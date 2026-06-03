@@ -20414,7 +20414,7 @@
     "name": "모스크바",
     "rarity": "UR",
     "shipType": "중순",
-    "faction": "북련",
+    "faction": "노스유니온",
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
@@ -20448,7 +20448,7 @@
     "name": "오조르노이",
     "rarity": "SSR",
     "shipType": "구축",
-    "faction": "북련",
+    "faction": "노스유니온",
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
@@ -20478,7 +20478,7 @@
     "name": "크라스늬 캅카스",
     "rarity": "SR",
     "shipType": "경순",
-    "faction": "북련",
+    "faction": "노스유니온",
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
@@ -20508,7 +20508,7 @@
     "name": "바가티르",
     "rarity": "SR",
     "shipType": "경순",
-    "faction": "북련",
+    "faction": "노스유니온",
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
