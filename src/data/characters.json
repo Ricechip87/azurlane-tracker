@@ -4033,9 +4033,9 @@
     "gid": 21301,
     "iconUrl": "/azurlane-tracker/ship-icons/213010.png",
     "techPoints": {
-      "acquired": 10,
-      "maxLB": 21,
-      "lv120": 16
+      "acquired": 5,
+      "maxLB": 10,
+      "lv120": 7
     }
   },
   {
@@ -14203,6 +14203,36 @@
     "skillPoints": 0,
     "statAcquired": {
       "shipTypes": [
+        "구축"
+      ],
+      "stat": "대공",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 2
+    },
+    "gid": 10148,
+    "iconUrl": "/azurlane-tracker/ship-icons/101480.png",
+    "techPoints": {
+      "acquired": 12,
+      "maxLB": 24,
+      "lv120": 18
+    }
+  },
+  {
+    "id": 519,
+    "name": "노틸러스",
+    "rarity": "SR",
+    "shipType": "잠수",
+    "faction": "유니온",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
         "잠수함",
         "잠수항모"
       ],
@@ -14217,38 +14247,12 @@
       "stat": "내구",
       "value": 1
     },
-    "gid": 10148,
-    "iconUrl": "/azurlane-tracker/ship-icons/101480.png",
+    "gid": 10807,
+    "iconUrl": "/azurlane-tracker/ship-icons/108070.png",
     "techPoints": {
       "acquired": 5,
       "maxLB": 10,
       "lv120": 8
-    }
-  },
-  {
-    "id": 519,
-    "name": "노틸러스",
-    "rarity": "SR",
-    "shipType": "잠수",
-    "faction": "유니온",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
-    },
-    "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
-    },
-    "gid": 10807,
-    "iconUrl": "/azurlane-tracker/ship-icons/108070.png",
-    "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
     }
   },
   {
@@ -15120,21 +15124,25 @@
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "내구",
+      "value": 1
     },
     "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "화력",
+      "value": 2
     },
     "gid": 40207,
     "iconUrl": "/azurlane-tracker/ship-icons/402070.png",
     "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
+      "acquired": 8,
+      "maxLB": 18,
+      "lv120": 14
     }
   },
   {
@@ -16848,32 +16856,6 @@
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
-    },
-    "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
-    },
-    "gid": 90502,
-    "iconUrl": "/azurlane-tracker/ship-icons/905020.png",
-    "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
-    }
-  },
-  {
-    "id": 605,
-    "name": "운젠",
-    "rarity": "UR",
-    "shipType": "중순",
-    "faction": "중앵",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
       "shipTypes": [
         "전함",
         "순전",
@@ -16891,12 +16873,46 @@
       "stat": "화력",
       "value": 2
     },
-    "gid": 30319,
-    "iconUrl": "/azurlane-tracker/ship-icons/303190.png",
+    "gid": 90502,
+    "iconUrl": "/azurlane-tracker/ship-icons/905020.png",
     "techPoints": {
       "acquired": 40,
       "maxLB": 80,
       "lv120": 60
+    }
+  },
+  {
+    "id": 605,
+    "name": "운젠",
+    "rarity": "UR",
+    "shipType": "중순",
+    "faction": "중앵",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "중순",
+        "초순",
+        "모니터"
+      ],
+      "stat": "뇌격",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "중순",
+        "초순",
+        "모니터"
+      ],
+      "stat": "화력",
+      "value": 1
+    },
+    "gid": 30319,
+    "iconUrl": "/azurlane-tracker/ship-icons/303190.png",
+    "techPoints": {
+      "acquired": 23,
+      "maxLB": 46,
+      "lv120": 35
     }
   },
   {
@@ -18221,15 +18237,15 @@
       "shipTypes": [
         "구축"
       ],
-      "stat": "대잠",
+      "stat": "화력",
       "value": 1
     },
     "gid": 40143,
     "iconUrl": "/azurlane-tracker/ship-icons/401430.png",
     "techPoints": {
-      "acquired": 8,
-      "maxLB": 17,
-      "lv120": 13
+      "acquired": 16,
+      "maxLB": 32,
+      "lv120": 24
     }
   },
   {
@@ -18371,21 +18387,25 @@
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "대공",
+      "value": 1
     },
     "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "화력",
+      "value": 1
     },
     "gid": 10233,
     "iconUrl": "/azurlane-tracker/ship-icons/102330.png",
     "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
+      "acquired": 16,
+      "maxLB": 33,
+      "lv120": 25
     }
   },
   {
@@ -18429,21 +18449,25 @@
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
     },
     "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "대잠",
+      "value": 1
     },
     "gid": 10152,
     "iconUrl": "/azurlane-tracker/ship-icons/101520.png",
     "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
+      "acquired": 8,
+      "maxLB": 17,
+      "lv120": 13
     }
   },
   {
@@ -20955,6 +20979,36 @@
     "skillPoints": 0,
     "statAcquired": {
       "shipTypes": [
+        "경순"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "장전",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 10,
+      "maxLB": 21,
+      "lv120": 16
+    },
+    "gid": 970202,
+    "iconUrl": "/azurlane-tracker/ship-icons/9702020.png"
+  },
+  {
+    "id": "M012",
+    "name": "리펄스(META)",
+    "rarity": "SSR",
+    "shipType": "순전",
+    "faction": "META",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
         "전함",
         "순전",
         "항전"
@@ -20973,36 +21027,6 @@
       "acquired": 22,
       "maxLB": 44,
       "lv120": 33
-    },
-    "gid": 970202,
-    "iconUrl": "/azurlane-tracker/ship-icons/9702020.png"
-  },
-  {
-    "id": "M012",
-    "name": "리펄스(META)",
-    "rarity": "SSR",
-    "shipType": "순전",
-    "faction": "META",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "장전",
-      "value": 1
-    },
-    "techPoints": {
-      "acquired": 10,
-      "maxLB": 21,
-      "lv120": 16
     },
     "gid": 970403,
     "iconUrl": "/azurlane-tracker/ship-icons/9704030.png"
@@ -21241,6 +21265,36 @@
     "skillPoints": 0,
     "statAcquired": {
       "shipTypes": [
+        "경순"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "화력",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 10,
+      "maxLB": 21,
+      "lv120": 16
+    },
+    "gid": 970204,
+    "iconUrl": "/azurlane-tracker/ship-icons/9702040.png"
+  },
+  {
+    "id": "M021",
+    "name": "U-556(META)",
+    "rarity": "SSR",
+    "shipType": "잠수",
+    "faction": "META",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
         "잠수함",
         "잠수항모"
       ],
@@ -21259,32 +21313,6 @@
       "acquired": 8,
       "maxLB": 17,
       "lv120": 13
-    },
-    "gid": 970204,
-    "iconUrl": "/azurlane-tracker/ship-icons/9702040.png"
-  },
-  {
-    "id": "M021",
-    "name": "U-556(META)",
-    "rarity": "SSR",
-    "shipType": "잠수",
-    "faction": "META",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
-    },
-    "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
-    },
-    "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
     },
     "gid": 970801,
     "iconUrl": "/azurlane-tracker/ship-icons/9708010.png"
@@ -21453,19 +21481,27 @@
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "중순",
+        "초순",
+        "모니터"
+      ],
+      "stat": "내구",
+      "value": 1
     },
     "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "중순",
+        "초순",
+        "모니터"
+      ],
+      "stat": "장전",
+      "value": 1
     },
     "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
+      "acquired": 10,
+      "maxLB": 21,
+      "lv120": 16
     },
     "gid": 971301,
     "iconUrl": "/azurlane-tracker/ship-icons/9713010.png"
@@ -21874,13 +21910,13 @@
         "순전",
         "항전"
       ],
-      "stat": "화력",
+      "stat": "명중",
       "value": 1
     },
     "techPoints": {
-      "acquired": 24,
-      "maxLB": 48,
-      "lv120": 36
+      "acquired": 18,
+      "maxLB": 36,
+      "lv120": 27
     },
     "gid": 970507,
     "iconUrl": "/azurlane-tracker/ship-icons/9705070.png"
@@ -21994,19 +22030,27 @@
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "전함",
+        "순전",
+        "항전"
+      ],
+      "stat": "내구",
+      "value": 2
     },
     "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "전함",
+        "순전",
+        "항전"
+      ],
+      "stat": "화력",
+      "value": 1
     },
     "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
+      "acquired": 24,
+      "maxLB": 48,
+      "lv120": 36
     },
     "gid": 970508,
     "iconUrl": "/azurlane-tracker/ship-icons/9705080.png"
@@ -22087,6 +22131,36 @@
     "skillPoints": 0,
     "statAcquired": {
       "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "회피",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 9,
+      "maxLB": 18,
+      "lv120": 13
+    },
+    "gid": 970107,
+    "iconUrl": "/azurlane-tracker/ship-icons/9701070.png"
+  },
+  {
+    "id": "M048",
+    "name": "글로리어스(META)",
+    "rarity": "SSR",
+    "shipType": "항모",
+    "faction": "META",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
         "경항모",
         "정규항모"
       ],
@@ -22105,36 +22179,6 @@
       "acquired": 19,
       "maxLB": 39,
       "lv120": 29
-    },
-    "gid": 970107,
-    "iconUrl": "/azurlane-tracker/ship-icons/9701070.png"
-  },
-  {
-    "id": "M048",
-    "name": "글로리어스(META)",
-    "rarity": "SSR",
-    "shipType": "항모",
-    "faction": "META",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "회피",
-      "value": 1
-    },
-    "techPoints": {
-      "acquired": 9,
-      "maxLB": 18,
-      "lv120": 13
     },
     "gid": 970707,
     "iconUrl": "/azurlane-tracker/ship-icons/9707070.png"
@@ -23934,19 +23978,23 @@
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
     },
     "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "대잠",
+      "value": 1
     },
     "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
+      "acquired": 8,
+      "maxLB": 17,
+      "lv120": 13
     },
     "gid": 1010004,
     "iconUrl": "/azurlane-tracker/ship-icons/10100040.png"
