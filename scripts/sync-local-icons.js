@@ -9,6 +9,11 @@ const CHARS_PATH = path.join(ROOT, 'src', 'data', 'characters.json')
 const OUT_DIR = path.join(ROOT, 'public', 'ship-icons')
 const REPORT_PATH = path.join(ROOT, 'scripts', 'icon-missing-report.json')
 
+// ship.json에 동명이인이 있어 이름 조회가 틀릴 수 있는 PR 함선을 id로 직접 고정
+const SPECIAL_PR_SHIP_IDS = new Map([
+  ['P001', 20001], // HMS Neptune (id:20001) — 콜라보 Neptune(id:10001)과 이름 충돌
+])
+
 const SPECIAL_SKINS = new Map([
   ['Z031', 10300010],
   ['Z032', 10300020],
@@ -86,7 +91,10 @@ function resolveShip(char, shipsById, shipsByName) {
   if (SPECIAL_SKINS.has(id)) return { gid: null, skinId: SPECIAL_SKINS.get(id) }
   if (id.startsWith('M')) return shipsById.get(30000 + Number(id.slice(1)))
   if (id.startsWith('Z')) return shipsById.get(makeZShipId(id))
-  if (id.startsWith('P')) return shipsByName.get(PR_NAMES[Number(id.slice(1)) - 1])
+  if (id.startsWith('P')) {
+    if (SPECIAL_PR_SHIP_IDS.has(id)) return shipsById.get(SPECIAL_PR_SHIP_IDS.get(id))
+    return shipsByName.get(PR_NAMES[Number(id.slice(1)) - 1])
+  }
 
   return null
 }
