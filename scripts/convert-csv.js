@@ -10,8 +10,8 @@ const OUT_PATH = path.join(__dirname, '../src/data/characters.json')
 const raw = fs.readFileSync(CSV_PATH, 'utf-8')
 const lines = raw.split('\n').map(l => l.trimEnd())
 
-// 데이터 행: 계산용(col0)이 숫자인 행만 추출
-const dataLines = lines.filter(line => /^\d+,\d+,/.test(line))
+// 데이터 행: 계산용(col0)이 숫자이고, ID(col1)가 숫자 또는 알파벳+숫자인 행 (M/P/Z 포함)
+const dataLines = lines.filter(line => /^\d+,[A-Za-z0-9]+,/.test(line))
 
 function parseCSVLine(line) {
   const result = []
@@ -43,7 +43,8 @@ const characters = dataLines.map(line => {
   // 15: 입수_적용함종1, 16: 입수_적용함종2, 17: 입수_적용함종3, 18: 입수_능력치, 19: 입수_수치
   // 20: 120_적용함종1, 21: 120_적용함종2, 22: 120_적용함종3, 23: 120_능력치, 24: 120_수치
 
-  const id = parseInt(cols[1])
+  const rawId = cols[1].trim()
+  const id = /^\d+$/.test(rawId) ? parseInt(rawId) : rawId
   const name = cols[3].trim()
   if (!name) return null
 

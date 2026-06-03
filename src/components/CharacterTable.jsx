@@ -1,3 +1,5 @@
+import { calcTechPoints } from '../utils/techPoints.js'
+
 const RARITY_COLOR = {
   N: 'text-gray-400',
   R: 'text-blue-400',
@@ -6,7 +8,7 @@ const RARITY_COLOR = {
   UR: 'text-red-400',
 }
 
-const ACQUIRED_OPTS = ['미획득', '육성중', '획득']
+const ACQUIRED_OPTS = ['미획득', '획득', '육성중', '육성 완료']
 const SKILLED_OPTS = ['스작 안함', '스작 중', '스작 완료']
 const AFFECTION_OPTS = ['호감작 안함', '호감작 중', '호감작 완료']
 
@@ -27,6 +29,8 @@ export default function CharacterTable({ characters, updateUser }) {
               <th className="px-3 py-2 text-center">스킬작</th>
               <th className="px-3 py-2 text-center">호감작</th>
               <th className="px-3 py-2 text-center">기술점수</th>
+              <th className="px-3 py-2 text-center">입수 스탯</th>
+              <th className="px-3 py-2 text-center">120 스탯</th>
               <th className="px-3 py-2 text-left">메모</th>
             </tr>
           </thead>
@@ -60,7 +64,17 @@ function CharacterRow({ char: c, updateUser, even }) {
           ★
         </button>
       </td>
-      <td className="px-3 py-2 font-medium">{c.name}</td>
+      <td className="px-3 py-2">
+        <div className="flex items-center gap-2">
+          {c.iconUrl ? (
+            <img src={c.iconUrl} alt={c.name} className="w-8 h-8 rounded object-cover flex-shrink-0" loading="lazy"
+              onError={e => { e.target.style.display = 'none' }} />
+          ) : (
+            <div className="w-8 h-8 rounded bg-gray-700 flex-shrink-0" />
+          )}
+          <span className="font-medium">{c.name}</span>
+        </div>
+      </td>
       <td className={`px-3 py-2 text-center font-bold ${RARITY_COLOR[c.rarity] || 'text-gray-400'}`}>
         {c.rarity}
       </td>
@@ -80,7 +94,7 @@ function CharacterRow({ char: c, updateUser, even }) {
       </td>
       <td className="px-3 py-2 text-center">
         <CycleButton value={acquired} options={ACQUIRED_OPTS} onChange={v => updateUser(c.id, 'acquired', v)}
-          colorMap={{ '획득': 'bg-blue-700 text-blue-200', '육성중': 'bg-yellow-700 text-yellow-200', '미획득': 'bg-gray-700 text-gray-400' }} />
+          colorMap={{ '미획득': 'bg-gray-700 text-gray-400', '획득': 'bg-blue-700 text-blue-200', '육성중': 'bg-yellow-700 text-yellow-200', '육성 완료': 'bg-green-700 text-green-200' }} />
       </td>
       <td className="px-3 py-2 text-center">
         <CycleButton value={skilled} options={SKILLED_OPTS} onChange={v => updateUser(c.id, 'skilled', v)}
@@ -90,7 +104,13 @@ function CharacterRow({ char: c, updateUser, even }) {
         <CycleButton value={affection} options={AFFECTION_OPTS} onChange={v => updateUser(c.id, 'affection', v)}
           colorMap={{ '호감작 완료': 'bg-pink-700 text-pink-200', '호감작 중': 'bg-yellow-700 text-yellow-200', '호감작 안함': 'bg-gray-700 text-gray-400' }} />
       </td>
-      <td className="px-3 py-2 text-center text-gray-300">{c.skillPoints || 0}</td>
+      <td className="px-3 py-2 text-center text-gray-300">{calcTechPoints(c)}</td>
+      <td className="px-3 py-2 text-center">
+        <StatCell data={c.statAcquired} />
+      </td>
+      <td className="px-3 py-2 text-center">
+        <StatCell data={c.stat120} />
+      </td>
       <td className="px-3 py-2">
         <input
           type="text"
@@ -101,6 +121,23 @@ function CharacterRow({ char: c, updateUser, even }) {
         />
       </td>
     </tr>
+  )
+}
+
+function StatCell({ data }) {
+  if (!data || (!data.stat && data.value === 0)) return <span className="text-gray-600 text-xs">-</span>
+  return (
+    <div className="text-xs text-center">
+      {data.shipTypes?.length > 0 && (
+        <div className="text-gray-500">{data.shipTypes.join('/')}</div>
+      )}
+      {data.stat && (
+        <div className="text-gray-300">
+          <span className="text-blue-300">{data.stat}</span>
+          {data.value > 0 && <span className="text-gray-400"> +{data.value}</span>}
+        </div>
+      )}
+    </div>
   )
 }
 
