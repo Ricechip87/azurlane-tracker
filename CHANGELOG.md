@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-04 - Define Product Direction
+
+### Why
+- The project direction was clarified as an ALtoy-style tool specialized for owned-ship growth and fleet optimization.
+- Optional visual archive features should be distinguished from the core tracker/recommendation goals.
+
+### Changed
+- Rewrote `README.md` to describe the project identity, goals, and local commands.
+- Expanded `PLAN.md` with required goals, optional goals, and a staged roadmap.
+
+### Verified
+- Documentation-only change.
+
 ## 2026-06-04 - Update Script Source Paths
 
 ### Why

@@ -1,16 +1,25 @@
-# React + Vite
+# AzurLane Growth Optimizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+내 보유함 기반 성장/편성 최적화에 특화된 벽람항로 팬 도구입니다.
 
-Currently, two official plugins are available:
+현재는 Google Sheets로 관리하던 함선 데이터를 웹 앱으로 옮겨 보유, 육성, 스킬, 호감, 메모, 기술점수를 관리하는 트래커 기능을 중심으로 개발 중입니다. 장기적으로는 보유함 상태를 기준으로 성장 우선순위와 스테이지별 편성을 추천하는 ALtoy 스타일의 정적 웹 도구를 목표로 합니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 방향
 
-## React Compiler
+- 필수 목표: 보유함 기반 성장/편성 최적화
+- 핵심 기능: 함선 트래커, 기술점수 계산, 성장 추천, 편성 추천
+- 확장 목표: 스킨, 일러스트, 로딩 이미지 등 감상형 모듈
+- 실행 환경: React + Vite, LocalStorage, GitHub Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 개발 명령
 
-## Expanding the ESLint configuration
+```bash
+npm.cmd run dev
+npm.cmd run lint
+npm.cmd run build
+npm.cmd run preview
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 로컬 참고 자료
+
+`참고용/` 폴더는 CSV, 원본 에셋, 임시 참고 자료를 보관하는 로컬 전용 폴더입니다. Git에는 포함하지 않습니다.
