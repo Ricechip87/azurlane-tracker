@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-04 - Update Acquisition Status Levels
+
+### Why
+- The owned-state cycle should track practical level milestones instead of the previous broad growth labels.
+
+### Changed
+- Changed acquisition status cycle to `미획득 -> 획득 -> 100 -> 120 -> 125`.
+- Updated filters, table colors, stats, and tech point calculation to use the new statuses.
+- Preserved compatibility with old saved values by mapping `육성중` to `100` and `육성 완료` to `120`.
+- Added status utility tests.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-04 - Clarify Header Backup Label
 
 ### Why

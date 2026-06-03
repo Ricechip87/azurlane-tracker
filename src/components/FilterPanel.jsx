@@ -1,5 +1,6 @@
+import { ACQUISITION_FILTER_OPTIONS } from '../utils/acquisitionStatus.js'
+
 const RARITIES = ['전체', 'N', 'R', 'SR', 'SSR', 'UR']
-const ACQUIRED_OPTS = ['전체', '미획득', '획득', '육성중', '육성 완료']
 const SKILLED_OPTS = ['전체', '스작 완료', '스작 중', '스작 안함']
 const AFFECTION_OPTS = ['전체', '호감작 완료', '호감작 중', '호감작 안함']
 const REMODEL_OPTS = ['전체', '개장', '미개장']
@@ -27,7 +28,7 @@ export default function FilterPanel({ filters, setFilters, characters }) {
         <Select label="레어도" value={filters.rarity} onChange={v => set('rarity', v)} options={RARITIES} />
         <Select label="함종" value={filters.shipType} onChange={v => set('shipType', v)} options={shipTypes} />
         <Select label="진영" value={filters.faction} onChange={v => set('faction', v)} options={factions} />
-        <Select label="획득 여부" value={filters.acquired} onChange={v => set('acquired', v)} options={ACQUIRED_OPTS} />
+        <Select label="획득 여부" value={filters.acquired} onChange={v => set('acquired', v)} options={ACQUISITION_FILTER_OPTIONS} />
         <Select label="스킬작" value={filters.skilled} onChange={v => set('skilled', v)} options={SKILLED_OPTS} />
         <Select label="호감작" value={filters.affection} onChange={v => set('affection', v)} options={AFFECTION_OPTS} />
         <Select label="개장" value={filters.remodel} onChange={v => set('remodel', v)} options={REMODEL_OPTS} />

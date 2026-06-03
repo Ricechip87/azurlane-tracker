@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "test": "node src/utils/backup.test.mjs",
+    "test": "node src/utils/backup.test.mjs && node src/utils/acquisitionStatus.test.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,4 +1,5 @@
 import { calcTechPoints } from '../utils/techPoints.js'
+import { ACQUISITION_STATUSES, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 
 const RARITY_COLOR = {
   N: 'text-gray-400',
@@ -8,7 +9,6 @@ const RARITY_COLOR = {
   UR: 'text-red-400',
 }
 
-const ACQUIRED_OPTS = ['미획득', '획득', '육성중', '육성 완료']
 const SKILLED_OPTS = ['스작 안함', '스작 중', '스작 완료']
 const AFFECTION_OPTS = ['호감작 안함', '호감작 중', '호감작 완료']
 
@@ -50,7 +50,7 @@ export default function CharacterTable({ characters, updateUser }) {
 
 function CharacterRow({ char: c, updateUser, even }) {
   const bg = even ? 'bg-gray-900' : 'bg-gray-950'
-  const acquired = c.acquired || '미획득'
+  const acquired = normalizeAcquisitionStatus(c.acquired)
   const skilled = c.skilled || '스작 안함'
   const affection = c.affection || '호감작 안함'
 
@@ -93,8 +93,8 @@ function CharacterRow({ char: c, updateUser, even }) {
         )}
       </td>
       <td className="px-3 py-2 text-center">
-        <CycleButton value={acquired} options={ACQUIRED_OPTS} onChange={v => updateUser(c.id, 'acquired', v)}
-          colorMap={{ '미획득': 'bg-gray-700 text-gray-400', '획득': 'bg-blue-700 text-blue-200', '육성중': 'bg-yellow-700 text-yellow-200', '육성 완료': 'bg-green-700 text-green-200' }} />
+        <CycleButton value={acquired} options={ACQUISITION_STATUSES} onChange={v => updateUser(c.id, 'acquired', v)}
+          colorMap={{ '미획득': 'bg-gray-700 text-gray-400', '획득': 'bg-blue-700 text-blue-200', '100': 'bg-yellow-700 text-yellow-200', '120': 'bg-green-700 text-green-200', '125': 'bg-purple-700 text-purple-200' }} />
       </td>
       <td className="px-3 py-2 text-center">
         <CycleButton value={skilled} options={SKILLED_OPTS} onChange={v => updateUser(c.id, 'skilled', v)}

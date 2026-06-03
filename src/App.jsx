@@ -5,6 +5,7 @@ import FilterPanel from './components/FilterPanel'
 import CharacterTable from './components/CharacterTable'
 import StatsBar from './components/StatsBar'
 import BackupPanel from './components/BackupPanel'
+import { normalizeAcquisitionStatus } from './utils/acquisitionStatus.js'
 
 const INITIAL_FILTERS = {
   search: '',
@@ -40,7 +41,7 @@ export default function App() {
       if (filters.rarity !== '전체' && c.rarity !== filters.rarity) return false
       if (filters.shipType !== '전체' && c.shipType !== filters.shipType) return false
       if (filters.faction !== '전체' && c.faction !== filters.faction) return false
-      if (filters.acquired !== '전체' && (c.acquired || '미획득') !== filters.acquired) return false
+      if (filters.acquired !== '전체' && normalizeAcquisitionStatus(c.acquired) !== filters.acquired) return false
       if (filters.skilled !== '전체' && (c.skilled || '스작 안함') !== filters.skilled) return false
       if (filters.affection !== '전체' && (c.affection || '호감작 안함') !== filters.affection) return false
       if (filters.remodel !== '전체') {

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { calcTechPoints } from '../utils/techPoints.js'
+import { isAcquiredStatus, isLevel120Status } from '../utils/acquisitionStatus.js'
 
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
 const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대순', '경항모', '항모', '전함', '순전', '항전', '잠수', '잠순', '모니터', '보급']
@@ -8,9 +9,8 @@ const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대순', '경항모', '�
 function calcStatsByShipType(characters, mode) {
   const result = {}
   for (const c of characters) {
-    const status = c.acquired || '미획득'
-    const isAcquired = ['획득', '육성중', '육성 완료'].includes(status)
-    const isMaxed = status === '육성 완료'
+    const isAcquired = isAcquiredStatus(c.acquired)
+    const isMaxed = isLevel120Status(c.acquired)
 
     const data = mode === '입수' ? (isAcquired ? c.statAcquired : null)
                                  : (isMaxed ? c.stat120 : null)
@@ -27,8 +27,8 @@ function calcStatsByShipType(characters, mode) {
 
 export default function StatsBar({ characters, filtered }) {
   const total = characters.length
-  const acquiredCount = filtered.filter(c => ['획득', '육성중', '육성 완료'].includes(c.acquired)).length
-  const maxed = filtered.filter(c => c.acquired === '육성 완료').length
+  const acquiredCount = filtered.filter(c => isAcquiredStatus(c.acquired)).length
+  const maxed = filtered.filter(c => isLevel120Status(c.acquired)).length
   const rate = filtered.length ? ((acquiredCount / filtered.length) * 100).toFixed(1) : 0
   const earnedSP = filtered.reduce((s, c) => s + calcTechPoints(c), 0)
 
@@ -51,7 +51,7 @@ export default function StatsBar({ characters, filtered }) {
             <div className="px-4 py-1.5 text-blue-300 font-bold">{rate}%</div>
             <div className="px-4 py-1.5 text-gray-400">표시 목록 수 (전체)</div>
             <div className="px-4 py-1.5 text-blue-300 font-bold">{filtered.length} ({total})</div>
-            <div className="px-4 py-1.5 text-gray-400">육성 완료</div>
+            <div className="px-4 py-1.5 text-gray-400">120 이상</div>
             <div className="px-4 py-1.5 text-blue-300 font-bold">{maxed}</div>
             <div className="px-4 py-1.5 text-gray-400">획득 기술점수</div>
             <div className="px-4 py-1.5 text-blue-300 font-bold">{earnedSP}</div>
@@ -71,8 +71,8 @@ export default function StatsBar({ characters, filtered }) {
             </select>
           </div>
           <div className="flex divide-x divide-gray-800">
-            <StatGroup label="입수 스탯 총합" statsByType={acquiredStats} selectedType={selectedType} sub="획득/육성중/육성완료 기준" />
-            <StatGroup label="120 스탯 총합" statsByType={maxedStats} selectedType={selectedType} sub="육성 완료 기준" />
+            <StatGroup label="입수 스탯 총합" statsByType={acquiredStats} selectedType={selectedType} sub="획득/100/120/125 기준" />
+            <StatGroup label="120 스탯 총합" statsByType={maxedStats} selectedType={selectedType} sub="120/125 기준" />
           </div>
         </div>
 
