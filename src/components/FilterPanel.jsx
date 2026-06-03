@@ -1,4 +1,5 @@
 import { ACQUISITION_FILTER_OPTIONS } from '../utils/acquisitionStatus.js'
+import { getFactionOptions } from '../utils/factions.js'
 
 const RARITIES = ['전체', 'N', 'R', 'SR', 'SSR', 'UR']
 const SKILLED_OPTS = ['전체', '스작 완료', '스작 중', '스작 안함']
@@ -7,7 +8,7 @@ const REMODEL_OPTS = ['전체', '없음', '미개장', '개장']
 
 export default function FilterPanel({ filters, setFilters, characters }) {
   const shipTypes = ['전체', ...new Set(characters.map(c => c.shipType).filter(Boolean))]
-  const factions = ['전체', ...new Set(characters.map(c => c.faction).filter(Boolean))]
+  const factions = getFactionOptions(characters.map(c => c.faction))
 
   const set = (key, val) => setFilters(prev => ({ ...prev, [key]: val }))
 
@@ -54,6 +55,14 @@ export default function FilterPanel({ filters, setFilters, characters }) {
   )
 }
 
+function getOptionValue(option) {
+  return typeof option === 'string' ? option : option.value
+}
+
+function getOptionLabel(option) {
+  return typeof option === 'string' ? option : option.label
+}
+
 function Select({ label, value, onChange, options }) {
   return (
     <div className="flex flex-col gap-1">
@@ -63,7 +72,11 @@ function Select({ label, value, onChange, options }) {
         onChange={e => onChange(e.target.value)}
         className="bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-blue-500"
       >
-        {options.map(o => <option key={o} value={o}>{o}</option>)}
+        {options.map(o => (
+          <option key={getOptionValue(o)} value={getOptionValue(o)}>
+            {getOptionLabel(o)}
+          </option>
+        ))}
       </select>
     </div>
   )
