@@ -8,6 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "test": "node src/utils/backup.test.mjs && node src/utils/acquisitionStatus.test.mjs",
+    "sync:icons": "node scripts/sync-local-icons.js",
     "preview": "vite preview"
   },
   "dependencies": {

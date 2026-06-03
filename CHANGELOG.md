@@ -1,5 +1,23 @@
 # Change Log
 
+## 2026-06-04 - Sync Ship Icons From Local Data
+
+### Why
+- Ship icons should be served from local public assets instead of relying on remote GitHub raw URLs at runtime.
+- Utawarerumono collaboration icons were missing from the local `AzurLane` image data and needed an ALtoy-compatible fallback source.
+
+### Changed
+- Added a local icon sync script that copies ship icons from `참고용/AzurLane` into `public/ship-icons`.
+- Added fixed skin-ID handling for `Z031` through `Z036` using ALtoy's `JforPlay/data_for_toy` icon source.
+- Updated character data icon URLs to use local public assets.
+- Added a missing icon report for ships that do not exist in the local reference data.
+- Added `npm run sync:icons` for repeatable icon refreshes.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-04 - Update Acquisition Status Levels
 
 ### Why
