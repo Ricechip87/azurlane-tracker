@@ -19,6 +19,10 @@ const INITIAL_FILTERS = {
   favoritesOnly: false,
 }
 
+function isCollabCharacter(c) {
+  return String(c.id).startsWith('Z')
+}
+
 export default function App() {
   const [userData, setUserData] = useLocalStorage('azurlane-userdata', {})
   const [filters, setFilters] = useState(INITIAL_FILTERS)
@@ -40,7 +44,12 @@ export default function App() {
       if (filters.search && !c.name.includes(filters.search)) return false
       if (filters.rarity !== '전체' && c.rarity !== filters.rarity) return false
       if (filters.shipType !== '전체' && c.shipType !== filters.shipType) return false
-      if (filters.faction !== '전체' && c.faction !== filters.faction) return false
+      if (filters.faction !== '전체') {
+        const matchesFaction = filters.faction === '기타'
+          ? c.faction === '기타' || isCollabCharacter(c)
+          : c.faction === filters.faction
+        if (!matchesFaction) return false
+      }
       if (filters.acquired !== '전체' && normalizeAcquisitionStatus(c.acquired) !== filters.acquired) return false
       if (filters.skilled !== '전체' && (c.skilled || '스작 안함') !== filters.skilled) return false
       if (filters.affection !== '전체' && (c.affection || '호감작 안함') !== filters.affection) return false
@@ -64,7 +73,7 @@ export default function App() {
 
       <div className="p-4 space-y-4">
         <StatsBar characters={enriched} filtered={filtered} />
-<FilterPanel filters={filters} setFilters={setFilters} characters={enriched} />
+        <FilterPanel filters={filters} setFilters={setFilters} characters={enriched} />
         <CharacterTable characters={filtered} updateUser={updateUser} />
       </div>
     </div>
