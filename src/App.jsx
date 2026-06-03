@@ -45,9 +45,8 @@ export default function App() {
       if (filters.skilled !== '전체' && (c.skilled || '스작 안함') !== filters.skilled) return false
       if (filters.affection !== '전체' && (c.affection || '호감작 안함') !== filters.affection) return false
       if (filters.remodel !== '전체') {
-        const val = c.remodeled || 'X'
-        if (filters.remodel === '개장' && val !== 'O') return false
-        if (filters.remodel === '미개장' && val !== 'X') return false
+        const val = c.remodeled === 'O' ? '개장' : c.remodeled === 'X' ? '미개장' : (c.remodeled || '없음')
+        if (val !== filters.remodel) return false
       }
       if (filters.favoritesOnly && !c.favorite) return false
       return true

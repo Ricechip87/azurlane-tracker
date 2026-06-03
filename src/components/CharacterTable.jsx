@@ -9,6 +9,7 @@ const RARITY_COLOR = {
   UR: 'text-red-400',
 }
 
+const REMODEL_OPTS = ['없음', '미개장', '개장']
 const SKILLED_OPTS = ['스작 안함', '스작 중', '스작 완료']
 const AFFECTION_OPTS = ['호감작 안함', '호감작 중', '서약 완료', '호감도 Max']
 const EQUIP_OPTS = ['없음', '미제작', '제작']
@@ -56,6 +57,7 @@ function CharacterRow({ char: c, updateUser, even }) {
   const skilled = c.skilled || '스작 안함'
   const affection = c.affection || '호감작 안함'
   const equip = c.equip || '없음'
+  const remodel = c.remodeled === 'O' ? '개장' : c.remodeled === 'X' ? '미개장' : (c.remodeled || '없음')
 
   return (
     <tr className={`${bg} hover:bg-gray-800 transition-colors border-t border-gray-800`}>
@@ -75,7 +77,7 @@ function CharacterRow({ char: c, updateUser, even }) {
           ) : (
             <div className="w-8 h-8 rounded bg-gray-700 flex-shrink-0" />
           )}
-          <span className="font-medium">{c.name}</span>
+          <span className="font-medium">{c.name}{String(c.id).startsWith('P') && <span className="text-xs text-cyan-400 ml-1">(SP)</span>}</span>
         </div>
       </td>
       <td className={`px-3 py-2 text-center font-bold ${RARITY_COLOR[c.rarity] || 'text-gray-400'}`}>
@@ -84,16 +86,8 @@ function CharacterRow({ char: c, updateUser, even }) {
       <td className="px-3 py-2 text-center text-gray-300">{c.shipType}</td>
       <td className="px-3 py-2 text-center text-gray-400 text-xs">{c.faction}</td>
       <td className="px-3 py-2 text-center">
-        {c.canRemodel ? (
-          <button
-            onClick={() => updateUser(c.id, 'remodeled', c.remodeled === 'O' ? 'X' : 'O')}
-            className={`text-xs px-2 py-0.5 rounded ${c.remodeled === 'O' ? 'bg-green-700 text-green-200' : 'bg-gray-700 text-gray-400 hover:bg-gray-600'}`}
-          >
-            {c.remodeled === 'O' ? '개장' : '미개장'}
-          </button>
-        ) : (
-          <span className="text-gray-600 text-xs">-</span>
-        )}
+        <CycleButton value={remodel} options={REMODEL_OPTS} onChange={v => updateUser(c.id, 'remodeled', v)}
+          colorMap={{ '없음': 'bg-gray-700 text-gray-400', '미개장': 'bg-yellow-700 text-yellow-200', '개장': 'bg-green-700 text-green-200' }} />
       </td>
       <td className="px-3 py-2 text-center">
         <CycleButton value={acquired} options={ACQUISITION_STATUSES} onChange={v => updateUser(c.id, 'acquired', v)}
