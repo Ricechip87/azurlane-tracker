@@ -16,7 +16,7 @@ export function isAcquiredStatus(status) {
 }
 
 export function isLevel100Status(status) {
-  return ['풀돌', '100', '120', '125'].includes(normalizeAcquisitionStatus(status))
+  return ['100', '120', '125'].includes(normalizeAcquisitionStatus(status))
 }
 
 export function isLevel120Status(status) {

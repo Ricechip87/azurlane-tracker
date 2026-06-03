@@ -9,6 +9,10 @@ const OUT_PATH = path.join(__dirname, '../src/data/characters.json')
 
 const raw = fs.readFileSync(CSV_PATH, 'utf-8')
 const lines = raw.split('\n').map(l => l.trimEnd())
+const existingCharacters = fs.existsSync(OUT_PATH)
+  ? JSON.parse(fs.readFileSync(OUT_PATH, 'utf-8'))
+  : []
+const existingById = new Map(existingCharacters.map(c => [normalizeId(c.id), c]))
 
 // 데이터 행: 계산용(col0)이 숫자이고, ID(col1)가 숫자 또는 알파벳+숫자인 행 (M/P/Z 포함)
 const dataLines = lines.filter(line => /^\d+,[A-Za-z0-9]+,/.test(line))
@@ -33,6 +37,11 @@ function parseCSVLine(line) {
   return result
 }
 
+function normalizeId(rawId) {
+  const id = String(rawId || '').trim()
+  return /^\d+$/.test(id) ? String(parseInt(id)) : id
+}
+
 const characters = dataLines.map(line => {
   const cols = parseCSVLine(line)
   // cols 인덱스 (헤더 기준):
@@ -45,10 +54,11 @@ const characters = dataLines.map(line => {
 
   const rawId = cols[1].trim()
   const id = /^\d+$/.test(rawId) ? parseInt(rawId) : rawId
+  const existing = existingById.get(normalizeId(id)) || {}
   const name = cols[3].trim()
   if (!name) return null
 
-  return {
+  const base = {
     id,
     name,
     rarity: cols[4].trim(),
@@ -67,6 +77,8 @@ const characters = dataLines.map(line => {
       value: parseInt(cols[24]) || 0,
     },
   }
+
+  return { ...existing, ...base }
 }).filter(Boolean)
 
 fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true })
