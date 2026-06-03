@@ -4,6 +4,7 @@ import { useLocalStorage } from './hooks/useLocalStorage'
 import FilterPanel from './components/FilterPanel'
 import CharacterTable from './components/CharacterTable'
 import StatsBar from './components/StatsBar'
+import BackupPanel from './components/BackupPanel'
 
 const INITIAL_FILTERS = {
   search: '',
@@ -60,6 +61,7 @@ export default function App() {
 
       <div className="p-4 space-y-4">
         <StatsBar characters={enriched} filtered={filtered} />
+        <BackupPanel userData={userData} setUserData={setUserData} />
         <FilterPanel filters={filters} setFilters={setFilters} characters={enriched} />
         <CharacterTable characters={filtered} updateUser={updateUser} />
       </div>

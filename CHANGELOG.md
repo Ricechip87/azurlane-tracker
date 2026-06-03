@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-04 - Add User Data Backup
+
+### Why
+- Owned-ship status, notes, favorites, and growth state are stored in LocalStorage and need a safe backup path before the tracker becomes a daily-use tool.
+
+### Changed
+- Added a versioned JSON backup format for user data.
+- Added backup export and import controls to the main tracker screen.
+- Added lightweight Node assertions for backup parsing and validation.
+- Updated project docs to include the new test command and mark backup/restore as complete.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-04 - Define Product Direction
 
 ### Why

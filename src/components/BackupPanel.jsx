@@ -1,0 +1,75 @@
+import { useRef, useState } from 'react'
+import { createBackup, parseBackup } from '../utils/backup.js'
+
+export default function BackupPanel({ userData, setUserData }) {
+  const fileInputRef = useRef(null)
+  const [message, setMessage] = useState('')
+  const savedCount = Object.keys(userData).length
+
+  const exportBackup = () => {
+    const backup = createBackup(userData)
+    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const date = backup.exportedAt.slice(0, 10)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `azurlane-backup-${date}.json`
+    link.click()
+    URL.revokeObjectURL(url)
+    setMessage(`백업 파일 생성 완료: ${savedCount}명`)
+  }
+
+  const importBackup = async (event) => {
+    const file = event.target.files?.[0]
+    event.target.value = ''
+    if (!file) return
+
+    try {
+      const text = await file.text()
+      const nextUserData = parseBackup(text)
+      setUserData(nextUserData)
+      setMessage(`복원 완료: ${Object.keys(nextUserData).length}명`)
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : '복원에 실패했습니다.')
+    }
+  }
+
+  return (
+    <div className="bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
+      <div className="flex flex-wrap items-center gap-3">
+        <div className="mr-auto">
+          <div className="text-sm font-semibold text-gray-200">데이터 백업</div>
+          <div className="text-xs text-gray-500">LocalStorage 저장 데이터 {savedCount}명</div>
+        </div>
+
+        <button
+          type="button"
+          onClick={exportBackup}
+          className="rounded border border-blue-700 bg-blue-950 px-3 py-1.5 text-sm font-medium text-blue-200 hover:bg-blue-900"
+        >
+          내보내기
+        </button>
+
+        <button
+          type="button"
+          onClick={() => fileInputRef.current?.click()}
+          className="rounded border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-700"
+        >
+          가져오기
+        </button>
+
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="application/json,.json"
+          onChange={importBackup}
+          className="hidden"
+        />
+      </div>
+
+      {message && (
+        <div className="mt-2 text-xs text-gray-400">{message}</div>
+      )}
+    </div>
+  )
+}

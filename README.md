@@ -15,6 +15,7 @@
 
 ```bash
 npm.cmd run dev
+npm.cmd run test
 npm.cmd run lint
 npm.cmd run build
 npm.cmd run preview
