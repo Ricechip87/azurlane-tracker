@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-04 - Clarify Header Backup Label
+
+### Why
+- Header backup controls needed a visible label so users know the buttons apply to entered tracker data.
+
+### Changed
+- Added an `입력 데이터` label before the compact backup controls.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-04 - Move Backup Controls To Header
 
 ### Why

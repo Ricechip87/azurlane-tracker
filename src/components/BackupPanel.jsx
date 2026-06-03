@@ -65,6 +65,7 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
   if (compact) {
     return (
       <div className="flex flex-wrap items-center gap-2">
+        <span className="text-sm font-semibold text-gray-300">입력 데이터</span>
         <span className="text-xs text-gray-500">저장 {savedCount}명</span>
         {controls}
         {message && <span className="text-xs text-gray-400">{message}</span>}
