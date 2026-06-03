@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-const CSV_PATH = path.join(__dirname, '../../벽람 함순이도감 v2.1.8_배포용의 사본 - [ 메인시트.csv')
+const CSV_PATH = path.join(__dirname, '../참고용/벽람 함순이도감 v2.1.8_배포용의 사본 - [ 메인시트.csv')
 const OUT_PATH = path.join(__dirname, '../src/data/characters.json')
 
 const raw = fs.readFileSync(CSV_PATH, 'utf-8')

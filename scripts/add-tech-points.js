@@ -3,7 +3,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const TECH_CSV = path.join(__dirname, '../../벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv')
+const TECH_CSV = path.join(__dirname, '../참고용/벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv')
 const CHARS_PATH = path.join(__dirname, '../src/data/characters.json')
 
 const STAT_NAMES = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']

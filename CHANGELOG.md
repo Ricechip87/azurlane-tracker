@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-04 - Update Script Source Paths
+
+### Why
+- The app was moved to the repository root while source CSV files are kept locally under `참고용/`.
+- Data conversion scripts needed to resolve input files from the new root project structure.
+
+### Changed
+- Updated `scripts/convert-csv.js` to read the main CSV from `참고용/`.
+- Updated `scripts/add-tech-points.js` to read the tech-point CSV from `참고용/`.
+
+### Verified
+- Confirmed both referenced CSV paths exist locally.
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-04 - Flatten AzurLane Tracker Project
 
 ### Why
