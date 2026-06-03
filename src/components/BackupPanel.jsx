@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { createBackup, parseBackup } from '../utils/backup.js'
 
-export default function BackupPanel({ userData, setUserData }) {
+export default function BackupPanel({ userData, setUserData, compact = false }) {
   const fileInputRef = useRef(null)
   const [message, setMessage] = useState('')
   const savedCount = Object.keys(userData).length
@@ -34,6 +34,44 @@ export default function BackupPanel({ userData, setUserData }) {
     }
   }
 
+  const controls = (
+    <>
+      <button
+        type="button"
+        onClick={exportBackup}
+        className="rounded border border-blue-700 bg-blue-950 px-3 py-1.5 text-sm font-medium text-blue-200 hover:bg-blue-900"
+      >
+        내보내기
+      </button>
+
+      <button
+        type="button"
+        onClick={() => fileInputRef.current?.click()}
+        className="rounded border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-700"
+      >
+        가져오기
+      </button>
+
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="application/json,.json"
+        onChange={importBackup}
+        className="hidden"
+      />
+    </>
+  )
+
+  if (compact) {
+    return (
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-xs text-gray-500">저장 {savedCount}명</span>
+        {controls}
+        {message && <span className="text-xs text-gray-400">{message}</span>}
+      </div>
+    )
+  }
+
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
       <div className="flex flex-wrap items-center gap-3">
@@ -42,29 +80,7 @@ export default function BackupPanel({ userData, setUserData }) {
           <div className="text-xs text-gray-500">LocalStorage 저장 데이터 {savedCount}명</div>
         </div>
 
-        <button
-          type="button"
-          onClick={exportBackup}
-          className="rounded border border-blue-700 bg-blue-950 px-3 py-1.5 text-sm font-medium text-blue-200 hover:bg-blue-900"
-        >
-          내보내기
-        </button>
-
-        <button
-          type="button"
-          onClick={() => fileInputRef.current?.click()}
-          className="rounded border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-700"
-        >
-          가져오기
-        </button>
-
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="application/json,.json"
-          onChange={importBackup}
-          className="hidden"
-        />
+        {controls}
       </div>
 
       {message && (

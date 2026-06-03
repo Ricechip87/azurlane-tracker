@@ -56,12 +56,14 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
       <header className="bg-gray-900 border-b border-gray-800 px-6 py-4">
-        <h1 className="text-xl font-bold text-blue-400">벽람항로 함순이 도감</h1>
+        <div className="flex flex-wrap items-center gap-4">
+          <h1 className="text-xl font-bold text-blue-400">벽람항로 함순이 도감</h1>
+          <BackupPanel userData={userData} setUserData={setUserData} compact />
+        </div>
       </header>
 
       <div className="p-4 space-y-4">
         <StatsBar characters={enriched} filtered={filtered} />
-        <BackupPanel userData={userData} setUserData={setUserData} />
         <FilterPanel filters={filters} setFilters={setFilters} characters={enriched} />
         <CharacterTable characters={filtered} updateUser={updateUser} />
       </div>

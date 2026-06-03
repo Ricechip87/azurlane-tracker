@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-04 - Move Backup Controls To Header
+
+### Why
+- Backup controls should stay available while leaving more vertical room for the tracker table.
+
+### Changed
+- Added a compact backup control layout for the page header.
+- Moved backup export/import controls next to the page title.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-04 - Add User Data Backup
 
 ### Why
