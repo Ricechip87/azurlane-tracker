@@ -10,7 +10,7 @@ const RARITY_COLOR = {
 }
 
 const SKILLED_OPTS = ['스작 안함', '스작 중', '스작 완료']
-const AFFECTION_OPTS = ['호감작 안함', '호감작 중', '호감작 완료']
+const AFFECTION_OPTS = ['호감작 안함', '호감작 중', '서약 완료', '호감도 Max']
 
 export default function CharacterTable({ characters, updateUser }) {
   return (
@@ -102,7 +102,7 @@ function CharacterRow({ char: c, updateUser, even }) {
       </td>
       <td className="px-3 py-2 text-center">
         <CycleButton value={affection} options={AFFECTION_OPTS} onChange={v => updateUser(c.id, 'affection', v)}
-          colorMap={{ '호감작 완료': 'bg-pink-700 text-pink-200', '호감작 중': 'bg-yellow-700 text-yellow-200', '호감작 안함': 'bg-gray-700 text-gray-400' }} />
+          colorMap={{ '호감작 안함': 'bg-gray-700 text-gray-400', '호감작 중': 'bg-yellow-700 text-yellow-200', '서약 완료': 'bg-red-700 text-red-200', '호감도 Max': 'bg-pink-700 text-pink-200' }} />
       </td>
       <td className="px-3 py-2 text-center text-gray-300">{calcTechPoints(c)}</td>
       <td className="px-3 py-2 text-center">
