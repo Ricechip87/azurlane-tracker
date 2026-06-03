@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { normalizeFactionValue } from '../src/utils/factions.js'
+import { normalizeShipTypeValue } from '../src/utils/shipClassifications.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -63,7 +64,7 @@ const characters = dataLines.map(line => {
     id,
     name,
     rarity: cols[4].trim(),
-    shipType: cols[5].trim(),
+    shipType: normalizeShipTypeValue(cols[5]),
     faction: normalizeFactionValue(cols[6]),
     canRemodel: cols[7].trim() === 'O',
     skillPoints: parseInt(cols[14]) || 0,

@@ -1,5 +1,6 @@
 import { ACQUISITION_FILTER_OPTIONS } from '../utils/acquisitionStatus.js'
 import { getFactionOptions } from '../utils/factions.js'
+import { SHIP_CLASSIFICATION_OPTIONS } from '../utils/shipClassifications.js'
 
 const RARITIES = ['전체', 'N', 'R', 'SR', 'SSR', 'UR']
 const SKILLED_OPTS = ['전체', '스작 완료', '스작 중', '스작 안함']
@@ -7,7 +8,6 @@ const AFFECTION_OPTS = ['전체', '호감도 Max', '서약 완료', '호감작 �
 const REMODEL_OPTS = ['전체', '없음', '미개장', '개장']
 
 export default function FilterPanel({ filters, setFilters, characters }) {
-  const shipTypes = ['전체', ...new Set(characters.map(c => c.shipType).filter(Boolean))]
   const factions = getFactionOptions(characters.map(c => c.faction))
 
   const set = (key, val) => setFilters(prev => ({ ...prev, [key]: val }))
@@ -27,7 +27,7 @@ export default function FilterPanel({ filters, setFilters, characters }) {
         </div>
 
         <Select label="레어도" value={filters.rarity} onChange={v => set('rarity', v)} options={RARITIES} />
-        <Select label="함종" value={filters.shipType} onChange={v => set('shipType', v)} options={shipTypes} />
+        <Select label="분류" value={filters.shipType} onChange={v => set('shipType', v)} options={SHIP_CLASSIFICATION_OPTIONS} />
         <Select label="진영" value={filters.faction} onChange={v => set('faction', v)} options={factions} />
         <Select label="획득 여부" value={filters.acquired} onChange={v => set('acquired', v)} options={ACQUISITION_FILTER_OPTIONS} />
         <Select label="스킬작" value={filters.skilled} onChange={v => set('skilled', v)} options={SKILLED_OPTS} />
