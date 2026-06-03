@@ -11,6 +11,7 @@ const RARITY_COLOR = {
 
 const SKILLED_OPTS = ['스작 안함', '스작 중', '스작 완료']
 const AFFECTION_OPTS = ['호감작 안함', '호감작 중', '서약 완료', '호감도 Max']
+const EQUIP_OPTS = ['없음', '미제작', '제작']
 
 export default function CharacterTable({ characters, updateUser }) {
   return (
@@ -28,6 +29,7 @@ export default function CharacterTable({ characters, updateUser }) {
               <th className="px-3 py-2 text-center">획득/육성</th>
               <th className="px-3 py-2 text-center">스킬작</th>
               <th className="px-3 py-2 text-center">호감작</th>
+              <th className="px-3 py-2 text-center">전용 장비</th>
               <th className="px-3 py-2 text-center">기술점수</th>
               <th className="px-3 py-2 text-center">입수 스탯</th>
               <th className="px-3 py-2 text-center">120 스탯</th>
@@ -53,6 +55,7 @@ function CharacterRow({ char: c, updateUser, even }) {
   const acquired = normalizeAcquisitionStatus(c.acquired)
   const skilled = c.skilled || '스작 안함'
   const affection = c.affection || '호감작 안함'
+  const equip = c.equip || '없음'
 
   return (
     <tr className={`${bg} hover:bg-gray-800 transition-colors border-t border-gray-800`}>
@@ -94,7 +97,7 @@ function CharacterRow({ char: c, updateUser, even }) {
       </td>
       <td className="px-3 py-2 text-center">
         <CycleButton value={acquired} options={ACQUISITION_STATUSES} onChange={v => updateUser(c.id, 'acquired', v)}
-          colorMap={{ '미획득': 'bg-gray-700 text-gray-400', '획득': 'bg-blue-700 text-blue-200', '100': 'bg-yellow-700 text-yellow-200', '120': 'bg-green-700 text-green-200', '125': 'bg-purple-700 text-purple-200' }} />
+          colorMap={{ '미획득': 'bg-gray-700 text-gray-400', '획득': 'bg-blue-700 text-blue-200', '풀돌': 'bg-cyan-700 text-cyan-200', '100': 'bg-yellow-700 text-yellow-200', '120': 'bg-green-700 text-green-200', '125': 'bg-purple-700 text-purple-200' }} />
       </td>
       <td className="px-3 py-2 text-center">
         <CycleButton value={skilled} options={SKILLED_OPTS} onChange={v => updateUser(c.id, 'skilled', v)}
@@ -103,6 +106,10 @@ function CharacterRow({ char: c, updateUser, even }) {
       <td className="px-3 py-2 text-center">
         <CycleButton value={affection} options={AFFECTION_OPTS} onChange={v => updateUser(c.id, 'affection', v)}
           colorMap={{ '호감작 안함': 'bg-gray-700 text-gray-400', '호감작 중': 'bg-yellow-700 text-yellow-200', '서약 완료': 'bg-red-700 text-red-200', '호감도 Max': 'bg-pink-700 text-pink-200' }} />
+      </td>
+      <td className="px-3 py-2 text-center">
+        <CycleButton value={equip} options={EQUIP_OPTS} onChange={v => updateUser(c.id, 'equip', v)}
+          colorMap={{ '없음': 'bg-gray-700 text-gray-400', '미제작': 'bg-yellow-700 text-yellow-200', '제작': 'bg-green-700 text-green-200' }} />
       </td>
       <td className="px-3 py-2 text-center text-gray-300">{calcTechPoints(c)}</td>
       <td className="px-3 py-2 text-center">

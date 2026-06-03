@@ -1,4 +1,4 @@
-export const ACQUISITION_STATUSES = ['미획득', '획득', '100', '120', '125']
+export const ACQUISITION_STATUSES = ['미획득', '획득', '풀돌', '100', '120', '125']
 export const ACQUISITION_FILTER_OPTIONS = ['전체', ...ACQUISITION_STATUSES]
 
 const LEGACY_STATUS_MAP = {
