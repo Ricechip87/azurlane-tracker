@@ -71,7 +71,7 @@ export default function StatsBar({ characters, filtered }) {
             </select>
           </div>
           <div className="flex divide-x divide-gray-800">
-            <StatGroup label="입수 스탯 총합" statsByType={acquiredStats} selectedType={selectedType} sub="획득/100/120/125 기준" />
+            <StatGroup label="입수 스탯 총합" statsByType={acquiredStats} selectedType={selectedType} sub="획득/풀돌/100/120/125 기준" />
             <StatGroup label="120 스탯 총합" statsByType={maxedStats} selectedType={selectedType} sub="120/125 기준" />
           </div>
         </div>
