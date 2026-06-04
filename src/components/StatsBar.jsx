@@ -43,7 +43,7 @@ export default function StatsBar({ characters, filtered }) {
 
         {/* 좌측: 간단 통계 */}
         <div className="border-r border-gray-800 shrink-0">
-          <div className="px-3 py-1.5 text-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
+          <div className="h-9 px-3 flex items-center justify-center text-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
             간단 통계
           </div>
           <div className="grid grid-cols-2 divide-x divide-gray-800 text-xs">
@@ -60,7 +60,7 @@ export default function StatsBar({ characters, filtered }) {
 
         {/* 우측: 추가 스탯 */}
         <div className="flex-1 min-w-0">
-          <div className="bg-gray-800 border-b border-gray-700 px-3 py-1.5 flex items-center gap-3">
+          <div className="h-9 bg-gray-800 border-b border-gray-700 px-3 flex items-center gap-3">
             <span className="text-xs font-semibold text-gray-300">표시된 목록의 추가 스탯</span>
             <select
               value={selectedType}
