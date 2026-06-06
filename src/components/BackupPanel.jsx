@@ -10,9 +10,9 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
     const backup = createBackup(userData)
     const date = backup.exportedAt.slice(0, 10)
     const fileName = `azurlane-backup-${date}.json`
-    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' })
+    const backupText = JSON.stringify(backup, null, 2)
 
-    if ('showSaveFilePicker' in window) {
+    if (typeof window.showSaveFilePicker === 'function' && window.isSecureContext) {
       try {
         const handle = await window.showSaveFilePicker({
           suggestedName: fileName,
@@ -23,6 +23,7 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
             },
           ],
         })
+        const blob = new Blob([backupText], { type: 'application/json' })
         const writable = await handle.createWritable()
         await writable.write(blob)
         await writable.close()
@@ -33,9 +34,13 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
           setMessage('백업 저장 취소')
           return
         }
+        setMessage('저장 위치 선택을 사용할 수 없어 다운로드로 저장했습니다.')
       }
+    } else {
+      setMessage('Firefox는 저장 위치 선택을 지원하지 않습니다. Firefox 다운로드 설정에서 저장 위치 묻기를 켜면 선택할 수 있습니다.')
     }
 
+    const blob = new Blob([backupText], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url

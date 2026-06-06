@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-06 - Clarify Firefox Backup Export Fallback
+
+### Why
+- Firefox does not support `showSaveFilePicker`, so the app cannot directly open a folder/name save dialog there.
+- The backup export message should explain why Firefox still uses the browser download flow.
+
+### Changed
+- Updated the Firefox/unsupported-browser fallback message to point users to the browser download setting that asks where to save files.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Add Save-As Backup Export
 
 ### Why
