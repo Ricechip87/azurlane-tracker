@@ -3,7 +3,7 @@ import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from '../utils/fleetT
 import { calcStatsByShipType, summarizeRoster } from '../utils/rosterStats.js'
 
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
-const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대순', '경항모', '항모', '전함', '순전', '항전', '잠수', '잠순', '모니터', '보급']
+const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대형순', '순전', '전함', '경항모', '항모', '잠수', '항전', '공작', '모니터', '잠항모', '운송', '범선']
 
 export default function StatsBar({ characters }) {
   const fullSummary = summarizeRoster(characters)

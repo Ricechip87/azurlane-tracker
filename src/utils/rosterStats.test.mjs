@@ -50,3 +50,43 @@ assert.deepEqual(calcStatsByShipType(roster, 'acquired'), {
 assert.deepEqual(calcStatsByShipType(roster, '120'), {
   전함: { 화력: 70 },
 })
+
+assert.deepEqual(
+  calcStatsByShipType([
+    {
+      acquired: '획득',
+      statAcquired: { shipTypes: ['경항모', '정규항모'], stat: '내구', value: 2 },
+    },
+    {
+      acquired: '120',
+      statAcquired: { shipTypes: ['정규항모'], stat: '항공', value: 1 },
+      stat120: { shipTypes: ['정규항모'], stat: '대공', value: 1 },
+    },
+  ], 'acquired'),
+  {
+    경항모: { 내구: 2 },
+    항모: { 내구: 2, 항공: 1 },
+  }
+)
+
+assert.deepEqual(
+  calcStatsByShipType([
+    {
+      acquired: '획득',
+      statAcquired: { shipTypes: ['초순', '대순'], stat: '화력', value: 1 },
+    },
+    {
+      acquired: '획득',
+      statAcquired: { shipTypes: ['잠수항모', '잠순'], stat: '대잠', value: 2 },
+    },
+    {
+      acquired: '획득',
+      statAcquired: { shipTypes: ['운송함', '보급'], stat: '내구', value: 3 },
+    },
+  ], 'acquired'),
+  {
+    대형순: { 화력: 1 },
+    잠항모: { 대잠: 2 },
+    운송: { 내구: 3 },
+  }
+)

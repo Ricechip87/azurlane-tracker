@@ -1,4 +1,5 @@
 import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from './acquisitionStatus.js'
+import { normalizeStatShipTypeValue } from './shipClassifications.js'
 
 export function summarizeRoster(characters) {
   const total = characters.length
@@ -27,7 +28,8 @@ export function calcStatsByShipType(characters, mode) {
 
     if (!data?.stat || !data.shipTypes?.length) continue
 
-    for (const shipType of data.shipTypes) {
+    const shipTypes = new Set(data.shipTypes.map(normalizeStatShipTypeValue))
+    for (const shipType of shipTypes) {
       if (!result[shipType]) result[shipType] = {}
       result[shipType][data.stat] = (result[shipType][data.stat] || 0) + (data.value || 0)
     }

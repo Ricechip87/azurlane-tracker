@@ -14,6 +14,17 @@ const SHIP_TYPE_ALIASES = new Map([
   ['공작', '공작함'],
 ])
 
+const STAT_SHIP_TYPE_ALIASES = new Map([
+  ['정규항모', '항모'],
+  ['초순', '대형순'],
+  ['대순', '대형순'],
+  ['잠수함', '잠수'],
+  ['잠수항모', '잠항모'],
+  ['잠순', '잠항모'],
+  ['운송함', '운송'],
+  ['보급', '운송'],
+])
+
 const CLASSIFICATION_BY_SHIP_TYPE = new Map([
   ['구축', '구축'],
   ['경순', '경순'],
@@ -40,4 +51,9 @@ export function normalizeShipTypeValue(shipType) {
 export function getShipClassification(shipType) {
   const normalized = normalizeShipTypeValue(shipType)
   return CLASSIFICATION_BY_SHIP_TYPE.get(normalized) || normalized
+}
+
+export function normalizeStatShipTypeValue(shipType) {
+  const value = String(shipType || '').trim()
+  return STAT_SHIP_TYPE_ALIASES.get(value) || value
 }

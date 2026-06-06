@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-06 - Normalize Additional Stat Ship Type Labels
+
+### Why
+- Additional stat totals were keyed by CSV source labels such as `정규항모`, so selecting the in-game label `항모` could show no data.
+- The additional stat dropdown should follow the in-game effect screen labels and order instead of the raw CSV labels.
+
+### Changed
+- Updated the additional stat ship type dropdown to the in-game order: `구축`, `경순`, `중순`, `대형순`, `순전`, `전함`, `경항모`, `항모`, `잠수`, `항전`, `공작`, `모니터`, `잠항모`, `운송`, `범선`.
+- Added stat-target label normalization such as `정규항모 -> 항모`, `초순/대순 -> 대형순`, `잠수항모/잠순 -> 잠항모`, and `운송함/보급 -> 운송`.
+- Added regression coverage so multi-target stat entries are deduplicated after label normalization.
+
+### Verified
+- `node src/utils/rosterStats.test.mjs`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Add Fleet Tech Audit Script
 
 ### Why
