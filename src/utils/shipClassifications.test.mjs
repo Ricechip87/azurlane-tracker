@@ -1,12 +1,16 @@
 import assert from 'node:assert/strict'
 import {
   getShipClassification,
+  getShipPosition,
+  matchesShipClassification,
   normalizeShipTypeValue,
   SHIP_CLASSIFICATION_OPTIONS,
 } from './shipClassifications.js'
 
 assert.deepEqual(SHIP_CLASSIFICATION_OPTIONS, [
   '전체',
+  '전열',
+  '후열',
   '구축',
   '경순',
   '중순',
@@ -36,3 +40,18 @@ assert.equal(getShipClassification('항전'), '기타')
 assert.equal(normalizeShipTypeValue('공작'), '공작함')
 assert.equal(normalizeShipTypeValue('대순'), '대순')
 assert.equal(getShipClassification('공작'), '공작')
+
+assert.equal(getShipPosition('구축'), '전열')
+assert.equal(getShipPosition('대순'), '전열')
+assert.equal(getShipPosition('운송함'), '전열')
+assert.equal(getShipPosition('순전'), '후열')
+assert.equal(getShipPosition('항모'), '후열')
+assert.equal(getShipPosition('항전'), '후열')
+assert.equal(getShipPosition('잠수'), '기타')
+assert.equal(getShipPosition('잠수항모'), '기타')
+assert.equal(getShipPosition('범선'), '기타')
+
+assert.equal(matchesShipClassification('대순', '전열'), true)
+assert.equal(matchesShipClassification('항모', '후열'), true)
+assert.equal(matchesShipClassification('잠수', '전열'), false)
+assert.equal(matchesShipClassification('순전', '전함'), true)

@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-07 - Add Frontline Backline Classification Filter
+
+### Why
+- The ship classification filter should support broad frontline/backline views using the same grouping shown in fleet tech candidate rows.
+
+### Changed
+- Added `전열` and `후열` options to the `분류` filter.
+- Matched `전열` against `구축`, `경순`, `중순`, `대형순`, and `운송`.
+- Matched `후열` against `순전`, `전함`, `경항모`, `항모`, `항전`, `공작`, and `모니터`.
+- Shared the same position classification helper with the fleet tech candidate popup.
+- Kept the existing detailed classification options and their behavior intact.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Convert Row Status Buttons To Dropdowns
 
 ### Why
