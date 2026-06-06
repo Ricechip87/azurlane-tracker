@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-07 - Move Filter Dropdown Dividers
+
+### Why
+- Dropdown divider rows should separate the default `전체`/`모든 진영` options from selectable category groups.
+
+### Changed
+- Moved the `분류` divider directly under `전체`.
+- Moved the `진영` divider directly under `모든 진영`.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Refine Filter Panel Grouping
 
 ### Why
