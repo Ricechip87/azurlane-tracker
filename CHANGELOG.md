@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-06 - Add GitHub Pages Deployment Workflow
+
+### Why
+- Local Vite dev server startup can be inconvenient under sandboxed or permission-restricted sessions.
+- The tracker is intended to become a publicly reachable static web app, so deployment should be repeatable from Git history.
+
+### Changed
+- Added a GitHub Actions workflow that tests, builds, uploads, and deploys the Vite app to GitHub Pages.
+- Documented the public GitHub Pages setup flow and expected `/azurlane-tracker/` URL.
+- Clarified that LocalStorage user data must be moved between local and deployed origins with export/import.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-04 - Sync Ship Icons From Local Data
 
 ### Why

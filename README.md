@@ -21,6 +21,20 @@ npm.cmd run build
 npm.cmd run preview
 ```
 
+## GitHub Pages 배포
+
+이 프로젝트는 공개 GitHub Pages 배포를 기준으로 `vite.config.js`의 base path를 `/azurlane-tracker/`로 설정합니다.
+
+GitHub 공개 저장소를 `azurlane-tracker` 이름으로 만들고 이 저장소를 push한 뒤, GitHub 저장소의 `Settings > Pages`에서 Source를 `GitHub Actions`로 설정하면 `master` 또는 `main` 브랜치 push 때 자동으로 빌드/배포됩니다.
+
+예상 접속 주소:
+
+```text
+https://<github-username>.github.io/azurlane-tracker/
+```
+
+브라우저에 입력한 보유함 데이터는 LocalStorage에 저장되므로, 로컬 개발 주소와 GitHub Pages 주소 간에는 `입력 데이터`의 내보내기/가져오기로 옮깁니다.
+
 ## 로컬 참고 자료
 
 `참고용/` 폴더는 CSV, 원본 에셋, 임시 참고 자료를 보관하는 로컬 전용 폴더입니다. Git에는 포함하지 않습니다.
