@@ -19,6 +19,8 @@ export default function FilterPanel({ filters, setFilters, characters }) {
   const factions = getFactionOptions(characters.map(c => c.faction))
 
   const set = (key, val) => setFilters(prev => ({ ...prev, [key]: val }))
+  const toggleButtonBase = 'h-[34px] text-xs border rounded px-3 py-1.5 transition-colors'
+  const inactiveToggleButton = 'border-gray-700 text-gray-400 hover:border-gray-600 hover:text-gray-200'
 
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 space-y-3">
@@ -42,27 +44,28 @@ export default function FilterPanel({ filters, setFilters, characters }) {
         <Select label="호감작" value={filters.affection} onChange={v => set('affection', v)} options={AFFECTION_OPTS} />
         <Select label="개장" value={filters.remodel} onChange={v => set('remodel', v)} options={REMODEL_OPTS} />
 
-        <label className="flex items-center gap-2 text-sm cursor-pointer">
-          <input
-            type="checkbox"
-            checked={filters.favoritesOnly}
-            onChange={e => set('favoritesOnly', e.target.checked)}
-            className="w-4 h-4 accent-yellow-400"
-          />
-          <span className="text-yellow-400">★ 즐겨찾기만</span>
-        </label>
+        <button
+          type="button"
+          aria-pressed={filters.favoritesOnly}
+          onClick={() => set('favoritesOnly', !filters.favoritesOnly)}
+          className={`${toggleButtonBase} ${filters.favoritesOnly ? 'border-yellow-500 bg-yellow-500/15 text-yellow-300' : inactiveToggleButton}`}
+        >
+          ★ 즐겨찾기만
+        </button>
 
         <button
           type="button"
+          aria-pressed={filters.researchOnly}
           onClick={() => set('researchOnly', !filters.researchOnly)}
-          className={`text-xs border rounded px-2 py-1.5 ${filters.researchOnly ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 text-gray-400 hover:text-gray-200'}`}
+          className={`${toggleButtonBase} ${filters.researchOnly ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : inactiveToggleButton}`}
         >
           연구함만
         </button>
 
         <button
+          type="button"
           onClick={() => setFilters({ search: '', rarity: '전체', shipType: '전체', faction: '전체', acquired: '전체', skilled: '전체', affection: '전체', remodel: '전체', favoritesOnly: false, researchOnly: false })}
-          className="text-xs text-gray-400 hover:text-gray-200 border border-gray-700 rounded px-2 py-1.5"
+          className="h-[34px] text-xs text-gray-400 hover:text-gray-200 hover:border-gray-600 border border-gray-700 rounded px-3 py-1.5 transition-colors"
         >
           필터 초기화
         </button>

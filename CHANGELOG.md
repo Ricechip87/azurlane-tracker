@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-07 - Align Filter Action Buttons
+
+### Why
+- The favorite, research-only, and reset controls in the filter panel used different visual treatments.
+
+### Changed
+- Converted the favorite-only checkbox into a button-style toggle.
+- Matched the height, border, padding, and hover treatment for favorite-only, research-only, and filter reset controls.
+- Preserved active color cues for favorite-only and research-only filters.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Filter Dropdown Group Dividers
 
 ### Why
