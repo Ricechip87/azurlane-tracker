@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from '../utils/fleetTech.js'
 import { calcStatsByShipType, mergeStatsByShipType, summarizeRoster } from '../utils/rosterStats.js'
-import { calcFleetTechLevels, calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
+import { calcFleetTechLevelStats, calcFleetTechProgress } from '../utils/fleetTechLevelStats.js'
 
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
 const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대형순', '순전', '전함', '경항모', '항모', '잠수', '항전', '공작', '모니터', '잠항모', '운송', '범선']
@@ -9,7 +9,7 @@ const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대형순', '순전', '�
 export default function StatsBar({ characters }) {
   const fullSummary = summarizeRoster(characters)
   const majorFactionTechPoints = calcMajorFactionTechPoints(characters)
-  const majorFactionTechLevels = calcFleetTechLevels(majorFactionTechPoints)
+  const majorFactionTechProgress = calcFleetTechProgress(majorFactionTechPoints)
 
   const [selectedType, setSelectedType] = useState('전함')
 
@@ -33,20 +33,27 @@ export default function StatsBar({ characters }) {
         </div>
 
         {/* 가운데: 기술점수 */}
-        <div className="border-r border-gray-800 shrink-0 w-[360px]">
+        <div className="border-r border-gray-800 shrink-0 w-[430px]">
           <div className="h-9 px-3 flex items-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
             획득 기술점수 <span className="ml-1 font-normal text-gray-500">(전체 보유함)</span>
           </div>
-          <div className="grid grid-cols-[1fr_auto_auto] divide-x divide-gray-800 text-xs">
-            {MAJOR_TECH_FACTIONS.map(faction => (
-              <div key={faction.value} className="contents">
-                <div className="px-4 py-3 text-gray-300">{faction.label}</div>
-                <div className="px-3 py-3 text-center text-gray-400 whitespace-nowrap">
-                  Lv.{majorFactionTechLevels[faction.value]?.level || 0}
+          <div className="grid grid-cols-[1fr_auto_auto_auto] divide-x divide-gray-800 text-xs">
+            {MAJOR_TECH_FACTIONS.map(faction => {
+              const progress = majorFactionTechProgress[faction.value]
+
+              return (
+                <div key={faction.value} className="contents">
+                  <div className="px-4 py-3 text-gray-300">{faction.label}</div>
+                  <div className="px-3 py-3 text-center text-gray-400 whitespace-nowrap">
+                    Lv.{progress?.currentLevel?.level || 0}
+                  </div>
+                  <div className="px-4 py-3 text-right text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
+                  <div className="px-3 py-3 text-right text-gray-500 whitespace-nowrap">
+                    {formatNextLevelProgress(progress)}
+                  </div>
                 </div>
-                <div className="px-4 py-3 text-right text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
 
@@ -70,6 +77,12 @@ export default function StatsBar({ characters }) {
       </div>
     </div>
   )
+}
+
+function formatNextLevelProgress(progress) {
+  if (!progress) return '-'
+  if (progress.isMaxLevel) return 'MAX'
+  return `다음 ${progress.pointsToNext}`
 }
 
 function SummaryGroup({ title, summary }) {

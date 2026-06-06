@@ -1,8 +1,10 @@
 import assert from 'node:assert/strict'
-import { calcFleetTechLevels, calcFleetTechLevelStats, findCurrentLevel } from './fleetTechLevelStats.js'
+import { calcFleetTechLevels, calcFleetTechLevelStats, calcFleetTechProgress, findCurrentLevel, findNextLevel } from './fleetTechLevelStats.js'
 
 assert.equal(findCurrentLevel([{ level: 1, pt: 300 }, { level: 2, pt: 600 }], 299), null)
 assert.deepEqual(findCurrentLevel([{ level: 1, pt: 300 }, { level: 2, pt: 600 }], 600), { level: 2, pt: 600 })
+assert.deepEqual(findNextLevel([{ level: 1, pt: 300 }, { level: 2, pt: 600 }], 299), { level: 1, pt: 300 })
+assert.deepEqual(findNextLevel([{ level: 1, pt: 300 }, { level: 2, pt: 600 }], 600), null)
 
 const levelStats = calcFleetTechLevelStats({
   유니온: 5937,
@@ -22,6 +24,21 @@ assert.equal(levels.유니온.level, 9)
 assert.equal(levels.로열.level, 9)
 assert.equal(levels.중앵.level, 9)
 assert.equal(levels.철혈.level, 9)
+
+const progress = calcFleetTechProgress({
+  유니온: 299,
+  로열: 4332,
+  중앵: 5651,
+  철혈: 6229,
+})
+
+assert.equal(progress.유니온.currentLevel, null)
+assert.equal(progress.유니온.nextLevel.level, 1)
+assert.equal(progress.유니온.pointsToNext, 1)
+assert.equal(progress.로열.currentLevel.level, 9)
+assert.equal(progress.로열.nextLevel, null)
+assert.equal(progress.로열.pointsToNext, 0)
+assert.equal(progress.로열.isMaxLevel, true)
 
 assert.deepEqual(levelStats.순전, {
   대공: 10,

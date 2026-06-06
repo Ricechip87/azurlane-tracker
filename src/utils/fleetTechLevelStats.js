@@ -36,8 +36,35 @@ export function calcFleetTechLevels(majorFactionTechPoints) {
   return result
 }
 
+export function calcFleetTechProgress(majorFactionTechPoints) {
+  const result = {}
+
+  for (const faction of MAJOR_TECH_FACTIONS) {
+    const levels = fleetTechLevelBonuses[faction.code] || []
+    const points = majorFactionTechPoints[faction.value] || 0
+    const currentLevel = findCurrentLevel(levels, points)
+    const nextLevel = findNextLevel(levels, points)
+
+    result[faction.value] = {
+      points,
+      currentLevel,
+      nextLevel,
+      pointsToNext: nextLevel ? Math.max(nextLevel.pt - points, 0) : 0,
+      isMaxLevel: !nextLevel && levels.length > 0,
+    }
+  }
+
+  return result
+}
+
 export function findCurrentLevel(levels, points) {
   return levels.reduce((current, level) => (
     points >= level.pt && (!current || level.level > current.level) ? level : current
   ), null)
+}
+
+export function findNextLevel(levels, points) {
+  return levels
+    .filter(level => level.pt > points)
+    .reduce((next, level) => (!next || level.pt < next.pt ? level : next), null)
 }

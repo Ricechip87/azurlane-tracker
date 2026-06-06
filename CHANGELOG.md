@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-07 - Add Fleet Tech Next Level Progress
+
+### Why
+- The major faction tech panel should help decide which faction is close to its next fleet tech level, not just show the current point total.
+- Users need to see the current level and remaining points together while planning growth.
+
+### Changed
+- Added fleet tech progress calculation with current level, next level, remaining points, and max-level detection.
+- Updated the acquired tech point panel to show `진영 | Lv | 점수 | 다음` for USS/HMS/IJN/KMS.
+- Added regression tests for next-level and max-level progress calculation.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Show Carrier ASW And Fleet Tech Levels
 
 ### Why
