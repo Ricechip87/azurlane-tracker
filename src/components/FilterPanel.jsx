@@ -8,9 +8,10 @@ const AFFECTION_OPTS = ['전체', '호감도 Max', '서약 완료', '호감작 �
 const REMODEL_OPTS = ['전체', '없음', '미개장', '개장']
 const SHIP_CLASSIFICATION_FILTER_OPTIONS = [
   '전체',
-  { value: '__ship-classification-divider', label: '────────', disabled: true },
+  { value: '__ship-classification-primary-divider', label: '────────', disabled: true },
   '전열',
   '후열',
+  { value: '__ship-classification-detail-divider', label: '────────', disabled: true },
   ...SHIP_CLASSIFICATION_OPTIONS.filter(option => !['전체', '전열', '후열'].includes(option)),
 ]
 

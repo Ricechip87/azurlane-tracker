@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-07 - Add Filter Dropdown Group Dividers
+
+### Why
+- Classification and faction dropdowns need separators after the default option and again before detailed/collab groups.
+
+### Changed
+- Added a disabled divider after `전체`, then another divider between `후열` and detailed ship type options.
+- Added a disabled divider after `모든 진영`, then another divider between base factions/`기타` and collab factions.
+- Kept divider rows non-selectable in both dropdowns.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Move Filter Dropdown Dividers
 
 ### Why

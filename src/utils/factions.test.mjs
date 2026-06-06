@@ -18,7 +18,8 @@ assert.equal(normalizeFactionValue('칭송받는자'), '칭송받는자')
 
 assert.deepEqual(
   getFactionOptions(['라이자', '중앵', '유니온', '기타', '로열']).map(o => o.label),
-  ['모든 진영', '────────', '유니온 (USS)', '로열 (HMS)', '중앵 (IJN)', '기타', '라이자']
+  ['모든 진영', '────────', '유니온 (USS)', '로열 (HMS)', '중앵 (IJN)', '기타', '────────', '라이자']
 )
 
-assert.equal(getFactionOptions(['라이자', '기타']).find(o => o.value === '__faction-divider').disabled, true)
+assert.equal(getFactionOptions(['라이자', '기타']).find(o => o.value === '__faction-primary-divider').disabled, true)
+assert.equal(getFactionOptions(['라이자', '기타']).find(o => o.value === '__faction-collab-divider').disabled, true)

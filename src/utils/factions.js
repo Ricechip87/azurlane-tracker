@@ -55,8 +55,9 @@ export function getFactionOptions(factions) {
 
   return [
     ...FACTION_ORDER.filter(o => o.value === '전체'),
-    { value: '__faction-divider', label: '────────', disabled: true },
+    { value: '__faction-primary-divider', label: '────────', disabled: true },
     ...FACTION_ORDER.filter(o => o.value !== '전체' && factionValues.has(o.value)),
+    ...(extraFactions.length ? [{ value: '__faction-collab-divider', label: '────────', disabled: true }] : []),
     ...extraFactions,
   ]
 }
