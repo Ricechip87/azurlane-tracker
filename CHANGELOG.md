@@ -1,5 +1,23 @@
 # Change Log
 
+## 2026-06-07 - Add Fleet Tech Candidate Preview
+
+### Why
+- The next-level progress panel should connect directly to actionable ship candidates.
+- Candidate ordering needs to prioritize efficient tech point recovery without pretending that unavailable ships can be acquired immediately.
+
+### Changed
+- Added a `후보 보기` button for each USS/HMS/IJN/KMS tech point row.
+- Added an inline candidate panel showing `함선`, `등급`, `현재 상태`, `획득`, `풀돌`, `120`, `남은 기술점수`, and `효율`.
+- Calculated efficiency as remaining tech points divided by remaining milestone count.
+- Sorted candidates by rarity group first (`UR/SSR` before `SR/R/N`), then efficiency, remaining tech points, fewer remaining stages, rarity, and name.
+- Added regression coverage for faction matching, candidate exclusion, grouping, and sorting.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Fleet Tech Next Level Progress
 
 ### Why
