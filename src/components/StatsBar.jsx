@@ -116,7 +116,7 @@ function TechCandidatePopover({ faction, progress, candidates }) {
   const hasCandidates = candidates.length > 0
 
   return (
-    <div className="absolute right-0 top-full z-30 mt-1 w-[720px] max-w-[calc(100vw-2rem)] rounded border border-gray-700 bg-gray-950 text-left shadow-2xl">
+    <div className="absolute right-0 top-full z-30 mt-1 w-[780px] max-w-[calc(100vw-2rem)] rounded border border-gray-700 bg-gray-950 text-left shadow-2xl">
       <div className="h-8 px-3 flex items-center gap-3 bg-gray-800 border-b border-gray-700 text-xs">
         <span className="font-semibold text-gray-200">{faction.label} 기술점수 후보</span>
         <span className="text-gray-500">{formatNextLevelProgress(progress)}</span>
@@ -135,12 +135,13 @@ function CandidateTable({ highCandidates, lowCandidates }) {
     <div className="max-h-[420px] overflow-auto">
       <table className="w-full table-fixed text-xs">
         <colgroup>
-          <col className="w-[27%]" />
+          <col className="w-[24%]" />
+          <col className="w-[8%]" />
+          <col className="w-[8%]" />
+          <col className="w-[11%]" />
           <col className="w-[9%]" />
-          <col className="w-[12%]" />
-          <col className="w-[10%]" />
-          <col className="w-[10%]" />
-          <col className="w-[10%]" />
+          <col className="w-[9%]" />
+          <col className="w-[9%]" />
           <col className="w-[13%]" />
           <col className="w-[9%]" />
         </colgroup>
@@ -148,6 +149,7 @@ function CandidateTable({ highCandidates, lowCandidates }) {
           <tr>
             <th className="px-3 py-1.5 text-left font-normal">함선</th>
             <th className="px-2 py-1.5 text-center font-normal">등급</th>
+            <th className="px-2 py-1.5 text-center font-normal">구분</th>
             <th className="px-2 py-1.5 text-center font-normal">현재 상태</th>
             <th className="px-2 py-1.5 text-right font-normal">획득</th>
             <th className="px-2 py-1.5 text-right font-normal">풀돌</th>
@@ -170,7 +172,7 @@ function CandidateTable({ highCandidates, lowCandidates }) {
 function CandidateGroupRow({ title }) {
   return (
     <tr className="bg-gray-900/80">
-      <td colSpan={8} className="px-3 py-1.5 text-xs font-semibold text-gray-400">{title}</td>
+      <td colSpan={9} className="px-3 py-1.5 text-xs font-semibold text-gray-400">{title}</td>
     </tr>
   )
 }
@@ -179,7 +181,7 @@ function CandidateRows({ candidates }) {
   if (!candidates.length) {
     return (
       <tr>
-        <td colSpan={8} className="px-3 py-2 text-xs text-gray-600">후보 없음</td>
+        <td colSpan={9} className="px-3 py-2 text-xs text-gray-600">후보 없음</td>
       </tr>
     )
   }
@@ -188,6 +190,7 @@ function CandidateRows({ candidates }) {
     <tr key={candidate.id} className="hover:bg-gray-900/70">
       <td className="truncate px-3 py-1.5 text-gray-200">{candidate.name}</td>
       <td className={`px-2 py-1.5 text-center font-bold ${RARITY_COLOR[candidate.rarity] || 'text-gray-400'}`}>{candidate.rarity}</td>
+      <td className="px-2 py-1.5 text-center text-gray-500">{candidate.position}</td>
       <td className="px-2 py-1.5 text-center text-gray-400">{candidate.status}</td>
       <StageCell stage={candidate.stages.acquired} />
       <StageCell stage={candidate.stages.maxLB} />

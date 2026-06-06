@@ -1,5 +1,6 @@
 import { normalizeAcquisitionStatus } from './acquisitionStatus.js'
 import { normalizeFactionValue } from './factions.js'
+import { normalizeStatShipTypeValue } from './shipClassifications.js'
 
 const RARITY_ORDER = {
   UR: 0,
@@ -10,6 +11,8 @@ const RARITY_ORDER = {
 }
 
 const HIGH_RARITY = new Set(['UR', 'SSR'])
+const FRONTLINE_TYPES = new Set(['구축', '경순', '중순', '대형순', '운송'])
+const BACKLINE_TYPES = new Set(['순전', '전함', '경항모', '항모', '항전', '공작', '모니터'])
 
 export function calcFleetTechCandidates(characters, factionValue) {
   return characters
@@ -44,6 +47,7 @@ function toCandidate(character) {
     id: character.id,
     name: character.name,
     rarity: character.rarity,
+    position: getShipPosition(character.shipType),
     status,
     stages: {
       acquired: stageValue(acquiredRemaining, status !== '미획득'),
@@ -55,6 +59,13 @@ function toCandidate(character) {
     efficiency: remainingTechPoints / remainingSteps,
     group: HIGH_RARITY.has(character.rarity) ? 'high' : 'low',
   }
+}
+
+function getShipPosition(shipType) {
+  const normalized = normalizeStatShipTypeValue(shipType)
+  if (FRONTLINE_TYPES.has(normalized)) return '전열'
+  if (BACKLINE_TYPES.has(normalized)) return '후열'
+  return '기타'
 }
 
 function countRemainingSteps(status) {

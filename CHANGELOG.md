@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-07 - Add Fleet Tech Candidate Position Column
+
+### Why
+- Candidate rows should show whether a ship belongs to the frontline, backline, or other category before choosing a growth target.
+
+### Changed
+- Added a `구분` column after `등급` in the fleet tech candidate popup.
+- Classified `구축`, `경순`, `중순`, `대형순`, and `운송` as `전열`.
+- Classified `순전`, `전함`, `경항모`, `항모`, `항전`, `공작`, and `모니터` as `후열`.
+- Classified `잠수`, `잠항모`, and `범선` as `기타`.
+- Added regression coverage for candidate position classification.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Compact Fleet Tech Candidate Popup
 
 ### Why
