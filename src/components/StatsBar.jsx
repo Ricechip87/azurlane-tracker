@@ -1,65 +1,45 @@
 import { useState } from 'react'
-import { isAcquiredStatus, isLevel120Status } from '../utils/acquisitionStatus.js'
 import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from '../utils/fleetTech.js'
+import { calcStatsByShipType, summarizeRoster } from '../utils/rosterStats.js'
 
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
 const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대순', '경항모', '항모', '전함', '순전', '항전', '잠수', '잠순', '모니터', '보급']
 
-// { 함종: { 스탯: 합계 } }
-function calcStatsByShipType(characters, mode) {
-  const result = {}
-  for (const c of characters) {
-    const isAcquired = isAcquiredStatus(c.acquired)
-    const isMaxed = isLevel120Status(c.acquired)
-
-    const data = mode === '입수' ? (isAcquired ? c.statAcquired : null)
-                                 : (isMaxed ? c.stat120 : null)
-
-    if (!data?.stat || !data.shipTypes?.length) continue
-
-    for (const shipType of data.shipTypes) {
-      if (!result[shipType]) result[shipType] = {}
-      result[shipType][data.stat] = (result[shipType][data.stat] || 0) + (data.value || 0)
-    }
-  }
-  return result
-}
-
 export default function StatsBar({ characters, filtered }) {
-  const total = characters.length
-  const acquiredCount = filtered.filter(c => isAcquiredStatus(c.acquired)).length
-  const maxed = filtered.filter(c => isLevel120Status(c.acquired)).length
-  const rate = filtered.length ? ((acquiredCount / filtered.length) * 100).toFixed(1) : 0
+  const fullSummary = summarizeRoster(characters)
+  const filteredSummary = summarizeRoster(filtered)
   const majorFactionTechPoints = calcMajorFactionTechPoints(characters)
 
   const [selectedType, setSelectedType] = useState('전함')
 
-  const acquiredStats = calcStatsByShipType(filtered, '입수')
-  const maxedStats = calcStatsByShipType(filtered, '120')
+  const acquiredStats = calcStatsByShipType(characters, 'acquired')
+  const maxedStats = calcStatsByShipType(characters, '120')
 
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
       <div className="flex flex-wrap">
 
         {/* 좌측: 간단 통계 */}
-        <div className="border-r border-gray-800 shrink-0">
+        <div className="border-r border-gray-800 shrink-0 w-[360px]">
           <div className="h-9 px-3 flex items-center justify-center text-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
             간단 통계
           </div>
+          <div className="divide-y divide-gray-800 text-xs">
+            <SummaryGroup title="전체 보유함 기준" summary={fullSummary} showOath />
+            <SummaryGroup title="현재 필터 기준" summary={filteredSummary} />
+          </div>
+        </div>
+
+        {/* 가운데: 기술점수 */}
+        <div className="border-r border-gray-800 shrink-0 w-[360px]">
+          <div className="h-9 px-3 flex items-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
+            획득 기술점수 <span className="ml-1 font-normal text-gray-500">(전체 보유함)</span>
+          </div>
           <div className="grid grid-cols-2 divide-x divide-gray-800 text-xs">
-            <div className="px-4 py-1.5 text-gray-400">표시 목록 수집률</div>
-            <div className="px-4 py-1.5 text-blue-300 font-bold">{rate}%</div>
-            <div className="px-4 py-1.5 text-gray-400">표시 목록 수 (전체)</div>
-            <div className="px-4 py-1.5 text-blue-300 font-bold">{filtered.length} ({total})</div>
-            <div className="px-4 py-1.5 text-gray-400">120 이상</div>
-            <div className="px-4 py-1.5 text-blue-300 font-bold">{maxed}</div>
-            <div className="col-span-2 px-4 py-1.5 text-gray-300 font-semibold bg-gray-800/60 border-t border-gray-800">
-              획득 기술점수 <span className="font-normal text-gray-500">(전체 보유함)</span>
-            </div>
             {MAJOR_TECH_FACTIONS.map(faction => (
               <div key={faction.value} className="contents">
-                <div className="px-4 py-1.5 text-gray-400">{faction.label}</div>
-                <div className="px-4 py-1.5 text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
+                <div className="px-4 py-3 text-gray-300">{faction.label}</div>
+                <div className="px-4 py-3 text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
               </div>
             ))}
           </div>
@@ -68,7 +48,7 @@ export default function StatsBar({ characters, filtered }) {
         {/* 우측: 추가 스탯 */}
         <div className="flex-1 min-w-0">
           <div className="h-9 bg-gray-800 border-b border-gray-700 px-3 flex items-center gap-3">
-            <span className="text-xs font-semibold text-gray-300">표시된 목록의 추가 스탯</span>
+            <span className="text-xs font-semibold text-gray-300">전체 목록의 추가 스탯</span>
             <select
               value={selectedType}
               onChange={e => setSelectedType(e.target.value)}
@@ -78,11 +58,35 @@ export default function StatsBar({ characters, filtered }) {
             </select>
           </div>
           <div className="flex divide-x divide-gray-800">
-            <StatGroup label="입수 스탯 총합" statsByType={acquiredStats} selectedType={selectedType} sub="획득/풀돌/100/120/125 기준" />
-            <StatGroup label="120 스탯 총합" statsByType={maxedStats} selectedType={selectedType} sub="120/125 기준" />
+            <StatGroup label="입수 스탯 총합" statsByType={acquiredStats} selectedType={selectedType} sub="획득 기준" />
+            <StatGroup label="120 스탯 총합" statsByType={maxedStats} selectedType={selectedType} sub="120 기준" />
           </div>
         </div>
 
+      </div>
+    </div>
+  )
+}
+
+function SummaryGroup({ title, summary, showOath = false }) {
+  return (
+    <div>
+      <div className="px-4 py-1.5 text-gray-300 font-semibold bg-gray-800/50">{title}</div>
+      <div className="grid grid-cols-2 divide-x divide-gray-800">
+        <div className="px-4 py-1.5 text-gray-400">목록 수집률</div>
+        <div className="px-4 py-1.5 text-blue-300 font-bold">{summary.collectionRate}%</div>
+        <div className="px-4 py-1.5 text-gray-400">보유 수 / 목록 수</div>
+        <div className="px-4 py-1.5 text-blue-300 font-bold">{summary.acquired} / {summary.total}</div>
+        <div className="px-4 py-1.5 text-gray-400">120 이상</div>
+        <div className="px-4 py-1.5 text-blue-300 font-bold">{summary.level120}</div>
+        <div className="px-4 py-1.5 text-gray-400">125 이상</div>
+        <div className="px-4 py-1.5 text-blue-300 font-bold">{summary.level125}</div>
+        {showOath && (
+          <>
+            <div className="px-4 py-1.5 text-gray-400">서약</div>
+            <div className="px-4 py-1.5 text-blue-300 font-bold">{summary.oath}</div>
+          </>
+        )}
       </div>
     </div>
   )

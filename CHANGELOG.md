@@ -1,5 +1,24 @@
 # Change Log
 
+## 2026-06-06 - Rework Stats Bar Scope Separation
+
+### Why
+- The stats bar mixed full-roster values and filtered-list values in one compact block, making it hard to compare tracker totals with in-game fleet technology totals.
+- Additional stat totals should be shown as full-roster totals, while filtered-list collection progress should stay visible as a separate reference.
+
+### Changed
+- Split the stats bar into full-roster summary, filtered-list summary, full-roster major faction tech points, and full-roster additional stat totals.
+- Added `125 이상` and `서약` counts to the full-roster summary, and added `125 이상` to the filtered-list summary.
+- Changed additional stat totals to use the full enriched roster instead of the currently filtered table rows.
+- Renamed stat footnotes to `획득 기준` and `120 기준` to match the actual data grant timing.
+- Added roster stat utility tests for collection rate, 120/125 counts, oath counts, and stat aggregation.
+
+### Verified
+- `node src/utils/rosterStats.test.mjs`
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Use Full Roster For Major Faction Tech Points
 
 ### Why
