@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-07 - Convert Row Status Buttons To Dropdowns
+
+### Why
+- Repeated cycle buttons in the character table made status editing less direct and harder to scan.
+- Status fields should allow selecting the intended value without stepping through intermediate states.
+
+### Changed
+- Replaced row status cycle buttons with compact dropdown controls.
+- Applied the dropdown control to remodel, keel, acquisition/growth, skill, affection, and equipment status fields.
+- Preserved the existing color coding for each selected status value.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Fleet Tech Candidate Position Column
 
 ### Why

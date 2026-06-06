@@ -90,30 +90,30 @@ function CharacterRow({ char: c, updateUser, even }) {
       <td className="px-3 py-2 text-center text-gray-300">{c.shipType}</td>
       <td className="px-3 py-2 text-center text-gray-400 text-xs">{c.faction}</td>
       <td className="px-3 py-2 text-center">
-        <CycleButton value={remodel} options={REMODEL_OPTS} onChange={v => updateUser(c.id, 'remodeled', v)}
+        <StatusSelect value={remodel} options={REMODEL_OPTS} onChange={v => updateUser(c.id, 'remodeled', v)}
           colorMap={{ '없음': 'bg-gray-700 text-gray-400', '미개장': 'bg-yellow-700 text-yellow-200', '개장': 'bg-green-700 text-green-200' }} />
       </td>
       <td className="px-3 py-2 text-center">
         {isSP
-          ? <CycleButton value={keel} options={KEEL_OPTS} onChange={v => updateUser(c.id, 'keel', v)}
+          ? <StatusSelect value={keel} options={KEEL_OPTS} onChange={v => updateUser(c.id, 'keel', v)}
               colorMap={{ '없음': 'bg-gray-700 text-gray-400', '가능': 'bg-yellow-700 text-yellow-200', '완료': 'bg-green-700 text-green-200' }} />
           : <span className="text-gray-600 text-xs">-</span>
         }
       </td>
       <td className="px-3 py-2 text-center">
-        <CycleButton value={acquired} options={ACQUISITION_STATUSES} onChange={v => updateUser(c.id, 'acquired', v)}
+        <StatusSelect value={acquired} options={ACQUISITION_STATUSES} onChange={v => updateUser(c.id, 'acquired', v)}
           colorMap={{ '미획득': 'bg-gray-700 text-gray-400', '획득': 'bg-blue-700 text-blue-200', '풀돌': 'bg-cyan-700 text-cyan-200', '100': 'bg-yellow-700 text-yellow-200', '120': 'bg-green-700 text-green-200', '125': 'bg-purple-700 text-purple-200' }} />
       </td>
       <td className="px-3 py-2 text-center">
-        <CycleButton value={skilled} options={SKILLED_OPTS} onChange={v => updateUser(c.id, 'skilled', v)}
+        <StatusSelect value={skilled} options={SKILLED_OPTS} onChange={v => updateUser(c.id, 'skilled', v)}
           colorMap={{ '스작 완료': 'bg-green-700 text-green-200', '스작 중': 'bg-yellow-700 text-yellow-200', '스작 안함': 'bg-gray-700 text-gray-400' }} />
       </td>
       <td className="px-3 py-2 text-center">
-        <CycleButton value={affection} options={AFFECTION_OPTS} onChange={v => updateUser(c.id, 'affection', v)}
+        <StatusSelect value={affection} options={AFFECTION_OPTS} onChange={v => updateUser(c.id, 'affection', v)}
           colorMap={{ '호감작 안함': 'bg-gray-700 text-gray-400', '호감작 중': 'bg-yellow-700 text-yellow-200', '서약 완료': 'bg-red-700 text-red-200', '호감도 Max': 'bg-pink-700 text-pink-200' }} />
       </td>
       <td className="px-3 py-2 text-center">
-        <CycleButton value={equip} options={EQUIP_OPTS} onChange={v => updateUser(c.id, 'equip', v)}
+        <StatusSelect value={equip} options={EQUIP_OPTS} onChange={v => updateUser(c.id, 'equip', v)}
           colorMap={{ '없음': 'bg-gray-700 text-gray-400', '미제작': 'bg-yellow-700 text-yellow-200', '제작': 'bg-green-700 text-green-200' }} />
       </td>
       <td className="px-3 py-2 text-center text-gray-300">{calcTechPoints(c)}</td>
@@ -153,15 +153,19 @@ function StatCell({ data }) {
   )
 }
 
-function CycleButton({ value, options, onChange, colorMap }) {
-  const next = () => {
-    const idx = options.indexOf(value)
-    onChange(options[(idx + 1) % options.length])
-  }
+function StatusSelect({ value, options, onChange, colorMap }) {
   const color = colorMap[value] || 'bg-gray-700 text-gray-400'
   return (
-    <button onClick={next} className={`text-xs px-2 py-0.5 rounded ${color} hover:opacity-80 whitespace-nowrap`}>
-      {value}
-    </button>
+    <select
+      value={value}
+      onChange={e => onChange(e.target.value)}
+      className={`min-w-20 rounded border border-transparent px-2 py-0.5 text-xs outline-none transition-colors hover:border-gray-500 focus:border-blue-500 ${color}`}
+    >
+      {options.map(option => (
+        <option key={option} value={option} className="bg-gray-900 text-gray-200">
+          {option}
+        </option>
+      ))}
+    </select>
   )
 }
