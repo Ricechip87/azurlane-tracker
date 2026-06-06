@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { calcTechPoints } from '../utils/techPoints.js'
 import { isAcquiredStatus, isLevel120Status } from '../utils/acquisitionStatus.js'
+import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from '../utils/fleetTech.js'
 
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
 const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대순', '경항모', '항모', '전함', '순전', '항전', '잠수', '잠순', '모니터', '보급']
@@ -30,7 +30,7 @@ export default function StatsBar({ characters, filtered }) {
   const acquiredCount = filtered.filter(c => isAcquiredStatus(c.acquired)).length
   const maxed = filtered.filter(c => isLevel120Status(c.acquired)).length
   const rate = filtered.length ? ((acquiredCount / filtered.length) * 100).toFixed(1) : 0
-  const earnedSP = filtered.reduce((s, c) => s + calcTechPoints(c), 0)
+  const majorFactionTechPoints = calcMajorFactionTechPoints(filtered)
 
   const [selectedType, setSelectedType] = useState('전함')
 
@@ -53,8 +53,15 @@ export default function StatsBar({ characters, filtered }) {
             <div className="px-4 py-1.5 text-blue-300 font-bold">{filtered.length} ({total})</div>
             <div className="px-4 py-1.5 text-gray-400">120 이상</div>
             <div className="px-4 py-1.5 text-blue-300 font-bold">{maxed}</div>
-            <div className="px-4 py-1.5 text-gray-400">획득 기술점수</div>
-            <div className="px-4 py-1.5 text-blue-300 font-bold">{earnedSP}</div>
+            <div className="col-span-2 px-4 py-1.5 text-gray-300 font-semibold bg-gray-800/60 border-t border-gray-800">
+              획득 기술점수
+            </div>
+            {MAJOR_TECH_FACTIONS.map(faction => (
+              <div key={faction.value} className="contents">
+                <div className="px-4 py-1.5 text-gray-400">{faction.label}</div>
+                <div className="px-4 py-1.5 text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
+              </div>
+            ))}
           </div>
         </div>
 

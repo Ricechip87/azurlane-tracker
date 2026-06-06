@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-06 - Split Earned Tech Points By Major Faction
+
+### Why
+- In-game fleet technology progress is shown separately for Eagle Union, Royal Navy, Sakura Empire, and Iron Blood.
+- The tracker should make owned-data totals comparable with the in-game fleet technology screen instead of showing only one combined value.
+
+### Changed
+- Added a fleet technology utility that sums earned tech points for the four in-game major factions only.
+- Updated the stats bar to display earned tech points as `유니온 (USS)`, `로열 (HMS)`, `중앵 (IJN)`, and `철혈 (KMS)`.
+- Added regression coverage for faction alias handling and exclusion of non-major factions from this split display.
+
+### Verified
+- `node src/utils/fleetTech.test.mjs`
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Refresh GitHub Pages Actions Runtime
 
 ### Why
