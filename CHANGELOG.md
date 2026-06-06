@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-06 - Add Fleet Tech Audit Script
+
+### Why
+- The tracker fleet tech totals can differ from in-game totals because the browser-owned data, ship tech values, or faction mapping may be wrong.
+- A repeatable audit script is needed to compare exported LocalStorage data against in-game USS/HMS/IJN/KMS totals without guessing.
+
+### Changed
+- Added `scripts/audit-tech-points.mjs` to merge an exported backup with character data and print major faction tech totals.
+- Added optional expected in-game totals so the script can print faction diffs and high-contribution candidate ships.
+- Added faction code metadata for USS/HMS/IJN/KMS and an `npm run audit:tech` script alias.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+
 ## 2026-06-06 - Remove Filtered Summary From Stats Bar
 
 ### Why
