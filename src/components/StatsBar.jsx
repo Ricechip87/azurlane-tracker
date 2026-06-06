@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from '../utils/fleetTech.js'
 import { calcStatsByShipType, mergeStatsByShipType, summarizeRoster } from '../utils/rosterStats.js'
-import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
+import { calcFleetTechLevels, calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
 
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
 const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대형순', '순전', '전함', '경항모', '항모', '잠수', '항전', '공작', '모니터', '잠항모', '운송', '범선']
@@ -9,6 +9,7 @@ const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대형순', '순전', '�
 export default function StatsBar({ characters }) {
   const fullSummary = summarizeRoster(characters)
   const majorFactionTechPoints = calcMajorFactionTechPoints(characters)
+  const majorFactionTechLevels = calcFleetTechLevels(majorFactionTechPoints)
 
   const [selectedType, setSelectedType] = useState('전함')
 
@@ -36,11 +37,14 @@ export default function StatsBar({ characters }) {
           <div className="h-9 px-3 flex items-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
             획득 기술점수 <span className="ml-1 font-normal text-gray-500">(전체 보유함)</span>
           </div>
-          <div className="grid grid-cols-2 divide-x divide-gray-800 text-xs">
+          <div className="grid grid-cols-[1fr_auto_auto] divide-x divide-gray-800 text-xs">
             {MAJOR_TECH_FACTIONS.map(faction => (
               <div key={faction.value} className="contents">
                 <div className="px-4 py-3 text-gray-300">{faction.label}</div>
-                <div className="px-4 py-3 text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
+                <div className="px-3 py-3 text-center text-gray-400 whitespace-nowrap">
+                  Lv.{majorFactionTechLevels[faction.value]?.level || 0}
+                </div>
+                <div className="px-4 py-3 text-right text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
               </div>
             ))}
           </div>

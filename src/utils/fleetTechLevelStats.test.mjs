@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { calcFleetTechLevelStats, findCurrentLevel } from './fleetTechLevelStats.js'
+import { calcFleetTechLevels, calcFleetTechLevelStats, findCurrentLevel } from './fleetTechLevelStats.js'
 
 assert.equal(findCurrentLevel([{ level: 1, pt: 300 }, { level: 2, pt: 600 }], 299), null)
 assert.deepEqual(findCurrentLevel([{ level: 1, pt: 300 }, { level: 2, pt: 600 }], 600), { level: 2, pt: 600 })
@@ -10,6 +10,18 @@ const levelStats = calcFleetTechLevelStats({
   중앵: 5651,
   철혈: 6229,
 })
+
+const levels = calcFleetTechLevels({
+  유니온: 5937,
+  로열: 4332,
+  중앵: 5651,
+  철혈: 6229,
+})
+
+assert.equal(levels.유니온.level, 9)
+assert.equal(levels.로열.level, 9)
+assert.equal(levels.중앵.level, 9)
+assert.equal(levels.철혈.level, 9)
 
 assert.deepEqual(levelStats.순전, {
   대공: 10,

@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-07 - Show Carrier ASW And Fleet Tech Levels
+
+### Why
+- Carrier ASW does not appear on the in-game effect screen, but it is still real fleet tech stat data and should remain visible in the tracker.
+- The major faction tech point panel should show the current fleet tech level reached by each faction's owned tech points.
+
+### Changed
+- Restored `항모` `대잠` aggregation in additional stat totals.
+- Added current fleet tech level calculation for USS/HMS/IJN/KMS tech point totals.
+- Displayed each major faction's current `Lv.` between the faction label and acquired tech point total.
+- Updated stat diagnostics and regression tests to keep carrier ASW visible.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Reconcile In-Game Additional Stat Totals
 
 ### Why

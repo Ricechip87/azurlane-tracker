@@ -78,6 +78,7 @@ assert.deepEqual(
   ], 'acquired'),
   {
     경항모: { 대잠: 1 },
+    항모: { 대잠: 1 },
   }
 )
 

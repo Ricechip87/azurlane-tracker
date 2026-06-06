@@ -15,7 +15,7 @@ const IN_GAME = {
   순전: { 내구: 231, 화력: 99, 대공: 20, 장전: 17, 명중: 29, 회피: 17 },
   전함: { 내구: 231, 화력: 94, 대공: 20, 장전: 17, 명중: 29, 회피: 1 },
   경항모: { 내구: 87, 대공: 4, 항공: 78, 장전: 35, 명중: 14, 대잠: 48 },
-  항모: { 내구: 83, 대공: 4, 항공: 65, 장전: 35, 명중: 14 },
+  항모: { 내구: 83, 대공: 4, 항공: 65, 장전: 35, 명중: 14, 대잠: 4 },
   잠수: { 내구: 65, 화력: 2, 뇌격: 26, 명중: 25, 회피: 31 },
   항전: { 내구: 221, 화력: 94, 대공: 17, 항공: 9, 장전: 17, 명중: 26, 회피: 1 },
   공작: { 내구: 48, 대공: 15 },
@@ -81,7 +81,6 @@ for (const [shipType, expectedStats] of Object.entries(IN_GAME)) {
 
 function addStat(target, sourceLog, shipType, statData, label) {
   if (!shipType || !statData.stat || !statData.value) return
-  if (shipType === '항모' && statData.stat === '대잠') return
   if (!target[shipType]) target[shipType] = {}
   target[shipType][statData.stat] = (target[shipType][statData.stat] || 0) + statData.value
 

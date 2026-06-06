@@ -5,11 +5,10 @@ import { normalizeStatShipTypeValue } from './shipClassifications.js'
 export function calcFleetTechLevelStats(majorFactionTechPoints) {
   const result = {}
 
-  for (const faction of MAJOR_TECH_FACTIONS) {
-    const levels = fleetTechLevelBonuses[faction.code] || []
-    const points = majorFactionTechPoints[faction.value] || 0
-    const currentLevel = findCurrentLevel(levels, points)
+  const currentLevels = calcFleetTechLevels(majorFactionTechPoints)
 
+  for (const faction of MAJOR_TECH_FACTIONS) {
+    const currentLevel = currentLevels[faction.value]
     const appliedBonuses = new Set()
     for (const bonus of currentLevel?.bonuses || []) {
       const shipType = normalizeStatShipTypeValue(bonus.shipType)
@@ -20,6 +19,18 @@ export function calcFleetTechLevelStats(majorFactionTechPoints) {
       if (!result[shipType]) result[shipType] = {}
       result[shipType][bonus.stat] = (result[shipType][bonus.stat] || 0) + (bonus.value || 0)
     }
+  }
+
+  return result
+}
+
+export function calcFleetTechLevels(majorFactionTechPoints) {
+  const result = {}
+
+  for (const faction of MAJOR_TECH_FACTIONS) {
+    const levels = fleetTechLevelBonuses[faction.code] || []
+    const points = majorFactionTechPoints[faction.value] || 0
+    result[faction.value] = findCurrentLevel(levels, points)
   }
 
   return result
