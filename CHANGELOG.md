@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-06 - Use Full Roster For Major Faction Tech Points
+
+### Why
+- In-game fleet technology totals are global roster values, while the tracker was summing the currently filtered table rows.
+- Search or filter state could make the displayed major-faction tech points differ from the in-game fleet technology screen.
+
+### Changed
+- Changed the major-faction earned tech point summary to use the full enriched roster instead of the filtered table list.
+- Clarified the stats label as `전체 보유함` so it is not confused with the filtered extra-stat summaries.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Split Earned Tech Points By Major Faction
 
 ### Why

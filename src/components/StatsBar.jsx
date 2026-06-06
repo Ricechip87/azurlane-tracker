@@ -30,7 +30,7 @@ export default function StatsBar({ characters, filtered }) {
   const acquiredCount = filtered.filter(c => isAcquiredStatus(c.acquired)).length
   const maxed = filtered.filter(c => isLevel120Status(c.acquired)).length
   const rate = filtered.length ? ((acquiredCount / filtered.length) * 100).toFixed(1) : 0
-  const majorFactionTechPoints = calcMajorFactionTechPoints(filtered)
+  const majorFactionTechPoints = calcMajorFactionTechPoints(characters)
 
   const [selectedType, setSelectedType] = useState('전함')
 
@@ -54,7 +54,7 @@ export default function StatsBar({ characters, filtered }) {
             <div className="px-4 py-1.5 text-gray-400">120 이상</div>
             <div className="px-4 py-1.5 text-blue-300 font-bold">{maxed}</div>
             <div className="col-span-2 px-4 py-1.5 text-gray-300 font-semibold bg-gray-800/60 border-t border-gray-800">
-              획득 기술점수
+              획득 기술점수 <span className="font-normal text-gray-500">(전체 보유함)</span>
             </div>
             {MAJOR_TECH_FACTIONS.map(faction => (
               <div key={faction.value} className="contents">
