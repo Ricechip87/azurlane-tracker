@@ -1841,7 +1841,8 @@
     "skillPoints": 0,
     "statAcquired": {
       "shipTypes": [
-        "경항모"
+        "경항모",
+        "항모"
       ],
       "stat": "대잠",
       "value": 1
@@ -10771,7 +10772,8 @@
     "skillPoints": 0,
     "statAcquired": {
       "shipTypes": [
-        "경항모"
+        "경항모",
+        "항모"
       ],
       "stat": "대잠",
       "value": 1
@@ -11468,7 +11470,8 @@
     "skillPoints": 0,
     "statAcquired": {
       "shipTypes": [
-        "경항모"
+        "경항모",
+        "항모"
       ],
       "stat": "대잠",
       "value": 1
@@ -12063,7 +12066,8 @@
     "skillPoints": 0,
     "statAcquired": {
       "shipTypes": [
-        "경항모"
+        "경항모",
+        "항모"
       ],
       "stat": "대잠",
       "value": 1

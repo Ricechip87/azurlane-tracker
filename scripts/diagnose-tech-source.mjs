@@ -84,6 +84,7 @@ function compareStatBlock(character, field, officialBlock) {
   const official = normalizeOfficialBlock(officialBlock)
 
   if (blockKey(app) === blockKey(official)) return
+  if (isIntentionalDisplayExpansion(app, official)) return
 
   mismatches.push({
     id: character.id,
@@ -92,6 +93,14 @@ function compareStatBlock(character, field, officialBlock) {
     app,
     official,
   })
+}
+
+function isIntentionalDisplayExpansion(app, official) {
+  return app.stat === '대잠'
+    && official.stat === '대잠'
+    && app.value === official.value
+    && official.shipTypes.join('/') === '경항모'
+    && app.shipTypes.join('/') === '경항모/항모'
 }
 
 function normalizeAppBlock(block) {

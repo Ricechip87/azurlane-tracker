@@ -177,8 +177,8 @@ const updated = characters.map(c => {
         maxLB: official.pt_upgrage ?? baseTechPoints.maxLB,
         lv120: official.pt_level ?? baseTechPoints.lv120,
       },
-      statAcquired: parseOfficialStat(official.add_get_shiptype, official.add_get_attr, official.add_get_value),
-      stat120: parseOfficialStat(official.add_level_shiptype, official.add_level_attr, official.add_level_value),
+      statAcquired: parseOfficialStat(official.add_get_shiptype, official.add_get_attr, official.add_get_value, tech?.statAcquired),
+      stat120: parseOfficialStat(official.add_level_shiptype, official.add_level_attr, official.add_level_value, tech?.stat120),
     }
   }
 
@@ -197,13 +197,22 @@ const updated = characters.map(c => {
 fs.writeFileSync(CHARS_PATH, JSON.stringify(updated, null, 2), 'utf-8')
 console.log(`완료: 공식 원본 ${officialMatched}명, CSV ${matched}명 기술 데이터 반영, CSV ${techRecords.length}행 확인`)
 
-function parseOfficialStat(shipTypeIds, attrId, value) {
+function parseOfficialStat(shipTypeIds, attrId, value, fallbackStat) {
   const stat = STAT_BY_ID[attrId] || ''
   const parsedValue = value || 0
   if (!stat || !parsedValue) return { shipTypes: [], stat: '', value: 0 }
 
+  const shipTypes = [...new Set((shipTypeIds || []).map(id => SHIP_TYPE_BY_ID[id]).filter(Boolean))]
+  const fallbackShipTypes = fallbackStat?.stat === stat && fallbackStat.value === parsedValue
+    ? fallbackStat.shipTypes || []
+    : []
+
+  if (stat === '대잠' && shipTypes.includes('경항모') && (fallbackShipTypes.includes('항모') || fallbackShipTypes.includes('정규항모'))) {
+    shipTypes.push('항모')
+  }
+
   return {
-    shipTypes: [...new Set((shipTypeIds || []).map(id => SHIP_TYPE_BY_ID[id]).filter(Boolean))],
+    shipTypes,
     stat,
     value: parsedValue,
   }

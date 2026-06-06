@@ -8,6 +8,7 @@
 
 ### Changed
 - Restored `항모` `대잠` aggregation in additional stat totals.
+- Preserved CSV-provided `정규항모` ASW targets when the official source only lists `경항모`, so hidden carrier ASW still appears in the tracker.
 - Added current fleet tech level calculation for USS/HMS/IJN/KMS tech point totals.
 - Displayed each major faction's current `Lv.` between the faction label and acquired tech point total.
 - Updated stat diagnostics and regression tests to keep carrier ASW visible.
