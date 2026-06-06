@@ -5,9 +5,8 @@ import { calcStatsByShipType, summarizeRoster } from '../utils/rosterStats.js'
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
 const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대순', '경항모', '항모', '전함', '순전', '항전', '잠수', '잠순', '모니터', '보급']
 
-export default function StatsBar({ characters, filtered }) {
+export default function StatsBar({ characters }) {
   const fullSummary = summarizeRoster(characters)
-  const filteredSummary = summarizeRoster(filtered)
   const majorFactionTechPoints = calcMajorFactionTechPoints(characters)
 
   const [selectedType, setSelectedType] = useState('전함')
@@ -24,9 +23,8 @@ export default function StatsBar({ characters, filtered }) {
           <div className="h-9 px-3 flex items-center justify-center text-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
             간단 통계
           </div>
-          <div className="divide-y divide-gray-800 text-xs">
-            <SummaryGroup title="전체 보유함 기준" summary={fullSummary} showOath />
-            <SummaryGroup title="현재 필터 기준" summary={filteredSummary} />
+          <div className="text-xs">
+            <SummaryGroup title="전체 보유함 기준" summary={fullSummary} />
           </div>
         </div>
 
@@ -68,7 +66,7 @@ export default function StatsBar({ characters, filtered }) {
   )
 }
 
-function SummaryGroup({ title, summary, showOath = false }) {
+function SummaryGroup({ title, summary }) {
   return (
     <div>
       <div className="px-4 py-1.5 text-gray-300 font-semibold bg-gray-800/50">{title}</div>
@@ -81,12 +79,8 @@ function SummaryGroup({ title, summary, showOath = false }) {
         <div className="px-4 py-1.5 text-blue-300 font-bold">{summary.level120}</div>
         <div className="px-4 py-1.5 text-gray-400">125 이상</div>
         <div className="px-4 py-1.5 text-blue-300 font-bold">{summary.level125}</div>
-        {showOath && (
-          <>
-            <div className="px-4 py-1.5 text-gray-400">서약</div>
-            <div className="px-4 py-1.5 text-blue-300 font-bold">{summary.oath}</div>
-          </>
-        )}
+        <div className="px-4 py-1.5 text-gray-400">서약</div>
+        <div className="px-4 py-1.5 text-blue-300 font-bold">{summary.oath}</div>
       </div>
     </div>
   )

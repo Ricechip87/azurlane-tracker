@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-06 - Remove Filtered Summary From Stats Bar
+
+### Why
+- The filtered-list summary made the stats bar feel crowded and visually noisy after the full-roster UI split.
+- The top stats area should focus on stable full-roster values that can be compared with in-game screens.
+
+### Changed
+- Removed the `현재 필터 기준` summary block from the stats bar.
+- Simplified the stats bar props so the summary area no longer depends on filtered rows.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Stack Additional Stat Groups Vertically
 
 ### Why

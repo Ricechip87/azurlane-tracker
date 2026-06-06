@@ -73,7 +73,7 @@ export default function App() {
       </header>
 
       <div className="p-4 space-y-4">
-        <StatsBar characters={enriched} filtered={filtered} />
+        <StatsBar characters={enriched} />
         <FilterPanel filters={filters} setFilters={setFilters} characters={enriched} />
         <CharacterTable characters={filtered} updateUser={updateUser} />
       </div>
