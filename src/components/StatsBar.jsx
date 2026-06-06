@@ -57,7 +57,7 @@ export default function StatsBar({ characters, filtered }) {
               {SHIP_TYPE_ORDER.map(t => <option key={t} value={t}>{t}</option>)}
             </select>
           </div>
-          <div className="flex divide-x divide-gray-800">
+          <div className="divide-y divide-gray-800">
             <StatGroup label="입수 스탯 총합" statsByType={acquiredStats} selectedType={selectedType} sub="획득 기준" />
             <StatGroup label="120 스탯 총합" statsByType={maxedStats} selectedType={selectedType} sub="120 기준" />
           </div>
@@ -97,7 +97,7 @@ function StatGroup({ label, statsByType, selectedType, sub }) {
   const hasData = Object.keys(typeStats).length > 0
 
   return (
-    <div className="flex-1 px-4 py-2 min-w-0">
+    <div className="px-4 py-2 min-w-0">
       <div className="text-xs text-gray-400 mb-1.5 font-medium">{label}</div>
       <table className="text-xs w-full">
         <thead>

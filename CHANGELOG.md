@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-06-06 - Stack Additional Stat Groups Vertically
+
+### Why
+- The acquired and 120 stat totals were still arranged side by side, making the full-roster stat section harder to scan.
+
+### Changed
+- Changed the additional stat totals from a left/right split to a vertical stack.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Rework Stats Bar Scope Separation
 
 ### Why
