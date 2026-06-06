@@ -26,12 +26,9 @@ export default function StatsBar({ characters }) {
   const maxedStats = calcStatsByShipType(characters, '120')
   const levelStats = calcFleetTechLevelStats(majorFactionTechPoints)
   const totalStats = mergeStatsByShipType(acquiredStats, maxedStats, levelStats)
-  const previewFactionInfo = MAJOR_TECH_FACTIONS.find(faction => faction.value === previewFaction)
-  const previewProgress = previewFaction ? majorFactionTechProgress[previewFaction] : null
-  const previewCandidates = previewFaction ? calcFleetTechCandidates(characters, previewFaction) : []
 
   return (
-    <div className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
+    <div className="relative bg-gray-900 border border-gray-800 rounded-lg overflow-visible">
       <div className="flex flex-wrap">
 
         {/* 좌측: 간단 통계 */}
@@ -64,7 +61,7 @@ export default function StatsBar({ characters }) {
                   <div className="px-3 py-3 text-right text-gray-500 whitespace-nowrap">
                     {formatNextLevelProgress(progress)}
                   </div>
-                  <div className="px-3 py-2 text-right">
+                  <div className="relative px-3 py-2 text-right">
                     <button
                       type="button"
                       onClick={() => setPreviewFaction(isOpen ? null : faction.value)}
@@ -72,6 +69,13 @@ export default function StatsBar({ characters }) {
                     >
                       후보 보기
                     </button>
+                    {isOpen && (
+                      <TechCandidatePopover
+                        faction={faction}
+                        progress={progress}
+                        candidates={calcFleetTechCandidates(characters, faction.value)}
+                      />
+                    )}
                   </div>
                 </div>
               )
@@ -97,13 +101,6 @@ export default function StatsBar({ characters }) {
         </div>
 
       </div>
-      {previewFactionInfo && (
-        <TechCandidatePreview
-          faction={previewFactionInfo}
-          progress={previewProgress}
-          candidates={previewCandidates}
-        />
-      )}
     </div>
   )
 }
@@ -114,63 +111,91 @@ function formatNextLevelProgress(progress) {
   return `다음 ${progress.pointsToNext}`
 }
 
-function TechCandidatePreview({ faction, progress, candidates }) {
+function TechCandidatePopover({ faction, progress, candidates }) {
   const splitCandidates = splitFleetTechCandidates(candidates)
+  const hasCandidates = candidates.length > 0
 
   return (
-    <div className="border-t border-gray-800 bg-gray-950/40">
-      <div className="h-9 px-4 flex items-center gap-3 bg-gray-800/80 border-b border-gray-700 text-xs">
+    <div className="absolute right-0 top-full z-30 mt-1 w-[720px] max-w-[calc(100vw-2rem)] rounded border border-gray-700 bg-gray-950 text-left shadow-2xl">
+      <div className="h-8 px-3 flex items-center gap-3 bg-gray-800 border-b border-gray-700 text-xs">
         <span className="font-semibold text-gray-200">{faction.label} 기술점수 후보</span>
         <span className="text-gray-500">{formatNextLevelProgress(progress)}</span>
       </div>
-      <div className="p-3 space-y-3">
-        <CandidateSection title="UR / SSR" candidates={splitCandidates.high} />
-        <CandidateSection title="SR / R / N" candidates={splitCandidates.low} />
-      </div>
+      {hasCandidates ? (
+        <CandidateTable highCandidates={splitCandidates.high} lowCandidates={splitCandidates.low} />
+      ) : (
+        <div className="px-3 py-3 text-xs text-gray-600">후보 없음</div>
+      )}
     </div>
   )
 }
 
-function CandidateSection({ title, candidates }) {
+function CandidateTable({ highCandidates, lowCandidates }) {
   return (
-    <div>
-      <div className="mb-1.5 text-xs font-semibold text-gray-400">{title}</div>
-      {candidates.length ? (
-        <div className="max-h-72 overflow-auto border border-gray-800">
-          <table className="w-full text-xs">
-            <thead className="sticky top-0 bg-gray-900 text-gray-500">
-              <tr>
-                <th className="px-3 py-2 text-left font-normal">함선</th>
-                <th className="px-2 py-2 text-center font-normal">등급</th>
-                <th className="px-2 py-2 text-center font-normal">현재 상태</th>
-                <th className="px-2 py-2 text-right font-normal">획득</th>
-                <th className="px-2 py-2 text-right font-normal">풀돌</th>
-                <th className="px-2 py-2 text-right font-normal">120</th>
-                <th className="px-2 py-2 text-right font-normal">남은 기술점수</th>
-                <th className="px-3 py-2 text-right font-normal">효율</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-900">
-              {candidates.map(candidate => (
-                <tr key={candidate.id} className="hover:bg-gray-900/70">
-                  <td className="px-3 py-1.5 text-gray-200">{candidate.name}</td>
-                  <td className={`px-2 py-1.5 text-center font-bold ${RARITY_COLOR[candidate.rarity] || 'text-gray-400'}`}>{candidate.rarity}</td>
-                  <td className="px-2 py-1.5 text-center text-gray-400">{candidate.status}</td>
-                  <StageCell stage={candidate.stages.acquired} />
-                  <StageCell stage={candidate.stages.maxLB} />
-                  <StageCell stage={candidate.stages.level120} />
-                  <td className="px-2 py-1.5 text-right font-bold text-blue-300">{candidate.remainingTechPoints}</td>
-                  <td className="px-3 py-1.5 text-right font-bold text-yellow-300">{candidate.efficiency.toFixed(1)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ) : (
-        <div className="border border-gray-800 px-3 py-3 text-xs text-gray-600">후보 없음</div>
-      )}
+    <div className="max-h-[420px] overflow-auto">
+      <table className="w-full table-fixed text-xs">
+        <colgroup>
+          <col className="w-[27%]" />
+          <col className="w-[9%]" />
+          <col className="w-[12%]" />
+          <col className="w-[10%]" />
+          <col className="w-[10%]" />
+          <col className="w-[10%]" />
+          <col className="w-[13%]" />
+          <col className="w-[9%]" />
+        </colgroup>
+        <thead className="sticky top-0 z-10 bg-gray-900 text-gray-500">
+          <tr>
+            <th className="px-3 py-1.5 text-left font-normal">함선</th>
+            <th className="px-2 py-1.5 text-center font-normal">등급</th>
+            <th className="px-2 py-1.5 text-center font-normal">현재 상태</th>
+            <th className="px-2 py-1.5 text-right font-normal">획득</th>
+            <th className="px-2 py-1.5 text-right font-normal">풀돌</th>
+            <th className="px-2 py-1.5 text-right font-normal">120</th>
+            <th className="px-2 py-1.5 text-right font-normal">남은 기술점수</th>
+            <th className="px-3 py-1.5 text-right font-normal">효율</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-gray-900">
+          <CandidateGroupRow title="UR / SSR" />
+          <CandidateRows candidates={highCandidates} />
+          <CandidateGroupRow title="SR / R / N" />
+          <CandidateRows candidates={lowCandidates} />
+        </tbody>
+      </table>
     </div>
   )
+}
+
+function CandidateGroupRow({ title }) {
+  return (
+    <tr className="bg-gray-900/80">
+      <td colSpan={8} className="px-3 py-1.5 text-xs font-semibold text-gray-400">{title}</td>
+    </tr>
+  )
+}
+
+function CandidateRows({ candidates }) {
+  if (!candidates.length) {
+    return (
+      <tr>
+        <td colSpan={8} className="px-3 py-2 text-xs text-gray-600">후보 없음</td>
+      </tr>
+    )
+  }
+
+  return candidates.map(candidate => (
+    <tr key={candidate.id} className="hover:bg-gray-900/70">
+      <td className="truncate px-3 py-1.5 text-gray-200">{candidate.name}</td>
+      <td className={`px-2 py-1.5 text-center font-bold ${RARITY_COLOR[candidate.rarity] || 'text-gray-400'}`}>{candidate.rarity}</td>
+      <td className="px-2 py-1.5 text-center text-gray-400">{candidate.status}</td>
+      <StageCell stage={candidate.stages.acquired} />
+      <StageCell stage={candidate.stages.maxLB} />
+      <StageCell stage={candidate.stages.level120} />
+      <td className="px-2 py-1.5 text-right font-bold text-blue-300">{candidate.remainingTechPoints}</td>
+      <td className="px-3 py-1.5 text-right font-bold text-yellow-300">{candidate.efficiency.toFixed(1)}</td>
+    </tr>
+  ))
 }
 
 function StageCell({ stage }) {

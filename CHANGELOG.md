@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-07 - Compact Fleet Tech Candidate Popup
+
+### Why
+- The candidate preview panel occupied too much vertical space for the amount of information it showed.
+- Candidate rows should appear near the clicked `후보 보기` button and keep UR/SSR and SR/R/N columns aligned.
+
+### Changed
+- Replaced the full-width inline candidate panel with a compact popup anchored below the clicked `후보 보기` button.
+- Merged UR/SSR and SR/R/N candidate groups into one fixed-layout table with group divider rows.
+- Limited the popup height with internal scrolling so it does not push the rest of the stats area down.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Fleet Tech Candidate Preview
 
 ### Why
