@@ -26480,5 +26480,35 @@
     },
     "gid": 970212,
     "iconUrl": "/azurlane-tracker/ship-icons/9702120.png"
+  },
+  {
+    "id": "M062",
+    "name": "브리스톨(META)",
+    "rarity": "SSR",
+    "shipType": "구축",
+    "faction": "META",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "",
+      "value": 0
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "",
+      "value": 0
+    },
+    "techPoints": {
+      "acquired": 0,
+      "maxLB": 0,
+      "lv120": 0
+    },
+    "gid": 970112,
+    "iconUrl": "/azurlane-tracker/ship-icons/9701120.png"
   }
 ]
