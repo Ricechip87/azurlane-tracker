@@ -18,6 +18,7 @@ const INITIAL_FILTERS = {
   affection: '전체',
   remodel: '전체',
   favoritesOnly: false,
+  researchOnly: false,
 }
 
 function isCollabCharacter(c) {
@@ -59,6 +60,7 @@ export default function App() {
         if (val !== filters.remodel) return false
       }
       if (filters.favoritesOnly && !c.favorite) return false
+      if (filters.researchOnly && !String(c.id).startsWith('P')) return false
       return true
     })
   }, [enriched, filters])

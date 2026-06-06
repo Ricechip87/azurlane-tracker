@@ -6,6 +6,13 @@ const RARITIES = ['전체', 'N', 'R', 'SR', 'SSR', 'UR']
 const SKILLED_OPTS = ['전체', '스작 완료', '스작 중', '스작 안함']
 const AFFECTION_OPTS = ['전체', '호감도 Max', '서약 완료', '호감작 중', '호감작 안함']
 const REMODEL_OPTS = ['전체', '없음', '미개장', '개장']
+const SHIP_CLASSIFICATION_FILTER_OPTIONS = [
+  '전체',
+  '전열',
+  '후열',
+  { value: '__ship-classification-divider', label: '────────', disabled: true },
+  ...SHIP_CLASSIFICATION_OPTIONS.filter(option => !['전체', '전열', '후열'].includes(option)),
+]
 
 export default function FilterPanel({ filters, setFilters, characters }) {
   const factions = getFactionOptions(characters.map(c => c.faction))
@@ -27,7 +34,7 @@ export default function FilterPanel({ filters, setFilters, characters }) {
         </div>
 
         <Select label="레어도" value={filters.rarity} onChange={v => set('rarity', v)} options={RARITIES} />
-        <Select label="분류" value={filters.shipType} onChange={v => set('shipType', v)} options={SHIP_CLASSIFICATION_OPTIONS} />
+        <Select label="분류" value={filters.shipType} onChange={v => set('shipType', v)} options={SHIP_CLASSIFICATION_FILTER_OPTIONS} />
         <Select label="진영" value={filters.faction} onChange={v => set('faction', v)} options={factions} />
         <Select label="획득 여부" value={filters.acquired} onChange={v => set('acquired', v)} options={ACQUISITION_FILTER_OPTIONS} />
         <Select label="스킬작" value={filters.skilled} onChange={v => set('skilled', v)} options={SKILLED_OPTS} />
@@ -45,10 +52,18 @@ export default function FilterPanel({ filters, setFilters, characters }) {
         </label>
 
         <button
-          onClick={() => setFilters({ search: '', rarity: '전체', shipType: '전체', faction: '전체', acquired: '전체', skilled: '전체', affection: '전체', remodel: '전체', favoritesOnly: false })}
+          type="button"
+          onClick={() => set('researchOnly', !filters.researchOnly)}
+          className={`text-xs border rounded px-2 py-1.5 ${filters.researchOnly ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 text-gray-400 hover:text-gray-200'}`}
+        >
+          연구함만
+        </button>
+
+        <button
+          onClick={() => setFilters({ search: '', rarity: '전체', shipType: '전체', faction: '전체', acquired: '전체', skilled: '전체', affection: '전체', remodel: '전체', favoritesOnly: false, researchOnly: false })}
           className="text-xs text-gray-400 hover:text-gray-200 border border-gray-700 rounded px-2 py-1.5"
         >
-          초기화
+          필터 초기화
         </button>
       </div>
     </div>
@@ -63,6 +78,10 @@ function getOptionLabel(option) {
   return typeof option === 'string' ? option : option.label
 }
 
+function isOptionDisabled(option) {
+  return typeof option === 'object' && option.disabled
+}
+
 function Select({ label, value, onChange, options }) {
   return (
     <div className="flex flex-col gap-1">
@@ -73,7 +92,7 @@ function Select({ label, value, onChange, options }) {
         className="bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-blue-500"
       >
         {options.map(o => (
-          <option key={getOptionValue(o)} value={getOptionValue(o)}>
+          <option key={getOptionValue(o)} value={getOptionValue(o)} disabled={isOptionDisabled(o)}>
             {getOptionLabel(o)}
           </option>
         ))}

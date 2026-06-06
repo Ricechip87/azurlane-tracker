@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-07 - Refine Filter Panel Grouping
+
+### Why
+- Broad classification and collab faction options should be visually separated from detailed options in the filter dropdowns.
+- Research ships need a quick one-click filter separate from general rarity/faction filters.
+
+### Changed
+- Added a disabled divider in the `분류` dropdown between `후열` and detailed ship type categories.
+- Added a disabled divider in the `진영` dropdown between `기타` and collab factions.
+- Added a `연구함만` filter toggle for SP/research ships.
+- Renamed the reset action from `초기화` to `필터 초기화`.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Frontline Backline Classification Filter
 
 ### Why
