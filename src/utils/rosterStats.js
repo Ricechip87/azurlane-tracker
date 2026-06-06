@@ -30,12 +30,17 @@ export function calcStatsByShipType(characters, mode) {
 
     const shipTypes = new Set(data.shipTypes.map(normalizeStatShipTypeValue))
     for (const shipType of shipTypes) {
+      if (shouldSkipStatForShipType(shipType, data.stat)) continue
       if (!result[shipType]) result[shipType] = {}
       result[shipType][data.stat] = (result[shipType][data.stat] || 0) + (data.value || 0)
     }
   }
 
   return result
+}
+
+function shouldSkipStatForShipType(shipType, stat) {
+  return shipType === '항모' && stat === '대잠'
 }
 
 export function mergeStatsByShipType(...statsList) {

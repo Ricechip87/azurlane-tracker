@@ -10,8 +10,13 @@ export function calcFleetTechLevelStats(majorFactionTechPoints) {
     const points = majorFactionTechPoints[faction.value] || 0
     const currentLevel = findCurrentLevel(levels, points)
 
+    const appliedBonuses = new Set()
     for (const bonus of currentLevel?.bonuses || []) {
       const shipType = normalizeStatShipTypeValue(bonus.shipType)
+      const bonusKey = `${shipType}:${bonus.stat}`
+      if (appliedBonuses.has(bonusKey)) continue
+      appliedBonuses.add(bonusKey)
+
       if (!result[shipType]) result[shipType] = {}
       result[shipType][bonus.stat] = (result[shipType][bonus.stat] || 0) + (bonus.value || 0)
     }

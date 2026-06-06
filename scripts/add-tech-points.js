@@ -4,14 +4,50 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const TECH_CSV = path.join(__dirname, '../참고용/벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv')
+const OFFICIAL_TECH_JSON = path.join(__dirname, '../참고용/AzurLaneData/KR/ShareCfg/fleet_tech_ship_template.json')
 const CHARS_PATH = path.join(__dirname, '../src/data/characters.json')
 
 const STAT_NAMES = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
+const STAT_BY_ID = {
+  1: '내구',
+  2: '화력',
+  3: '뇌격',
+  4: '대공',
+  5: '항공',
+  6: '장전',
+  8: '명중',
+  9: '회피',
+  12: '대잠',
+}
+const SHIP_TYPE_BY_ID = {
+  1: '구축',
+  2: '경순',
+  3: '중순',
+  4: '순전',
+  5: '전함',
+  6: '경항모',
+  7: '항모',
+  8: '잠수',
+  10: '항전',
+  12: '공작',
+  13: '모니터',
+  17: '잠항모',
+  18: '대형순',
+  19: '운송',
+  20: '구축',
+  21: '구축',
+  22: '범선',
+  23: '범선',
+  24: '범선',
+}
 const NAME_ALIASES = {
   잉그러햄: '잉그레이엄',
 }
 
 const raw = fs.readFileSync(TECH_CSV, 'utf-8')
+const officialTech = fs.existsSync(OFFICIAL_TECH_JSON)
+  ? JSON.parse(fs.readFileSync(OFFICIAL_TECH_JSON, 'utf-8'))
+  : {}
 const lines = parseCSVRecords(raw).map(l => l.trimEnd())
 
 // No.가 숫자이거나 M/P/Z처럼 문자 접두어를 가진 데이터 행만 추출
@@ -125,9 +161,26 @@ for (const line of dataLines) {
 const characters = JSON.parse(fs.readFileSync(CHARS_PATH, 'utf-8'))
 
 let matched = 0
+let officialMatched = 0
 const updated = characters.map(c => {
   const tech = (!duplicateNames.has(c.name) && techByName.get(c.name))
     || (duplicateIds.has(normalizeId(c.id)) ? null : techById.get(normalizeId(c.id)))
+
+  const official = officialTech[String(c.gid)]
+  if (official) {
+    officialMatched++
+    const baseTechPoints = tech?.techPoints || c.techPoints || { acquired: 0, maxLB: 0, lv120: 0 }
+    return {
+      ...c,
+      techPoints: {
+        acquired: official.pt_get ?? baseTechPoints.acquired,
+        maxLB: official.pt_upgrage ?? baseTechPoints.maxLB,
+        lv120: official.pt_level ?? baseTechPoints.lv120,
+      },
+      statAcquired: parseOfficialStat(official.add_get_shiptype, official.add_get_attr, official.add_get_value),
+      stat120: parseOfficialStat(official.add_level_shiptype, official.add_level_attr, official.add_level_value),
+    }
+  }
 
   if (tech) {
     matched++
@@ -142,4 +195,16 @@ const updated = characters.map(c => {
 })
 
 fs.writeFileSync(CHARS_PATH, JSON.stringify(updated, null, 2), 'utf-8')
-console.log(`완료: ${matched}/${characters.length}명 기술 데이터 반영, CSV ${techRecords.length}행 확인`)
+console.log(`완료: 공식 원본 ${officialMatched}명, CSV ${matched}명 기술 데이터 반영, CSV ${techRecords.length}행 확인`)
+
+function parseOfficialStat(shipTypeIds, attrId, value) {
+  const stat = STAT_BY_ID[attrId] || ''
+  const parsedValue = value || 0
+  if (!stat || !parsedValue) return { shipTypes: [], stat: '', value: 0 }
+
+  return {
+    shipTypes: [...new Set((shipTypeIds || []).map(id => SHIP_TYPE_BY_ID[id]).filter(Boolean))],
+    stat,
+    value: parsedValue,
+  }
+}

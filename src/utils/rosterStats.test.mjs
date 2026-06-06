@@ -70,6 +70,18 @@ assert.deepEqual(
 )
 
 assert.deepEqual(
+  calcStatsByShipType([
+    {
+      acquired: '획득',
+      statAcquired: { shipTypes: ['경항모', '정규항모'], stat: '대잠', value: 1 },
+    },
+  ], 'acquired'),
+  {
+    경항모: { 대잠: 1 },
+  }
+)
+
+assert.deepEqual(
   mergeStatsByShipType(
     { 순전: { 내구: 176, 화력: 79 } },
     { 순전: { 내구: 55, 화력: 20 }, 전함: { 대공: 10 } },

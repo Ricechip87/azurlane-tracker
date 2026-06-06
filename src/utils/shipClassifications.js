@@ -15,6 +15,7 @@ const SHIP_TYPE_ALIASES = new Map([
 ])
 
 const STAT_SHIP_TYPE_ALIASES = new Map([
+  ['공작함', '공작'],
   ['정규항모', '항모'],
   ['초순', '대형순'],
   ['대순', '대형순'],

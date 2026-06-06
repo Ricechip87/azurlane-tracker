@@ -1,5 +1,27 @@
 # Change Log
 
+## 2026-06-07 - Reconcile In-Game Additional Stat Totals
+
+### Why
+- The additional stat totals needed to match the in-game fleet tech effect screen exactly.
+- Several imported CSV stat rows differed from the raw KR `AzurLaneData` fleet tech source.
+- Fleet tech level bonus rows can include multiple internal ship type ids that collapse to one displayed ship type, which could overcount after label normalization.
+
+### Changed
+- Updated the tech data import script to prefer `AzurLaneData/KR/ShareCfg/fleet_tech_ship_template.json` for ship tech points and additional stat grants when a `gid` match exists.
+- Re-imported character tech data from the official source, leaving CSV as a fallback for unmatched rows.
+- Deduplicated normalized fleet tech level bonuses per faction level so internal aliases like missile destroyer ids do not double-count under `구축`.
+- Normalized `공작함` to the in-game stat label `공작`.
+- Excluded carrier `대잠` from the displayed `항모` total to match the in-game effect screen behavior.
+- Added diagnostic scripts for comparing app data against the official fleet tech source and the current in-game stat totals.
+
+### Verified
+- `node scripts/diagnose-tech-source.mjs`
+- `node scripts/diagnose-stat-mismatch.mjs 참고용/검산용.json`
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Match In-Game Fleet Tech Stat Totals
 
 ### Why
