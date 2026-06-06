@@ -6,14 +6,40 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
   const [message, setMessage] = useState('')
   const savedCount = Object.keys(userData).length
 
-  const exportBackup = () => {
+  const exportBackup = async () => {
     const backup = createBackup(userData)
-    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' })
-    const url = URL.createObjectURL(blob)
     const date = backup.exportedAt.slice(0, 10)
+    const fileName = `azurlane-backup-${date}.json`
+    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' })
+
+    if ('showSaveFilePicker' in window) {
+      try {
+        const handle = await window.showSaveFilePicker({
+          suggestedName: fileName,
+          types: [
+            {
+              description: 'JSON 백업 파일',
+              accept: { 'application/json': ['.json'] },
+            },
+          ],
+        })
+        const writable = await handle.createWritable()
+        await writable.write(blob)
+        await writable.close()
+        setMessage(`백업 파일 저장 완료: ${savedCount}명`)
+        return
+      } catch (error) {
+        if (error instanceof DOMException && error.name === 'AbortError') {
+          setMessage('백업 저장 취소')
+          return
+        }
+      }
+    }
+
+    const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = `azurlane-backup-${date}.json`
+    link.download = fileName
     link.click()
     URL.revokeObjectURL(url)
     setMessage(`백업 파일 생성 완료: ${savedCount}명`)

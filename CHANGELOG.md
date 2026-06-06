@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-06 - Add Save-As Backup Export
+
+### Why
+- Browser downloads do not reliably show where a backup file was saved.
+- Users should be able to choose the backup folder and JSON filename when the browser supports the File System Access API.
+
+### Changed
+- Updated backup export to use the browser save dialog when `showSaveFilePicker` is available.
+- Kept the existing automatic download behavior as a fallback for unsupported browsers.
+- Added cancel handling so closing the save dialog does not create a fallback duplicate download.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Normalize Additional Stat Ship Type Labels
 
 ### Why
