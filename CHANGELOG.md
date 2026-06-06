@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-06 - Refresh GitHub Pages Actions Runtime
+
+### Why
+- GitHub Actions warned that Node.js 20-based actions are deprecated and will be forced to Node.js 24.
+- The deployment workflow should stay close to the current GitHub-hosted runner behavior so future Pages deploys remain quiet and predictable.
+
+### Changed
+- Updated `actions/checkout` to v5 and `actions/setup-node` to v6 so the build job uses Node.js 24-ready official actions.
+- Updated `actions/upload-pages-artifact` to v4 for the current Pages artifact action.
+- Added `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` to opt remaining JavaScript actions into the upcoming Node.js 24 runtime.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Add GitHub Pages Deployment Workflow
 
 ### Why
