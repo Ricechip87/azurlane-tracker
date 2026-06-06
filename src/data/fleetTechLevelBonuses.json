@@ -1,0 +1,3926 @@
+{
+  "USS": [
+    {
+      "level": 1,
+      "pt": 300,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "pt": 600,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "중순",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "장전",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "pt": 900,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "중순",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "장전",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 2
+        },
+        {
+          "shipType": "항전",
+          "stat": "대공",
+          "value": 1
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 1
+        },
+        {
+          "shipType": "공작",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "운송",
+          "stat": "대공",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "pt": 1200,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "중순",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "장전",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 2
+        },
+        {
+          "shipType": "항전",
+          "stat": "대공",
+          "value": 1
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 1
+        },
+        {
+          "shipType": "공작",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "운송",
+          "stat": "대공",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "pt": 1500,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "중순",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "장전",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "대공",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 2
+        },
+        {
+          "shipType": "항전",
+          "stat": "대공",
+          "value": 1
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 1
+        },
+        {
+          "shipType": "공작",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "운송",
+          "stat": "대공",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "pt": 1800,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "중순",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "장전",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 5
+        },
+        {
+          "shipType": "항전",
+          "stat": "대공",
+          "value": 3
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "공작",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "운송",
+          "stat": "대공",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "pt": 2100,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "중순",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "장전",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 5
+        },
+        {
+          "shipType": "항전",
+          "stat": "대공",
+          "value": 3
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "공작",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "운송",
+          "stat": "대공",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "pt": 2400,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "경순",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "중순",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "모니터",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "대형순",
+          "stat": "장전",
+          "value": 10
+        },
+        {
+          "shipType": "순전",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "대공",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 5
+        },
+        {
+          "shipType": "항전",
+          "stat": "대공",
+          "value": 3
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "공작",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "운송",
+          "stat": "대공",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "pt": 2700,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "경순",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "중순",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "모니터",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "대형순",
+          "stat": "장전",
+          "value": 10
+        },
+        {
+          "shipType": "순전",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "전함",
+          "stat": "대공",
+          "value": 10
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 10
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 10
+        },
+        {
+          "shipType": "항전",
+          "stat": "대공",
+          "value": 7
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 7
+        },
+        {
+          "shipType": "공작",
+          "stat": "대공",
+          "value": 15
+        },
+        {
+          "shipType": "운송",
+          "stat": "대공",
+          "value": 15
+        }
+      ]
+    }
+  ],
+  "HMS": [
+    {
+      "level": 1,
+      "pt": 300,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 2
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "pt": 600,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 2
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "pt": 900,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 2
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 1
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "회피",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "pt": 1200,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 5
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "대잠",
+          "value": 2
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "회피",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "pt": 1500,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 5
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "회피",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "pt": 1800,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 5
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "회피",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "pt": 2100,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 10
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "대잠",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "회피",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "pt": 2400,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 10
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "경순",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 10
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "순전",
+          "stat": "회피",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "pt": 2700,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 10
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "경항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "장전",
+          "value": 7
+        },
+        {
+          "shipType": "경항모",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "경순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "경순",
+          "stat": "대잠",
+          "value": 10
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 10
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 10
+        },
+        {
+          "shipType": "순전",
+          "stat": "회피",
+          "value": 10
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 7
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 7
+        }
+      ]
+    }
+  ],
+  "IJN": [
+    {
+      "level": 1,
+      "pt": 300,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "잠수",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 2
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 2
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "항공",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "pt": 600,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "잠수",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 2
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 2
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "pt": 900,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 1
+        },
+        {
+          "shipType": "잠수",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 2
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 2
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "항전",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "공작",
+          "stat": "내구",
+          "value": 15
+        },
+        {
+          "shipType": "운송",
+          "stat": "내구",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "pt": 1200,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "잠수",
+          "stat": "내구",
+          "value": 25
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "내구",
+          "value": 25
+        },
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "항공",
+          "value": 6
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 1
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 1
+        },
+        {
+          "shipType": "경순",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "항전",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "공작",
+          "stat": "내구",
+          "value": 15
+        },
+        {
+          "shipType": "운송",
+          "stat": "내구",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "pt": 1500,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "잠수",
+          "stat": "내구",
+          "value": 25
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "내구",
+          "value": 25
+        },
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "항공",
+          "value": 6
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 2
+        },
+        {
+          "shipType": "항전",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "공작",
+          "stat": "내구",
+          "value": 15
+        },
+        {
+          "shipType": "운송",
+          "stat": "내구",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "pt": 1800,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 3
+        },
+        {
+          "shipType": "잠수",
+          "stat": "내구",
+          "value": 25
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "내구",
+          "value": 25
+        },
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "항공",
+          "value": 6
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "항전",
+          "stat": "항공",
+          "value": 6
+        },
+        {
+          "shipType": "공작",
+          "stat": "내구",
+          "value": 30
+        },
+        {
+          "shipType": "운송",
+          "stat": "내구",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "pt": 2100,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "잠수",
+          "stat": "내구",
+          "value": 50
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "내구",
+          "value": 50
+        },
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 10
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 10
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "항공",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "경순",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "항전",
+          "stat": "항공",
+          "value": 6
+        },
+        {
+          "shipType": "공작",
+          "stat": "내구",
+          "value": 30
+        },
+        {
+          "shipType": "운송",
+          "stat": "내구",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "pt": 2400,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "잠수",
+          "stat": "내구",
+          "value": 50
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "내구",
+          "value": 50
+        },
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 10
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 10
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "항공",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "경순",
+          "stat": "뇌격",
+          "value": 13
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 13
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 6
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 5
+        },
+        {
+          "shipType": "항전",
+          "stat": "항공",
+          "value": 6
+        },
+        {
+          "shipType": "공작",
+          "stat": "내구",
+          "value": 30
+        },
+        {
+          "shipType": "운송",
+          "stat": "내구",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "pt": 2700,
+      "bonuses": [
+        {
+          "shipType": "경항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "항모",
+          "stat": "항공",
+          "value": 7
+        },
+        {
+          "shipType": "잠수",
+          "stat": "내구",
+          "value": 50
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "내구",
+          "value": 50
+        },
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 10
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 10
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "항공",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "경순",
+          "stat": "뇌격",
+          "value": 13
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 13
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 6
+        },
+        {
+          "shipType": "순전",
+          "stat": "화력",
+          "value": 10
+        },
+        {
+          "shipType": "전함",
+          "stat": "화력",
+          "value": 10
+        },
+        {
+          "shipType": "항전",
+          "stat": "화력",
+          "value": 10
+        },
+        {
+          "shipType": "항전",
+          "stat": "항공",
+          "value": 9
+        },
+        {
+          "shipType": "공작",
+          "stat": "내구",
+          "value": 45
+        },
+        {
+          "shipType": "운송",
+          "stat": "내구",
+          "value": 45
+        }
+      ]
+    }
+  ],
+  "KMS": [
+    {
+      "level": 1,
+      "pt": 450,
+      "bonuses": [
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "잠수",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "잠수",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "회피",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "pt": 900,
+      "bonuses": [
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "잠수",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "잠수",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "중순",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "모니터",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "대형순",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "pt": 1350,
+      "bonuses": [
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 3
+        },
+        {
+          "shipType": "잠수",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "잠수",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "회피",
+          "value": 3
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "중순",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "모니터",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "대형순",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "순전",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "전함",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "항전",
+          "stat": "내구",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "pt": 1800,
+      "bonuses": [
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "잠수",
+          "stat": "명중",
+          "value": 7
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "명중",
+          "value": 7
+        },
+        {
+          "shipType": "잠수",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 4
+        },
+        {
+          "shipType": "중순",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "모니터",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "대형순",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 1
+        },
+        {
+          "shipType": "순전",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "전함",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "항전",
+          "stat": "내구",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "pt": 2250,
+      "bonuses": [
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "잠수",
+          "stat": "명중",
+          "value": 7
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "명중",
+          "value": 7
+        },
+        {
+          "shipType": "잠수",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "모니터",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "대형순",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 4
+        },
+        {
+          "shipType": "대형순",
+          "stat": "뇌격",
+          "value": 4
+        },
+        {
+          "shipType": "모니터",
+          "stat": "명중",
+          "value": 2
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "순전",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "전함",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "항전",
+          "stat": "내구",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "pt": 2700,
+      "bonuses": [
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 7
+        },
+        {
+          "shipType": "잠수",
+          "stat": "명중",
+          "value": 7
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "명중",
+          "value": 7
+        },
+        {
+          "shipType": "잠수",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "회피",
+          "value": 7
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "모니터",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "대형순",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 4
+        },
+        {
+          "shipType": "대형순",
+          "stat": "뇌격",
+          "value": 4
+        },
+        {
+          "shipType": "모니터",
+          "stat": "명중",
+          "value": 2
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "순전",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "전함",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "항전",
+          "stat": "내구",
+          "value": 15
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "pt": 3150,
+      "bonuses": [
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 13
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 13
+        },
+        {
+          "shipType": "잠수",
+          "stat": "명중",
+          "value": 13
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "명중",
+          "value": 13
+        },
+        {
+          "shipType": "잠수",
+          "stat": "회피",
+          "value": 13
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "회피",
+          "value": 13
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "내구",
+          "value": 10
+        },
+        {
+          "shipType": "모니터",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "대형순",
+          "stat": "내구",
+          "value": 5
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 4
+        },
+        {
+          "shipType": "대형순",
+          "stat": "뇌격",
+          "value": 4
+        },
+        {
+          "shipType": "모니터",
+          "stat": "명중",
+          "value": 2
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "순전",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "전함",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "항전",
+          "stat": "내구",
+          "value": 15
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "pt": 3600,
+      "bonuses": [
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 13
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 13
+        },
+        {
+          "shipType": "잠수",
+          "stat": "명중",
+          "value": 13
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "명중",
+          "value": 13
+        },
+        {
+          "shipType": "잠수",
+          "stat": "회피",
+          "value": 13
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "회피",
+          "value": 13
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 35
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 35
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 35
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 12
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 12
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 12
+        },
+        {
+          "shipType": "중순",
+          "stat": "내구",
+          "value": 35
+        },
+        {
+          "shipType": "모니터",
+          "stat": "내구",
+          "value": 25
+        },
+        {
+          "shipType": "대형순",
+          "stat": "내구",
+          "value": 25
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 10
+        },
+        {
+          "shipType": "대형순",
+          "stat": "뇌격",
+          "value": 10
+        },
+        {
+          "shipType": "모니터",
+          "stat": "명중",
+          "value": 6
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "순전",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "전함",
+          "stat": "내구",
+          "value": 20
+        },
+        {
+          "shipType": "항전",
+          "stat": "내구",
+          "value": 15
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "pt": 4050,
+      "bonuses": [
+        {
+          "shipType": "잠수",
+          "stat": "뇌격",
+          "value": 13
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "뇌격",
+          "value": 13
+        },
+        {
+          "shipType": "잠수",
+          "stat": "명중",
+          "value": 13
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "명중",
+          "value": 13
+        },
+        {
+          "shipType": "잠수",
+          "stat": "회피",
+          "value": 13
+        },
+        {
+          "shipType": "잠항모",
+          "stat": "회피",
+          "value": 13
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 35
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 35
+        },
+        {
+          "shipType": "구축",
+          "stat": "내구",
+          "value": 35
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "화력",
+          "value": 9
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 12
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 12
+        },
+        {
+          "shipType": "구축",
+          "stat": "뇌격",
+          "value": 12
+        },
+        {
+          "shipType": "중순",
+          "stat": "내구",
+          "value": 35
+        },
+        {
+          "shipType": "모니터",
+          "stat": "내구",
+          "value": 25
+        },
+        {
+          "shipType": "대형순",
+          "stat": "내구",
+          "value": 25
+        },
+        {
+          "shipType": "중순",
+          "stat": "뇌격",
+          "value": 10
+        },
+        {
+          "shipType": "대형순",
+          "stat": "뇌격",
+          "value": 10
+        },
+        {
+          "shipType": "모니터",
+          "stat": "명중",
+          "value": 6
+        },
+        {
+          "shipType": "중순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "모니터",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "대형순",
+          "stat": "화력",
+          "value": 3
+        },
+        {
+          "shipType": "순전",
+          "stat": "내구",
+          "value": 55
+        },
+        {
+          "shipType": "전함",
+          "stat": "내구",
+          "value": 55
+        },
+        {
+          "shipType": "항전",
+          "stat": "내구",
+          "value": 45
+        },
+        {
+          "shipType": "순전",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "전함",
+          "stat": "명중",
+          "value": 3
+        },
+        {
+          "shipType": "항전",
+          "stat": "명중",
+          "value": 3
+        }
+      ]
+    }
+  ]
+}

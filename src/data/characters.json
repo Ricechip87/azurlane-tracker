@@ -11839,21 +11839,29 @@
     "canRemodel": false,
     "skillPoints": 0,
     "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "전함",
+        "순전",
+        "항전"
+      ],
+      "stat": "내구",
+      "value": 2
     },
     "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
+      "shipTypes": [
+        "전함",
+        "순전",
+        "항전"
+      ],
+      "stat": "화력",
+      "value": 1
     },
     "gid": 70504,
     "iconUrl": "/azurlane-tracker/ship-icons/705040.png",
     "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
+      "acquired": 44,
+      "maxLB": 88,
+      "lv120": 66
     }
   },
   {
@@ -12655,7 +12663,7 @@
     "gid": 40126,
     "iconUrl": "/azurlane-tracker/ship-icons/401260.png",
     "techPoints": {
-      "acquired": 14,
+      "acquired": 18,
       "maxLB": 28,
       "lv120": 20
     }

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { calcStatsByShipType, summarizeRoster } from './rosterStats.js'
+import { calcStatsByShipType, mergeStatsByShipType, summarizeRoster } from './rosterStats.js'
 
 const roster = [
   {
@@ -66,6 +66,17 @@ assert.deepEqual(
   {
     경항모: { 내구: 2 },
     항모: { 내구: 2, 항공: 1 },
+  }
+)
+
+assert.deepEqual(
+  mergeStatsByShipType(
+    { 순전: { 내구: 176, 화력: 79 } },
+    { 순전: { 내구: 55, 화력: 20 }, 전함: { 대공: 10 } },
+  ),
+  {
+    순전: { 내구: 231, 화력: 99 },
+    전함: { 대공: 10 },
   }
 )
 

@@ -1,5 +1,23 @@
 # Change Log
 
+## 2026-06-06 - Match In-Game Fleet Tech Stat Totals
+
+### Why
+- The in-game fleet tech effect screen includes major faction fleet tech level bonuses in addition to ship acquisition and Lv.120 bonuses.
+- The app previously showed only ship acquisition/Lv.120 totals, so displayed stat totals were lower than in-game values.
+- Some CSV records contain quoted newlines, which caused ships such as `소비에츠카야 벨로루시아` to miss tech point/stat data during import.
+
+### Changed
+- Added fleet tech level bonus data derived from the KR `fleet_tech_template` reference.
+- Updated the stat summary to show the in-game style total: acquisition + Lv.120 + fleet tech level.
+- Fixed the tech CSV importer to keep quoted multiline records intact.
+- Re-ran tech data import so `소비에츠카야 벨로루시아` receives its missing tech point/stat data.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-06 - Clarify Firefox Backup Export Fallback
 
 ### Why

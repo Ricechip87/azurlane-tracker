@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "test": "node src/utils/backup.test.mjs && node src/utils/acquisitionStatus.test.mjs && node src/utils/factions.test.mjs && node src/utils/shipClassifications.test.mjs && node src/utils/fleetTech.test.mjs && node src/utils/rosterStats.test.mjs",
+    "test": "node src/utils/backup.test.mjs && node src/utils/acquisitionStatus.test.mjs && node src/utils/factions.test.mjs && node src/utils/shipClassifications.test.mjs && node src/utils/fleetTech.test.mjs && node src/utils/fleetTechLevelStats.test.mjs && node src/utils/rosterStats.test.mjs",
     "audit:tech": "node scripts/audit-tech-points.mjs",
     "sync:icons": "node scripts/sync-local-icons.js",
     "preview": "vite preview"

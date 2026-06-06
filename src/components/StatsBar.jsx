@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from '../utils/fleetTech.js'
-import { calcStatsByShipType, summarizeRoster } from '../utils/rosterStats.js'
+import { calcStatsByShipType, mergeStatsByShipType, summarizeRoster } from '../utils/rosterStats.js'
+import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
 
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
 const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대형순', '순전', '전함', '경항모', '항모', '잠수', '항전', '공작', '모니터', '잠항모', '운송', '범선']
@@ -13,6 +14,8 @@ export default function StatsBar({ characters }) {
 
   const acquiredStats = calcStatsByShipType(characters, 'acquired')
   const maxedStats = calcStatsByShipType(characters, '120')
+  const levelStats = calcFleetTechLevelStats(majorFactionTechPoints)
+  const totalStats = mergeStatsByShipType(acquiredStats, maxedStats, levelStats)
 
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
@@ -56,8 +59,7 @@ export default function StatsBar({ characters }) {
             </select>
           </div>
           <div className="divide-y divide-gray-800">
-            <StatGroup label="입수 스탯 총합" statsByType={acquiredStats} selectedType={selectedType} sub="획득 기준" />
-            <StatGroup label="120 스탯 총합" statsByType={maxedStats} selectedType={selectedType} sub="120 기준" />
+            <StatGroup label="인게임 효과 합계" statsByType={totalStats} selectedType={selectedType} sub="획득/120/함대 기술 레벨 기준" />
           </div>
         </div>
 

@@ -12,7 +12,7 @@ const NAME_ALIASES = {
 }
 
 const raw = fs.readFileSync(TECH_CSV, 'utf-8')
-const lines = raw.split('\n').map(l => l.trimEnd())
+const lines = parseCSVRecords(raw).map(l => l.trimEnd())
 
 // No.가 숫자이거나 M/P/Z처럼 문자 접두어를 가진 데이터 행만 추출
 const dataLines = lines.filter(l => /^[A-Za-z]?\d{3,}/.test(l))
@@ -40,6 +40,32 @@ function parseCSVLine(line) {
   }
   result.push(cur)
   return result
+}
+
+function parseCSVRecords(text) {
+  const records = []
+  let cur = ''
+  let inQuote = false
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i]
+    if (ch === '"') {
+      if (inQuote && text[i + 1] === '"') { cur += ch + text[i + 1]; i++ }
+      else {
+        inQuote = !inQuote
+        cur += ch
+      }
+    } else if ((ch === '\n' || ch === '\r') && !inQuote) {
+      if (cur.trim()) records.push(cur)
+      cur = ''
+      if (ch === '\r' && text[i + 1] === '\n') i++
+    } else {
+      cur += ch
+    }
+  }
+
+  if (cur.trim()) records.push(cur)
+  return records
 }
 
 function parseStat(cols, startIdx) {

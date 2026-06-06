@@ -37,3 +37,18 @@ export function calcStatsByShipType(characters, mode) {
 
   return result
 }
+
+export function mergeStatsByShipType(...statsList) {
+  const result = {}
+
+  for (const statsByType of statsList) {
+    for (const [shipType, stats] of Object.entries(statsByType || {})) {
+      if (!result[shipType]) result[shipType] = {}
+      for (const [stat, value] of Object.entries(stats)) {
+        result[shipType][stat] = (result[shipType][stat] || 0) + value
+      }
+    }
+  }
+
+  return result
+}
