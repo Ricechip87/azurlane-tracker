@@ -12,23 +12,19 @@ body {
 }
 
 .auto-scroll-name {
-  animation: name-auto-scroll var(--name-scroll-duration, 8s) ease-in-out infinite;
+  animation: name-auto-scroll var(--name-scroll-duration, 8s) linear infinite;
   will-change: transform;
 }
 
 @keyframes name-auto-scroll {
   0%,
-  15% {
+  18% {
     transform: translateX(0);
   }
 
-  50%,
-  65% {
-    transform: translateX(calc(-1 * var(--name-scroll-distance, 0px)));
-  }
-
+  82%,
   100% {
-    transform: translateX(0);
+    transform: translateX(calc(-1 * var(--name-scroll-distance, 0px)));
   }
 }
 

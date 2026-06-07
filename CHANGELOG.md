@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Make Roster Name Scroll Loop Forward
+
+### Why
+- Long roster names should restart from the beginning after showing the end, instead of scrolling back and forth.
+
+### Changed
+- Changed the long-name animation from a ping-pong motion to a forward loop.
+- Kept the start and end briefly readable before the loop restarts.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Auto Scroll Long Roster Names
 
 ### Why
