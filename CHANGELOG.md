@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-06-07 - Track Candidate Sort Rule Follow-up
+
+### Why
+- The current fleet tech candidate sort rule may need to change after the growth recommendation logic is finished.
+
+### Changed
+- Added a PLAN follow-up to revisit the candidate sort rule after growth recommendation work.
+- Documented the current temporary sort order for future comparison.
+
+### Verified
+- Documentation-only change.
+
 ## 2026-06-07 - Make Roster Name Scroll Loop Forward
 
 ### Why
