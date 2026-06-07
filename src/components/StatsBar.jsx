@@ -9,6 +9,10 @@ import { summarizeRoster } from '../utils/rosterStats.js'
 import { calcFleetTechProgress } from '../utils/fleetTechLevelStats.js'
 import { normalizeStatShipTypeValue } from '../utils/shipClassifications.js'
 import fleetTechGuideImage from '../assets/loading-illustrations/100021-painting.png'
+import ussFleetTechImage from '../assets/fleet-tech-guides/uss-new-jersey.png'
+import hmsFleetTechImage from '../assets/fleet-tech-guides/hms-albion.png'
+import ijnFleetTechImage from '../assets/fleet-tech-guides/ijn-shinano.png'
+import kmsFleetTechImage from '../assets/fleet-tech-guides/kms-bismarck-zwei.png'
 
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
 const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대형순', '순전', '전함', '경항모', '항모', '잠수', '항전', '공작', '모니터', '잠항모', '운송', '범선']
@@ -18,6 +22,13 @@ const RARITY_COLOR = {
   SR: 'text-purple-400',
   SSR: 'text-yellow-300',
   UR: 'text-red-300',
+}
+
+const FLEET_TECH_GUIDE_IMAGES = {
+  유니온: ussFleetTechImage,
+  로열: hmsFleetTechImage,
+  중앵: ijnFleetTechImage,
+  철혈: kmsFleetTechImage,
 }
 
 export default function StatsBar({ characters }) {
@@ -208,7 +219,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
 
 function FleetTechGuideImagePanel({ context }) {
   const imageContextKey = context ? `${context.factionValue}:${context.type}` : 'default'
-  const imageSrc = fleetTechGuideImage
+  const imageSrc = context ? FLEET_TECH_GUIDE_IMAGES[context.factionValue] || fleetTechGuideImage : fleetTechGuideImage
 
   return (
     <section className="border-t border-gray-800 bg-gray-950 p-4">
