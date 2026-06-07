@@ -252,7 +252,20 @@ function MyRosterPage({ characters, filteredCharacters, filters, setFilters, upd
         <FilterPanel filters={filters} setFilters={setFilters} characters={characters} />
         <CharacterTable characters={filteredCharacters} updateUser={updateUser} />
       </main>
+      <BackToTopButton />
     </>
+  )
+}
+
+function BackToTopButton() {
+  return (
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      className="fixed bottom-5 right-5 z-30 rounded border border-blue-500/70 bg-blue-700/90 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-950/40 transition-colors hover:bg-blue-600"
+    >
+      맨위로
+    </button>
   )
 }
 

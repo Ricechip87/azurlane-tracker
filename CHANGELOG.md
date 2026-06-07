@@ -22,6 +22,7 @@
 - Center-aligned all fleet tech candidate table columns except the ship-name column.
 - Updated the header tagline to `벽람항로 개인용 함선 육성툴`.
 - Made the roster filter panel stay visible below the top menu while scrolling.
+- Added a fixed bottom-right `맨위로` button on the roster page.
 
 ### Verified
 - `npm.cmd run test`
