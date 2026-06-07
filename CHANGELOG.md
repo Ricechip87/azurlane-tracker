@@ -30,6 +30,8 @@
 - Added faction-specific fleet tech guide images for USS, HMS, IJN, and KMS button selections.
 - Added a small placeholder note below the fleet tech guide image.
 - Clarified that the fleet tech guide image is a temporary placeholder.
+- Moved large guide images to public static assets and loaded character data as a fetched JSON asset to reduce the main JS chunk.
+- Disabled the Rolldown plugin timing advisory while keeping normal build warnings enabled.
 
 ### Verified
 - `npm.cmd run test`

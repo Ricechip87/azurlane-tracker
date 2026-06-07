@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import characters from './data/characters.json'
+import charactersUrl from './data/characters.json?url'
 import { useLocalStorage } from './hooks/useLocalStorage'
 import FilterPanel from './components/FilterPanel'
 import CharacterTable from './components/CharacterTable'
@@ -10,14 +10,10 @@ import { normalizeAcquisitionStatus } from './utils/acquisitionStatus.js'
 import { matchesShipClassification } from './utils/shipClassifications.js'
 import heroImage from './assets/hero.png'
 
-const loadingIllustrationModules = import.meta.glob('./assets/loading-illustrations/*.{png,jpg,jpeg,webp,gif}', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-})
-const LOADING_ILLUSTRATIONS = Object.entries(loadingIllustrationModules)
-  .sort(([a], [b]) => a.localeCompare(b))
-  .map(([, src]) => src)
+const publicAssetUrl = path => `${import.meta.env.BASE_URL}${path}`
+const LOADING_ILLUSTRATIONS = [
+  publicAssetUrl('images/loading-illustrations/100021-painting.png'),
+]
 const LOADING_ILLUSTRATION_INTERVAL_MS = 8000
 
 const INITIAL_FILTERS = {
@@ -65,8 +61,35 @@ function isCollabCharacter(c) {
 
 export default function App() {
   const [activePage, setActivePage] = useState('home')
+  const [characters, setCharacters] = useState([])
+  const [charactersLoaded, setCharactersLoaded] = useState(false)
+  const [charactersError, setCharactersError] = useState('')
   const [userData, setUserData] = useLocalStorage('azurlane-userdata', {})
   const [filters, setFilters] = useState(INITIAL_FILTERS)
+
+  useEffect(() => {
+    let ignore = false
+
+    async function loadCharacters() {
+      try {
+        const response = await fetch(charactersUrl)
+        if (!response.ok) throw new Error(`characters.json ${response.status}`)
+        const data = await response.json()
+        if (ignore) return
+        setCharacters(data)
+        setCharactersLoaded(true)
+      } catch (error) {
+        if (ignore) return
+        setCharactersError(error instanceof Error ? error.message : '알 수 없는 오류')
+      }
+    }
+
+    loadCharacters()
+
+    return () => {
+      ignore = true
+    }
+  }, [])
 
   const updateUser = (id, field, value) => {
     setUserData(prev => ({
@@ -77,7 +100,7 @@ export default function App() {
 
   const enriched = useMemo(() =>
     characters.map(c => ({ ...c, ...(userData[c.id] || {}) })),
-    [userData]
+    [characters, userData]
   )
 
   const filtered = useMemo(() => {
@@ -109,7 +132,7 @@ export default function App() {
       <TopMenu activePage={activePage} onSelect={setActivePage} />
 
       {activePage === 'home' && <HomePage />}
-      {activePage === 'my-roster' && (
+      {activePage === 'my-roster' && (charactersLoaded ? (
         <MyRosterPage
           characters={enriched}
           filteredCharacters={filtered}
@@ -119,14 +142,28 @@ export default function App() {
           userData={userData}
           setUserData={setUserData}
         />
-      )}
-      {activePage === 'growth-recommend' && (
+      ) : (
+        <DataLoadStatePage error={charactersError} />
+      ))}
+      {activePage === 'growth-recommend' && (charactersLoaded ? (
         <RecommendationPage characters={enriched} />
-      )}
+      ) : (
+        <DataLoadStatePage error={charactersError} />
+      ))}
       {activePage !== 'home' && activePage !== 'my-roster' && activePage !== 'growth-recommend' && (
         <UnderConstructionPage title={PAGE_TITLES[activePage] || '공사중'} />
       )}
     </div>
+  )
+}
+
+function DataLoadStatePage({ error }) {
+  return (
+    <main className="mx-auto max-w-[1500px] p-6">
+      <section className="border border-gray-800 bg-gray-900 px-6 py-10 text-sm text-gray-400">
+        {error ? `함선 데이터를 불러오지 못했습니다. (${error})` : '함선 데이터를 불러오는 중입니다.'}
+      </section>
+    </main>
   )
 }
 
