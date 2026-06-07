@@ -37,7 +37,6 @@ export default function CharacterTable({ characters, updateUser }) {
               <th className="px-3 py-2 text-center">기술점수</th>
               <th className="px-3 py-2 text-center">입수 스탯</th>
               <th className="px-3 py-2 text-center">120 스탯</th>
-              <th className="px-3 py-2 text-left">메모</th>
             </tr>
           </thead>
           <tbody>
@@ -123,15 +122,6 @@ function CharacterRow({ char: c, updateUser, even }) {
       </td>
       <td className="px-3 py-2 text-center">
         <StatCell data={c.stat120} />
-      </td>
-      <td className="px-3 py-2">
-        <input
-          type="text"
-          value={c.comment || ''}
-          onChange={e => updateUser(c.id, 'comment', e.target.value)}
-          placeholder="메모..."
-          className="bg-transparent border-b border-gray-700 focus:border-blue-500 outline-none text-xs w-full text-gray-300 placeholder-gray-600"
-        />
       </td>
     </tr>
   )

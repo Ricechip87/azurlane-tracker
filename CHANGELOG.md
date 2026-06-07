@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Remove Roster Table Memo Column
+
+### Why
+- The roster table needs more room for status controls, and memo editing will move to another area later.
+
+### Changed
+- Removed the memo header and memo input cells from the roster table.
+- Kept existing saved `comment` data untouched for future reuse.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Prevent Status Dropdown Label Wrapping
 
 ### Why
