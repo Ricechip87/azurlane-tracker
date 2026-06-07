@@ -15,6 +15,8 @@ const KEEL_OPTS = ['없음', '가능', '완료']
 const SKILLED_OPTS = ['스작 안함', '스작 중', '스작 완료']
 const AFFECTION_OPTS = ['호감작 안함', '호감작 중', '서약 완료', '호감도 Max']
 const EQUIP_OPTS = ['없음', '미제작', '제작']
+const TH_CENTER = 'px-3 py-2 text-center align-middle whitespace-nowrap'
+const TD_CENTER = 'px-3 py-2 text-center align-middle'
 
 export default function CharacterTable({ characters, updateUser }) {
   return (
@@ -23,20 +25,20 @@ export default function CharacterTable({ characters, updateUser }) {
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-gray-800 text-gray-400 text-xs">
-              <th className="px-3 py-2 text-left w-8">★</th>
-              <th className="px-3 py-2 text-left">이름</th>
-              <th className="px-3 py-2 text-center">레어도</th>
-              <th className="px-3 py-2 text-center">함종</th>
-              <th className="px-3 py-2 text-center">진영</th>
-              <th className="px-3 py-2 text-center">개장</th>
-              <th className="px-3 py-2 text-center">용골편찬</th>
-              <th className="px-3 py-2 text-center">획득/육성</th>
-              <th className="px-3 py-2 text-center">스킬작</th>
-              <th className="px-3 py-2 text-center">호감작</th>
-              <th className="px-3 py-2 text-center">전용 장비</th>
-              <th className="px-3 py-2 text-center">기술점수</th>
-              <th className="px-3 py-2 text-center">입수 스탯</th>
-              <th className="px-3 py-2 text-center">120 스탯</th>
+              <th className={`${TH_CENTER} w-8`}>★</th>
+              <th className="px-3 py-2 text-left align-middle whitespace-nowrap">이름</th>
+              <th className={TH_CENTER}>레어도</th>
+              <th className={TH_CENTER}>함종</th>
+              <th className={TH_CENTER}>진영</th>
+              <th className={TH_CENTER}>개장</th>
+              <th className={TH_CENTER}>용골편찬</th>
+              <th className={TH_CENTER}>획득/육성</th>
+              <th className={TH_CENTER}>스킬작</th>
+              <th className={TH_CENTER}>호감작</th>
+              <th className={TH_CENTER}>전용 장비</th>
+              <th className={TH_CENTER}>기술점수</th>
+              <th className={TH_CENTER}>입수 스탯</th>
+              <th className={TH_CENTER}>120 스탯</th>
             </tr>
           </thead>
           <tbody>
@@ -65,7 +67,7 @@ function CharacterRow({ char: c, updateUser, even }) {
 
   return (
     <tr className={`${bg} hover:bg-gray-800 transition-colors border-t border-gray-800`}>
-      <td className="px-3 py-2 text-center">
+      <td className={TD_CENTER}>
         <button
           onClick={() => updateUser(c.id, 'favorite', !c.favorite)}
           className={`text-lg leading-none ${c.favorite ? 'text-yellow-400' : 'text-gray-700 hover:text-gray-500'}`}
@@ -73,7 +75,7 @@ function CharacterRow({ char: c, updateUser, even }) {
           ★
         </button>
       </td>
-      <td className="px-3 py-2">
+      <td className="px-3 py-2 align-middle">
         <div className="flex items-center gap-2">
           {c.iconUrl ? (
             <img src={c.iconUrl} alt={c.name} className="w-8 h-8 rounded object-cover flex-shrink-0" loading="lazy"
@@ -84,43 +86,43 @@ function CharacterRow({ char: c, updateUser, even }) {
           <span className="font-medium">{c.name}{isSP && <span className="text-xs text-cyan-400 ml-1">(SP)</span>}</span>
         </div>
       </td>
-      <td className={`px-3 py-2 text-center font-bold ${RARITY_COLOR[c.rarity] || 'text-gray-400'}`}>
+      <td className={`${TD_CENTER} font-bold ${RARITY_COLOR[c.rarity] || 'text-gray-400'}`}>
         {c.rarity}
       </td>
-      <td className="px-3 py-2 text-center text-gray-300">{c.shipType}</td>
-      <td className="px-3 py-2 text-center text-gray-400 text-xs">{c.faction}</td>
-      <td className="px-3 py-2 text-center">
+      <td className={`${TD_CENTER} text-gray-300`}>{c.shipType}</td>
+      <td className={`${TD_CENTER} text-xs text-gray-400`}>{c.faction}</td>
+      <td className={TD_CENTER}>
         <StatusSelect value={remodel} options={REMODEL_OPTS} onChange={v => updateUser(c.id, 'remodeled', v)}
           colorMap={{ '없음': 'bg-gray-700 text-gray-400', '미개장': 'bg-yellow-700 text-yellow-200', '개장': 'bg-green-700 text-green-200' }} />
       </td>
-      <td className="px-3 py-2 text-center">
+      <td className={TD_CENTER}>
         {isSP
           ? <StatusSelect value={keel} options={KEEL_OPTS} onChange={v => updateUser(c.id, 'keel', v)}
               colorMap={{ '없음': 'bg-gray-700 text-gray-400', '가능': 'bg-yellow-700 text-yellow-200', '완료': 'bg-green-700 text-green-200' }} />
           : <span className="text-gray-600 text-xs">-</span>
         }
       </td>
-      <td className="px-3 py-2 text-center">
+      <td className={TD_CENTER}>
         <StatusSelect value={acquired} options={ACQUISITION_STATUSES} onChange={v => updateUser(c.id, 'acquired', v)}
           colorMap={{ '미획득': 'bg-gray-700 text-gray-400', '획득': 'bg-blue-700 text-blue-200', '풀돌': 'bg-cyan-700 text-cyan-200', '100': 'bg-yellow-700 text-yellow-200', '120': 'bg-green-700 text-green-200', '125': 'bg-purple-700 text-purple-200' }} />
       </td>
-      <td className="px-3 py-2 text-center">
+      <td className={TD_CENTER}>
         <StatusSelect value={skilled} options={SKILLED_OPTS} onChange={v => updateUser(c.id, 'skilled', v)}
           colorMap={{ '스작 완료': 'bg-green-700 text-green-200', '스작 중': 'bg-yellow-700 text-yellow-200', '스작 안함': 'bg-gray-700 text-gray-400' }} />
       </td>
-      <td className="px-3 py-2 text-center">
+      <td className={TD_CENTER}>
         <StatusSelect value={affection} options={AFFECTION_OPTS} onChange={v => updateUser(c.id, 'affection', v)}
           colorMap={{ '호감작 안함': 'bg-gray-700 text-gray-400', '호감작 중': 'bg-yellow-700 text-yellow-200', '서약 완료': 'bg-red-700 text-red-200', '호감도 Max': 'bg-pink-700 text-pink-200' }} />
       </td>
-      <td className="px-3 py-2 text-center">
+      <td className={TD_CENTER}>
         <StatusSelect value={equip} options={EQUIP_OPTS} onChange={v => updateUser(c.id, 'equip', v)}
           colorMap={{ '없음': 'bg-gray-700 text-gray-400', '미제작': 'bg-yellow-700 text-yellow-200', '제작': 'bg-green-700 text-green-200' }} />
       </td>
-      <td className="px-3 py-2 text-center text-gray-300">{calcTechPoints(c)}</td>
-      <td className="px-3 py-2 text-center">
+      <td className={`${TD_CENTER} text-gray-300`}>{calcTechPoints(c)}</td>
+      <td className={TD_CENTER}>
         <StatCell data={c.statAcquired} />
       </td>
-      <td className="px-3 py-2 text-center">
+      <td className={TD_CENTER}>
         <StatCell data={c.stat120} />
       </td>
     </tr>

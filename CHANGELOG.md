@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-07 - Align Roster Table Columns
+
+### Why
+- Roster table headers and values wrapped or sat unevenly after status controls became wider.
+
+### Changed
+- Centered and middle-aligned every roster table column except the name column.
+- Prevented roster table headers from wrapping.
+- Kept the name column left-aligned for readability.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Remove Roster Table Memo Column
 
 ### Why
