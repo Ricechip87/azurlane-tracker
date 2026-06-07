@@ -205,7 +205,7 @@ function StatusSelect({ value, options, onChange, colorMap }) {
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => setOpen(current => !current)}
-        className={`inline-flex min-w-20 items-center justify-between gap-2 rounded border px-2 py-0.5 text-xs outline-none transition-colors hover:border-gray-500 focus:border-blue-500 ${open ? 'border-blue-500' : 'border-transparent'} ${color}`}
+        className={`inline-flex min-w-20 items-center justify-between gap-2 whitespace-nowrap rounded border px-2 py-0.5 text-xs outline-none transition-colors hover:border-gray-500 focus:border-blue-500 ${open ? 'border-blue-500' : 'border-transparent'} ${color}`}
       >
         <span>{value}</span>
         <span className="text-[10px] opacity-70">▼</span>
@@ -229,7 +229,7 @@ function StatusSelect({ value, options, onChange, colorMap }) {
                   onChange(option)
                   setOpen(false)
                 }}
-                className={`block w-full rounded px-2 py-1 text-left transition-colors ${selected ? 'bg-gray-800 text-blue-200' : 'text-gray-200 hover:bg-gray-800 hover:text-gray-100'}`}
+                className={`block w-full whitespace-nowrap rounded px-2 py-1 text-left transition-colors ${selected ? 'bg-gray-800 text-blue-200' : 'text-gray-200 hover:bg-gray-800 hover:text-gray-100'}`}
               >
                 {option}
               </button>

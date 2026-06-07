@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-06-07 - Prevent Status Dropdown Label Wrapping
+
+### Why
+- Long Korean status labels wrapped after replacing native selects with custom dropdown buttons.
+
+### Changed
+- Prevented status dropdown button labels and menu options from wrapping.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Replace Status Dropdown Native Options
 
 ### Why
