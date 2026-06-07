@@ -207,23 +207,15 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
 }
 
 function FleetTechGuideImagePanel({ context }) {
-  const selectedFaction = context
-    ? MAJOR_TECH_FACTIONS.find(faction => faction.value === context.factionValue)
-    : null
-  const caption = selectedFaction
-    ? `${selectedFaction.label} ${context.type === 'candidate' ? '육성 추천 후보' : '달성 효과'}`
-    : '기술점수 안내'
+  const imageContextKey = context ? `${context.factionValue}:${context.type}` : 'default'
+  const imageSrc = fleetTechGuideImage
 
   return (
     <section className="border-t border-gray-800 bg-gray-950 p-4">
-      <div className="overflow-hidden rounded border border-gray-700 bg-gray-900 shadow-lg shadow-gray-950/50">
-        <div className="flex h-8 items-center justify-between border-b border-gray-800 bg-gray-900/90 px-3 text-xs">
-          <span className="font-semibold text-blue-200">{caption}</span>
-          <span className="text-gray-600">IMAGE SLOT</span>
-        </div>
+      <div key={imageContextKey} className="overflow-hidden rounded border border-gray-700 bg-gray-900 shadow-lg shadow-gray-950/50">
         <div className="aspect-video bg-gray-950">
           <img
-            src={fleetTechGuideImage}
+            src={imageSrc}
             alt=""
             className="h-full w-full object-cover"
           />
