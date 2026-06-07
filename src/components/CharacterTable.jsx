@@ -23,10 +23,26 @@ export default function CharacterTable({ characters, updateUser }) {
     <div className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
+          <colgroup>
+            <col className="w-10" />
+            <col className="w-[210px]" />
+            <col className="w-16" />
+            <col className="w-16" />
+            <col className="w-20" />
+            <col className="w-24" />
+            <col className="w-24" />
+            <col className="w-24" />
+            <col className="w-28" />
+            <col className="w-32" />
+            <col className="w-24" />
+            <col className="w-20" />
+            <col className="w-36" />
+            <col className="w-36" />
+          </colgroup>
           <thead>
             <tr className="bg-gray-800 text-gray-400 text-xs">
               <th className={`${TH_CENTER} w-8`}>★</th>
-              <th className="px-3 py-2 text-left align-middle whitespace-nowrap">이름</th>
+              <th className="w-[210px] px-3 py-2 text-left align-middle whitespace-nowrap">이름</th>
               <th className={TH_CENTER}>레어도</th>
               <th className={TH_CENTER}>함종</th>
               <th className={TH_CENTER}>진영</th>
@@ -75,15 +91,15 @@ function CharacterRow({ char: c, updateUser, even }) {
           ★
         </button>
       </td>
-      <td className="px-3 py-2 align-middle">
-        <div className="flex items-center gap-2">
+      <td className="w-[210px] max-w-[210px] px-3 py-2 align-middle">
+        <div className="flex w-[210px] items-center gap-2 overflow-x-auto overflow-y-hidden whitespace-nowrap">
           {c.iconUrl ? (
             <img src={c.iconUrl} alt={c.name} className="w-8 h-8 rounded object-cover flex-shrink-0" loading="lazy"
               onError={e => { e.target.style.display = 'none' }} />
           ) : (
             <div className="w-8 h-8 rounded bg-gray-700 flex-shrink-0" />
           )}
-          <span className="font-medium">{c.name}{isSP && <span className="text-xs text-cyan-400 ml-1">(SP)</span>}</span>
+          <span className="shrink-0 font-medium">{c.name}{isSP && <span className="text-xs text-cyan-400 ml-1">(SP)</span>}</span>
         </div>
       </td>
       <td className={`${TD_CENTER} font-bold ${RARITY_COLOR[c.rarity] || 'text-gray-400'}`}>

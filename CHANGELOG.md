@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-07 - Rebalance Roster Table Column Widths
+
+### Why
+- Long name cells took too much horizontal space while bonus stat columns still wrapped awkwardly.
+
+### Changed
+- Reduced the roster table name column to a fixed width.
+- Kept long character names intact by allowing horizontal scrolling inside the name cell.
+- Reserved more width for acquired and 120 bonus stat columns.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Align Roster Table Columns
 
 ### Why
