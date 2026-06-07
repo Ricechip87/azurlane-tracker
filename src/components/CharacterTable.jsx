@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { calcTechPoints } from '../utils/techPoints.js'
 import { ACQUISITION_STATUSES, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 
@@ -154,18 +155,88 @@ function StatCell({ data }) {
 }
 
 function StatusSelect({ value, options, onChange, colorMap }) {
+  const [open, setOpen] = useState(false)
+  const [menuStyle, setMenuStyle] = useState({})
+  const buttonRef = useRef(null)
+  const menuRef = useRef(null)
   const color = colorMap[value] || 'bg-gray-700 text-gray-400'
+
+  useEffect(() => {
+    if (!open) return undefined
+
+    const updateMenuPosition = () => {
+      const rect = buttonRef.current?.getBoundingClientRect()
+      if (!rect) return
+      setMenuStyle({
+        left: `${rect.left}px`,
+        top: `${rect.bottom + 4}px`,
+        width: `${Math.max(rect.width, 80)}px`,
+      })
+    }
+
+    const closeOnOutside = event => {
+      if (buttonRef.current?.contains(event.target) || menuRef.current?.contains(event.target)) return
+      setOpen(false)
+    }
+
+    const closeOnEscape = event => {
+      if (event.key === 'Escape') setOpen(false)
+    }
+
+    updateMenuPosition()
+    window.addEventListener('resize', updateMenuPosition)
+    window.addEventListener('scroll', updateMenuPosition, true)
+    document.addEventListener('mousedown', closeOnOutside)
+    document.addEventListener('keydown', closeOnEscape)
+
+    return () => {
+      window.removeEventListener('resize', updateMenuPosition)
+      window.removeEventListener('scroll', updateMenuPosition, true)
+      document.removeEventListener('mousedown', closeOnOutside)
+      document.removeEventListener('keydown', closeOnEscape)
+    }
+  }, [open])
+
   return (
-    <select
-      value={value}
-      onChange={e => onChange(e.target.value)}
-      className={`status-select min-w-20 rounded border border-transparent px-2 py-0.5 text-xs outline-none transition-colors hover:border-gray-500 focus:border-blue-500 ${color}`}
-    >
-      {options.map(option => (
-        <option key={option} value={option}>
-          {option}
-        </option>
-      ))}
-    </select>
+    <>
+      <button
+        ref={buttonRef}
+        type="button"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        onClick={() => setOpen(current => !current)}
+        className={`inline-flex min-w-20 items-center justify-between gap-2 rounded border px-2 py-0.5 text-xs outline-none transition-colors hover:border-gray-500 focus:border-blue-500 ${open ? 'border-blue-500' : 'border-transparent'} ${color}`}
+      >
+        <span>{value}</span>
+        <span className="text-[10px] opacity-70">▼</span>
+      </button>
+      {open && (
+        <div
+          ref={menuRef}
+          role="listbox"
+          className="fixed z-50 rounded border border-blue-600 bg-gray-950 p-1 text-left text-xs shadow-2xl"
+          style={menuStyle}
+        >
+          {options.map(option => {
+            const selected = option === value
+            return (
+              <button
+                key={option}
+                type="button"
+                role="option"
+                aria-selected={selected}
+                onClick={() => {
+                  onChange(option)
+                  setOpen(false)
+                }}
+                className={`block w-full rounded px-2 py-1 text-left transition-colors ${selected ? 'bg-gray-800 text-blue-200' : 'text-gray-200 hover:bg-gray-800 hover:text-gray-100'}`}
+              >
+                {option}
+              </button>
+            )
+          })}
+        </div>
+      )}
+    </>
   )
 }

@@ -1,13 +1,14 @@
 # Change Log
 
-## 2026-06-07 - Normalize Status Dropdown Option Colors
+## 2026-06-07 - Replace Status Dropdown Native Options
 
 ### Why
-- Firefox can render native status dropdown option lists with the selected status color inherited from the collapsed select.
+- Firefox keeps native selected option highlighting in status dropdowns even when option colors are overridden.
 
 ### Changed
-- Added a dedicated status select CSS hook.
-- Kept the collapsed status control color-coded while forcing opened option rows to use neutral dark list colors.
+- Replaced table status dropdowns with a small custom dropdown menu.
+- Kept the collapsed status control color-coded while rendering opened option rows with neutral dark list colors.
+- Applied the change to all table status dropdowns: remodel, keel, acquisition, skill, affection, and equipment.
 
 ### Verified
 - `npm.cmd run lint`
