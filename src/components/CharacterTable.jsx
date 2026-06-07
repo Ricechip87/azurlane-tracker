@@ -39,7 +39,7 @@ export default function CharacterTable({ characters, updateUser }) {
             <col className="w-36" />
             <col className="w-36" />
           </colgroup>
-          <thead className="sticky top-[176px] z-10 shadow-lg shadow-gray-950/30">
+          <thead>
             <tr className="bg-gray-800 text-gray-400 text-xs">
               <th className={`${TH_CENTER} w-8`}>★</th>
               <th className="w-[210px] px-3 py-2 text-left align-middle whitespace-nowrap">이름</th>
