@@ -14,6 +14,7 @@
 - Renamed the fleet tech candidate column header from `추천 후보` to `육성 추천 후보`.
 - Centered the fleet tech candidate `획득 가능 기술점수` header as an explicit two-line label.
 - Narrowed the candidate ship-name column to give score columns more room.
+- Reordered the first menu group to `내 함순이 정보`, `육성/편성 추천`, then `함순이 DB`.
 
 ### Verified
 - `npm.cmd run lint`
