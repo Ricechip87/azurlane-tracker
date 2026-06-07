@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Equalize Tech Recommendation Detail Height
+
+### Why
+- The right detail panel changed height between level effects and candidate lists.
+
+### Changed
+- Fixed the recommendation detail panel height to match the level effect view.
+- Made level effect and candidate detail contents scroll inside the fixed panel.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Simplify My Roster Info Page
 
 ### Why

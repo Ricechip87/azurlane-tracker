@@ -174,7 +174,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
           </div>
         </div>
         {usesInlineDetail && (
-          <div className="min-h-[264px] border border-gray-800 bg-gray-950/50">
+          <div className="h-[760px] min-h-[760px] border border-gray-800 bg-gray-950/50">
             {inlineFaction ? (
               inlineDetail.type === 'effect' ? (
                 <LevelEffectSection faction={inlineFaction} progress={inlineProgress} />
@@ -250,17 +250,17 @@ function LevelEffectSection({ faction, progress }) {
   const hasEffects = effects.length > 0
 
   return (
-    <section className="p-4">
-      <div className="mb-3 flex flex-wrap items-center gap-3">
+    <section className="flex h-full flex-col p-4">
+      <div className="mb-3 flex shrink-0 flex-wrap items-center gap-3">
         <h3 className="text-sm font-bold text-gray-100">{faction.label} LV.{currentLevel?.level || 0} 달성 효과</h3>
         <span className="text-xs text-gray-500">{currentLevel ? `${currentLevel.pt}점 기준` : '효과 없음'}</span>
       </div>
       {hasEffects ? (
-        <div className="overflow-auto border border-gray-800 bg-gray-950">
+        <div className="min-h-0 flex-1 overflow-auto border border-gray-800 bg-gray-950">
           <LevelEffectTable effects={effects} />
         </div>
       ) : (
-        <div className="border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">현재 레벨 효과 없음</div>
+        <div className="flex flex-1 items-center justify-center border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">현재 레벨 효과 없음</div>
       )}
     </section>
   )
@@ -340,17 +340,17 @@ function TechCandidateSection({ faction, progress, candidates }) {
   const hasCandidates = candidates.length > 0
 
   return (
-    <section className="p-4">
-      <div className="mb-3 flex flex-wrap items-center gap-3">
+    <section className="flex h-full flex-col p-4">
+      <div className="mb-3 flex shrink-0 flex-wrap items-center gap-3">
         <h3 className="text-sm font-bold text-gray-100">{faction.label} 기술점수 후보</h3>
         <span className="text-xs text-gray-500">{formatNextLevelProgress(progress)}</span>
       </div>
       {hasCandidates ? (
-        <div className="overflow-hidden border border-gray-800 bg-gray-950">
+        <div className="min-h-0 flex-1 overflow-hidden border border-gray-800 bg-gray-950">
           <CandidateTable highCandidates={splitCandidates.high} lowCandidates={splitCandidates.low} />
         </div>
       ) : (
-        <div className="border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">후보 없음</div>
+        <div className="flex flex-1 items-center justify-center border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">후보 없음</div>
       )}
     </section>
   )
@@ -371,7 +371,7 @@ function TechDetailEmptyState() {
 
 function CandidateTable({ highCandidates, lowCandidates }) {
   return (
-    <div className="max-h-[420px] overflow-auto">
+    <div className="h-full overflow-auto">
       <table className="w-full table-fixed text-xs">
         <colgroup>
           <col className="w-[24%]" />
