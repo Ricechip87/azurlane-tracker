@@ -450,21 +450,20 @@ function CandidateBasisToggle({ basis, setBasis }) {
 
 function CandidateTable({ basis, candidateGroups }) {
   const showsLevel120 = basis === FLEET_TECH_CANDIDATE_BASIS.LEVEL_120
-  const columnSpan = showsLevel120 ? 9 : 8
+  const columnSpan = showsLevel120 ? 8 : 7
 
   return (
     <div className="h-full overflow-auto">
       <table className="w-full table-fixed text-xs">
         <colgroup>
-          <col className="w-[22%]" />
+          <col className="w-[24%]" />
           <col className="w-[8%]" />
           <col className="w-[8%]" />
-          <col className="w-[11%]" />
-          <col className="w-[9%]" />
-          <col className="w-[9%]" />
-          {showsLevel120 && <col className="w-[9%]" />}
-          <col className="w-[16%]" />
+          <col className="w-[12%]" />
           <col className="w-[10%]" />
+          <col className="w-[10%]" />
+          {showsLevel120 && <col className="w-[10%]" />}
+          <col className="w-[18%]" />
         </colgroup>
         <thead className="sticky top-0 z-10 bg-gray-900 text-gray-500">
           <tr>
@@ -478,7 +477,6 @@ function CandidateTable({ basis, candidateGroups }) {
             <th className="px-2 py-1.5 text-center align-middle font-normal leading-4">
               <span>획득 가능<br />기술점수</span>
             </th>
-            <th className="px-3 py-1.5 text-center align-middle font-normal">효율</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-900">
@@ -521,7 +519,6 @@ function CandidateRows({ candidates, columnSpan, showsLevel120 }) {
       <StageCell stage={candidate.stages.maxLB} />
       {showsLevel120 && <StageCell stage={candidate.stages.level120} />}
       <td className="px-2 py-1.5 text-center align-middle font-bold text-blue-300">{candidate.remainingTechPoints}</td>
-      <td className="px-3 py-1.5 text-center align-middle font-bold text-yellow-300">{candidate.efficiency.toFixed(1)}</td>
     </tr>
   ))
 }

@@ -74,7 +74,6 @@ function toCandidate(character, basis) {
     },
     remainingSteps,
     remainingTechPoints,
-    efficiency: remainingTechPoints / remainingSteps,
     group: getCandidateGroupKey(character.rarity, basis),
   }
 }
@@ -109,7 +108,6 @@ function stageValue(value, completed) {
 
 function compareCandidates(a, b) {
   return groupRank(a) - groupRank(b)
-    || b.efficiency - a.efficiency
     || b.remainingTechPoints - a.remainingTechPoints
     || a.remainingSteps - b.remainingSteps
     || rarityRank(a) - rarityRank(b)

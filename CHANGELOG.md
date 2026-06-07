@@ -16,7 +16,8 @@
 - Narrowed the candidate ship-name column to give score columns more room.
 - Reordered the first menu group to `내 함순이 정보`, `육성/편성 추천`, then `함순이 DB`.
 - Added `벽청년 이상` and `벽뉴비 권장` toggles to fleet tech candidate panels, with `벽청년 이상` selected by default.
-- Recalculate candidate score, efficiency, and ordering without Lv.120 points when `벽뉴비 권장` is selected.
+- Recalculate candidate score and ordering without Lv.120 points when `벽뉴비 권장` is selected.
+- Removed the final fleet tech candidate metric column and its related sort tiebreaker.
 - Split `벽뉴비 권장` candidate groups into `SSR / SR`, `UR`, and `R / N`.
 - Exclude `기타` position candidates from `벽뉴비 권장` results.
 - Center-aligned all fleet tech candidate table columns except the ship-name column.
@@ -548,13 +549,13 @@
 
 ### Why
 - The next-level progress panel should connect directly to actionable ship candidates.
-- Candidate ordering needs to prioritize efficient tech point recovery without pretending that unavailable ships can be acquired immediately.
+- Candidate ordering needs to prioritize high tech point recovery without pretending that unavailable ships can be acquired immediately.
 
 ### Changed
 - Added a `후보 보기` button for each USS/HMS/IJN/KMS tech point row.
-- Added an inline candidate panel showing `함선`, `등급`, `현재 상태`, `획득`, `풀돌`, `120`, `획득 가능 기술점수`, and `효율`.
-- Calculated efficiency as remaining tech points divided by remaining milestone count.
-- Sorted candidates by rarity group first (`UR/SSR` before `SR/R/N`), then efficiency, remaining tech points, fewer remaining stages, rarity, and name.
+- Added an inline candidate panel showing `함선`, `등급`, `현재 상태`, `획득`, `풀돌`, `120`, and `획득 가능 기술점수`.
+- Calculated remaining obtainable tech points from unfinished milestones.
+- Sorted candidates by rarity group first (`UR/SSR` before `SR/R/N`), then remaining tech points, fewer remaining stages, rarity, and name.
 - Added regression coverage for faction matching, candidate exclusion, grouping, and sorting.
 
 ### Verified

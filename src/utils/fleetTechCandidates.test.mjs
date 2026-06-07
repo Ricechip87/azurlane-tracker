@@ -26,7 +26,7 @@ const candidates = calcFleetTechCandidates([
   },
   {
     id: 3,
-    name: 'SR efficient',
+    name: 'SR bonus',
     rarity: 'SR',
     shipType: '잠수항모',
     faction: '로열',
@@ -55,16 +55,15 @@ const candidates = calcFleetTechCandidates([
 
 assert.deepEqual(candidates.map(candidate => candidate.name), [
   'UR acquired',
-  'SSR 100',
   'SSR missing',
-  'SR efficient',
+  'SSR 100',
+  'SR bonus',
 ])
 
-assert.equal(candidates[1].remainingTechPoints, 30)
-assert.equal(candidates[1].remainingSteps, 1)
-assert.equal(candidates[1].efficiency, 30)
-assert.equal(candidates[1].position, '전열')
-assert.deepEqual(candidates[1].stages, {
+assert.equal(candidates[2].remainingTechPoints, 30)
+assert.equal(candidates[2].remainingSteps, 1)
+assert.equal(candidates[2].position, '전열')
+assert.deepEqual(candidates[2].stages, {
   acquired: { completed: true, value: 0 },
   maxLB: { completed: true, value: 0 },
   level120: { completed: false, value: 30 },
@@ -72,8 +71,8 @@ assert.deepEqual(candidates[1].stages, {
 
 const split = splitFleetTechCandidates(candidates)
 assert.deepEqual(split.map(group => group.title), ['UR / SSR', 'SR / R / N'])
-assert.deepEqual(split[0].candidates.map(candidate => candidate.name), ['UR acquired', 'SSR 100', 'SSR missing'])
-assert.deepEqual(split[1].candidates.map(candidate => candidate.name), ['SR efficient'])
+assert.deepEqual(split[0].candidates.map(candidate => candidate.name), ['UR acquired', 'SSR missing', 'SSR 100'])
+assert.deepEqual(split[1].candidates.map(candidate => candidate.name), ['SR bonus'])
 assert.equal(split[0].candidates[0].position, '후열')
 assert.equal(split[0].candidates[2].position, '전열')
 assert.equal(split[1].candidates[0].position, '기타')
@@ -109,13 +108,12 @@ const maxLbCandidates = calcFleetTechCandidates([
 ], '로열', { basis: 'maxLB' })
 
 assert.deepEqual(maxLbCandidates.map(candidate => candidate.name), [
-  'SSR acquired maxlb',
   'SSR missing maxlb',
+  'SSR acquired maxlb',
 ])
-assert.equal(maxLbCandidates[0].remainingTechPoints, 50)
-assert.equal(maxLbCandidates[0].remainingSteps, 1)
-assert.equal(maxLbCandidates[0].efficiency, 50)
-assert.deepEqual(maxLbCandidates[0].stages, {
+assert.equal(maxLbCandidates[1].remainingTechPoints, 50)
+assert.equal(maxLbCandidates[1].remainingSteps, 1)
+assert.deepEqual(maxLbCandidates[1].stages, {
   acquired: { completed: true, value: 0 },
   maxLB: { completed: false, value: 50 },
   level120: { completed: true, value: 0 },
