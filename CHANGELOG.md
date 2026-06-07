@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Fix Top Menu Dropdown Closing
+
+### Why
+- Top menu dropdowns stayed open after the pointer left the menu area or after a submenu item was clicked.
+
+### Changed
+- Replaced CSS-only hover/focus dropdown visibility with controlled menu state.
+- Close the open dropdown when selecting a menu item, clicking home, leaving the menu area, or blurring out of the menu.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Main Menu Shell
 
 ### Why

@@ -117,12 +117,19 @@ export default function App() {
 }
 
 function TopMenu({ activePage, onSelect }) {
+  const [openMenu, setOpenMenu] = useState(null)
+
+  const selectPage = pageId => {
+    onSelect(pageId)
+    setOpenMenu(null)
+  }
+
   return (
     <header className="sticky top-0 z-30 border-b border-gray-800 bg-gray-950/95 px-6 py-3 backdrop-blur">
       <div className="mx-auto flex max-w-[1500px] items-center gap-3">
         <button
           type="button"
-          onClick={() => onSelect('home')}
+          onClick={() => selectPage('home')}
           className={`flex h-10 w-10 items-center justify-center rounded border text-lg transition-colors ${activePage === 'home' ? 'border-blue-500 bg-blue-600/20 text-blue-300' : 'border-gray-800 bg-gray-900 text-gray-300 hover:border-gray-700 hover:text-gray-100'}`}
           aria-label="홈"
         >
@@ -135,7 +142,15 @@ function TopMenu({ activePage, onSelect }) {
 
         <nav className="flex flex-wrap justify-end gap-2">
           {MENU_GROUPS.map(group => (
-            <MenuDropdown key={group.label} group={group} activePage={activePage} onSelect={onSelect} />
+            <MenuDropdown
+              key={group.label}
+              group={group}
+              activePage={activePage}
+              isOpen={openMenu === group.label}
+              onOpen={() => setOpenMenu(group.label)}
+              onClose={() => setOpenMenu(null)}
+              onSelect={selectPage}
+            />
           ))}
         </nav>
       </div>
@@ -143,18 +158,27 @@ function TopMenu({ activePage, onSelect }) {
   )
 }
 
-function MenuDropdown({ group, activePage, onSelect }) {
+function MenuDropdown({ group, activePage, isOpen, onOpen, onClose, onSelect }) {
   const isActive = group.items.some(item => item.id === activePage)
 
   return (
-    <div className="group relative">
+    <div
+      className="relative"
+      onMouseEnter={onOpen}
+      onMouseLeave={onClose}
+      onBlur={event => {
+        if (!event.currentTarget.contains(event.relatedTarget)) onClose()
+      }}
+    >
       <button
         type="button"
+        onClick={() => isOpen ? onClose() : onOpen()}
+        aria-expanded={isOpen}
         className={`h-10 rounded border px-4 text-sm font-semibold transition-colors ${isActive ? 'border-blue-500 bg-blue-600/20 text-blue-100' : 'border-gray-800 bg-gray-900 text-gray-200 hover:border-gray-700'}`}
       >
         {group.label} ▾
       </button>
-      <div className="invisible absolute right-0 top-full z-40 w-[360px] translate-y-2 rounded border border-gray-800 bg-gray-950 p-3 opacity-0 shadow-2xl shadow-black/40 transition-all group-hover:visible group-hover:translate-y-1 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-1 group-focus-within:opacity-100">
+      <div className={`${isOpen ? 'visible translate-y-1 opacity-100' : 'invisible translate-y-2 opacity-0'} absolute right-0 top-full z-40 w-[360px] rounded border border-gray-800 bg-gray-950 p-3 shadow-2xl shadow-black/40 transition-all`}>
         <div className="mb-2 px-2 text-xs text-gray-500">{group.label}</div>
         <div className="space-y-1">
           {group.items.map(item => (
