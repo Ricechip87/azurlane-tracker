@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-07 - Simplify My Roster Info Page
+
+### Why
+- Fleet tech and bonus stat sections now belong to the recommendation page, not the personal roster input page.
+- The page title should use `내 함순이 정보`.
+
+### Changed
+- Removed fleet tech and bonus stat panels from the roster info page summary area.
+- Kept only the compact simple summary card on the roster info page.
+- Renamed `함순이 내 정보` to `내 함순이 정보` in the menu and page header.
+- Removed unused bonus stat rendering code from the stats component.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Center Tech Recommendation Cells Vertically
 
 ### Why

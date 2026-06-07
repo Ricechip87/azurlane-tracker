@@ -28,7 +28,7 @@ const MENU_GROUPS = [
     label: '함순이 DB/육성/편성',
     items: [
       { id: 'ship-db', title: '함순이 DB', description: '인게임 함순이 DB 출력' },
-      { id: 'my-roster', title: '함순이 내 정보', description: '현재 내 정보를 입력하는 곳' },
+      { id: 'my-roster', title: '내 함순이 정보', description: '현재 내 정보를 입력하는 곳' },
       {
         id: 'growth-recommend',
         title: '육성/편성 추천',
@@ -229,7 +229,7 @@ function MyRosterPage({ characters, filteredCharacters, filters, setFilters, upd
     <>
       <header className="border-b border-gray-800 bg-gray-900 px-6 py-4">
         <div className="mx-auto flex max-w-[1500px] flex-wrap items-center gap-4">
-          <h1 className="text-xl font-bold text-blue-400">함순이 내 정보</h1>
+          <h1 className="text-xl font-bold text-blue-400">내 함순이 정보</h1>
           <BackupPanel userData={userData} setUserData={setUserData} compact />
         </div>
       </header>
