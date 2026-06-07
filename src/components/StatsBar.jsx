@@ -79,7 +79,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
   return (
     <div className={className}>
       <div className="h-9 px-3 flex items-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
-        획득 기술점수 <span className="ml-1 font-normal text-gray-500">(전체 보유함)</span>
+        획득 기술점수 <span className="ml-1 font-normal text-gray-500">(현재 보유함)</span>
       </div>
       <div className={usesInlineDetail ? 'grid gap-4 p-4 xl:grid-cols-[724px_minmax(0,1fr)]' : ''}>
         <div className={usesInlineDetail ? 'min-w-0 overflow-visible border border-gray-800 bg-gray-950' : 'overflow-visible'}>
@@ -92,7 +92,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
               <div className={`${inlineCellClass} px-3 py-2`}>
                 <span>다음 레벨까지<br />남은 점수</span>
               </div>
-              <div className={`${inlineCellClass} px-3 py-2`}>추천 후보</div>
+              <div className={`${inlineCellClass} px-3 py-2`}>육성 추천 후보</div>
             </div>
           )}
           <div className={`grid ${gridClass} divide-x divide-gray-800 text-xs`}>
