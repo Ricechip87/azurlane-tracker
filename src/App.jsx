@@ -290,7 +290,6 @@ function RosterHeroPanel() {
         </div>
         <div className="flex flex-col justify-center px-6 py-5">
           <div className="text-xs font-semibold text-blue-300">입력 안내</div>
-          <div className="mt-3 text-2xl font-bold text-gray-200">내 함순이 정보</div>
           <div className="mt-3 max-w-3xl space-y-1.5 text-sm leading-6 text-gray-400">
             <p>번거롭지만 본인이 보유 중인 애정어린 함순이 정보를 수동으로 기입해주세요.</p>
             <p>여기 정보가 기입되어야 육성/편성 추천 정보가 돌아갑니다.</p>

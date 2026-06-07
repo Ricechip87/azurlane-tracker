@@ -24,7 +24,7 @@ export default function StatsBar({ characters }) {
         간단 통계
       </div>
       <div className="text-xs">
-        <SummaryGroup title="전체 보유함 기준" summary={fullSummary} />
+        <SummaryGroup title="현재 보유함 기준" summary={fullSummary} />
       </div>
     </div>
   )

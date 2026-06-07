@@ -8,6 +8,8 @@
 ### Changed
 - Kept the roster guide panel at the same height as the simple stats card.
 - Enlarged the loading illustration within that fixed-height panel by reducing the image-side padding and using a 16:9 height-based slot.
+- Removed the repeated large `내 함순이 정보` heading from the roster guide text panel.
+- Renamed the simple stats scope label from `전체 보유함 기준` to `현재 보유함 기준`.
 
 ### Verified
 - `npm.cmd run lint`
