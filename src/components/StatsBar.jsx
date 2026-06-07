@@ -176,9 +176,6 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
               )
             })}
           </div>
-          {usesInlineDetail && (
-            <FactionTechCardGrid progressByFaction={majorFactionTechProgress} />
-          )}
         </div>
         {usesInlineDetail && (
           <div className="h-[760px] min-h-[760px] border border-gray-800 bg-gray-950/50">
@@ -200,92 +197,6 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
         )}
       </div>
     </div>
-  )
-}
-
-const FACTION_CARD_META = {
-  USS: {
-    subtitle: '함대 작전기술-이글 유니온',
-    vertical: 'EAGLE UNION',
-    glow: 'from-blue-500/45 via-cyan-300/25 to-blue-950/20',
-    mark: 'USS',
-  },
-  HMS: {
-    subtitle: '함대 작전기술-로열 네이비',
-    vertical: 'ROYAL NAVY',
-    glow: 'from-sky-400/45 via-blue-300/20 to-indigo-950/20',
-    mark: 'HMS',
-  },
-  IJN: {
-    subtitle: '함대 작전기술-사쿠라 엠파이어',
-    vertical: 'SAKURA ISLANDS',
-    glow: 'from-cyan-300/45 via-teal-300/20 to-blue-950/20',
-    mark: 'IJN',
-  },
-  KMS: {
-    subtitle: '함대 작전기술-메탈 블러드',
-    vertical: 'METAL BLOOD',
-    glow: 'from-blue-400/40 via-violet-300/20 to-indigo-950/20',
-    mark: 'KMS',
-  },
-}
-
-function FactionTechCardGrid({ progressByFaction }) {
-  return (
-    <div className="grid gap-3 border-t border-gray-800 p-4 sm:grid-cols-2 lg:grid-cols-4">
-      {MAJOR_TECH_FACTIONS.map(faction => (
-        <FactionTechCard
-          key={faction.value}
-          faction={faction}
-          progress={progressByFaction[faction.value]}
-        />
-      ))}
-    </div>
-  )
-}
-
-function FactionTechCard({ faction, progress }) {
-  const meta = FACTION_CARD_META[faction.code]
-  const level = progress?.currentLevel?.level || 0
-  const points = progress?.points || 0
-  const nextTarget = progress?.nextLevel?.pt
-  const nextText = progress?.isMaxLevel ? 'MAX' : `${points}/${nextTarget || 0}`
-
-  return (
-    <article className="relative min-h-[300px] overflow-hidden border border-blue-300/25 bg-slate-900 shadow-lg shadow-blue-950/30">
-      <div className={`absolute inset-0 bg-gradient-to-br ${meta.glow}`} />
-      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.04)_38%,transparent_39%,transparent_100%)]" />
-      <div className="absolute inset-x-5 bottom-8 h-12 bg-gray-950/55" />
-      <div className="absolute inset-x-6 bottom-9 h-9 opacity-45 [background:repeating-linear-gradient(90deg,rgba(185,210,255,0.8)_0_1px,transparent_1px_4px)]" />
-      <div
-        className="absolute right-2 top-20 text-2xl font-black tracking-[0.22em] text-blue-400"
-        style={{ writingMode: 'vertical-rl' }}
-      >
-        {meta.vertical}
-      </div>
-      <div className="relative flex h-full min-h-[300px] flex-col px-4 py-3">
-        <div className="text-xs font-semibold italic text-blue-100/90">{meta.subtitle}</div>
-        <div className="mt-8 flex justify-center">
-          <div className="relative flex h-32 w-32 items-center justify-center rounded-full">
-            <div className="absolute inset-0 rounded-full [background:conic-gradient(from_225deg,rgba(219,234,254,0.95)_0deg,rgba(219,234,254,0.95)_245deg,rgba(30,41,59,0.25)_245deg,rgba(30,41,59,0.25)_360deg)]" />
-            <div className="absolute inset-3 rounded-full bg-slate-900/80 shadow-inner shadow-blue-950" />
-            <div className="relative text-center">
-              <div className="text-5xl font-black leading-none text-white drop-shadow">{level}</div>
-              <div className="text-sm font-bold text-gray-300">Lv.</div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-5 text-center">
-          <div className="text-[10px] font-black tracking-[0.24em] text-gray-200">NEXT LEVEL:</div>
-          <div className="mt-1 text-sm font-black text-white">{nextText}</div>
-        </div>
-        <div className="mt-8 text-center text-sm text-gray-400">- 수령함 -</div>
-        <div className="mt-auto flex items-end justify-between">
-          <div className="text-[8px] tracking-[0.18em] text-gray-500">NATION INFORMATION</div>
-          <div className="text-3xl font-black text-gray-300/80">{meta.mark}</div>
-        </div>
-      </div>
-    </article>
   )
 }
 
