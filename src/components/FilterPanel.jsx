@@ -23,7 +23,7 @@ export default function FilterPanel({ filters, setFilters, characters }) {
   const inactiveToggleButton = 'border-gray-700 text-gray-400 hover:border-gray-600 hover:text-gray-200'
 
   return (
-    <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 space-y-3">
+    <div className="sticky top-[76px] z-20 space-y-3 rounded-lg border border-gray-800 bg-gray-900 p-4 shadow-lg shadow-gray-950/40">
       <div className="flex flex-wrap gap-3 items-end">
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray-400">이름 검색</label>
