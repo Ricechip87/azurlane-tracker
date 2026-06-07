@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-07 - Add Fleet Tech Level Effect Popover
+
+### Why
+- Fleet tech rows should show the current level's achieved effect, not only the level number.
+
+### Changed
+- Replaced the plain `LV.n` text with an `LV.n 달성 효과` button.
+- Added a popover that lists the current level's ship type/stat bonuses for the selected major faction.
+- Keep the level effect popover and candidate popover mutually exclusive.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Fix Top Menu Dropdown Closing
 
 ### Why

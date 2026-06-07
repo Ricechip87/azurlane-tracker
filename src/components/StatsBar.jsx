@@ -3,6 +3,7 @@ import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from '../utils/fleetT
 import { calcFleetTechCandidates, splitFleetTechCandidates } from '../utils/fleetTechCandidates.js'
 import { calcStatsByShipType, mergeStatsByShipType, summarizeRoster } from '../utils/rosterStats.js'
 import { calcFleetTechLevelStats, calcFleetTechProgress } from '../utils/fleetTechLevelStats.js'
+import { normalizeStatShipTypeValue } from '../utils/shipClassifications.js'
 
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
 const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대형순', '순전', '전함', '경항모', '항모', '잠수', '항전', '공작', '모니터', '잠항모', '운송', '범선']
@@ -21,6 +22,7 @@ export default function StatsBar({ characters }) {
 
   const [selectedType, setSelectedType] = useState('전함')
   const [previewFaction, setPreviewFaction] = useState(null)
+  const [effectFaction, setEffectFaction] = useState(null)
 
   const acquiredStats = calcStatsByShipType(characters, 'acquired')
   const maxedStats = calcStatsByShipType(characters, '120')
@@ -49,13 +51,29 @@ export default function StatsBar({ characters }) {
           <div className="grid grid-cols-[1fr_auto_auto_auto_auto] divide-x divide-gray-800 text-xs">
             {MAJOR_TECH_FACTIONS.map(faction => {
               const progress = majorFactionTechProgress[faction.value]
-              const isOpen = previewFaction === faction.value
+              const isCandidateOpen = previewFaction === faction.value
+              const isEffectOpen = effectFaction === faction.value
 
               return (
                 <div key={faction.value} className="contents">
                   <div className="px-4 py-3 text-gray-300">{faction.label}</div>
-                  <div className="px-3 py-3 text-center text-gray-400 whitespace-nowrap">
-                    Lv.{progress?.currentLevel?.level || 0}
+                  <div className="relative px-3 py-2 text-center whitespace-nowrap">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEffectFaction(isEffectOpen ? null : faction.value)
+                        setPreviewFaction(null)
+                      }}
+                      className={`rounded border px-2 py-1 text-xs transition-colors ${isEffectOpen ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-cyan-600 hover:text-cyan-200'}`}
+                    >
+                      LV.{progress?.currentLevel?.level || 0} 달성 효과
+                    </button>
+                    {isEffectOpen && (
+                      <LevelEffectPopover
+                        faction={faction}
+                        progress={progress}
+                      />
+                    )}
                   </div>
                   <div className="px-4 py-3 text-right text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
                   <div className="px-3 py-3 text-right text-gray-500 whitespace-nowrap">
@@ -64,12 +82,15 @@ export default function StatsBar({ characters }) {
                   <div className="relative px-3 py-2 text-right">
                     <button
                       type="button"
-                      onClick={() => setPreviewFaction(isOpen ? null : faction.value)}
-                      className={`rounded border px-2 py-1 text-xs transition-colors ${isOpen ? 'border-blue-500 bg-blue-600/20 text-blue-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-blue-600 hover:text-blue-200'}`}
+                      onClick={() => {
+                        setPreviewFaction(isCandidateOpen ? null : faction.value)
+                        setEffectFaction(null)
+                      }}
+                      className={`rounded border px-2 py-1 text-xs transition-colors ${isCandidateOpen ? 'border-blue-500 bg-blue-600/20 text-blue-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-blue-600 hover:text-blue-200'}`}
                     >
                       후보 보기
                     </button>
-                    {isOpen && (
+                    {isCandidateOpen && (
                       <TechCandidatePopover
                         faction={faction}
                         progress={progress}
@@ -109,6 +130,68 @@ function formatNextLevelProgress(progress) {
   if (!progress) return '-'
   if (progress.isMaxLevel) return 'MAX'
   return `다음 ${progress.pointsToNext}`
+}
+
+function LevelEffectPopover({ faction, progress }) {
+  const currentLevel = progress?.currentLevel
+  const effects = summarizeLevelEffects(currentLevel)
+  const hasEffects = effects.length > 0
+
+  return (
+    <div className="absolute left-0 top-full z-30 mt-1 w-[420px] max-w-[calc(100vw-2rem)] rounded border border-gray-700 bg-gray-950 text-left shadow-2xl">
+      <div className="h-8 px-3 flex items-center gap-3 bg-gray-800 border-b border-gray-700 text-xs">
+        <span className="font-semibold text-gray-200">{faction.label} LV.{currentLevel?.level || 0} 달성 효과</span>
+        <span className="text-gray-500">{currentLevel ? `${currentLevel.pt}점 기준` : '효과 없음'}</span>
+      </div>
+      {hasEffects ? (
+        <div className="max-h-[320px] overflow-auto">
+          <table className="w-full text-xs">
+            <thead className="sticky top-0 z-10 bg-gray-900 text-gray-500">
+              <tr>
+                <th className="px-3 py-1.5 text-left font-normal">함종</th>
+                <th className="px-3 py-1.5 text-left font-normal">스탯</th>
+                <th className="px-3 py-1.5 text-right font-normal">효과</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-900">
+              {effects.map(effect => (
+                <tr key={`${effect.shipType}:${effect.stat}`} className="hover:bg-gray-900/70">
+                  <td className="px-3 py-1.5 text-gray-300">{effect.shipType}</td>
+                  <td className="px-3 py-1.5 text-gray-400">{effect.stat}</td>
+                  <td className="px-3 py-1.5 text-right font-bold text-yellow-300">+{effect.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div className="px-3 py-3 text-xs text-gray-600">현재 레벨 효과 없음</div>
+      )}
+    </div>
+  )
+}
+
+function summarizeLevelEffects(level) {
+  const effects = []
+  const seen = new Set()
+
+  for (const bonus of level?.bonuses || []) {
+    const shipType = normalizeStatShipTypeValue(bonus.shipType)
+    const key = `${shipType}:${bonus.stat}`
+    if (seen.has(key)) continue
+    seen.add(key)
+    effects.push({
+      shipType,
+      stat: bonus.stat,
+      value: bonus.value || 0,
+    })
+  }
+
+  return effects.sort((a, b) => {
+    const shipTypeRank = SHIP_TYPE_ORDER.indexOf(a.shipType) - SHIP_TYPE_ORDER.indexOf(b.shipType)
+    if (shipTypeRank !== 0) return shipTypeRank
+    return STAT_ORDER.indexOf(a.stat) - STAT_ORDER.indexOf(b.stat)
+  })
 }
 
 function TechCandidatePopover({ faction, progress, candidates }) {
