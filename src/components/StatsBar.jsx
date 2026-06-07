@@ -377,7 +377,7 @@ function TechCandidatePopover({ faction, progress, characters, onMouseEnter, onM
     >
       <div className="min-h-10 px-3 py-2 flex flex-wrap items-center justify-between gap-2 bg-gray-800 border-b border-gray-700 text-xs">
         <div className="flex items-center gap-3">
-          <span className="font-semibold text-gray-200">{faction.label} 기술점수 후보</span>
+          <span className="font-semibold text-gray-200">{faction.label} 기술점수 획득용 육성 함선 추천</span>
           <span className="text-gray-500">{formatNextLevelProgress(progress)}</span>
         </div>
         <CandidateBasisToggle basis={basis} setBasis={setBasis} />
@@ -402,7 +402,7 @@ function TechCandidateSection({ faction, progress, characters }) {
       <div className="mb-3 flex shrink-0 flex-wrap items-start justify-between gap-3">
         <div>
           <div className="flex flex-wrap items-center gap-3">
-            <h3 className="text-sm font-bold text-gray-100">{faction.label} 기술점수 후보</h3>
+            <h3 className="text-sm font-bold text-gray-100">{faction.label} 기술점수 획득용 육성 함선 추천</h3>
             <span className="text-xs text-gray-500">{formatNextLevelProgress(progress)}</span>
           </div>
           <p className="mt-1 text-xs text-gray-500">

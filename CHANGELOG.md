@@ -19,6 +19,7 @@
 - Recalculate candidate score and ordering without Lv.120 points when `벽뉴비 권장` is selected.
 - Removed the final fleet tech candidate metric column and its related sort tiebreaker.
 - Added a short fleet tech candidate note explaining that easier acquisitions or strong owned ships are recommended first.
+- Renamed the fleet tech candidate panel title to clarify that it recommends ships to raise for tech point acquisition.
 - Split `벽뉴비 권장` candidate groups into `SSR / SR`, `UR`, and `R / N`.
 - Exclude `기타` position candidates from `벽뉴비 권장` results.
 - Center-aligned all fleet tech candidate table columns except the ship-name column.
