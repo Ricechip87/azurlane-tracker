@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Add Roster Info Image Text Panel
+
+### Why
+- The roster info page needs a large separate section beside the simple stats card for a future image and message.
+
+### Changed
+- Added a wide image/text panel next to the simple stats card on `내 함순이 정보`.
+- Added a placeholder image slot and temporary text that can be replaced later.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Equalize Tech Recommendation Detail Height
 
 ### Why

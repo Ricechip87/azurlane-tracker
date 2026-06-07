@@ -235,11 +235,33 @@ function MyRosterPage({ characters, filteredCharacters, filters, setFilters, upd
       </header>
 
       <main className="mx-auto max-w-[1500px] p-4 space-y-4">
-        <StatsBar characters={characters} />
+        <div className="flex flex-wrap gap-4">
+          <StatsBar characters={characters} />
+          <RosterHeroPanel />
+        </div>
         <FilterPanel filters={filters} setFilters={setFilters} characters={characters} />
         <CharacterTable characters={filteredCharacters} updateUser={updateUser} />
       </main>
     </>
+  )
+}
+
+function RosterHeroPanel() {
+  return (
+    <section className="min-h-[206px] flex-1 min-w-[420px] overflow-hidden rounded-lg border border-gray-800 bg-gray-900">
+      <div className="grid h-full min-h-[206px] grid-cols-[280px_1fr]">
+        <div className="flex items-center justify-center border-r border-gray-800 bg-gray-950/60">
+          <div className="h-[150px] w-[220px] rounded border border-dashed border-gray-700 bg-gray-900/80" />
+        </div>
+        <div className="flex flex-col justify-center px-6 py-5">
+          <div className="text-xs font-semibold text-blue-300">이미지 / 문구 영역</div>
+          <div className="mt-3 text-2xl font-bold text-gray-200">내 함순이 정보</div>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-500">
+            이 영역에는 나중에 원하는 이미지와 안내 문구를 배치할 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
   )
 }
 
