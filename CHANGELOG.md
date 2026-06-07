@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Refresh Project Plan Around Current Menu
+
+### Why
+- The old phase-based plan no longer matched the current ALtoy-style menu structure.
+
+### Changed
+- Reorganized `PLAN.md` around Home, My Roster, Recommendation, In-game Content, Data Operations, and Deployment.
+- Updated completed and remaining work to match the current implementation.
+- Clarified that bonus stat data currently matches the verified in-game scope, with revalidation needed for future updates.
+
+### Verified
+- Documentation-only change.
+
 ## 2026-06-07 - Track Candidate Sort Rule Follow-up
 
 ### Why
