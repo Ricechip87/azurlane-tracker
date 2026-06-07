@@ -69,7 +69,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
   const majorFactionTechProgress = calcFleetTechProgress(majorFactionTechPoints)
   const usesInlineDetail = detailMode === 'inline'
   const gridClass = usesInlineDetail
-    ? 'grid-cols-[130px_118px_118px_96px_150px_112px]'
+    ? 'grid-cols-[1.15fr_1fr_1fr_0.9fr_1.35fr_1fr]'
     : 'grid-cols-[1fr_auto_auto_auto_auto]'
 
   const [previewFaction, setPreviewFaction] = useState(null)
@@ -115,18 +115,18 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
         획득 기술점수 <span className="ml-1 font-normal text-gray-500">(전체 보유함)</span>
       </div>
       <div className={usesInlineDetail ? 'grid gap-4 p-4 xl:grid-cols-[724px_minmax(0,1fr)]' : ''}>
-        <div className={usesInlineDetail ? 'overflow-x-auto border border-gray-800 bg-gray-950' : 'overflow-visible'}>
+        <div className={usesInlineDetail ? 'min-w-0 overflow-visible border border-gray-800 bg-gray-950' : 'overflow-visible'}>
           {usesInlineDetail && (
-            <div className={`grid min-w-[724px] ${gridClass} divide-x divide-gray-800 border-b border-gray-800 bg-gray-900 text-xs text-gray-500`}>
-              <div className="px-4 py-2">진영</div>
+            <div className={`grid ${gridClass} divide-x divide-gray-800 border-b border-gray-800 bg-gray-900 text-xs text-gray-500`}>
+              <div className="px-3 py-2 text-center">진영</div>
               <div className="px-3 py-2 text-center">현재 달성 레벨</div>
               <div className="px-3 py-2 text-center">레벨 달성 효과</div>
-              <div className="px-4 py-2 text-right">현재 점수</div>
-              <div className="px-3 py-2 text-right">다음 레벨까지 남은 점수</div>
-              <div className="px-3 py-2 text-right">추천 후보</div>
+              <div className="px-3 py-2 text-center">현재 점수</div>
+              <div className="px-3 py-2 text-center">다음 레벨까지 남은 점수</div>
+              <div className="px-3 py-2 text-center">추천 후보</div>
             </div>
           )}
-          <div className={`grid ${usesInlineDetail ? 'min-w-[724px]' : ''} ${gridClass} divide-x divide-gray-800 text-xs`}>
+          <div className={`grid ${gridClass} divide-x divide-gray-800 text-xs`}>
             {MAJOR_TECH_FACTIONS.map(faction => {
               const progress = majorFactionTechProgress[faction.value]
               const isCandidateOpen = previewFaction === faction.value
@@ -134,7 +134,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
 
               return (
                 <div key={faction.value} className="contents">
-                  <div className="px-4 py-3 text-gray-300">{faction.label}</div>
+                  <div className={`${usesInlineDetail ? 'text-center' : ''} px-4 py-3 text-gray-300`}>{faction.label}</div>
                   {usesInlineDetail && (
                     <div className="px-3 py-3 text-center font-semibold text-blue-200 whitespace-nowrap">
                       LV.{progress?.currentLevel?.level || 0}
@@ -167,12 +167,12 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
                       />
                     )}
                   </div>
-                  <div className="px-4 py-3 text-right text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
-                  <div className="px-3 py-3 text-right text-gray-500 whitespace-nowrap">
+                  <div className={`${usesInlineDetail ? 'text-center' : 'text-right'} px-4 py-3 text-blue-300 font-bold`}>{majorFactionTechPoints[faction.value]}</div>
+                  <div className={`${usesInlineDetail ? 'text-center' : 'text-right'} px-3 py-3 text-gray-500 whitespace-nowrap`}>
                     {formatNextLevelProgress(progress)}
                   </div>
                   <div
-                    className="relative px-3 py-2 text-right"
+                    className={`${usesInlineDetail ? 'text-center' : 'text-right'} relative px-3 py-2`}
                     onMouseEnter={usesInlineDetail ? undefined : cancelPreviewClose}
                     onMouseLeave={usesInlineDetail ? undefined : schedulePreviewClose}
                   >

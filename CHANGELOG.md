@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-06-07 - Align Tech Recommendation Columns
+
+### Why
+- The inline tech recommendation table showed an unnecessary horizontal scrollbar.
+- Header labels and row values should be centered within the same columns.
+
+### Changed
+- Removed the forced minimum width that caused the horizontal scrollbar.
+- Switched inline tech recommendation columns to fractional widths.
+- Center-aligned inline table headers and row values.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Split Tech Recommendation Details
 
 ### Why
