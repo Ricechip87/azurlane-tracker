@@ -8,6 +8,7 @@ import {
 import { summarizeRoster } from '../utils/rosterStats.js'
 import { calcFleetTechProgress } from '../utils/fleetTechLevelStats.js'
 import { normalizeStatShipTypeValue } from '../utils/shipClassifications.js'
+import fleetTechGuideImage from '../assets/loading-illustrations/100021-painting.png'
 
 const STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
 const SHIP_TYPE_ORDER = ['구축', '경순', '중순', '대형순', '순전', '전함', '경항모', '항모', '잠수', '항전', '공작', '모니터', '잠항모', '운송', '범선']
@@ -46,6 +47,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
   const [previewFaction, setPreviewFaction] = useState(null)
   const [effectFaction, setEffectFaction] = useState(null)
   const [inlineDetail, setInlineDetail] = useState(null)
+  const [inlineImageContext, setInlineImageContext] = useState(null)
   const previewCloseTimer = useRef(null)
   const effectCloseTimer = useRef(null)
 
@@ -71,6 +73,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
     setInlineDetail(current => (
       current?.type === type && current?.factionValue === factionValue ? null : { type, factionValue }
     ))
+    setInlineImageContext({ type, factionValue })
     setPreviewFaction(null)
     setEffectFaction(null)
   }
@@ -176,6 +179,9 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
               )
             })}
           </div>
+          {usesInlineDetail && (
+            <FleetTechGuideImagePanel context={inlineImageContext} />
+          )}
         </div>
         {usesInlineDetail && (
           <div className="h-[760px] min-h-[760px] border border-gray-800 bg-gray-950/50">
@@ -197,6 +203,33 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
         )}
       </div>
     </div>
+  )
+}
+
+function FleetTechGuideImagePanel({ context }) {
+  const selectedFaction = context
+    ? MAJOR_TECH_FACTIONS.find(faction => faction.value === context.factionValue)
+    : null
+  const caption = selectedFaction
+    ? `${selectedFaction.label} ${context.type === 'candidate' ? '육성 추천 후보' : '달성 효과'}`
+    : '기술점수 안내'
+
+  return (
+    <section className="border-t border-gray-800 bg-gray-950 p-4">
+      <div className="overflow-hidden rounded border border-gray-700 bg-gray-900 shadow-lg shadow-gray-950/50">
+        <div className="flex h-8 items-center justify-between border-b border-gray-800 bg-gray-900/90 px-3 text-xs">
+          <span className="font-semibold text-blue-200">{caption}</span>
+          <span className="text-gray-600">IMAGE SLOT</span>
+        </div>
+        <div className="aspect-video bg-gray-950">
+          <img
+            src={fleetTechGuideImage}
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
   )
 }
 

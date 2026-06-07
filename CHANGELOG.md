@@ -23,6 +23,7 @@
 - Updated the header tagline to `벽람항로 개인용 함선 육성툴`.
 - Made the roster filter panel stay visible below the top menu while scrolling.
 - Added a fixed bottom-right `맨위로` button on the roster page.
+- Replaced the experimental faction tech cards with a full-width guide image slot below the fleet tech table.
 
 ### Verified
 - `npm.cmd run test`
