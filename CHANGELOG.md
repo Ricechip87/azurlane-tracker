@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-07 - Add Rotating Loading Illustration Slot
+
+### Why
+- The fixed roster info image panel should be able to rotate through site-owned loading illustrations.
+- This image area is system-controlled and not part of user editable/exported data.
+
+### Changed
+- Added build-time loading illustration discovery under `src/assets/loading-illustrations`.
+- Rotate available loading illustrations in the `내 함순이 정보` image panel every 8 seconds.
+- Keep a placeholder when no loading illustration images are present.
+- Added a folder README documenting supported image extensions.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Roster Info Image Text Panel
 
 ### Why

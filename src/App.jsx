@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import characters from './data/characters.json'
 import { useLocalStorage } from './hooks/useLocalStorage'
 import FilterPanel from './components/FilterPanel'
@@ -9,6 +9,16 @@ import RecommendationPage from './components/RecommendationPage'
 import { normalizeAcquisitionStatus } from './utils/acquisitionStatus.js'
 import { matchesShipClassification } from './utils/shipClassifications.js'
 import heroImage from './assets/hero.png'
+
+const loadingIllustrationModules = import.meta.glob('./assets/loading-illustrations/*.{png,jpg,jpeg,webp,gif}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})
+const LOADING_ILLUSTRATIONS = Object.entries(loadingIllustrationModules)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, src]) => src)
+const LOADING_ILLUSTRATION_INTERVAL_MS = 8000
 
 const INITIAL_FILTERS = {
   search: '',
@@ -247,11 +257,36 @@ function MyRosterPage({ characters, filteredCharacters, filters, setFilters, upd
 }
 
 function RosterHeroPanel() {
+  const [imageIndex, setImageIndex] = useState(0)
+  const currentImage = LOADING_ILLUSTRATIONS[imageIndex]
+
+  useEffect(() => {
+    if (LOADING_ILLUSTRATIONS.length <= 1) return undefined
+
+    const timerId = window.setInterval(() => {
+      setImageIndex(current => (current + 1) % LOADING_ILLUSTRATIONS.length)
+    }, LOADING_ILLUSTRATION_INTERVAL_MS)
+
+    return () => window.clearInterval(timerId)
+  }, [])
+
   return (
     <section className="min-h-[206px] flex-1 min-w-[420px] overflow-hidden rounded-lg border border-gray-800 bg-gray-900">
       <div className="grid h-full min-h-[206px] grid-cols-[280px_1fr]">
-        <div className="flex items-center justify-center border-r border-gray-800 bg-gray-950/60">
-          <div className="h-[150px] w-[220px] rounded border border-dashed border-gray-700 bg-gray-900/80" />
+        <div className="flex items-center justify-center border-r border-gray-800 bg-gray-950/60 p-5">
+          <div className="h-[150px] w-[220px] overflow-hidden rounded border border-gray-700 bg-gray-900/80">
+            {currentImage ? (
+              <img
+                src={currentImage}
+                alt=""
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center border border-dashed border-gray-700 text-xs text-gray-600">
+                로딩 일러스트
+              </div>
+            )}
+          </div>
         </div>
         <div className="flex flex-col justify-center px-6 py-5">
           <div className="text-xs font-semibold text-blue-300">이미지 / 문구 영역</div>
