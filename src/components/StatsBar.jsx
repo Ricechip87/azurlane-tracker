@@ -374,15 +374,15 @@ function CandidateTable({ highCandidates, lowCandidates }) {
     <div className="h-full overflow-auto">
       <table className="w-full table-fixed text-xs">
         <colgroup>
-          <col className="w-[24%]" />
+          <col className="w-[20%]" />
           <col className="w-[8%]" />
           <col className="w-[8%]" />
           <col className="w-[11%]" />
           <col className="w-[9%]" />
           <col className="w-[9%]" />
           <col className="w-[9%]" />
-          <col className="w-[13%]" />
-          <col className="w-[9%]" />
+          <col className="w-[15%]" />
+          <col className="w-[10%]" />
         </colgroup>
         <thead className="sticky top-0 z-10 bg-gray-900 text-gray-500">
           <tr>
@@ -393,8 +393,10 @@ function CandidateTable({ highCandidates, lowCandidates }) {
             <th className="px-2 py-1.5 text-right font-normal">획득</th>
             <th className="px-2 py-1.5 text-right font-normal">풀돌</th>
             <th className="px-2 py-1.5 text-right font-normal">120</th>
-            <th className="px-2 py-1.5 text-right font-normal">남은 기술점수</th>
-            <th className="px-3 py-1.5 text-right font-normal">효율</th>
+            <th className="px-2 py-1.5 text-center align-middle font-normal leading-4">
+              <span>획득 가능<br />기술점수</span>
+            </th>
+            <th className="px-3 py-1.5 text-center align-middle font-normal">효율</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-900">

@@ -12,6 +12,8 @@
 - Renamed the simple stats scope label from `전체 보유함 기준` to `현재 보유함 기준`.
 - Renamed the fleet tech panel scope label from `(전체 보유함)` to `(현재 보유함)`.
 - Renamed the fleet tech candidate column header from `추천 후보` to `육성 추천 후보`.
+- Centered the fleet tech candidate `획득 가능 기술점수` header as an explicit two-line label.
+- Narrowed the candidate ship-name column to give score columns more room.
 
 ### Verified
 - `npm.cmd run lint`
@@ -535,7 +537,7 @@
 
 ### Changed
 - Added a `후보 보기` button for each USS/HMS/IJN/KMS tech point row.
-- Added an inline candidate panel showing `함선`, `등급`, `현재 상태`, `획득`, `풀돌`, `120`, `남은 기술점수`, and `효율`.
+- Added an inline candidate panel showing `함선`, `등급`, `현재 상태`, `획득`, `풀돌`, `120`, `획득 가능 기술점수`, and `효율`.
 - Calculated efficiency as remaining tech points divided by remaining milestone count.
 - Sorted candidates by rarity group first (`UR/SSR` before `SR/R/N`), then efficiency, remaining tech points, fewer remaining stages, rarity, and name.
 - Added regression coverage for faction matching, candidate exclusion, grouping, and sorting.
