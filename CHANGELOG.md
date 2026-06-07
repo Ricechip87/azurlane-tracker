@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-07 - Refine Tech Recommendation Table
+
+### Why
+- The recommendation page should focus on the tech point table instead of low-value summary tiles.
+- Fleet tech rows need explicit column labels for easier scanning.
+
+### Changed
+- Removed the three summary metric tiles from the tech recommendation tab.
+- Added column labels for faction, current level, level effect, current points, points to next level, and candidates.
+- Split the current level into its own column and shortened the effect button label.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Show Tech Recommendation Details Inline
 
 ### Why

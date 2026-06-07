@@ -111,7 +111,15 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
       <div className="h-9 px-3 flex items-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
         획득 기술점수 <span className="ml-1 font-normal text-gray-500">(전체 보유함)</span>
       </div>
-      <div className="grid grid-cols-[1fr_auto_auto_auto_auto] divide-x divide-gray-800 text-xs">
+      <div className="grid grid-cols-[1fr_auto_auto_auto_auto_auto] divide-x divide-gray-800 border-b border-gray-800 bg-gray-900 text-xs text-gray-500">
+        <div className="px-4 py-2">진영</div>
+        <div className="px-3 py-2 text-center">현재 달성 레벨</div>
+        <div className="px-3 py-2 text-center">레벨 달성 효과</div>
+        <div className="px-4 py-2 text-right">현재 점수</div>
+        <div className="px-3 py-2 text-right">다음 레벨까지 남은 점수</div>
+        <div className="px-3 py-2 text-right">추천 후보</div>
+      </div>
+      <div className="grid grid-cols-[1fr_auto_auto_auto_auto_auto] divide-x divide-gray-800 text-xs">
         {MAJOR_TECH_FACTIONS.map(faction => {
           const progress = majorFactionTechProgress[faction.value]
           const isCandidateOpen = previewFaction === faction.value
@@ -120,9 +128,12 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
           return (
             <div key={faction.value} className="contents">
               <div className="px-4 py-3 text-gray-300">{faction.label}</div>
+              <div className="px-3 py-3 text-center font-semibold text-blue-200 whitespace-nowrap">
+                LV.{progress?.currentLevel?.level || 0}
+              </div>
               <div
                 className="relative px-3 py-2 text-center whitespace-nowrap"
-                  onMouseEnter={usesInlineDetail ? undefined : cancelEffectClose}
+                onMouseEnter={usesInlineDetail ? undefined : cancelEffectClose}
                   onMouseLeave={usesInlineDetail ? undefined : scheduleEffectClose}
                 >
                   <button
@@ -136,7 +147,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
                     }
                     className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'effect' && inlineDetail?.factionValue === faction.value : isEffectOpen) ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-cyan-600 hover:text-cyan-200'}`}
                   >
-                    LV.{progress?.currentLevel?.level || 0} 달성 효과
+                    달성 효과
                   </button>
                 {!usesInlineDetail && isEffectOpen && (
                   <LevelEffectPopover
