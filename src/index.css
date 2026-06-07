@@ -10,3 +10,31 @@ body {
   background: #0f1117;
   color: #e2e8f0;
 }
+
+.auto-scroll-name {
+  animation: name-auto-scroll var(--name-scroll-duration, 8s) ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes name-auto-scroll {
+  0%,
+  15% {
+    transform: translateX(0);
+  }
+
+  50%,
+  65% {
+    transform: translateX(calc(-1 * var(--name-scroll-distance, 0px)));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-scroll-name {
+    animation: none;
+    transform: translateX(0);
+  }
+}

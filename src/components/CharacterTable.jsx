@@ -92,14 +92,14 @@ function CharacterRow({ char: c, updateUser, even }) {
         </button>
       </td>
       <td className="w-[210px] max-w-[210px] px-3 py-2 align-middle">
-        <div className="flex w-[210px] items-center gap-2 overflow-x-auto overflow-y-hidden whitespace-nowrap">
+        <div className="flex w-full min-w-0 items-center gap-2 whitespace-nowrap">
           {c.iconUrl ? (
             <img src={c.iconUrl} alt={c.name} className="w-8 h-8 rounded object-cover flex-shrink-0" loading="lazy"
               onError={e => { e.target.style.display = 'none' }} />
           ) : (
             <div className="w-8 h-8 rounded bg-gray-700 flex-shrink-0" />
           )}
-          <span className="shrink-0 font-medium">{c.name}{isSP && <span className="text-xs text-cyan-400 ml-1">(SP)</span>}</span>
+          <AutoScrollingName name={c.name} isSP={isSP} />
         </div>
       </td>
       <td className={`${TD_CENTER} font-bold ${RARITY_COLOR[c.rarity] || 'text-gray-400'}`}>
@@ -142,6 +142,44 @@ function CharacterRow({ char: c, updateUser, even }) {
         <StatCell data={c.stat120} />
       </td>
     </tr>
+  )
+}
+
+function AutoScrollingName({ name, isSP }) {
+  const viewportRef = useRef(null)
+  const contentRef = useRef(null)
+  const [scrollDistance, setScrollDistance] = useState(0)
+
+  useEffect(() => {
+    const updateScrollDistance = () => {
+      const viewport = viewportRef.current
+      const content = contentRef.current
+      if (!viewport || !content) return
+      setScrollDistance(Math.max(0, content.scrollWidth - viewport.clientWidth + 12))
+    }
+
+    updateScrollDistance()
+    window.addEventListener('resize', updateScrollDistance)
+    return () => window.removeEventListener('resize', updateScrollDistance)
+  }, [name, isSP])
+
+  const scrollStyle = scrollDistance > 0
+    ? {
+        '--name-scroll-distance': `${scrollDistance}px`,
+        '--name-scroll-duration': `${Math.max(7, scrollDistance / 10)}s`,
+      }
+    : undefined
+
+  return (
+    <div ref={viewportRef} className="min-w-0 flex-1 overflow-hidden">
+      <span
+        ref={contentRef}
+        className={`inline-block whitespace-nowrap font-medium ${scrollDistance > 0 ? 'auto-scroll-name' : ''}`}
+        style={scrollStyle}
+      >
+        {name}{isSP && <span className="ml-1 text-xs text-cyan-400">(SP)</span>}
+      </span>
+    </div>
   )
 }
 

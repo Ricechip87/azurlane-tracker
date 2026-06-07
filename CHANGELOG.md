@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-07 - Auto Scroll Long Roster Names
+
+### Why
+- Long character names should remain fully visible without manual scrollbars or ellipsis.
+
+### Changed
+- Added automatic horizontal scrolling for overflowing roster name text.
+- Kept character icons fixed while only the long name text scrolls.
+- Left short names static.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Rebalance Roster Table Column Widths
 
 ### Why
