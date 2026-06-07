@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Add Fixed Roster Input Guidance
+
+### Why
+- The roster info panel needs fixed system guidance text that users cannot edit.
+
+### Changed
+- Replaced the placeholder panel copy with fixed roster input guidance.
+- Kept the guidance outside of user-editable/exported data.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Rotating Loading Illustration Slot
 
 ### Why
