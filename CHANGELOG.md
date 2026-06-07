@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-07 - Add Main Menu Shell
+
+### Why
+- The app needs an ALtoy-style shell instead of placing every tool on one page.
+- The existing tracker screen is closer to a personal roster input page and should live under its own menu item.
+
+### Changed
+- Added a top menu bar with `함순이 DB/육성/편성` and `인게임 콘텐츠` dropdown groups.
+- Added a home page with a single hero image section.
+- Moved the existing roster input/tracker screen under `함순이 내 정보`.
+- Routed unfinished menu items to a centered `공사중` placeholder screen.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Align Filter Action Buttons
 
 ### Why
