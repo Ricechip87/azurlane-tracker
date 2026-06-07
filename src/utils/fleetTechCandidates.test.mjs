@@ -158,8 +158,18 @@ const maxLbGroupedCandidates = calcFleetTechCandidates([
     acquired: '획득',
     techPoints: { acquired: 20, maxLB: 25, lv120: 300 },
   },
+  {
+    id: 24,
+    name: 'SSR submarine',
+    rarity: 'SSR',
+    shipType: '잠수',
+    faction: '로열',
+    acquired: '획득',
+    techPoints: { acquired: 20, maxLB: 100, lv120: 300 },
+  },
 ], '로열', { basis: FLEET_TECH_CANDIDATE_BASIS.MAX_LB })
 
+assert.equal(maxLbGroupedCandidates.some(candidate => candidate.name === 'SSR submarine'), false)
 const maxLbSplit = splitFleetTechCandidates(maxLbGroupedCandidates, FLEET_TECH_CANDIDATE_BASIS.MAX_LB)
 assert.deepEqual(maxLbSplit.map(group => group.title), ['SSR / SR', 'UR', 'R / N'])
 assert.deepEqual(maxLbSplit.map(group => group.candidates.map(candidate => candidate.name)), [

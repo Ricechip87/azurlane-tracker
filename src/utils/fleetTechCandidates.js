@@ -58,11 +58,14 @@ function toCandidate(character, basis) {
 
   if (!remainingTechPoints || !remainingSteps) return null
 
+  const position = getShipPosition(character.shipType)
+  if (basis === FLEET_TECH_CANDIDATE_BASIS.MAX_LB && position === '기타') return null
+
   return {
     id: character.id,
     name: character.name,
     rarity: character.rarity,
-    position: getShipPosition(character.shipType),
+    position,
     status,
     stages: {
       acquired: stageValue(acquiredRemaining, status !== '미획득'),

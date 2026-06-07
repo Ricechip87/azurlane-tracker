@@ -18,6 +18,7 @@
 - Added `벽청년 이상` and `벽뉴비 권장` toggles to fleet tech candidate panels, with `벽청년 이상` selected by default.
 - Recalculate candidate score, efficiency, and ordering without Lv.120 points when `벽뉴비 권장` is selected.
 - Split `벽뉴비 권장` candidate groups into `SSR / SR`, `UR`, and `R / N`.
+- Exclude `기타` position candidates from `벽뉴비 권장` results.
 - Center-aligned all fleet tech candidate table columns except the ship-name column.
 - Updated the header tagline to `벽람항로 개인용 함선 육성툴`.
 
