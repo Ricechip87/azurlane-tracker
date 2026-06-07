@@ -231,6 +231,9 @@ function FleetTechGuideImagePanel({ context }) {
             className="h-full w-full object-cover"
           />
         </div>
+        <div className="border-t border-gray-800 px-4 py-3 text-sm text-gray-500">
+          아 여기에 무슨 정보를 표기하지... 추천 받습니다.
+        </div>
       </div>
     </section>
   )

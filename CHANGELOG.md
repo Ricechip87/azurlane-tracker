@@ -26,6 +26,7 @@
 - Replaced the experimental faction tech cards with a full-width guide image slot below the fleet tech table.
 - Removed the text header from the fleet tech guide image slot.
 - Added faction-specific fleet tech guide images for USS, HMS, IJN, and KMS button selections.
+- Added a small placeholder note below the fleet tech guide image.
 
 ### Verified
 - `npm.cmd run test`
