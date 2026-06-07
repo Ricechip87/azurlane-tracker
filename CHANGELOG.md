@@ -23,6 +23,7 @@
 - Updated the header tagline to `벽람항로 개인용 함선 육성툴`.
 - Made the roster filter panel stay visible below the top menu while scrolling.
 - Added a fixed bottom-right `맨위로` button on the roster page.
+- Made the roster table header stay visible below the sticky filter panel while scrolling.
 
 ### Verified
 - `npm.cmd run test`
