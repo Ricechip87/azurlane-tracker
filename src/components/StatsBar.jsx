@@ -57,7 +57,10 @@ export default function StatsBar({ characters }) {
               return (
                 <div key={faction.value} className="contents">
                   <div className="px-4 py-3 text-gray-300">{faction.label}</div>
-                  <div className="relative px-3 py-2 text-center whitespace-nowrap">
+                  <div
+                    className="relative px-3 py-2 text-center whitespace-nowrap"
+                    onMouseLeave={() => setEffectFaction(null)}
+                  >
                     <button
                       type="button"
                       onClick={() => {
@@ -79,7 +82,10 @@ export default function StatsBar({ characters }) {
                   <div className="px-3 py-3 text-right text-gray-500 whitespace-nowrap">
                     {formatNextLevelProgress(progress)}
                   </div>
-                  <div className="relative px-3 py-2 text-right">
+                  <div
+                    className="relative px-3 py-2 text-right"
+                    onMouseLeave={() => setPreviewFaction(null)}
+                  >
                     <button
                       type="button"
                       onClick={() => {

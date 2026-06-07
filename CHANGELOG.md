@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Close Fleet Tech Popovers On Mouse Leave
+
+### Why
+- Fleet tech candidate and level effect popovers should dismiss like the top menu dropdowns when the pointer leaves their area.
+
+### Changed
+- Close the level effect popover when the pointer leaves the effect button/popover area.
+- Close the candidate popover when the pointer leaves the candidate button/popover area.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Fleet Tech Level Effect Popover
 
 ### Why
