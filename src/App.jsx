@@ -151,7 +151,7 @@ function TopMenu({ activePage, onSelect }) {
         </button>
         <div className="mr-auto">
           <div className="text-sm font-bold text-blue-300">AzurLane Tracker</div>
-          <div className="text-[11px] text-gray-500">벽람항로 개인용 장난감</div>
+          <div className="text-[11px] text-gray-500">벽람항로 개인용 함선 육성툴</div>
         </div>
 
         <nav className="flex flex-wrap justify-end gap-2">

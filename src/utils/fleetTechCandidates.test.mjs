@@ -72,3 +72,46 @@ assert.deepEqual(split.low.map(candidate => candidate.name), ['SR efficient'])
 assert.equal(split.high[0].position, '후열')
 assert.equal(split.high[2].position, '전열')
 assert.equal(split.low[0].position, '기타')
+
+const maxLbCandidates = calcFleetTechCandidates([
+  {
+    id: 10,
+    name: 'SSR missing maxlb',
+    rarity: 'SSR',
+    shipType: '경순',
+    faction: '로열',
+    acquired: '미획득',
+    techPoints: { acquired: 20, maxLB: 40, lv120: 300 },
+  },
+  {
+    id: 11,
+    name: 'SSR acquired maxlb',
+    rarity: 'SSR',
+    shipType: '전함',
+    faction: '로열',
+    acquired: '획득',
+    techPoints: { acquired: 20, maxLB: 50, lv120: 10 },
+  },
+  {
+    id: 12,
+    name: 'SSR full limit break',
+    rarity: 'SSR',
+    shipType: '전함',
+    faction: '로열',
+    acquired: '풀돌',
+    techPoints: { acquired: 20, maxLB: 50, lv120: 400 },
+  },
+], '로열', { basis: 'maxLB' })
+
+assert.deepEqual(maxLbCandidates.map(candidate => candidate.name), [
+  'SSR acquired maxlb',
+  'SSR missing maxlb',
+])
+assert.equal(maxLbCandidates[0].remainingTechPoints, 50)
+assert.equal(maxLbCandidates[0].remainingSteps, 1)
+assert.equal(maxLbCandidates[0].efficiency, 50)
+assert.deepEqual(maxLbCandidates[0].stages, {
+  acquired: { completed: true, value: 0 },
+  maxLB: { completed: false, value: 50 },
+  level120: { completed: true, value: 0 },
+})

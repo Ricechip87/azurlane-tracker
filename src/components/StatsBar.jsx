@@ -1,6 +1,10 @@
 import { useRef, useState } from 'react'
 import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from '../utils/fleetTech.js'
-import { calcFleetTechCandidates, splitFleetTechCandidates } from '../utils/fleetTechCandidates.js'
+import {
+  calcFleetTechCandidates,
+  FLEET_TECH_CANDIDATE_BASIS,
+  splitFleetTechCandidates,
+} from '../utils/fleetTechCandidates.js'
 import { summarizeRoster } from '../utils/rosterStats.js'
 import { calcFleetTechProgress } from '../utils/fleetTechLevelStats.js'
 import { normalizeStatShipTypeValue } from '../utils/shipClassifications.js'
@@ -162,7 +166,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
                       <TechCandidatePopover
                         faction={faction}
                         progress={progress}
-                        candidates={calcFleetTechCandidates(characters, faction.value)}
+                        characters={characters}
                         onMouseEnter={cancelPreviewClose}
                         onMouseLeave={schedulePreviewClose}
                       />
@@ -180,9 +184,10 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
                 <LevelEffectSection faction={inlineFaction} progress={inlineProgress} />
               ) : (
                 <TechCandidateSection
+                  key={inlineFaction.value}
                   faction={inlineFaction}
                   progress={inlineProgress}
-                  candidates={calcFleetTechCandidates(characters, inlineFaction.value)}
+                  characters={characters}
                 />
               )
             ) : (
@@ -312,7 +317,14 @@ function summarizeLevelEffects(level) {
   })
 }
 
-function TechCandidatePopover({ faction, progress, candidates, onMouseEnter, onMouseLeave }) {
+const CANDIDATE_BASIS_OPTIONS = [
+  { value: FLEET_TECH_CANDIDATE_BASIS.LEVEL_120, label: '120 기준' },
+  { value: FLEET_TECH_CANDIDATE_BASIS.MAX_LB, label: '풀돌 기준' },
+]
+
+function TechCandidatePopover({ faction, progress, characters, onMouseEnter, onMouseLeave }) {
+  const [basis, setBasis] = useState(FLEET_TECH_CANDIDATE_BASIS.LEVEL_120)
+  const candidates = calcFleetTechCandidates(characters, faction.value, { basis })
   const splitCandidates = splitFleetTechCandidates(candidates)
   const hasCandidates = candidates.length > 0
 
@@ -322,12 +334,15 @@ function TechCandidatePopover({ faction, progress, candidates, onMouseEnter, onM
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="h-8 px-3 flex items-center gap-3 bg-gray-800 border-b border-gray-700 text-xs">
-        <span className="font-semibold text-gray-200">{faction.label} 기술점수 후보</span>
-        <span className="text-gray-500">{formatNextLevelProgress(progress)}</span>
+      <div className="min-h-10 px-3 py-2 flex flex-wrap items-center justify-between gap-2 bg-gray-800 border-b border-gray-700 text-xs">
+        <div className="flex items-center gap-3">
+          <span className="font-semibold text-gray-200">{faction.label} 기술점수 후보</span>
+          <span className="text-gray-500">{formatNextLevelProgress(progress)}</span>
+        </div>
+        <CandidateBasisToggle basis={basis} setBasis={setBasis} />
       </div>
       {hasCandidates ? (
-        <CandidateTable highCandidates={splitCandidates.high} lowCandidates={splitCandidates.low} />
+        <CandidateTable basis={basis} highCandidates={splitCandidates.high} lowCandidates={splitCandidates.low} />
       ) : (
         <div className="px-3 py-3 text-xs text-gray-600">후보 없음</div>
       )}
@@ -335,19 +350,24 @@ function TechCandidatePopover({ faction, progress, candidates, onMouseEnter, onM
   )
 }
 
-function TechCandidateSection({ faction, progress, candidates }) {
+function TechCandidateSection({ faction, progress, characters }) {
+  const [basis, setBasis] = useState(FLEET_TECH_CANDIDATE_BASIS.LEVEL_120)
+  const candidates = calcFleetTechCandidates(characters, faction.value, { basis })
   const splitCandidates = splitFleetTechCandidates(candidates)
   const hasCandidates = candidates.length > 0
 
   return (
     <section className="flex h-full flex-col p-4">
-      <div className="mb-3 flex shrink-0 flex-wrap items-center gap-3">
-        <h3 className="text-sm font-bold text-gray-100">{faction.label} 기술점수 후보</h3>
-        <span className="text-xs text-gray-500">{formatNextLevelProgress(progress)}</span>
+      <div className="mb-3 flex shrink-0 flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center gap-3">
+          <h3 className="text-sm font-bold text-gray-100">{faction.label} 기술점수 후보</h3>
+          <span className="text-xs text-gray-500">{formatNextLevelProgress(progress)}</span>
+        </div>
+        <CandidateBasisToggle basis={basis} setBasis={setBasis} />
       </div>
       {hasCandidates ? (
         <div className="min-h-0 flex-1 overflow-hidden border border-gray-800 bg-gray-950">
-          <CandidateTable highCandidates={splitCandidates.high} lowCandidates={splitCandidates.low} />
+          <CandidateTable basis={basis} highCandidates={splitCandidates.high} lowCandidates={splitCandidates.low} />
         </div>
       ) : (
         <div className="flex flex-1 items-center justify-center border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">후보 없음</div>
@@ -369,19 +389,42 @@ function TechDetailEmptyState() {
   )
 }
 
-function CandidateTable({ highCandidates, lowCandidates }) {
+function CandidateBasisToggle({ basis, setBasis }) {
+  return (
+    <div className="flex overflow-hidden rounded border border-gray-700 bg-gray-950">
+      {CANDIDATE_BASIS_OPTIONS.map(option => {
+        const isActive = basis === option.value
+        return (
+          <button
+            key={option.value}
+            type="button"
+            onClick={() => setBasis(option.value)}
+            className={`h-7 px-3 text-xs font-semibold transition-colors ${isActive ? 'bg-blue-700 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-gray-200'}`}
+          >
+            {option.label}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+function CandidateTable({ basis, highCandidates, lowCandidates }) {
+  const showsLevel120 = basis === FLEET_TECH_CANDIDATE_BASIS.LEVEL_120
+  const columnSpan = showsLevel120 ? 9 : 8
+
   return (
     <div className="h-full overflow-auto">
       <table className="w-full table-fixed text-xs">
         <colgroup>
-          <col className="w-[20%]" />
+          <col className="w-[22%]" />
           <col className="w-[8%]" />
           <col className="w-[8%]" />
           <col className="w-[11%]" />
           <col className="w-[9%]" />
           <col className="w-[9%]" />
-          <col className="w-[9%]" />
-          <col className="w-[15%]" />
+          {showsLevel120 && <col className="w-[9%]" />}
+          <col className="w-[16%]" />
           <col className="w-[10%]" />
         </colgroup>
         <thead className="sticky top-0 z-10 bg-gray-900 text-gray-500">
@@ -390,9 +433,9 @@ function CandidateTable({ highCandidates, lowCandidates }) {
             <th className="px-2 py-1.5 text-center font-normal">등급</th>
             <th className="px-2 py-1.5 text-center font-normal">구분</th>
             <th className="px-2 py-1.5 text-center font-normal">현재 상태</th>
-            <th className="px-2 py-1.5 text-right font-normal">획득</th>
-            <th className="px-2 py-1.5 text-right font-normal">풀돌</th>
-            <th className="px-2 py-1.5 text-right font-normal">120</th>
+            <th className="px-2 py-1.5 text-center align-middle font-normal">획득</th>
+            <th className="px-2 py-1.5 text-center align-middle font-normal">풀돌</th>
+            {showsLevel120 && <th className="px-2 py-1.5 text-center align-middle font-normal">120</th>}
             <th className="px-2 py-1.5 text-center align-middle font-normal leading-4">
               <span>획득 가능<br />기술점수</span>
             </th>
@@ -400,29 +443,29 @@ function CandidateTable({ highCandidates, lowCandidates }) {
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-900">
-          <CandidateGroupRow title="UR / SSR" />
-          <CandidateRows candidates={highCandidates} />
-          <CandidateGroupRow title="SR / R / N" />
-          <CandidateRows candidates={lowCandidates} />
+          <CandidateGroupRow title="UR / SSR" columnSpan={columnSpan} />
+          <CandidateRows candidates={highCandidates} columnSpan={columnSpan} showsLevel120={showsLevel120} />
+          <CandidateGroupRow title="SR / R / N" columnSpan={columnSpan} />
+          <CandidateRows candidates={lowCandidates} columnSpan={columnSpan} showsLevel120={showsLevel120} />
         </tbody>
       </table>
     </div>
   )
 }
 
-function CandidateGroupRow({ title }) {
+function CandidateGroupRow({ title, columnSpan }) {
   return (
     <tr className="bg-gray-900/80">
-      <td colSpan={9} className="px-3 py-1.5 text-xs font-semibold text-gray-400">{title}</td>
+      <td colSpan={columnSpan} className="px-3 py-1.5 text-xs font-semibold text-gray-400">{title}</td>
     </tr>
   )
 }
 
-function CandidateRows({ candidates }) {
+function CandidateRows({ candidates, columnSpan, showsLevel120 }) {
   if (!candidates.length) {
     return (
       <tr>
-        <td colSpan={9} className="px-3 py-2 text-xs text-gray-600">후보 없음</td>
+        <td colSpan={columnSpan} className="px-3 py-2 text-xs text-gray-600">후보 없음</td>
       </tr>
     )
   }
@@ -435,16 +478,16 @@ function CandidateRows({ candidates }) {
       <td className="px-2 py-1.5 text-center text-gray-400">{candidate.status}</td>
       <StageCell stage={candidate.stages.acquired} />
       <StageCell stage={candidate.stages.maxLB} />
-      <StageCell stage={candidate.stages.level120} />
-      <td className="px-2 py-1.5 text-right font-bold text-blue-300">{candidate.remainingTechPoints}</td>
-      <td className="px-3 py-1.5 text-right font-bold text-yellow-300">{candidate.efficiency.toFixed(1)}</td>
+      {showsLevel120 && <StageCell stage={candidate.stages.level120} />}
+      <td className="px-2 py-1.5 text-center align-middle font-bold text-blue-300">{candidate.remainingTechPoints}</td>
+      <td className="px-3 py-1.5 text-center align-middle font-bold text-yellow-300">{candidate.efficiency.toFixed(1)}</td>
     </tr>
   ))
 }
 
 function StageCell({ stage }) {
   return (
-    <td className="px-2 py-1.5 text-right">
+    <td className="px-2 py-1.5 text-center align-middle">
       {stage.completed
         ? <span className="text-gray-600">완료</span>
         : <span className="text-blue-300">{stage.value ? `+${stage.value}` : '-'}</span>

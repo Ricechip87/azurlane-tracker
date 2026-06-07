@@ -11,11 +11,16 @@ const RARITY_ORDER = {
 }
 
 const HIGH_RARITY = new Set(['UR', 'SSR'])
+export const FLEET_TECH_CANDIDATE_BASIS = {
+  LEVEL_120: 'level120',
+  MAX_LB: 'maxLB',
+}
 
-export function calcFleetTechCandidates(characters, factionValue) {
+export function calcFleetTechCandidates(characters, factionValue, options = {}) {
+  const basis = options.basis || FLEET_TECH_CANDIDATE_BASIS.LEVEL_120
   return characters
     .filter(character => normalizeFactionValue(character.faction) === factionValue)
-    .map(toCandidate)
+    .map(character => toCandidate(character, basis))
     .filter(Boolean)
     .sort(compareCandidates)
 }
@@ -27,7 +32,7 @@ export function splitFleetTechCandidates(candidates) {
   }
 }
 
-function toCandidate(character) {
+function toCandidate(character, basis) {
   const status = normalizeAcquisitionStatus(character.acquired)
   const techPoints = character.techPoints || { acquired: 0, maxLB: 0, lv120: 0 }
 
@@ -35,9 +40,10 @@ function toCandidate(character) {
 
   const acquiredRemaining = status === '미획득' ? techPoints.acquired || 0 : 0
   const maxLbRemaining = ['미획득', '획득'].includes(status) ? techPoints.maxLB || 0 : 0
-  const level120Remaining = techPoints.lv120 || 0
+  const includesLevel120 = basis !== FLEET_TECH_CANDIDATE_BASIS.MAX_LB
+  const level120Remaining = includesLevel120 ? techPoints.lv120 || 0 : 0
   const remainingTechPoints = acquiredRemaining + maxLbRemaining + level120Remaining
-  const remainingSteps = countRemainingSteps(status)
+  const remainingSteps = countRemainingSteps(status, basis)
 
   if (!remainingTechPoints || !remainingSteps) return null
 
@@ -50,7 +56,7 @@ function toCandidate(character) {
     stages: {
       acquired: stageValue(acquiredRemaining, status !== '미획득'),
       maxLB: stageValue(maxLbRemaining, !['미획득', '획득'].includes(status)),
-      level120: stageValue(level120Remaining, false),
+      level120: stageValue(level120Remaining, !includesLevel120),
     },
     remainingSteps,
     remainingTechPoints,
@@ -59,7 +65,13 @@ function toCandidate(character) {
   }
 }
 
-function countRemainingSteps(status) {
+function countRemainingSteps(status, basis) {
+  if (basis === FLEET_TECH_CANDIDATE_BASIS.MAX_LB) {
+    if (status === '미획득') return 2
+    if (status === '획득') return 1
+    return 0
+  }
+
   if (status === '미획득') return 3
   if (status === '획득') return 2
   if (status === '풀돌' || status === '100') return 1
