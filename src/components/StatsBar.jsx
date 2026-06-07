@@ -64,12 +64,14 @@ export default function StatsBar({ characters }) {
   )
 }
 
-export function FleetTechPanel({ characters, className = '' }) {
+export function FleetTechPanel({ characters, className = '', detailMode = 'popover' }) {
   const majorFactionTechPoints = calcMajorFactionTechPoints(characters)
   const majorFactionTechProgress = calcFleetTechProgress(majorFactionTechPoints)
+  const usesInlineDetail = detailMode === 'inline'
 
   const [previewFaction, setPreviewFaction] = useState(null)
   const [effectFaction, setEffectFaction] = useState(null)
+  const [inlineDetail, setInlineDetail] = useState(null)
   const previewCloseTimer = useRef(null)
   const effectCloseTimer = useRef(null)
 
@@ -91,6 +93,19 @@ export function FleetTechPanel({ characters, className = '' }) {
     effectCloseTimer.current = setTimeout(() => setEffectFaction(null), 180)
   }
 
+  const showInlineDetail = (type, factionValue) => {
+    setInlineDetail(current => (
+      current?.type === type && current?.factionValue === factionValue ? null : { type, factionValue }
+    ))
+    setPreviewFaction(null)
+    setEffectFaction(null)
+  }
+
+  const inlineFaction = inlineDetail
+    ? MAJOR_TECH_FACTIONS.find(faction => faction.value === inlineDetail.factionValue)
+    : null
+  const inlineProgress = inlineFaction ? majorFactionTechProgress[inlineFaction.value] : null
+
   return (
     <div className={className}>
       <div className="h-9 px-3 flex items-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
@@ -107,20 +122,23 @@ export function FleetTechPanel({ characters, className = '' }) {
               <div className="px-4 py-3 text-gray-300">{faction.label}</div>
               <div
                 className="relative px-3 py-2 text-center whitespace-nowrap"
-                onMouseEnter={cancelEffectClose}
-                onMouseLeave={scheduleEffectClose}
-              >
-                <button
-                  type="button"
-                  onClick={() => {
-                    setEffectFaction(isEffectOpen ? null : faction.value)
-                    setPreviewFaction(null)
-                  }}
-                  className={`rounded border px-2 py-1 text-xs transition-colors ${isEffectOpen ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-cyan-600 hover:text-cyan-200'}`}
+                  onMouseEnter={usesInlineDetail ? undefined : cancelEffectClose}
+                  onMouseLeave={usesInlineDetail ? undefined : scheduleEffectClose}
                 >
-                  LV.{progress?.currentLevel?.level || 0} 달성 효과
-                </button>
-                {isEffectOpen && (
+                  <button
+                    type="button"
+                    onClick={() => usesInlineDetail
+                      ? showInlineDetail('effect', faction.value)
+                      : (() => {
+                          setEffectFaction(isEffectOpen ? null : faction.value)
+                          setPreviewFaction(null)
+                        })()
+                    }
+                    className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'effect' && inlineDetail?.factionValue === faction.value : isEffectOpen) ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-cyan-600 hover:text-cyan-200'}`}
+                  >
+                    LV.{progress?.currentLevel?.level || 0} 달성 효과
+                  </button>
+                {!usesInlineDetail && isEffectOpen && (
                   <LevelEffectPopover
                     faction={faction}
                     progress={progress}
@@ -135,20 +153,23 @@ export function FleetTechPanel({ characters, className = '' }) {
               </div>
               <div
                 className="relative px-3 py-2 text-right"
-                onMouseEnter={cancelPreviewClose}
-                onMouseLeave={schedulePreviewClose}
+                onMouseEnter={usesInlineDetail ? undefined : cancelPreviewClose}
+                onMouseLeave={usesInlineDetail ? undefined : schedulePreviewClose}
               >
                 <button
                   type="button"
-                  onClick={() => {
-                    setPreviewFaction(isCandidateOpen ? null : faction.value)
-                    setEffectFaction(null)
-                  }}
-                  className={`rounded border px-2 py-1 text-xs transition-colors ${isCandidateOpen ? 'border-blue-500 bg-blue-600/20 text-blue-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-blue-600 hover:text-blue-200'}`}
+                  onClick={() => usesInlineDetail
+                    ? showInlineDetail('candidate', faction.value)
+                    : (() => {
+                        setPreviewFaction(isCandidateOpen ? null : faction.value)
+                        setEffectFaction(null)
+                      })()
+                  }
+                  className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'candidate' && inlineDetail?.factionValue === faction.value : isCandidateOpen) ? 'border-blue-500 bg-blue-600/20 text-blue-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-blue-600 hover:text-blue-200'}`}
                 >
                   후보 보기
                 </button>
-                {isCandidateOpen && (
+                {!usesInlineDetail && isCandidateOpen && (
                   <TechCandidatePopover
                     faction={faction}
                     progress={progress}
@@ -162,6 +183,19 @@ export function FleetTechPanel({ characters, className = '' }) {
           )
         })}
       </div>
+      {usesInlineDetail && inlineFaction && (
+        <div className="border-t border-gray-800 bg-gray-950/50">
+          {inlineDetail.type === 'effect' ? (
+            <LevelEffectSection faction={inlineFaction} progress={inlineProgress} />
+          ) : (
+            <TechCandidateSection
+              faction={inlineFaction}
+              progress={inlineProgress}
+              candidates={calcFleetTechCandidates(characters, inlineFaction.value)}
+            />
+          )}
+        </div>
+      )}
     </div>
   )
 }
@@ -215,6 +249,51 @@ function LevelEffectPopover({ faction, progress, onMouseEnter, onMouseLeave }) {
   )
 }
 
+function LevelEffectSection({ faction, progress }) {
+  const currentLevel = progress?.currentLevel
+  const effects = summarizeLevelEffects(currentLevel)
+  const hasEffects = effects.length > 0
+
+  return (
+    <section className="p-4">
+      <div className="mb-3 flex flex-wrap items-center gap-3">
+        <h3 className="text-sm font-bold text-gray-100">{faction.label} LV.{currentLevel?.level || 0} 달성 효과</h3>
+        <span className="text-xs text-gray-500">{currentLevel ? `${currentLevel.pt}점 기준` : '효과 없음'}</span>
+      </div>
+      {hasEffects ? (
+        <div className="overflow-auto border border-gray-800 bg-gray-950">
+          <LevelEffectTable effects={effects} />
+        </div>
+      ) : (
+        <div className="border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">현재 레벨 효과 없음</div>
+      )}
+    </section>
+  )
+}
+
+function LevelEffectTable({ effects }) {
+  return (
+    <table className="w-full text-xs">
+      <thead className="bg-gray-900 text-gray-500">
+        <tr>
+          <th className="px-3 py-1.5 text-left font-normal">함종</th>
+          <th className="px-3 py-1.5 text-left font-normal">스탯</th>
+          <th className="px-3 py-1.5 text-right font-normal">효과</th>
+        </tr>
+      </thead>
+      <tbody className="divide-y divide-gray-900">
+        {effects.map(effect => (
+          <tr key={`${effect.shipType}:${effect.stat}`} className="hover:bg-gray-900/70">
+            <td className="px-3 py-1.5 text-gray-300">{effect.shipType}</td>
+            <td className="px-3 py-1.5 text-gray-400">{effect.stat}</td>
+            <td className="px-3 py-1.5 text-right font-bold text-yellow-300">+{effect.value}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+}
+
 function summarizeLevelEffects(level) {
   const effects = []
   const seen = new Set()
@@ -258,6 +337,27 @@ function TechCandidatePopover({ faction, progress, candidates, onMouseEnter, onM
         <div className="px-3 py-3 text-xs text-gray-600">후보 없음</div>
       )}
     </div>
+  )
+}
+
+function TechCandidateSection({ faction, progress, candidates }) {
+  const splitCandidates = splitFleetTechCandidates(candidates)
+  const hasCandidates = candidates.length > 0
+
+  return (
+    <section className="p-4">
+      <div className="mb-3 flex flex-wrap items-center gap-3">
+        <h3 className="text-sm font-bold text-gray-100">{faction.label} 기술점수 후보</h3>
+        <span className="text-xs text-gray-500">{formatNextLevelProgress(progress)}</span>
+      </div>
+      {hasCandidates ? (
+        <div className="overflow-hidden border border-gray-800 bg-gray-950">
+          <CandidateTable highCandidates={splitCandidates.high} lowCandidates={splitCandidates.low} />
+        </div>
+      ) : (
+        <div className="border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">후보 없음</div>
+      )}
+    </section>
   )
 }
 

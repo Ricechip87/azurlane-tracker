@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-07 - Show Tech Recommendation Details Inline
+
+### Why
+- The growth recommendation page has enough room to show selected details below the tech point list instead of using popovers.
+- Candidate and level-effect details should not be open at the same time.
+
+### Changed
+- Added an inline detail mode to the fleet tech panel.
+- Show `후보 보기` and `LV.n 달성 효과` results in a lower detail section on the recommendation page.
+- Kept the existing popover mode for the compact roster information page.
+- Added small summary metrics to reduce the empty feel of the recommendation page.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Growth Recommendation Page
 
 ### Why

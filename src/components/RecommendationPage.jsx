@@ -60,13 +60,29 @@ export default function RecommendationPage({ characters }) {
       </div>
 
       {activeTab === 'tech' ? (
-        <section className="relative overflow-visible rounded border border-gray-800 bg-gray-900">
-          <FleetTechPanel characters={characters} />
+        <section className="space-y-3">
+          <div className="grid gap-3 md:grid-cols-3">
+            <RecommendationMetric label="추천 기준" value="기술점수" />
+            <RecommendationMetric label="대상 진영" value="4대 진영" />
+            <RecommendationMetric label="상세 출력" value="하단 패널" />
+          </div>
+          <div className="relative overflow-visible rounded border border-gray-800 bg-gray-900">
+            <FleetTechPanel characters={characters} detailMode="inline" />
+          </div>
         </section>
       ) : (
         <RecommendationPlaceholder tab={currentTab} />
       )}
     </main>
+  )
+}
+
+function RecommendationMetric({ label, value }) {
+  return (
+    <div className="border border-gray-800 bg-gray-900 px-4 py-3">
+      <div className="text-xs text-gray-500">{label}</div>
+      <div className="mt-1 text-lg font-bold text-blue-200">{value}</div>
+    </div>
   )
 }
 
