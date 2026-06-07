@@ -10,3 +10,13 @@ body {
   background: #0f1117;
   color: #e2e8f0;
 }
+
+.status-select option {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+.status-select option:checked {
+  background-color: #1f2937;
+  color: #bfdbfe;
+}

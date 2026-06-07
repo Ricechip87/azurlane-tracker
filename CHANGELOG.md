@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Normalize Status Dropdown Option Colors
+
+### Why
+- Firefox can render native status dropdown option lists with the selected status color inherited from the collapsed select.
+
+### Changed
+- Added a dedicated status select CSS hook.
+- Kept the collapsed status control color-coded while forcing opened option rows to use neutral dark list colors.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add First Roster Loading Illustration
 
 ### Why

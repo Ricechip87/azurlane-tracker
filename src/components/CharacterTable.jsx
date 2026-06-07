@@ -159,10 +159,10 @@ function StatusSelect({ value, options, onChange, colorMap }) {
     <select
       value={value}
       onChange={e => onChange(e.target.value)}
-      className={`min-w-20 rounded border border-transparent px-2 py-0.5 text-xs outline-none transition-colors hover:border-gray-500 focus:border-blue-500 ${color}`}
+      className={`status-select min-w-20 rounded border border-transparent px-2 py-0.5 text-xs outline-none transition-colors hover:border-gray-500 focus:border-blue-500 ${color}`}
     >
       {options.map(option => (
-        <option key={option} value={option} className="bg-gray-900 text-gray-200">
+        <option key={option} value={option}>
           {option}
         </option>
       ))}
