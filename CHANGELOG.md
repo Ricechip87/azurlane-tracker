@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Add First Roster Loading Illustration
+
+### Why
+- The roster info image panel needs an initial fixed illustration asset.
+
+### Changed
+- Copied `painting.png` from the reference AzurLane skin folder into the app loading illustration assets as `100021-painting.png`.
+- Left the original reference folder untouched.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Add Fixed Roster Input Guidance
 
 ### Why
