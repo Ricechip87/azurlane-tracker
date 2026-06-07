@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-07 - Split Tech Recommendation Details
+
+### Why
+- The tech recommendation table headers and row values were not visually aligned well enough.
+- The recommendation page is wide enough to show selected details beside the table instead of below it.
+
+### Changed
+- Use fixed columns for the inline tech recommendation table so headers and values line up.
+- Split the tech recommendation tab into a left table and a right detail panel.
+- Show level effects or candidate details in the right panel, with only one detail view active at a time.
+- Kept the compact roster info tech panel on its existing popover-style layout.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Refine Tech Recommendation Table
 
 ### Why

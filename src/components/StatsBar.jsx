@@ -68,6 +68,9 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
   const majorFactionTechPoints = calcMajorFactionTechPoints(characters)
   const majorFactionTechProgress = calcFleetTechProgress(majorFactionTechPoints)
   const usesInlineDetail = detailMode === 'inline'
+  const gridClass = usesInlineDetail
+    ? 'grid-cols-[130px_118px_118px_96px_150px_112px]'
+    : 'grid-cols-[1fr_auto_auto_auto_auto]'
 
   const [previewFaction, setPreviewFaction] = useState(null)
   const [effectFaction, setEffectFaction] = useState(null)
@@ -111,102 +114,114 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
       <div className="h-9 px-3 flex items-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
         획득 기술점수 <span className="ml-1 font-normal text-gray-500">(전체 보유함)</span>
       </div>
-      <div className="grid grid-cols-[1fr_auto_auto_auto_auto_auto] divide-x divide-gray-800 border-b border-gray-800 bg-gray-900 text-xs text-gray-500">
-        <div className="px-4 py-2">진영</div>
-        <div className="px-3 py-2 text-center">현재 달성 레벨</div>
-        <div className="px-3 py-2 text-center">레벨 달성 효과</div>
-        <div className="px-4 py-2 text-right">현재 점수</div>
-        <div className="px-3 py-2 text-right">다음 레벨까지 남은 점수</div>
-        <div className="px-3 py-2 text-right">추천 후보</div>
-      </div>
-      <div className="grid grid-cols-[1fr_auto_auto_auto_auto_auto] divide-x divide-gray-800 text-xs">
-        {MAJOR_TECH_FACTIONS.map(faction => {
-          const progress = majorFactionTechProgress[faction.value]
-          const isCandidateOpen = previewFaction === faction.value
-          const isEffectOpen = effectFaction === faction.value
-
-          return (
-            <div key={faction.value} className="contents">
-              <div className="px-4 py-3 text-gray-300">{faction.label}</div>
-              <div className="px-3 py-3 text-center font-semibold text-blue-200 whitespace-nowrap">
-                LV.{progress?.currentLevel?.level || 0}
-              </div>
-              <div
-                className="relative px-3 py-2 text-center whitespace-nowrap"
-                onMouseEnter={usesInlineDetail ? undefined : cancelEffectClose}
-                  onMouseLeave={usesInlineDetail ? undefined : scheduleEffectClose}
-                >
-                  <button
-                    type="button"
-                    onClick={() => usesInlineDetail
-                      ? showInlineDetail('effect', faction.value)
-                      : (() => {
-                          setEffectFaction(isEffectOpen ? null : faction.value)
-                          setPreviewFaction(null)
-                        })()
-                    }
-                    className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'effect' && inlineDetail?.factionValue === faction.value : isEffectOpen) ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-cyan-600 hover:text-cyan-200'}`}
-                  >
-                    달성 효과
-                  </button>
-                {!usesInlineDetail && isEffectOpen && (
-                  <LevelEffectPopover
-                    faction={faction}
-                    progress={progress}
-                    onMouseEnter={cancelEffectClose}
-                    onMouseLeave={scheduleEffectClose}
-                  />
-                )}
-              </div>
-              <div className="px-4 py-3 text-right text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
-              <div className="px-3 py-3 text-right text-gray-500 whitespace-nowrap">
-                {formatNextLevelProgress(progress)}
-              </div>
-              <div
-                className="relative px-3 py-2 text-right"
-                onMouseEnter={usesInlineDetail ? undefined : cancelPreviewClose}
-                onMouseLeave={usesInlineDetail ? undefined : schedulePreviewClose}
-              >
-                <button
-                  type="button"
-                  onClick={() => usesInlineDetail
-                    ? showInlineDetail('candidate', faction.value)
-                    : (() => {
-                        setPreviewFaction(isCandidateOpen ? null : faction.value)
-                        setEffectFaction(null)
-                      })()
-                  }
-                  className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'candidate' && inlineDetail?.factionValue === faction.value : isCandidateOpen) ? 'border-blue-500 bg-blue-600/20 text-blue-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-blue-600 hover:text-blue-200'}`}
-                >
-                  후보 보기
-                </button>
-                {!usesInlineDetail && isCandidateOpen && (
-                  <TechCandidatePopover
-                    faction={faction}
-                    progress={progress}
-                    candidates={calcFleetTechCandidates(characters, faction.value)}
-                    onMouseEnter={cancelPreviewClose}
-                    onMouseLeave={schedulePreviewClose}
-                  />
-                )}
-              </div>
+      <div className={usesInlineDetail ? 'grid gap-4 p-4 xl:grid-cols-[724px_minmax(0,1fr)]' : ''}>
+        <div className={usesInlineDetail ? 'overflow-x-auto border border-gray-800 bg-gray-950' : 'overflow-visible'}>
+          {usesInlineDetail && (
+            <div className={`grid min-w-[724px] ${gridClass} divide-x divide-gray-800 border-b border-gray-800 bg-gray-900 text-xs text-gray-500`}>
+              <div className="px-4 py-2">진영</div>
+              <div className="px-3 py-2 text-center">현재 달성 레벨</div>
+              <div className="px-3 py-2 text-center">레벨 달성 효과</div>
+              <div className="px-4 py-2 text-right">현재 점수</div>
+              <div className="px-3 py-2 text-right">다음 레벨까지 남은 점수</div>
+              <div className="px-3 py-2 text-right">추천 후보</div>
             </div>
-          )
-        })}
-      </div>
-      {usesInlineDetail && inlineFaction && (
-        <div className="border-t border-gray-800 bg-gray-950/50">
-          {inlineDetail.type === 'effect' ? (
-            <LevelEffectSection faction={inlineFaction} progress={inlineProgress} />
-          ) : (
-            <TechCandidateSection
-              faction={inlineFaction}
-              progress={inlineProgress}
-              candidates={calcFleetTechCandidates(characters, inlineFaction.value)}
-            />
           )}
+          <div className={`grid ${usesInlineDetail ? 'min-w-[724px]' : ''} ${gridClass} divide-x divide-gray-800 text-xs`}>
+            {MAJOR_TECH_FACTIONS.map(faction => {
+              const progress = majorFactionTechProgress[faction.value]
+              const isCandidateOpen = previewFaction === faction.value
+              const isEffectOpen = effectFaction === faction.value
+
+              return (
+                <div key={faction.value} className="contents">
+                  <div className="px-4 py-3 text-gray-300">{faction.label}</div>
+                  {usesInlineDetail && (
+                    <div className="px-3 py-3 text-center font-semibold text-blue-200 whitespace-nowrap">
+                      LV.{progress?.currentLevel?.level || 0}
+                    </div>
+                  )}
+                  <div
+                    className="relative px-3 py-2 text-center whitespace-nowrap"
+                    onMouseEnter={usesInlineDetail ? undefined : cancelEffectClose}
+                    onMouseLeave={usesInlineDetail ? undefined : scheduleEffectClose}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => usesInlineDetail
+                        ? showInlineDetail('effect', faction.value)
+                        : (() => {
+                            setEffectFaction(isEffectOpen ? null : faction.value)
+                            setPreviewFaction(null)
+                          })()
+                      }
+                      className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'effect' && inlineDetail?.factionValue === faction.value : isEffectOpen) ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-cyan-600 hover:text-cyan-200'}`}
+                    >
+                      {usesInlineDetail ? '달성 효과' : `LV.${progress?.currentLevel?.level || 0} 달성 효과`}
+                    </button>
+                    {!usesInlineDetail && isEffectOpen && (
+                      <LevelEffectPopover
+                        faction={faction}
+                        progress={progress}
+                        onMouseEnter={cancelEffectClose}
+                        onMouseLeave={scheduleEffectClose}
+                      />
+                    )}
+                  </div>
+                  <div className="px-4 py-3 text-right text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
+                  <div className="px-3 py-3 text-right text-gray-500 whitespace-nowrap">
+                    {formatNextLevelProgress(progress)}
+                  </div>
+                  <div
+                    className="relative px-3 py-2 text-right"
+                    onMouseEnter={usesInlineDetail ? undefined : cancelPreviewClose}
+                    onMouseLeave={usesInlineDetail ? undefined : schedulePreviewClose}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => usesInlineDetail
+                        ? showInlineDetail('candidate', faction.value)
+                        : (() => {
+                            setPreviewFaction(isCandidateOpen ? null : faction.value)
+                            setEffectFaction(null)
+                          })()
+                      }
+                      className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'candidate' && inlineDetail?.factionValue === faction.value : isCandidateOpen) ? 'border-blue-500 bg-blue-600/20 text-blue-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-blue-600 hover:text-blue-200'}`}
+                    >
+                      후보 보기
+                    </button>
+                    {!usesInlineDetail && isCandidateOpen && (
+                      <TechCandidatePopover
+                        faction={faction}
+                        progress={progress}
+                        candidates={calcFleetTechCandidates(characters, faction.value)}
+                        onMouseEnter={cancelPreviewClose}
+                        onMouseLeave={schedulePreviewClose}
+                      />
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </div>
-      )}
+        {usesInlineDetail && (
+          <div className="min-h-[264px] border border-gray-800 bg-gray-950/50">
+            {inlineFaction ? (
+              inlineDetail.type === 'effect' ? (
+                <LevelEffectSection faction={inlineFaction} progress={inlineProgress} />
+              ) : (
+                <TechCandidateSection
+                  faction={inlineFaction}
+                  progress={inlineProgress}
+                  candidates={calcFleetTechCandidates(characters, inlineFaction.value)}
+                />
+              )
+            ) : (
+              <TechDetailEmptyState />
+            )}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
@@ -369,6 +384,19 @@ function TechCandidateSection({ faction, progress, candidates }) {
         <div className="border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">후보 없음</div>
       )}
     </section>
+  )
+}
+
+function TechDetailEmptyState() {
+  return (
+    <div className="flex h-full min-h-[264px] items-center justify-center px-6 py-10 text-center">
+      <div>
+        <div className="text-sm font-semibold text-gray-300">상세 정보 선택</div>
+        <div className="mt-2 text-xs leading-5 text-gray-600">
+          왼쪽 표에서 `달성 효과` 또는 `후보 보기`를 누르면 이 영역에 상세 내용이 표시됩니다.
+        </div>
+      </div>
+    </div>
   )
 }
 
