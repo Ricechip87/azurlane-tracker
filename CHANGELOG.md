@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-06-07 - Add Growth Recommendation Page
+
+### Why
+- Growth and fleet recommendation tools need their own page instead of staying mixed into roster input.
+- The roster page's simple summary block should keep its current compact size and role.
+
+### Changed
+- Added a `육성/편성 추천` page with tabs for `기술점수 추천`, `추가 스탯 추천`, `개발함 추천`, `120 육성 추천`, and `편성 추천`.
+- Connected the existing fleet tech points, level effect, and candidate popover features to the `기술점수 추천` tab.
+- Added placeholder states for the remaining recommendation tabs.
+- Extracted the fleet tech panel for reuse while preserving the existing simple summary layout in `함순이 내 정보`.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Stabilize Fleet Tech Popover Hover
 
 ### Why

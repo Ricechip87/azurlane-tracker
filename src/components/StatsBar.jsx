@@ -18,9 +18,56 @@ const RARITY_COLOR = {
 export default function StatsBar({ characters }) {
   const fullSummary = summarizeRoster(characters)
   const majorFactionTechPoints = calcMajorFactionTechPoints(characters)
-  const majorFactionTechProgress = calcFleetTechProgress(majorFactionTechPoints)
 
   const [selectedType, setSelectedType] = useState('전함')
+
+  const acquiredStats = calcStatsByShipType(characters, 'acquired')
+  const maxedStats = calcStatsByShipType(characters, '120')
+  const levelStats = calcFleetTechLevelStats(majorFactionTechPoints)
+  const totalStats = mergeStatsByShipType(acquiredStats, maxedStats, levelStats)
+
+  return (
+    <div className="relative bg-gray-900 border border-gray-800 rounded-lg overflow-visible">
+      <div className="flex flex-wrap">
+
+        {/* 좌측: 간단 통계 */}
+        <div className="border-r border-gray-800 shrink-0 w-[360px]">
+          <div className="h-9 px-3 flex items-center justify-center text-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
+            간단 통계
+          </div>
+          <div className="text-xs">
+            <SummaryGroup title="전체 보유함 기준" summary={fullSummary} />
+          </div>
+        </div>
+
+        <FleetTechPanel characters={characters} className="border-r border-gray-800 shrink-0 w-[520px]" />
+
+        {/* 우측: 추가 스탯 */}
+        <div className="flex-1 min-w-0">
+          <div className="h-9 bg-gray-800 border-b border-gray-700 px-3 flex items-center gap-3">
+            <span className="text-xs font-semibold text-gray-300">전체 목록의 추가 스탯</span>
+            <select
+              value={selectedType}
+              onChange={e => setSelectedType(e.target.value)}
+              className="bg-gray-700 border border-gray-600 rounded px-2 py-0.5 text-xs text-gray-200 focus:outline-none focus:border-blue-500"
+            >
+              {SHIP_TYPE_ORDER.map(t => <option key={t} value={t}>{t}</option>)}
+            </select>
+          </div>
+          <div className="divide-y divide-gray-800">
+            <StatGroup label="인게임 효과 합계" statsByType={totalStats} selectedType={selectedType} sub="획득/120/함대 기술 레벨 기준" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  )
+}
+
+export function FleetTechPanel({ characters, className = '' }) {
+  const majorFactionTechPoints = calcMajorFactionTechPoints(characters)
+  const majorFactionTechProgress = calcFleetTechProgress(majorFactionTechPoints)
+
   const [previewFaction, setPreviewFaction] = useState(null)
   const [effectFaction, setEffectFaction] = useState(null)
   const previewCloseTimer = useRef(null)
@@ -44,115 +91,76 @@ export default function StatsBar({ characters }) {
     effectCloseTimer.current = setTimeout(() => setEffectFaction(null), 180)
   }
 
-  const acquiredStats = calcStatsByShipType(characters, 'acquired')
-  const maxedStats = calcStatsByShipType(characters, '120')
-  const levelStats = calcFleetTechLevelStats(majorFactionTechPoints)
-  const totalStats = mergeStatsByShipType(acquiredStats, maxedStats, levelStats)
-
   return (
-    <div className="relative bg-gray-900 border border-gray-800 rounded-lg overflow-visible">
-      <div className="flex flex-wrap">
+    <div className={className}>
+      <div className="h-9 px-3 flex items-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
+        획득 기술점수 <span className="ml-1 font-normal text-gray-500">(전체 보유함)</span>
+      </div>
+      <div className="grid grid-cols-[1fr_auto_auto_auto_auto] divide-x divide-gray-800 text-xs">
+        {MAJOR_TECH_FACTIONS.map(faction => {
+          const progress = majorFactionTechProgress[faction.value]
+          const isCandidateOpen = previewFaction === faction.value
+          const isEffectOpen = effectFaction === faction.value
 
-        {/* 좌측: 간단 통계 */}
-        <div className="border-r border-gray-800 shrink-0 w-[360px]">
-          <div className="h-9 px-3 flex items-center justify-center text-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
-            간단 통계
-          </div>
-          <div className="text-xs">
-            <SummaryGroup title="전체 보유함 기준" summary={fullSummary} />
-          </div>
-        </div>
-
-        {/* 가운데: 기술점수 */}
-        <div className="border-r border-gray-800 shrink-0 w-[520px]">
-          <div className="h-9 px-3 flex items-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
-            획득 기술점수 <span className="ml-1 font-normal text-gray-500">(전체 보유함)</span>
-          </div>
-          <div className="grid grid-cols-[1fr_auto_auto_auto_auto] divide-x divide-gray-800 text-xs">
-            {MAJOR_TECH_FACTIONS.map(faction => {
-              const progress = majorFactionTechProgress[faction.value]
-              const isCandidateOpen = previewFaction === faction.value
-              const isEffectOpen = effectFaction === faction.value
-
-              return (
-                <div key={faction.value} className="contents">
-                  <div className="px-4 py-3 text-gray-300">{faction.label}</div>
-                  <div
-                    className="relative px-3 py-2 text-center whitespace-nowrap"
+          return (
+            <div key={faction.value} className="contents">
+              <div className="px-4 py-3 text-gray-300">{faction.label}</div>
+              <div
+                className="relative px-3 py-2 text-center whitespace-nowrap"
+                onMouseEnter={cancelEffectClose}
+                onMouseLeave={scheduleEffectClose}
+              >
+                <button
+                  type="button"
+                  onClick={() => {
+                    setEffectFaction(isEffectOpen ? null : faction.value)
+                    setPreviewFaction(null)
+                  }}
+                  className={`rounded border px-2 py-1 text-xs transition-colors ${isEffectOpen ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-cyan-600 hover:text-cyan-200'}`}
+                >
+                  LV.{progress?.currentLevel?.level || 0} 달성 효과
+                </button>
+                {isEffectOpen && (
+                  <LevelEffectPopover
+                    faction={faction}
+                    progress={progress}
                     onMouseEnter={cancelEffectClose}
                     onMouseLeave={scheduleEffectClose}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setEffectFaction(isEffectOpen ? null : faction.value)
-                        setPreviewFaction(null)
-                      }}
-                      className={`rounded border px-2 py-1 text-xs transition-colors ${isEffectOpen ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-cyan-600 hover:text-cyan-200'}`}
-                    >
-                      LV.{progress?.currentLevel?.level || 0} 달성 효과
-                    </button>
-                    {isEffectOpen && (
-                      <LevelEffectPopover
-                        faction={faction}
-                        progress={progress}
-                        onMouseEnter={cancelEffectClose}
-                        onMouseLeave={scheduleEffectClose}
-                      />
-                    )}
-                  </div>
-                  <div className="px-4 py-3 text-right text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
-                  <div className="px-3 py-3 text-right text-gray-500 whitespace-nowrap">
-                    {formatNextLevelProgress(progress)}
-                  </div>
-                  <div
-                    className="relative px-3 py-2 text-right"
+                  />
+                )}
+              </div>
+              <div className="px-4 py-3 text-right text-blue-300 font-bold">{majorFactionTechPoints[faction.value]}</div>
+              <div className="px-3 py-3 text-right text-gray-500 whitespace-nowrap">
+                {formatNextLevelProgress(progress)}
+              </div>
+              <div
+                className="relative px-3 py-2 text-right"
+                onMouseEnter={cancelPreviewClose}
+                onMouseLeave={schedulePreviewClose}
+              >
+                <button
+                  type="button"
+                  onClick={() => {
+                    setPreviewFaction(isCandidateOpen ? null : faction.value)
+                    setEffectFaction(null)
+                  }}
+                  className={`rounded border px-2 py-1 text-xs transition-colors ${isCandidateOpen ? 'border-blue-500 bg-blue-600/20 text-blue-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-blue-600 hover:text-blue-200'}`}
+                >
+                  후보 보기
+                </button>
+                {isCandidateOpen && (
+                  <TechCandidatePopover
+                    faction={faction}
+                    progress={progress}
+                    candidates={calcFleetTechCandidates(characters, faction.value)}
                     onMouseEnter={cancelPreviewClose}
                     onMouseLeave={schedulePreviewClose}
-                  >
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setPreviewFaction(isCandidateOpen ? null : faction.value)
-                        setEffectFaction(null)
-                      }}
-                      className={`rounded border px-2 py-1 text-xs transition-colors ${isCandidateOpen ? 'border-blue-500 bg-blue-600/20 text-blue-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-blue-600 hover:text-blue-200'}`}
-                    >
-                      후보 보기
-                    </button>
-                    {isCandidateOpen && (
-                      <TechCandidatePopover
-                        faction={faction}
-                        progress={progress}
-                        candidates={calcFleetTechCandidates(characters, faction.value)}
-                        onMouseEnter={cancelPreviewClose}
-                        onMouseLeave={schedulePreviewClose}
-                      />
-                    )}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* 우측: 추가 스탯 */}
-        <div className="flex-1 min-w-0">
-          <div className="h-9 bg-gray-800 border-b border-gray-700 px-3 flex items-center gap-3">
-            <span className="text-xs font-semibold text-gray-300">전체 목록의 추가 스탯</span>
-            <select
-              value={selectedType}
-              onChange={e => setSelectedType(e.target.value)}
-              className="bg-gray-700 border border-gray-600 rounded px-2 py-0.5 text-xs text-gray-200 focus:outline-none focus:border-blue-500"
-            >
-              {SHIP_TYPE_ORDER.map(t => <option key={t} value={t}>{t}</option>)}
-            </select>
-          </div>
-          <div className="divide-y divide-gray-800">
-            <StatGroup label="인게임 효과 합계" statsByType={totalStats} selectedType={selectedType} sub="획득/120/함대 기술 레벨 기준" />
-          </div>
-        </div>
-
+                  />
+                )}
+              </div>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

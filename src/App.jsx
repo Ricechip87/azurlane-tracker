@@ -5,6 +5,7 @@ import FilterPanel from './components/FilterPanel'
 import CharacterTable from './components/CharacterTable'
 import StatsBar from './components/StatsBar'
 import BackupPanel from './components/BackupPanel'
+import RecommendationPage from './components/RecommendationPage'
 import { normalizeAcquisitionStatus } from './utils/acquisitionStatus.js'
 import { matchesShipClassification } from './utils/shipClassifications.js'
 import heroImage from './assets/hero.png'
@@ -109,7 +110,10 @@ export default function App() {
           setUserData={setUserData}
         />
       )}
-      {activePage !== 'home' && activePage !== 'my-roster' && (
+      {activePage === 'growth-recommend' && (
+        <RecommendationPage characters={enriched} />
+      )}
+      {activePage !== 'home' && activePage !== 'my-roster' && activePage !== 'growth-recommend' && (
         <UnderConstructionPage title={PAGE_TITLES[activePage] || '공사중'} />
       )}
     </div>
