@@ -397,10 +397,15 @@ function TechCandidateSection({ faction, progress, characters }) {
 
   return (
     <section className="flex h-full flex-col p-4">
-      <div className="mb-3 flex shrink-0 flex-wrap items-center justify-between gap-3">
-        <div className="flex flex-wrap items-center gap-3">
-          <h3 className="text-sm font-bold text-gray-100">{faction.label} 기술점수 후보</h3>
-          <span className="text-xs text-gray-500">{formatNextLevelProgress(progress)}</span>
+      <div className="mb-3 flex shrink-0 flex-wrap items-start justify-between gap-3">
+        <div>
+          <div className="flex flex-wrap items-center gap-3">
+            <h3 className="text-sm font-bold text-gray-100">{faction.label} 기술점수 후보</h3>
+            <span className="text-xs text-gray-500">{formatNextLevelProgress(progress)}</span>
+          </div>
+          <p className="mt-1 text-xs text-gray-500">
+            (입수 난이도가 쉽거나 보유 중인 함선 중 강력한 함선부터 추천됩니다.)
+          </p>
         </div>
         <CandidateBasisToggle basis={basis} setBasis={setBasis} />
       </div>
