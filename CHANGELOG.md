@@ -1,9 +1,35 @@
 # Change Log
 
+## 2026-06-07 - Enlarge Roster Guide Illustration
+
+### Why
+- The loading illustration in the roster guide panel looked too small inside its available slot.
+
+### Changed
+- Enlarged the roster guide illustration area and reduced the unused padding around the image.
+- Kept the panel responsive by stacking the image and guide text on narrow screens.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
+## 2026-06-07 - Remove Unverified External-Style Wording
+
+### Why
+- The current menu structure has not been rechecked directly against the original external reference after the initial reference phase.
+- Project docs should avoid claiming an externally matched structure without current verification.
+
+### Changed
+- Reworded the project direction in `PLAN.md` and `README.md` as a owned-roster growth/fleet optimization web tool.
+- Replaced the completed Home item with the neutral `기능별 진입 구조`.
+
+### Verified
+- Documentation-only change.
+
 ## 2026-06-07 - Refresh Project Plan Around Current Menu
 
 ### Why
-- The old phase-based plan no longer matched the current ALtoy-style menu structure.
+- The old phase-based plan no longer matched the current menu structure.
 
 ### Changed
 - Reorganized `PLAN.md` around Home, My Roster, Recommendation, In-game Content, Data Operations, and Deployment.
@@ -357,7 +383,7 @@
 ## 2026-06-07 - Add Main Menu Shell
 
 ### Why
-- The app needs an ALtoy-style shell instead of placing every tool on one page.
+- The app needs a menu-based shell instead of placing every tool on one page.
 - The existing tracker screen is closer to a personal roster input page and should live under its own menu item.
 
 ### Changed
@@ -761,11 +787,11 @@
 
 ### Why
 - Ship icons should be served from local public assets instead of relying on remote GitHub raw URLs at runtime.
-- Utawarerumono collaboration icons were missing from the local `AzurLane` image data and needed an ALtoy-compatible fallback source.
+- Utawarerumono collaboration icons were missing from the local `AzurLane` image data and needed a compatible fallback source.
 
 ### Changed
 - Added a local icon sync script that copies ship icons from `참고용/AzurLane` into `public/ship-icons`.
-- Added fixed skin-ID handling for `Z031` through `Z036` using ALtoy's `JforPlay/data_for_toy` icon source.
+- Added fixed skin-ID handling for `Z031` through `Z036` using the `JforPlay/data_for_toy` icon source.
 - Updated character data icon URLs to use local public assets.
 - Added a missing icon report for ships that do not exist in the local reference data.
 - Added `npm run sync:icons` for repeatable icon refreshes.
@@ -837,7 +863,7 @@
 ## 2026-06-04 - Define Product Direction
 
 ### Why
-- The project direction was clarified as an ALtoy-style tool specialized for owned-ship growth and fleet optimization.
+- The project direction was clarified as a tool specialized for owned-ship growth and fleet optimization.
 - Optional visual archive features should be distinguished from the core tracker/recommendation goals.
 
 ### Changed
