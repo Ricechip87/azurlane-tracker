@@ -232,7 +232,7 @@ function FleetTechGuideImagePanel({ context }) {
           />
         </div>
         <div className="border-t border-gray-800 px-4 py-3 text-sm text-gray-500">
-          아 여기에 무슨 정보를 표기하지... 추천 받습니다.
+          아 여기에 무슨 정보를 표기하지... 추천 받습니다. 일단 임시로 이미지 넣어둠
         </div>
       </div>
     </section>

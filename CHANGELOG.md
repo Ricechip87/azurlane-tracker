@@ -27,6 +27,7 @@
 - Removed the text header from the fleet tech guide image slot.
 - Added faction-specific fleet tech guide images for USS, HMS, IJN, and KMS button selections.
 - Added a small placeholder note below the fleet tech guide image.
+- Clarified that the fleet tech guide image is a temporary placeholder.
 
 ### Verified
 - `npm.cmd run test`
