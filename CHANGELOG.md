@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-07 - Center Tech Recommendation Cells Vertically
+
+### Why
+- Inline tech recommendation headers and values were visually top-aligned.
+- The long next-level header wrapped awkwardly at the final character.
+
+### Changed
+- Vertically and horizontally centered inline tech recommendation header/value cells.
+- Split `다음 레벨까지 남은 점수` into two explicit lines.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Align Tech Recommendation Columns
 
 ### Why
