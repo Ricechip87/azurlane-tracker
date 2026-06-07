@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from '../utils/fleetTech.js'
 import { calcFleetTechCandidates, splitFleetTechCandidates } from '../utils/fleetTechCandidates.js'
 import { calcStatsByShipType, mergeStatsByShipType, summarizeRoster } from '../utils/rosterStats.js'
@@ -23,6 +23,26 @@ export default function StatsBar({ characters }) {
   const [selectedType, setSelectedType] = useState('전함')
   const [previewFaction, setPreviewFaction] = useState(null)
   const [effectFaction, setEffectFaction] = useState(null)
+  const previewCloseTimer = useRef(null)
+  const effectCloseTimer = useRef(null)
+
+  const cancelPreviewClose = () => {
+    if (previewCloseTimer.current) clearTimeout(previewCloseTimer.current)
+  }
+
+  const schedulePreviewClose = () => {
+    cancelPreviewClose()
+    previewCloseTimer.current = setTimeout(() => setPreviewFaction(null), 180)
+  }
+
+  const cancelEffectClose = () => {
+    if (effectCloseTimer.current) clearTimeout(effectCloseTimer.current)
+  }
+
+  const scheduleEffectClose = () => {
+    cancelEffectClose()
+    effectCloseTimer.current = setTimeout(() => setEffectFaction(null), 180)
+  }
 
   const acquiredStats = calcStatsByShipType(characters, 'acquired')
   const maxedStats = calcStatsByShipType(characters, '120')
@@ -59,7 +79,8 @@ export default function StatsBar({ characters }) {
                   <div className="px-4 py-3 text-gray-300">{faction.label}</div>
                   <div
                     className="relative px-3 py-2 text-center whitespace-nowrap"
-                    onMouseLeave={() => setEffectFaction(null)}
+                    onMouseEnter={cancelEffectClose}
+                    onMouseLeave={scheduleEffectClose}
                   >
                     <button
                       type="button"
@@ -75,6 +96,8 @@ export default function StatsBar({ characters }) {
                       <LevelEffectPopover
                         faction={faction}
                         progress={progress}
+                        onMouseEnter={cancelEffectClose}
+                        onMouseLeave={scheduleEffectClose}
                       />
                     )}
                   </div>
@@ -84,7 +107,8 @@ export default function StatsBar({ characters }) {
                   </div>
                   <div
                     className="relative px-3 py-2 text-right"
-                    onMouseLeave={() => setPreviewFaction(null)}
+                    onMouseEnter={cancelPreviewClose}
+                    onMouseLeave={schedulePreviewClose}
                   >
                     <button
                       type="button"
@@ -101,6 +125,8 @@ export default function StatsBar({ characters }) {
                         faction={faction}
                         progress={progress}
                         candidates={calcFleetTechCandidates(characters, faction.value)}
+                        onMouseEnter={cancelPreviewClose}
+                        onMouseLeave={schedulePreviewClose}
                       />
                     )}
                   </div>
@@ -138,13 +164,17 @@ function formatNextLevelProgress(progress) {
   return `다음 ${progress.pointsToNext}`
 }
 
-function LevelEffectPopover({ faction, progress }) {
+function LevelEffectPopover({ faction, progress, onMouseEnter, onMouseLeave }) {
   const currentLevel = progress?.currentLevel
   const effects = summarizeLevelEffects(currentLevel)
   const hasEffects = effects.length > 0
 
   return (
-    <div className="absolute left-0 top-full z-30 mt-1 w-[420px] max-w-[calc(100vw-2rem)] rounded border border-gray-700 bg-gray-950 text-left shadow-2xl">
+    <div
+      className="absolute left-0 top-full z-30 mt-1 w-[420px] max-w-[calc(100vw-2rem)] rounded border border-gray-700 bg-gray-950 text-left shadow-2xl"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <div className="h-8 px-3 flex items-center gap-3 bg-gray-800 border-b border-gray-700 text-xs">
         <span className="font-semibold text-gray-200">{faction.label} LV.{currentLevel?.level || 0} 달성 효과</span>
         <span className="text-gray-500">{currentLevel ? `${currentLevel.pt}점 기준` : '효과 없음'}</span>
@@ -200,12 +230,16 @@ function summarizeLevelEffects(level) {
   })
 }
 
-function TechCandidatePopover({ faction, progress, candidates }) {
+function TechCandidatePopover({ faction, progress, candidates, onMouseEnter, onMouseLeave }) {
   const splitCandidates = splitFleetTechCandidates(candidates)
   const hasCandidates = candidates.length > 0
 
   return (
-    <div className="absolute right-0 top-full z-30 mt-1 w-[780px] max-w-[calc(100vw-2rem)] rounded border border-gray-700 bg-gray-950 text-left shadow-2xl">
+    <div
+      className="absolute right-0 top-full z-30 mt-1 w-[780px] max-w-[calc(100vw-2rem)] rounded border border-gray-700 bg-gray-950 text-left shadow-2xl"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <div className="h-8 px-3 flex items-center gap-3 bg-gray-800 border-b border-gray-700 text-xs">
         <span className="font-semibold text-gray-200">{faction.label} 기술점수 후보</span>
         <span className="text-gray-500">{formatNextLevelProgress(progress)}</span>

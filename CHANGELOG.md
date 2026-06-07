@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-06-07 - Stabilize Fleet Tech Popover Hover
+
+### Why
+- Fleet tech popovers closed too quickly while moving the pointer from a button into the opened popover.
+
+### Changed
+- Added a short delayed close for fleet tech candidate and level effect popovers.
+- Cancel the delayed close when the pointer enters the opened popover.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-07 - Close Fleet Tech Popovers On Mouse Leave
 
 ### Why
