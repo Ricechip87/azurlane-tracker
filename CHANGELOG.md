@@ -6,7 +6,7 @@
 - The loading illustration in the roster guide panel looked too small inside its available slot.
 
 ### Changed
-- Enlarged the roster guide illustration area and reduced the unused padding around the image.
+- Enlarged the roster guide illustration area to a wider 16:9 slot and reduced the unused padding around the image.
 - Kept the panel responsive by stacking the image and guide text on narrow screens.
 
 ### Verified
