@@ -15,8 +15,9 @@
 - Centered the fleet tech candidate `획득 가능 기술점수` header as an explicit two-line label.
 - Narrowed the candidate ship-name column to give score columns more room.
 - Reordered the first menu group to `내 함순이 정보`, `육성/편성 추천`, then `함순이 DB`.
-- Added `120 기준` and `풀돌 기준` toggles to fleet tech candidate panels, with `120 기준` selected by default.
-- Recalculate candidate score, efficiency, and ordering without Lv.120 points when `풀돌 기준` is selected.
+- Added `벽청년 이상` and `벽뉴비 권장` toggles to fleet tech candidate panels, with `벽청년 이상` selected by default.
+- Recalculate candidate score, efficiency, and ordering without Lv.120 points when `벽뉴비 권장` is selected.
+- Split `벽뉴비 권장` candidate groups into `SSR / SR`, `UR`, and `R / N`.
 - Center-aligned all fleet tech candidate table columns except the ship-name column.
 - Updated the header tagline to `벽람항로 개인용 함선 육성툴`.
 

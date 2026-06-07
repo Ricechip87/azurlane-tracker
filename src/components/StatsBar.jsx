@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { Fragment, useRef, useState } from 'react'
 import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from '../utils/fleetTech.js'
 import {
   calcFleetTechCandidates,
@@ -318,14 +318,14 @@ function summarizeLevelEffects(level) {
 }
 
 const CANDIDATE_BASIS_OPTIONS = [
-  { value: FLEET_TECH_CANDIDATE_BASIS.LEVEL_120, label: '120 기준' },
-  { value: FLEET_TECH_CANDIDATE_BASIS.MAX_LB, label: '풀돌 기준' },
+  { value: FLEET_TECH_CANDIDATE_BASIS.LEVEL_120, label: '벽청년 이상' },
+  { value: FLEET_TECH_CANDIDATE_BASIS.MAX_LB, label: '벽뉴비 권장' },
 ]
 
 function TechCandidatePopover({ faction, progress, characters, onMouseEnter, onMouseLeave }) {
   const [basis, setBasis] = useState(FLEET_TECH_CANDIDATE_BASIS.LEVEL_120)
   const candidates = calcFleetTechCandidates(characters, faction.value, { basis })
-  const splitCandidates = splitFleetTechCandidates(candidates)
+  const candidateGroups = splitFleetTechCandidates(candidates, basis)
   const hasCandidates = candidates.length > 0
 
   return (
@@ -342,7 +342,7 @@ function TechCandidatePopover({ faction, progress, characters, onMouseEnter, onM
         <CandidateBasisToggle basis={basis} setBasis={setBasis} />
       </div>
       {hasCandidates ? (
-        <CandidateTable basis={basis} highCandidates={splitCandidates.high} lowCandidates={splitCandidates.low} />
+        <CandidateTable basis={basis} candidateGroups={candidateGroups} />
       ) : (
         <div className="px-3 py-3 text-xs text-gray-600">후보 없음</div>
       )}
@@ -353,7 +353,7 @@ function TechCandidatePopover({ faction, progress, characters, onMouseEnter, onM
 function TechCandidateSection({ faction, progress, characters }) {
   const [basis, setBasis] = useState(FLEET_TECH_CANDIDATE_BASIS.LEVEL_120)
   const candidates = calcFleetTechCandidates(characters, faction.value, { basis })
-  const splitCandidates = splitFleetTechCandidates(candidates)
+  const candidateGroups = splitFleetTechCandidates(candidates, basis)
   const hasCandidates = candidates.length > 0
 
   return (
@@ -367,7 +367,7 @@ function TechCandidateSection({ faction, progress, characters }) {
       </div>
       {hasCandidates ? (
         <div className="min-h-0 flex-1 overflow-hidden border border-gray-800 bg-gray-950">
-          <CandidateTable basis={basis} highCandidates={splitCandidates.high} lowCandidates={splitCandidates.low} />
+          <CandidateTable basis={basis} candidateGroups={candidateGroups} />
         </div>
       ) : (
         <div className="flex flex-1 items-center justify-center border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">후보 없음</div>
@@ -409,7 +409,7 @@ function CandidateBasisToggle({ basis, setBasis }) {
   )
 }
 
-function CandidateTable({ basis, highCandidates, lowCandidates }) {
+function CandidateTable({ basis, candidateGroups }) {
   const showsLevel120 = basis === FLEET_TECH_CANDIDATE_BASIS.LEVEL_120
   const columnSpan = showsLevel120 ? 9 : 8
 
@@ -443,10 +443,12 @@ function CandidateTable({ basis, highCandidates, lowCandidates }) {
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-900">
-          <CandidateGroupRow title="UR / SSR" columnSpan={columnSpan} />
-          <CandidateRows candidates={highCandidates} columnSpan={columnSpan} showsLevel120={showsLevel120} />
-          <CandidateGroupRow title="SR / R / N" columnSpan={columnSpan} />
-          <CandidateRows candidates={lowCandidates} columnSpan={columnSpan} showsLevel120={showsLevel120} />
+          {candidateGroups.map(group => (
+            <Fragment key={group.key}>
+              <CandidateGroupRow title={group.title} columnSpan={columnSpan} />
+              <CandidateRows candidates={group.candidates} columnSpan={columnSpan} showsLevel120={showsLevel120} />
+            </Fragment>
+          ))}
         </tbody>
       </table>
     </div>

@@ -10,11 +10,21 @@ const RARITY_ORDER = {
   N: 4,
 }
 
-const HIGH_RARITY = new Set(['UR', 'SSR'])
 export const FLEET_TECH_CANDIDATE_BASIS = {
   LEVEL_120: 'level120',
   MAX_LB: 'maxLB',
 }
+
+const LEVEL_120_GROUPS = [
+  { key: 'high', title: 'UR / SSR', rarities: new Set(['UR', 'SSR']) },
+  { key: 'low', title: 'SR / R / N', rarities: new Set(['SR', 'R', 'N']) },
+]
+
+const MAX_LB_GROUPS = [
+  { key: 'practical', title: 'SSR / SR', rarities: new Set(['SSR', 'SR']) },
+  { key: 'ur', title: 'UR', rarities: new Set(['UR']) },
+  { key: 'low', title: 'R / N', rarities: new Set(['R', 'N']) },
+]
 
 export function calcFleetTechCandidates(characters, factionValue, options = {}) {
   const basis = options.basis || FLEET_TECH_CANDIDATE_BASIS.LEVEL_120
@@ -25,11 +35,12 @@ export function calcFleetTechCandidates(characters, factionValue, options = {}) 
     .sort(compareCandidates)
 }
 
-export function splitFleetTechCandidates(candidates) {
-  return {
-    high: candidates.filter(candidate => candidate.group === 'high'),
-    low: candidates.filter(candidate => candidate.group === 'low'),
-  }
+export function splitFleetTechCandidates(candidates, basis = FLEET_TECH_CANDIDATE_BASIS.LEVEL_120) {
+  return getCandidateGroups(basis).map(group => ({
+    key: group.key,
+    title: group.title,
+    candidates: candidates.filter(candidate => candidate.group === group.key),
+  }))
 }
 
 function toCandidate(character, basis) {
@@ -61,8 +72,16 @@ function toCandidate(character, basis) {
     remainingSteps,
     remainingTechPoints,
     efficiency: remainingTechPoints / remainingSteps,
-    group: HIGH_RARITY.has(character.rarity) ? 'high' : 'low',
+    group: getCandidateGroupKey(character.rarity, basis),
   }
+}
+
+function getCandidateGroups(basis) {
+  return basis === FLEET_TECH_CANDIDATE_BASIS.MAX_LB ? MAX_LB_GROUPS : LEVEL_120_GROUPS
+}
+
+function getCandidateGroupKey(rarity, basis) {
+  return getCandidateGroups(basis).find(group => group.rarities.has(rarity))?.key || 'low'
 }
 
 function countRemainingSteps(status, basis) {

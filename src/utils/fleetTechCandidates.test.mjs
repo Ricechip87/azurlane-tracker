@@ -1,5 +1,9 @@
 import assert from 'node:assert/strict'
-import { calcFleetTechCandidates, splitFleetTechCandidates } from './fleetTechCandidates.js'
+import {
+  calcFleetTechCandidates,
+  FLEET_TECH_CANDIDATE_BASIS,
+  splitFleetTechCandidates,
+} from './fleetTechCandidates.js'
 
 const candidates = calcFleetTechCandidates([
   {
@@ -67,11 +71,12 @@ assert.deepEqual(candidates[1].stages, {
 })
 
 const split = splitFleetTechCandidates(candidates)
-assert.deepEqual(split.high.map(candidate => candidate.name), ['UR acquired', 'SSR 100', 'SSR missing'])
-assert.deepEqual(split.low.map(candidate => candidate.name), ['SR efficient'])
-assert.equal(split.high[0].position, '후열')
-assert.equal(split.high[2].position, '전열')
-assert.equal(split.low[0].position, '기타')
+assert.deepEqual(split.map(group => group.title), ['UR / SSR', 'SR / R / N'])
+assert.deepEqual(split[0].candidates.map(candidate => candidate.name), ['UR acquired', 'SSR 100', 'SSR missing'])
+assert.deepEqual(split[1].candidates.map(candidate => candidate.name), ['SR efficient'])
+assert.equal(split[0].candidates[0].position, '후열')
+assert.equal(split[0].candidates[2].position, '전열')
+assert.equal(split[1].candidates[0].position, '기타')
 
 const maxLbCandidates = calcFleetTechCandidates([
   {
@@ -115,3 +120,50 @@ assert.deepEqual(maxLbCandidates[0].stages, {
   maxLB: { completed: false, value: 50 },
   level120: { completed: true, value: 0 },
 })
+
+const maxLbGroupedCandidates = calcFleetTechCandidates([
+  {
+    id: 20,
+    name: 'UR expensive',
+    rarity: 'UR',
+    shipType: '전함',
+    faction: '로열',
+    acquired: '획득',
+    techPoints: { acquired: 20, maxLB: 200, lv120: 300 },
+  },
+  {
+    id: 21,
+    name: 'SSR practical',
+    rarity: 'SSR',
+    shipType: '경순',
+    faction: '로열',
+    acquired: '획득',
+    techPoints: { acquired: 20, maxLB: 40, lv120: 300 },
+  },
+  {
+    id: 22,
+    name: 'SR practical',
+    rarity: 'SR',
+    shipType: '구축',
+    faction: '로열',
+    acquired: '획득',
+    techPoints: { acquired: 20, maxLB: 30, lv120: 300 },
+  },
+  {
+    id: 23,
+    name: 'R low',
+    rarity: 'R',
+    shipType: '구축',
+    faction: '로열',
+    acquired: '획득',
+    techPoints: { acquired: 20, maxLB: 25, lv120: 300 },
+  },
+], '로열', { basis: FLEET_TECH_CANDIDATE_BASIS.MAX_LB })
+
+const maxLbSplit = splitFleetTechCandidates(maxLbGroupedCandidates, FLEET_TECH_CANDIDATE_BASIS.MAX_LB)
+assert.deepEqual(maxLbSplit.map(group => group.title), ['SSR / SR', 'UR', 'R / N'])
+assert.deepEqual(maxLbSplit.map(group => group.candidates.map(candidate => candidate.name)), [
+  ['SSR practical', 'SR practical'],
+  ['UR expensive'],
+  ['R low'],
+])
