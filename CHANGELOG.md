@@ -6,8 +6,8 @@
 - The loading illustration in the roster guide panel looked too small inside its available slot.
 
 ### Changed
-- Enlarged the roster guide illustration area to a wider 16:9 slot and reduced the unused padding around the image.
-- Kept the panel responsive by stacking the image and guide text on narrow screens.
+- Kept the roster guide panel at the same height as the simple stats card.
+- Enlarged the loading illustration within that fixed-height panel by reducing the image-side padding and using a 16:9 height-based slot.
 
 ### Verified
 - `npm.cmd run lint`

@@ -271,10 +271,10 @@ function RosterHeroPanel() {
   }, [])
 
   return (
-    <section className="min-h-[306px] w-full flex-1 overflow-hidden rounded-lg border border-gray-800 bg-gray-900 lg:min-w-[720px]">
-      <div className="grid h-full min-h-[306px] grid-cols-1 md:grid-cols-[520px_1fr]">
-        <div className="flex items-center justify-center border-b border-gray-800 bg-gray-950/60 p-5 md:border-b-0 md:border-r">
-          <div className="aspect-video w-full max-w-[488px] overflow-hidden rounded border border-gray-700 bg-gray-900/80">
+    <section className="h-[206px] w-full flex-1 overflow-hidden rounded-lg border border-gray-800 bg-gray-900 lg:min-w-[720px]">
+      <div className="grid h-full grid-cols-1 md:grid-cols-[360px_1fr]">
+        <div className="flex items-center justify-center border-b border-gray-800 bg-gray-950/60 p-2 md:border-b-0 md:border-r">
+          <div className="aspect-video h-full max-h-[188px] max-w-full overflow-hidden rounded border border-gray-700 bg-gray-900/80">
             {currentImage ? (
               <img
                 src={currentImage}
