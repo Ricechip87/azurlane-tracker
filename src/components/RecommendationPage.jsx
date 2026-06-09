@@ -3,16 +3,10 @@ import { FleetTechPanel } from './StatsBar.jsx'
 
 const RECOMMENDATION_TABS = [
   {
-    id: 'tech',
-    label: '기술점수 추천',
-    title: '기술점수 추천',
-    description: '진영별 기술점수, 현재 LV, 다음 LV, 후보 함선을 확인합니다.',
-  },
-  {
-    id: 'bonus-stat',
-    label: '추가 스탯 추천',
-    title: '추가 스탯 추천',
-    description: '함종과 원하는 스탯을 기준으로 육성 후보를 고릅니다.',
+    id: 'level120',
+    label: '육성 추천',
+    title: '육성 추천',
+    description: '해역과 대작전 기준으로 120 육성 우선순위를 고릅니다.',
   },
   {
     id: 'research',
@@ -21,10 +15,16 @@ const RECOMMENDATION_TABS = [
     description: '개발함 획득 조건과 필요한 진영/함종 기반 후보를 정리합니다.',
   },
   {
-    id: 'level120',
-    label: '120 육성 추천',
-    title: '120 육성 추천',
-    description: '해역과 대작전 기준으로 120 육성 우선순위를 고릅니다.',
+    id: 'tech',
+    label: '기술 점수 추천',
+    title: '기술 점수 추천',
+    description: '진영별 기술점수, 현재 LV, 다음 LV, 후보 함선을 확인합니다.',
+  },
+  {
+    id: 'bonus-stat',
+    label: '추가 스탯작 추천',
+    title: '추가 스탯작 추천',
+    description: '함종과 원하는 스탯을 기준으로 육성 후보를 고릅니다.',
   },
   {
     id: 'fleet',
@@ -35,7 +35,7 @@ const RECOMMENDATION_TABS = [
 ]
 
 export default function RecommendationPage({ characters }) {
-  const [activeTab, setActiveTab] = useState('tech')
+  const [activeTab, setActiveTab] = useState('level120')
   const currentTab = RECOMMENDATION_TABS.find(tab => tab.id === activeTab) || RECOMMENDATION_TABS[0]
 
   return (

@@ -20,6 +20,7 @@
 - Removed the final fleet tech candidate metric column and its related sort tiebreaker.
 - Added a short fleet tech candidate note explaining that easier acquisitions or strong owned ships are recommended first.
 - Renamed the fleet tech candidate panel title to clarify that it recommends ships to raise for tech point acquisition.
+- Reordered recommendation tabs to `육성 추천`, `개발함 추천`, `기술 점수 추천`, `추가 스탯작 추천`, then `편성 추천`.
 - Split `벽뉴비 권장` candidate groups into `SSR / SR`, `UR`, and `R / N`.
 - Exclude `기타` position candidates from `벽뉴비 권장` results.
 - Center-aligned all fleet tech candidate table columns except the ship-name column.
@@ -343,8 +344,8 @@
 - The roster page's simple summary block should keep its current compact size and role.
 
 ### Changed
-- Added a `육성/편성 추천` page with tabs for `기술점수 추천`, `추가 스탯 추천`, `개발함 추천`, `120 육성 추천`, and `편성 추천`.
-- Connected the existing fleet tech points, level effect, and candidate popover features to the `기술점수 추천` tab.
+- Added a `육성/편성 추천` page with tabs for `육성 추천`, `개발함 추천`, `기술 점수 추천`, `추가 스탯작 추천`, and `편성 추천`.
+- Connected the existing fleet tech points, level effect, and candidate popover features to the `기술 점수 추천` tab.
 - Added placeholder states for the remaining recommendation tabs.
 - Extracted the fleet tech panel for reuse while preserving the existing simple summary layout in `함순이 내 정보`.
 

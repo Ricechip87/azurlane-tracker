@@ -37,7 +37,7 @@ const MENU_GROUPS = [
       {
         id: 'growth-recommend',
         title: '육성/편성 추천',
-        description: '기술점수, 추가 스탯, 120 육성, 개발함, 해역/대작전 편성 추천',
+        description: '육성, 개발함, 기술 점수, 추가 스탯작, 해역/대작전 편성 추천',
       },
       { id: 'ship-db', title: '함순이 DB', description: '인게임 함순이 DB 출력' },
     ],
