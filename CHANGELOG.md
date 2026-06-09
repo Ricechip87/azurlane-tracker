@@ -33,6 +33,7 @@
 - Clarified that the fleet tech guide image is a temporary placeholder.
 - Moved large guide images to public static assets and loaded character data as a fetched JSON asset to reduce the main JS chunk.
 - Disabled the Rolldown plugin timing advisory while keeping normal build warnings enabled.
+- Documented the future fleet tech candidate sorting plan based on growth recommendation rank, acquisition difficulty, ownership, and tech point gain.
 
 ### Verified
 - `npm.cmd run test`
