@@ -83,10 +83,11 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
   }
 
   const showInlineDetail = (type, factionValue) => {
-    setInlineDetail(current => (
-      current?.type === type && current?.factionValue === factionValue ? null : { type, factionValue }
-    ))
-    setInlineImageContext({ type, factionValue })
+    const isSameSelection = inlineDetail?.type === type && inlineDetail?.factionValue === factionValue
+    const nextContext = isSameSelection ? null : { type, factionValue }
+
+    setInlineDetail(nextContext)
+    setInlineImageContext(nextContext)
     setPreviewFaction(null)
     setEffectFaction(null)
   }

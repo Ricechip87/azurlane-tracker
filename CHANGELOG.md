@@ -21,6 +21,7 @@
 - Added a short fleet tech candidate note explaining that easier acquisitions or strong owned ships are recommended first.
 - Renamed the fleet tech candidate panel title to clarify that it recommends ships to raise for tech point acquisition.
 - Reordered recommendation tabs to `육성 추천`, `개발함 추천`, `기술 점수 추천`, `추가 스탯작 추천`, then `편성 추천`.
+- Return the fleet tech guide image to the default illustration when the selected level effect or candidate button is clicked again.
 - Split `벽뉴비 권장` candidate groups into `SSR / SR`, `UR`, and `R / N`.
 - Exclude `기타` position candidates from `벽뉴비 권장` results.
 - Center-aligned all fleet tech candidate table columns except the ship-name column.
