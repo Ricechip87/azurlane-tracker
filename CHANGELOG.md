@@ -36,6 +36,8 @@
 - Moved large guide images to public static assets and loaded character data as a fetched JSON asset to reduce the main JS chunk.
 - Disabled the Rolldown plugin timing advisory while keeping normal build warnings enabled.
 - Documented the future fleet tech candidate sorting plan based on growth recommendation rank, acquisition difficulty, ownership, and tech point gain.
+- Added a growth recommendation extraction script for the reference `메인해역`, `대작전`, and `맨땅뉴비` CSV files.
+- Generated an initial `growthRecommendations.json` dataset with matched character metadata, tier, sheet group, role note, and CSV coordinates for review.
 
 ### Verified
 - `npm.cmd run test`
