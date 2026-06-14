@@ -25,6 +25,9 @@ const SOURCES = [
 ]
 
 const OUTPUT_PATH = path.join(ROOT, 'src/data/growthRecommendations.json')
+const REPORT_DIR = path.join(ROOT, 'reports')
+const RECOMMENDATION_REPORT_PATH = path.join(REPORT_DIR, 'growthRecommendations.review.csv')
+const UNMATCHED_REPORT_PATH = path.join(REPORT_DIR, 'growthRecommendations.unmatched.csv')
 const characterByName = new Map()
 for (const character of characters) {
   for (const key of buildNameKeys(character.name)) {
@@ -287,6 +290,20 @@ function dedupeRecommendations(recommendations) {
   return result
 }
 
+function toCsvValue(value) {
+  const text = String(value ?? '')
+  if (!/[",\n\r]/.test(text)) return text
+  return `"${text.replace(/"/g, '""')}"`
+}
+
+function writeCsv(filePath, rows) {
+  const csv = rows
+    .map(row => row.map(toCsvValue).join(','))
+    .join('\n')
+
+  fs.writeFileSync(filePath, `${csv}\n`, 'utf8')
+}
+
 const extracted = SOURCES.map(extractSource)
 const recommendations = dedupeRecommendations(extracted.flatMap(result => result.recommendations))
 const unmatched = extracted.flatMap(result => result.unmatched)
@@ -310,7 +327,36 @@ const output = {
   },
 }
 
+fs.mkdirSync(REPORT_DIR, { recursive: true })
 fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`, 'utf8')
+writeCsv(RECOMMENDATION_REPORT_PATH, [
+  ['source', 'sourceLabel', 'audience', 'tier', 'sheetGroup', 'name', 'id', 'rarity', 'faction', 'shipType', 'roleNote', 'row', 'column'],
+  ...recommendations.map(item => [
+    item.source,
+    item.sourceLabel,
+    item.audience,
+    item.tier,
+    item.sheetGroup,
+    item.name,
+    item.id,
+    item.rarity,
+    item.faction,
+    item.shipType,
+    item.roleNote,
+    item.row,
+    item.column,
+  ]),
+])
+writeCsv(UNMATCHED_REPORT_PATH, [
+  ['source', 'name', 'row', 'column', 'reason'],
+  ...unmatched.map(item => [
+    item.source,
+    item.name,
+    item.row,
+    item.column,
+    item.reason || 'not matched',
+  ]),
+])
 
 for (const result of extracted) {
   console.log(`${result.source.label}: rows=${result.rows} columns=${result.columns} matched=${result.recommendations.length} unmatchedCandidates=${result.unmatched.length}`)
@@ -319,3 +365,5 @@ for (const result of extracted) {
 console.log(`totalRecommendations=${recommendations.length}`)
 console.log(`reviewUnmatchedTotal=${unmatched.length}`)
 console.log(`wrote ${path.relative(ROOT, OUTPUT_PATH)}`)
+console.log(`wrote ${path.relative(ROOT, RECOMMENDATION_REPORT_PATH)}`)
+console.log(`wrote ${path.relative(ROOT, UNMATCHED_REPORT_PATH)}`)
