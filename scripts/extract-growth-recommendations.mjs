@@ -28,6 +28,8 @@ const OUTPUT_PATH = path.join(ROOT, 'src/data/growthRecommendations.json')
 const REPORT_DIR = path.join(ROOT, 'reports')
 const RECOMMENDATION_REPORT_PATH = path.join(REPORT_DIR, 'growthRecommendations.review.csv')
 const UNMATCHED_REPORT_PATH = path.join(REPORT_DIR, 'growthRecommendations.unmatched.csv')
+const RECOMMENDATION_TEXT_REPORT_PATH = path.join(REPORT_DIR, 'growthRecommendations.review.txt')
+const UNMATCHED_TEXT_REPORT_PATH = path.join(REPORT_DIR, 'growthRecommendations.unmatched.txt')
 const characterByName = new Map()
 for (const character of characters) {
   for (const key of buildNameKeys(character.name)) {
@@ -304,6 +306,82 @@ function writeCsv(filePath, rows) {
   fs.writeFileSync(filePath, `${csv}\n`, 'utf8')
 }
 
+function groupBy(items, getKey) {
+  const groups = new Map()
+
+  for (const item of items) {
+    const key = getKey(item)
+    if (!groups.has(key)) groups.set(key, [])
+    groups.get(key).push(item)
+  }
+
+  return groups
+}
+
+function formatNote(note) {
+  return String(note || '')
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean)
+    .join(' / ')
+}
+
+function writeRecommendationTextReport(filePath, items) {
+  const lines = [
+    '육성 추천표 자동 추출 결과',
+    '',
+    `총 추천 엔트리: ${items.length}`,
+    '표기: 함선명 [등급/진영/함종] - 역할 메모 (원본 row:column)',
+    '',
+  ]
+
+  const bySource = groupBy(items, item => `${item.sourceLabel} / ${item.audience}`)
+  for (const [sourceLabel, sourceItems] of bySource) {
+    lines.push(`## ${sourceLabel}`)
+    lines.push('')
+
+    const byTier = groupBy(sourceItems, item => item.tier || '티어 미확인')
+    for (const [tier, tierItems] of byTier) {
+      lines.push(`### ${tier}`)
+
+      const byGroup = groupBy(tierItems, item => item.sheetGroup || '분류 미확인')
+      for (const [sheetGroup, groupItems] of byGroup) {
+        lines.push(`- ${sheetGroup}`)
+        for (const item of groupItems) {
+          const note = formatNote(item.roleNote)
+          const noteText = note ? ` - ${note}` : ''
+          lines.push(`  - ${item.name} [${item.rarity}/${item.faction}/${item.shipType}]${noteText} (${item.row}:${item.column})`)
+        }
+      }
+
+      lines.push('')
+    }
+  }
+
+  fs.writeFileSync(filePath, `${lines.join('\n')}\n`, 'utf8')
+}
+
+function writeUnmatchedTextReport(filePath, items) {
+  const lines = [
+    '육성 추천표 미매칭/검토 후보',
+    '',
+    `총 검토 후보: ${items.length}`,
+    '설명 텍스트가 포함될 수 있으므로 실제 누락 함선인지 원본 좌표 기준으로 확인합니다.',
+    '',
+  ]
+
+  const bySource = groupBy(items, item => item.source)
+  for (const [source, sourceItems] of bySource) {
+    lines.push(`## ${source}`)
+    for (const item of sourceItems) {
+      lines.push(`- ${item.name} (${item.row}:${item.column}) - ${item.reason || 'not matched'}`)
+    }
+    lines.push('')
+  }
+
+  fs.writeFileSync(filePath, `${lines.join('\n')}\n`, 'utf8')
+}
+
 const extracted = SOURCES.map(extractSource)
 const recommendations = dedupeRecommendations(extracted.flatMap(result => result.recommendations))
 const unmatched = extracted.flatMap(result => result.unmatched)
@@ -357,6 +435,8 @@ writeCsv(UNMATCHED_REPORT_PATH, [
     item.reason || 'not matched',
   ]),
 ])
+writeRecommendationTextReport(RECOMMENDATION_TEXT_REPORT_PATH, recommendations)
+writeUnmatchedTextReport(UNMATCHED_TEXT_REPORT_PATH, unmatched)
 
 for (const result of extracted) {
   console.log(`${result.source.label}: rows=${result.rows} columns=${result.columns} matched=${result.recommendations.length} unmatchedCandidates=${result.unmatched.length}`)
@@ -367,3 +447,5 @@ console.log(`reviewUnmatchedTotal=${unmatched.length}`)
 console.log(`wrote ${path.relative(ROOT, OUTPUT_PATH)}`)
 console.log(`wrote ${path.relative(ROOT, RECOMMENDATION_REPORT_PATH)}`)
 console.log(`wrote ${path.relative(ROOT, UNMATCHED_REPORT_PATH)}`)
+console.log(`wrote ${path.relative(ROOT, RECOMMENDATION_TEXT_REPORT_PATH)}`)
+console.log(`wrote ${path.relative(ROOT, UNMATCHED_TEXT_REPORT_PATH)}`)

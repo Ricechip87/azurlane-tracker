@@ -39,6 +39,7 @@
 - Added a growth recommendation extraction script for the reference `메인해역`, `대작전`, and `맨땅뉴비` CSV files.
 - Generated an initial `growthRecommendations.json` dataset with matched character metadata, tier, sheet group, role note, and CSV coordinates for review.
 - Added comparison CSV reports for matched growth recommendations and unmatched review candidates.
+- Added plain text growth recommendation review reports for Notepad-style inspection.
 
 ### Verified
 - `npm.cmd run test`
