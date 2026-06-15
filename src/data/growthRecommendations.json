@@ -1205,7 +1205,7 @@
       "faction": "중앵",
       "shipType": "경항모",
       "tier": "SS",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "신세대의 힐러",
       "row": 34,
       "column": 4
@@ -1220,7 +1220,7 @@
       "faction": "사르데냐",
       "shipType": "항모",
       "tier": "SS",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄 보스 딜러\n서브 힐러",
       "row": 34,
       "column": 8
@@ -1235,7 +1235,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "후열 보호\n아퀼라와 시너지",
       "row": 34,
       "column": 22
@@ -1250,7 +1250,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "스마트 힐\n실드",
       "row": 34,
       "column": 26
@@ -1265,7 +1265,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄약 오링 완화\n소환",
       "row": 34,
       "column": 30
@@ -1280,7 +1280,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "높은 공격력\n+ 강력한 범위딜",
       "row": 34,
       "column": 34
@@ -1295,7 +1295,7 @@
       "faction": "중앵",
       "shipType": "잠수항모",
       "tier": "SS",
-      "sheetGroup": "버퍼 / 디버퍼",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "최강 잠수함",
       "row": 34,
       "column": 38
@@ -1310,7 +1310,7 @@
       "faction": "유니온",
       "shipType": "경항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "높은 공격력\n딸피 스마트 힐",
       "row": 38,
       "column": 4
@@ -1325,7 +1325,7 @@
       "faction": "유니온",
       "shipType": "경항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "제공권 + 반장전\n타함대 항공버프",
       "row": 38,
       "column": 8
@@ -1340,7 +1340,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "쫄 보스 둘다 잘함",
       "row": 38,
       "column": 20
@@ -1355,7 +1355,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "보스전 특화\n강한 대공",
       "row": 38,
       "column": 22
@@ -1370,7 +1370,7 @@
       "faction": "아이리스",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "수동시 SS\n선장전",
       "row": 38,
       "column": 24
@@ -1385,7 +1385,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "높은 공격력",
       "row": 38,
       "column": 26
@@ -1400,7 +1400,7 @@
       "faction": "중앵",
       "shipType": "경항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "2 전투기 + 제공권",
       "row": 42,
       "column": 5
@@ -1415,7 +1415,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "2 전투기 + 제공권",
       "row": 42,
       "column": 6
@@ -1430,7 +1430,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "",
       "row": 42,
       "column": 8
@@ -1445,7 +1445,7 @@
       "faction": "노스유니온",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "제공권 GOAT",
       "row": 42,
       "column": 10
@@ -1460,7 +1460,7 @@
       "faction": "철혈",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전투기 8대\n특수 부포 + 대공",
       "row": 42,
       "column": 12
@@ -1475,7 +1475,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "항공피해감소 / \n타함대 지원",
       "row": 42,
       "column": 14
@@ -1490,7 +1490,7 @@
       "faction": "노스유니온",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "광역딜, 좋은 탄막\n후열 딜 보충",
       "row": 42,
       "column": 20
@@ -1505,7 +1505,7 @@
       "faction": "유니온",
       "shipType": "항전",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "아군 딜 증가\n보스 팟 특화",
       "row": 42,
       "column": 22
@@ -1520,7 +1520,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "쫄 보스 둘다 잘함",
       "row": 42,
       "column": 24
@@ -1535,7 +1535,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전함 최강 버퍼",
       "row": 42,
       "column": 26
@@ -1550,7 +1550,7 @@
       "faction": "DOAX VV",
       "shipType": "순전",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "쫄 보스 둘 다 잘함",
       "row": 42,
       "column": 30
@@ -1565,7 +1565,7 @@
       "faction": "아이리스",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "대체 서브힐러",
       "row": 46,
       "column": 4
@@ -1580,7 +1580,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "높은 DPS\n일항팟",
       "row": 46,
       "column": 6
@@ -1595,7 +1595,7 @@
       "faction": "데어라",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "3 장갑 다 잘팸\n높은 탱킹력",
       "row": 46,
       "column": 8
@@ -1610,7 +1610,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "단기전 특화",
       "row": 46,
       "column": 11
@@ -1625,7 +1625,7 @@
       "faction": "중앵",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "강한 딜\n보조 유틸",
       "row": 46,
       "column": 16
@@ -1640,7 +1640,7 @@
       "faction": "아이마스",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전",
       "row": 46,
       "column": 18
@@ -1655,7 +1655,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "개전 탄막\n준 최강 딜러",
       "row": 46,
       "column": 23
@@ -1670,7 +1670,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "개전 탄막\n준 최강 딜러",
       "row": 46,
       "column": 24
@@ -1685,7 +1685,7 @@
       "faction": "중앵",
       "shipType": "구축",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "오와리 하위호환",
       "row": 46,
       "column": 26
@@ -1700,7 +1700,7 @@
       "faction": "유니온",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "딜 높음 + 탱 보조",
       "row": 46,
       "column": 27
@@ -1715,7 +1715,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "딜 높음 + 탱 보조",
       "row": 46,
       "column": 28
@@ -1730,7 +1730,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난한 콜라보 전함",
       "row": 46,
       "column": 29
@@ -1745,7 +1745,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "안정적인 탄막\n높은 공격력",
       "row": 46,
       "column": 32
@@ -1760,7 +1760,7 @@
       "faction": "라이자",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난한 쫄팟 성능",
       "row": 46,
       "column": 34
@@ -1775,7 +1775,7 @@
       "faction": "그리드맨",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대체 잠수함\nU-552는 생존이슈로\n메인해역에선 낮게 위치",
       "row": 46,
       "column": 35
@@ -1790,7 +1790,7 @@
       "faction": "섬란 카구라",
       "shipType": "잠수",
       "tier": "A",
-      "sheetGroup": "버퍼 / 디버퍼",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대체 잠수함\nU-552는 생존이슈로\n메인해역에선 낮게 위치",
       "row": 46,
       "column": 36
@@ -1805,7 +1805,7 @@
       "faction": "철혈",
       "shipType": "잠수",
       "tier": "A",
-      "sheetGroup": "버퍼 / 디버퍼",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "<<<<\n로열 포춘",
       "row": 46,
       "column": 37
@@ -1820,7 +1820,7 @@
       "faction": "데어라",
       "shipType": "경항모",
       "tier": "B+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "소량힐",
       "row": 50,
       "column": 4
@@ -1835,7 +1835,7 @@
       "faction": "노스유니온",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "보호막, 영국 시너지\n4 폭격기",
       "row": 50,
       "column": 7
@@ -1850,7 +1850,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "B+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "보호막, 영국 시너지\n4 폭격기",
       "row": 50,
       "column": 8
@@ -1865,7 +1865,7 @@
       "faction": "아이리스",
       "shipType": "경항모",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전, 쫄팟 특화",
       "row": 50,
       "column": 12
@@ -1880,7 +1880,7 @@
       "faction": "DOAX VV",
       "shipType": "경항모",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "무난한 미항모",
       "row": 50,
       "column": 13
@@ -1895,7 +1895,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "무난한 미항모",
       "row": 50,
       "column": 14
@@ -1910,7 +1910,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "무난하게 강한 딜\n2 전투기",
       "row": 50,
       "column": 16
@@ -1925,7 +1925,7 @@
       "faction": "사르데냐",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "상위권 전함",
       "row": 50,
       "column": 19
@@ -1940,7 +1940,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "상위권 전함",
       "row": 50,
       "column": 20
@@ -1955,7 +1955,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄막 전함",
       "row": 50,
       "column": 21
@@ -1970,7 +1970,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄막 전함",
       "row": 50,
       "column": 22
@@ -1985,7 +1985,7 @@
       "faction": "노스유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "상위권 전함",
       "row": 50,
       "column": 26
@@ -2000,7 +2000,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "보스팟 특화",
       "row": 50,
       "column": 27
@@ -2015,7 +2015,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "포격, 명중 버퍼\n딜 보조 버프",
       "row": 50,
       "column": 30
@@ -2030,7 +2030,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "빅 세븐 탄막",
       "row": 50,
       "column": 31
@@ -2045,7 +2045,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "빅 세븐 탄막",
       "row": 50,
       "column": 32
@@ -2060,7 +2060,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "수동 시 A+",
       "row": 50,
       "column": 33
@@ -2075,7 +2075,7 @@
       "faction": "비시아",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "수동 시 A+",
       "row": 50,
       "column": 34
@@ -2090,7 +2090,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 범위딜",
       "row": 54,
       "column": 6
@@ -2105,7 +2105,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형/중갑 특화",
       "row": 54,
       "column": 8
@@ -2120,7 +2120,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "각종 유틸",
       "row": 54,
       "column": 9
@@ -2135,7 +2135,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "밸런스 잡힌 항모",
       "row": 54,
       "column": 13
@@ -2150,7 +2150,7 @@
       "faction": "섬란 카구라",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "그럭저럭 강한\n금딱 콜라보 항모",
       "row": 54,
       "column": 16
@@ -2165,7 +2165,7 @@
       "faction": "유니온",
       "shipType": "경항모",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "불안정 딜러\n약한 몸",
       "row": 54,
       "column": 18
@@ -2180,7 +2180,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 전함",
       "row": 54,
       "column": 20
@@ -2195,7 +2195,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장갑 특화",
       "row": 54,
       "column": 21
@@ -2210,7 +2210,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "부포 약함",
       "row": 54,
       "column": 23
@@ -2225,7 +2225,7 @@
       "faction": "비시아",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "보스 팟 특화",
       "row": 54,
       "column": 25
@@ -2240,7 +2240,7 @@
       "faction": "중앵",
       "shipType": "순전",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "15-2 발사대",
       "row": 54,
       "column": 28
@@ -2255,7 +2255,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "안정적인 탱킹력\n중형만 잘팸",
       "row": 54,
       "column": 30
@@ -2270,7 +2270,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "확정 발동 탄막",
       "row": 54,
       "column": 32
@@ -2285,7 +2285,7 @@
       "faction": "로열",
       "shipType": "순전",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "수동시 A",
       "row": 54,
       "column": 33
@@ -2300,7 +2300,7 @@
       "faction": "아이리스",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "수동시 A",
       "row": 54,
       "column": 34
@@ -2315,7 +2315,7 @@
       "faction": "비시아",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 54,
       "column": 35
@@ -2585,7 +2585,7 @@
       "faction": "중앵",
       "shipType": "중순",
       "tier": "S",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "중순 / 대순 CA",
       "roleNote": "쫄팟/단기전의 신",
       "row": 15,
       "column": 50
@@ -3185,7 +3185,7 @@
       "faction": "DOAX VV",
       "shipType": "중순",
       "tier": "A",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번 자리 딜러\n약간의 유틸",
       "row": 23,
       "column": 48
@@ -3560,7 +3560,7 @@
       "faction": "로열",
       "shipType": "중순",
       "tier": "B+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "중순 / 대순 CA",
       "roleNote": "전열 보조",
       "row": 27,
       "column": 48
@@ -3920,7 +3920,7 @@
       "faction": "철혈",
       "shipType": "중순",
       "tier": "B",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "중순 / 대순 CA",
       "roleNote": "",
       "row": 31,
       "column": 48
@@ -3935,7 +3935,7 @@
       "faction": "중앵",
       "shipType": "중순",
       "tier": "B",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "중순 / 대순 CA",
       "roleNote": "쫄팟 후보",
       "row": 31,
       "column": 50
@@ -4295,7 +4295,7 @@
       "faction": "사르데냐",
       "shipType": "중순",
       "tier": "C+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "중순 / 대순 CA",
       "roleNote": "",
       "row": 35,
       "column": 49
@@ -4310,7 +4310,7 @@
       "faction": "아이마스",
       "shipType": "중순",
       "tier": "C+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "중순 / 대순 CA",
       "roleNote": "",
       "row": 35,
       "column": 50
@@ -4325,7 +4325,7 @@
       "faction": "유니온",
       "shipType": "중순",
       "tier": "C+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "중순 / 대순 CA",
       "roleNote": "",
       "row": 35,
       "column": 51
@@ -4340,7 +4340,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "SS+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "모든 장갑 코어픽",
       "row": 42,
       "column": 24
@@ -4355,7 +4355,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "SS+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "모든 장갑 깡패픽",
       "row": 42,
       "column": 26
@@ -4370,7 +4370,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "",
       "row": 46,
       "column": 18
@@ -4385,7 +4385,7 @@
       "faction": "유니온",
       "shipType": "항전",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "감속 항모 사용 설명서\n\n- 감속 혹은 정지를 바인드라 부르고, 바인드가 있으면 적 이동에 따른 빗나감이 줄어서 딜 기대치 상승\n\n이동 봉쇄 : 렉싱턴2, 나히모프 \n(둘다 특정 아군 조합 요구됨)\n\n전열 감속 : 엘드릿지, 트라팔가\n\n후열 감속 : 소유즈, 루메이",
       "row": 46,
       "column": 20
@@ -4400,7 +4400,7 @@
       "faction": "철혈",
       "shipType": "항모",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형 - 우선픽\n경장 - 대체픽",
       "row": 46,
       "column": 22
@@ -4415,7 +4415,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대중장 깡패",
       "row": 46,
       "column": 24
@@ -4430,7 +4430,7 @@
       "faction": "노스유니온",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대중형/중장\n대체 선택지",
       "row": 46,
       "column": 26
@@ -4445,7 +4445,7 @@
       "faction": "아이리스",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대경장/중장\n대체 선택지",
       "row": 46,
       "column": 28
@@ -4460,7 +4460,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "S+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄팟의 떠오르는 코어픽\n여기는 순수 쫄팟티어",
       "row": 50,
       "column": 2
@@ -4475,7 +4475,7 @@
       "faction": "중앵",
       "shipType": "순전",
       "tier": "S+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "일항팟 시너지 + 대중장\n만쥬가 안움직이는 중장 META 내주면 SS",
       "row": 50,
       "column": 12
@@ -4490,7 +4490,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "S+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "",
       "row": 50,
       "column": 14
@@ -4505,7 +4505,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "S+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "",
       "row": 50,
       "column": 16
@@ -4520,7 +4520,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "S+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "블랙홀 바인드",
       "row": 50,
       "column": 24
@@ -4535,7 +4535,7 @@
       "faction": "철혈",
       "shipType": "잠수",
       "tier": "S+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "잠수함 1황",
       "row": 50,
       "column": 48
@@ -4550,7 +4550,7 @@
       "faction": "중앵",
       "shipType": "잠수항모",
       "tier": "S+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "잠수함 2황 + 보조",
       "row": 50,
       "column": 50
@@ -4565,7 +4565,7 @@
       "faction": "그리드맨",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "라이온팟\n선장전",
       "row": 54,
       "column": 4
@@ -4580,7 +4580,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "대중형/중장\n딜 보조/영국 시너지",
       "row": 54,
       "column": 6
@@ -4595,7 +4595,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "보스팟 딜러",
       "row": 54,
       "column": 8
@@ -4610,7 +4610,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "바인더 1황\n영국 항모",
       "row": 54,
       "column": 10
@@ -4625,7 +4625,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "Lucky E",
       "row": 54,
       "column": 12
@@ -4640,7 +4640,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중장갑 특화",
       "row": 54,
       "column": 14
@@ -4655,7 +4655,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경/중형 바인더\n항모뎀증 '파갑' 보유",
       "row": 54,
       "column": 16
@@ -4670,7 +4670,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형/중갑 바인더\n딜 로또",
       "row": 54,
       "column": 18
@@ -4685,7 +4685,7 @@
       "faction": "철혈",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경/중형 바인더\n항모뎀증 '파갑' 보유",
       "row": 54,
       "column": 20
@@ -4700,7 +4700,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전함 최강 버퍼",
       "row": 54,
       "column": 26
@@ -4715,7 +4715,7 @@
       "faction": "유니온",
       "shipType": "항전",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "포격 버퍼\n경, 중형 특화",
       "row": 54,
       "column": 28
@@ -4730,7 +4730,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형/중장 특화",
       "row": 54,
       "column": 30
@@ -4745,7 +4745,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "단일 적 특화",
       "row": 54,
       "column": 32
@@ -4760,7 +4760,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "철혈 범용 무딱",
       "row": 54,
       "column": 34
@@ -4775,7 +4775,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "딜 보조\n전열 보호",
       "row": 54,
       "column": 35
@@ -4790,7 +4790,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "딜 보조\n전열 보호",
       "row": 54,
       "column": 36
@@ -4805,7 +4805,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전장요구\n무딱전함라인 입성",
       "row": 54,
       "column": 38
@@ -4820,7 +4820,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "최강 금딱라인",
       "row": 54,
       "column": 40
@@ -4835,7 +4835,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "용골 무난하게 받음\n탈금딱 1황",
       "row": 54,
       "column": 41
@@ -4850,7 +4850,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "용골 무난하게 받음\n탈금딱 1황",
       "row": 54,
       "column": 42
@@ -4865,7 +4865,7 @@
       "faction": "비시아",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 전함 2황",
       "row": 54,
       "column": 44
@@ -4880,7 +4880,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속, 받피증 버퍼",
       "row": 54,
       "column": 46
@@ -4895,7 +4895,7 @@
       "faction": "유니온",
       "shipType": "잠수",
       "tier": "S",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음",
       "row": 54,
       "column": 48
@@ -4910,7 +4910,7 @@
       "faction": "섬란 카구라",
       "shipType": "잠수",
       "tier": "S",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 54,
       "column": 50
@@ -4925,7 +4925,7 @@
       "faction": "철혈",
       "shipType": "잠수",
       "tier": "S",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 54,
       "column": 52
@@ -4940,7 +4940,7 @@
       "faction": "아이리스",
       "shipType": "경항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전, 단기전 특화\n루나 상위호환",
       "row": 58,
       "column": 2
@@ -4955,7 +4955,7 @@
       "faction": "사르데냐",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄 보스 딜러\n서브 힐러",
       "row": 58,
       "column": 4
@@ -4970,7 +4970,7 @@
       "faction": "유니온",
       "shipType": "경항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "제공권 + 반장전\n타함대 항공버프",
       "row": 58,
       "column": 6
@@ -4985,7 +4985,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "안정성 높은\n엔터프라이즈 +",
       "row": 58,
       "column": 8
@@ -5000,7 +5000,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "높은 공격력\n딜 보조 유틸",
       "row": 58,
       "column": 9
@@ -5015,7 +5015,7 @@
       "faction": "DOAX VV",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "높은 공격력\n딜 보조 유틸",
       "row": 58,
       "column": 10
@@ -5030,7 +5030,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전 항모",
       "row": 58,
       "column": 11
@@ -5045,7 +5045,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전 항모",
       "row": 58,
       "column": 12
@@ -5060,7 +5060,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "특정 장갑 특화",
       "row": 58,
       "column": 14
@@ -5075,7 +5075,7 @@
       "faction": "유니온",
       "shipType": "경항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "4공습 / \n중형,중장 잘팸",
       "row": 58,
       "column": 16
@@ -5090,7 +5090,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형 잘팸",
       "row": 58,
       "column": 18
@@ -5105,7 +5105,7 @@
       "faction": "노스유니온",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "데어라 콜라보 항모",
       "row": 58,
       "column": 19
@@ -5120,7 +5120,7 @@
       "faction": "데어라",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "데어라 콜라보 항모",
       "row": 58,
       "column": 20
@@ -5135,7 +5135,7 @@
       "faction": "데어라",
       "shipType": "경항모",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "3 장갑 다 잘팸",
       "row": 58,
       "column": 21
@@ -5150,7 +5150,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난하게 강한 \n탈금딱 전함",
       "row": 58,
       "column": 24
@@ -5165,7 +5165,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "명중, 장전 버퍼",
       "row": 58,
       "column": 26
@@ -5180,7 +5180,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "포격, 명중 버퍼\n딜 보조 버프",
       "row": 58,
       "column": 28
@@ -5195,7 +5195,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 코어",
       "row": 58,
       "column": 30
@@ -5210,7 +5210,7 @@
       "faction": "아이리스",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 버퍼\n선장전",
       "row": 58,
       "column": 32
@@ -5225,7 +5225,7 @@
       "faction": "라이자",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 58,
       "column": 38
@@ -5240,7 +5240,7 @@
       "faction": "섬란 카구라",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "단기전 강함\n대중장 특화",
       "row": 58,
       "column": 40
@@ -5255,7 +5255,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전열 보호",
       "row": 58,
       "column": 42
@@ -5270,7 +5270,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속\n중형/중장 특화",
       "row": 58,
       "column": 44
@@ -5285,7 +5285,7 @@
       "faction": "데어라",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로 좋음\n높은 탱킹력",
       "row": 58,
       "column": 46
@@ -5300,7 +5300,7 @@
       "faction": "철혈",
       "shipType": "잠수",
       "tier": "A+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 58,
       "column": 50
@@ -5315,7 +5315,7 @@
       "faction": "철혈",
       "shipType": "잠수",
       "tier": "A+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 58,
       "column": 52
@@ -5330,7 +5330,7 @@
       "faction": "DOAX VV",
       "shipType": "경항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전, 단기전 특화",
       "row": 62,
       "column": 2
@@ -5345,7 +5345,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄팟, 광역힐\n선장전",
       "row": 62,
       "column": 4
@@ -5360,7 +5360,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "4공습 /\n미묘한 바인드",
       "row": 62,
       "column": 8
@@ -5375,7 +5375,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화\n쫄팟 후보군",
       "row": 62,
       "column": 10
@@ -5390,7 +5390,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "고점 조금 낮은\n샹그릴라",
       "row": 62,
       "column": 12
@@ -5405,7 +5405,7 @@
       "faction": "유니온",
       "shipType": "경항모",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "불안정 딜러\n경장 특화",
       "row": 62,
       "column": 18
@@ -5420,7 +5420,7 @@
       "faction": "철혈",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전장에 바인드 있음\n독일 항모 버프",
       "row": 62,
       "column": 20
@@ -5435,7 +5435,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "선장전, 밸런스형",
       "row": 62,
       "column": 24
@@ -5450,7 +5450,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 특화\n사르데냐 핵심 전함",
       "row": 62,
       "column": 26
@@ -5465,7 +5465,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장만 잘팸",
       "row": 62,
       "column": 30
@@ -5480,7 +5480,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "3장갑 다 잘팸",
       "row": 62,
       "column": 34
@@ -5495,7 +5495,7 @@
       "faction": "유니온",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "고성능 콜라보 전함",
       "row": 62,
       "column": 35
@@ -5510,7 +5510,7 @@
       "faction": "투러브",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "고성능 콜라보 전함",
       "row": 62,
       "column": 36
@@ -5525,7 +5525,7 @@
       "faction": "DOAX VV",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "특수 부포",
       "row": 62,
       "column": 37
@@ -5540,7 +5540,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "특수 부포",
       "row": 62,
       "column": 38
@@ -5555,7 +5555,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장만 잘팸",
       "row": 62,
       "column": 40
@@ -5570,7 +5570,7 @@
       "faction": "그리드맨",
       "shipType": "항전",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 특화\n무난한 콜라보 전함",
       "row": 62,
       "column": 42
@@ -5585,7 +5585,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경장, 단일적 특화",
       "row": 66,
       "column": 16
@@ -5600,7 +5600,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "후열 딜 버프",
       "row": 66,
       "column": 18
@@ -5615,7 +5615,7 @@
       "faction": "사르데냐",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "2전투기 항모",
       "row": 66,
       "column": 20
@@ -5630,7 +5630,7 @@
       "faction": "철혈",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "2 폭격기\n독일 탱보조",
       "row": 66,
       "column": 22
@@ -5645,7 +5645,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대체 전함\n보조 능력있음",
       "row": 66,
       "column": 24
@@ -5660,7 +5660,7 @@
       "faction": "아이리스",
       "shipType": "순전",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "스택형 딜러",
       "row": 66,
       "column": 26
@@ -5675,7 +5675,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "약속의 빅 세븐 개장",
       "row": 66,
       "column": 28
@@ -5690,7 +5690,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 66,
       "column": 29
@@ -5705,7 +5705,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 66,
       "column": 30
@@ -5720,7 +5720,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
       "row": 66,
       "column": 31
@@ -5735,7 +5735,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
       "row": 66,
       "column": 32
@@ -5750,7 +5750,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
       "row": 66,
       "column": 33
@@ -5765,7 +5765,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
       "row": 66,
       "column": 34
@@ -5780,7 +5780,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장만 잘팸",
       "row": 66,
       "column": 35
@@ -5795,7 +5795,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 66,
       "column": 38
@@ -5810,7 +5810,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "3장갑 다 잘팸",
       "row": 66,
       "column": 39
@@ -5825,7 +5825,7 @@
       "faction": "비시아",
       "shipType": "순전",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "차상위 전함\n진영 시너지 요구",
       "row": 66,
       "column": 42
@@ -5840,7 +5840,7 @@
       "faction": "노스유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "차상위 전함\n근접적 상대 탱",
       "row": 66,
       "column": 43
@@ -5855,7 +5855,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "차상위 전함\n근접적 상대 탱",
       "row": 66,
       "column": 44
@@ -5870,7 +5870,7 @@
       "faction": "DOAX VV",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "평범한 2군 전함\n약간의 딜/힐 유틸",
       "row": 66,
       "column": 46
@@ -5885,7 +5885,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전 / 서로 시너지",
       "row": 70,
       "column": 2
@@ -5900,7 +5900,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "",
       "row": 70,
       "column": 4
@@ -5915,7 +5915,7 @@
       "faction": "유니온",
       "shipType": "경항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "항모 버프",
       "row": 70,
       "column": 10
@@ -5930,7 +5930,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "3일본 방어 버프",
       "row": 70,
       "column": 12
@@ -5945,7 +5945,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "단독성능은 쇼카쿠 아래\n쇼카쿠와 시너지",
       "row": 70,
       "column": 14
@@ -5960,7 +5960,7 @@
       "faction": "섬란 카구라",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "그럭저럭 강힘\n약한 바인더",
       "row": 70,
       "column": 18
@@ -5975,7 +5975,7 @@
       "faction": "노스유니온",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "소량 힐",
       "row": 70,
       "column": 24
@@ -5990,7 +5990,7 @@
       "faction": "DOAX VV",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "각종 유틸",
       "row": 70,
       "column": 25
@@ -6005,7 +6005,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "각종 유틸",
       "row": 70,
       "column": 26
@@ -6020,7 +6020,7 @@
       "faction": "비시아",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 조합 필요",
       "row": 70,
       "column": 28
@@ -6035,7 +6035,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "이글 유니온 시너지",
       "row": 70,
       "column": 30
@@ -6050,7 +6050,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "독일 버퍼",
       "row": 70,
       "column": 32
@@ -6065,7 +6065,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "3장갑 다 잘팸",
       "row": 70,
       "column": 34
@@ -6080,7 +6080,7 @@
       "faction": "그리드맨",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "소환수로 인한\n안정성 증가",
       "row": 70,
       "column": 36
@@ -6095,7 +6095,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "힐 기능 있는 전함",
       "row": 70,
       "column": 38
@@ -6110,7 +6110,7 @@
       "faction": "아이마스",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중장만 잘팸",
       "row": 70,
       "column": 40
@@ -6125,7 +6125,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장 상대 미국 전함",
       "row": 70,
       "column": 42
@@ -6140,7 +6140,7 @@
       "faction": "비시아",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "평범한 2군 전함",
       "row": 70,
       "column": 46
@@ -6155,7 +6155,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "아군버프 /\n초살팟",
       "row": 70,
       "column": 48
@@ -6170,7 +6170,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "C+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화",
       "row": 74,
       "column": 8
@@ -6185,7 +6185,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "C+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "대체 항모\n마지노선",
       "row": 74,
       "column": 10
@@ -6200,7 +6200,7 @@
       "faction": "중앵",
       "shipType": "경항모",
       "tier": "C+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "소량 힐",
       "row": 74,
       "column": 14
@@ -6215,7 +6215,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "C+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전열 보호",
       "row": 74,
       "column": 16
@@ -6230,7 +6230,7 @@
       "faction": "비시아",
       "shipType": "항모",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "하위해역\n많은 적 상대",
       "row": 74,
       "column": 18
@@ -6245,7 +6245,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "적 전함 상대 보조",
       "row": 74,
       "column": 20
@@ -6260,7 +6260,7 @@
       "faction": "동황",
       "shipType": "경항모",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "6전투기\n대체 항모",
       "row": 74,
       "column": 22
@@ -6275,7 +6275,7 @@
       "faction": "비시아",
       "shipType": "순전",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 함대 파츠\n선장전, 딜 버프",
       "row": 74,
       "column": 24
@@ -6290,7 +6290,7 @@
       "faction": "DOAX VV",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속 제공",
       "row": 74,
       "column": 26
@@ -6305,7 +6305,7 @@
       "faction": "로열",
       "shipType": "순전",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "장전 버프",
       "row": 74,
       "column": 28
@@ -6320,7 +6320,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "세이렌 특화",
       "row": 74,
       "column": 30
@@ -6335,7 +6335,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 대체제",
       "row": 74,
       "column": 32
@@ -6350,7 +6350,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 74,
       "column": 34
@@ -6365,7 +6365,7 @@
       "faction": "비시아",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 함대 파츠\n대체 전함들",
       "row": 74,
       "column": 36
@@ -6380,7 +6380,7 @@
       "faction": "아이리스",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 74,
       "column": 38
@@ -6395,7 +6395,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무사시 독점",
       "row": 74,
       "column": 40
@@ -6410,7 +6410,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "비스마르크와\n같이 쓰기",
       "row": 74,
       "column": 42
@@ -6425,7 +6425,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "작은 육각형 딜러",
       "row": 74,
       "column": 44
@@ -6440,7 +6440,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "C+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "글쎄요..?",
       "row": 74,
       "column": 48
@@ -6455,7 +6455,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "C+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 74,
       "column": 49
@@ -6470,7 +6470,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "얘네 항모아닌데\n아래랑 섞어쓰기 좋아서 넣음",
       "row": 84,
       "column": 14
@@ -6485,7 +6485,7 @@
       "faction": "로열",
       "shipType": "구축",
       "tier": "SS",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "",
       "row": 84,
       "column": 16
@@ -6500,7 +6500,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "가장 강력한 후열",
       "row": 84,
       "column": 24
@@ -6515,7 +6515,7 @@
       "faction": "중앵",
       "shipType": "순전",
       "tier": "SS",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "일항팟 시너지 + 대중장 / 추후 중장갑 보스 실전테스트 필요",
       "row": 89,
       "column": 10
@@ -6530,7 +6530,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "SS",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "",
       "row": 89,
       "column": 12
@@ -6545,7 +6545,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "SS",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "",
       "row": 89,
       "column": 14
@@ -6560,7 +6560,7 @@
       "faction": "노스유니온",
       "shipType": "항모",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "딜과 바인더 다함",
       "row": 89,
       "column": 18
@@ -6575,7 +6575,7 @@
       "faction": "철혈",
       "shipType": "항모",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경, 중형 상대\n감속 보유",
       "row": 89,
       "column": 22
@@ -6590,7 +6590,7 @@
       "faction": "아이리스",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "선장전, 딜 버프\n자체 딜도 쎔",
       "row": 89,
       "column": 24
@@ -6605,7 +6605,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대중장갑 1황\n경장 활약여지있음",
       "row": 89,
       "column": 26
@@ -6620,7 +6620,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "블랙홀 바인드",
       "row": 89,
       "column": 28
@@ -6635,7 +6635,7 @@
       "faction": "노스유니온",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "트라팔가와 사용시\n이중 감속",
       "row": 89,
       "column": 32
@@ -6650,7 +6650,7 @@
       "faction": "아이리스",
       "shipType": "전함",
       "tier": "SS",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 소속이라\n한번 더 복붙",
       "row": 89,
       "column": 36
@@ -6665,7 +6665,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "S+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄팟의 떠오르는 코어픽\n여기는 순수 쫄팟티어",
       "row": 93,
       "column": 2
@@ -6680,7 +6680,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "S+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경장 상대로 좋음\n미항팟 코어",
       "row": 93,
       "column": 6
@@ -6695,7 +6695,7 @@
       "faction": "유니온",
       "shipType": "항전",
       "tier": "S+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경장 및 중형\n항공지원",
       "row": 93,
       "column": 8
@@ -6710,7 +6710,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "S+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "보스팟 딜러",
       "row": 93,
       "column": 12
@@ -6725,7 +6725,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "S+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "대중형/중장\n딜 보조/영국 시너지",
       "row": 93,
       "column": 14
@@ -6740,7 +6740,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "S+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "바인더 1황\n영국 항모",
       "row": 93,
       "column": 16
@@ -6755,7 +6755,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "S+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "최상위 바인더",
       "row": 93,
       "column": 22
@@ -6770,7 +6770,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "S+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전함 최강 버퍼",
       "row": 93,
       "column": 24
@@ -6785,7 +6785,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "S+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형/중장 특화",
       "row": 93,
       "column": 32
@@ -6800,7 +6800,7 @@
       "faction": "유니온",
       "shipType": "항전",
       "tier": "S+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "포격 버퍼\n경, 중형 특화",
       "row": 93,
       "column": 34
@@ -6815,7 +6815,7 @@
       "faction": "중앵",
       "shipType": "잠수항모",
       "tier": "S+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "최강 잠수함",
       "row": 93,
       "column": 48
@@ -6830,7 +6830,7 @@
       "faction": "그리드맨",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "라이온팟\n선장전",
       "row": 97,
       "column": 4
@@ -6845,7 +6845,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "Lucky E",
       "row": 97,
       "column": 6
@@ -6860,7 +6860,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중장갑 특화",
       "row": 97,
       "column": 8
@@ -6875,7 +6875,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경/중형 바인더\n항모뎀증 '파갑' 보유",
       "row": 97,
       "column": 14
@@ -6890,7 +6890,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "딜 로또\n영국 항모",
       "row": 97,
       "column": 16
@@ -6905,7 +6905,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형/중갑 바인더\n딜 로또",
       "row": 97,
       "column": 20
@@ -6920,7 +6920,7 @@
       "faction": "철혈",
       "shipType": "항모",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경/중형 바인더\n항모뎀증 '파갑' 보유",
       "row": 97,
       "column": 22
@@ -6935,7 +6935,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "단일 적 특화",
       "row": 97,
       "column": 24
@@ -6950,7 +6950,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대경장 특화",
       "row": 97,
       "column": 26
@@ -6965,7 +6965,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장/중형 특화",
       "row": 97,
       "column": 28
@@ -6980,7 +6980,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "딜 보조\n전열 보호",
       "row": 97,
       "column": 30
@@ -6995,7 +6995,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전장요구\n무딱전함라인 입성",
       "row": 97,
       "column": 32
@@ -7010,7 +7010,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "용골 무난하게 받음\n탈금딱 1황",
       "row": 97,
       "column": 34
@@ -7025,7 +7025,7 @@
       "faction": "비시아",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 전함 2황",
       "row": 97,
       "column": 36
@@ -7040,7 +7040,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 특화",
       "row": 97,
       "column": 38
@@ -7055,7 +7055,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "S",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속, 받피증 버퍼",
       "row": 97,
       "column": 40
@@ -7070,7 +7070,7 @@
       "faction": "유니온",
       "shipType": "잠수",
       "tier": "S",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "이404의 최고 조합들",
       "row": 97,
       "column": 48
@@ -7085,7 +7085,7 @@
       "faction": "유니온",
       "shipType": "잠수",
       "tier": "S",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 97,
       "column": 49
@@ -7100,7 +7100,7 @@
       "faction": "섬란 카구라",
       "shipType": "잠수",
       "tier": "S",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 97,
       "column": 50
@@ -7115,7 +7115,7 @@
       "faction": "아이리스",
       "shipType": "경항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전, 단기전 특화\n루나 상위호환",
       "row": 101,
       "column": 2
@@ -7130,7 +7130,7 @@
       "faction": "사르데냐",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄 보스 딜러\n서브 힐러",
       "row": 101,
       "column": 4
@@ -7145,7 +7145,7 @@
       "faction": "유니온",
       "shipType": "경항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "제공권 + 반장전\n타함대 항공버프",
       "row": 101,
       "column": 6
@@ -7160,7 +7160,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "안정성 높은\n엔터프라이즈 +",
       "row": 101,
       "column": 8
@@ -7175,7 +7175,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "안정성 높은\n엔터프라이즈",
       "row": 101,
       "column": 10
@@ -7190,7 +7190,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "공방 버프\n즈이카쿠와 시너지",
       "row": 101,
       "column": 12
@@ -7205,7 +7205,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형 특화 / 로켓",
       "row": 101,
       "column": 14
@@ -7220,7 +7220,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "A+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형 잘팸\n영국 경항모",
       "row": 101,
       "column": 16
@@ -7235,7 +7235,7 @@
       "faction": "노스유니온",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화\n항모 버퍼",
       "row": 101,
       "column": 18
@@ -7250,7 +7250,7 @@
       "faction": "데어라",
       "shipType": "항모",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "데어라 콜라보 항모",
       "row": 101,
       "column": 20
@@ -7265,7 +7265,7 @@
       "faction": "데어라",
       "shipType": "경항모",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "3 장갑 다 잘팸",
       "row": 101,
       "column": 21
@@ -7280,7 +7280,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난하게 강한 \n탈금딱 전함",
       "row": 101,
       "column": 24
@@ -7295,7 +7295,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "명중, 장전 버퍼",
       "row": 101,
       "column": 26
@@ -7310,7 +7310,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "포격, 명중 버퍼\n딜 보조 버프",
       "row": 101,
       "column": 28
@@ -7325,7 +7325,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 코어",
       "row": 101,
       "column": 30
@@ -7340,7 +7340,7 @@
       "faction": "섬란 카구라",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "단기전 강함\n대중장 특화",
       "row": 101,
       "column": 34
@@ -7355,7 +7355,7 @@
       "faction": "아이리스",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 버퍼\n선장전",
       "row": 101,
       "column": 36
@@ -7370,7 +7370,7 @@
       "faction": "라이자",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 101,
       "column": 40
@@ -7385,7 +7385,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전열 보호",
       "row": 101,
       "column": 42
@@ -7400,7 +7400,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속\n중형/중장 특화",
       "row": 101,
       "column": 44
@@ -7415,7 +7415,7 @@
       "faction": "데어라",
       "shipType": "전함",
       "tier": "A+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로 좋음\n높은 탱킹력",
       "row": 101,
       "column": 46
@@ -7430,7 +7430,7 @@
       "faction": "유니온",
       "shipType": "잠수",
       "tier": "A+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "U 보트 고점\n이404 대체제",
       "row": 101,
       "column": 49
@@ -7445,7 +7445,7 @@
       "faction": "철혈",
       "shipType": "잠수",
       "tier": "A+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 101,
       "column": 52
@@ -7460,7 +7460,7 @@
       "faction": "유니온",
       "shipType": "잠수",
       "tier": "A",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "U보트 2개 + \n위에 하나",
       "row": 104,
       "column": 50
@@ -7475,7 +7475,7 @@
       "faction": "섬란 카구라",
       "shipType": "잠수",
       "tier": "A",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 104,
       "column": 51
@@ -7490,7 +7490,7 @@
       "faction": "DOAX VV",
       "shipType": "경항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전, 단기전 특화",
       "row": 105,
       "column": 2
@@ -7505,7 +7505,7 @@
       "faction": "로열",
       "shipType": "경항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄팟, 광역힐\n선장전",
       "row": 105,
       "column": 4
@@ -7520,7 +7520,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화\n쫄팟 후보군",
       "row": 105,
       "column": 6
@@ -7535,7 +7535,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "고점 조금 낮은\n샹그릴라",
       "row": 105,
       "column": 8
@@ -7550,7 +7550,7 @@
       "faction": "유니온",
       "shipType": "경항모",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "불안정 딜러\n경장 특화",
       "row": 105,
       "column": 18
@@ -7565,7 +7565,7 @@
       "faction": "철혈",
       "shipType": "항모",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전장에 바인드 있음\n독일 항모 버프",
       "row": 105,
       "column": 20
@@ -7580,7 +7580,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "선장전, 밸런스형",
       "row": 105,
       "column": 24
@@ -7595,7 +7595,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장만 잘팸",
       "row": 105,
       "column": 26
@@ -7610,7 +7610,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "특수 부포",
       "row": 105,
       "column": 28
@@ -7625,7 +7625,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 특화\n사르데냐 핵심 전함",
       "row": 105,
       "column": 30
@@ -7640,7 +7640,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "3장갑 다 잘팸",
       "row": 105,
       "column": 36
@@ -7655,7 +7655,7 @@
       "faction": "유니온",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "고성능 콜라보 전함",
       "row": 105,
       "column": 37
@@ -7670,7 +7670,7 @@
       "faction": "투러브",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "고성능 콜라보 전함",
       "row": 105,
       "column": 38
@@ -7685,7 +7685,7 @@
       "faction": "DOAX VV",
       "shipType": "순전",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장만 잘팸",
       "row": 105,
       "column": 39
@@ -7700,7 +7700,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장만 잘팸",
       "row": 105,
       "column": 40
@@ -7715,7 +7715,7 @@
       "faction": "그리드맨",
       "shipType": "항전",
       "tier": "A",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 특화\n무난한 콜라보 전함",
       "row": 105,
       "column": 42
@@ -7730,7 +7730,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경장, 단일적 특화",
       "row": 109,
       "column": 8
@@ -7745,7 +7745,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "후열 딜 버프",
       "row": 109,
       "column": 12
@@ -7760,7 +7760,7 @@
       "faction": "사르데냐",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "2전투기 항모",
       "row": 109,
       "column": 20
@@ -7775,7 +7775,7 @@
       "faction": "철혈",
       "shipType": "항모",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "2 폭격기\n독일 탱보조",
       "row": 109,
       "column": 22
@@ -7790,7 +7790,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "약속의 빅 세븐 개장",
       "row": 109,
       "column": 24
@@ -7805,7 +7805,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 109,
       "column": 25
@@ -7820,7 +7820,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 109,
       "column": 26
@@ -7835,7 +7835,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속, 명중버퍼",
       "row": 109,
       "column": 27
@@ -7850,7 +7850,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속, 명중버퍼",
       "row": 109,
       "column": 28
@@ -7865,7 +7865,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
       "row": 109,
       "column": 30
@@ -7880,7 +7880,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
       "row": 109,
       "column": 31
@@ -7895,7 +7895,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
       "row": 109,
       "column": 32
@@ -7910,7 +7910,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "스택형 딜러",
       "row": 109,
       "column": 33
@@ -7925,7 +7925,7 @@
       "faction": "아이리스",
       "shipType": "순전",
       "tier": "B+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "스택형 딜러",
       "row": 109,
       "column": 34
@@ -7940,7 +7940,7 @@
       "faction": "비시아",
       "shipType": "순전",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 조합 필요",
       "row": 109,
       "column": 36
@@ -7955,7 +7955,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 109,
       "column": 40
@@ -7970,7 +7970,7 @@
       "faction": "노스유니온",
       "shipType": "전함",
       "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "북련 조합 필요",
       "row": 109,
       "column": 44
@@ -7985,7 +7985,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전 / 서로 시너지",
       "row": 113,
       "column": 2
@@ -8000,7 +8000,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "",
       "row": 113,
       "column": 4
@@ -8015,7 +8015,7 @@
       "faction": "유니온",
       "shipType": "경항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "항모 버프",
       "row": 113,
       "column": 8
@@ -8030,7 +8030,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "3일본 방어 버프",
       "row": 113,
       "column": 10
@@ -8045,7 +8045,7 @@
       "faction": "중앵",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "단독성능은 쇼카쿠 아래\n쇼카쿠와 시너지",
       "row": 113,
       "column": 12
@@ -8060,7 +8060,7 @@
       "faction": "섬란 카구라",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "그럭저럭 강힘\n약한 바인더",
       "row": 113,
       "column": 16
@@ -8075,7 +8075,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "바인더 대체",
       "row": 113,
       "column": 18
@@ -8090,7 +8090,7 @@
       "faction": "노스유니온",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "소량 힐",
       "row": 113,
       "column": 24
@@ -8105,7 +8105,7 @@
       "faction": "DOAX VV",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "각종 유틸",
       "row": 113,
       "column": 25
@@ -8120,7 +8120,7 @@
       "faction": "철혈",
       "shipType": "순전",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "각종 유틸",
       "row": 113,
       "column": 26
@@ -8135,7 +8135,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "독일 버퍼",
       "row": 113,
       "column": 28
@@ -8150,7 +8150,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "이글 유니온 시너지",
       "row": 113,
       "column": 30
@@ -8165,7 +8165,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "3장갑 다 잘팸",
       "row": 113,
       "column": 34
@@ -8180,7 +8180,7 @@
       "faction": "비시아",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 조합 필요",
       "row": 113,
       "column": 36
@@ -8195,7 +8195,7 @@
       "faction": "그리드맨",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "소환수로 인한\n안정성 증가",
       "row": 113,
       "column": 38
@@ -8210,7 +8210,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "힐 기능 있는 전함",
       "row": 113,
       "column": 40
@@ -8225,7 +8225,7 @@
       "faction": "아이마스",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중장만 잘팸",
       "row": 113,
       "column": 42
@@ -8240,7 +8240,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장 상대 미국 전함",
       "row": 113,
       "column": 44
@@ -8255,7 +8255,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "B",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 113,
       "column": 46
@@ -8270,7 +8270,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "B",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "아군버프 /\n초살팟",
       "row": 113,
       "column": 48
@@ -8285,7 +8285,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "C+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화",
       "row": 117,
       "column": 6
@@ -8300,7 +8300,7 @@
       "faction": "유니온",
       "shipType": "항모",
       "tier": "C+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "대체 항모\n마지노선",
       "row": 117,
       "column": 8
@@ -8315,7 +8315,7 @@
       "faction": "중앵",
       "shipType": "경항모",
       "tier": "C+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "소량 힐",
       "row": 117,
       "column": 12
@@ -8330,7 +8330,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "C+",
-      "sheetGroup": "구축 DD",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전열 보호",
       "row": 117,
       "column": 16
@@ -8345,7 +8345,7 @@
       "faction": "비시아",
       "shipType": "항모",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "하위해역\n많은 적 상대",
       "row": 117,
       "column": 18
@@ -8360,7 +8360,7 @@
       "faction": "로열",
       "shipType": "항모",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "적 전함 상대 보조",
       "row": 117,
       "column": 20
@@ -8375,7 +8375,7 @@
       "faction": "동황",
       "shipType": "경항모",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "6전투기\n대체 항모",
       "row": 117,
       "column": 22
@@ -8390,7 +8390,7 @@
       "faction": "DOAX VV",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속 제공",
       "row": 117,
       "column": 24
@@ -8405,7 +8405,7 @@
       "faction": "로열",
       "shipType": "순전",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "장전 버프",
       "row": 117,
       "column": 26
@@ -8420,7 +8420,7 @@
       "faction": "로열",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "세이렌 특화",
       "row": 117,
       "column": 28
@@ -8435,7 +8435,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 대체제",
       "row": 117,
       "column": 30
@@ -8450,7 +8450,7 @@
       "faction": "사르데냐",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "경순 CL",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 117,
       "column": 32
@@ -8465,7 +8465,7 @@
       "faction": "비시아",
       "shipType": "순전",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 함대 파츠\n선장전, 딜 버프",
       "row": 117,
       "column": 36
@@ -8480,7 +8480,7 @@
       "faction": "비시아",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 함대 파츠\n대체 전함들",
       "row": 117,
       "column": 38
@@ -8495,7 +8495,7 @@
       "faction": "아이리스",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 117,
       "column": 40
@@ -8510,7 +8510,7 @@
       "faction": "중앵",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무사시 독점",
       "row": 117,
       "column": 42
@@ -8525,7 +8525,7 @@
       "faction": "철혈",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "비스마르크와\n같이 쓰기",
       "row": 117,
       "column": 44
@@ -8540,7 +8540,7 @@
       "faction": "유니온",
       "shipType": "전함",
       "tier": "C+",
-      "sheetGroup": "중순 / 대순 CA",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "작은 육각형 딜러",
       "row": 117,
       "column": 46
@@ -8555,7 +8555,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "C+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "글쎄요..?",
       "row": 117,
       "column": 48
@@ -8570,7 +8570,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "tier": "C+",
-      "sheetGroup": "항모버프 표시",
+      "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "",
       "row": 117,
       "column": 49

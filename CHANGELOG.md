@@ -40,6 +40,7 @@
 - Generated an initial `growthRecommendations.json` dataset with matched character metadata, tier, sheet group, role note, and CSV coordinates for review.
 - Added comparison CSV reports for matched growth recommendations and unmatched review candidates.
 - Added plain text growth recommendation review reports for Notepad-style inspection.
+- Fixed growth recommendation sheet-group inference to use the nearest section header row instead of reusing the first header section.
 
 ### Verified
 - `npm.cmd run test`

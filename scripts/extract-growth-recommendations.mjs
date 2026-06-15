@@ -141,31 +141,53 @@ function isGroupCell(value) {
   return GROUP_PATTERN.test(text)
 }
 
-function buildColumnGroups(rows) {
-  const groups = []
+function isSectionHeaderCell(value) {
+  return /(DD|CL|CA|CVL|CV|BB|BC)/.test(cleanCell(value))
+}
+
+function buildGroupRows(rows) {
+  const groupRows = []
 
   rows.forEach((row, rowIndex) => {
-    if (rowIndex > 4) return
+    const groups = []
+    let sectionHeaderCellCount = 0
 
     row.forEach((cell, columnIndex) => {
       const text = cleanCell(cell)
       if (!isGroupCell(text)) return
+      if (isSectionHeaderCell(text)) sectionHeaderCellCount += 1
       groups.push({ row: rowIndex, column: columnIndex, label: text })
     })
+
+    if (sectionHeaderCellCount >= 2) {
+      groupRows.push({
+        row: rowIndex,
+        groups: groups.sort((a, b) => a.column - b.column),
+      })
+    }
   })
 
-  return groups.sort((a, b) => a.column - b.column || a.row - b.row)
+  return groupRows.sort((a, b) => a.row - b.row)
 }
 
-function findColumnGroup(columnIndex, groups) {
+function findColumnGroup(rowIndex, columnIndex, groupRows) {
+  let selectedGroupRow = null
+
+  for (const groupRow of groupRows) {
+    if (groupRow.row > rowIndex) break
+    selectedGroupRow = groupRow
+  }
+
+  if (!selectedGroupRow) return ''
+
   let current = null
 
-  for (const group of groups) {
+  for (const group of selectedGroupRow.groups) {
     if (group.column > columnIndex) break
     current = group
   }
 
-  return current?.label || ''
+  return current?.label || selectedGroupRow.groups[0]?.label || ''
 }
 
 function findTier(rows, rowIndex) {
@@ -200,7 +222,7 @@ function extractSource(source) {
   const filePath = path.join(ROOT, source.file)
   const csv = fs.readFileSync(filePath, 'utf8')
   const rows = parseCsv(csv)
-  const groups = buildColumnGroups(rows)
+  const groupRows = buildGroupRows(rows)
   const candidates = []
   const unmatched = []
 
@@ -232,7 +254,7 @@ function extractSource(source) {
         faction: character.faction,
         shipType: character.shipType,
         tier: findTier(rows, rowIndex),
-        sheetGroup: findColumnGroup(columnIndex, groups),
+        sheetGroup: findColumnGroup(rowIndex, columnIndex, groupRows),
         roleNote: findRoleNote(rows, rowIndex, columnIndex),
         row: rowIndex + 1,
         column: columnIndex + 1,
