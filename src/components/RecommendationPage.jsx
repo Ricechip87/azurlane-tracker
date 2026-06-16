@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FleetTechPanel } from './StatsBar.jsx'
+import GrowthMatrixDummy from './GrowthMatrixDummy.jsx'
 
 const RECOMMENDATION_TABS = [
   {
@@ -7,6 +8,12 @@ const RECOMMENDATION_TABS = [
     label: '육성 추천',
     title: '육성 추천',
     description: '해역과 대작전 기준으로 120 육성 우선순위를 고릅니다.',
+  },
+  {
+    id: 'growth-matrix-dummy',
+    label: '육성표 더미',
+    title: '육성표 더미',
+    description: '스프레드시트형 육성 추천표 구조를 앱 안에서 확인하기 위한 더미 화면입니다.',
   },
   {
     id: 'research',
@@ -59,7 +66,9 @@ export default function RecommendationPage({ characters }) {
         ))}
       </div>
 
-      {activeTab === 'tech' ? (
+      {activeTab === 'growth-matrix-dummy' ? (
+        <GrowthMatrixDummy characters={characters} />
+      ) : activeTab === 'tech' ? (
         <section>
           <div className="relative overflow-visible rounded border border-gray-800 bg-gray-900">
             <FleetTechPanel characters={characters} detailMode="inline" />
