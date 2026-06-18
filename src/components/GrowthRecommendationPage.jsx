@@ -366,12 +366,12 @@ function RecommendationCard({ card, character }) {
   const cardArtUrl = getCardArtUrl(character)
   const status = card.status || normalizeAcquisitionStatus(character?.acquired)
   const showDifficultyBadge = status === '미획득'
-  const obtainTooltip = showDifficultyBadge ? getObtainTooltip(card) : ''
+  const cardTooltip = getCardTooltip(card)
 
   return (
     <article
       className={`group relative h-[214px] overflow-hidden rounded-md border-2 bg-[#272727] shadow-lg ${rarityStyle.card}`}
-      title={obtainTooltip}
+      title={cardTooltip}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,#3a3a3a_0%,#202020_52%,#111_100%)]" />
       {cardArtUrl ? (
@@ -417,10 +417,12 @@ function RecommendationCard({ card, character }) {
   )
 }
 
-function getObtainTooltip(card) {
+function getCardTooltip(card) {
   const sources = card.obtainability?.obtain || []
-  if (sources.length === 0) return ''
-  return `획득처: ${sources.join(', ')}`
+  const lines = []
+  if (card.summary) lines.push(`추천사유: ${card.summary}`)
+  if (sources.length > 0) lines.push(`획득처: ${sources.join(', ')}`)
+  return lines.join('\n')
 }
 
 function getCardArtUrl(character) {
