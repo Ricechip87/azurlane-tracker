@@ -41,19 +41,19 @@ export default function RecommendationPage({ characters }) {
 
   return (
     <main className="mx-auto max-w-[1500px] p-4 space-y-4">
-      <header className="border border-gray-800 bg-gray-900 px-5 py-4">
-        <div className="text-xs font-semibold text-blue-300">육성/편성 추천</div>
+      <header className="border border-neutral-700 bg-[#242424] px-5 py-4">
+        <div className="text-xs font-semibold text-gray-300">육성/편성 추천</div>
         <h1 className="mt-1 text-2xl font-bold text-gray-100">{currentTab.title}</h1>
         <p className="mt-2 text-sm leading-6 text-gray-500">{currentTab.description}</p>
       </header>
 
-      <div className="flex flex-wrap gap-2 border-b border-gray-800">
+      <div className="flex flex-wrap gap-2 border-b border-neutral-700">
         {RECOMMENDATION_TABS.map(tab => (
           <button
             key={tab.id}
             type="button"
             onClick={() => setActiveTab(tab.id)}
-            className={`border-x border-t px-4 py-2 text-sm font-semibold transition-colors ${activeTab === tab.id ? 'border-blue-500 bg-blue-600/20 text-blue-100' : 'border-gray-800 bg-gray-900 text-gray-400 hover:text-gray-100'}`}
+            className={`border-x border-t px-4 py-2 text-sm font-semibold transition-colors ${activeTab === tab.id ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#242424] text-gray-400 hover:border-neutral-500 hover:text-gray-100'}`}
           >
             {tab.label}
           </button>
@@ -64,7 +64,7 @@ export default function RecommendationPage({ characters }) {
         <GrowthRecommendationPage characters={characters} />
       ) : activeTab === 'tech' ? (
         <section>
-          <div className="relative overflow-visible rounded border border-gray-800 bg-gray-900">
+          <div className="relative overflow-visible rounded border border-neutral-700 bg-[#242424]">
             <FleetTechPanel characters={characters} detailMode="inline" />
           </div>
         </section>
@@ -77,14 +77,14 @@ export default function RecommendationPage({ characters }) {
 
 function RecommendationPlaceholder({ tab }) {
   return (
-    <section className="min-h-[360px] border border-gray-800 bg-gray-900 px-6 py-8">
+    <section className="min-h-[360px] border border-neutral-700 bg-[#242424] px-6 py-8">
       <div className="grid gap-4 md:grid-cols-[280px_1fr]">
         <div>
-          <div className="text-xs font-semibold text-blue-300">{tab.label}</div>
+          <div className="text-xs font-semibold text-gray-300">{tab.label}</div>
           <h2 className="mt-2 text-xl font-bold text-gray-100">준비 중</h2>
           <p className="mt-3 text-sm leading-6 text-gray-500">{tab.description}</p>
         </div>
-        <div className="flex min-h-[240px] items-center justify-center border border-dashed border-gray-700 bg-gray-950 text-center">
+        <div className="flex min-h-[240px] items-center justify-center border border-dashed border-neutral-700 bg-[#1a1a1a] text-center">
           <div>
             <div className="text-sm text-gray-500">이 영역에 다음 추천 로직이 들어갑니다.</div>
             <div className="mt-3 text-2xl font-bold text-gray-300">공사중</div>

@@ -87,10 +87,10 @@ export default function GrowthRecommendationPage({ characters }) {
 
   return (
     <section className="space-y-4">
-      <div className="rounded border border-gray-800 bg-gray-900 px-4 py-4">
+      <div className="rounded border border-neutral-700 bg-[#242424] px-4 py-4">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <div className="text-xs font-semibold text-blue-300">육성 추천 초안</div>
+            <div className="text-xs font-semibold text-gray-300">육성 추천 초안</div>
             <h2 className="mt-1 text-xl font-bold text-gray-100">{currentMode.label} 카드 추천</h2>
             <p className="mt-2 text-sm leading-6 text-gray-500">{currentMode.description}</p>
           </div>
@@ -101,7 +101,7 @@ export default function GrowthRecommendationPage({ characters }) {
                 key={item.id}
                 type="button"
                 onClick={() => setMode(item.id)}
-                className={`rounded border px-3 py-2 text-sm font-semibold transition-colors ${mode === item.id ? 'border-blue-500 bg-blue-600 text-white' : 'border-gray-700 bg-gray-950 text-gray-400 hover:text-gray-100'}`}
+                className={`rounded border px-3 py-2 text-sm font-semibold transition-colors ${mode === item.id ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#1a1a1a] text-gray-400 hover:border-neutral-500 hover:text-gray-100'}`}
               >
                 {item.label}
               </button>
@@ -112,8 +112,8 @@ export default function GrowthRecommendationPage({ characters }) {
 
       <div className="space-y-4">
         {RECOMMENDATION_SECTIONS.map(section => (
-          <section key={section.id} className="rounded border border-gray-800 bg-gray-950">
-            <div className="border-b border-gray-800 bg-gray-900 px-4 py-3">
+          <section key={section.id} className="rounded border border-neutral-700 bg-[#1a1a1a]">
+            <div className="border-b border-neutral-700 bg-[#242424] px-4 py-3">
               <div className="flex flex-wrap items-baseline gap-3">
                 <h3 className="text-base font-bold text-gray-100">{section.title}</h3>
                 <span className="text-xs text-gray-500">{section.description}</span>
@@ -199,7 +199,7 @@ function EmptyRecommendationSection() {
 function Badge({ children, tone = 'gray' }) {
   const tones = {
     gray: 'bg-gray-700 text-gray-100',
-    blue: 'bg-blue-600 text-white',
+    blue: 'bg-neutral-600 text-white',
     rainbow: 'bg-gradient-to-r from-fuchsia-500 via-amber-300 to-cyan-300 text-gray-950',
     gold: 'bg-yellow-500 text-gray-950',
     purple: 'bg-violet-600 text-white',

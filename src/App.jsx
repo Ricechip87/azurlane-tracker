@@ -128,7 +128,7 @@ export default function App() {
   }, [enriched, filters])
 
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100">
+    <div className="min-h-screen bg-[#171717] text-gray-100">
       <TopMenu activePage={activePage} onSelect={setActivePage} />
 
       {activePage === 'home' && <HomePage />}
@@ -160,7 +160,7 @@ export default function App() {
 function DataLoadStatePage({ error }) {
   return (
     <main className="mx-auto max-w-[1500px] p-6">
-      <section className="border border-gray-800 bg-gray-900 px-6 py-10 text-sm text-gray-400">
+      <section className="border border-neutral-700 bg-[#242424] px-6 py-10 text-sm text-gray-400">
         {error ? `함선 데이터를 불러오지 못했습니다. (${error})` : '함선 데이터를 불러오는 중입니다.'}
       </section>
     </main>
@@ -176,18 +176,18 @@ function TopMenu({ activePage, onSelect }) {
   }
 
   return (
-    <header className="sticky top-0 z-30 border-b border-gray-800 bg-gray-950/95 px-6 py-3 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-neutral-800 bg-[#1f1f1f]/95 px-6 py-3 backdrop-blur">
       <div className="mx-auto flex max-w-[1500px] items-center gap-3">
         <button
           type="button"
           onClick={() => selectPage('home')}
-          className={`flex h-10 w-10 items-center justify-center rounded border text-lg transition-colors ${activePage === 'home' ? 'border-blue-500 bg-blue-600/20 text-blue-300' : 'border-gray-800 bg-gray-900 text-gray-300 hover:border-gray-700 hover:text-gray-100'}`}
+          className={`flex h-10 w-10 items-center justify-center rounded border text-lg transition-colors ${activePage === 'home' ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#2a2a2a] text-gray-300 hover:border-neutral-500 hover:text-gray-100'}`}
           aria-label="홈"
         >
           ⌂
         </button>
         <div className="mr-auto">
-          <div className="text-sm font-bold text-blue-300">AzurLane Tracker</div>
+          <div className="text-sm font-bold text-gray-100">AzurLane Tracker</div>
           <div className="text-[11px] text-gray-500">벽람항로 개인용 함선 육성툴</div>
         </div>
 
@@ -225,11 +225,11 @@ function MenuDropdown({ group, activePage, isOpen, onOpen, onClose, onSelect }) 
         type="button"
         onClick={() => isOpen ? onClose() : onOpen()}
         aria-expanded={isOpen}
-        className={`h-10 rounded border px-4 text-sm font-semibold transition-colors ${isActive ? 'border-blue-500 bg-blue-600/20 text-blue-100' : 'border-gray-800 bg-gray-900 text-gray-200 hover:border-gray-700'}`}
+        className={`h-10 rounded border px-4 text-sm font-semibold transition-colors ${isActive ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#2a2a2a] text-gray-200 hover:border-neutral-500'}`}
       >
         {group.label} ▾
       </button>
-      <div className={`${isOpen ? 'visible translate-y-1 opacity-100' : 'invisible translate-y-2 opacity-0'} absolute right-0 top-full z-40 w-[360px] rounded border border-gray-800 bg-gray-950 p-3 shadow-2xl shadow-black/40 transition-all`}>
+      <div className={`${isOpen ? 'visible translate-y-1 opacity-100' : 'invisible translate-y-2 opacity-0'} absolute right-0 top-full z-40 w-[360px] rounded border border-neutral-700 bg-[#1f1f1f] p-3 shadow-2xl shadow-black/50 transition-all`}>
         <div className="mb-2 px-2 text-xs text-gray-500">{group.label}</div>
         <div className="space-y-1">
           {group.items.map(item => (
@@ -237,7 +237,7 @@ function MenuDropdown({ group, activePage, isOpen, onOpen, onClose, onSelect }) 
               key={item.id}
               type="button"
               onClick={() => onSelect(item.id)}
-              className={`w-full rounded px-3 py-3 text-left transition-colors ${activePage === item.id ? 'bg-blue-600/20 text-blue-100' : 'text-gray-200 hover:bg-gray-900'}`}
+              className={`w-full rounded px-3 py-3 text-left transition-colors ${activePage === item.id ? 'bg-neutral-700 text-white' : 'text-gray-200 hover:bg-[#2a2a2a]'}`}
             >
               <div className="text-sm font-bold">{item.title}</div>
               <div className="mt-1 text-xs leading-5 text-gray-500">{item.description}</div>
@@ -260,7 +260,7 @@ function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/85 via-gray-950/45 to-gray-950/20" />
         <div className="relative flex min-h-[420px] max-w-3xl flex-col justify-center px-8 py-10">
-          <div className="mb-4 w-fit rounded bg-blue-600 px-3 py-1 text-xs font-bold text-white">PRIVATE TOOL</div>
+          <div className="mb-4 w-fit rounded bg-neutral-700 px-3 py-1 text-xs font-bold text-white">PRIVATE TOOL</div>
           <h1 className="text-4xl font-black text-white">AzurLane Tracker</h1>
           <p className="mt-4 max-w-xl text-base leading-7 text-gray-200">
             내 보유함 기반 성장, 기술점수, 추가 스탯, 편성 추천을 정리하기 위한 벽람항로 개인 도구.
@@ -276,7 +276,7 @@ function MyRosterPage({ characters, filteredCharacters, filters, setFilters, upd
     <>
       <header className="border-b border-gray-800 bg-gray-900 px-6 py-4">
         <div className="mx-auto flex max-w-[1500px] flex-wrap items-center gap-4">
-          <h1 className="text-xl font-bold text-blue-400">내 함순이 정보</h1>
+          <h1 className="text-xl font-bold text-gray-100">내 함순이 정보</h1>
           <BackupPanel userData={userData} setUserData={setUserData} compact />
         </div>
       </header>
@@ -299,7 +299,7 @@ function BackToTopButton() {
     <button
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className="fixed bottom-5 right-5 z-30 rounded border border-blue-500/70 bg-blue-700/90 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-950/40 transition-colors hover:bg-blue-600"
+      className="fixed bottom-5 right-5 z-30 rounded border border-neutral-500 bg-neutral-700/95 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-black/40 transition-colors hover:bg-neutral-600"
     >
       맨위로
     </button>
@@ -339,7 +339,7 @@ function RosterHeroPanel() {
           </div>
         </div>
         <div className="flex flex-col justify-center px-6 py-5">
-          <div className="text-xs font-semibold text-blue-300">입력 안내</div>
+          <div className="text-xs font-semibold text-gray-300">입력 안내</div>
           <div className="mt-3 max-w-3xl space-y-1.5 text-sm leading-6 text-gray-400">
             <p>번거롭지만 본인이 보유 중인 애정어린 함순이 정보를 수동으로 기입해주세요.</p>
             <p>여기 정보가 기입되어야 육성/편성 추천 정보가 돌아갑니다.</p>
@@ -355,9 +355,9 @@ function RosterHeroPanel() {
 function UnderConstructionPage({ title }) {
   return (
     <main className="mx-auto flex min-h-[calc(100vh-65px)] max-w-[1500px] items-center justify-center p-6">
-      <section className="flex aspect-[16/9] w-full max-w-4xl items-center justify-center rounded border border-blue-400/30 bg-sky-500 text-center shadow-2xl shadow-blue-950/40">
+      <section className="flex aspect-[16/9] w-full max-w-4xl items-center justify-center rounded border border-neutral-600 bg-[#242424] text-center shadow-2xl shadow-black/40">
         <div>
-          <div className="text-sm font-semibold text-blue-100">{title}</div>
+          <div className="text-sm font-semibold text-gray-100">{title}</div>
           <div className="mt-4 text-3xl font-bold text-white">공사중</div>
         </div>
       </section>

@@ -144,7 +144,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
                             setPreviewFaction(null)
                           })()
                       }
-                      className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'effect' && inlineDetail?.factionValue === faction.value : isEffectOpen) ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-cyan-600 hover:text-cyan-200'}`}
+                      className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'effect' && inlineDetail?.factionValue === faction.value : isEffectOpen) ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-neutral-500 hover:text-gray-100'}`}
                     >
                       {usesInlineDetail ? '달성 효과' : `LV.${progress?.currentLevel?.level || 0} 달성 효과`}
                     </button>
@@ -175,7 +175,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
                             setEffectFaction(null)
                           })()
                       }
-                      className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'candidate' && inlineDetail?.factionValue === faction.value : isCandidateOpen) ? 'border-blue-500 bg-blue-600/20 text-blue-200' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-blue-600 hover:text-blue-200'}`}
+                      className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'candidate' && inlineDetail?.factionValue === faction.value : isCandidateOpen) ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-neutral-500 hover:text-gray-100'}`}
                     >
                       후보 보기
                     </button>
@@ -446,7 +446,7 @@ function CandidateBasisToggle({ basis, setBasis }) {
             key={option.value}
             type="button"
             onClick={() => setBasis(option.value)}
-            className={`h-7 px-3 text-xs font-semibold transition-colors ${isActive ? 'bg-blue-700 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-gray-200'}`}
+            className={`h-7 px-3 text-xs font-semibold transition-colors ${isActive ? 'bg-neutral-700 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-gray-200'}`}
           >
             {option.label}
           </button>
