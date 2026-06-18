@@ -1,4 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
+import shipObtainabilityUrl from '../data/shipObtainability.json?url'
+import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 
 const MODES = [
   {
@@ -18,72 +21,240 @@ const MODES = [
   },
 ]
 
-const RECOMMENDATION_SECTIONS = [
-  {
-    id: 'top',
-    title: '최우선 추천',
-    description: '성능, 범용성, 장기 활용도를 기준으로 가장 먼저 확인할 카드입니다.',
-    cards: [
-      ship('윌리엄 D 포터', 'SS', '선봉', ['구축', '만능'], '만능 육각형', ['입수 시 바로 육성 후보', '대공/대잠/보조를 넓게 커버']),
-      ship('라피Ⅱ', 'SS', '선봉', ['구축', '대공'], '탱 / 대잠 / 대공', ['고난도 해역 대응력이 좋음', '구축풀이 부족하면 우선 확인']),
-      ship('Z52', 'SS', '선봉', ['구축', '딜탱'], '딜탱 / 보조 / 힐', ['철혈 구축 핵심 후보', '공방 균형이 좋은 상위권']),
-      ship('괌', 'SS', '선봉', ['대순', '탱커'], '최상급 대공 / 탱킹', ['대공 요구 해역에서 강함', '대형순 탱커가 부족하면 우선']),
-      ship('하우덴 리우', 'SS', '선봉', ['중순', '육각형'], '탱 / 딜 / 보조 / 힐', ['여러 역할을 동시에 수행', '고난도 선봉 보강 후보']),
-      ship('시만토', 'SS', '선봉', ['경순', '유틸'], '균형잡힌 공방 / 짤힐', ['경순 슬롯의 안정성 보강', '대공과 보조를 함께 봄']),
-    ],
-  },
-  {
-    id: 'main-force',
-    title: '후열 / 지원 추천',
-    description: '힐러, 항모, 전함처럼 함대의 방향을 잡아주는 함선입니다.',
-    cards: [
-      ship('유니콘', 'SS', '후열', ['경항모', '힐러'], '초반부터 오래 쓰는 메인 힐러', ['입수 난이도 대비 효율이 좋음', '뉴비 기준 최우선 확인']),
-      ship('즈이호', 'SS', '후열', ['경항모', '힐러'], '신세대 힐러', ['힐러 풀이 부족하면 우선', '장기전 안정성 보강']),
-      ship('아퀼라', 'SS', '후열', ['항모', '힐러'], '딜러 / 서브 힐러', ['보스전 안정성에 기여', '힐러와 딜러 역할을 겸함']),
-      ship('클라우디아 발렌츠', 'S', '후열', ['항모', '딜러'], '쫄팟 딜러 / 기믹 실드', ['메인해역 후열 딜러 후보', '특정 상황에서 가치가 큼']),
-      ship('렉싱턴Ⅱ', 'S', '후열', ['항모', '딜러'], '높은 제공권 / 생존력', ['항모 전력이 부족할 때 확인', '해역 진행용 후보']),
-      ship('비스마르크 Zwei', 'S', '후열', ['전함', '딜러'], '철혈 전함 핵심 딜러', ['철혈 편성 중심축', '보스전 화력 후보']),
-    ],
-  },
-  {
-    id: 'role-fill',
-    title: '포지션 보강 추천',
-    description: '당장 빈 포지션을 메우거나 특정 기믹에 대응하기 좋은 함선입니다.',
-    cards: [
-      ship('샌디에이고', 'S+', '선봉', ['경순', '대공'], '상위 대공 성능', ['대공 요구 해역에서 강함', '개장 후 가치 상승']),
-      ship('플리머스', 'S', '선봉', ['경순', '딜러'], '경순 딜러 / 전함 딜버프', ['딜과 보조를 함께 제공', '후열 전함 화력 보조']),
-      ship('엘드릿지', 'S', '선봉', ['구축', '탱커'], '전열 탱 보조', ['개장 필요', '구축 탱커 후보']),
-      ship('브레스트', 'S', '선봉', ['대순', '탱커'], '쫄팟/보스팟 탱커', ['단단한 선봉이 필요할 때', '고난도 안정성 보강']),
-      ship('나폴리', 'S', '선봉', ['중순', '탱커'], '실드 무시 딜러 / 탱커', ['보스전 탱커 후보', '중순 포지션 보강']),
-      ship('잔 다르크', 'S', '선봉', ['경순', '보조'], '탱커 보조', ['전열 안정성 보강', '보조 풀이 부족할 때 확인']),
-    ],
-  },
-  {
-    id: 'next',
-    title: '차순위 후보',
-    description: '핵심 카드가 준비된 뒤 천천히 보강할 후보입니다.',
-    cards: [
-      ship('펠릭스 슐츠', 'A+', '선봉', ['구축', '탱커'], '탱커 2황', ['구축 탱커가 필요할 때', '선봉 생존력 보강']),
-      ship('핑하이', 'A+', '선봉', ['경순', '탱커'], '확고한 탱킹능력', ['낮은 딜 기여도 감안', '탱킹 목적일 때 선택']),
-      ship('닝하이', 'A+', '선봉', ['경순', '탱커'], '태생 보딱 중 탱킹 1황', ['접근성 좋은 탱킹 후보', '초중반 보강용']),
-      ship('얏센', 'A+', '선봉', ['경순', '탱커'], '태생 보딱 중 탱킹 1황', ['동황팟 계열 후보', '접근성 좋은 탱킹 카드']),
-      ship('힌덴부르크', 'A+', '선봉', ['중순', '딜러'], '전열 딜러 1황', ['화력 보강 목적', '고투자 후보']),
-      ship('운젠', 'A+', '선봉', ['중순', '딜러'], '전열 딜러 2황', ['중앵 전열 딜러', '고점 딜러 후보']),
-    ],
-  },
-]
+const MODE_SOURCE = {
+  main: 'main',
+  operation: 'operation-siren',
+  newbie: 'newbie',
+}
 
-function ship(name, tier, lane, tags, summary, notes) {
-  return { name, tier, lane, tags, summary, notes }
+const MAIN_FORCE_TYPES = new Set(['전함', '순전', '항전', '항모', '경항모', '모니터'])
+const POSITION_TYPES = ['구축', '경순', '중순', '대순', '전함', '순전', '항모', '경항모']
+const TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B']
+const DIFFICULTY_RANK = {
+  easy: 0,
+  normal: 1,
+  hard: 2,
+  limited: 3,
+  unknown: 4,
+  excluded: 9,
+}
+
+function buildRecommendationSections(mode, characters, growthRecommendationData, obtainabilityByName) {
+  const characterByName = new Map(characters.map(character => [character.name, character]))
+  const candidates = getCandidatesForMode(mode, characterByName, growthRecommendationData, obtainabilityByName)
+  const tierGroups = [...new Set(candidates.map(candidate => candidate.tier))]
+    .sort((a, b) => tierScore(a) - tierScore(b))
+  const topTier = tierGroups[0]
+  const nextTier = tierGroups[1]
+
+  return [
+    {
+      id: 'top',
+      title: '최우선 추천',
+      description: topTier ? `${topTier} 등급 후보 중 지금 키워볼만한 함선입니다.` : '조건에 맞는 최우선 후보를 찾지 못했습니다.',
+      cards: cardsForSection(candidates.filter(candidate => candidate.tier === topTier), 16),
+      groupByLane: true,
+    },
+    {
+      id: 'next',
+      title: '차순위 추천',
+      description: nextTier ? `${nextTier} 등급 후보 중 다음으로 확인할 함선입니다.` : '최우선 바로 아래 단계 후보가 없거나 이미 충분히 육성되었습니다.',
+      cards: cardsForSection(candidates.filter(candidate => candidate.tier === nextTier), 16),
+      groupByLane: true,
+    },
+    {
+      id: 'vanguard',
+      title: '전열 기준 추천',
+      description: '구축, 경순, 중순, 대순 등 전열 포지션 보강 후보입니다.',
+      cards: cardsForSection(candidates.filter(candidate => candidate.lane === '전열'), 24),
+    },
+    {
+      id: 'main-force',
+      title: '후열 기준 추천',
+      description: '전함, 항모, 경항모 등 후열 포지션 보강 후보입니다.',
+      cards: cardsForSection(candidates.filter(candidate => candidate.lane === '후열'), 24),
+    },
+    {
+      id: 'special',
+      title: '특수 항목 추천',
+      description: '힐러, 버퍼, 디버퍼, 서포터 역할이 명확한 후보입니다.',
+      cards: cardsForSection(candidates.filter(isSpecialCandidate), 24),
+    },
+    {
+      id: 'position-fill',
+      title: '포지션 보강 추천',
+      description: '현재 보유함 기준으로 120 이상 UR/SSR 수가 부족한 함종부터 보강합니다.',
+      cards: cardsForSection(getPositionFillCandidates(candidates, characters), 24),
+    },
+  ]
+}
+
+function getCandidatesForMode(mode, characterByName, growthRecommendationData, obtainabilityByName) {
+  const source = MODE_SOURCE[mode] || MODE_SOURCE.main
+  const seen = new Map()
+
+  for (const recommendation of growthRecommendationData.recommendations || []) {
+    if (recommendation.source !== source) continue
+    const character = characterByName.get(recommendation.name)
+    const obtainability = obtainabilityByName.get(recommendation.name)
+    const candidate = buildCandidate(recommendation, character, obtainability)
+    if (!isEligibleCandidate(candidate)) continue
+
+    const previous = seen.get(candidate.name)
+    if (!previous || compareCandidates(candidate, previous) < 0) {
+      seen.set(candidate.name, candidate)
+    }
+  }
+
+  return [...seen.values()].sort(compareCandidates)
+}
+
+function buildCandidate(recommendation, character, obtainability) {
+  const status = normalizeAcquisitionStatus(character?.acquired)
+  const difficulty = obtainability?.difficulty || { key: 'unknown', label: '미확인' }
+  const shipType = character?.shipType || recommendation.shipType || '-'
+
+  return {
+    ...recommendation,
+    character,
+    obtainability,
+    difficulty,
+    status,
+    acquired: isAcquiredStatus(status),
+    lane: getLane(shipType),
+    tags: [shipType, getGroupTag(recommendation.sheetGroup)].filter(Boolean),
+    summary: normalizeSummary(recommendation.roleNote || recommendation.sheetGroup || '추천 후보'),
+  }
+}
+
+function isEligibleCandidate(candidate) {
+  if (candidate.difficulty.key === 'excluded') return false
+  if (candidate.acquired) return !isLevel120Status(candidate.status)
+  return candidate.difficulty.key === 'easy'
+}
+
+function compareCandidates(a, b) {
+  return tierScore(a.tier) - tierScore(b.tier) ||
+    ownershipScore(a) - ownershipScore(b) ||
+    difficultyScore(a) - difficultyScore(b) ||
+    Number(a.row || 999) - Number(b.row || 999) ||
+    Number(a.column || 999) - Number(b.column || 999) ||
+    a.name.localeCompare(b.name, 'ko')
+}
+
+function cardsForSection(cards, limit) {
+  return cards.slice(0, limit)
+}
+
+function tierScore(tier) {
+  const index = TIER_ORDER.indexOf(tier)
+  return index === -1 ? TIER_ORDER.length : index
+}
+
+function ownershipScore(candidate) {
+  if (!candidate.acquired) return 4
+  if (candidate.status === '100') return 0
+  if (candidate.status === '풀돌') return 1
+  if (candidate.status === '획득') return 2
+  return 3
+}
+
+function difficultyScore(candidate) {
+  return DIFFICULTY_RANK[candidate.difficulty.key] ?? DIFFICULTY_RANK.unknown
+}
+
+function getLane(shipType) {
+  return MAIN_FORCE_TYPES.has(shipType) ? '후열' : '전열'
+}
+
+function getGroupTag(sheetGroup) {
+  if (!sheetGroup) return ''
+  return String(sheetGroup).replace(/\s+/g, ' ').split(' ')[0]
+}
+
+function normalizeSummary(value) {
+  return String(value || '')
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean)
+    .join(' / ')
+}
+
+function isSpecialCandidate(candidate) {
+  const text = `${candidate.sheetGroup || ''} ${candidate.roleNote || ''}`
+  return /힐|버프|디버프|보조|서포터|지원|실드|대공/.test(text)
+}
+
+function getPositionFillCandidates(candidates, characters) {
+  const ownedHighLevelCounts = new Map(POSITION_TYPES.map(type => [type, 0]))
+
+  for (const character of characters) {
+    if (!['UR', 'SSR'].includes(character.rarity)) continue
+    if (!isLevel120Status(character.acquired)) continue
+    if (!ownedHighLevelCounts.has(character.shipType)) continue
+    ownedHighLevelCounts.set(character.shipType, ownedHighLevelCounts.get(character.shipType) + 1)
+  }
+
+  const weakestTypes = [...ownedHighLevelCounts.entries()]
+    .sort((a, b) => a[1] - b[1] || POSITION_TYPES.indexOf(a[0]) - POSITION_TYPES.indexOf(b[0]))
+    .slice(0, 3)
+    .map(([type]) => type)
+
+  return candidates
+    .filter(candidate => weakestTypes.includes(candidate.character?.shipType || candidate.shipType))
+    .sort((a, b) => weakestTypes.indexOf(a.character?.shipType || a.shipType) - weakestTypes.indexOf(b.character?.shipType || b.shipType) || compareCandidates(a, b))
 }
 
 export default function GrowthRecommendationPage({ characters }) {
   const [mode, setMode] = useState('main')
+  const [recommendationData, setRecommendationData] = useState(null)
+  const [obtainabilityMap, setObtainabilityMap] = useState(null)
+  const [dataError, setDataError] = useState('')
   const currentMode = MODES.find(item => item.id === mode) || MODES[0]
+
+  useEffect(() => {
+    let ignore = false
+
+    async function loadRecommendationData() {
+      try {
+        const [recommendationResponse, obtainabilityResponse] = await Promise.all([
+          fetch(growthRecommendationsUrl),
+          fetch(shipObtainabilityUrl),
+        ])
+
+        if (!recommendationResponse.ok) throw new Error(`growthRecommendations.json ${recommendationResponse.status}`)
+        if (!obtainabilityResponse.ok) throw new Error(`shipObtainability.json ${obtainabilityResponse.status}`)
+
+        const [recommendations, obtainability] = await Promise.all([
+          recommendationResponse.json(),
+          obtainabilityResponse.json(),
+        ])
+
+        if (ignore) return
+        setRecommendationData(recommendations)
+        setObtainabilityMap(new Map((obtainability.ships || []).map(ship => [ship.name, ship])))
+        setDataError('')
+      } catch (error) {
+        if (ignore) return
+        setDataError(error instanceof Error ? error.message : '알 수 없는 오류')
+      }
+    }
+
+    loadRecommendationData()
+
+    return () => {
+      ignore = true
+    }
+  }, [])
 
   const characterByName = useMemo(() => (
     new Map(characters.map(character => [character.name, character]))
   ), [characters])
+  const recommendationSections = useMemo(() => (
+    recommendationData && obtainabilityMap
+      ? buildRecommendationSections(mode, characters, recommendationData, obtainabilityMap)
+      : []
+  ), [mode, characters, recommendationData, obtainabilityMap])
 
   return (
     <section className="space-y-4">
@@ -110,8 +281,21 @@ export default function GrowthRecommendationPage({ characters }) {
         </div>
       </div>
 
-      <div className="space-y-4">
-        {RECOMMENDATION_SECTIONS.map(section => (
+      {dataError && (
+        <section className="rounded border border-rose-900/60 bg-rose-950/30 px-4 py-5 text-sm text-rose-200">
+          육성 추천 데이터를 불러오지 못했습니다. ({dataError})
+        </section>
+      )}
+
+      {!dataError && (!recommendationData || !obtainabilityMap) && (
+        <section className="rounded border border-neutral-700 bg-[#1a1a1a] px-4 py-5 text-sm text-gray-400">
+          육성 추천 데이터를 불러오는 중입니다.
+        </section>
+      )}
+
+      {!dataError && recommendationData && obtainabilityMap && (
+        <div className="space-y-4">
+        {recommendationSections.map(section => (
           <section key={section.id} className="rounded border border-neutral-700 bg-[#1a1a1a]">
             <div className="border-b border-neutral-700 bg-[#242424] px-4 py-3">
               <div className="flex flex-wrap items-baseline gap-3">
@@ -121,6 +305,12 @@ export default function GrowthRecommendationPage({ characters }) {
             </div>
 
             {section.cards.length > 0 ? (
+              section.groupByLane ? (
+                <LaneGroupedCards
+                  section={section}
+                  characterByName={characterByName}
+                />
+              ) : (
               <div className="grid gap-2.5 p-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
                 {section.cards.map(card => (
                   <RecommendationCard
@@ -130,13 +320,41 @@ export default function GrowthRecommendationPage({ characters }) {
                   />
                 ))}
               </div>
+              )
             ) : (
               <EmptyRecommendationSection />
             )}
           </section>
         ))}
       </div>
+      )}
     </section>
+  )
+}
+
+function LaneGroupedCards({ section, characterByName }) {
+  const groups = [
+    { lane: '전열', cards: section.cards.filter(card => card.lane === '전열') },
+    { lane: '후열', cards: section.cards.filter(card => card.lane === '후열') },
+  ]
+
+  return (
+    <div className="space-y-3 p-3">
+      {groups.map(group => group.cards.length > 0 && (
+        <div key={`${section.id}-${group.lane}`}>
+          <div className="mb-2 text-xs font-bold text-gray-400">{group.lane}</div>
+          <div className="grid gap-2.5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
+            {group.cards.map(card => (
+              <RecommendationCard
+                key={`${section.id}-${group.lane}-${card.name}`}
+                card={card}
+                character={characterByName.get(card.name)}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
   )
 }
 
@@ -146,6 +364,7 @@ function RecommendationCard({ card, character }) {
   const shipType = character?.shipType || card.tags[0]
   const rarityStyle = rarityCardStyle(rarity)
   const cardArtUrl = getCardArtUrl(character)
+  const status = card.status || normalizeAcquisitionStatus(character?.acquired)
 
   return (
     <article className={`group relative h-[214px] overflow-hidden rounded-md border-2 bg-[#272727] shadow-lg ${rarityStyle.card}`}>
@@ -167,6 +386,11 @@ function RecommendationCard({ card, character }) {
       <div className="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-black/50 to-transparent" />
       <div className="absolute right-2 top-2 text-[11px] font-black">
         <Badge tone={rarityTone(rarity)}>{rarity}</Badge>
+      </div>
+      <div className="absolute left-2 top-2 flex max-w-[calc(100%-56px)] flex-wrap gap-1 text-[10px] font-black">
+        <Badge tone="dark">{card.tier}</Badge>
+        <Badge tone={statusTone(status)}>{status}</Badge>
+        <Badge tone={difficultyTone(card.difficulty?.key)}>{card.difficulty?.label || '미확인'}</Badge>
       </div>
 
       <div className="absolute inset-x-0 bottom-0 p-3 text-white">
@@ -209,6 +433,10 @@ function Badge({ children, tone = 'gray' }) {
   const tones = {
     gray: 'bg-gray-700 text-gray-100',
     blue: 'bg-neutral-600 text-white',
+    dark: 'bg-black/65 text-gray-100 ring-1 ring-white/10',
+    green: 'bg-emerald-500 text-gray-950',
+    orange: 'bg-amber-500 text-gray-950',
+    red: 'bg-rose-600 text-white',
     rainbow: 'bg-gradient-to-r from-fuchsia-500 via-amber-300 to-cyan-300 text-gray-950',
     gold: 'bg-yellow-500 text-gray-950',
     purple: 'bg-violet-600 text-white',
@@ -226,6 +454,22 @@ function rarityTone(rarity) {
   if (rarity === 'SSR') return 'gold'
   if (rarity === 'SR') return 'purple'
   return 'blue'
+}
+
+function statusTone(status) {
+  if (status === '미획득') return 'gray'
+  if (status === '획득') return 'blue'
+  if (status === '풀돌') return 'green'
+  if (status === '100') return 'orange'
+  return 'dark'
+}
+
+function difficultyTone(key) {
+  if (key === 'easy') return 'green'
+  if (key === 'normal') return 'blue'
+  if (key === 'hard') return 'orange'
+  if (key === 'limited') return 'red'
+  return 'gray'
 }
 
 function rarityCardStyle(rarity) {
