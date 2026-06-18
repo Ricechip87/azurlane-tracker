@@ -1,0 +1,117 @@
+육성 추천표 미매칭/검토 후보
+
+총 검토 후보: 110
+설명 텍스트가 포함될 수 있으므로 실제 누락 함선인지 원본 좌표 기준으로 확인합니다.
+
+## main
+- 메인해역용 (2:1) - not matched
+- 만능 육각형 (8:6) - not matched
+- 상위 대공 성능 (8:22) - not matched
+- 보스 전용 탱커 (12:28) - not matched
+- 연막탄 탱킹 보조 (12:30) - not matched
+- 탱커 보조 (12:36) - not matched
+- 키로프 META (경순) (15:38) - not matched
+- 탱커 2황 (16:2) - not matched
+- 분신을 활용한 탱 (16:16) - not matched
+- 분신을 통한 탱킹보조 (16:38) - not matched
+- 탱커 (18:26) - not matched
+- 클리블랜드 META (19:17) - not matched
+- 무난한 탱커 (20:4) - not matched
+- 3번 자리 딜러 (20:6) - not matched
+- 경장 방뢰요원 (20:14) - not matched
+- 경순 드레이크 (20:16) - not matched
+- 고성능 대체 탱커들 (20:24) - not matched
+- 고출력 중순 표준 (20:28) - not matched
+- 절약팟 멤버 (22:8) - not matched
+- 대공 (22:12) - not matched
+- 플레어 (22:13) - not matched
+- 전체 힐 (22:18) - not matched
+- 단일 힐 (22:19) - not matched
+- 딸피 힐 (22:22) - not matched
+- 탱 대공 (22:23) - not matched
+- 실드 (22:26) - not matched
+- 30초 실드 (22:27) - not matched
+- 대공 (24:2) - not matched
+- 3번 자리 딜러 (24:4) - not matched
+- 3번 자리 딜러 (24:6) - not matched
+- 경장 특화 (24:8) - not matched
+- 무난하게 좋은 성능 (24:12) - not matched
+- 포격특화 경순 (24:16) - not matched
+- 탱 경순 (24:22) - not matched
+- 3번 자리 딜러 (24:34) - not matched
+- 레이더 탐지 (24:36) - not matched
+- 구축 버프 (24:39) - not matched
+- 18초 실드 (26:24) - not matched
+- 항모 버프 (26:25) - not matched
+- 탱커 (26:26) - not matched
+- 무난한 딜 (26:27) - not matched
+- 탱킹 보조 (26:29) - not matched
+- 노시로 μ (27:20) - not matched
+- 뉴욜리언스 (27:28) - not matched
+- 오이겐 μ (27:35) - not matched
+- 0.9 유다치 (28:4) - not matched
+- 경장 특화 (28:7) - not matched
+- 3번 자리 딜러 (28:12) - not matched
+- 뇌격특화 경순 (28:16) - not matched
+- 3번 자리 대공맨 (28:18) - not matched
+- 3번 자리 딜러 (28:32) - not matched
+- 3번 자리 딜러 (28:34) - not matched
+- 공습 선도 (28:40) - not matched
+- 어뢰 (생략함) (30:40) - not matched
+- 최강 잠수함 (35:38) - not matched
+- 쫄 보스 둘다 잘함 (39:20) - not matched
+- 높은 공격력 (39:26) - not matched
+- 제공권 GOAT (43:10) - not matched
+- 쫄 보스 둘다 잘함 (43:24) - not matched
+- 쫄 보스 둘 다 잘함 (43:30) - not matched
+- 원거리 지원 (43:38) - not matched
+- 피해 감소 (45:8) - not matched
+- 불사 (45:9) - not matched
+- 글로리어스 META (46:12) - not matched
+- 요크타운 META (46:14) - not matched
+- 나가토 META (46:22) - not matched
+- 단기전 특화 (47:12) - not matched
+- 반장전 (47:18) - not matched
+- 탄막 우수 전함 (47:20) - not matched
+- 준 최강 딜러 (47:22) - not matched
+- 오와리 하위호환 (47:26) - not matched
+- 무난한 콜라보 전함 (47:30) - not matched
+- 무난한 쫄팟 성능 (47:34) - not matched
+- 4공습 (49:4) - not matched
+- 올라운더 (49:5) - not matched
+- 밸런스 (49:6) - not matched
+- 튼튼함 (49:18) - not matched
+- 2 전투기 (49:19) - not matched
+- 선장전 (49:21) - not matched
+- 유미아 (콜라보) (50:5) - not matched
+- 호넷 META (50:10) - not matched
+- 소량힐 (51:4) - not matched
+- 폭격 특화 항모 (51:6) - not matched
+- 무난한 미항모 (51:14) - not matched
+- 반장전 항모 (51:18) - not matched
+- 상위권 전함 (51:20) - not matched
+- 탄막 전함 (51:22) - not matched
+- 상위권 전함 (51:26) - not matched
+- 보스팟 특화 (51:28) - not matched
+- 빅 세븐 탄막 (51:32) - not matched
+- 중장 (53:9) - not matched
+- 20초 파갑 (53:26) - not matched
+- 빅 세븐 (53:32) - not matched
+- 일러스트리어스 μ (54:10) - not matched
+- 파르제팔 (54:12) - not matched
+- 히류 META (54:14) - not matched
+- 히에이 META (54:24) - not matched
+- 힐 전함 대체 (55:2) - not matched
+- 폭격 범위딜 (55:6) - not matched
+- 각종 유틸 (55:10) - not matched
+- 그럭저럭 강한 항모 (55:12) - not matched
+- 밸런스 잡힌 항모 (55:14) - not matched
+- 사르데냐 전함 (55:20) - not matched
+- 경장갑 특화 (55:22) - not matched
+- 부포 약함 (55:24) - not matched
+- 보스 팟 특화 (55:26) - not matched
+- 15-2 발사대 (55:28) - not matched
+- 확정 발동 탄막 (55:32) - not matched
+- 수동시 A (55:34) - not matched
+- 헤스티아 (58:2) - single matched name row
+

@@ -41,6 +41,7 @@
 - Added comparison CSV reports for matched growth recommendations and unmatched review candidates.
 - Added plain text growth recommendation review reports for Notepad-style inspection.
 - Fixed growth recommendation sheet-group inference to use the nearest section header row instead of reusing the first header section.
+- Split growth recommendation header parsing by source sheet, including main-stage healer/buffer groups and newbie recommendation columns.
 
 ### Verified
 - `npm.cmd run test`

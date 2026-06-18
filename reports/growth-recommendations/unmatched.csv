@@ -1,11 +1,11 @@
 source,name,row,column,reason
 main,메인해역용,2,1,not matched
-main,하이덴 리우,7,26,not matched
 main,만능 육각형,8,6,not matched
 main,상위 대공 성능,8,22,not matched
 main,보스 전용 탱커,12,28,not matched
 main,연막탄 탱킹 보조,12,30,not matched
 main,탱커 보조,12,36,not matched
+main,키로프 META (경순),15,38,not matched
 main,탱커 2황,16,2,not matched
 main,분신을 활용한 탱,16,16,not matched
 main,분신을 통한 탱킹보조,16,38,not matched
@@ -14,7 +14,9 @@ main,클리블랜드 META,19,17,not matched
 main,무난한 탱커,20,4,not matched
 main,3번 자리 딜러,20,6,not matched
 main,경장 방뢰요원,20,14,not matched
+main,경순 드레이크,20,16,not matched
 main,고성능 대체 탱커들,20,24,not matched
+main,고출력 중순 표준,20,28,not matched
 main,절약팟 멤버,22,8,not matched
 main,대공,22,12,not matched
 main,플레어,22,13,not matched
@@ -29,9 +31,13 @@ main,3번 자리 딜러,24,4,not matched
 main,3번 자리 딜러,24,6,not matched
 main,경장 특화,24,8,not matched
 main,무난하게 좋은 성능,24,12,not matched
+main,포격특화 경순,24,16,not matched
+main,탱 경순,24,22,not matched
 main,3번 자리 딜러,24,34,not matched
 main,레이더 탐지,24,36,not matched
+main,구축 버프,24,39,not matched
 main,18초 실드,26,24,not matched
+main,항모 버프,26,25,not matched
 main,탱커,26,26,not matched
 main,무난한 딜,26,27,not matched
 main,탱킹 보조,26,29,not matched
@@ -41,15 +47,15 @@ main,오이겐 μ,27,35,not matched
 main,0.9 유다치,28,4,not matched
 main,경장 특화,28,7,not matched
 main,3번 자리 딜러,28,12,not matched
+main,뇌격특화 경순,28,16,not matched
 main,3번 자리 대공맨,28,18,not matched
 main,3번 자리 딜러,28,32,not matched
 main,3번 자리 딜러,28,34,not matched
 main,공습 선도,28,40,not matched
 main,어뢰 (생략함),30,40,not matched
-main,렉싱턴2,38,6,not matched
+main,최강 잠수함,35,38,not matched
 main,쫄 보스 둘다 잘함,39,20,not matched
 main,높은 공격력,39,26,not matched
-main,다 빈치,42,39,not matched
 main,제공권 GOAT,43,10,not matched
 main,쫄 보스 둘다 잘함,43,24,not matched
 main,쫄 보스 둘 다 잘함,43,30,not matched
@@ -61,8 +67,10 @@ main,요크타운 META,46,14,not matched
 main,나가토 META,46,22,not matched
 main,단기전 특화,47,12,not matched
 main,반장전,47,18,not matched
+main,탄막 우수 전함,47,20,not matched
 main,준 최강 딜러,47,22,not matched
 main,오와리 하위호환,47,26,not matched
+main,무난한 콜라보 전함,47,30,not matched
 main,무난한 쫄팟 성능,47,34,not matched
 main,4공습,49,4,not matched
 main,올라운더,49,5,not matched
@@ -73,6 +81,12 @@ main,선장전,49,21,not matched
 main,유미아 (콜라보),50,5,not matched
 main,호넷 META,50,10,not matched
 main,소량힐,51,4,not matched
+main,폭격 특화 항모,51,6,not matched
+main,무난한 미항모,51,14,not matched
+main,반장전 항모,51,18,not matched
+main,상위권 전함,51,20,not matched
+main,탄막 전함,51,22,not matched
+main,상위권 전함,51,26,not matched
 main,보스팟 특화,51,28,not matched
 main,빅 세븐 탄막,51,32,not matched
 main,중장,53,9,not matched
@@ -82,8 +96,12 @@ main,일러스트리어스 μ,54,10,not matched
 main,파르제팔,54,12,not matched
 main,히류 META,54,14,not matched
 main,히에이 META,54,24,not matched
+main,힐 전함 대체,55,2,not matched
 main,폭격 범위딜,55,6,not matched
 main,각종 유틸,55,10,not matched
+main,그럭저럭 강한 항모,55,12,not matched
+main,밸런스 잡힌 항모,55,14,not matched
+main,사르데냐 전함,55,20,not matched
 main,경장갑 특화,55,22,not matched
 main,부포 약함,55,24,not matched
 main,보스 팟 특화,55,26,not matched
@@ -92,10 +110,11 @@ main,확정 발동 탄막,55,32,not matched
 main,수동시 A,55,34,not matched
 main,헤스티아,58,2,single matched name row
 operation-siren,대작전용,2,1,not matched
+operation-siren,항모버프 표시,5,48,not matched
 operation-siren,만능 육각형,8,8,not matched
 operation-siren,레이더 탐지,8,20,not matched
 operation-siren,대 경장갑 필살기,8,24,not matched
-operation-siren,하이덴 리우,11,38,not matched
+operation-siren,구축함 상대,12,18,not matched
 operation-siren,위치타 META,15,42,not matched
 operation-siren,최강 쫄팟 요원,16,34,not matched
 operation-siren,보스 전용 탱커,16,36,not matched
@@ -103,7 +122,6 @@ operation-siren,유리대포 1황,16,42,not matched
 operation-siren,포격 보조,18,26,not matched
 operation-siren,힐 보조,18,27,not matched
 operation-siren,블랙홀,18,35,not matched
-operation-siren,키로프 META,19,23,not matched
 operation-siren,헬레나 META,19,24,not matched
 operation-siren,노시로 μ,19,32,not matched
 operation-siren,탱커 2황,20,6,not matched
@@ -123,6 +141,7 @@ operation-siren,3번 자리 딜러,24,4,not matched
 operation-siren,3번 자리 뇌장딜러,24,6,not matched
 operation-siren,3번 자리 딜러,24,18,not matched
 operation-siren,준최상급 딜러,24,20,not matched
+operation-siren,경순 딜러 2황,24,22,not matched
 operation-siren,대경장 딜탱,24,32,not matched
 operation-siren,대경장 딜러,24,34,not matched
 operation-siren,약간의 보조,24,35,not matched
@@ -130,39 +149,49 @@ operation-siren,준수한 탱커 겸 딜러,24,46,not matched
 operation-siren,나나 (콜라보),27,4,not matched
 operation-siren,타슈켄트 μ,27,12,not matched
 operation-siren,히퍼 (전장),27,50,not matched
+operation-siren,3번자리 구축딜러,28,2,not matched
 operation-siren,보급형 공습 선도,28,16,not matched
 operation-siren,독일 포격 버프,28,18,not matched
 operation-siren,개전 공격 및 지원,28,20,not matched
 operation-siren,로열 시너지 필요함,28,22,not matched
 operation-siren,탱커 보조,28,28,not matched
 operation-siren,탱커,28,36,not matched
+operation-siren,고출력 중순 표준,28,38,not matched
 operation-siren,동황 드레이크,28,40,not matched
 operation-siren,실드,30,45,not matched
 operation-siren,파먀티 META,31,26,not matched
+operation-siren,구축 탱커,32,2,not matched
 operation-siren,공습 선도 (쩌리),32,10,not matched
+operation-siren,딜에 더 집중한 구축딜러,32,14,not matched
 operation-siren,프랑스 보조,32,18,not matched
+operation-siren,딜에 더 치중된 경순 딜러,32,20,not matched
+operation-siren,탱 경순,32,30,not matched
 operation-siren,조명탄 지원,32,32,not matched
 operation-siren,유리 대포,32,38,not matched
 operation-siren,조명탄 보조,32,42,not matched
 operation-siren,약간씩 유틸을 얹은 탱커라인,32,44,not matched
 operation-siren,쫄팟 후보,32,50,not matched
+operation-siren,항모 버프,34,42,not matched
 operation-siren,30초 실드,34,43,not matched
 operation-siren,18초 실드,34,44,not matched
 operation-siren,주세페 가라발디,35,28,not matched
 operation-siren,진츠 META,35,30,not matched
 operation-siren,론 μ,35,38,not matched
 operation-siren,오이겐 μ,35,48,not matched
+operation-siren,딜에 더 집중한 구축딜러 대체제,36,4,not matched
 operation-siren,소량의 탱킹 지원,36,8,not matched
 operation-siren,특수 장갑관통,36,18,not matched
 operation-siren,3번 자리 딜러,36,20,not matched
+operation-siren,적당한 탱 경순,36,26,not matched
 operation-siren,뇌장 보조,36,30,not matched
 operation-siren,연막탄 보조,36,36,not matched
 operation-siren,딜링 보조,36,38,not matched
 operation-siren,개전 어뢰,36,40,not matched
+operation-siren,적당한 탱커 중순,36,42,not matched
+operation-siren,적당한 딜러 중순,36,48,not matched
 operation-siren,핫산 원본,38,2,not matched
 operation-siren,모든 장갑 코어픽,43,24,not matched
 operation-siren,모든 장갑 깡패픽,43,26,not matched
-operation-siren,렉싱턴2,46,16,not matched
 operation-siren,대중장 깡패,47,24,not matched
 operation-siren,일단 이 2명을 넣어,48,52,not matched
 operation-siren,나히모프,50,18,not matched
@@ -175,16 +204,20 @@ operation-siren,보스팟 딜러,55,8,not matched
 operation-siren,Lucky E,55,12,not matched
 operation-siren,중장갑 특화,55,14,not matched
 operation-siren,단기전의 신,55,22,not matched
+operation-siren,전함 최강 버퍼,55,26,not matched
 operation-siren,단일 적 특화,55,32,not matched
+operation-siren,철혈 범용 무딱,55,34,not matched
 operation-siren,최강 금딱라인,55,40,not matched
+operation-siren,프랑스 전함 2황,55,44,not matched
 operation-siren,중형,57,14,not matched
 operation-siren,경장,57,15,not matched
 operation-siren,올라운더,57,20,not matched
 operation-siren,4공습,57,21,not matched
 operation-siren,요크타운 META,58,15,not matched
-operation-siren,U-556 META,58,48,not matched
+operation-siren,반장전 항모,59,12,not matched
 operation-siren,특정 장갑 특화,59,14,not matched
 operation-siren,중형 잘팸,59,18,not matched
+operation-siren,데어라 콜라보 항모,59,20,not matched
 operation-siren,3 장갑 다 잘팸,59,22,not matched
 operation-siren,사르데냐 코어,59,30,not matched
 operation-siren,중형 특화,59,34,not matched
@@ -199,6 +232,7 @@ operation-siren,폭격 특화,63,14,not matched
 operation-siren,경장만 잘팸,63,30,not matched
 operation-siren,경장만 잘팸,63,32,not matched
 operation-siren,3장갑 다 잘팸,63,34,not matched
+operation-siren,고성능 콜라보 전함,63,36,not matched
 operation-siren,특수 부포,63,38,not matched
 operation-siren,20초 파갑,63,46,not matched
 operation-siren,감속,65,24,not matched
@@ -208,6 +242,8 @@ operation-siren,애리조나 META,66,4,not matched
 operation-siren,샤른호르스트 META,66,25,not matched
 operation-siren,나가토 META,66,40,not matched
 operation-siren,로드니 META,66,41,not matched
+operation-siren,반장전 항모,67,2,not matched
+operation-siren,2전투기 항모,67,20,not matched
 operation-siren,스택형 딜러,67,26,not matched
 operation-siren,약속의 빅 세븐 개장,67,28,not matched
 operation-siren,경장 상대로만 쓸것,67,32,not matched
@@ -215,6 +251,7 @@ operation-siren,경장 상대로만 쓸것,67,34,not matched
 operation-siren,3장갑 다 잘팸,67,40,not matched
 operation-siren,히류 META,70,16,not matched
 operation-siren,강구트 META,70,44,not matched
+operation-siren,항모 버프,71,10,not matched
 operation-siren,3일본 방어 버프,71,12,not matched
 operation-siren,뇌격 특화,71,16,not matched
 operation-siren,바인더 대체,71,20,not matched
@@ -222,11 +259,15 @@ operation-siren,소량 힐,71,24,not matched
 operation-siren,각종 유틸,71,26,not matched
 operation-siren,프랑스 조합 필요,71,28,not matched
 operation-siren,이글 유니온 시너지,71,30,not matched
+operation-siren,독일 버퍼,71,32,not matched
 operation-siren,3장갑 다 잘팸,71,34,not matched
+operation-siren,힐 기능 있는 전함,71,38,not matched
 operation-siren,중장만 잘팸,71,40,not matched
+operation-siren,평범한 2군 전함,71,46,not matched
 operation-siren,아카기 μ,74,12,not matched
 operation-siren,폭격 특화,75,8,not matched
 operation-siren,소량 힐,75,14,not matched
+operation-siren,적 전함 상대 보조,75,20,not matched
 operation-siren,감속 제공,75,26,not matched
 operation-siren,장전 버프,75,28,not matched
 operation-siren,세이렌 특화,75,30,not matched
@@ -244,16 +285,20 @@ operation-siren,딜과 바인더 다함,90,18,not matched
 operation-siren,블랙홀 바인드,90,28,not matched
 operation-siren,보스팟 딜러,94,12,not matched
 operation-siren,최상위 바인더,94,22,not matched
+operation-siren,전함 최강 버퍼,94,24,not matched
+operation-siren,최강 잠수함,94,48,not matched
 operation-siren,글로리어스 META,97,18,not matched
 operation-siren,Lucky E,98,6,not matched
 operation-siren,중장갑 특화,98,8,not matched
 operation-siren,단기전의 신,98,18,not matched
 operation-siren,단일 적 특화,98,24,not matched
 operation-siren,대경장 특화,98,26,not matched
+operation-siren,프랑스 전함 2황,98,36,not matched
 operation-siren,경장 특화,98,38,not matched
 operation-siren,이404의 최고 조합들,98,48,not matched
 operation-siren,올라운더,100,20,not matched
 operation-siren,4공습,100,21,not matched
+operation-siren,데어라 콜라보 항모,102,20,not matched
 operation-siren,3 장갑 다 잘팸,102,22,not matched
 operation-siren,사르데냐 코어,102,30,not matched
 operation-siren,중형 특화,102,32,not matched
@@ -268,12 +313,15 @@ operation-siren,경장만 잘팸,106,26,not matched
 operation-siren,특수 부포,106,28,not matched
 operation-siren,경장만 잘팸,106,34,not matched
 operation-siren,3장갑 다 잘팸,106,36,not matched
+operation-siren,고성능 콜라보 전함,106,38,not matched
 operation-siren,20초 파갑,106,46,not matched
 operation-siren,베아른 META,109,2,not matched
 operation-siren,애리조나 META,109,4,not matched
 operation-siren,나가토 META,109,42,not matched
 operation-siren,로드니 META,109,43,not matched
 operation-siren,샤른호르스트 META,109,46,not matched
+operation-siren,반장전 항모,110,2,not matched
+operation-siren,2전투기 항모,110,20,not matched
 operation-siren,약속의 빅 세븐 개장,110,24,not matched
 operation-siren,경장 상대로만 쓸것,110,30,not matched
 operation-siren,경장 상대로만 쓸것,110,32,not matched
@@ -283,18 +331,22 @@ operation-siren,3장갑 다 잘팸,110,42,not matched
 operation-siren,북련 조합 필요,110,44,not matched
 operation-siren,파갑,110,46,not matched
 operation-siren,히류 META,113,14,not matched
+operation-siren,항모 버프,114,8,not matched
 operation-siren,3일본 방어 버프,114,10,not matched
 operation-siren,뇌격 특화,114,14,not matched
 operation-siren,바인더 대체,114,18,not matched
 operation-siren,소량 힐,114,24,not matched
 operation-siren,각종 유틸,114,26,not matched
+operation-siren,독일 버퍼,114,28,not matched
 operation-siren,이글 유니온 시너지,114,30,not matched
 operation-siren,3장갑 다 잘팸,114,34,not matched
 operation-siren,프랑스 조합 필요,114,36,not matched
+operation-siren,힐 기능 있는 전함,114,40,not matched
 operation-siren,중장만 잘팸,114,42,not matched
 operation-siren,아카기 μ,117,10,not matched
 operation-siren,폭격 특화,118,6,not matched
 operation-siren,소량 힐,118,12,not matched
+operation-siren,적 전함 상대 보조,118,20,not matched
 operation-siren,감속 제공,118,24,not matched
 operation-siren,장전 버프,118,26,not matched
 operation-siren,세이렌 특화,118,28,not matched

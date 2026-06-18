@@ -1,0 +1,28 @@
+육성 추천표 미매칭/검토 후보
+
+총 검토 후보: 21
+설명 텍스트가 포함될 수 있으므로 실제 누락 함선인지 원본 좌표 기준으로 확인합니다.
+
+## newbie
+- 철혈 점수 특공대 (16:10) - not matched
+- 다이도 μ (19:13) - not matched
+- 소류 META (19:32) - not matched
+- 히류 META (19:33) - not matched
+- 뉴비에겐 권장되진 않음 (20:44) - not matched
+- 타슈켄트 μ (23:6) - not matched
+- 아카기 μ (23:30) - not matched
+- U보트 대체제 (24:50) - not matched
+- 미잠 대체제 (24:52) - not matched
+- 적당한 탱 (26:2) - not matched
+- 대공 (26:3) - not matched
+- 르 말랭 μ (27:4) - not matched
+- 볼티모어 μ (27:20) - not matched
+- 클리블랜드 μ (31:14) - not matched
+- 론 μ (31:22) - not matched
+- 다이호 μ (31:30) - not matched
+- 일러스트리어스 μ (31:32) - not matched
+- 아크 로열 META (31:34) - not matched
+- 작은 육각형 (32:20) - not matched
+- 감속요원 (32:24) - not matched
+- 노스 유니온 조합 필요 (32:38) - not matched
+

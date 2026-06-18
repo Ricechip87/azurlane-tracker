@@ -25,11 +25,16 @@ const SOURCES = [
 ]
 
 const OUTPUT_PATH = path.join(ROOT, 'src/data/growthRecommendations.json')
-const REPORT_DIR = path.join(ROOT, 'reports')
-const RECOMMENDATION_REPORT_PATH = path.join(REPORT_DIR, 'growthRecommendations.review.csv')
-const UNMATCHED_REPORT_PATH = path.join(REPORT_DIR, 'growthRecommendations.unmatched.csv')
-const RECOMMENDATION_TEXT_REPORT_PATH = path.join(REPORT_DIR, 'growthRecommendations.review.txt')
-const UNMATCHED_TEXT_REPORT_PATH = path.join(REPORT_DIR, 'growthRecommendations.unmatched.txt')
+const REPORT_DIR = path.join(ROOT, 'reports', 'growth-recommendations')
+const RECOMMENDATION_REPORT_PATH = path.join(REPORT_DIR, 'review.csv')
+const UNMATCHED_REPORT_PATH = path.join(REPORT_DIR, 'unmatched.csv')
+const RECOMMENDATION_TEXT_REPORT_PATH = path.join(REPORT_DIR, 'review.txt')
+const UNMATCHED_TEXT_REPORT_PATH = path.join(REPORT_DIR, 'unmatched.txt')
+const SOURCE_REPORT_NAMES = new Map([
+  ['main', 'main'],
+  ['operation-siren', 'operation-siren'],
+  ['newbie', 'newbie'],
+])
 const characterByName = new Map()
 for (const character of characters) {
   for (const key of buildNameKeys(character.name)) {
@@ -38,6 +43,18 @@ for (const character of characters) {
 }
 const TIER_PATTERN = /^(?:SS\+?|S\+?|S-|A\+?|B\+?|C\+?|D\+?)\s*급?|^상시|^힐러|^잠수|^연구함|^신규/
 const GROUP_PATTERN = /(구축|경순|중순|대순|항모|경항모|전함|순전|버퍼|디버퍼|힐러|잠수|연구함|상시|이벤트|무딱|DD|CL|CA|CV|CVL|BB|BC)/
+const TIER_HEADER_PATTERN = /^(?:SS\+?|S\+?|S-|A\+?|B\+?|C\+?|D\+?)(?:\s|\uAE09|\/|$)/
+const SHIP_TYPE_HEADER_PATTERN = /(DD|CL|CA|CVL|CV|BB|BC|SS)/
+const MAIN_EXTRA_GROUP_PATTERN = /(\uBC84\uD37C|\uB514\uBC84\uD37C|\uD790\uB7EC)/
+const NEWBIE_EXTRA_GROUP_PATTERN = /(\uC0C1\uC2DC|\uBB34\uB531|\uD790\uB7EC|\uC5F0\uAD6C\uD568|\uC2E0\uADDC|\uC774\uBCA4\uD2B8)/
+const MAIN_HEALER_GROUP_PATTERN = /(\uBA54\uC778 \uD790\uB7EC|\uC11C\uBE0C \uD790\uB7EC)/
+const NAME_ALIASES = new Map([
+  ['\uD558\uC774\uB374 \uB9AC\uC6B0', '\uD558\uC6B0\uB374 \uB9AC\uC6B0'],
+  ['\uB809\uC2F1\uD1342', '\uB809\uC2F1\uD134\u2161'],
+  ['\uB2E4 \uBE48\uCE58', '\uB808\uC624\uB098\uB974\uB3C4 \uB2E4 \uBE48\uCE58'],
+  ['\uD0A4\uB85C\uD504 META', '\uD0A4\uB85C\uD504(META)'],
+  ['U-556 META', 'U-556(META)'],
+])
 const NON_NAME_HINTS = [
   'Credits to:',
   '보는법',
@@ -124,7 +141,7 @@ function cleanCell(value) {
 
 function isTierCell(value) {
   const firstLine = cleanCell(value).split('\n').find(Boolean) || ''
-  return TIER_PATTERN.test(firstLine)
+  return TIER_HEADER_PATTERN.test(firstLine) || TIER_PATTERN.test(firstLine)
 }
 
 function normalizeTier(value) {
@@ -141,25 +158,63 @@ function isGroupCell(value) {
   return GROUP_PATTERN.test(text)
 }
 
-function isSectionHeaderCell(value) {
-  return /(DD|CL|CA|CVL|CV|BB|BC)/.test(cleanCell(value))
+function isSourceGroupCell(value, source) {
+  const text = cleanCell(value)
+  if (!text || text.length > 30) return false
+
+  if (SHIP_TYPE_HEADER_PATTERN.test(text)) return true
+  if (source.key === 'main') return MAIN_EXTRA_GROUP_PATTERN.test(text)
+  if (source.key === 'newbie') return NEWBIE_EXTRA_GROUP_PATTERN.test(text)
+  if (isTierCell(text)) return false
+  return false
 }
 
-function buildGroupRows(rows) {
+function isSectionHeaderCell(value) {
+  return SHIP_TYPE_HEADER_PATTERN.test(cleanCell(value))
+}
+
+function applyMainHealerSubgroups(rows, rowIndex, groups, source) {
+  if (source.key !== 'main') return groups
+
+  const hasHealerGroup = groups.some(group => cleanCell(group.label) === '\uD790\uB7EC')
+  if (!hasHealerGroup) return groups
+
+  const firstShipTypeGroup = groups.find(group => isSectionHeaderCell(group.label))
+  if (!firstShipTypeGroup) return groups
+
+  const subgroups = []
+  rows[rowIndex + 1]?.forEach((cell, columnIndex) => {
+    const text = cleanCell(cell)
+    if (columnIndex >= firstShipTypeGroup.column) return
+    if (!MAIN_HEALER_GROUP_PATTERN.test(text)) return
+    subgroups.push({ row: rowIndex, column: columnIndex, label: text })
+  })
+
+  if (subgroups.length === 0) return groups
+  return [
+    ...subgroups,
+    ...groups.filter(group => cleanCell(group.label) !== '\uD790\uB7EC'),
+  ].sort((a, b) => a.column - b.column)
+}
+
+function buildGroupRows(rows, source) {
   const groupRows = []
 
   rows.forEach((row, rowIndex) => {
-    const groups = []
+    let groups = []
     let sectionHeaderCellCount = 0
+    const firstCellText = cleanCell(row.find(cell => cleanCell(cell)))
 
     row.forEach((cell, columnIndex) => {
       const text = cleanCell(cell)
-      if (!isGroupCell(text)) return
+      if (!isSourceGroupCell(text, source)) return
       if (isSectionHeaderCell(text)) sectionHeaderCellCount += 1
       groups.push({ row: rowIndex, column: columnIndex, label: text })
     })
 
-    if (sectionHeaderCellCount >= 2) {
+    groups = applyMainHealerSubgroups(rows, rowIndex, groups, source)
+
+    if (sectionHeaderCellCount >= 2 && !isTierCell(firstCellText)) {
       groupRows.push({
         row: rowIndex,
         groups: groups.sort((a, b) => a.column - b.column),
@@ -209,12 +264,12 @@ function findRoleNote(rows, rowIndex, columnIndex) {
   return cleanCell(candidates.find(candidate => cleanCell(candidate)) || '')
 }
 
-function isProbablyNameCell(value) {
+function isProbablyNameCell(value, source) {
   const text = cleanCell(value)
   if (!text) return false
   if (text.length > 30) return false
   if (NON_NAME_HINTS.some(hint => text.includes(hint))) return false
-  if (isTierCell(text) || isGroupCell(text)) return false
+  if (isTierCell(text) || isSourceGroupCell(text, source)) return false
   return true
 }
 
@@ -222,16 +277,17 @@ function extractSource(source) {
   const filePath = path.join(ROOT, source.file)
   const csv = fs.readFileSync(filePath, 'utf8')
   const rows = parseCsv(csv)
-  const groupRows = buildGroupRows(rows)
+  const groupRows = buildGroupRows(rows, source)
   const candidates = []
   const unmatched = []
 
   rows.forEach((row, rowIndex) => {
     row.forEach((cell, columnIndex) => {
       const name = cleanCell(cell)
-      if (!isProbablyNameCell(name)) return
+      if (!isProbablyNameCell(name, source)) return
 
-      const character = buildNameKeys(name).map(key => characterByName.get(key)).find(Boolean)
+      const lookupName = NAME_ALIASES.get(name) || name
+      const character = buildNameKeys(lookupName).map(key => characterByName.get(key)).find(Boolean)
       if (!character) {
         if (/^[가-힣A-Za-z0-9 .·μ()ⅡⅢ-]+$/.test(name) && name.length <= 20) {
           unmatched.push({
@@ -460,6 +516,18 @@ writeCsv(UNMATCHED_REPORT_PATH, [
 writeRecommendationTextReport(RECOMMENDATION_TEXT_REPORT_PATH, recommendations)
 writeUnmatchedTextReport(UNMATCHED_TEXT_REPORT_PATH, unmatched)
 
+for (const source of SOURCES) {
+  const reportName = SOURCE_REPORT_NAMES.get(source.key) || source.key
+  writeRecommendationTextReport(
+    path.join(REPORT_DIR, `${reportName}.review.txt`),
+    recommendations.filter(item => item.source === source.key),
+  )
+  writeUnmatchedTextReport(
+    path.join(REPORT_DIR, `${reportName}.unmatched.txt`),
+    unmatched.filter(item => item.source === source.key),
+  )
+}
+
 for (const result of extracted) {
   console.log(`${result.source.label}: rows=${result.rows} columns=${result.columns} matched=${result.recommendations.length} unmatchedCandidates=${result.unmatched.length}`)
 }
@@ -471,3 +539,8 @@ console.log(`wrote ${path.relative(ROOT, RECOMMENDATION_REPORT_PATH)}`)
 console.log(`wrote ${path.relative(ROOT, UNMATCHED_REPORT_PATH)}`)
 console.log(`wrote ${path.relative(ROOT, RECOMMENDATION_TEXT_REPORT_PATH)}`)
 console.log(`wrote ${path.relative(ROOT, UNMATCHED_TEXT_REPORT_PATH)}`)
+for (const source of SOURCES) {
+  const reportName = SOURCE_REPORT_NAMES.get(source.key) || source.key
+  console.log(`wrote ${path.relative(ROOT, path.join(REPORT_DIR, `${reportName}.review.txt`))}`)
+  console.log(`wrote ${path.relative(ROOT, path.join(REPORT_DIR, `${reportName}.unmatched.txt`))}`)
+}
