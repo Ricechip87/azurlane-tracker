@@ -20,10 +20,10 @@ export default function FilterPanel({ filters, setFilters, characters }) {
 
   const set = (key, val) => setFilters(prev => ({ ...prev, [key]: val }))
   const toggleButtonBase = 'h-[34px] text-xs border rounded px-3 py-1.5 transition-colors'
-  const inactiveToggleButton = 'border-gray-700 text-gray-400 hover:border-gray-600 hover:text-gray-200'
+  const inactiveToggleButton = 'border-neutral-700 text-gray-400 hover:border-neutral-500 hover:text-gray-200'
 
   return (
-    <div className="sticky top-[76px] z-20 space-y-3 rounded-lg border border-gray-800 bg-gray-900 p-4 shadow-lg shadow-gray-950/40">
+    <div className="sticky top-[76px] z-20 space-y-3 rounded-lg border border-neutral-700 bg-[#242424] p-4 shadow-lg shadow-black/30">
       <div className="flex flex-wrap gap-3 items-end">
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray-400">이름 검색</label>
@@ -32,7 +32,7 @@ export default function FilterPanel({ filters, setFilters, characters }) {
             value={filters.search}
             onChange={e => set('search', e.target.value)}
             placeholder="이름 입력..."
-            className="bg-gray-800 border border-gray-700 rounded px-3 py-1.5 text-sm w-40 focus:outline-none focus:border-blue-500"
+            className="w-40 rounded border border-neutral-700 bg-[#303030] px-3 py-1.5 text-sm focus:border-neutral-400 focus:outline-none"
           />
         </div>
 
@@ -57,7 +57,7 @@ export default function FilterPanel({ filters, setFilters, characters }) {
           type="button"
           aria-pressed={filters.researchOnly}
           onClick={() => set('researchOnly', !filters.researchOnly)}
-          className={`${toggleButtonBase} ${filters.researchOnly ? 'border-cyan-500 bg-cyan-600/20 text-cyan-200' : inactiveToggleButton}`}
+          className={`${toggleButtonBase} ${filters.researchOnly ? 'border-neutral-500 bg-neutral-700 text-white' : inactiveToggleButton}`}
         >
           연구함만
         </button>
@@ -65,7 +65,7 @@ export default function FilterPanel({ filters, setFilters, characters }) {
         <button
           type="button"
           onClick={() => setFilters({ search: '', rarity: '전체', shipType: '전체', faction: '전체', acquired: '전체', skilled: '전체', affection: '전체', remodel: '전체', favoritesOnly: false, researchOnly: false })}
-          className="h-[34px] text-xs text-gray-400 hover:text-gray-200 hover:border-gray-600 border border-gray-700 rounded px-3 py-1.5 transition-colors"
+          className="h-[34px] rounded border border-neutral-700 px-3 py-1.5 text-xs text-gray-400 transition-colors hover:border-neutral-500 hover:text-gray-200"
         >
           필터 초기화
         </button>
@@ -93,7 +93,7 @@ function Select({ label, value, onChange, options }) {
       <select
         value={value}
         onChange={e => onChange(e.target.value)}
-        className="bg-gray-800 border border-gray-700 rounded px-2 py-1.5 text-sm focus:outline-none focus:border-blue-500"
+        className="rounded border border-neutral-700 bg-[#303030] px-2 py-1.5 text-sm focus:border-neutral-400 focus:outline-none"
       >
         {options.map(o => (
           <option key={getOptionValue(o)} value={getOptionValue(o)} disabled={isOptionDisabled(o)}>

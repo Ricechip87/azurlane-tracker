@@ -37,8 +37,8 @@ export default function StatsBar({ characters }) {
   const fullSummary = summarizeRoster(characters)
 
   return (
-    <div className="relative w-[360px] bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
-      <div className="h-9 px-3 flex items-center justify-center text-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
+    <div className="relative w-[360px] overflow-hidden rounded-lg border border-neutral-700 bg-[#242424]">
+      <div className="flex h-9 items-center justify-center border-b border-neutral-700 bg-[#2b2b2b] px-3 text-center text-xs font-semibold text-gray-300">
         간단 통계
       </div>
       <div className="text-xs">
@@ -99,13 +99,13 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
 
   return (
     <div className={className}>
-      <div className="h-9 px-3 flex items-center text-xs font-semibold text-gray-300 bg-gray-800 border-b border-gray-700">
+      <div className="flex h-9 items-center border-b border-neutral-700 bg-[#2b2b2b] px-3 text-xs font-semibold text-gray-300">
         획득 기술점수 <span className="ml-1 font-normal text-gray-500">(현재 보유함)</span>
       </div>
       <div className={usesInlineDetail ? 'grid gap-4 p-4 xl:grid-cols-[724px_minmax(0,1fr)]' : ''}>
-        <div className={usesInlineDetail ? 'min-w-0 overflow-visible border border-gray-800 bg-gray-950' : 'overflow-visible'}>
+        <div className={usesInlineDetail ? 'min-w-0 overflow-visible border border-neutral-700 bg-[#181818]' : 'overflow-visible'}>
           {usesInlineDetail && (
-            <div className={`grid ${gridClass} divide-x divide-gray-800 border-b border-gray-800 bg-gray-900 text-xs text-gray-500`}>
+            <div className={`grid ${gridClass} divide-x divide-neutral-800 border-b border-neutral-700 bg-[#242424] text-xs text-gray-500`}>
               <div className={`${inlineCellClass} px-3 py-2`}>진영</div>
               <div className={`${inlineCellClass} px-3 py-2`}>현재 달성 레벨</div>
               <div className={`${inlineCellClass} px-3 py-2`}>레벨 달성 효과</div>
@@ -116,7 +116,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
               <div className={`${inlineCellClass} px-3 py-2`}>육성 추천 후보</div>
             </div>
           )}
-          <div className={`grid ${gridClass} divide-x divide-gray-800 text-xs`}>
+          <div className={`grid ${gridClass} divide-x divide-neutral-800 text-xs`}>
             {MAJOR_TECH_FACTIONS.map(faction => {
               const progress = majorFactionTechProgress[faction.value]
               const isCandidateOpen = previewFaction === faction.value
@@ -144,7 +144,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
                             setPreviewFaction(null)
                           })()
                       }
-                      className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'effect' && inlineDetail?.factionValue === faction.value : isEffectOpen) ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-neutral-500 hover:text-gray-100'}`}
+                      className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'effect' && inlineDetail?.factionValue === faction.value : isEffectOpen) ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#2b2b2b] text-gray-300 hover:border-neutral-500 hover:text-gray-100'}`}
                     >
                       {usesInlineDetail ? '달성 효과' : `LV.${progress?.currentLevel?.level || 0} 달성 효과`}
                     </button>
@@ -175,7 +175,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
                             setEffectFaction(null)
                           })()
                       }
-                      className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'candidate' && inlineDetail?.factionValue === faction.value : isCandidateOpen) ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-gray-700 bg-gray-800 text-gray-300 hover:border-neutral-500 hover:text-gray-100'}`}
+                      className={`rounded border px-2 py-1 text-xs transition-colors ${(usesInlineDetail ? inlineDetail?.type === 'candidate' && inlineDetail?.factionValue === faction.value : isCandidateOpen) ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#2b2b2b] text-gray-300 hover:border-neutral-500 hover:text-gray-100'}`}
                     >
                       후보 보기
                     </button>
@@ -198,7 +198,7 @@ export function FleetTechPanel({ characters, className = '', detailMode = 'popov
           )}
         </div>
         {usesInlineDetail && (
-          <div className="h-[760px] min-h-[760px] border border-gray-800 bg-gray-950/50">
+          <div className="h-[760px] min-h-[760px] border border-neutral-700 bg-[#181818]">
             {inlineFaction ? (
               inlineDetail.type === 'effect' ? (
                 <LevelEffectSection faction={inlineFaction} progress={inlineProgress} />
@@ -225,16 +225,16 @@ function FleetTechGuideImagePanel({ context }) {
   const imageSrc = context ? FLEET_TECH_GUIDE_IMAGES[context.factionValue] || fleetTechGuideImage : fleetTechGuideImage
 
   return (
-    <section className="border-t border-gray-800 bg-gray-950 p-4">
-      <div key={imageContextKey} className="overflow-hidden rounded border border-gray-700 bg-gray-900 shadow-lg shadow-gray-950/50">
-        <div className="aspect-video bg-gray-950">
+    <section className="border-t border-neutral-700 bg-[#1a1a1a] p-4">
+      <div key={imageContextKey} className="overflow-hidden rounded border border-neutral-700 bg-[#242424] shadow-lg shadow-black/40">
+        <div className="aspect-video bg-[#181818]">
           <img
             src={imageSrc}
             alt=""
             className="h-full w-full object-cover"
           />
         </div>
-        <div className="border-t border-gray-800 px-4 py-3 text-sm text-gray-500">
+        <div className="border-t border-neutral-700 px-4 py-3 text-sm text-gray-500">
           아 여기에 무슨 정보를 표기하지... 추천 받습니다. 일단 임시로 이미지 넣어둠
         </div>
       </div>
@@ -255,27 +255,27 @@ function LevelEffectPopover({ faction, progress, onMouseEnter, onMouseLeave }) {
 
   return (
     <div
-      className="absolute left-0 top-full z-30 mt-1 w-[420px] max-w-[calc(100vw-2rem)] rounded border border-gray-700 bg-gray-950 text-left shadow-2xl"
+      className="absolute left-0 top-full z-30 mt-1 w-[420px] max-w-[calc(100vw-2rem)] rounded border border-neutral-700 bg-[#1a1a1a] text-left shadow-2xl"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="h-8 px-3 flex items-center gap-3 bg-gray-800 border-b border-gray-700 text-xs">
+      <div className="flex h-8 items-center gap-3 border-b border-neutral-700 bg-[#2b2b2b] px-3 text-xs">
         <span className="font-semibold text-gray-200">{faction.label} LV.{currentLevel?.level || 0} 달성 효과</span>
         <span className="text-gray-500">{currentLevel ? `${currentLevel.pt}점 기준` : '효과 없음'}</span>
       </div>
       {hasEffects ? (
         <div className="max-h-[320px] overflow-auto">
           <table className="w-full text-xs">
-            <thead className="sticky top-0 z-10 bg-gray-900 text-gray-500">
+            <thead className="sticky top-0 z-10 bg-[#242424] text-gray-500">
               <tr>
                 <th className="px-3 py-1.5 text-left font-normal">함종</th>
                 <th className="px-3 py-1.5 text-left font-normal">스탯</th>
                 <th className="px-3 py-1.5 text-right font-normal">효과</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-900">
+            <tbody className="divide-y divide-neutral-800">
               {effects.map(effect => (
-                <tr key={`${effect.shipType}:${effect.stat}`} className="hover:bg-gray-900/70">
+                <tr key={`${effect.shipType}:${effect.stat}`} className="hover:bg-[#2a2a2a]">
                   <td className="px-3 py-1.5 text-gray-300">{effect.shipType}</td>
                   <td className="px-3 py-1.5 text-gray-400">{effect.stat}</td>
                   <td className="px-3 py-1.5 text-right font-bold text-yellow-300">+{effect.value}</td>
@@ -303,11 +303,11 @@ function LevelEffectSection({ faction, progress }) {
         <span className="text-xs text-gray-500">{currentLevel ? `${currentLevel.pt}점 기준` : '효과 없음'}</span>
       </div>
       {hasEffects ? (
-        <div className="min-h-0 flex-1 overflow-auto border border-gray-800 bg-gray-950">
+        <div className="min-h-0 flex-1 overflow-auto border border-neutral-700 bg-[#181818]">
           <LevelEffectTable effects={effects} />
         </div>
       ) : (
-        <div className="flex flex-1 items-center justify-center border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">현재 레벨 효과 없음</div>
+        <div className="flex flex-1 items-center justify-center border border-neutral-700 bg-[#181818] px-4 py-6 text-sm text-gray-600">현재 레벨 효과 없음</div>
       )}
     </section>
   )
@@ -316,16 +316,16 @@ function LevelEffectSection({ faction, progress }) {
 function LevelEffectTable({ effects }) {
   return (
     <table className="w-full text-xs">
-      <thead className="bg-gray-900 text-gray-500">
+      <thead className="bg-[#242424] text-gray-500">
         <tr>
           <th className="px-3 py-1.5 text-left font-normal">함종</th>
           <th className="px-3 py-1.5 text-left font-normal">스탯</th>
           <th className="px-3 py-1.5 text-right font-normal">효과</th>
         </tr>
       </thead>
-      <tbody className="divide-y divide-gray-900">
+      <tbody className="divide-y divide-neutral-800">
         {effects.map(effect => (
-          <tr key={`${effect.shipType}:${effect.stat}`} className="hover:bg-gray-900/70">
+          <tr key={`${effect.shipType}:${effect.stat}`} className="hover:bg-[#2a2a2a]">
             <td className="px-3 py-1.5 text-gray-300">{effect.shipType}</td>
             <td className="px-3 py-1.5 text-gray-400">{effect.stat}</td>
             <td className="px-3 py-1.5 text-right font-bold text-yellow-300">+{effect.value}</td>
@@ -372,11 +372,11 @@ function TechCandidatePopover({ faction, progress, characters, onMouseEnter, onM
 
   return (
     <div
-      className="absolute right-0 top-full z-30 mt-1 w-[780px] max-w-[calc(100vw-2rem)] rounded border border-gray-700 bg-gray-950 text-left shadow-2xl"
+      className="absolute right-0 top-full z-30 mt-1 w-[780px] max-w-[calc(100vw-2rem)] rounded border border-neutral-700 bg-[#1a1a1a] text-left shadow-2xl"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="min-h-10 px-3 py-2 flex flex-wrap items-center justify-between gap-2 bg-gray-800 border-b border-gray-700 text-xs">
+      <div className="flex min-h-10 flex-wrap items-center justify-between gap-2 border-b border-neutral-700 bg-[#2b2b2b] px-3 py-2 text-xs">
         <div className="flex items-center gap-3">
           <span className="font-semibold text-gray-200">{faction.label} 기술점수 획득용 육성 함선 추천</span>
           <span className="text-gray-500">{formatNextLevelProgress(progress)}</span>
@@ -413,11 +413,11 @@ function TechCandidateSection({ faction, progress, characters }) {
         <CandidateBasisToggle basis={basis} setBasis={setBasis} />
       </div>
       {hasCandidates ? (
-        <div className="min-h-0 flex-1 overflow-hidden border border-gray-800 bg-gray-950">
+        <div className="min-h-0 flex-1 overflow-hidden border border-neutral-700 bg-[#181818]">
           <CandidateTable basis={basis} candidateGroups={candidateGroups} />
         </div>
       ) : (
-        <div className="flex flex-1 items-center justify-center border border-gray-800 bg-gray-950 px-4 py-6 text-sm text-gray-600">후보 없음</div>
+        <div className="flex flex-1 items-center justify-center border border-neutral-700 bg-[#181818] px-4 py-6 text-sm text-gray-600">후보 없음</div>
       )}
     </section>
   )
@@ -438,7 +438,7 @@ function TechDetailEmptyState() {
 
 function CandidateBasisToggle({ basis, setBasis }) {
   return (
-    <div className="flex overflow-hidden rounded border border-gray-700 bg-gray-950">
+    <div className="flex overflow-hidden rounded border border-neutral-700 bg-[#181818]">
       {CANDIDATE_BASIS_OPTIONS.map(option => {
         const isActive = basis === option.value
         return (
@@ -446,7 +446,7 @@ function CandidateBasisToggle({ basis, setBasis }) {
             key={option.value}
             type="button"
             onClick={() => setBasis(option.value)}
-            className={`h-7 px-3 text-xs font-semibold transition-colors ${isActive ? 'bg-neutral-700 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-gray-200'}`}
+            className={`h-7 px-3 text-xs font-semibold transition-colors ${isActive ? 'bg-neutral-700 text-white' : 'text-gray-400 hover:bg-[#2a2a2a] hover:text-gray-200'}`}
           >
             {option.label}
           </button>
@@ -473,7 +473,7 @@ function CandidateTable({ basis, candidateGroups }) {
           {showsLevel120 && <col className="w-[10%]" />}
           <col className="w-[18%]" />
         </colgroup>
-        <thead className="sticky top-0 z-10 bg-gray-900 text-gray-500">
+        <thead className="sticky top-0 z-10 bg-[#242424] text-gray-500">
           <tr>
             <th className="px-3 py-1.5 text-left font-normal">함선</th>
             <th className="px-2 py-1.5 text-center font-normal">등급</th>
@@ -487,7 +487,7 @@ function CandidateTable({ basis, candidateGroups }) {
             </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-900">
+        <tbody className="divide-y divide-neutral-800">
           {candidateGroups.map(group => (
             <Fragment key={group.key}>
               <CandidateGroupRow title={group.title} columnSpan={columnSpan} />
@@ -502,7 +502,7 @@ function CandidateTable({ basis, candidateGroups }) {
 
 function CandidateGroupRow({ title, columnSpan }) {
   return (
-    <tr className="bg-gray-900/80">
+    <tr className="bg-[#242424]">
       <td colSpan={columnSpan} className="px-3 py-1.5 text-xs font-semibold text-gray-400">{title}</td>
     </tr>
   )
@@ -518,7 +518,7 @@ function CandidateRows({ candidates, columnSpan, showsLevel120 }) {
   }
 
   return candidates.map(candidate => (
-    <tr key={candidate.id} className="hover:bg-gray-900/70">
+    <tr key={candidate.id} className="hover:bg-[#2a2a2a]">
       <td className="truncate px-3 py-1.5 text-gray-200">{candidate.name}</td>
       <td className={`px-2 py-1.5 text-center font-bold ${RARITY_COLOR[candidate.rarity] || 'text-gray-400'}`}>{candidate.rarity}</td>
       <td className="px-2 py-1.5 text-center text-gray-500">{candidate.position}</td>
@@ -545,8 +545,8 @@ function StageCell({ stage }) {
 function SummaryGroup({ title, summary }) {
   return (
     <div>
-      <div className="px-4 py-1.5 text-gray-300 font-semibold bg-gray-800/50">{title}</div>
-      <div className="grid grid-cols-2 divide-x divide-gray-800">
+      <div className="bg-[#2b2b2b] px-4 py-1.5 font-semibold text-gray-300">{title}</div>
+      <div className="grid grid-cols-2 divide-x divide-neutral-800">
         <div className="px-4 py-1.5 text-gray-400">목록 수집률</div>
         <div className="px-4 py-1.5 text-blue-300 font-bold">{summary.collectionRate}%</div>
         <div className="px-4 py-1.5 text-gray-400">보유 수 / 목록 수</div>

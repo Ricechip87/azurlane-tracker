@@ -70,7 +70,7 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
       <button
         type="button"
         onClick={exportBackup}
-        className="rounded border border-blue-700 bg-blue-950 px-3 py-1.5 text-sm font-medium text-blue-200 hover:bg-blue-900"
+        className="rounded border border-neutral-600 bg-[#303030] px-3 py-1.5 text-sm font-medium text-gray-100 hover:bg-neutral-700"
       >
         내보내기
       </button>
@@ -78,7 +78,7 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
       <button
         type="button"
         onClick={() => fileInputRef.current?.click()}
-        className="rounded border border-gray-700 bg-gray-800 px-3 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-700"
+        className="rounded border border-neutral-700 bg-[#2b2b2b] px-3 py-1.5 text-sm font-medium text-gray-200 hover:bg-neutral-700"
       >
         가져오기
       </button>
@@ -105,7 +105,7 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
   }
 
   return (
-    <div className="bg-gray-900 border border-gray-800 rounded-lg px-4 py-3">
+    <div className="rounded-lg border border-neutral-700 bg-[#242424] px-4 py-3">
       <div className="flex flex-wrap items-center gap-3">
         <div className="mr-auto">
           <div className="text-sm font-semibold text-gray-200">데이터 백업</div>

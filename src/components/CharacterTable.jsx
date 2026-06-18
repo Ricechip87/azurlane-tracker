@@ -20,7 +20,7 @@ const TD_CENTER = 'px-3 py-2 text-center align-middle'
 
 export default function CharacterTable({ characters, updateUser }) {
   return (
-    <div className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden">
+    <div className="overflow-hidden rounded-lg border border-neutral-700 bg-[#242424]">
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <colgroup>
@@ -40,7 +40,7 @@ export default function CharacterTable({ characters, updateUser }) {
             <col className="w-36" />
           </colgroup>
           <thead>
-            <tr className="bg-gray-800 text-gray-400 text-xs">
+            <tr className="bg-[#2b2b2b] text-xs text-gray-400">
               <th className={`${TH_CENTER} w-8`}>★</th>
               <th className="w-[210px] px-3 py-2 text-left align-middle whitespace-nowrap">이름</th>
               <th className={TH_CENTER}>레어도</th>
@@ -72,7 +72,7 @@ export default function CharacterTable({ characters, updateUser }) {
 }
 
 function CharacterRow({ char: c, updateUser, even }) {
-  const bg = even ? 'bg-gray-900' : 'bg-gray-950'
+  const bg = even ? 'bg-[#1f1f1f]' : 'bg-[#181818]'
   const acquired = normalizeAcquisitionStatus(c.acquired)
   const skilled = c.skilled || '스작 안함'
   const affection = c.affection || '호감작 안함'
@@ -82,7 +82,7 @@ function CharacterRow({ char: c, updateUser, even }) {
   const keel = c.keel || '없음'
 
   return (
-    <tr className={`${bg} hover:bg-gray-800 transition-colors border-t border-gray-800`}>
+    <tr className={`${bg} border-t border-neutral-800 transition-colors hover:bg-[#2a2a2a]`}>
       <td className={TD_CENTER}>
         <button
           onClick={() => updateUser(c.id, 'favorite', !c.favorite)}
@@ -251,7 +251,7 @@ function StatusSelect({ value, options, onChange, colorMap }) {
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => setOpen(current => !current)}
-        className={`inline-flex min-w-20 items-center justify-between gap-2 whitespace-nowrap rounded border px-2 py-0.5 text-xs outline-none transition-colors hover:border-gray-500 focus:border-blue-500 ${open ? 'border-blue-500' : 'border-transparent'} ${color}`}
+        className={`inline-flex min-w-20 items-center justify-between gap-2 whitespace-nowrap rounded border px-2 py-0.5 text-xs outline-none transition-colors hover:border-gray-500 focus:border-neutral-400 ${open ? 'border-neutral-400' : 'border-transparent'} ${color}`}
       >
         <span>{value}</span>
         <span className="text-[10px] opacity-70">▼</span>
@@ -260,7 +260,7 @@ function StatusSelect({ value, options, onChange, colorMap }) {
         <div
           ref={menuRef}
           role="listbox"
-          className="fixed z-50 rounded border border-blue-600 bg-gray-950 p-1 text-left text-xs shadow-2xl"
+          className="fixed z-50 rounded border border-neutral-600 bg-[#1a1a1a] p-1 text-left text-xs shadow-2xl"
           style={menuStyle}
         >
           {options.map(option => {
@@ -275,7 +275,7 @@ function StatusSelect({ value, options, onChange, colorMap }) {
                   onChange(option)
                   setOpen(false)
                 }}
-                className={`block w-full whitespace-nowrap rounded px-2 py-1 text-left transition-colors ${selected ? 'bg-gray-800 text-blue-200' : 'text-gray-200 hover:bg-gray-800 hover:text-gray-100'}`}
+                className={`block w-full whitespace-nowrap rounded px-2 py-1 text-left transition-colors ${selected ? 'bg-neutral-700 text-white' : 'text-gray-200 hover:bg-[#2a2a2a] hover:text-gray-100'}`}
               >
                 {option}
               </button>

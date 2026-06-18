@@ -274,7 +274,7 @@ function HomePage() {
 function MyRosterPage({ characters, filteredCharacters, filters, setFilters, updateUser, userData, setUserData }) {
   return (
     <>
-      <header className="border-b border-gray-800 bg-gray-900 px-6 py-4">
+      <header className="border-b border-neutral-800 bg-[#1f1f1f] px-6 py-4">
         <div className="mx-auto flex max-w-[1500px] flex-wrap items-center gap-4">
           <h1 className="text-xl font-bold text-gray-100">내 함순이 정보</h1>
           <BackupPanel userData={userData} setUserData={setUserData} compact />
@@ -321,10 +321,10 @@ function RosterHeroPanel() {
   }, [])
 
   return (
-    <section className="h-[206px] w-full flex-1 overflow-hidden rounded-lg border border-gray-800 bg-gray-900 lg:min-w-[720px]">
+    <section className="h-[206px] w-full flex-1 overflow-hidden rounded-lg border border-neutral-700 bg-[#242424] lg:min-w-[720px]">
       <div className="grid h-full grid-cols-1 md:grid-cols-[360px_1fr]">
-        <div className="flex items-center justify-center border-b border-gray-800 bg-gray-950/60 p-2 md:border-b-0 md:border-r">
-          <div className="aspect-video h-full max-h-[188px] max-w-full overflow-hidden rounded border border-gray-700 bg-gray-900/80">
+        <div className="flex items-center justify-center border-b border-neutral-700 bg-[#1a1a1a] p-2 md:border-b-0 md:border-r">
+          <div className="aspect-video h-full max-h-[188px] max-w-full overflow-hidden rounded border border-neutral-600 bg-[#242424]">
             {currentImage ? (
               <img
                 src={currentImage}
