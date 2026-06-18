@@ -2,8 +2,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
-const COMPONENT_PATH = path.join(ROOT, 'src', 'components', 'GrowthRecommendationPage.jsx')
 const CHARACTERS_PATH = path.join(ROOT, 'src', 'data', 'characters.json')
+const GROWTH_RECOMMENDATIONS_PATH = path.join(ROOT, 'src', 'data', 'growthRecommendations.json')
 const OUT_DIR = path.join(ROOT, 'public', 'ship-card-art')
 
 function readJson(filePath) {
@@ -18,8 +18,8 @@ function findReferenceDir() {
 }
 
 function extractRecommendationNames() {
-  const source = fs.readFileSync(COMPONENT_PATH, 'utf8')
-  return [...source.matchAll(/ship\('([^']+)'/g)].map(match => match[1])
+  const data = readJson(GROWTH_RECOMMENDATIONS_PATH)
+  return [...new Set((data.recommendations || []).map(item => item.name).filter(Boolean))]
 }
 
 function getSkinId(character) {
