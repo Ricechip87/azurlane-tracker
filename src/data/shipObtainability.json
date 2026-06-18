@@ -6,10 +6,10 @@
       "localResource": "참고용/AzurLane/ship.json",
       "altoy": "https://jforplay.github.io/altoy/data/ship_info_data.json"
     },
-    "generatedAt": "2026-06-18T17:58:35.254Z",
+    "generatedAt": "2026-06-18T18:06:51.916Z",
     "total": 867,
-    "withObtain": 861,
-    "withoutObtain": 6,
+    "withObtain": 867,
+    "withoutObtain": 0,
     "verification": {
       "altoy-only": 10,
       "different": 1,
@@ -19,9 +19,9 @@
     "difficulty": {
       "easy": 134,
       "hard": 68,
-      "limited": 584,
+      "limited": 590,
       "normal": 71,
-      "unknown": 10
+      "unknown": 4
     },
     "altoySnapshots": {
       "data/ship_info_lite.json": {
@@ -38610,7 +38610,9 @@
       "rarity": "SSR",
       "faction": "칭송받는자",
       "shipType": "중순",
-      "obtain": [],
+      "obtain": [
+        "입수 못함"
+      ],
       "obtainEn": [],
       "build": {
         "light": false,
@@ -38621,9 +38623,11 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "unknown",
-        "label": "미확인",
-        "reasons": []
+        "key": "limited",
+        "label": "한정/복각 대기",
+        "reasons": [
+          "입수 못함"
+        ]
       },
       "verification": {
         "localKr": false,
@@ -38639,7 +38643,9 @@
       "rarity": "SSR",
       "faction": "칭송받는자",
       "shipType": "구축",
-      "obtain": [],
+      "obtain": [
+        "입수 못함"
+      ],
       "obtainEn": [],
       "build": {
         "light": false,
@@ -38650,9 +38656,11 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "unknown",
-        "label": "미확인",
-        "reasons": []
+        "key": "limited",
+        "label": "한정/복각 대기",
+        "reasons": [
+          "입수 못함"
+        ]
       },
       "verification": {
         "localKr": false,
@@ -38668,7 +38676,9 @@
       "rarity": "SSR",
       "faction": "칭송받는자",
       "shipType": "경순",
-      "obtain": [],
+      "obtain": [
+        "입수 못함"
+      ],
       "obtainEn": [],
       "build": {
         "light": false,
@@ -38679,9 +38689,11 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "unknown",
-        "label": "미확인",
-        "reasons": []
+        "key": "limited",
+        "label": "한정/복각 대기",
+        "reasons": [
+          "입수 못함"
+        ]
       },
       "verification": {
         "localKr": false,
@@ -38697,7 +38709,9 @@
       "rarity": "SR",
       "faction": "칭송받는자",
       "shipType": "경항모",
-      "obtain": [],
+      "obtain": [
+        "입수 못함"
+      ],
       "obtainEn": [],
       "build": {
         "light": false,
@@ -38708,9 +38722,11 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "unknown",
-        "label": "미확인",
-        "reasons": []
+        "key": "limited",
+        "label": "한정/복각 대기",
+        "reasons": [
+          "입수 못함"
+        ]
       },
       "verification": {
         "localKr": false,
@@ -38726,7 +38742,9 @@
       "rarity": "SR",
       "faction": "칭송받는자",
       "shipType": "경항모",
-      "obtain": [],
+      "obtain": [
+        "입수 못함"
+      ],
       "obtainEn": [],
       "build": {
         "light": false,
@@ -38737,9 +38755,11 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "unknown",
-        "label": "미확인",
-        "reasons": []
+        "key": "limited",
+        "label": "한정/복각 대기",
+        "reasons": [
+          "입수 못함"
+        ]
       },
       "verification": {
         "localKr": false,
@@ -38755,7 +38775,9 @@
       "rarity": "SR",
       "faction": "칭송받는자",
       "shipType": "항모",
-      "obtain": [],
+      "obtain": [
+        "입수 못함"
+      ],
       "obtainEn": [],
       "build": {
         "light": false,
@@ -38766,9 +38788,11 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "unknown",
-        "label": "미확인",
-        "reasons": []
+        "key": "limited",
+        "label": "한정/복각 대기",
+        "reasons": [
+          "입수 못함"
+        ]
       },
       "verification": {
         "localKr": false,

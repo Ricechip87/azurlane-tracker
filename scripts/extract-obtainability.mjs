@@ -9,6 +9,15 @@ const ALTOY_FILES = [
   'data/ship_info_lite.json',
   'data/ship_info_data.json',
 ]
+const UNAVAILABLE_OBTAIN = '\uC785\uC218 \uBABB\uD568'
+const MANUAL_UNAVAILABLE_GIDS = new Set([
+  10300010,
+  10300020,
+  10300030,
+  10300040,
+  10300050,
+  10300060,
+])
 
 const DIFFICULTY = {
   EASY: { rank: 1, key: 'easy', label: '쉬움' },
@@ -130,6 +139,14 @@ function classifyDifficulty(obtain, build) {
   let selected = DIFFICULTY.UNKNOWN
   const text = obtain.join(' / ')
 
+  if (obtain.includes(UNAVAILABLE_OBTAIN)) {
+    return {
+      key: DIFFICULTY.LIMITED.key,
+      label: DIFFICULTY.LIMITED.label,
+      reasons: [UNAVAILABLE_OBTAIN],
+    }
+  }
+
   for (const rule of difficultyRules) {
     if (rule.pattern.test(text)) {
       reasons.push(rule.difficulty.label)
@@ -175,7 +192,13 @@ function buildRecord(character, sources) {
 
   const localKrObtain = getDescriptionList(krGroup?.description)
   const altoyObtain = normalizeList(altoy?.description || [])
-  const obtain = localKrObtain.length > 0 ? localKrObtain : altoyObtain
+  const obtain = localKrObtain.length > 0
+    ? localKrObtain
+    : altoyObtain.length > 0
+      ? altoyObtain
+      : MANUAL_UNAVAILABLE_GIDS.has(gid)
+        ? [UNAVAILABLE_OBTAIN]
+        : []
   const build = getBuildInfo(localShip, altoy)
   const mapDrops = getMapDrops(altoy)
   const difficulty = classifyDifficulty(obtain, build)
