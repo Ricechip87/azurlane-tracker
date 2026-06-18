@@ -144,11 +144,13 @@ function RecommendationCard({ card, character }) {
   const rarity = character?.rarity || card.tier
   const faction = character?.faction || '-'
   const shipType = character?.shipType || card.tags[0]
+  const rarityStyle = rarityCardStyle(rarity)
 
   return (
-    <article className="flex min-h-[198px] flex-col rounded-md border border-gray-800 bg-[#272727] p-2.5 shadow-lg shadow-black/20">
+    <article className={`relative flex min-h-[198px] flex-col overflow-hidden rounded-md border-2 bg-[#272727] p-2.5 shadow-lg ${rarityStyle.card}`}>
+      <div className={`absolute inset-x-0 top-0 h-1 ${rarityStyle.bar}`} />
       <div className="flex flex-col items-center text-center">
-        <div className="h-12 w-12 overflow-hidden rounded-full border border-gray-600 bg-gray-800">
+        <div className={`h-12 w-12 overflow-hidden rounded-full border-2 bg-gray-800 ${rarityStyle.portrait}`}>
           {character?.iconUrl ? (
             <img src={character.iconUrl} alt="" className="h-full w-full object-cover" />
           ) : (
@@ -172,7 +174,7 @@ function RecommendationCard({ card, character }) {
       </div>
 
       <div className="mt-2">
-        <div className="text-[11px] font-bold text-gray-100">입수/육성 메모</div>
+        <div className="text-[11px] font-bold text-gray-100">추천 이유</div>
         <ul className="mt-0.5 space-y-0.5 text-[11px] leading-4 text-gray-300">
           {card.notes.slice(0, 2).map(note => <li key={note} className="truncate">- {note}</li>)}
         </ul>
@@ -215,4 +217,44 @@ function rarityTone(rarity) {
   if (rarity === 'SSR') return 'gold'
   if (rarity === 'SR') return 'purple'
   return 'blue'
+}
+
+function rarityCardStyle(rarity) {
+  if (rarity === 'UR') {
+    return {
+      card: 'border-fuchsia-400 shadow-fuchsia-950/30',
+      bar: 'bg-gradient-to-r from-fuchsia-400 via-yellow-300 to-sky-400',
+      portrait: 'border-fuchsia-300',
+    }
+  }
+
+  if (rarity === 'SSR') {
+    return {
+      card: 'border-yellow-400 shadow-yellow-950/20',
+      bar: 'bg-yellow-400',
+      portrait: 'border-yellow-300',
+    }
+  }
+
+  if (rarity === 'SR') {
+    return {
+      card: 'border-purple-400 shadow-purple-950/20',
+      bar: 'bg-purple-400',
+      portrait: 'border-purple-300',
+    }
+  }
+
+  if (rarity === 'R') {
+    return {
+      card: 'border-blue-400 shadow-blue-950/20',
+      bar: 'bg-blue-400',
+      portrait: 'border-blue-300',
+    }
+  }
+
+  return {
+    card: 'border-gray-600 shadow-black/20',
+    bar: 'bg-gray-600',
+    portrait: 'border-gray-500',
+  }
 }
