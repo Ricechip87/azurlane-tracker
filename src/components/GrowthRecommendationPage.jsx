@@ -365,9 +365,14 @@ function RecommendationCard({ card, character }) {
   const rarityStyle = rarityCardStyle(rarity)
   const cardArtUrl = getCardArtUrl(character)
   const status = card.status || normalizeAcquisitionStatus(character?.acquired)
+  const showDifficultyBadge = status === '미획득'
+  const obtainTooltip = showDifficultyBadge ? getObtainTooltip(card) : ''
 
   return (
-    <article className={`group relative h-[214px] overflow-hidden rounded-md border-2 bg-[#272727] shadow-lg ${rarityStyle.card}`}>
+    <article
+      className={`group relative h-[214px] overflow-hidden rounded-md border-2 bg-[#272727] shadow-lg ${rarityStyle.card}`}
+      title={obtainTooltip}
+    >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,#3a3a3a_0%,#202020_52%,#111_100%)]" />
       {cardArtUrl ? (
         <img
@@ -390,7 +395,9 @@ function RecommendationCard({ card, character }) {
       <div className="absolute left-2 top-2 flex max-w-[calc(100%-56px)] flex-wrap gap-1 text-[10px] font-black">
         <Badge tone="dark">{card.tier}</Badge>
         <Badge tone={statusTone(status)}>{status}</Badge>
-        <Badge tone={difficultyTone(card.difficulty?.key)}>{card.difficulty?.label || '미확인'}</Badge>
+        {showDifficultyBadge && (
+          <Badge tone={difficultyTone(card.difficulty?.key)}>{card.difficulty?.label || '미확인'}</Badge>
+        )}
       </div>
 
       <div className="absolute inset-x-0 bottom-0 p-3 text-white">
@@ -408,6 +415,12 @@ function RecommendationCard({ card, character }) {
       </div>
     </article>
   )
+}
+
+function getObtainTooltip(card) {
+  const sources = card.obtainability?.obtain || []
+  if (sources.length === 0) return ''
+  return `획득처: ${sources.join(', ')}`
 }
 
 function getCardArtUrl(character) {
