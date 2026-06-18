@@ -120,15 +120,19 @@ export default function GrowthRecommendationPage({ characters }) {
               </div>
             </div>
 
-            <div className="grid gap-3 p-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
-              {section.cards.map(card => (
-                <RecommendationCard
-                  key={`${section.id}-${card.name}`}
-                  card={card}
-                  character={characterByName.get(card.name)}
-                />
-              ))}
-            </div>
+            {section.cards.length > 0 ? (
+              <div className="grid gap-2.5 p-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
+                {section.cards.map(card => (
+                  <RecommendationCard
+                    key={`${section.id}-${card.name}`}
+                    card={card}
+                    character={characterByName.get(card.name)}
+                  />
+                ))}
+              </div>
+            ) : (
+              <EmptyRecommendationSection />
+            )}
           </section>
         ))}
       </div>
@@ -142,19 +146,19 @@ function RecommendationCard({ card, character }) {
   const shipType = character?.shipType || card.tags[0]
 
   return (
-    <article className="flex min-h-[260px] flex-col rounded-md border border-gray-800 bg-[#272727] p-3 shadow-lg shadow-black/20">
+    <article className="flex min-h-[198px] flex-col rounded-md border border-gray-800 bg-[#272727] p-2.5 shadow-lg shadow-black/20">
       <div className="flex flex-col items-center text-center">
-        <div className="h-16 w-16 overflow-hidden rounded-full border border-gray-600 bg-gray-800">
+        <div className="h-12 w-12 overflow-hidden rounded-full border border-gray-600 bg-gray-800">
           {character?.iconUrl ? (
             <img src={character.iconUrl} alt="" className="h-full w-full object-cover" />
           ) : (
-            <div className="flex h-full w-full items-center justify-center text-sm font-bold text-gray-500">
+            <div className="flex h-full w-full items-center justify-center text-xs font-bold text-gray-500">
               {card.name.slice(0, 2)}
             </div>
           )}
         </div>
-        <h4 className="mt-2 max-w-full truncate text-base font-bold text-gray-100">{card.name}</h4>
-        <div className="mt-2 flex flex-wrap justify-center gap-1.5 text-[11px] font-semibold">
+        <h4 className="mt-1.5 max-w-full truncate text-sm font-bold text-gray-100">{card.name}</h4>
+        <div className="mt-1.5 flex flex-wrap justify-center gap-1 text-[10px] font-semibold">
           <Badge tone={rarityTone(rarity)}>{rarity}</Badge>
           <Badge>{faction}</Badge>
           <Badge>{shipType}</Badge>
@@ -162,18 +166,31 @@ function RecommendationCard({ card, character }) {
         </div>
       </div>
 
-      <div className="mt-3">
-        <div className="text-xs font-bold text-gray-100">추천 역할</div>
-        <div className="mt-1 text-sm leading-6 text-gray-300">{card.summary}</div>
+      <div className="mt-2">
+        <div className="text-[11px] font-bold text-gray-100">추천 역할</div>
+        <div className="mt-0.5 truncate text-xs leading-5 text-gray-300">{card.summary}</div>
       </div>
 
-      <div className="mt-3">
-        <div className="text-xs font-bold text-gray-100">입수/육성 메모</div>
-        <ul className="mt-1 space-y-1 text-xs leading-5 text-gray-300">
-          {card.notes.map(note => <li key={note}>- {note}</li>)}
+      <div className="mt-2">
+        <div className="text-[11px] font-bold text-gray-100">입수/육성 메모</div>
+        <ul className="mt-0.5 space-y-0.5 text-[11px] leading-4 text-gray-300">
+          {card.notes.slice(0, 2).map(note => <li key={note} className="truncate">- {note}</li>)}
         </ul>
       </div>
     </article>
+  )
+}
+
+function EmptyRecommendationSection() {
+  return (
+    <div className="p-3">
+      <div className="flex min-h-[96px] items-center justify-center rounded border border-dashed border-gray-700 bg-gray-900/60 px-4 py-5 text-center">
+        <div>
+          <div className="text-sm font-semibold text-gray-300">현재 조건에서 추가 추천 후보가 없습니다.</div>
+          <div className="mt-1 text-xs text-gray-500">보유함 반영 단계에서는 이미 충분히 육성된 구간이 이렇게 표시됩니다.</div>
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -187,7 +204,7 @@ function Badge({ children, tone = 'gray' }) {
   }
 
   return (
-    <span className={`rounded-full px-2 py-0.5 ${tones[tone] || tones.gray}`}>
+    <span className={`rounded-full px-1.5 py-0.5 ${tones[tone] || tones.gray}`}>
       {children}
     </span>
   )
