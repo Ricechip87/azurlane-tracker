@@ -147,37 +147,38 @@ function RecommendationCard({ card, character }) {
   const rarityStyle = rarityCardStyle(rarity)
 
   return (
-    <article className={`relative flex min-h-[198px] flex-col overflow-hidden rounded-md border-2 bg-[#272727] p-2.5 shadow-lg ${rarityStyle.card}`}>
-      <div className={`absolute inset-x-0 top-0 h-1 ${rarityStyle.bar}`} />
-      <div className="flex flex-col items-center text-center">
-        <div className={`h-12 w-12 overflow-hidden rounded-full border-2 bg-gray-800 ${rarityStyle.portrait}`}>
-          {character?.iconUrl ? (
-            <img src={character.iconUrl} alt="" className="h-full w-full object-cover" />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center text-xs font-bold text-gray-500">
-              {card.name.slice(0, 2)}
-            </div>
-          )}
+    <article className={`group relative h-[214px] overflow-hidden rounded-md border-2 bg-[#272727] shadow-lg ${rarityStyle.card}`}>
+      {character?.iconUrl ? (
+        <img
+          src={character.iconUrl}
+          alt=""
+          className="absolute inset-0 h-full w-full scale-110 object-cover transition-transform duration-300 group-hover:scale-[1.16]"
+          loading="lazy"
+        />
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center bg-[#202020] text-3xl font-black text-gray-700">
+          {card.name.slice(0, 2)}
         </div>
-        <h4 className="mt-1.5 max-w-full truncate text-sm font-bold text-gray-100">{card.name}</h4>
-        <div className="mt-1.5 flex flex-wrap justify-center gap-1 text-[10px] font-semibold">
-          <Badge tone={rarityTone(rarity)}>{rarity}</Badge>
-          <Badge>{faction}</Badge>
-          <Badge>{shipType}</Badge>
-          <Badge tone="blue">{card.lane}</Badge>
-        </div>
+      )}
+
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/90" />
+      <div className="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-black/50 to-transparent" />
+      <div className="absolute right-2 top-2 text-[11px] font-black">
+        <Badge tone={rarityTone(rarity)}>{rarity}</Badge>
       </div>
 
-      <div className="mt-2">
-        <div className="text-[11px] font-bold text-gray-100">추천 역할</div>
-        <div className="mt-0.5 truncate text-xs leading-5 text-gray-300">{card.summary}</div>
-      </div>
-
-      <div className="mt-2">
-        <div className="text-[11px] font-bold text-gray-100">추천 이유</div>
-        <ul className="mt-0.5 space-y-0.5 text-[11px] leading-4 text-gray-300">
-          {card.notes.slice(0, 2).map(note => <li key={note} className="truncate">- {note}</li>)}
-        </ul>
+      <div className="absolute inset-x-0 bottom-0 p-3 text-white">
+        <h4 className="truncate text-sm font-black drop-shadow">{card.name}</h4>
+        <div className="mt-1 flex items-center gap-1.5 text-[11px] font-semibold text-gray-200">
+          <span className="truncate">{faction}</span>
+          <span className="text-gray-500">·</span>
+          <span className="truncate">{shipType}</span>
+          <span className="text-gray-500">·</span>
+          <span className="shrink-0">{card.lane}</span>
+        </div>
+        <div className="mt-2 truncate rounded bg-black/35 px-2 py-1 text-[11px] font-semibold text-gray-100 backdrop-blur-sm">
+          {card.summary}
+        </div>
       </div>
     </article>
   )
