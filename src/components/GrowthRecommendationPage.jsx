@@ -140,10 +140,9 @@ function RecommendationCard({ card, character }) {
   const rarity = character?.rarity || card.tier
   const faction = character?.faction || '-'
   const shipType = character?.shipType || card.tags[0]
-  const techPoints = character?.techPoints
 
   return (
-    <article className="flex min-h-[320px] flex-col rounded-md border border-gray-800 bg-[#272727] p-3 shadow-lg shadow-black/20">
+    <article className="flex min-h-[260px] flex-col rounded-md border border-gray-800 bg-[#272727] p-3 shadow-lg shadow-black/20">
       <div className="flex flex-col items-center text-center">
         <div className="h-16 w-16 overflow-hidden rounded-full border border-gray-600 bg-gray-800">
           {character?.iconUrl ? (
@@ -174,19 +173,6 @@ function RecommendationCard({ card, character }) {
           {card.notes.map(note => <li key={note}>- {note}</li>)}
         </ul>
       </div>
-
-      <div className="mt-3 border-t border-gray-700 pt-3 text-xs text-gray-400">
-        <div className="flex justify-between gap-2">
-          <span>입수 / 풀돌 / 120</span>
-          <span className="font-semibold text-blue-300">{formatTechPoints(techPoints)}</span>
-        </div>
-      </div>
-
-      <div className="mt-auto space-y-1.5 pt-3">
-        <CheckRow label="입수 시" value={techPoints?.acquired} />
-        <CheckRow label="풀돌 시" value={techPoints?.maxLB} />
-        <CheckRow label="120 달성 시" value={techPoints?.lv120} />
-      </div>
     </article>
   )
 }
@@ -205,22 +191,6 @@ function Badge({ children, tone = 'gray' }) {
       {children}
     </span>
   )
-}
-
-function CheckRow({ label, value }) {
-  return (
-    <label className="flex items-center justify-between rounded bg-gray-800 px-2 py-1.5 text-xs text-gray-200">
-      <span>{label}{Number.isFinite(value) ? ` (+${value})` : ''}</span>
-      <input type="checkbox" className="h-4 w-4 accent-blue-500" readOnly />
-    </label>
-  )
-}
-
-function formatTechPoints(points) {
-  if (!points) return '-'
-  return [points.acquired, points.maxLB, points.lv120]
-    .filter(Number.isFinite)
-    .join(' / ')
 }
 
 function rarityTone(rarity) {
