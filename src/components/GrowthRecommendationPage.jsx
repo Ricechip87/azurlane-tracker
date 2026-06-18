@@ -200,9 +200,9 @@ function Badge({ children, tone = 'gray' }) {
   const tones = {
     gray: 'bg-gray-700 text-gray-100',
     blue: 'bg-blue-600 text-white',
-    rainbow: 'bg-fuchsia-600 text-white',
+    rainbow: 'bg-gradient-to-r from-fuchsia-500 via-amber-300 to-cyan-300 text-gray-950',
     gold: 'bg-yellow-500 text-gray-950',
-    purple: 'bg-purple-500 text-white',
+    purple: 'bg-violet-600 text-white',
   }
 
   return (
@@ -222,9 +222,9 @@ function rarityTone(rarity) {
 function rarityCardStyle(rarity) {
   if (rarity === 'UR') {
     return {
-      card: 'border-fuchsia-400 shadow-fuchsia-950/30',
+      card: 'border-cyan-300 shadow-cyan-950/40 ring-1 ring-fuchsia-400/80',
       bar: 'bg-gradient-to-r from-fuchsia-400 via-yellow-300 to-sky-400',
-      portrait: 'border-fuchsia-300',
+      portrait: 'border-cyan-200',
     }
   }
 
@@ -238,9 +238,9 @@ function rarityCardStyle(rarity) {
 
   if (rarity === 'SR') {
     return {
-      card: 'border-purple-400 shadow-purple-950/20',
-      bar: 'bg-purple-400',
-      portrait: 'border-purple-300',
+      card: 'border-violet-500 shadow-violet-950/20',
+      bar: 'bg-violet-500',
+      portrait: 'border-violet-400',
     }
   }
 
