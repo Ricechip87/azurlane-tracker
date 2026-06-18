@@ -145,14 +145,16 @@ function RecommendationCard({ card, character }) {
   const faction = character?.faction || '-'
   const shipType = character?.shipType || card.tags[0]
   const rarityStyle = rarityCardStyle(rarity)
+  const cardArtUrl = getCardArtUrl(character)
 
   return (
     <article className={`group relative h-[214px] overflow-hidden rounded-md border-2 bg-[#272727] shadow-lg ${rarityStyle.card}`}>
-      {character?.iconUrl ? (
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,#3a3a3a_0%,#202020_52%,#111_100%)]" />
+      {cardArtUrl ? (
         <img
-          src={character.iconUrl}
+          src={cardArtUrl}
           alt=""
-          className="absolute inset-0 h-full w-full scale-110 object-cover transition-transform duration-300 group-hover:scale-[1.16]"
+          className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
         />
       ) : (
@@ -182,6 +184,12 @@ function RecommendationCard({ card, character }) {
       </div>
     </article>
   )
+}
+
+function getCardArtUrl(character) {
+  const fileName = character?.iconUrl?.split('/').pop()
+  if (!fileName) return ''
+  return `${import.meta.env.BASE_URL}ship-card-art/${fileName.replace(/\.(png|webp)$/i, '.png')}`
 }
 
 function EmptyRecommendationSection() {

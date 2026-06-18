@@ -11,6 +11,7 @@
     "audit:tech": "node scripts/audit-tech-points.mjs",
     "extract:growth": "node scripts/extract-growth-recommendations.mjs",
     "extract:obtain": "node scripts/extract-obtainability.mjs",
+    "sync:growth-art": "node scripts/sync-growth-card-art.mjs",
     "sync:icons": "node scripts/sync-local-icons.js",
     "preview": "vite preview"
   },
