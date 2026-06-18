@@ -24,14 +24,49 @@ const DIFFICULTY = {
   NORMAL: { rank: 2, key: 'normal', label: '보통' },
   HARD: { rank: 3, key: 'hard', label: '어려움' },
   LIMITED: { rank: 4, key: 'limited', label: '한정/복각 대기' },
+  EXCLUDED: { rank: 5, key: 'excluded', label: '추천 제외' },
   UNKNOWN: { rank: 9, key: 'unknown', label: '미확인' },
 }
 
-const difficultyRules = [
-  { difficulty: DIFFICULTY.EASY, pattern: /(함대|군수|훈장|원형) 상점|주간 임무|도감 업적|지원\(랜덤 갱신\)|메인 스테이지 해역[1-4]-/ },
-  { difficulty: DIFFICULTY.NORMAL, pattern: /소형함 건조|중형함 건조|특형함 건조|상시|작전문서|메인 스테이지 해역(?:[5-9]|1[0-2])-/ },
-  { difficulty: DIFFICULTY.HARD, pattern: /히든 임무|개발|연구|메인 스테이지 해역1[3-9]-|META|코어|월드|대작전/ },
-  { difficulty: DIFFICULTY.LIMITED, pattern: /이벤트|한정/ },
+const easyPatterns = [
+  /^함대 상점 교환$/,
+  /^군수 상점 교환$/,
+  /^훈장 상점 교환$/,
+  /^상점의 대함대 보급에서 획득 가능$/,
+  /^주간 임무$/,
+  /^도감 업적 달성$/,
+  /^출석 스탬프$/,
+  /^작전 파일:/,
+  /^히든 임무/,
+  /^메인 스테이지 해역[1-4]-[1-4]$/,
+]
+
+const normalPatterns = [
+  /^(소형함|중형함|대형함|특형함) 건조$/,
+  /^대형함 건조[,·] 특형함 건조$/,
+  /^대형함 건조·특형함 건조$/,
+  /^중형함 건조、특형함 건조$/,
+  /^훈장 상점 교환\(랜덤 갱신\)$/,
+  /^훈장 교환\(랜덤 출현\)$/,
+  /^훈장 지원\((랜덤 갱신|확률적 출현)\)$/,
+  /^지원 신청\(랜덤 출현\)$/,
+  /^특별 ?보급/,
+  /^코어 (상점|교환 획득)$/,
+  /^원형 상점 교환$/,
+  /^연구 ?도크$/,
+  /^메인 스테이지 해역(?:[5-9]|1[0-2])-[1-4]$/,
+]
+
+const hardPatterns = [
+  /^상설 UR 함선 교환$/,
+  /^UR Exchange$/,
+  /META 연구실|META 연구실·|메타랩/,
+  /^메인 스테이지 해역1[3-6]-[1-4]$/,
+  /^추천 획득 해역 16-4$/,
+]
+
+const limitedPatterns = [
+  /^(기간 한정|한정 건조|한정 이벤트|이벤트|이벤트：|이벤트:|이벤트 :)/,
 ]
 
 function readJson(filePath) {
@@ -134,29 +169,38 @@ function getMapDrops(altoy) {
   return drops
 }
 
-function classifyDifficulty(obtain, build) {
-  const reasons = []
-  let selected = DIFFICULTY.UNKNOWN
-  const text = obtain.join(' / ')
+function matchAny(value, patterns) {
+  return patterns.some(pattern => pattern.test(value))
+}
 
+function classifyObtainSource(source) {
+  if (source === UNAVAILABLE_OBTAIN) return DIFFICULTY.EXCLUDED
+  if (matchAny(source, easyPatterns)) return DIFFICULTY.EASY
+  if (matchAny(source, normalPatterns)) return DIFFICULTY.NORMAL
+  if (matchAny(source, hardPatterns)) return DIFFICULTY.HARD
+  if (matchAny(source, limitedPatterns)) return DIFFICULTY.LIMITED
+  return DIFFICULTY.UNKNOWN
+}
+
+function classifyDifficulty(obtain, build) {
   if (obtain.includes(UNAVAILABLE_OBTAIN)) {
     return {
-      key: DIFFICULTY.LIMITED.key,
-      label: DIFFICULTY.LIMITED.label,
+      key: DIFFICULTY.EXCLUDED.key,
+      label: DIFFICULTY.EXCLUDED.label,
       reasons: [UNAVAILABLE_OBTAIN],
     }
   }
 
-  for (const rule of difficultyRules) {
-    if (rule.pattern.test(text)) {
-      reasons.push(rule.difficulty.label)
-      if (rule.difficulty.rank < selected.rank) selected = rule.difficulty
-    }
-  }
+  const sourceDifficulties = obtain.map(classifyObtainSource)
+  let selected = sourceDifficulties.reduce(
+    (current, next) => next.rank < current.rank ? next : current,
+    DIFFICULTY.UNKNOWN,
+  )
+  const reasons = obtain.map((source, index) => `${source}: ${sourceDifficulties[index].label}`)
 
-  if (build.limited || /한정|이벤트/.test(text)) {
+  if (selected === DIFFICULTY.UNKNOWN && build.limited) {
     selected = DIFFICULTY.LIMITED
-    reasons.push('한정/이벤트 입수처')
+    reasons.push('한정 건조 플래그')
   }
 
   if (obtain.length === 0 && (build.light || build.heavy || build.special)) {
