@@ -113,6 +113,7 @@ function buildCandidate(recommendation, character, obtainability) {
   const status = normalizeAcquisitionStatus(character?.acquired)
   const difficulty = obtainability?.difficulty || { key: 'unknown', label: '미확인' }
   const shipType = character?.shipType || recommendation.shipType || '-'
+  const roleSummary = normalizeSummary(recommendation.roleNote)
 
   return {
     ...recommendation,
@@ -123,7 +124,7 @@ function buildCandidate(recommendation, character, obtainability) {
     acquired: isAcquiredStatus(status),
     lane: getLane(shipType),
     tags: [shipType, getGroupTag(recommendation.sheetGroup)].filter(Boolean),
-    summary: normalizeSummary(recommendation.roleNote || recommendation.sheetGroup || '추천 후보'),
+    summary: roleSummary || '원본 추천표 등급 기준 후보',
   }
 }
 
@@ -419,8 +420,9 @@ function RecommendationCard({ card, character }) {
 
 function getCardTooltip(card) {
   const sources = card.obtainability?.obtain || []
+  const reason = normalizeSummary(card.roleNote)
   const lines = []
-  if (card.summary) lines.push(`추천사유: ${card.summary}`)
+  if (reason) lines.push(`추천사유: ${reason}`)
   if (sources.length > 0) lines.push(`획득처: ${sources.join(', ')}`)
   return lines.join('\n')
 }

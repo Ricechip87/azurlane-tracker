@@ -291,7 +291,7 @@
       "shipType": "경순",
       "tier": "A+",
       "sheetGroup": "경순 CL",
-      "roleNote": "태생 보딱 중\n탱킹 1황",
+      "roleNote": "",
       "row": 15,
       "column": 13
     },
@@ -471,7 +471,7 @@
       "shipType": "구축",
       "tier": "A",
       "sheetGroup": "구축 DD",
-      "roleNote": "3번 자리 딜러",
+      "roleNote": "",
       "row": 19,
       "column": 5
     },
@@ -636,7 +636,7 @@
       "shipType": "중순",
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
-      "roleNote": "고출력 중순 표준",
+      "roleNote": "",
       "row": 19,
       "column": 27
     },
@@ -801,7 +801,7 @@
       "shipType": "구축",
       "tier": "B+",
       "sheetGroup": "구축 DD",
-      "roleNote": "높은 공격력\n순양함 대항 특화",
+      "roleNote": "",
       "row": 23,
       "column": 9
     },
@@ -846,7 +846,7 @@
       "shipType": "경순",
       "tier": "B+",
       "sheetGroup": "경순 CL",
-      "roleNote": "딜 낮고 튼튼한\n드레이크",
+      "roleNote": "",
       "row": 23,
       "column": 13
     },
@@ -861,7 +861,7 @@
       "shipType": "경순",
       "tier": "B+",
       "sheetGroup": "경순 CL",
-      "roleNote": "콜라보 경순\n쫄팟기용",
+      "roleNote": "",
       "row": 23,
       "column": 17
     },
@@ -891,7 +891,7 @@
       "shipType": "경순",
       "tier": "B+",
       "sheetGroup": "경순 CL",
-      "roleNote": "보조/포격 특화경순",
+      "roleNote": "",
       "row": 23,
       "column": 19
     },
@@ -921,7 +921,7 @@
       "shipType": "경순",
       "tier": "B+",
       "sheetGroup": "경순 CL",
-      "roleNote": "위의 A+급 없을때 대체 메인 or 서브탱커 추천 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "roleNote": "",
       "row": 23,
       "column": 23
     },
@@ -1026,7 +1026,7 @@
       "shipType": "대순",
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
-      "roleNote": "쫄팟 A+급 탱커",
+      "roleNote": "",
       "row": 23,
       "column": 31
     },
@@ -1161,7 +1161,7 @@
       "shipType": "구축",
       "tier": "B",
       "sheetGroup": "구축 DD",
-      "roleNote": "경장 특화",
+      "roleNote": "",
       "row": 27,
       "column": 6
     },
@@ -1221,7 +1221,7 @@
       "shipType": "경순",
       "tier": "B",
       "sheetGroup": "경순 CL",
-      "roleNote": "뇌격특화 경순",
+      "roleNote": "",
       "row": 27,
       "column": 15
     },
@@ -1386,7 +1386,7 @@
       "shipType": "구축",
       "tier": "B",
       "sheetGroup": "버퍼 / 디버퍼",
-      "roleNote": "탄약 + 1",
+      "roleNote": "",
       "row": 27,
       "column": 41
     },
@@ -1686,7 +1686,7 @@
       "shipType": "경항모",
       "tier": "A+",
       "sheetGroup": "서브 힐러",
-      "roleNote": "2 전투기 + 제공권",
+      "roleNote": "",
       "row": 42,
       "column": 5
     },
@@ -1881,7 +1881,7 @@
       "shipType": "경항모",
       "tier": "A",
       "sheetGroup": "메인 힐러",
-      "roleNote": "대체 서브힐러",
+      "roleNote": "",
       "row": 46,
       "column": 3
     },
@@ -1941,7 +1941,7 @@
       "shipType": "항모",
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "단기전 특화",
+      "roleNote": "",
       "row": 46,
       "column": 11
     },
@@ -1986,7 +1986,7 @@
       "shipType": "전함",
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "개전 탄막\n준 최강 딜러",
+      "roleNote": "",
       "row": 46,
       "column": 23
     },
@@ -2031,7 +2031,7 @@
       "shipType": "순전",
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "딜 높음 + 탱 보조",
+      "roleNote": "",
       "row": 46,
       "column": 27
     },
@@ -2061,7 +2061,7 @@
       "shipType": "전함",
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "무난한 콜라보 전함",
+      "roleNote": "",
       "row": 46,
       "column": 29
     },
@@ -2106,7 +2106,7 @@
       "shipType": "전함",
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "대체 잠수함\nU-552는 생존이슈로\n메인해역에선 낮게 위치",
+      "roleNote": "",
       "row": 46,
       "column": 35
     },
@@ -2181,7 +2181,7 @@
       "shipType": "항모",
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "보호막, 영국 시너지\n4 폭격기",
+      "roleNote": "",
       "row": 50,
       "column": 7
     },
@@ -2226,7 +2226,7 @@
       "shipType": "경항모",
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "무난한 미항모",
+      "roleNote": "",
       "row": 50,
       "column": 13
     },
@@ -2271,7 +2271,7 @@
       "shipType": "항모",
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "상위권 전함",
+      "roleNote": "",
       "row": 50,
       "column": 19
     },
@@ -2301,7 +2301,7 @@
       "shipType": "순전",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "탄막 전함",
+      "roleNote": "",
       "row": 50,
       "column": 21
     },
@@ -2346,7 +2346,7 @@
       "shipType": "범선",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "보스팟 특화",
+      "roleNote": "",
       "row": 50,
       "column": 27
     },
@@ -2376,7 +2376,7 @@
       "shipType": "전함",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "빅 세븐 탄막",
+      "roleNote": "",
       "row": 50,
       "column": 31
     },
@@ -2406,7 +2406,7 @@
       "shipType": "전함",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "수동 시 A+",
+      "roleNote": "",
       "row": 50,
       "column": 33
     },
@@ -2496,7 +2496,7 @@
       "shipType": "항모",
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "각종 유틸",
+      "roleNote": "",
       "row": 54,
       "column": 9
     },
@@ -2511,7 +2511,7 @@
       "shipType": "항모",
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "밸런스 잡힌 항모",
+      "roleNote": "",
       "row": 54,
       "column": 13
     },
@@ -2571,7 +2571,7 @@
       "shipType": "전함",
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "경장갑 특화",
+      "roleNote": "",
       "row": 54,
       "column": 21
     },
@@ -2586,7 +2586,7 @@
       "shipType": "순전",
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "부포 약함",
+      "roleNote": "",
       "row": 54,
       "column": 23
     },
@@ -2601,7 +2601,7 @@
       "shipType": "전함",
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "보스 팟 특화",
+      "roleNote": "",
       "row": 54,
       "column": 25
     },
@@ -2661,7 +2661,7 @@
       "shipType": "순전",
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "수동시 A",
+      "roleNote": "",
       "row": 54,
       "column": 33
     },
@@ -3201,7 +3201,7 @@
       "shipType": "경순",
       "tier": "A+",
       "sheetGroup": "경순 CL",
-      "roleNote": "딜 버프",
+      "roleNote": "",
       "row": 19,
       "column": 23
     },
@@ -3231,7 +3231,7 @@
       "shipType": "경순",
       "tier": "A+",
       "sheetGroup": "경순 CL",
-      "roleNote": "철갑탄 공증 지원",
+      "roleNote": "",
       "row": 19,
       "column": 27
     },
@@ -3441,7 +3441,7 @@
       "shipType": "구축",
       "tier": "A",
       "sheetGroup": "구축 DD",
-      "roleNote": "3번 자리 딜러",
+      "roleNote": "",
       "row": 23,
       "column": 17
     },
@@ -3486,7 +3486,7 @@
       "shipType": "경순",
       "tier": "A",
       "sheetGroup": "경순 CL",
-      "roleNote": "경순 딜러 2황",
+      "roleNote": "",
       "row": 23,
       "column": 21
     },
@@ -3546,7 +3546,7 @@
       "shipType": "경순",
       "tier": "A",
       "sheetGroup": "경순 CL",
-      "roleNote": "2,3번 자리 딜러",
+      "roleNote": "",
       "row": 23,
       "column": 27
     },
@@ -3576,7 +3576,7 @@
       "shipType": "경순",
       "tier": "A",
       "sheetGroup": "경순 CL",
-      "roleNote": "확률적 아군 전체\n데미지 증가",
+      "roleNote": "",
       "row": 23,
       "column": 29
     },
@@ -3981,7 +3981,7 @@
       "shipType": "경순",
       "tier": "B+",
       "sheetGroup": "경순 CL",
-      "roleNote": "탱커",
+      "roleNote": "",
       "row": 27,
       "column": 35
     },
@@ -4206,7 +4206,7 @@
       "shipType": "구축",
       "tier": "B",
       "sheetGroup": "구축 DD",
-      "roleNote": "딜에 더 집중한 구축딜러",
+      "roleNote": "",
       "row": 31,
       "column": 13
     },
@@ -4536,7 +4536,7 @@
       "shipType": "구축",
       "tier": "C+",
       "sheetGroup": "구축 DD",
-      "roleNote": "소량의 탱킹 지원",
+      "roleNote": "",
       "row": 35,
       "column": 7
     },
@@ -4746,7 +4746,7 @@
       "shipType": "중순",
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
-      "roleNote": "적당한 탱커 중순",
+      "roleNote": "",
       "row": 35,
       "column": 41
     },
@@ -5346,7 +5346,7 @@
       "shipType": "전함",
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "딜 보조\n전열 보호",
+      "roleNote": "",
       "row": 54,
       "column": 35
     },
@@ -5406,7 +5406,7 @@
       "shipType": "전함",
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "용골 무난하게 받음\n탈금딱 1황",
+      "roleNote": "",
       "row": 54,
       "column": 41
     },
@@ -5571,7 +5571,7 @@
       "shipType": "항모",
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "높은 공격력\n딜 보조 유틸",
+      "roleNote": "",
       "row": 58,
       "column": 9
     },
@@ -5601,7 +5601,7 @@
       "shipType": "항모",
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "반장전 항모",
+      "roleNote": "",
       "row": 58,
       "column": 11
     },
@@ -5676,7 +5676,7 @@
       "shipType": "항모",
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "데어라 콜라보 항모",
+      "roleNote": "",
       "row": 58,
       "column": 19
     },
@@ -5706,7 +5706,7 @@
       "shipType": "경항모",
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "3 장갑 다 잘팸",
+      "roleNote": "",
       "row": 58,
       "column": 21
     },
@@ -6081,7 +6081,7 @@
       "shipType": "순전",
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "고성능 콜라보 전함",
+      "roleNote": "",
       "row": 62,
       "column": 35
     },
@@ -6111,7 +6111,7 @@
       "shipType": "순전",
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "특수 부포",
+      "roleNote": "",
       "row": 62,
       "column": 37
     },
@@ -6306,7 +6306,7 @@
       "shipType": "전함",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "경장 상대로만 쓸것",
+      "roleNote": "",
       "row": 66,
       "column": 31
     },
@@ -6336,7 +6336,7 @@
       "shipType": "범선",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "경장 상대로만 쓸것",
+      "roleNote": "",
       "row": 66,
       "column": 33
     },
@@ -6366,7 +6366,7 @@
       "shipType": "범선",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "중형 / 중장만 잘팸",
+      "roleNote": "",
       "row": 66,
       "column": 35
     },
@@ -6396,7 +6396,7 @@
       "shipType": "전함",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "3장갑 다 잘팸",
+      "roleNote": "",
       "row": 66,
       "column": 39
     },
@@ -6426,7 +6426,7 @@
       "shipType": "전함",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "차상위 전함\n근접적 상대 탱",
+      "roleNote": "",
       "row": 66,
       "column": 43
     },
@@ -6576,7 +6576,7 @@
       "shipType": "전함",
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "각종 유틸",
+      "roleNote": "",
       "row": 70,
       "column": 25
     },
@@ -7881,7 +7881,7 @@
       "shipType": "경항모",
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "3 장갑 다 잘팸",
+      "roleNote": "",
       "row": 101,
       "column": 21
     },
@@ -8046,7 +8046,7 @@
       "shipType": "잠수",
       "tier": "A+",
       "sheetGroup": "잠수 SS",
-      "roleNote": "U 보트 고점\n이404 대체제",
+      "roleNote": "",
       "row": 101,
       "column": 49
     },
@@ -8271,7 +8271,7 @@
       "shipType": "순전",
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "고성능 콜라보 전함",
+      "roleNote": "",
       "row": 105,
       "column": 37
     },
@@ -8301,7 +8301,7 @@
       "shipType": "순전",
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "중형 / 중장만 잘팸",
+      "roleNote": "",
       "row": 105,
       "column": 39
     },
@@ -8451,7 +8451,7 @@
       "shipType": "전함",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "감속, 명중버퍼",
+      "roleNote": "",
       "row": 109,
       "column": 27
     },
@@ -8496,7 +8496,7 @@
       "shipType": "범선",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "경장 상대로만 쓸것",
+      "roleNote": "",
       "row": 109,
       "column": 31
     },
@@ -8526,7 +8526,7 @@
       "shipType": "범선",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "스택형 딜러",
+      "roleNote": "",
       "row": 109,
       "column": 33
     },
@@ -8721,7 +8721,7 @@
       "shipType": "전함",
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "각종 유틸",
+      "roleNote": "",
       "row": 113,
       "column": 25
     },
@@ -9216,7 +9216,7 @@
       "shipType": "구축",
       "tier": "S",
       "sheetGroup": "구축 DD",
-      "roleNote": "최상위 대공 성능\n훈장교환",
+      "roleNote": "",
       "row": 7,
       "column": 11
     },
@@ -9291,7 +9291,7 @@
       "shipType": "중순",
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
-      "roleNote": "Lucky E\n훈장교환",
+      "roleNote": "",
       "row": 7,
       "column": 27
     },
@@ -9636,7 +9636,7 @@
       "shipType": "구축",
       "tier": "A",
       "sheetGroup": "구축 DD",
-      "roleNote": "3번 자리 딜러\n나히모프 시너지\n소형 상시건조",
+      "roleNote": "",
       "row": 15,
       "column": 7
     },
@@ -9666,7 +9666,7 @@
       "shipType": "구축",
       "tier": "A",
       "sheetGroup": "구축 DD",
-      "roleNote": "태생 보딱 중\n탱킹 1황\n상시 소형건조\n간혹 연하장",
+      "roleNote": "",
       "row": 15,
       "column": 11
     },
@@ -9846,7 +9846,7 @@
       "shipType": "항모",
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "무난한 성능 전함\n근데 철혈 아님\n상시 META",
+      "roleNote": "",
       "row": 15,
       "column": 35
     },
@@ -9951,7 +9951,7 @@
       "shipType": "잠수",
       "tier": "A",
       "sheetGroup": "잠수 SS",
-      "roleNote": "대공요원 + 무난한탱\n11지 이후로 활약\n3기 PR 연구함",
+      "roleNote": "",
       "row": 15,
       "column": 53
     },
@@ -10011,7 +10011,7 @@
       "shipType": "구축",
       "tier": "A",
       "sheetGroup": "구축 DD",
-      "roleNote": "잉그레이엄\n대공 / 기타보조유틸\n재너스\n높은 공격력\n\n소형 상시건조",
+      "roleNote": "",
       "row": 19,
       "column": 5
     },
@@ -10041,7 +10041,7 @@
       "shipType": "구축",
       "tier": "A",
       "sheetGroup": "구축 DD",
-      "roleNote": "전용장비 요구됨\n좋은 화력보조\n소형 상시건조",
+      "roleNote": "",
       "row": 19,
       "column": 7
     },
@@ -10206,7 +10206,7 @@
       "shipType": "경항모",
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "무난한 미항모\n둘다 특형 상시건조\n타이콘 -> 작전문서",
+      "roleNote": "",
       "row": 19,
       "column": 29
     },
@@ -10236,7 +10236,7 @@
       "shipType": "항모",
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "폭격 특화 / 뇌격 특화\n상시 META",
+      "roleNote": "",
       "row": 19,
       "column": 31
     },
@@ -10326,7 +10326,7 @@
       "shipType": "순전",
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "뉴비에겐 권장되진 않음",
+      "roleNote": "",
       "row": 19,
       "column": 43
     },
@@ -10506,7 +10506,7 @@
       "shipType": "중순",
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
-      "roleNote": "국밥탱 + 사르데냐\n훈장 교환",
+      "roleNote": "",
       "row": 23,
       "column": 21
     },
@@ -10716,7 +10716,7 @@
       "shipType": "구축",
       "tier": "B",
       "sheetGroup": "구축 DD",
-      "roleNote": "전열 딜러\n뮤 함순이는 진영점수X\n아이리스 점수\n르 말랭 : 훈장교환\n뮤 : 코어데이터샵",
+      "roleNote": "",
       "row": 27,
       "column": 3
     },
@@ -10731,7 +10731,7 @@
       "shipType": "구축",
       "tier": "B",
       "sheetGroup": "구축 DD",
-      "roleNote": "딜 특화 유리대포\n작전 문서\n소형 상시건조",
+      "roleNote": "",
       "row": 27,
       "column": 5
     },
@@ -10761,7 +10761,7 @@
       "shipType": "구축",
       "tier": "B",
       "sheetGroup": "구축 DD",
-      "roleNote": "적당한 딜탱\n아이리스\n소형 상시건조",
+      "roleNote": "",
       "row": 27,
       "column": 7
     },
@@ -10911,7 +10911,7 @@
       "shipType": "항모",
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "서로 시너지\n3-4 보스 파밍",
+      "roleNote": "",
       "row": 27,
       "column": 31
     },
@@ -10941,7 +10941,7 @@
       "shipType": "항모",
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "3일본 방어 버프\n특형 상시건조",
+      "roleNote": "",
       "row": 27,
       "column": 33
     },

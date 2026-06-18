@@ -257,7 +257,6 @@ function findTier(rows, rowIndex) {
 function findRoleNote(rows, rowIndex, columnIndex) {
   const candidates = [
     rows[rowIndex + 1]?.[columnIndex],
-    rows[rowIndex + 1]?.[columnIndex + 1],
     rows[rowIndex + 2]?.[columnIndex],
   ]
 
