@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
+import { getEffectiveRarity } from '../utils/rarity.js'
 
 const MODES = [
   {
@@ -234,7 +235,7 @@ function getPositionFillCandidates(candidates, characters) {
   const ownedHighLevelCounts = new Map(POSITION_TYPES.map(type => [type, 0]))
 
   for (const character of characters) {
-    if (!['UR', 'SSR'].includes(character.rarity)) continue
+    if (!['UR', 'SSR'].includes(getEffectiveRarity(character))) continue
     if (!isLevel120Status(character.acquired)) continue
     if (!ownedHighLevelCounts.has(character.shipType)) continue
     ownedHighLevelCounts.set(character.shipType, ownedHighLevelCounts.get(character.shipType) + 1)
@@ -404,7 +405,7 @@ function LaneGroupedCards({ section, characterByName }) {
 }
 
 function RecommendationCard({ card, character }) {
-  const rarity = character?.rarity || card.tier
+  const rarity = character ? getEffectiveRarity(character) : card.rarity
   const faction = getDisplayFaction(character?.faction)
   const shipType = character?.shipType || card.tags[0]
   const rarityStyle = rarityCardStyle(rarity)

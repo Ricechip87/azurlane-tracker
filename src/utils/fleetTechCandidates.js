@@ -1,5 +1,6 @@
 import { normalizeAcquisitionStatus } from './acquisitionStatus.js'
 import { normalizeFactionValue } from './factions.js'
+import { getEffectiveRarity } from './rarity.js'
 import { getShipPosition } from './shipClassifications.js'
 
 const RARITY_ORDER = {
@@ -46,6 +47,7 @@ export function splitFleetTechCandidates(candidates, basis = FLEET_TECH_CANDIDAT
 function toCandidate(character, basis) {
   const status = normalizeAcquisitionStatus(character.acquired)
   const techPoints = character.techPoints || { acquired: 0, maxLB: 0, lv120: 0 }
+  const rarity = getEffectiveRarity(character)
 
   if (status === '120' || status === '125') return null
 
@@ -64,7 +66,7 @@ function toCandidate(character, basis) {
   return {
     id: character.id,
     name: character.name,
-    rarity: character.rarity,
+    rarity,
     position,
     status,
     stages: {
@@ -74,7 +76,7 @@ function toCandidate(character, basis) {
     },
     remainingSteps,
     remainingTechPoints,
-    group: getCandidateGroupKey(character.rarity, basis),
+    group: getCandidateGroupKey(rarity, basis),
   }
 }
 

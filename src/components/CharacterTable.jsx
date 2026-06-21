@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { calcTechPoints } from '../utils/techPoints.js'
 import { ACQUISITION_STATUSES, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
+import { getEffectiveRarity } from '../utils/rarity.js'
 
 const RARITY_COLOR = {
   N: 'text-gray-400',
@@ -80,6 +81,7 @@ function CharacterRow({ char: c, updateUser, even }) {
   const remodel = c.remodeled === 'O' ? '개장' : c.remodeled === 'X' ? '미개장' : (c.remodeled || '없음')
   const isSP = String(c.id).startsWith('P')
   const keel = c.keel || '없음'
+  const rarity = getEffectiveRarity(c)
 
   return (
     <tr className={`${bg} border-t border-neutral-800 transition-colors hover:bg-[#2a2a2a]`}>
@@ -102,8 +104,8 @@ function CharacterRow({ char: c, updateUser, even }) {
           <AutoScrollingName name={c.name} isSP={isSP} />
         </div>
       </td>
-      <td className={`${TD_CENTER} font-bold ${RARITY_COLOR[c.rarity] || 'text-gray-400'}`}>
-        {c.rarity}
+      <td className={`${TD_CENTER} font-bold ${RARITY_COLOR[rarity] || 'text-gray-400'}`}>
+        {rarity}
       </td>
       <td className={`${TD_CENTER} text-gray-300`}>{c.shipType}</td>
       <td className={`${TD_CENTER} text-xs text-gray-400`}>{c.faction}</td>

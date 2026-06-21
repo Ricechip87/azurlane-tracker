@@ -8,6 +8,7 @@ import BackupPanel from './components/BackupPanel'
 import RecommendationPage from './components/RecommendationPage'
 import { normalizeAcquisitionStatus } from './utils/acquisitionStatus.js'
 import { matchesShipClassification } from './utils/shipClassifications.js'
+import { getEffectiveRarity } from './utils/rarity.js'
 import heroImage from './assets/home-anchorage-painting.png'
 import homeQIcon from './assets/home-qicon.png'
 
@@ -107,7 +108,7 @@ export default function App() {
   const filtered = useMemo(() => {
     return enriched.filter(c => {
       if (filters.search && !c.name.includes(filters.search)) return false
-      if (filters.rarity !== '전체' && c.rarity !== filters.rarity) return false
+      if (filters.rarity !== '전체' && getEffectiveRarity(c) !== filters.rarity) return false
       if (!matchesShipClassification(c.shipType, filters.shipType)) return false
       if (filters.faction !== '전체') {
         const matchesFaction = filters.faction === '기타'
