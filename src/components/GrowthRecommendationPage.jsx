@@ -202,7 +202,7 @@ function difficultyScore(candidate) {
 }
 
 function getLane(shipType) {
-  if (SUBMARINE_TYPES.has(shipType)) return '잠수함'
+  if (SUBMARINE_TYPES.has(shipType)) return shipType
   return MAIN_FORCE_TYPES.has(shipType) ? '후열' : '전열'
 }
 
