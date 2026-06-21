@@ -7,7 +7,7 @@ const RECOMMENDATION_TABS = [
     id: 'level120',
     label: '육성 추천',
     title: '육성 추천',
-    description: '해역과 대작전 기준으로 120 육성 우선순위를 고릅니다.',
+    description: '현재 내가 보유 중이거나 입수가 쉬운 함선들 중에서 추천합니다.\n(맨땅 뉴비는 적당히 100레벨까지 그 외에는 125까지)',
   },
   {
     id: 'research',
@@ -44,7 +44,7 @@ export default function RecommendationPage({ characters }) {
       <header className="border border-neutral-700 bg-[#242424] px-5 py-4">
         <div className="text-xs font-semibold text-gray-300">육성/편성 추천</div>
         <h1 className="mt-1 text-2xl font-bold text-gray-100">{currentTab.title}</h1>
-        <p className="mt-2 text-sm leading-6 text-gray-500">{currentTab.description}</p>
+        <p className="mt-2 whitespace-pre-line text-sm leading-6 text-gray-500">{currentTab.description}</p>
       </header>
 
       <div className="flex flex-wrap gap-2 border-b border-neutral-700">
