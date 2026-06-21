@@ -1,28 +1,305 @@
-육성 추천표 미매칭/검토 후보
+육성 추천표 미매칭 검토 후보
 
-총 검토 후보: 21
-설명 텍스트가 포함될 수 있으므로 실제 누락 함선인지 원본 좌표 기준으로 확인합니다.
+총 검토 후보: 299
 
 ## newbie
+- 구축 DD (3:2) - not matched
+- 경순 CL (3:12) - not matched
+- 중순 (3:20) - not matched
+- 대순 CA (3:20) - not matched
+- 항모 CV, 경항모 CVL (3:28) - not matched
+- 전함 BB, 순전 BC (3:36) - not matched
+- 상시 무딱 (3:44) - not matched
+- 힐러 (3:46) - not matched
+- 잠수 SS (3:50) - not matched
+- 연구함 (3:54) - not matched
+- 신규 이벤트 함순이 (3:60) - not matched
+- S 급 (5:1) - not matched
+- 최우선 (5:1) - not matched
+- 프린츠 (7:26) - not matched
+- 오이겐 (7:26) - not matched
+- 파르제팔 (7:58) - not matched
+- 앵커리지 점수 (8:10) - not matched
+- 절약팟 전열 (8:10) - not matched
+- 메인해역 다수 드랍 (8:10) - not matched
+- 최상위 대공 성능 (8:12) - not matched
+- 훈장교환 (8:12) - not matched
+- 탱커 보조 (8:16) - not matched
+- 작전문서 획득 가능 (8:16) - not matched
+- 레이더 탐지 (8:18) - not matched
+- 대함대 상점 (8:18) - not matched
+- 철혈 점수작 좋음 (8:26) - not matched
+- 무난한 탱커들 (8:26) - not matched
+- 론 : 1기 pr함 (8:26) - not matched
+- Lucky E (8:28) - not matched
+- 훈장교환 (8:28) - not matched
+- 철혈 점수 필요하면 육성할만함 (8:42) - not matched
+- 아니면 쓸이유없음 (8:42) - not matched
+- 훈장 교환 (8:42) - not matched
+- 쫄팟, 광역힐, 선장전 (8:46) - not matched
+- 개장 1순위, 신 GOD (8:46) - not matched
+- 대함대 상점 (8:46) - not matched
+- 쫄 보스 딜러 (8:48) - not matched
+- 서브 힐러 (8:48) - not matched
+- 특형 상시건조 (8:48) - not matched
+- 철혈 연구함 선택지들 (8:58) - not matched
+- 프리드리히 (11:58) - not matched
+- 데어 그로세 (11:58) - not matched
+- 공습선도 1황 (12:6) - not matched
+- 훈장교환 1순위 (12:6) - not matched
+- 항모 버퍼 (12:12) - not matched
+- 훈장교환 (12:12) - not matched
+- 전장주면 실드 (12:20) - not matched
+- 파갑 (12:20) - not matched
+- 신규출첵 8일차 보상 (12:20) - not matched
+- 전열보호 (12:28) - not matched
+- 신입임무 (12:28) - not matched
+- 훈장교환 (12:28) - not matched
+- 중형 (12:30) - not matched
+- 중갑 바인더 (12:30) - not matched
+- 6-3 드랍 (12:30) - not matched
+- 특형 상시건조 (12:30) - not matched
+- 제공권 + 반장전 (12:32) - not matched
+- 타함대 항공버프 (12:32) - not matched
+- 코어데이터 샵 (12:32) - not matched
+- 감속, 받피증 버퍼 (12:40) - not matched
+- 연습전 상점 (12:40) - not matched
+- 높은 공격력 (12:48) - not matched
+- 1+2 힐 (12:48) - not matched
+- 특형 상시건조 (12:48) - not matched
+- 유틸갖춘 성능 탱커 (12:54) - not matched
+- 4기 DR 연구함 (12:54) - not matched
+- 연막탄 탱킹 보조 (12:56) - not matched
+- 4기 PR 연구함 (12:56) - not matched
+- 대경장 특화 (12:58) - not matched
+- 상시 획득 전함 1황 (12:58) - not matched
+- 2기 DR 연구함 (12:58) - not matched
+- A 급 (13:1) - not matched
+- META (15:16) - not matched
+- 그나이 (15:36) - not matched
+- META (15:36) - not matched
+- META (15:37) - not matched
+- 3번 자리 딜러 (16:2) - not matched
+- 6-4 보스 드랍 (16:2) - not matched
+- 보급형 공습 선도 (16:6) - not matched
+- 대함대 상점 (16:6) - not matched
+- 3번 자리 딜러 (16:8) - not matched
+- 나히모프 시너지 (16:8) - not matched
+- 소형 상시건조 (16:8) - not matched
 - 철혈 점수 특공대 (16:10) - not matched
+- 경장 방뢰요원 (16:14) - not matched
+- 작전문서 (16:14) - not matched
+- 상시 소형건조 (16:14) - not matched
+- 버프 겸 (16:16) - not matched
+- 포격 특화경순 (16:16) - not matched
+- 상시 META 비콘 (16:16) - not matched
+- 포격특화 경순 (16:18) - not matched
+- 상시 소형건조 (16:18) - not matched
+- 초반 국밥탱 (16:20) - not matched
+- 신입임무 육성픽 (16:20) - not matched
+- 대함대 상점 (16:20) - not matched
+- 무난한 만능탱커 (16:22) - not matched
+- 상시 중형건조 (16:22) - not matched
+- 안정성 높은 (16:28) - not matched
+- 특형 상시건조 (16:28) - not matched
+- 중형 (16:34) - not matched
+- 중갑 특화 (16:34) - not matched
+- 특형 상시건조 (16:34) - not matched
+- 무난한 성능 전함 (16:36) - not matched
+- 근데 철혈 아님 (16:36) - not matched
+- 상시 META (16:36) - not matched
+- 명중, 장전 버퍼 (16:38) - not matched
+- 중형 상시건조 (16:38) - not matched
+- 사르데냐 코어 (16:40) - not matched
+- 중형 상시건조 (16:40) - not matched
+- 보스팟 광역딜러 (16:44) - not matched
+- 일항팟 코어 (16:44) - not matched
+- 이중 선장전 (16:46) - not matched
+- 타함대 힐 (16:46) - not matched
+- 특형 상시건조 (16:46) - not matched
+- 독잠 (16:50) - not matched
+- 상위 U 보트들 (16:50) - not matched
+- 미잠 (16:52) - not matched
+- 높은 산소량 (16:52) - not matched
+- 대공요원 + 무난한탱 (16:54) - not matched
+- 11지 이후로 활약 (16:54) - not matched
+- 3기 PR 연구함 (16:54) - not matched
 - 다이도 μ (19:13) - not matched
+- 타이콘 (19:30) - not matched
+- 데로가 (19:30) - not matched
 - 소류 META (19:32) - not matched
 - 히류 META (19:33) - not matched
+- 탱커 (20:2) - not matched
+- 탱 보조 1황 (20:2) - not matched
+- 개장템없으면 후순위 (20:2) - not matched
+- 연습전 상점 (20:2) - not matched
+- 무난한 탱커 (20:4) - not matched
+- 소형 상시건조 (20:4) - not matched
+- 전용장비 요구됨 (20:8) - not matched
+- 좋은 화력보조 (20:8) - not matched
+- 소형 상시건조 (20:8) - not matched
+- 무난한 3번 딜러 (20:12) - not matched
+- 상시 소형건조 (20:12) - not matched
+- 뇌격특화 3번딜러 (20:14) - not matched
+- 작전문서 (20:14) - not matched
+- 상시 소형건조 (20:14) - not matched
+- 포격 딜링 특화 (20:16) - not matched
+- 작전문서 (20:16) - not matched
+- 상시 소형건조 (20:16) - not matched
+- 적당한 탱커 (20:18) - not matched
+- 북련 점수용 (20:18) - not matched
+- 상시 소형건조 (20:18) - not matched
+- 평균이상 탱+딜 (20:20) - not matched
+- 흡혈 (20:20) - not matched
+- 훈장 교환 (20:20) - not matched
+- 딜을 좀 더 가진 탱커 (20:22) - not matched
+- 철혈 점수작 (20:22) - not matched
+- 상시 중형건조 (20:22) - not matched
+- 무난한 탱커 (20:24) - not matched
+- 철혈 점수작 (20:24) - not matched
+- 상시 중형건조 (20:24) - not matched
+- 무난한 미항모 (20:30) - not matched
+- 둘다 특형 상시건조 (20:30) - not matched
+- 타이콘 -> 작전문서 (20:30) - not matched
+- 폭격 특화 (20:32) - not matched
+- 뇌격 특화 (20:32) - not matched
+- 상시 META (20:32) - not matched
+- 중앵버퍼 (20:36) - not matched
+- 훈장 교환 (20:36) - not matched
+- 개장시 강한 무딱딜러 (20:37) - not matched
+- 훈장교환 (20:37) - not matched
+- 프랑스 버퍼 (20:40) - not matched
+- 선장전 (20:40) - not matched
+- 중형 상시건조 (20:40) - not matched
+- 철혈 점수셔틀 (20:42) - not matched
+- 초반 확정획득 후열 (20:42) - not matched
+- 작전 문서 (20:42) - not matched
 - 뉴비에겐 권장되진 않음 (20:44) - not matched
+- 항모버퍼 (20:46) - not matched
+- 대함대 상점 (20:46) - not matched
+- 보급형 원거리지원 (20:50) - not matched
+- 독잠 (20:50) - not matched
+- 실드 무시 딜러 (20:54) - not matched
+- 탱커 (20:54) - not matched
+- 7기 DR 연구함 (20:54) - not matched
+- B 급 (21:1) - not matched
 - 타슈켄트 μ (23:6) - not matched
 - 아카기 μ (23:30) - not matched
-- U보트 대체제 (24:50) - not matched
-- 미잠 대체제 (24:52) - not matched
+- 후열 생존버퍼 (24:2) - not matched
+- 훈장 교환 (24:2) - not matched
+- 대공 (24:4) - not matched
+- 훈장 교환 (24:4) - not matched
+- 50초 지속 (24:6) - not matched
+- 항공 딜 버프 (24:6) - not matched
+- 훈장 교환 (24:6) - not matched
+- 절약팟 (24:8) - not matched
+- 미사일 구축함(미구) (24:8) - not matched
+- 대함대 상점 (24:8) - not matched
+- 경장 상대버퍼 (24:12) - not matched
+- 상시 소형건조 (24:12) - not matched
+- 무난한 대공맨들 (24:14) - not matched
+- 상시 소형건조 (24:14) - not matched
+- 철혈 점수 특공대 (24:18) - not matched
+- 풀돌까지만 해주면됨 (24:18) - not matched
+- 라이프치히는 나머지 3명 도감작보상 (24:18) - not matched
+- 3번자리 딜러 (24:20) - not matched
+- 브레머튼 : 작전문서 (24:20) - not matched
+- 볼티모어 : 훈장 교환 (24:20) - not matched
+- 국밥탱 + 사르데냐 (24:22) - not matched
+- 훈장 교환 (24:22) - not matched
+- 쇼카쿠와 시너지 (24:28) - not matched
+- 훈장교환 (24:28) - not matched
+- 반장전 (24:30) - not matched
+- 훈장교환 (24:30) - not matched
+- 강한 반장전 항모 (24:32) - not matched
+- 상시 특형건조 (24:32) - not matched
+- 철혈 점수 (24:34) - not matched
+- 독일 항모 (24:34) - not matched
+- 가끔 초대장 (24:34) - not matched
+- 특형 상시건조 (24:34) - not matched
+- 세이렌 특화 (24:36) - not matched
+- 작전문서 (24:36) - not matched
+- 연습전 상점 (24:36) - not matched
+- 미국 버퍼 (24:38) - not matched
+- 선장전 (24:38) - not matched
+- 작전 문서 (24:38) - not matched
+- 순전 쿼터제용 (24:40) - not matched
+- 둘다 훈장 교환 가능 (24:40) - not matched
 - 적당한 탱 (26:2) - not matched
 - 대공 (26:3) - not matched
 - 르 말랭 μ (27:4) - not matched
 - 볼티모어 μ (27:20) - not matched
+- 절혈 점수용 (28:2) - not matched
+- Z1은 Z급 버퍼 (28:2) - not matched
+- 상시 소형건조 (28:2) - not matched
+- 딜 특화 유리대포 (28:6) - not matched
+- 작전 문서 (28:6) - not matched
+- 소형 상시건조 (28:6) - not matched
+- 적당한 딜탱 (28:8) - not matched
+- 아이리스 (28:8) - not matched
+- 소형 상시건조 (28:8) - not matched
+- 보급형 공습선도 (28:14) - not matched
+- 차라리 아리아케 ㄱㄱ (28:14) - not matched
+- 상시 소형건조 (28:14) - not matched
+- 작전문서 (28:16) - not matched
+- 소형 상시건조 (28:16) - not matched
+- 대공 보조 (28:18) - not matched
+- 잠수함 경치버프 (28:18) - not matched
+- 소형 상시건조 (28:18) - not matched
+- 3번자리 딜러 (28:22) - not matched
+- 훈장 교환 (28:22) - not matched
+- 파갑 (28:28) - not matched
+- 유니온 점수작 (28:28) - not matched
+- 특형 상시건조 (28:28) - not matched
+- 저렴한 개장값 (28:30) - not matched
+- 초반에 무난하게 쓰기좋음 (28:30) - not matched
+- 3지역 드랍 (28:30) - not matched
+- 서로 시너지 (28:32) - not matched
+- 3-4 보스 파밍 (28:32) - not matched
+- 3일본 방어 버프 (28:34) - not matched
+- 특형 상시건조 (28:34) - not matched
+- 사르데냐 파츠 (28:36) - not matched
+- 사르데냐 점수 (28:36) - not matched
+- 작전문서 (28:36) - not matched
+- 사거리 짧은 탄막 (28:38) - not matched
+- 훈장 교환 (28:38) - not matched
+- 유니온 점수쌀먹 (28:40) - not matched
+- 메인으로 쓰긴 아쉬움 (28:40) - not matched
+- 훈장 교환 (28:40) - not matched
+- 프랑스 함대 파츠 (28:42) - not matched
+- 선장전, 딜 버프 (28:42) - not matched
+- 중형 상시건조 (28:42) - not matched
 - 클리블랜드 μ (31:14) - not matched
 - 론 μ (31:22) - not matched
 - 다이호 μ (31:30) - not matched
 - 일러스트리어스 μ (31:32) - not matched
 - 아크 로열 META (31:34) - not matched
+- 중앵 점수작용 (32:8) - not matched
+- 대함대 상점 (32:8) - not matched
+- 로열 점수작용 (32:12) - not matched
+- 소형 상시건조 (32:12) - not matched
+- 뮤함순이는 진영점수X (32:14) - not matched
+- 적당한 딜 (32:14) - not matched
+- 약한 몸 (32:14) - not matched
+- 대함대 상점 (32:14) - not matched
 - 작은 육각형 (32:20) - not matched
+- 뮤함순이는 진영점수X (32:22) - not matched
+- 코어데이터 교환 (32:22) - not matched
 - 감속요원 (32:24) - not matched
+- 도파민 발사대 (32:28) - not matched
+- 절약팟 멤버 (32:28) - not matched
+- 신경안써도 구해짐 (32:28) - not matched
+- 4 뮤 시너지 (32:30) - not matched
+- 근데 뮤는 진영점수X (32:30) - not matched
+- 훈장 교환 (32:30) - not matched
+- 여기 있긴한데 뉴비땐 비추 (32:32) - not matched
+- 코어데이터샵 교환 (32:32) - not matched
+- 철혈 점수 필요하면 육성할만함 (32:36) - not matched
+- 아니면 쓸이유없음 (32:36) - not matched
+- 훈장 교환 (32:36) - not matched
 - 노스 유니온 조합 필요 (32:38) - not matched
+- 프랑스 함대 파츠 (32:42) - not matched
+- 선장전, 대경장용 (32:42) - not matched
+- 훈장 교환 (32:42) - not matched
+- 엔터프라이즈 (16:28) - single matched name row
 

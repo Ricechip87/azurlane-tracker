@@ -1,27 +1,120 @@
-육성 추천표 미매칭/검토 후보
+육성 추천표 미매칭 검토 후보
 
-총 검토 후보: 110
-설명 텍스트가 포함될 수 있으므로 실제 누락 함선인지 원본 좌표 기준으로 확인합니다.
+총 검토 후보: 460
 
 ## main
 - 메인해역용 (2:1) - not matched
+- 전열 (3:1) - not matched
+- (선봉) (3:1) - not matched
+- 구축 DD (3:2) - not matched
+- 경순 CL (3:12) - not matched
+- 중순 (3:24) - not matched
+- 대순 CA (3:24) - not matched
+- 버퍼 (3:36) - not matched
+- 디버퍼 (3:36) - not matched
+- SS 급 (5:1) - not matched
+- 최우선 (5:1) - not matched
+- S+ (5:20) - not matched
+- SS 대용 (5:20) - not matched
+- S 상위호환 (5:20) - not matched
+- 딜탱 (8:2) - not matched
+- 보조 (8:2) - not matched
+- 대잠 (8:4) - not matched
+- 대공 (8:4) - not matched
 - 만능 육각형 (8:6) - not matched
+- 균형잡힌 공방 (8:12) - not matched
+- 유틸 + 짤힐 (8:12) - not matched
+- 최상위 대공 + 힐 (8:14) - not matched
 - 상위 대공 성능 (8:22) - not matched
+- 최상급 대공 (8:24) - not matched
+- 최상급 탱킹 (8:24) - not matched
+- 보조 (8:26) - not matched
+- 꽉찬 육각형 (8:26) - not matched
+- 전열 탱 보조 1황 (8:36) - not matched
+- 구축 탱커 1황 (8:36) - not matched
+- 개장 필요 (8:36) - not matched
+- S 급 (9:1) - not matched
+- 최고 성능 (9:1) - not matched
+- 대공 (12:8) - not matched
+- 지원탄막 (12:8) - not matched
+- 경순 딜러 1황 (12:12) - not matched
+- 기함 전함 딜버프 (12:12) - not matched
+- 쫄팟 보스팟 (12:24) - not matched
+- 둘다 탱잘함 (12:24) - not matched
+- 실드 무시 딜러 (12:26) - not matched
+- 탱커 (12:26) - not matched
 - 보스 전용 탱커 (12:28) - not matched
 - 연막탄 탱킹 보조 (12:30) - not matched
 - 탱커 보조 (12:36) - not matched
-- 키로프 META (경순) (15:38) - not matched
+- A+ 급 (13:1) - not matched
+- 토키사키 (15:16) - not matched
+- 쿠루미 (콜) (15:16) - not matched
+- (콜라보) (15:28) - not matched
 - 탱커 2황 (16:2) - not matched
+- 확고한 탱킹능력 (16:12) - not matched
+- 낮은 딜 기여도 (16:12) - not matched
+- 태생 보딱 중 (16:14) - not matched
+- 탱킹 1황 (16:14) - not matched
 - 분신을 활용한 탱 (16:16) - not matched
+- 무난하게 좋음 (16:24) - not matched
+- 타함대 지원탄막 (16:24) - not matched
+- 대공요원 중 (16:26) - not matched
+- 2등으로 단단함 (16:26) - not matched
+- 튼튼한 서포터형 (16:28) - not matched
+- 기함보호 (16:30) - not matched
+- 3번자리 딜러 (16:30) - not matched
+- 전열 딜러 1황 (16:32) - not matched
+- 전열 딜러 2황 (16:34) - not matched
+- 대공 (16:36) - not matched
+- 대잠 (16:36) - not matched
+- 공습선도 + 기함보호 (16:36) - not matched
 - 분신을 통한 탱킹보조 (16:38) - not matched
+- A 급 (17:1) - not matched
+- 강력한 (18:24) - not matched
+- 딜탱 (18:24) - not matched
+- 유사 (18:25) - not matched
 - 탱커 (18:26) - not matched
+- 딜탱 (18:27) - not matched
+- 실드 (18:27) - not matched
+- 오토 폰 (19:4) - not matched
+- 알벤슬레벤 (19:4) - not matched
 - 클리블랜드 META (19:17) - not matched
+- 모모 벨리아 데빌룩 (19:18) - not matched
+- (콜라보) (19:18) - not matched
+- (콜라보) (19:22) - not matched
+- 야마이 카구야 (19:23) - not matched
+- 야마이 유즈루 (콜) (19:23) - not matched
+- 프리드리히 (19:25) - not matched
+- 카를 (19:25) - not matched
+- 대공 (20:2) - not matched
+- 기타보조 (20:2) - not matched
 - 무난한 탱커 (20:4) - not matched
 - 3번 자리 딜러 (20:6) - not matched
+- 무난한 탱커 (20:8) - not matched
+- 불사 (20:8) - not matched
+- 높은 공격력 (20:12) - not matched
+- 연막탄 (20:12) - not matched
 - 경장 방뢰요원 (20:14) - not matched
 - 경순 드레이크 (20:16) - not matched
-- 고성능 대체 탱커들 (20:24) - not matched
+- 하루카, 릿카 (20:18) - not matched
+- 상위호환 (20:18) - not matched
+- 5초 무적 (20:20) - not matched
+- 준최상급 딜링 (20:20) - not matched
+- 준최상급 (20:22) - not matched
+- 3번자리 딜러 (20:22) - not matched
 - 고출력 중순 표준 (20:28) - not matched
+- 딜탱 다 잘함 + 파갑 (20:30) - not matched
+- 미항팟 항공 버퍼 (20:32) - not matched
+- 무난한 탱킹 (20:32) - not matched
+- 쫄팟 (20:34) - not matched
+- 단기전의 신 (20:34) - not matched
+- 공습선도 1황 (20:36) - not matched
+- 14지에서 좋음 (20:36) - not matched
+- 대공 + 항공뎀증 (20:38) - not matched
+- 디버프 완화 (14지) (20:40) - not matched
+- 15지 사용불가 (20:40) - not matched
+- 탄약 + 1 (20:42) - not matched
+- B+ 급 (21:1) - not matched
 - 절약팟 멤버 (22:8) - not matched
 - 대공 (22:12) - not matched
 - 플레어 (22:13) - not matched
@@ -29,89 +122,345 @@
 - 단일 힐 (22:19) - not matched
 - 딸피 힐 (22:22) - not matched
 - 탱 대공 (22:23) - not matched
+- 딜탱 (22:24) - not matched
+- 무난함 (22:24) - not matched
+- 아즈마급 (22:25) - not matched
+- 탱킹 (22:25) - not matched
 - 실드 (22:26) - not matched
 - 30초 실드 (22:27) - not matched
+- 포지션 (22:28) - not matched
+- 유연함 (22:28) - not matched
+- 전열 피감 (22:29) - not matched
+- 딜 특화 (22:30) - not matched
+- 딜 없는 (22:31) - not matched
+- 쿠니베르티 (23:4) - not matched
+- 유다치 META (23:5) - not matched
+- 나나 (콜) (23:6) - not matched
+- META (23:14) - not matched
+- 아마미 (23:18) - not matched
+- 하루카 (23:18) - not matched
+- 타카라다 (23:19) - not matched
+- 릿카 (23:19) - not matched
+- META (23:20) - not matched
+- 돈스코이 (23:21) - not matched
+- 미나미 (23:24) - not matched
+- 유메 (콜) (23:24) - not matched
+- 프린츠 (23:25) - not matched
+- 오이겐 (23:25) - not matched
+- 샌프란 (23:28) - not matched
+- 시스코 (23:28) - not matched
+- 히퍼 (23:30) - not matched
+- META (23:30) - not matched
+- 칼라 (23:31) - not matched
+- 이데아스 (콜) (23:31) - not matched
 - 대공 (24:2) - not matched
 - 3번 자리 딜러 (24:4) - not matched
 - 3번 자리 딜러 (24:6) - not matched
 - 경장 특화 (24:8) - not matched
+- 높은 공격력 (24:10) - not matched
+- 순양함 대항 특화 (24:10) - not matched
 - 무난하게 좋은 성능 (24:12) - not matched
+- 딜 낮고 튼튼한 (24:14) - not matched
 - 포격특화 경순 (24:16) - not matched
+- 콜라보 경순 (24:18) - not matched
+- 쫄팟기용 (24:18) - not matched
+- 보조 (24:20) - not matched
+- 포격 특화경순 (24:20) - not matched
 - 탱 경순 (24:22) - not matched
+- 쫄팟 A+급 탱커 (24:32) - not matched
 - 3번 자리 딜러 (24:34) - not matched
 - 레이더 탐지 (24:36) - not matched
+- 미국 전열 (24:38) - not matched
+- 항공 버퍼 (24:38) - not matched
 - 구축 버프 (24:39) - not matched
+- 공습선도, 대잠 (24:40) - not matched
+- 탄약 + 1 (24:42) - not matched
+- B 급 (25:1) - not matched
+- 프랑스 (26:14) - not matched
+- 버퍼 (26:14) - not matched
+- 2초 (26:15) - not matched
+- 바인드 (26:15) - not matched
 - 18초 실드 (26:24) - not matched
 - 항모 버프 (26:25) - not matched
 - 탱커 (26:26) - not matched
 - 무난한 딜 (26:27) - not matched
+- 이 라인에서 (26:28) - not matched
+- 딜 2등 (26:28) - not matched
 - 탱킹 보조 (26:29) - not matched
+- (개장) (27:2) - not matched
+- 레골로 (27:4) - not matched
+- 진츠 META (27:13) - not matched
+- 아브루치 (27:16) - not matched
+- 가라발디 (27:17) - not matched
+- 다이도 μ (27:18) - not matched
 - 노시로 μ (27:20) - not matched
+- 프린츠 (27:26) - not matched
+- 아달베르트 (27:26) - not matched
+- 프린츠 (27:27) - not matched
+- 하인리히 (27:27) - not matched
 - 뉴욜리언스 (27:28) - not matched
+- 꼬마 (27:31) - not matched
+- 오이겐 (27:31) - not matched
+- (콜라보) (27:32) - not matched
+- 론 μ (27:34) - not matched
 - 오이겐 μ (27:35) - not matched
+- (경순) (27:40) - not matched
+- 스테판 (27:41) - not matched
+- 포터 (구축) (27:41) - not matched
+- 무난한 (28:2) - not matched
+- 3번자리 딜러 (28:2) - not matched
 - 0.9 유다치 (28:4) - not matched
 - 경장 특화 (28:7) - not matched
+- 전열 짤힐 (28:8) - not matched
+- 기동 (28:10) - not matched
+- 항속 (28:10) - not matched
+- 탱 보조 (28:10) - not matched
 - 3번 자리 딜러 (28:12) - not matched
+- 버퍼 겸 3번 자리 딜러 (28:14) - not matched
 - 뇌격특화 경순 (28:16) - not matched
 - 3번 자리 대공맨 (28:18) - not matched
+- 3번 자리 딜러 (28:20) - not matched
+- 뇌격 버프 (28:20) - not matched
+- 포격 버프 (28:22) - not matched
+- 탱 경순 (28:22) - not matched
 - 3번 자리 딜러 (28:32) - not matched
 - 3번 자리 딜러 (28:34) - not matched
+- 항모 버퍼 (28:36) - not matched
+- 죽어도 버프유지 (28:36) - not matched
+- 경장 상대버퍼 (28:38) - not matched
 - 공습 선도 (28:40) - not matched
+- 탄약 + 1 (28:42) - not matched
+- 후열 (30:1) - not matched
+- (주력) (30:1) - not matched
+- 힐러 (30:2) - not matched
+- 항모 CV, 경항모 CVL (30:6) - not matched
+- 전함 BB, 순전 BC (30:20) - not matched
+- 잠수 SS (30:36) - not matched
 - 어뢰 (생략함) (30:40) - not matched
+- 메인 힐러 (31:2) - not matched
+- 서브 힐러 (31:4) - not matched
+- SS 급 (32:1) - not matched
+- 최우선 (32:1) - not matched
+- SS+ (32:6) - not matched
+- 14~15지 (32:6) - not matched
+- 인권급 (32:6) - not matched
+- SS+ (32:20) - not matched
+- 인권급 (32:20) - not matched
+- S+ (32:32) - not matched
+- SS 대용 (32:32) - not matched
+- S 상위호환 (32:32) - not matched
+- S+ (32:36) - not matched
+- SS 대용 (32:36) - not matched
+- S 상위호환 (32:36) - not matched
+- 쫄팟, 광역힐 (35:2) - not matched
+- 선장전 (35:2) - not matched
+- 신세대의 힐러 (35:4) - not matched
+- 쫄 보스 딜러 (35:8) - not matched
+- 서브 힐러 (35:8) - not matched
+- 후열 보호 (35:22) - not matched
+- 아퀼라와 시너지 (35:22) - not matched
+- 스마트 힐 (35:26) - not matched
+- 실드 (35:26) - not matched
+- 탄약 오링 완화 (35:30) - not matched
+- 소환 (35:30) - not matched
+- 높은 공격력 (35:34) - not matched
+- + 강력한 범위딜 (35:34) - not matched
 - 최강 잠수함 (35:38) - not matched
+- S 급 (36:1) - not matched
+- 최고 성능 (36:1) - not matched
+- (콜라보, 경항모) (38:2) - not matched
+- 프리드리히 (38:20) - not matched
+- 데어 그로세 (38:20) - not matched
+- 쫄팟 힐러 (39:2) - not matched
+- 기믹 실드+힐 (39:2) - not matched
+- 높은 공격력 (39:4) - not matched
+- 딸피 스마트 힐 (39:4) - not matched
+- 높은 제공권 (39:6) - not matched
+- 생존력 (39:6) - not matched
+- 제공권 + 반장전 (39:8) - not matched
+- 타함대 항공버프 (39:8) - not matched
 - 쫄 보스 둘다 잘함 (39:20) - not matched
+- 수동시 SS (39:24) - not matched
+- 선장전 (39:24) - not matched
 - 높은 공격력 (39:26) - not matched
+- 미잠 (39:36) - not matched
+- 높은 산소량 (39:36) - not matched
+- A+ 급 (40:1) - not matched
+- META (42:32) - not matched
+- META (42:38) - not matched
+- 이중 선장전 (43:2) - not matched
+- 타함대 힐 (43:2) - not matched
+- 2 전투기 + 제공권 (43:6) - not matched
 - 제공권 GOAT (43:10) - not matched
+- 전투기 8대 (43:12) - not matched
+- 특수 부포 + 대공 (43:12) - not matched
+- 항공피해감소 / (43:14) - not matched
+- 타함대 지원 (43:14) - not matched
+- 광역딜, 좋은 탄막 (43:20) - not matched
+- 후열 딜 보충 (43:20) - not matched
+- 아군 딜 증가 (43:22) - not matched
+- 보스 팟 특화 (43:22) - not matched
 - 쫄 보스 둘다 잘함 (43:24) - not matched
+- 전함 최강 버퍼 (43:26) - not matched
 - 쫄 보스 둘 다 잘함 (43:30) - not matched
+- 근접 방어 (43:32) - not matched
+- 전열 생존 보조 (43:32) - not matched
+- 독잠 (43:36) - not matched
+- 상위 U 보트들 (43:36) - not matched
 - 원거리 지원 (43:38) - not matched
+- A 급 (44:1) - not matched
+- 전열보호 (45:2) - not matched
+- 항모버퍼 (45:3) - not matched
 - 피해 감소 (45:8) - not matched
 - 불사 (45:9) - not matched
+- 중장갑 (45:26) - not matched
+- 특화 (45:26) - not matched
+- 특수부포 (45:28) - not matched
+- 소량 힐 (45:28) - not matched
+- 전열 (45:29) - not matched
+- 실드 (45:29) - not matched
+- 일러스트 (46:2) - not matched
+- 리어스 (항모) (46:2) - not matched
+- (경항모) (46:3) - not matched
+- (콜라보) (46:9) - not matched
 - 글로리어스 META (46:12) - not matched
 - 요크타운 META (46:14) - not matched
+- (콜라보) (46:18) - not matched
+- META (46:20) - not matched
+- 니나 (콜) (46:21) - not matched
+- (전장) (46:21) - not matched
 - 나가토 META (46:22) - not matched
+- (콜라보) (46:26) - not matched
+- 컨스텔 (46:27) - not matched
+- 레이션 (46:27) - not matched
+- 프린츠 (46:28) - not matched
+- 루프레히트 (46:28) - not matched
+- (콜라보) (46:34) - not matched
+- (콜라보) (46:36) - not matched
+- 높은 DPS (47:6) - not matched
+- 일항팟 (47:6) - not matched
+- 3 장갑 다 잘팸 (47:8) - not matched
+- 높은 탱킹력 (47:8) - not matched
+- 안정성 높은 (47:10) - not matched
+- 엔터프라이즈 + (47:10) - not matched
 - 단기전 특화 (47:12) - not matched
+- 대경장 (47:14) - not matched
+- 보조 유틸 (47:14) - not matched
+- 강한 딜 (47:16) - not matched
+- 보조 유틸 (47:16) - not matched
 - 반장전 (47:18) - not matched
 - 탄막 우수 전함 (47:20) - not matched
 - 준 최강 딜러 (47:22) - not matched
+- 개전 탄막 (47:24) - not matched
+- 준 최강 딜러 (47:24) - not matched
 - 오와리 하위호환 (47:26) - not matched
+- 딜 높음 + 탱 보조 (47:28) - not matched
 - 무난한 콜라보 전함 (47:30) - not matched
+- 안정적인 탄막 (47:32) - not matched
+- 높은 공격력 (47:32) - not matched
 - 무난한 쫄팟 성능 (47:34) - not matched
+- B+ 급 (48:1) - not matched
 - 4공습 (49:4) - not matched
 - 올라운더 (49:5) - not matched
 - 밸런스 (49:6) - not matched
+- 중장갑 (49:7) - not matched
+- 특화 (49:7) - not matched
 - 튼튼함 (49:18) - not matched
 - 2 전투기 (49:19) - not matched
+- 탄약오링 (49:20) - not matched
+- 완화 (49:20) - not matched
 - 선장전 (49:21) - not matched
+- 전열 (49:32) - not matched
+- 소량힐 (49:32) - not matched
+- 잃은 체력 (49:33) - not matched
+- 비례딜 (49:33) - not matched
+- (전함) (50:2) - not matched
 - 유미아 (콜라보) (50:5) - not matched
+- META (50:6) - not matched
 - 호넷 META (50:10) - not matched
+- 타이콘 (50:14) - not matched
+- 데로가 (50:14) - not matched
+- META (50:18) - not matched
+- 마르코 (50:20) - not matched
+- 폴로 (50:20) - not matched
+- META (50:24) - not matched
+- META (50:29) - not matched
+- 범선류 ( = 템페스타) (50:36) - not matched
+- 힐하는 전함 (51:2) - not matched
+- 13지 전열작 (51:2) - not matched
 - 소량힐 (51:4) - not matched
 - 폭격 특화 항모 (51:6) - not matched
+- 보호막, 영국 시너지 (51:8) - not matched
+- 4 폭격기 (51:8) - not matched
+- 전열 보조 (51:10) - not matched
+- 다중 폭격 (51:10) - not matched
+- 반장전, 쫄팟 특화 (51:12) - not matched
 - 무난한 미항모 (51:14) - not matched
+- 무난하게 강한 딜 (51:16) - not matched
+- 2 전투기 (51:16) - not matched
 - 반장전 항모 (51:18) - not matched
 - 상위권 전함 (51:20) - not matched
 - 탄막 전함 (51:22) - not matched
+- 균형잡힌 (51:24) - not matched
+- 상위권 전함 (51:24) - not matched
 - 상위권 전함 (51:26) - not matched
 - 보스팟 특화 (51:28) - not matched
+- 포격, 명중 버퍼 (51:30) - not matched
+- 딜 보조 버프 (51:30) - not matched
 - 빅 세븐 탄막 (51:32) - not matched
+- 수동 시 A+ (51:34) - not matched
+- B 급 (52:1) - not matched
+- 중형 (53:8) - not matched
+- 중장 (53:8) - not matched
 - 중장 (53:9) - not matched
+- 방뢰 (53:20) - not matched
+- 진영 버퍼 (53:20) - not matched
+- 방뢰 (53:21) - not matched
+- 대잠 (53:21) - not matched
+- 명중 (53:23) - not matched
+- 버퍼 (53:23) - not matched
 - 20초 파갑 (53:26) - not matched
 - 빅 세븐 (53:32) - not matched
+- 범위딜 (53:33) - not matched
+- 경장갑 (53:33) - not matched
+- (경항모) (54:4) - not matched
 - 일러스트리어스 μ (54:10) - not matched
 - 파르제팔 (54:12) - not matched
 - 히류 META (54:14) - not matched
+- 비토리오 (54:20) - not matched
+- 베네토 (54:20) - not matched
+- META (54:22) - not matched
 - 히에이 META (54:24) - not matched
-- 힐 전함 대체 (55:2) - not matched
+- META (54:26) - not matched
+- 그나이 (54:27) - not matched
+- META (54:27) - not matched
+- 후열 힐 항공 버퍼 (55:4) - not matched
 - 폭격 범위딜 (55:6) - not matched
+- 중형 (55:8) - not matched
+- 중갑 특화 (55:8) - not matched
 - 각종 유틸 (55:10) - not matched
 - 그럭저럭 강한 항모 (55:12) - not matched
 - 밸런스 잡힌 항모 (55:14) - not matched
+- 그럭저럭 강한 (55:16) - not matched
+- 금딱 콜라보 항모 (55:16) - not matched
+- 불안정 딜러 (55:18) - not matched
+- 약한 몸 (55:18) - not matched
 - 사르데냐 전함 (55:20) - not matched
 - 경장갑 특화 (55:22) - not matched
 - 부포 약함 (55:24) - not matched
 - 보스 팟 특화 (55:26) - not matched
 - 15-2 발사대 (55:28) - not matched
+- 안정적인 탱킹력 (55:30) - not matched
+- 중형만 잘팸 (55:30) - not matched
 - 확정 발동 탄막 (55:32) - not matched
 - 수동시 A (55:34) - not matched
+- C+ 급 (56:1) - not matched
+- 전체 힐 (59:2) - not matched
+- 탄약 + 1 (59:2) - not matched
+- 드레이크 (16:28) - single matched name row
+- 드레이크 (18:25) - single matched name row
+- 드레이크 (24:14) - single matched name row
+- 무사시 (32:20) - single matched name row
+- 로열 포춘 (48:37) - single matched name row
 - 헤스티아 (58:2) - single matched name row
 
