@@ -40,7 +40,8 @@ const FACTION_LABELS = {
   아이리스: 'FFNF',
   비시아: 'MNF',
   사르데냐: 'RN',
-  템페스타: 'MOT',
+  튤리퍼: 'HNLMS',
+  템페스타: '템페스타',
 }
 const COLLAB_FACTIONS = new Set([
   'DOAX VV',
@@ -55,7 +56,6 @@ const COLLAB_FACTIONS = new Set([
   '칭송받는자',
   '키즈나 아이',
   '투러브',
-  '튤리퍼',
   '홀로라이브',
 ])
 const TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B']
