@@ -261,11 +261,13 @@ function HomePage() {
           className="absolute inset-0 h-full w-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/85 via-gray-950/45 to-gray-950/20" />
-        <div className="relative flex min-h-[360px] max-w-3xl flex-col justify-end px-8 py-10 md:min-h-full">
-          <div className="mb-4 w-fit rounded bg-neutral-700 px-3 py-1 text-xs font-bold text-white">PRIVATE TOOL</div>
-          <h1 className="text-4xl font-black text-white">AzurLane Tracker</h1>
-          <p className="mt-4 max-w-xl text-base leading-7 text-gray-200">
-            내 보유함 기반 성장, 기술점수, 추가 스탯, 편성 추천을 정리하기 위한 벽람항로 개인 도구.<br />
+        <div className="relative flex min-h-[360px] max-w-[460px] flex-col justify-start px-5 py-6 md:min-h-full">
+          <div className="mb-3 w-fit rounded bg-neutral-700 px-2.5 py-1 text-[11px] font-bold text-white">PRIVATE TOOL</div>
+          <h1 className="text-2xl font-black text-white md:text-3xl">AzurLane Tracker</h1>
+          <p className="mt-3 text-sm leading-6 text-gray-200">
+            내 보유함 기반 성장, 기술점수,<br />
+            추가 스탯, 편성 추천을 정리하기 위한<br />
+            벽람항로 개인 도구.<br />
             <br />
             출처 : 벽람항로 각종 유저 정리 스프레드 시트들 및 위키<br />
             (문제가 될 시 샷다 내림.)
