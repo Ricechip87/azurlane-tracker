@@ -23,7 +23,7 @@ export default function CharacterTable({ characters, updateUser }) {
   return (
     <div className="overflow-hidden rounded-lg border border-neutral-700 bg-[#242424]">
       <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+        <table className="w-full min-w-[1440px] text-sm">
           <colgroup>
             <col className="w-10" />
             <col className="w-[210px]" />
@@ -107,8 +107,8 @@ function CharacterRow({ char: c, updateUser, even }) {
       <td className={`${TD_CENTER} font-bold ${RARITY_COLOR[rarity] || 'text-gray-400'}`}>
         {rarity}
       </td>
-      <td className={`${TD_CENTER} text-gray-300`}>{c.shipType}</td>
-      <td className={`${TD_CENTER} text-xs text-gray-400`}>{c.faction}</td>
+      <td className={`${TD_CENTER} whitespace-nowrap text-gray-300`}>{c.shipType}</td>
+      <td className={`${TD_CENTER} whitespace-nowrap text-xs text-gray-400`}>{c.faction}</td>
       <td className={TD_CENTER}>
         <StatusSelect value={remodel} options={REMODEL_OPTS} onChange={v => updateUser(c.id, 'remodeled', v)}
           colorMap={{ '없음': 'bg-gray-700 text-gray-400', '미개장': 'bg-yellow-700 text-yellow-200', '개장': 'bg-green-700 text-green-200' }} />
