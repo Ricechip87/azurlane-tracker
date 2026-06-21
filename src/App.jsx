@@ -263,7 +263,9 @@ function HomePage() {
           <div className="mb-4 w-fit rounded bg-neutral-700 px-3 py-1 text-xs font-bold text-white">PRIVATE TOOL</div>
           <h1 className="text-4xl font-black text-white">AzurLane Tracker</h1>
           <p className="mt-4 max-w-xl text-base leading-7 text-gray-200">
-            내 보유함 기반 성장, 기술점수, 추가 스탯, 편성 추천을 정리하기 위한 벽람항로 개인 도구.
+            내 보유함 기반 성장, 기술점수, 추가 스탯, 편성 추천을 정리하기 위한 벽람항로 개인 도구.<br />
+            출처 : 벽람항로 각종 유저 정리 스프레드 시트들 및 위키<br />
+            문제가 될 시 샷다 내리고 혼자 씀.
           </p>
         </div>
       </section>
