@@ -30,6 +30,34 @@ const MODE_SOURCE = {
 const MAIN_FORCE_TYPES = new Set(['전함', '순전', '항전', '항모', '경항모', '모니터'])
 const SUBMARINE_TYPES = new Set(['잠수', '잠수항모'])
 const POSITION_TYPES = ['구축', '경순', '중순', '대순', '전함', '순전', '항모', '경항모']
+const FACTION_LABELS = {
+  유니온: 'USS',
+  로열: 'HMS',
+  중앵: 'IJN',
+  철혈: 'KMS',
+  동황: 'ROC',
+  노스유니온: 'SN',
+  아이리스: 'FFNF',
+  비시아: 'MNF',
+  사르데냐: 'RN',
+  템페스타: 'MOT',
+}
+const COLLAB_FACTIONS = new Set([
+  'DOAX VV',
+  '그리드맨',
+  '던만추',
+  '데어라',
+  '라이자',
+  '블랙 록 슈터',
+  '섬란 카구라',
+  '아이마스',
+  '초차원 넵튠',
+  '칭송받는자',
+  '키즈나 아이',
+  '투러브',
+  '튤리퍼',
+  '홀로라이브',
+])
 const TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B']
 const DIFFICULTY_RANK = {
   easy: 0,
@@ -377,7 +405,7 @@ function LaneGroupedCards({ section, characterByName }) {
 
 function RecommendationCard({ card, character }) {
   const rarity = character?.rarity || card.tier
-  const faction = character?.faction || '-'
+  const faction = getDisplayFaction(character?.faction)
   const shipType = character?.shipType || card.tags[0]
   const rarityStyle = rarityCardStyle(rarity)
   const cardArtUrl = getCardArtUrl(character)
@@ -432,6 +460,12 @@ function RecommendationCard({ card, character }) {
       </div>
     </article>
   )
+}
+
+function getDisplayFaction(faction) {
+  if (!faction) return '-'
+  if (COLLAB_FACTIONS.has(faction)) return '콜라보'
+  return FACTION_LABELS[faction] || faction
 }
 
 function getCardTooltip(card) {
