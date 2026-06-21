@@ -439,10 +439,10 @@ function RecommendationCard({ card, character }) {
         <Badge tone={rarityTone(rarity)}>{rarity}</Badge>
         <Badge tone="dark">{faction}</Badge>
         <Badge tone="dark">{shipType}</Badge>
+        <Badge tone={statusTone(status)}>{status}</Badge>
       </div>
       <div className="absolute left-2 top-2 flex max-w-[calc(100%-84px)] flex-wrap gap-1 text-[10px] font-black">
         <Badge tone="dark">{card.tier}</Badge>
-        <Badge tone={statusTone(status)}>{status}</Badge>
         {showDifficultyBadge && (
           <Badge tone={difficultyTone(card.difficulty?.key)}>{card.difficulty?.label || '미확인'}</Badge>
         )}

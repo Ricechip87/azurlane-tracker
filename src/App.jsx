@@ -267,12 +267,13 @@ function HomePage() {
           <p className="mt-3 text-sm leading-6 text-gray-200">
             내 보유함 기반 성장, 기술점수,<br />
             추가 스탯, 편성 추천을 정리하기 위한<br />
-            벽람항로 개인 도구.<br />
-            <br />
-            출처 : 벽람항로 각종 유저 정리 스프레드 시트들 및 위키<br />
-            (문제가 될 시 샷다 내림.)
+            벽람항로 개인 도구.
           </p>
         </div>
+        <p className="absolute bottom-5 left-5 max-w-[440px] text-sm leading-6 text-gray-200">
+          출처 : 벽람항로 각종 유저 정리 스프레드 시트들 및 위키<br />
+          (문제가 될 시 샷다 내림.)
+        </p>
       </section>
     </main>
   )

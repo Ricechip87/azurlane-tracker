@@ -93,7 +93,7 @@ function CharacterRow({ char: c, updateUser, even }) {
           ★
         </button>
       </td>
-      <td className="w-[210px] max-w-[210px] px-3 py-2 align-middle">
+      <td className="w-[210px] max-w-[210px] px-3 py-2 align-middle text-xs">
         <div className="flex w-full min-w-0 items-center gap-2 whitespace-nowrap">
           {c.iconUrl ? (
             <img src={c.iconUrl} alt={c.name} className="w-8 h-8 rounded object-cover flex-shrink-0" loading="lazy"
@@ -107,7 +107,7 @@ function CharacterRow({ char: c, updateUser, even }) {
       <td className={`${TD_CENTER} font-bold ${RARITY_COLOR[rarity] || 'text-gray-400'}`}>
         {rarity}
       </td>
-      <td className={`${TD_CENTER} text-gray-300`}>
+      <td className={`${TD_CENTER} text-xs text-gray-300`}>
         <AutoScrollingText text={c.shipType} />
       </td>
       <td className={`${TD_CENTER} text-xs text-gray-400`}>
