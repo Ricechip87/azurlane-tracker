@@ -9,6 +9,7 @@ import RecommendationPage from './components/RecommendationPage'
 import { normalizeAcquisitionStatus } from './utils/acquisitionStatus.js'
 import { matchesShipClassification } from './utils/shipClassifications.js'
 import heroImage from './assets/home-anchorage-painting.png'
+import homeQIcon from './assets/home-qicon.png'
 
 const publicAssetUrl = path => `${import.meta.env.BASE_URL}${path}`
 const LOADING_ILLUSTRATIONS = [
@@ -184,7 +185,7 @@ function TopMenu({ activePage, onSelect }) {
           className={`flex h-10 w-10 items-center justify-center rounded border text-lg transition-colors ${activePage === 'home' ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#2a2a2a] text-gray-300 hover:border-neutral-500 hover:text-gray-100'}`}
           aria-label="홈"
         >
-          ⌂
+          <img src={homeQIcon} alt="" className="h-7 w-7 rounded-full object-cover" />
         </button>
         <div className="mr-auto">
           <div className="text-sm font-bold text-gray-100">AzurLane Tracker</div>
