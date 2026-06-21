@@ -107,8 +107,12 @@ function CharacterRow({ char: c, updateUser, even }) {
       <td className={`${TD_CENTER} font-bold ${RARITY_COLOR[rarity] || 'text-gray-400'}`}>
         {rarity}
       </td>
-      <td className={`${TD_CENTER} whitespace-nowrap text-gray-300`}>{c.shipType}</td>
-      <td className={`${TD_CENTER} whitespace-nowrap text-xs text-gray-400`}>{c.faction}</td>
+      <td className={`${TD_CENTER} text-gray-300`}>
+        <AutoScrollingText text={c.shipType} />
+      </td>
+      <td className={`${TD_CENTER} text-xs text-gray-400`}>
+        <AutoScrollingText text={c.faction} />
+      </td>
       <td className={TD_CENTER}>
         <StatusSelect value={remodel} options={REMODEL_OPTS} onChange={v => updateUser(c.id, 'remodeled', v)}
           colorMap={{ '없음': 'bg-gray-700 text-gray-400', '미개장': 'bg-yellow-700 text-yellow-200', '개장': 'bg-green-700 text-green-200' }} />
@@ -148,6 +152,16 @@ function CharacterRow({ char: c, updateUser, even }) {
 }
 
 function AutoScrollingName({ name, isSP }) {
+  return (
+    <AutoScrollingText
+      text={name}
+      className="min-w-0 flex-1"
+      suffix={isSP ? <span className="ml-1 text-xs text-cyan-400">(SP)</span> : null}
+    />
+  )
+}
+
+function AutoScrollingText({ text, suffix = null, className = '' }) {
   const viewportRef = useRef(null)
   const contentRef = useRef(null)
   const [scrollDistance, setScrollDistance] = useState(0)
@@ -163,7 +177,7 @@ function AutoScrollingName({ name, isSP }) {
     updateScrollDistance()
     window.addEventListener('resize', updateScrollDistance)
     return () => window.removeEventListener('resize', updateScrollDistance)
-  }, [name, isSP])
+  }, [text, suffix])
 
   const scrollStyle = scrollDistance > 0
     ? {
@@ -173,13 +187,13 @@ function AutoScrollingName({ name, isSP }) {
     : undefined
 
   return (
-    <div ref={viewportRef} className="min-w-0 flex-1 overflow-hidden">
+    <div ref={viewportRef} className={`w-full min-w-0 max-w-full overflow-hidden ${className}`}>
       <span
         ref={contentRef}
         className={`inline-block whitespace-nowrap font-medium ${scrollDistance > 0 ? 'auto-scroll-name' : ''}`}
         style={scrollStyle}
       >
-        {name}{isSP && <span className="ml-1 text-xs text-cyan-400">(SP)</span>}
+        {text}{suffix}
       </span>
     </div>
   )
@@ -190,7 +204,7 @@ function StatCell({ data }) {
   return (
     <div className="text-xs text-center">
       {data.shipTypes?.length > 0 && (
-        <div className="text-gray-500">{data.shipTypes.join('/')}</div>
+        <AutoScrollingText text={data.shipTypes.join('/')} className="text-gray-500" />
       )}
       {data.stat && (
         <div className="text-gray-300">
