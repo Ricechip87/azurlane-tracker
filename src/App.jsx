@@ -182,10 +182,10 @@ function TopMenu({ activePage, onSelect }) {
         <button
           type="button"
           onClick={() => selectPage('home')}
-          className={`flex h-10 w-10 items-center justify-center rounded border text-lg transition-colors ${activePage === 'home' ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#2a2a2a] text-gray-300 hover:border-neutral-500 hover:text-gray-100'}`}
+          className={`flex h-10 w-10 items-center justify-center overflow-hidden rounded border text-lg transition-colors ${activePage === 'home' ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#2a2a2a] text-gray-300 hover:border-neutral-500 hover:text-gray-100'}`}
           aria-label="홈"
         >
-          <img src={homeQIcon} alt="" className="h-7 w-7 rounded-full object-cover" />
+          <img src={homeQIcon} alt="" className="h-full w-full object-cover" />
         </button>
         <div className="mr-auto">
           <div className="text-sm font-bold text-gray-100">AzurLane Tracker</div>
@@ -253,14 +253,14 @@ function MenuDropdown({ group, activePage, isOpen, onOpen, onClose, onSelect }) 
 function HomePage() {
   return (
     <main className="mx-auto max-w-[1500px] p-6">
-      <section className="relative min-h-[360px] overflow-hidden rounded border border-gray-800 bg-gray-900 md:aspect-[2048/1220] md:min-h-0 md:w-3/4">
+      <section className="relative mx-auto min-h-[360px] overflow-hidden rounded border border-gray-800 bg-gray-900 md:aspect-[2048/1220] md:min-h-0 md:w-3/4">
         <img
           src={heroImage}
           alt=""
           className="absolute inset-0 h-full w-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/85 via-gray-950/45 to-gray-950/20" />
-        <div className="relative flex min-h-[360px] max-w-3xl flex-col justify-start px-8 py-10 md:min-h-full">
+        <div className="relative flex min-h-[360px] max-w-3xl flex-col justify-end px-8 py-10 md:min-h-full">
           <div className="mb-4 w-fit rounded bg-neutral-700 px-3 py-1 text-xs font-bold text-white">PRIVATE TOOL</div>
           <h1 className="text-4xl font-black text-white">AzurLane Tracker</h1>
           <p className="mt-4 max-w-xl text-base leading-7 text-gray-200">
