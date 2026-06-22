@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-06-22 - Add Growth Card Detail Popup
+
+### Why
+- Browser default hover tooltips were too cramped for recommendation reasons and obtainability details.
+- Growth cards need a more readable touch-friendly detail view.
+
+### Changed
+- Replaced the growth recommendation card `title` tooltip with a click-open popup.
+- Show the card image, recommendation tier, rarity, faction, ship type, owned status, recommendation reason, and obtainability details in the popup.
+- Close the popup when the surrounding screen is clicked or touched.
+- Documented the completed popup behavior in `PLAN.md`.
+
+### Verified
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-22 - Refresh Tracker Docs After Growth Card Work
 
 ### Why

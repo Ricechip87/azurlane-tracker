@@ -256,6 +256,7 @@ export default function GrowthRecommendationPage({ characters }) {
   const [recommendationData, setRecommendationData] = useState(null)
   const [obtainabilityMap, setObtainabilityMap] = useState(null)
   const [dataError, setDataError] = useState('')
+  const [openCard, setOpenCard] = useState(null)
   const currentMode = MODES.find(item => item.id === mode) || MODES[0]
 
   useEffect(() => {
@@ -317,7 +318,10 @@ export default function GrowthRecommendationPage({ characters }) {
               <button
                 key={item.id}
                 type="button"
-                onClick={() => setMode(item.id)}
+                onClick={() => {
+                  setMode(item.id)
+                  setOpenCard(null)
+                }}
                 className={`rounded border px-3 py-2 text-sm font-semibold transition-colors ${mode === item.id ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#1a1a1a] text-gray-400 hover:border-neutral-500 hover:text-gray-100'}`}
               >
                 {item.label}
@@ -355,6 +359,7 @@ export default function GrowthRecommendationPage({ characters }) {
                 <LaneGroupedCards
                   section={section}
                   characterByName={characterByName}
+                  onOpenCard={setOpenCard}
                 />
               ) : (
               <div className="grid gap-2.5 p-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
@@ -363,6 +368,7 @@ export default function GrowthRecommendationPage({ characters }) {
                     key={`${section.id}-${card.name}`}
                     card={card}
                     character={characterByName.get(card.name)}
+                    onOpen={setOpenCard}
                   />
                 ))}
               </div>
@@ -374,11 +380,18 @@ export default function GrowthRecommendationPage({ characters }) {
         ))}
       </div>
       )}
+      {openCard && (
+        <RecommendationCardPopup
+          card={openCard.card}
+          character={openCard.character}
+          onClose={() => setOpenCard(null)}
+        />
+      )}
     </section>
   )
 }
 
-function LaneGroupedCards({ section, characterByName }) {
+function LaneGroupedCards({ section, characterByName, onOpenCard }) {
   const groups = [
     { lane: '전열', cards: section.cards.filter(card => card.lane === '전열') },
     { lane: '후열', cards: section.cards.filter(card => card.lane === '후열') },
@@ -395,6 +408,7 @@ function LaneGroupedCards({ section, characterByName }) {
                 key={`${section.id}-${group.lane}-${card.name}`}
                 card={card}
                 character={characterByName.get(card.name)}
+                onOpen={onOpenCard}
               />
             ))}
           </div>
@@ -404,7 +418,7 @@ function LaneGroupedCards({ section, characterByName }) {
   )
 }
 
-function RecommendationCard({ card, character }) {
+function RecommendationCard({ card, character, onOpen }) {
   const rarity = character ? getEffectiveRarity(character) : card.rarity
   const faction = getDisplayFaction(character?.faction)
   const shipType = character?.shipType || card.tags[0]
@@ -412,12 +426,12 @@ function RecommendationCard({ card, character }) {
   const cardArtUrl = getCardArtUrl(character)
   const status = card.status || normalizeAcquisitionStatus(character?.acquired)
   const showDifficultyBadge = status === '미획득'
-  const cardTooltip = getCardTooltip(card)
 
   return (
-    <article
-      className={`group relative h-[214px] overflow-hidden rounded-md border-2 bg-[#272727] shadow-lg ${rarityStyle.card}`}
-      title={cardTooltip}
+    <button
+      type="button"
+      className={`group relative h-[214px] overflow-hidden rounded-md border-2 bg-[#272727] text-left shadow-lg outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-neutral-200 ${rarityStyle.card}`}
+      onClick={() => onOpen?.({ card, character })}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,#3a3a3a_0%,#202020_52%,#111_100%)]" />
       {cardArtUrl ? (
@@ -454,7 +468,7 @@ function RecommendationCard({ card, character }) {
           {card.summary}
         </div>
       </div>
-    </article>
+    </button>
   )
 }
 
@@ -464,13 +478,85 @@ function getDisplayFaction(faction) {
   return FACTION_LABELS[faction] || faction
 }
 
-function getCardTooltip(card) {
+function getCardDetails(card) {
   const sources = card.obtainability?.obtain || []
   const reason = normalizeSummary(card.roleNote)
-  const lines = []
-  if (reason) lines.push(`추천사유: ${reason}`)
-  if (sources.length > 0) lines.push(`획득처: ${sources.join(', ')}`)
-  return lines.join('\n')
+  return {
+    reason: reason || card.summary || '원본 추천표 기준 추천 후보입니다.',
+    sources,
+  }
+}
+
+function RecommendationCardPopup({ card, character, onClose }) {
+  const rarity = character ? getEffectiveRarity(character) : card.rarity
+  const faction = getDisplayFaction(character?.faction)
+  const shipType = character?.shipType || card.tags[0]
+  const status = card.status || normalizeAcquisitionStatus(character?.acquired)
+  const cardArtUrl = getCardArtUrl(character)
+  const details = getCardDetails(card)
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/55 px-4 py-6 backdrop-blur-sm"
+      onClick={onClose}
+      role="presentation"
+    >
+      <div className="w-full max-w-md rounded-lg border border-neutral-600 bg-[#242424] p-4 text-gray-100 shadow-2xl shadow-black/70">
+        <div className="flex items-start gap-4">
+          <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded border border-neutral-600 bg-[#181818]">
+            {cardArtUrl ? (
+              <img src={cardArtUrl} alt="" className="h-full w-full object-cover object-top" />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center text-2xl font-black text-gray-700">
+                {card.name.slice(0, 2)}
+              </div>
+            )}
+          </div>
+
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap gap-1.5 text-[11px] font-black">
+              <Badge tone="dark">{card.tier}</Badge>
+              <Badge tone={rarityTone(rarity)}>{rarity}</Badge>
+              <Badge tone="dark">{faction}</Badge>
+              <Badge tone="dark">{shipType}</Badge>
+              <Badge tone={statusTone(status)}>{status}</Badge>
+              {status === '미획득' && (
+                <Badge tone={difficultyTone(card.difficulty?.key)}>{card.difficulty?.label || '미확인'}</Badge>
+              )}
+            </div>
+            <h4 className="mt-3 truncate text-lg font-black text-white">{card.name}</h4>
+          </div>
+        </div>
+
+        <div className="mt-4 space-y-4 text-sm leading-6">
+          <section>
+            <h5 className="mb-1 text-xs font-bold text-gray-400">추천 사유</h5>
+            <p className="rounded border border-neutral-700 bg-[#1a1a1a] px-3 py-2 text-gray-100">
+              {details.reason}
+            </p>
+          </section>
+
+          <section>
+            <h5 className="mb-1 text-xs font-bold text-gray-400">입수 방법</h5>
+            {details.sources.length > 0 ? (
+              <ul className="space-y-1 rounded border border-neutral-700 bg-[#1a1a1a] px-3 py-2 text-gray-200">
+                {details.sources.map(source => (
+                  <li key={source} className="flex gap-2">
+                    <span className="text-gray-500">•</span>
+                    <span>{source}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="rounded border border-neutral-700 bg-[#1a1a1a] px-3 py-2 text-gray-500">
+                확인된 입수처 정보가 없습니다.
+              </p>
+            )}
+          </section>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 function getCardArtUrl(character) {
