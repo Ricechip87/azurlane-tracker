@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-06-22 - Refresh Tracker Docs After Growth Card Work
+
+### Why
+- The project docs lagged behind the current GitHub Pages app after the home hero, dark theme, roster table, rarity, and growth recommendation card changes.
+- The next work should start from a clean folder and a current implementation checklist.
+
+### Changed
+- Updated `README.md` around the current `AzurLane Tracker` identity, GitHub Pages usage, data backup expectation, and active feature focus.
+- Updated `PLAN.md` to mark the home hero, roster compact text handling, remodel-aware rarity, growth recommendation cards, obtainability filtering, submarine separation, card art sync, and README refresh as complete.
+- Added remaining follow-ups for recommendation reason audit and source-data validation.
+
+### Verified
+- Documentation-only change.
+
 ## 2026-06-07 - Enlarge Roster Guide Illustration
 
 ### Why

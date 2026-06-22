@@ -1,39 +1,32 @@
-# AzurLane Growth Optimizer
+# AzurLane Tracker
 
-내 보유함 기반 성장/편성 최적화에 특화된 벽람항로 팬 도구입니다.
+내 보유함 기반 성장, 기술점수, 추가 스탯, 편성 추천을 정리하기 위한 벽람항로 개인 도구입니다.
 
-현재는 Google Sheets로 관리하던 함선 데이터를 웹 앱으로 옮겨 보유, 육성, 스킬, 호감, 메모, 기술점수를 관리하는 트래커 기능을 중심으로 개발 중입니다. 장기적으로는 보유함 상태를 기준으로 성장 우선순위와 스테이지별 편성을 추천하는 정적 웹 도구를 목표로 합니다.
+출처: 벽람항로 각종 유저 정리 스프레드 시트들 및 위키  
+(문제가 될 시 샷다 내림.)
 
-## 방향
+## 현재 초점
 
-- 필수 목표: 보유함 기반 성장/편성 최적화
-- 핵심 기능: 함선 트래커, 기술점수 계산, 성장 추천, 편성 추천
-- 확장 목표: 스킨, 일러스트, 로딩 이미지 등 감상형 모듈
-- 실행 환경: React + Vite, LocalStorage, GitHub Pages
+- 내 함순이 정보: 보유, 육성, 스킬, 호감, 개장, 용골편찬, 전용 장비 상태 관리
+- 육성 추천: 메인해역, 대작전, 맨땅뉴비 기준 추천표를 카드형 UI로 정리
+- 기술점수 추천: 현재 보유함 기준 진영 기술점수와 획득 가능 후보 확인
+- 추가 스탯작/개발함/편성 추천: 이후 확장 예정
+
+## 사용 방식
+
+GitHub Pages에 배포된 정적 웹 앱으로 사용합니다. 브라우저에 입력한 보유함 데이터는 LocalStorage에 저장되며, `입력 데이터`의 내보내기/가져오기로 백업합니다.
+
+```text
+https://ricechip87.github.io/azurlane-tracker/
+```
 
 ## 개발 명령
 
 ```bash
-npm.cmd run dev
 npm.cmd run test
 npm.cmd run lint
 npm.cmd run build
-npm.cmd run preview
 ```
-
-## GitHub Pages 배포
-
-이 프로젝트는 공개 GitHub Pages 배포를 기준으로 `vite.config.js`의 base path를 `/azurlane-tracker/`로 설정합니다.
-
-GitHub 공개 저장소를 `azurlane-tracker` 이름으로 만들고 이 저장소를 push한 뒤, GitHub 저장소의 `Settings > Pages`에서 Source를 `GitHub Actions`로 설정하면 `master` 또는 `main` 브랜치 push 때 자동으로 빌드/배포됩니다.
-
-예상 접속 주소:
-
-```text
-https://<github-username>.github.io/azurlane-tracker/
-```
-
-브라우저에 입력한 보유함 데이터는 LocalStorage에 저장되므로, 로컬 개발 주소와 GitHub Pages 주소 간에는 `입력 데이터`의 내보내기/가져오기로 옮깁니다.
 
 ## 로컬 참고 자료
 
