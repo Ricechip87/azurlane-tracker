@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "test": "node scripts/lib/fleet-tech-sources.test.mjs && node scripts/lib/obtainability-sources.test.mjs && node src/data/characters.test.mjs && node src/utils/backup.test.mjs && node src/utils/acquisitionStatus.test.mjs && node src/utils/factions.test.mjs && node src/utils/shipClassifications.test.mjs && node src/utils/rarity.test.mjs && node src/utils/fleetTech.test.mjs && node src/utils/fleetTechLevelStats.test.mjs && node src/utils/fleetTechCandidates.test.mjs && node src/utils/rosterStats.test.mjs",
+    "test": "node scripts/lib/fleet-tech-sources.test.mjs && node scripts/lib/obtainability-sources.test.mjs && node src/data/characters.test.mjs && node src/utils/dropdownPosition.test.mjs && node src/utils/backup.test.mjs && node src/utils/acquisitionStatus.test.mjs && node src/utils/factions.test.mjs && node src/utils/shipClassifications.test.mjs && node src/utils/rarity.test.mjs && node src/utils/fleetTech.test.mjs && node src/utils/fleetTechLevelStats.test.mjs && node src/utils/fleetTechCandidates.test.mjs && node src/utils/rosterStats.test.mjs",
     "audit:tech": "node scripts/audit-tech-points.mjs",
     "audit:data-sources": "node scripts/audit-data-sources.mjs && node scripts/build-data-issues-report.mjs",
     "extract:growth": "python scripts/extract-growth-recommendations.py",

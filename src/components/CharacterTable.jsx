@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { calcTechPoints } from '../utils/techPoints.js'
 import { ACQUISITION_STATUSES, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
+import { getDropdownMenuPosition } from '../utils/dropdownPosition.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
 
 const RARITY_COLOR = {
@@ -223,16 +224,30 @@ function StatusSelect({ value, options, onChange, colorMap }) {
   const menuRef = useRef(null)
   const color = colorMap[value] || 'bg-gray-700 text-gray-400'
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!open) return undefined
 
     const updateMenuPosition = () => {
       const rect = buttonRef.current?.getBoundingClientRect()
-      if (!rect) return
+      const menu = menuRef.current
+      if (!rect || !menu) return
+      const position = getDropdownMenuPosition({
+        buttonRect: rect,
+        menuRect: {
+          width: menu.getBoundingClientRect().width,
+          height: menu.scrollHeight,
+        },
+        viewport: {
+          width: window.innerWidth,
+          height: window.innerHeight,
+        },
+      })
       setMenuStyle({
-        left: `${rect.left}px`,
-        top: `${rect.bottom + 4}px`,
-        width: `${Math.max(rect.width, 80)}px`,
+        left: `${position.left}px`,
+        top: `${position.top}px`,
+        width: `${position.width}px`,
+        maxHeight: `${position.maxHeight}px`,
+        overflowY: menu.scrollHeight > position.maxHeight ? 'auto' : 'visible',
       })
     }
 

@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-07-18 - Keep Status Dropdowns Inside The Viewport
+
+### Why
+- Status menus always opened below their buttons, so rows near the bottom of the viewport could hide later options such as Lv.120 and Lv.125.
+
+### Changed
+- Measure the button, full menu height, and current viewport whenever a status menu opens or the page scrolls/resizes.
+- Open the menu above the button when there is not enough room below.
+- Clamp the menu horizontally and use internal scrolling when neither direction can fit the full menu.
+- Added regression coverage for bottom-edge, top-edge, cramped-height, and right-edge positioning.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-14 - Establish CN-First Data Refresh Pipeline
 
 ### Why
