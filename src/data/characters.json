@@ -26428,6 +26428,100 @@
     }
   },
   {
+    "id": 743,
+    "name": "셰르부르",
+    "rarity": "SSR",
+    "shipType": "대순",
+    "faction": "아이리스",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "중순",
+        "초순",
+        "모니터"
+      ],
+      "stat": "화력",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "중순",
+        "초순",
+        "모니터"
+      ],
+      "stat": "내구",
+      "value": 2
+    },
+    "techPoints": {
+      "acquired": 22,
+      "maxLB": 44,
+      "lv120": 32
+    },
+    "gid": 81801,
+    "iconUrl": "/azurlane-tracker/ship-icons/818010.png"
+  },
+  {
+    "id": 744,
+    "name": "아로망슈",
+    "rarity": "SSR",
+    "shipType": "경항모",
+    "faction": "아이리스",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경항모"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경항모"
+      ],
+      "stat": "항공",
+      "value": 2
+    },
+    "techPoints": {
+      "acquired": 18,
+      "maxLB": 38,
+      "lv120": 28
+    },
+    "gid": 80602,
+    "iconUrl": "/azurlane-tracker/ship-icons/806020.png"
+  },
+  {
+    "id": 745,
+    "name": "랑트레피드",
+    "rarity": "SR",
+    "shipType": "구축",
+    "faction": "아이리스",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "회피",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 14,
+      "maxLB": 28,
+      "lv120": 20
+    },
+    "gid": 80106,
+    "iconUrl": "/azurlane-tracker/ship-icons/801060.png"
+  },
+  {
     "id": "M061",
     "name": "쾨니히스베르크(META)",
     "rarity": "SR",
@@ -26439,23 +26533,23 @@
       "shipTypes": [
         "경순"
       ],
-      "stat": "",
-      "value": 0
+      "stat": "내구",
+      "value": 1
     },
     "stat120": {
       "shipTypes": [
         "경순"
       ],
-      "stat": "",
-      "value": 0
+      "stat": "내구",
+      "value": 1
     },
     "techPoints": {
       "acquired": 10,
       "maxLB": 21,
       "lv120": 16
     },
-    "gid": 970605,
-    "iconUrl": "/azurlane-tracker/ship-icons/9706050.png"
+    "gid": 970212,
+    "iconUrl": "/azurlane-tracker/ship-icons/9702120.png"
   },
   {
     "id": "M060",
@@ -26484,8 +26578,8 @@
       "maxLB": 35,
       "lv120": 26
     },
-    "gid": 970212,
-    "iconUrl": "/azurlane-tracker/ship-icons/9702120.png"
+    "gid": 970605,
+    "iconUrl": "/azurlane-tracker/ship-icons/9706050.png"
   },
   {
     "id": "M062",
@@ -26499,20 +26593,20 @@
       "shipTypes": [
         "구축"
       ],
-      "stat": "",
-      "value": 0
+      "stat": "화력",
+      "value": 1
     },
     "stat120": {
       "shipTypes": [
         "구축"
       ],
-      "stat": "",
-      "value": 0
+      "stat": "내구",
+      "value": 2
     },
     "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
+      "acquired": 13,
+      "maxLB": 26,
+      "lv120": 19
     },
     "gid": 970112,
     "iconUrl": "/azurlane-tracker/ship-icons/9701120.png"

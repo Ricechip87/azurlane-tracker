@@ -1,0 +1,489 @@
+{
+  "generatedAt": "2026-07-14T00:18:04.478Z",
+  "checked": 870,
+  "changedShips": 0,
+  "unavailableShips": 37,
+  "results": [
+    {
+      "gid": 10107,
+      "name": "맥콜",
+      "skinId": 101070,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/101070/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10105,
+      "name": "그리들리",
+      "skinId": 101050,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/101050/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10109,
+      "name": "플레처",
+      "skinId": 101090,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/101090/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10106,
+      "name": "크레이븐",
+      "skinId": 101060,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/101060/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10112,
+      "name": "대처",
+      "skinId": 101120,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/101120/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10124,
+      "name": "심즈",
+      "skinId": 101240,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/101240/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10306,
+      "name": "포틀랜드",
+      "skinId": 103060,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/103060/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10307,
+      "name": "인디애나폴리스",
+      "skinId": 103070,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/103070/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10304,
+      "name": "시카고",
+      "skinId": 103040,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/103040/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10117,
+      "name": "라피",
+      "skinId": 101170,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/101170/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10125,
+      "name": "허먼",
+      "skinId": 101250,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/101250/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10303,
+      "name": "노샘프턴",
+      "skinId": 103030,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/103030/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10601,
+      "name": "롱 아일랜드",
+      "skinId": 106010,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/106010/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 10707,
+      "name": "호넷",
+      "skinId": 107070,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/107070/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20101,
+      "name": "아마존",
+      "skinId": 201010,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/201010/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20108,
+      "name": "코멧",
+      "skinId": 201080,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/201080/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20110,
+      "name": "시그넷",
+      "skinId": 201100,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/201100/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20109,
+      "name": "크레센트",
+      "skinId": 201090,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/201090/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20112,
+      "name": "포춘",
+      "skinId": 201120,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/201120/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20121,
+      "name": "재블린",
+      "skinId": 201210,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/201210/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20122,
+      "name": "주노",
+      "skinId": 201220,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/201220/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20302,
+      "name": "슈롭셔",
+      "skinId": 203020,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/203020/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20303,
+      "name": "켄트",
+      "skinId": 203030,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/203030/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20304,
+      "name": "서포크",
+      "skinId": 203040,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/203040/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20305,
+      "name": "노포크",
+      "skinId": 203050,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/203050/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20403,
+      "name": "후드",
+      "skinId": 204030,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/204030/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 20506,
+      "name": "프린스 오브 웨일즈",
+      "skinId": 205060,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/205060/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 31201,
+      "name": "아카시",
+      "skinId": 312010,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/312010/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 40123,
+      "name": "Z23",
+      "skinId": 401230,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/401230/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 40303,
+      "name": "프린츠 오이겐",
+      "skinId": 403030,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/403030/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 40501,
+      "name": "비스마르크",
+      "skinId": 405010,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/405010/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030001,
+      "name": "쿠온",
+      "skinId": 10300010,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300010/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030003,
+      "name": "루루티에",
+      "skinId": 10300030,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300030/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030002,
+      "name": "네코네",
+      "skinId": 10300020,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300020/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030004,
+      "name": "우루루",
+      "skinId": 10300040,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300040/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030005,
+      "name": "사라나",
+      "skinId": 10300050,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300050/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030006,
+      "name": "후미뤼르",
+      "skinId": 10300060,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300060/painting.png"
+        }
+      ]
+    }
+  ]
+}

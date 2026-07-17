@@ -1,0 +1,1129 @@
+{
+  "generatedAt": "2026-07-17T23:23:39.390Z",
+  "summary": {
+    "identityExceptions": 6,
+    "obtainabilityAltoyOnly": 19,
+    "obtainabilityDifferent": 21,
+    "missingReferenceImages": 37,
+    "cnOnlyExcluded": 5
+  },
+  "identityExceptions": [
+    {
+      "appId": "Z031",
+      "name": "쿠온",
+      "appGid": 10300010,
+      "altoyGid": 1030001,
+      "skinId": 10300010,
+      "reason": "앱 gid 필드에 ALtoy gid가 아닌 기본 스킨 ID가 저장되어 이름 보조 매칭이 필요함",
+      "iconFile": "10300010.webp"
+    },
+    {
+      "appId": "Z032",
+      "name": "네코네",
+      "appGid": 10300020,
+      "altoyGid": 1030002,
+      "skinId": 10300020,
+      "reason": "앱 gid 필드에 ALtoy gid가 아닌 기본 스킨 ID가 저장되어 이름 보조 매칭이 필요함",
+      "iconFile": "10300020.webp"
+    },
+    {
+      "appId": "Z033",
+      "name": "루루티에",
+      "appGid": 10300030,
+      "altoyGid": 1030003,
+      "skinId": 10300030,
+      "reason": "앱 gid 필드에 ALtoy gid가 아닌 기본 스킨 ID가 저장되어 이름 보조 매칭이 필요함",
+      "iconFile": "10300030.webp"
+    },
+    {
+      "appId": "Z034",
+      "name": "우루루",
+      "appGid": 10300040,
+      "altoyGid": 1030004,
+      "skinId": 10300040,
+      "reason": "앱 gid 필드에 ALtoy gid가 아닌 기본 스킨 ID가 저장되어 이름 보조 매칭이 필요함",
+      "iconFile": "10300040.webp"
+    },
+    {
+      "appId": "Z035",
+      "name": "사라나",
+      "appGid": 10300050,
+      "altoyGid": 1030005,
+      "skinId": 10300050,
+      "reason": "앱 gid 필드에 ALtoy gid가 아닌 기본 스킨 ID가 저장되어 이름 보조 매칭이 필요함",
+      "iconFile": "10300050.webp"
+    },
+    {
+      "appId": "Z036",
+      "name": "후미뤼르",
+      "appGid": 10300060,
+      "altoyGid": 1030006,
+      "skinId": 10300060,
+      "reason": "앱 gid 필드에 ALtoy gid가 아닌 기본 스킨 ID가 저장되어 이름 보조 매칭이 필요함",
+      "iconFile": "10300060.webp"
+    }
+  ],
+  "obtainabilityReview": [
+    {
+      "gid": 30321,
+      "name": "꼬마 운젠",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 꼬마 선인의 보물찾기"
+      ],
+      "appliedObtain": [
+        "이벤트: 꼬마 선인의 보물찾기"
+      ],
+      "iconFile": "303210.png"
+    },
+    {
+      "gid": 30517,
+      "name": "꼬마 무사시",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 아직 미숙한 수호자"
+      ],
+      "appliedObtain": [
+        "이벤트: 아직 미숙한 수호자"
+      ],
+      "iconFile": "305170.png"
+    },
+    {
+      "gid": 40114,
+      "name": "Z14",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "appliedObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "iconFile": "401140.png"
+    },
+    {
+      "gid": 40115,
+      "name": "Z15",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "appliedObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "iconFile": "401150.png"
+    },
+    {
+      "gid": 40199,
+      "name": "오토 폰 알벤슬레벤",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 오엽각 교차점"
+      ],
+      "altoyObtain": [
+        "이벤트: 오엽각 교차점",
+        "소형함 건조"
+      ],
+      "appliedObtain": [
+        "이벤트: 오엽각 교차점",
+        "소형함 건조"
+      ],
+      "iconFile": "401990.png"
+    },
+    {
+      "gid": 40210,
+      "name": "레겐스부르크",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 오엽각 교차점"
+      ],
+      "altoyObtain": [
+        "이벤트: 오엽각 교차점",
+        "소형함 건조"
+      ],
+      "appliedObtain": [
+        "이벤트: 오엽각 교차점",
+        "소형함 건조"
+      ],
+      "iconFile": "402100.png"
+    },
+    {
+      "gid": 40317,
+      "name": "프린츠 모리츠",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "appliedObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "iconFile": "403170.png"
+    },
+    {
+      "gid": 40505,
+      "name": "비스마르크 Zwei",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 오엽각 교차점"
+      ],
+      "altoyObtain": [
+        "이벤트: 오엽각 교차점",
+        "대형함 건조, 특형함 건조",
+        "상설 UR 함선 교환"
+      ],
+      "appliedObtain": [
+        "이벤트: 오엽각 교차점",
+        "대형함 건조, 특형함 건조",
+        "상설 UR 함선 교환"
+      ],
+      "iconFile": "405050.png"
+    },
+    {
+      "gid": 40507,
+      "name": "괴츠 폰 베를리힝겐",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "appliedObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "iconFile": "405070.png"
+    },
+    {
+      "gid": 40603,
+      "name": "야드",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 오엽각 교차점"
+      ],
+      "altoyObtain": [
+        "이벤트: 오엽각 교차점",
+        "연습 상점(랜덤 출현)"
+      ],
+      "appliedObtain": [
+        "이벤트: 오엽각 교차점",
+        "연습 상점(랜덤 출현)"
+      ],
+      "iconFile": "406030.png"
+    },
+    {
+      "gid": 40815,
+      "name": "U-2501",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "appliedObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "iconFile": "408150.png"
+    },
+    {
+      "gid": 80106,
+      "name": "랑트레피드",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 환몽의 카발카드"
+      ],
+      "appliedObtain": [
+        "이벤트: 환몽의 카발카드"
+      ],
+      "iconFile": "801060.png"
+    },
+    {
+      "gid": 80602,
+      "name": "아로망슈",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 환몽의 카발카드"
+      ],
+      "appliedObtain": [
+        "이벤트: 환몽의 카발카드"
+      ],
+      "iconFile": "806020.png"
+    },
+    {
+      "gid": 81801,
+      "name": "셰르부르",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 환몽의 카발카드"
+      ],
+      "appliedObtain": [
+        "이벤트: 환몽의 카발카드"
+      ],
+      "iconFile": "818010.png"
+    },
+    {
+      "gid": 90114,
+      "name": "로데슈",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "이벤트: 환몽 간주곡"
+      ],
+      "altoyObtain": [
+        "이벤트: 환몽 간주곡",
+        "소형함 건조"
+      ],
+      "appliedObtain": [
+        "이벤트: 환몽 간주곡",
+        "소형함 건조"
+      ],
+      "iconFile": "901140.png"
+    },
+    {
+      "gid": 90202,
+      "name": "마르세예즈",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 불타는 아이리스 회상곡"
+      ],
+      "altoyObtain": [
+        "이벤트: 불타는 아이리스 회상곡",
+        "소형함 건조"
+      ],
+      "appliedObtain": [
+        "이벤트: 불타는 아이리스 회상곡",
+        "소형함 건조"
+      ],
+      "iconFile": "902020.png"
+    },
+    {
+      "gid": 90303,
+      "name": "듀플렉스",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "이벤트: 환몽 간주곡"
+      ],
+      "altoyObtain": [
+        "이벤트: 환몽 간주곡",
+        "중형함 건조"
+      ],
+      "appliedObtain": [
+        "이벤트: 환몽 간주곡",
+        "중형함 건조"
+      ],
+      "iconFile": "903030.png"
+    },
+    {
+      "gid": 90402,
+      "name": "스트라스부르",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "이벤트: 환몽 간주곡"
+      ],
+      "altoyObtain": [
+        "이벤트: 환몽 간주곡",
+        "중형함 건조"
+      ],
+      "appliedObtain": [
+        "이벤트: 환몽 간주곡",
+        "중형함 건조"
+      ],
+      "iconFile": "904020.png"
+    },
+    {
+      "gid": 970101,
+      "name": "헌터(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9701010.png"
+    },
+    {
+      "gid": 970102,
+      "name": "포춘(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9701020.png"
+    },
+    {
+      "gid": 970103,
+      "name": "하타카제(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드 투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9701030.png"
+    },
+    {
+      "gid": 970112,
+      "name": "브리스톨(META)",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "META 연구실·정보 동기화"
+      ],
+      "appliedObtain": [
+        "META 연구실·정보 동기화"
+      ],
+      "iconFile": "9701120.png"
+    },
+    {
+      "gid": 970202,
+      "name": "멤피스(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드 투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9702020.png"
+    },
+    {
+      "gid": 970203,
+      "name": "셰필드(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드 투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9702030.png"
+    },
+    {
+      "gid": 970204,
+      "name": "라 갈리소니에르(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드 투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9702040.png"
+    },
+    {
+      "gid": 970212,
+      "name": "쾨니히스베르크(META)",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "META 연구실·정보 동기화"
+      ],
+      "appliedObtain": [
+        "META 연구실·정보 동기화"
+      ],
+      "iconFile": "9702120.png"
+    },
+    {
+      "gid": 970301,
+      "name": "트렌토(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9703010.png"
+    },
+    {
+      "gid": 970501,
+      "name": "후소(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드 투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9705010.png"
+    },
+    {
+      "gid": 970502,
+      "name": "야마시로(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드 투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9705020.png"
+    },
+    {
+      "gid": 970601,
+      "name": "히요(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드 투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9706010.png"
+    },
+    {
+      "gid": 970602,
+      "name": "준요(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드 투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9706020.png"
+    },
+    {
+      "gid": 970605,
+      "name": "엘베(META)",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "appliedObtain": [
+        "이벤트: 성인 전의 동맹"
+      ],
+      "iconFile": "9706050.png"
+    },
+    {
+      "gid": 970801,
+      "name": "U-556(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 오엽각 교차점"
+      ],
+      "altoyObtain": [
+        "이벤트: 오엽각 교차점",
+        "특형함 건조"
+      ],
+      "appliedObtain": [
+        "이벤트: 오엽각 교차점",
+        "특형함 건조"
+      ],
+      "iconFile": "9708010.png"
+    },
+    {
+      "gid": 971201,
+      "name": "베스탈(META)",
+      "status": "different",
+      "reason": "KR 스냅샷보다 최신인 ALtoy 입수처를 적용함",
+      "resolution": "altoy-applied",
+      "krObtain": [
+        "한정 이벤트: 월드 투어"
+      ],
+      "altoyObtain": [
+        "META상점 교환"
+      ],
+      "appliedObtain": [
+        "META상점 교환"
+      ],
+      "iconFile": "9712010.png"
+    },
+    {
+      "gid": 10300010,
+      "name": "쿠온",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "appliedObtain": [
+        "입수 못함"
+      ],
+      "iconFile": "10300010.webp"
+    },
+    {
+      "gid": 10300020,
+      "name": "네코네",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "appliedObtain": [
+        "입수 못함"
+      ],
+      "iconFile": "10300020.webp"
+    },
+    {
+      "gid": 10300030,
+      "name": "루루티에",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "appliedObtain": [
+        "입수 못함"
+      ],
+      "iconFile": "10300030.webp"
+    },
+    {
+      "gid": 10300040,
+      "name": "우루루",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "appliedObtain": [
+        "입수 못함"
+      ],
+      "iconFile": "10300040.webp"
+    },
+    {
+      "gid": 10300050,
+      "name": "사라나",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "appliedObtain": [
+        "입수 못함"
+      ],
+      "iconFile": "10300050.webp"
+    },
+    {
+      "gid": 10300060,
+      "name": "후미뤼르",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "appliedObtain": [
+        "입수 못함"
+      ],
+      "iconFile": "10300060.webp"
+    }
+  ],
+  "missingReferenceImages": [
+    {
+      "gid": 10105,
+      "name": "그리들리",
+      "skinId": 101050,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "101050.png"
+    },
+    {
+      "gid": 10106,
+      "name": "크레이븐",
+      "skinId": 101060,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "101060.png"
+    },
+    {
+      "gid": 10107,
+      "name": "맥콜",
+      "skinId": 101070,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "101070.png"
+    },
+    {
+      "gid": 10109,
+      "name": "플레처",
+      "skinId": 101090,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "101090.png"
+    },
+    {
+      "gid": 10112,
+      "name": "대처",
+      "skinId": 101120,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "101120.png"
+    },
+    {
+      "gid": 10117,
+      "name": "라피",
+      "skinId": 101170,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "101170.png"
+    },
+    {
+      "gid": 10124,
+      "name": "심즈",
+      "skinId": 101240,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "101240.png"
+    },
+    {
+      "gid": 10125,
+      "name": "허먼",
+      "skinId": 101250,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "101250.png"
+    },
+    {
+      "gid": 10303,
+      "name": "노샘프턴",
+      "skinId": 103030,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "103030.png"
+    },
+    {
+      "gid": 10304,
+      "name": "시카고",
+      "skinId": 103040,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "103040.png"
+    },
+    {
+      "gid": 10306,
+      "name": "포틀랜드",
+      "skinId": 103060,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "103060.png"
+    },
+    {
+      "gid": 10307,
+      "name": "인디애나폴리스",
+      "skinId": 103070,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "103070.png"
+    },
+    {
+      "gid": 10601,
+      "name": "롱 아일랜드",
+      "skinId": 106010,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "106010.png"
+    },
+    {
+      "gid": 10707,
+      "name": "호넷",
+      "skinId": 107070,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "107070.png"
+    },
+    {
+      "gid": 20101,
+      "name": "아마존",
+      "skinId": 201010,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "201010.png"
+    },
+    {
+      "gid": 20108,
+      "name": "코멧",
+      "skinId": 201080,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "201080.png"
+    },
+    {
+      "gid": 20109,
+      "name": "크레센트",
+      "skinId": 201090,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "201090.png"
+    },
+    {
+      "gid": 20110,
+      "name": "시그넷",
+      "skinId": 201100,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "201100.png"
+    },
+    {
+      "gid": 20112,
+      "name": "포춘",
+      "skinId": 201120,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "201120.png"
+    },
+    {
+      "gid": 20121,
+      "name": "재블린",
+      "skinId": 201210,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "201210.png"
+    },
+    {
+      "gid": 20122,
+      "name": "주노",
+      "skinId": 201220,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "201220.png"
+    },
+    {
+      "gid": 20302,
+      "name": "슈롭셔",
+      "skinId": 203020,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "203020.png"
+    },
+    {
+      "gid": 20303,
+      "name": "켄트",
+      "skinId": 203030,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "203030.png"
+    },
+    {
+      "gid": 20304,
+      "name": "서포크",
+      "skinId": 203040,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "203040.png"
+    },
+    {
+      "gid": 20305,
+      "name": "노포크",
+      "skinId": 203050,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "203050.png"
+    },
+    {
+      "gid": 20403,
+      "name": "후드",
+      "skinId": 204030,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "204030.png"
+    },
+    {
+      "gid": 20506,
+      "name": "프린스 오브 웨일즈",
+      "skinId": 205060,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "205060.png"
+    },
+    {
+      "gid": 31201,
+      "name": "아카시",
+      "skinId": 312010,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "312010.png"
+    },
+    {
+      "gid": 40123,
+      "name": "Z23",
+      "skinId": 401230,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "401230.png"
+    },
+    {
+      "gid": 40303,
+      "name": "프린츠 오이겐",
+      "skinId": 403030,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "403030.png"
+    },
+    {
+      "gid": 40501,
+      "name": "비스마르크",
+      "skinId": 405010,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "405010.png"
+    },
+    {
+      "gid": 1030001,
+      "name": "쿠온",
+      "skinId": 10300010,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "10300010.webp"
+    },
+    {
+      "gid": 1030002,
+      "name": "네코네",
+      "skinId": 10300020,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "10300020.webp"
+    },
+    {
+      "gid": 1030003,
+      "name": "루루티에",
+      "skinId": 10300030,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "10300030.webp"
+    },
+    {
+      "gid": 1030004,
+      "name": "우루루",
+      "skinId": 10300040,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "10300040.webp"
+    },
+    {
+      "gid": 1030005,
+      "name": "사라나",
+      "skinId": 10300050,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "10300050.webp"
+    },
+    {
+      "gid": 1030006,
+      "name": "후미뤼르",
+      "skinId": 10300060,
+      "missing": [
+        "painting.png"
+      ],
+      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "iconFile": "10300060.webp"
+    }
+  ],
+  "cnOnlyExcluded": [
+    {
+      "gid": 29906,
+      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
+      "iconFile": null
+    },
+    {
+      "gid": 39908,
+      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
+      "iconFile": null
+    },
+    {
+      "gid": 49911,
+      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
+      "iconFile": null
+    },
+    {
+      "gid": 89905,
+      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
+      "iconFile": null
+    },
+    {
+      "gid": 129901,
+      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
+      "iconFile": null
+    }
+  ]
+}

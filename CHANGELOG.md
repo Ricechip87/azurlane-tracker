@@ -1,5 +1,55 @@
 # Change Log
 
+## 2026-07-14 - Establish CN-First Data Refresh Pipeline
+
+### Why
+- The Korean service roster must remain the app's display boundary, while fleet tech details need the newer Chinese source.
+- Updating ALtoy, Fernando2603, AzurLaneData, the CN Lua scripts, the maintained tech sheet, and reference images by hand was difficult to reproduce and audit.
+
+### Changed
+- Added a single `npm.cmd run refresh:data` pipeline that refreshes source snapshots, regenerates the roster and obtainability JSON, applies fleet tech data, fills available reference images, and runs the source audit.
+- Kept the displayed roster constrained to ALtoy/KR service data; CN-only ships are reported and explicitly excluded.
+- Changed fleet tech priority to CN Lua, KR JSON, the JP-based maintained tech sheet, then the existing app value.
+- Preserved the app's established Korean ship-type labels and ordering while replacing their underlying fleet tech values.
+- Corrected the previously swapped Elbe(META) and Königsberg(META) gids/icon identities before applying CN fleet tech records.
+- Added a brace-aware CN Lua parser with regression coverage for both table declaration forms.
+- Added tracked source and image audit reports under `reports/data-sources/`, including source hashes, cross-source counts, display-scope exceptions, and missing-image details.
+- Added an image-card review report for identifier exceptions, obtainability disagreements, unavailable reference paintings, and CN-only excluded ships.
+- Applied normalized-name fallback matching to ALtoy obtainability lookup, while preserving the explicit unavailable status for the six Utawarerumono collaboration ships.
+- Updated 21 ships with newer permanent-build, exchange, exercise-shop, or META-shop obtainability from ALtoy instead of retaining their older KR event-only entries.
+- Added reference-data and reference-image sync scripts. All available icon and shipyard assets are present; 37 `painting.png` files that Fernando2603 does not publish remain recorded as unavailable.
+
+### Verified
+- `npm.cmd run refresh:data`
+- Display roster: app 870 / ALtoy 870 / KR 857, with no out-of-scope or missing ALtoy entries.
+- Fleet tech: CN 742 records, 737 applied to displayed ships, 133 displayed ships without CN fleet tech, and 5 CN-only gids excluded.
+- Current JSON versus applicable CN fleet tech: 0 mismatches.
+- Public app icons: 0 missing.
+
+## 2026-07-14 - Add Bristol META And Illusory Cavalcade Ships
+
+### Why
+- Bristol(META) existed in the app with a missing icon and zeroed fleet tech data.
+- Cherbourg, Arromanches, and L'Intrépide were added after the last local character snapshot.
+- The generated AzurLaneData JSON snapshots lagged behind the latest fleet tech Lua and the maintained fleet tech spreadsheet.
+
+### Changed
+- Added Cherbourg, Arromanches, and L'Intrépide with their Korean names, faction, ship type, fleet tech points, acquired stat bonus, Lv.120 stat bonus, gid, and icon path.
+- Corrected Bristol(META) to `13 / 26 / 19`, destroyer firepower `+1` on acquisition, and destroyer durability `+2` at Lv.120.
+- Refreshed the fleet tech spreadsheet source, which also filled Königsberg(META)'s previously empty acquired and Lv.120 durability bonuses.
+- Added `characterOverrides.json` and merged it during CSV conversion so ships missing from the older main roster CSV survive regeneration.
+- Regenerated obtainability data from the latest ALtoy snapshots, including the Illusory Cavalcade event entries and Bristol(META)'s updated local-resource cross-check.
+- Added tracked app icons for all four ships.
+- Refreshed the ignored local reference snapshots from ALtoy, Fernando2603/AzurLane, AzurLaneData, and the current fleet tech spreadsheet.
+- Stored the latest CN fleet tech Lua source and downloaded icon, shipyard, and painting assets for all four ships under the ignored `참고용/` directory.
+- Added a data regression test covering all four character records and their tracked app icons.
+
+### Verified
+- `node src/data/characters.test.mjs`
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-06-22 - Add Growth Card Detail Popup
 
 ### Why

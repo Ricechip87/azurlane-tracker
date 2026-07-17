@@ -1,6 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import characters from '../src/data/characters.json' with { type: 'json' }
+import {
+  selectObtainSources,
+  UNAVAILABLE_OBTAIN,
+} from './lib/obtainability-sources.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const OUTPUT_PATH = path.join(ROOT, 'src/data/shipObtainability.json')
@@ -9,16 +13,6 @@ const ALTOY_FILES = [
   'data/ship_info_lite.json',
   'data/ship_info_data.json',
 ]
-const UNAVAILABLE_OBTAIN = '\uC785\uC218 \uBABB\uD568'
-const MANUAL_UNAVAILABLE_GIDS = new Set([
-  10300010,
-  10300020,
-  10300030,
-  10300040,
-  10300050,
-  10300060,
-])
-
 const DIFFICULTY = {
   EASY: { rank: 1, key: 'easy', label: '쉬움' },
   NORMAL: { rank: 2, key: 'normal', label: '보통' },
@@ -42,6 +36,7 @@ const easyPatterns = [
 ]
 
 const normalPatterns = [
+  /^META상점 교환$/,
   /^(소형함|중형함|대형함|특형함) 건조$/,
   /^대형함 건조[,·] 특형함 건조$/,
   /^대형함 건조·특형함 건조$/,
@@ -100,6 +95,10 @@ function getDescriptionList(description) {
 
 function normalizeList(values) {
   return [...new Set((values || []).map(value => String(value).trim()).filter(Boolean))]
+}
+
+function normalizeName(value) {
+  return String(value || '').normalize('NFKC').toLowerCase().replace(/[·ㆍ\s()（）・]/g, '')
 }
 
 function buildKrGroupByGid(krGroup) {
@@ -230,19 +229,14 @@ function compareLists(local, altoy) {
 
 function buildRecord(character, sources) {
   const gid = Number(character.gid)
-  const localShip = sources.localShipByGid.get(gid)
+  const normalizedName = normalizeName(character.name)
+  const localShip = sources.localShipByGid.get(gid) || sources.localShipByName.get(normalizedName)
   const krGroup = sources.krGroupByGid.get(gid)
-  const altoy = sources.altoyByGid.get(gid)
+  const altoy = sources.altoyByGid.get(gid) || sources.altoyByName.get(normalizedName)
 
   const localKrObtain = getDescriptionList(krGroup?.description)
   const altoyObtain = normalizeList(altoy?.description || [])
-  const obtain = localKrObtain.length > 0
-    ? localKrObtain
-    : altoyObtain.length > 0
-      ? altoyObtain
-      : MANUAL_UNAVAILABLE_GIDS.has(gid)
-        ? [UNAVAILABLE_OBTAIN]
-        : []
+  const obtain = selectObtainSources({ gid, localKrObtain, altoyObtain })
   const build = getBuildInfo(localShip, altoy)
   const mapDrops = getMapDrops(altoy)
   const difficulty = classifyDifficulty(obtain, build)
@@ -317,8 +311,10 @@ const altoyFullData = Array.isArray(altoySnapshots['data/ship_info_data.json'].d
 
 const sources = {
   localShipByGid: new Map(localShip.map(row => [Number(row.gid), row])),
+  localShipByName: new Map(localShip.map(row => [normalizeName(row.name), row])),
   krGroupByGid: buildKrGroupByGid(krGroup),
   altoyByGid: new Map(altoyFullData.map(row => [Number(row.gid), row])),
+  altoyByName: new Map(altoyFullData.map(row => [normalizeName(row.name), row])),
 }
 
 const records = characters

@@ -6,22 +6,21 @@
       "localResource": "참고용/AzurLane/ship.json",
       "altoy": "https://jforplay.github.io/altoy/data/ship_info_data.json"
     },
-    "generatedAt": "2026-06-18T19:38:07.440Z",
-    "total": 867,
-    "withObtain": 867,
+    "generatedAt": "2026-07-17T23:23:38.525Z",
+    "total": 870,
+    "withObtain": 870,
     "withoutObtain": 0,
     "verification": {
-      "altoy-only": 10,
-      "different": 1,
-      "empty": 6,
-      "matched": 850
+      "altoy-only": 19,
+      "different": 21,
+      "matched": 830
     },
     "difficulty": {
       "easy": 159,
       "excluded": 6,
       "hard": 39,
-      "limited": 308,
-      "normal": 355
+      "limited": 291,
+      "normal": 375
     },
     "altoySnapshots": {
       "data/ship_info_lite.json": {
@@ -23988,7 +23987,8 @@
       "faction": "철혈",
       "shipType": "구축",
       "obtain": [
-        "한정 이벤트: 오엽각 교차점"
+        "이벤트: 오엽각 교차점",
+        "소형함 건조"
       ],
       "obtainEn": [
         "Event: Confluence of Nothingness"
@@ -24002,17 +24002,18 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 오엽각 교차점: 한정/복각 대기"
+          "이벤트: 오엽각 교차점: 한정/복각 대기",
+          "소형함 건조: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -24562,7 +24563,8 @@
       "faction": "철혈",
       "shipType": "경순",
       "obtain": [
-        "한정 이벤트: 오엽각 교차점"
+        "이벤트: 오엽각 교차점",
+        "소형함 건조"
       ],
       "obtainEn": [
         "Event: Confluence of Nothingness"
@@ -24576,17 +24578,18 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 오엽각 교차점: 한정/복각 대기"
+          "이벤트: 오엽각 교차점: 한정/복각 대기",
+          "소형함 건조: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -25650,7 +25653,9 @@
       "faction": "철혈",
       "shipType": "전함",
       "obtain": [
-        "한정 이벤트: 오엽각 교차점"
+        "이벤트: 오엽각 교차점",
+        "대형함 건조, 특형함 건조",
+        "상설 UR 함선 교환"
       ],
       "obtainEn": [
         "Event: Confluence of Nothingness"
@@ -25664,17 +25669,19 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 오엽각 교차점: 한정/복각 대기"
+          "이벤트: 오엽각 교차점: 한정/복각 대기",
+          "대형함 건조, 특형함 건조: 보통",
+          "상설 UR 함선 교환: 어려움"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -25829,7 +25836,8 @@
       "faction": "철혈",
       "shipType": "경항모",
       "obtain": [
-        "한정 이벤트: 오엽각 교차점"
+        "이벤트: 오엽각 교차점",
+        "연습 상점(랜덤 출현)"
       ],
       "obtainEn": [
         "Event: Confluence of Nothingness"
@@ -25846,14 +25854,15 @@
         "key": "limited",
         "label": "한정/복각 대기",
         "reasons": [
-          "한정 이벤트: 오엽각 교차점: 한정/복각 대기"
+          "이벤트: 오엽각 교차점: 한정/복각 대기",
+          "연습 상점(랜덤 출현): 미확인"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -30836,6 +30845,39 @@
       }
     },
     {
+      "id": 745,
+      "gid": 80106,
+      "name": "랑트레피드",
+      "rarity": "SR",
+      "faction": "아이리스",
+      "shipType": "구축",
+      "obtain": [
+        "이벤트: 환몽의 카발카드"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "difficulty": {
+        "key": "limited",
+        "label": "한정/복각 대기",
+        "reasons": [
+          "이벤트: 환몽의 카발카드: 한정/복각 대기"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
       "id": 522,
       "gid": 80107,
       "name": "르 테리블",
@@ -31374,6 +31416,39 @@
       }
     },
     {
+      "id": 744,
+      "gid": 80602,
+      "name": "아로망슈",
+      "rarity": "SSR",
+      "faction": "아이리스",
+      "shipType": "경항모",
+      "obtain": [
+        "이벤트: 환몽의 카발카드"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": "02:30:00"
+      },
+      "mapDrops": [],
+      "difficulty": {
+        "key": "limited",
+        "label": "한정/복각 대기",
+        "reasons": [
+          "이벤트: 환몽의 카발카드: 한정/복각 대기"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
       "id": 458,
       "gid": 80701,
       "name": "베아른",
@@ -31482,6 +31557,39 @@
         "localResource": true,
         "altoy": true,
         "status": "matched"
+      }
+    },
+    {
+      "id": 743,
+      "gid": 81801,
+      "name": "셰르부르",
+      "rarity": "SSR",
+      "faction": "아이리스",
+      "shipType": "대순",
+      "obtain": [
+        "이벤트: 환몽의 카발카드"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": "04:05:00"
+      },
+      "mapDrops": [],
+      "difficulty": {
+        "key": "limited",
+        "label": "한정/복각 대기",
+        "reasons": [
+          "이벤트: 환몽의 카발카드: 한정/복각 대기"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {
@@ -32004,31 +32112,33 @@
       "faction": "비시아",
       "shipType": "구축",
       "obtain": [
-        "이벤트: 환몽 간주곡"
+        "이벤트: 환몽 간주곡",
+        "소형함 건조"
       ],
       "obtainEn": [
         "Event: Interlude of Illusions"
       ],
       "build": {
-        "light": false,
+        "light": true,
         "heavy": false,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "00:33:00"
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "이벤트: 환몽 간주곡: 한정/복각 대기"
+          "이벤트: 환몽 간주곡: 한정/복각 대기",
+          "소형함 건조: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -32077,7 +32187,8 @@
       "faction": "비시아",
       "shipType": "경순",
       "obtain": [
-        "한정 이벤트: 불타는 아이리스 회상곡"
+        "이벤트: 불타는 아이리스 회상곡",
+        "소형함 건조"
       ],
       "obtainEn": [
         "Event: Anthem of Remembrance",
@@ -32092,10 +32203,11 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 불타는 아이리스 회상곡: 한정/복각 대기"
+          "이벤트: 불타는 아이리스 회상곡: 한정/복각 대기",
+          "소형함 건조: 보통"
         ]
       },
       "verification": {
@@ -32189,31 +32301,33 @@
       "faction": "비시아",
       "shipType": "중순",
       "obtain": [
-        "이벤트: 환몽 간주곡"
+        "이벤트: 환몽 간주곡",
+        "중형함 건조"
       ],
       "obtainEn": [
         "Event: Interlude of Illusions"
       ],
       "build": {
         "light": false,
-        "heavy": false,
+        "heavy": true,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "01:45:00"
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "이벤트: 환몽 간주곡: 한정/복각 대기"
+          "이벤트: 환몽 간주곡: 한정/복각 대기",
+          "중형함 건조: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -32262,31 +32376,33 @@
       "faction": "비시아",
       "shipType": "순전",
       "obtain": [
-        "이벤트: 환몽 간주곡"
+        "이벤트: 환몽 간주곡",
+        "중형함 건조"
       ],
       "obtainEn": [
         "Event: Interlude of Illusions"
       ],
       "build": {
         "light": false,
-        "heavy": false,
+        "heavy": true,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "04:05:00"
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "이벤트: 환몽 간주곡: 한정/복각 대기"
+          "이벤트: 환몽 간주곡: 한정/복각 대기",
+          "중형함 건조: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -33191,7 +33307,7 @@
       "faction": "META",
       "shipType": "구축",
       "obtain": [
-        "한정 이벤트: 월드투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -33205,17 +33321,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -33226,7 +33342,7 @@
       "faction": "META",
       "shipType": "구축",
       "obtain": [
-        "한정 이벤트: 월드투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -33240,17 +33356,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -33261,7 +33377,7 @@
       "faction": "META",
       "shipType": "구축",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -33275,17 +33391,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드 투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -33578,7 +33694,9 @@
       "obtain": [
         "META 연구실·정보 동기화"
       ],
-      "obtainEn": [],
+      "obtainEn": [
+        "META Lab - Coordinate Analysis"
+      ],
       "build": {
         "light": false,
         "heavy": false,
@@ -33596,7 +33714,7 @@
       },
       "verification": {
         "localKr": false,
-        "localResource": false,
+        "localResource": true,
         "altoy": true,
         "status": "altoy-only"
       }
@@ -33644,7 +33762,7 @@
       "faction": "META",
       "shipType": "경순",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -33658,17 +33776,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드 투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -33679,7 +33797,7 @@
       "faction": "META",
       "shipType": "경순",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -33693,17 +33811,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드 투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -33714,7 +33832,7 @@
       "faction": "META",
       "shipType": "경순",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -33728,17 +33846,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드 투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -33987,12 +34105,12 @@
       }
     },
     {
-      "id": "M060",
+      "id": "M061",
       "gid": 970212,
-      "name": "엘베(META)",
-      "rarity": "SSR",
+      "name": "쾨니히스베르크(META)",
+      "rarity": "SR",
       "faction": "META",
-      "shipType": "경항모",
+      "shipType": "경순",
       "obtain": [
         "META 연구실·정보 동기화"
       ],
@@ -34029,7 +34147,7 @@
       "faction": "META",
       "shipType": "중순",
       "obtain": [
-        "한정 이벤트: 월드투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -34043,17 +34161,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -34449,7 +34567,7 @@
       "faction": "META",
       "shipType": "전함",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -34463,17 +34581,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드 투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -34484,7 +34602,7 @@
       "faction": "META",
       "shipType": "전함",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -34498,17 +34616,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드 투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -34799,7 +34917,7 @@
       "faction": "META",
       "shipType": "경항모",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -34813,17 +34931,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드 투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -34834,7 +34952,7 @@
       "faction": "META",
       "shipType": "경항모",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -34848,17 +34966,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드 투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -34932,12 +35050,12 @@
       }
     },
     {
-      "id": "M061",
+      "id": "M060",
       "gid": 970605,
-      "name": "쾨니히스베르크(META)",
-      "rarity": "SR",
+      "name": "엘베(META)",
+      "rarity": "SSR",
       "faction": "META",
-      "shipType": "경순",
+      "shipType": "경항모",
       "obtain": [
         "이벤트: 성인 전의 동맹"
       ],
@@ -35254,7 +35372,8 @@
       "faction": "META",
       "shipType": "잠수",
       "obtain": [
-        "한정 이벤트: 오엽각 교차점"
+        "이벤트: 오엽각 교차점",
+        "특형함 건조"
       ],
       "obtainEn": [
         "Event: Confluence of Nothingness"
@@ -35268,17 +35387,18 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 오엽각 교차점: 한정/복각 대기"
+          "이벤트: 오엽각 교차점: 한정/복각 대기",
+          "특형함 건조: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -35289,7 +35409,7 @@
       "faction": "META",
       "shipType": "공작함",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META상점 교환"
       ],
       "obtainEn": [
         "Event: Cruise Missions"
@@ -35303,17 +35423,17 @@
       },
       "mapDrops": [],
       "difficulty": {
-        "key": "limited",
-        "label": "한정/복각 대기",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "한정 이벤트: 월드 투어: 한정/복각 대기"
+          "META상점 교환: 보통"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -38271,8 +38391,8 @@
         "light": false,
         "heavy": false,
         "special": false,
-        "limited": false,
-        "timer": null
+        "limited": true,
+        "timer": "02:05:00"
       },
       "mapDrops": [],
       "difficulty": {
@@ -38285,8 +38405,8 @@
       "verification": {
         "localKr": false,
         "localResource": false,
-        "altoy": false,
-        "status": "empty"
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {
@@ -38304,8 +38424,8 @@
         "light": false,
         "heavy": false,
         "special": false,
-        "limited": false,
-        "timer": null
+        "limited": true,
+        "timer": "00:23:00"
       },
       "mapDrops": [],
       "difficulty": {
@@ -38318,8 +38438,8 @@
       "verification": {
         "localKr": false,
         "localResource": false,
-        "altoy": false,
-        "status": "empty"
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {
@@ -38337,8 +38457,8 @@
         "light": false,
         "heavy": false,
         "special": false,
-        "limited": false,
-        "timer": null
+        "limited": true,
+        "timer": "01:48:00"
       },
       "mapDrops": [],
       "difficulty": {
@@ -38351,8 +38471,8 @@
       "verification": {
         "localKr": false,
         "localResource": false,
-        "altoy": false,
-        "status": "empty"
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {
@@ -38370,8 +38490,8 @@
         "light": false,
         "heavy": false,
         "special": false,
-        "limited": false,
-        "timer": null
+        "limited": true,
+        "timer": "02:25:00"
       },
       "mapDrops": [],
       "difficulty": {
@@ -38384,8 +38504,8 @@
       "verification": {
         "localKr": false,
         "localResource": false,
-        "altoy": false,
-        "status": "empty"
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {
@@ -38417,8 +38537,8 @@
       "verification": {
         "localKr": false,
         "localResource": false,
-        "altoy": false,
-        "status": "empty"
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {
@@ -38450,8 +38570,8 @@
       "verification": {
         "localKr": false,
         "localResource": false,
-        "altoy": false,
-        "status": "empty"
+        "altoy": true,
+        "status": "altoy-only"
       }
     }
   ]

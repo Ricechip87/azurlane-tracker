@@ -8,6 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const CSV_PATH = path.join(__dirname, '../참고용/벽람 함순이도감 v2.1.8_배포용의 사본 - [ 메인시트.csv')
 const OUT_PATH = path.join(__dirname, '../src/data/characters.json')
+const OVERRIDES_PATH = path.join(__dirname, '../src/data/characterOverrides.json')
 
 const raw = fs.readFileSync(CSV_PATH, 'utf-8')
 const lines = raw.split('\n').map(l => l.trimEnd())
@@ -80,8 +81,38 @@ const characters = dataLines.map(line => {
     },
   }
 
-  return { ...existing, ...base }
+  return {
+    ...existing,
+    ...base,
+    // Fleet tech detail fields are refreshed separately from CN/KR/sheet sources.
+    // Preserve their established app labels and ordering when this roster CSV is regenerated.
+    statAcquired: existing.statAcquired || base.statAcquired,
+    stat120: existing.stat120 || base.stat120,
+  }
 }).filter(Boolean)
+
+const overrides = fs.existsSync(OVERRIDES_PATH)
+  ? JSON.parse(fs.readFileSync(OVERRIDES_PATH, 'utf-8'))
+  : { characters: [] }
+const characterIndexById = new Map(characters.map((character, index) => [normalizeId(character.id), index]))
+const additions = []
+
+for (const override of overrides.characters || []) {
+  const index = characterIndexById.get(normalizeId(override.id))
+  if (index === undefined) additions.push(override)
+  else characters[index] = { ...characters[index], ...override }
+}
+
+if (additions.length > 0) {
+  const insertAfterIndex = characters.findIndex(character => normalizeId(character.id) === normalizeId(overrides.insertAfterId))
+  characters.splice(insertAfterIndex >= 0 ? insertAfterIndex + 1 : characters.length, 0, ...additions)
+}
+
+for (const override of overrides.appendCharacters || []) {
+  const index = characters.findIndex(character => normalizeId(character.id) === normalizeId(override.id))
+  if (index === -1) characters.push(override)
+  else characters[index] = { ...characters[index], ...override }
+}
 
 fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true })
 fs.writeFileSync(OUT_PATH, JSON.stringify(characters, null, 2), 'utf-8')
