@@ -407,7 +407,7 @@ function TechCandidateSection({ faction, progress, characters }) {
             <span className="text-xs text-gray-500">{formatNextLevelProgress(progress)}</span>
           </div>
           <p className="mt-1 text-xs text-gray-500">
-            (현재 상시 획득하거나 이벤트에서 얻을 수 있는 함선, 또는 보유 중인 강력한 함선부터 추천됩니다.)
+            (현재 보유·육성 단계와 남은 기술점수를 기준으로 추천됩니다.)
           </p>
         </div>
         <CandidateBasisToggle basis={basis} setBasis={setBasis} />

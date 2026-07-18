@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T20:50:56.655Z",
+  "generatedAt": "2026-07-18T21:39:57.905Z",
   "summary": {
     "identityExceptions": 6,
     "obtainabilityAltoyOnly": 19,
@@ -11,6 +11,19 @@
       "collab-unknown": 89,
       "permanent": 600,
       "rerun-wait": 176
+    },
+    "acquisitionRoutes": {
+      "active-event": 5,
+      "archive-drop": 63,
+      "construction": 323,
+      "core-monthly": 25,
+      "fixed-exchange": 113,
+      "guaranteed-reward": 21,
+      "high-map-drop": 90,
+      "later-map-drop": 114,
+      "map-drop": 81,
+      "rotating-exchange": 165,
+      "special-exchange": 63
     }
   },
   "identityExceptions": [

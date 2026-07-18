@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { getAvailability, getObtainabilitySourceSections, isCurrentlyObtainable, isGrowthRecommendationEligible, isResearchCandidateActionable, obtainabilityLabel } from './obtainability.js'
+import { getAvailability, getObtainabilitySourceSections, getPrimaryAcquisitionRoute, isCurrentlyObtainable, isGrowthRecommendationEligible, isResearchCandidateActionable, obtainabilityLabel, obtainabilityRank } from './obtainability.js'
 
 const permanentEasy = { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'easy', label: '쉬움' } }
 const permanentNormal = { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'normal', label: '보통' } }
@@ -22,6 +22,29 @@ assert.equal(isResearchCandidateActionable({ acquired: false, obtainability: act
 assert.equal(isResearchCandidateActionable({ acquired: false, obtainability: rerunWait }), false)
 assert.equal(isResearchCandidateActionable({ acquired: true, obtainability: collab }), true)
 assert.equal(obtainabilityLabel(permanentEasy), '상시 획득')
+const mixedPermanent = {
+  ...permanentEasy,
+  acquisitionRoutes: [
+    { key: 'core-monthly', label: '코어 월간 교환', certainty: 'guaranteed', rank: 0, sources: ['코어 월간 교환'] },
+    { key: 'construction', label: '상시 건조', certainty: 'random', rank: 2, sources: ['소형함 상시 건조'] },
+  ],
+  primaryRoute: { key: 'core-monthly', label: '코어 월간 교환', certainty: 'guaranteed', rank: 0, sources: ['코어 월간 교환'] },
+}
+assert.equal(obtainabilityLabel(mixedPermanent), '상시 획득 · 코어 월간 교환')
+assert.equal(getPrimaryAcquisitionRoute(mixedPermanent).key, 'core-monthly')
+assert.equal(obtainabilityRank(mixedPermanent), 0)
+assert.equal(isGrowthRecommendationEligible({ acquired: false, level120: false, obtainability: mixedPermanent }), true, '확정 교환 후보는 미보유 육성 추천에 포함')
+assert.deepEqual(getObtainabilitySourceSections(mixedPermanent), [
+  { label: '코어 월간 교환 · 확정', sources: ['코어 월간 교환'] },
+  { label: '상시 건조 · 확률', sources: ['소형함 상시 건조'] },
+])
+const highMapPermanent = {
+  availability: { key: 'permanent', label: '상시 획득' },
+  difficulty: { key: 'hard', label: '어려움' },
+  primaryRoute: { key: 'high-map-drop', label: '고해역 드롭', certainty: 'random', rank: 3, sources: ['메인 스테이지 해역13-4'] },
+}
+assert.equal(isGrowthRecommendationEligible({ acquired: false, level120: false, obtainability: highMapPermanent }), false, '고해역 드롭 미보유함은 육성 추천에서 후순위 제외')
+assert.equal(obtainabilityLabel(highMapPermanent), '상시 획득 · 고해역 드롭')
 assert.deepEqual(getObtainabilitySourceSections({
   ...permanentEasy,
   obtain: ['코어 월간 교환'],

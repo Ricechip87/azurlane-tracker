@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-07-19 - Classify Multiple Permanent Acquisition Routes
+
+### Changed
+- Preserve every current acquisition route in structured `acquisitionRoutes` data while selecting the most practical route as `primaryRoute` for recommendation ordering.
+- Separate guaranteed shop exchange, Core Monthly exchange, rotating random shops, construction pools, mission rewards, War Archive drops, and main-map drop bands.
+- Classify chapter 13 and later as `고해역 드롭`; when construction or exchange is also available, prefer that easier route without hiding the high-map source.
+- Display permanent acquisition as `상시 획득 · 대표 입수 방법` and show all verified routes with `확정`, `랜덤 갱신`, `확률`, or `조건부` context in growth and research detail popups.
+- Apply the representative route consistently to growth inclusion and research candidate ordering while preserving legacy JSON fallback behavior.
+- Audit linked roster filters, fleet-tech recommendations, reports, and availability consumers; ownership filters remain independent, and the fleet-tech helper copy now accurately describes its ownership/point-based ordering.
+
+### Verified
+- Added classifier, route priority, high-map, mixed-source, generated-data, eligibility, and legacy compatibility regression tests.
+- Regenerated all 870 KR-visible obtainability records and added route-type counts to the data-source report.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Fix Research Candidate Detail Crash
 
 ### Fixed

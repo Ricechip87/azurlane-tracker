@@ -217,6 +217,7 @@ const output = {
     withoutObtain: ships.filter(ship => !ship.obtain.length).length,
     availability: countBy(ships, ship => ship.availability.key),
     difficulty: countBy(ships, ship => ship.difficulty.key),
+    acquisitionRoutes: countBy(ships.flatMap(ship => ship.acquisitionRoutes), route => route.key),
     source: altoy.source,
   },
   ships,
