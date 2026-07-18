@@ -12,9 +12,9 @@ import {
 assert.deepEqual(
   buildResearchFactionProgress(
     [
-      { name: '철혈 100', unlockRequirements: [{ type: 'tech-points', faction: '철혈', value: 100 }] },
-      { name: '철혈 300 A', unlockRequirements: [{ type: 'tech-points', faction: '철혈', value: 300 }] },
-      { name: '철혈 300 B', unlockRequirements: [{ type: 'tech-points', faction: '철혈', value: 300 }] },
+      { name: '철혈 100', generation: 2, unlockRequirements: [{ type: 'tech-points', faction: '철혈', value: 100 }] },
+      { name: '철혈 300 A', generation: 7, unlockRequirements: [{ type: 'tech-points', faction: '철혈', value: 300 }] },
+      { name: '철혈 300 B', generation: 8, unlockRequirements: [{ type: 'tech-points', faction: '철혈', value: 300 }] },
       { name: '사르데냐 200', unlockRequirements: [{ type: 'tech-points', faction: '사르데냐', value: 200 }] },
       { name: '도감 조건', unlockRequirements: [{ type: 'roster-count', faction: '철혈', lane: '전열', value: 7 }] },
     ],
@@ -26,10 +26,10 @@ assert.deepEqual(
       current: 150,
       maxRequired: 300,
       remaining: 150,
-      nextTarget: { required: 300, ships: ['철혈 300 A', '철혈 300 B'], met: false },
+      nextTarget: { required: 300, ships: ['철혈 300 B', '철혈 300 A'], met: false },
       targets: [
         { required: 100, ships: ['철혈 100'], met: true },
-        { required: 300, ships: ['철혈 300 A', '철혈 300 B'], met: false },
+        { required: 300, ships: ['철혈 300 B', '철혈 300 A'], met: false },
       ],
     },
     {

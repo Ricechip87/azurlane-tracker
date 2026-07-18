@@ -12,6 +12,8 @@ import {
   getResearchUnlockCandidates,
 } from '../utils/researchRecommendations.js'
 
+const RESEARCH_SHIP_BY_NAME = new Map(researchRecommendationData.ships.map(ship => [ship.name, ship]))
+
 export default function ResearchRecommendationPage({ characters }) {
   const [selected, setSelected] = useState(null)
   const [selectedFaction, setSelectedFaction] = useState(null)
@@ -65,6 +67,8 @@ export default function ResearchRecommendationPage({ characters }) {
   return (
     <section className="space-y-4">
       <ResearchSummary state={visibleState} />
+
+      <ResearchGuide />
 
       <ResearchFactionProgress
         items={factionProgress}
@@ -120,26 +124,27 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
       <header className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-700 bg-[#242424] px-4 py-3">
         <div>
           <h3 className="text-sm font-bold text-gray-100">진영별 개발 해금 진행</h3>
-          <p className="mt-1 text-xs text-gray-500">현재 기술점수를 기준으로 가장 가까운 미해금 개발함 하나를 표시합니다.</p>
+          <p className="mt-1 text-xs leading-5 text-gray-500">현재 기술점수에서 가장 가까운 해금 목표입니다. 같은 점수에서는 최신 기수부터 표시합니다.</p>
         </div>
         <button
           type="button"
           onClick={() => onSelect(null)}
-          className={`rounded border px-3 py-1.5 text-xs font-bold ${selectedFaction ? 'border-neutral-600 bg-neutral-800 text-gray-300 hover:border-neutral-400' : 'border-cyan-500 bg-cyan-950/60 text-cyan-200'}`}
+          disabled={!selectedFaction}
+          className={`rounded border px-3 py-1.5 text-xs font-bold ${selectedFaction ? 'border-neutral-600 bg-neutral-800 text-gray-300 hover:border-neutral-400' : 'cursor-default border-neutral-700 bg-neutral-900 text-gray-600'}`}
         >
-          전체 보기
+          {selectedFaction ? '전체 진영 보기' : '전체 진영 표시 중'}
         </button>
       </header>
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[760px] text-xs">
+        <table className="w-full min-w-[920px] text-xs">
           <thead className="bg-[#202020] text-gray-500">
             <tr>
               <th className="px-3 py-2 text-left">진영</th>
               <th className="px-3 py-2 text-right">현재 기술점수</th>
-              <th className="px-3 py-2 text-left">다음 개발함</th>
+              <th className="px-3 py-2 text-left">다음 개발 추천 목표</th>
               <th className="px-3 py-2 text-right">필요 점수</th>
               <th className="px-3 py-2 text-right">부족 점수</th>
-              <th className="px-3 py-2 text-center">목록 보기</th>
+              <th className="px-3 py-2 text-center">아래 목록 필터</th>
             </tr>
           </thead>
           <tbody>
@@ -150,8 +155,20 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
                 <tr key={item.faction} className={`border-t border-neutral-800 ${selected ? 'bg-cyan-950/35' : 'bg-[#242424] hover:bg-[#292929]'}`}>
                   <th scope="row" className="px-3 py-2.5 text-left text-sm font-bold text-gray-100">{getFactionDisplayName(item.faction)}</th>
                   <td className="px-3 py-2.5 text-right font-black text-cyan-300">{formatNumber(item.current)}점</td>
-                  <td className="max-w-[260px] truncate px-3 py-2.5 font-semibold text-gray-300" title={nextNames || '기술점수 조건 모두 충족'}>
-                    {nextNames || <span className="text-emerald-300">모두 충족</span>}
+                  <td className="min-w-[300px] px-3 py-2.5 font-semibold text-gray-300" title={nextNames || '기술점수 조건 모두 충족'}>
+                    {item.nextTarget ? (
+                      <div className="flex flex-wrap gap-1.5">
+                        {item.nextTarget.ships.map(name => {
+                          const ship = RESEARCH_SHIP_BY_NAME.get(name)
+                          return (
+                            <span key={name} className="inline-flex items-center gap-1 rounded border border-neutral-700 bg-neutral-900/70 px-2 py-1">
+                              <span className="text-[10px] font-black text-cyan-300">{ship?.generation || '?'}기</span>
+                              <span>{name}</span>
+                            </span>
+                          )
+                        })}
+                      </div>
+                    ) : <span className="text-emerald-300">기술점수 조건 모두 충족</span>}
                   </td>
                   <td className="px-3 py-2.5 text-right text-gray-300">
                     {item.nextTarget ? `${formatNumber(item.nextTarget.required)}점` : '-'}
@@ -166,7 +183,7 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
                       onClick={() => onSelect(selected ? null : item.faction)}
                       className={`rounded border px-2.5 py-1 font-bold ${selected ? 'border-cyan-400 bg-cyan-900/60 text-cyan-100' : 'border-neutral-600 bg-neutral-800 text-gray-300 hover:border-neutral-400'}`}
                     >
-                      {selected ? '선택됨' : '보기'}
+                      {selected ? '필터 해제' : '아래에서 이 진영만 보기'}
                     </button>
                   </td>
                 </tr>
@@ -175,6 +192,28 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
           </tbody>
         </table>
       </div>
+    </section>
+  )
+}
+
+function ResearchGuide() {
+  const steps = [
+    ['1', '다음 점수 목표 확인', '진영별로 가장 가까운 개발함 해금 점수를 확인합니다.'],
+    ['2', '개발할 함선 선택', '아래 최우선 추천에서 현재 바로 개발 가능한 최신 기수를 봅니다.'],
+    ['3', '부족 조건 채우기', '잠긴 함선 카드를 눌러 기술점수를 채울 육성 후보를 확인합니다.'],
+  ]
+
+  return (
+    <section className="grid gap-2 rounded border border-neutral-700 bg-[#1a1a1a] p-3 md:grid-cols-3" aria-label="개발함 추천 이용 순서">
+      {steps.map(([number, title, description]) => (
+        <div key={number} className="flex gap-3 rounded border border-neutral-800 bg-[#242424] px-3 py-2.5">
+          <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-cyan-950 text-xs font-black text-cyan-300">{number}</span>
+          <div>
+            <div className="text-xs font-bold text-gray-200">{title}</div>
+            <p className="mt-1 text-[11px] leading-4 text-gray-500">{description}</p>
+          </div>
+        </div>
+      ))}
     </section>
   )
 }

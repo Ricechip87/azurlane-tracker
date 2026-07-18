@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-07-19 - Clarify Research Recommendation Flow
+
+### Changed
+- Renamed the faction-progress target column to `다음 개발 추천 목표` and explicitly described it as the nearest tech-point unlock milestone.
+- Show generation badges on milestone ships and order ships sharing a point requirement by newest generation first.
+- Added a compact three-step guide for checking the next point target, choosing an available development ship, and filling locked conditions.
+- Reworded the faction filter controls to describe their effect on the recommendation lists below.
+
+### Verified
+- `node src/utils/researchRecommendations.test.mjs`
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Clarify Eagle Union And Northern Parliament Labels
 
 ### Fixed

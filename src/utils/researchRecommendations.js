@@ -94,6 +94,7 @@ const RESEARCH_FACTION_ORDER = ['유니온', '로열', '중앵', '철혈', '동�
 
 export function buildResearchFactionProgress(researchShips, factionTechPoints) {
   const targetsByFaction = new Map()
+  const generationByShipName = new Map((researchShips || []).map(ship => [ship.name, Number(ship.generation) || 0]))
 
   for (const ship of researchShips || []) {
     for (const requirement of ship.unlockRequirements || []) {
@@ -113,7 +114,7 @@ export function buildResearchFactionProgress(researchShips, factionTechPoints) {
       const targets = [...targetMap.entries()]
         .map(([required, ships]) => ({
           required: Number(required),
-          ships: [...ships].sort((a, b) => a.localeCompare(b, 'ko')),
+          ships: [...ships].sort((a, b) => (generationByShipName.get(b) || 0) - (generationByShipName.get(a) || 0) || a.localeCompare(b, 'ko')),
           met: current >= Number(required),
         }))
         .sort((a, b) => a.required - b.required)
