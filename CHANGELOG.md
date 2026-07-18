@@ -1,5 +1,16 @@
 # Change Log
 
+## 2026-07-18 - Simplify Faction Development Progress
+
+### Fixed
+- Replaced the unlabeled threshold-marker cards with an explicit table for faction, current tech points, next development ship, required points, remaining points, and list filtering.
+- Removed the maximum-threshold scale and marker ticks that were difficult to interpret, especially with an empty personal roster.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-18 - Add Faction Development Unlock Progress
 
 ### Changed

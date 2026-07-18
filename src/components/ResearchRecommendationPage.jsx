@@ -120,7 +120,7 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
       <header className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-700 bg-[#242424] px-4 py-3">
         <div>
           <h3 className="text-sm font-bold text-gray-100">진영별 개발 해금 진행</h3>
-          <p className="mt-1 text-xs text-gray-500">현재 기술점수와 다음 개발함 목표입니다. 카드를 누르면 해당 조건의 개발함만 표시합니다.</p>
+          <p className="mt-1 text-xs text-gray-500">현재 기술점수를 기준으로 가장 가까운 미해금 개발함 하나를 표시합니다.</p>
         </div>
         <button
           type="button"
@@ -130,63 +130,52 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
           전체 보기
         </button>
       </header>
-      <div className="grid gap-2 p-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {items.map(item => (
-          <FactionProgressCard
-            key={item.faction}
-            item={item}
-            selected={selectedFaction === item.faction}
-            onSelect={() => onSelect(selectedFaction === item.faction ? null : item.faction)}
-          />
-        ))}
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[760px] text-xs">
+          <thead className="bg-[#202020] text-gray-500">
+            <tr>
+              <th className="px-3 py-2 text-left">진영</th>
+              <th className="px-3 py-2 text-right">현재 기술점수</th>
+              <th className="px-3 py-2 text-left">다음 개발함</th>
+              <th className="px-3 py-2 text-right">필요 점수</th>
+              <th className="px-3 py-2 text-right">부족 점수</th>
+              <th className="px-3 py-2 text-center">목록 보기</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map(item => {
+              const selected = selectedFaction === item.faction
+              const nextNames = item.nextTarget?.ships.join(' · ')
+              return (
+                <tr key={item.faction} className={`border-t border-neutral-800 ${selected ? 'bg-cyan-950/35' : 'bg-[#242424] hover:bg-[#292929]'}`}>
+                  <th scope="row" className="px-3 py-2.5 text-left text-sm font-bold text-gray-100">{item.faction}</th>
+                  <td className="px-3 py-2.5 text-right font-black text-cyan-300">{formatNumber(item.current)}점</td>
+                  <td className="max-w-[260px] truncate px-3 py-2.5 font-semibold text-gray-300" title={nextNames || '기술점수 조건 모두 충족'}>
+                    {nextNames || <span className="text-emerald-300">모두 충족</span>}
+                  </td>
+                  <td className="px-3 py-2.5 text-right text-gray-300">
+                    {item.nextTarget ? `${formatNumber(item.nextTarget.required)}점` : '-'}
+                  </td>
+                  <td className={`px-3 py-2.5 text-right font-bold ${item.nextTarget ? 'text-amber-300' : 'text-emerald-300'}`}>
+                    {item.nextTarget ? `${formatNumber(item.remaining)}점` : '0점'}
+                  </td>
+                  <td className="px-3 py-2.5 text-center">
+                    <button
+                      type="button"
+                      aria-pressed={selected}
+                      onClick={() => onSelect(selected ? null : item.faction)}
+                      className={`rounded border px-2.5 py-1 font-bold ${selected ? 'border-cyan-400 bg-cyan-900/60 text-cyan-100' : 'border-neutral-600 bg-neutral-800 text-gray-300 hover:border-neutral-400'}`}
+                    >
+                      {selected ? '선택됨' : '보기'}
+                    </button>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
       </div>
     </section>
-  )
-}
-
-function FactionProgressCard({ item, selected, onSelect }) {
-  const progress = item.maxRequired > 0 ? Math.min(100, item.current / item.maxRequired * 100) : 100
-  const nextNames = item.nextTarget?.ships.join(' · ')
-  return (
-    <button
-      type="button"
-      aria-pressed={selected}
-      onClick={onSelect}
-      className={`rounded border px-3 py-3 text-left transition-colors ${selected ? 'border-cyan-400 bg-cyan-950/35 ring-1 ring-cyan-400/30' : 'border-neutral-700 bg-[#242424] hover:border-neutral-500'}`}
-    >
-      <div className="flex items-center justify-between gap-2">
-        <strong className="text-sm text-gray-100">{item.faction}</strong>
-        <span className="text-xs font-black text-cyan-300">{formatNumber(item.current)}점</span>
-      </div>
-      <div className="mt-2 min-h-9 text-[11px] leading-4">
-        {item.nextTarget ? (
-          <>
-            <div className="truncate font-bold text-gray-300" title={nextNames}>다음 · {nextNames}</div>
-            <div className="text-amber-300">{formatNumber(item.remaining)}점 부족 · 목표 {formatNumber(item.nextTarget.required)}점</div>
-          </>
-        ) : (
-          <>
-            <div className="font-bold text-emerald-300">기술점수 조건 모두 충족</div>
-            <div className="text-gray-500">최고 목표 {formatNumber(item.maxRequired)}점</div>
-          </>
-        )}
-      </div>
-      <div className="relative mt-2 h-2 rounded-full bg-neutral-800">
-        <div className={`h-full rounded-full ${item.nextTarget ? 'bg-cyan-500' : 'bg-emerald-500'}`} style={{ width: `${progress}%` }} />
-        {item.targets.map(target => (
-          <span
-            key={target.required}
-            title={`${target.ships.join(', ')} · ${target.required}점`}
-            className={`absolute top-1/2 h-3 w-0.5 -translate-x-1/2 -translate-y-1/2 ${target.met ? 'bg-emerald-200' : 'bg-gray-500'}`}
-            style={{ left: `${Math.min(100, target.required / item.maxRequired * 100)}%` }}
-          />
-        ))}
-      </div>
-      <div className="mt-1 flex justify-between text-[9px] text-gray-600">
-        <span>0</span>
-        <span>{formatNumber(item.maxRequired)}</span>
-      </div>
-    </button>
   )
 }
 
