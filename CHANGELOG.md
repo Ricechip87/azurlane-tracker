@@ -8,6 +8,7 @@
 ### Changed
 - Keep recommendation cards at a consistent `172 × 214px` display size.
 - Wrap cards according to the available width instead of stretching them to fill responsive grid columns.
+- Use an `8px` card gap so eight fixed-width cards fit within the maximum content width without leaving an avoidable empty column.
 - Allow cards to shrink only when the available viewport is narrower than the normal card width.
 
 ### Verified

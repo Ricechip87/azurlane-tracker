@@ -362,7 +362,7 @@ export default function GrowthRecommendationPage({ characters }) {
                   onOpenCard={setOpenCard}
                 />
               ) : (
-              <div className="flex flex-wrap gap-2.5 p-3">
+              <div className="flex flex-wrap gap-2 p-3">
                 {section.cards.map(card => (
                   <RecommendationCard
                     key={`${section.id}-${card.name}`}
@@ -402,7 +402,7 @@ function LaneGroupedCards({ section, characterByName, onOpenCard }) {
       {groups.map(group => group.cards.length > 0 && (
         <div key={`${section.id}-${group.lane}`}>
           <div className="mb-2 text-xs font-bold text-gray-400">{group.lane}</div>
-          <div className="flex flex-wrap gap-2.5">
+          <div className="flex flex-wrap gap-2">
             {group.cards.map(card => (
               <RecommendationCard
                 key={`${section.id}-${group.lane}-${card.name}`}
