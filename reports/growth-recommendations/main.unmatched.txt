@@ -1,6 +1,6 @@
 육성 추천표 미매칭 검토 후보
 
-총 검토 후보: 460
+총 검토 후보: 365
 
 ## main
 - 메인해역용 (2:1) - not matched
@@ -47,9 +47,6 @@
 - 연막탄 탱킹 보조 (12:30) - not matched
 - 탱커 보조 (12:36) - not matched
 - A+ 급 (13:1) - not matched
-- 토키사키 (15:16) - not matched
-- 쿠루미 (콜) (15:16) - not matched
-- (콜라보) (15:28) - not matched
 - 탱커 2황 (16:2) - not matched
 - 확고한 탱킹능력 (16:12) - not matched
 - 낮은 딜 기여도 (16:12) - not matched
@@ -76,16 +73,7 @@
 - 탱커 (18:26) - not matched
 - 딜탱 (18:27) - not matched
 - 실드 (18:27) - not matched
-- 오토 폰 (19:4) - not matched
-- 알벤슬레벤 (19:4) - not matched
-- 클리블랜드 META (19:17) - not matched
-- 모모 벨리아 데빌룩 (19:18) - not matched
 - (콜라보) (19:18) - not matched
-- (콜라보) (19:22) - not matched
-- 야마이 카구야 (19:23) - not matched
-- 야마이 유즈루 (콜) (19:23) - not matched
-- 프리드리히 (19:25) - not matched
-- 카를 (19:25) - not matched
 - 대공 (20:2) - not matched
 - 기타보조 (20:2) - not matched
 - 무난한 탱커 (20:4) - not matched
@@ -133,26 +121,6 @@
 - 전열 피감 (22:29) - not matched
 - 딜 특화 (22:30) - not matched
 - 딜 없는 (22:31) - not matched
-- 쿠니베르티 (23:4) - not matched
-- 유다치 META (23:5) - not matched
-- 나나 (콜) (23:6) - not matched
-- META (23:14) - not matched
-- 아마미 (23:18) - not matched
-- 하루카 (23:18) - not matched
-- 타카라다 (23:19) - not matched
-- 릿카 (23:19) - not matched
-- META (23:20) - not matched
-- 돈스코이 (23:21) - not matched
-- 미나미 (23:24) - not matched
-- 유메 (콜) (23:24) - not matched
-- 프린츠 (23:25) - not matched
-- 오이겐 (23:25) - not matched
-- 샌프란 (23:28) - not matched
-- 시스코 (23:28) - not matched
-- 히퍼 (23:30) - not matched
-- META (23:30) - not matched
-- 칼라 (23:31) - not matched
-- 이데아스 (콜) (23:31) - not matched
 - 대공 (24:2) - not matched
 - 3번 자리 딜러 (24:4) - not matched
 - 3번 자리 딜러 (24:6) - not matched
@@ -187,26 +155,6 @@
 - 이 라인에서 (26:28) - not matched
 - 딜 2등 (26:28) - not matched
 - 탱킹 보조 (26:29) - not matched
-- (개장) (27:2) - not matched
-- 레골로 (27:4) - not matched
-- 진츠 META (27:13) - not matched
-- 아브루치 (27:16) - not matched
-- 가라발디 (27:17) - not matched
-- 다이도 μ (27:18) - not matched
-- 노시로 μ (27:20) - not matched
-- 프린츠 (27:26) - not matched
-- 아달베르트 (27:26) - not matched
-- 프린츠 (27:27) - not matched
-- 하인리히 (27:27) - not matched
-- 뉴욜리언스 (27:28) - not matched
-- 꼬마 (27:31) - not matched
-- 오이겐 (27:31) - not matched
-- (콜라보) (27:32) - not matched
-- 론 μ (27:34) - not matched
-- 오이겐 μ (27:35) - not matched
-- (경순) (27:40) - not matched
-- 스테판 (27:41) - not matched
-- 포터 (구축) (27:41) - not matched
 - 무난한 (28:2) - not matched
 - 3번자리 딜러 (28:2) - not matched
 - 0.9 유다치 (28:4) - not matched
@@ -268,9 +216,6 @@
 - 최강 잠수함 (35:38) - not matched
 - S 급 (36:1) - not matched
 - 최고 성능 (36:1) - not matched
-- (콜라보, 경항모) (38:2) - not matched
-- 프리드리히 (38:20) - not matched
-- 데어 그로세 (38:20) - not matched
 - 쫄팟 힐러 (39:2) - not matched
 - 기믹 실드+힐 (39:2) - not matched
 - 높은 공격력 (39:4) - not matched
@@ -286,8 +231,6 @@
 - 미잠 (39:36) - not matched
 - 높은 산소량 (39:36) - not matched
 - A+ 급 (40:1) - not matched
-- META (42:32) - not matched
-- META (42:38) - not matched
 - 이중 선장전 (43:2) - not matched
 - 타함대 힐 (43:2) - not matched
 - 2 전투기 + 제공권 (43:6) - not matched
@@ -319,30 +262,11 @@
 - 소량 힐 (45:28) - not matched
 - 전열 (45:29) - not matched
 - 실드 (45:29) - not matched
-- 일러스트 (46:2) - not matched
-- 리어스 (항모) (46:2) - not matched
-- (경항모) (46:3) - not matched
-- (콜라보) (46:9) - not matched
-- 글로리어스 META (46:12) - not matched
-- 요크타운 META (46:14) - not matched
-- (콜라보) (46:18) - not matched
-- META (46:20) - not matched
-- 니나 (콜) (46:21) - not matched
-- (전장) (46:21) - not matched
-- 나가토 META (46:22) - not matched
-- (콜라보) (46:26) - not matched
-- 컨스텔 (46:27) - not matched
-- 레이션 (46:27) - not matched
-- 프린츠 (46:28) - not matched
-- 루프레히트 (46:28) - not matched
-- (콜라보) (46:34) - not matched
-- (콜라보) (46:36) - not matched
 - 높은 DPS (47:6) - not matched
 - 일항팟 (47:6) - not matched
 - 3 장갑 다 잘팸 (47:8) - not matched
 - 높은 탱킹력 (47:8) - not matched
 - 안정성 높은 (47:10) - not matched
-- 엔터프라이즈 + (47:10) - not matched
 - 단기전 특화 (47:12) - not matched
 - 대경장 (47:14) - not matched
 - 보조 유틸 (47:14) - not matched
@@ -374,17 +298,6 @@
 - 소량힐 (49:32) - not matched
 - 잃은 체력 (49:33) - not matched
 - 비례딜 (49:33) - not matched
-- (전함) (50:2) - not matched
-- 유미아 (콜라보) (50:5) - not matched
-- META (50:6) - not matched
-- 호넷 META (50:10) - not matched
-- 타이콘 (50:14) - not matched
-- 데로가 (50:14) - not matched
-- META (50:18) - not matched
-- 마르코 (50:20) - not matched
-- 폴로 (50:20) - not matched
-- META (50:24) - not matched
-- META (50:29) - not matched
 - 범선류 ( = 템페스타) (50:36) - not matched
 - 힐하는 전함 (51:2) - not matched
 - 13지 전열작 (51:2) - not matched
@@ -423,17 +336,6 @@
 - 빅 세븐 (53:32) - not matched
 - 범위딜 (53:33) - not matched
 - 경장갑 (53:33) - not matched
-- (경항모) (54:4) - not matched
-- 일러스트리어스 μ (54:10) - not matched
-- 파르제팔 (54:12) - not matched
-- 히류 META (54:14) - not matched
-- 비토리오 (54:20) - not matched
-- 베네토 (54:20) - not matched
-- META (54:22) - not matched
-- 히에이 META (54:24) - not matched
-- META (54:26) - not matched
-- 그나이 (54:27) - not matched
-- META (54:27) - not matched
 - 후열 힐 항공 버퍼 (55:4) - not matched
 - 폭격 범위딜 (55:6) - not matched
 - 중형 (55:8) - not matched
@@ -459,8 +361,11 @@
 - 탄약 + 1 (59:2) - not matched
 - 드레이크 (16:28) - single matched name row
 - 드레이크 (18:25) - single matched name row
+- 아즈마 (22:30) - single matched name row
+- 아즈마 (22:31) - single matched name row
 - 드레이크 (24:14) - single matched name row
 - 무사시 (32:20) - single matched name row
+- 엔터프라이즈 (47:10) - single matched name row
 - 로열 포춘 (48:37) - single matched name row
 - 헤스티아 (58:2) - single matched name row
 

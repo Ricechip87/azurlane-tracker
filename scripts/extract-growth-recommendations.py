@@ -1,6 +1,7 @@
 import csv
 import json
 import re
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -11,6 +12,13 @@ ROOT = Path(__file__).resolve().parents[1]
 REFERENCE_DIR = ROOT / "참고용"
 OUTPUT_PATH = ROOT / "src" / "data" / "growthRecommendations.json"
 REPORT_DIR = ROOT / "reports" / "growth-recommendations"
+
+KNOWN_RECENT_UNRATED_SHIPS = [
+    "브리스톨(META)",
+    "셰르부르",
+    "아로망슈",
+    "랑트레피드",
+]
 
 SOURCES = [
     {
@@ -26,6 +34,7 @@ SOURCES = [
         "audience": "벽청년 이상",
         "sheet_index": 3,
         "report": "operation-siren",
+        "exclusion_marker": "업데이트 안됨",
     },
     {
         "key": "newbie",
@@ -55,6 +64,30 @@ NAME_ALIASES = {
     "헬레나 / META": "헬레나(META)",
     "헬레나 META": "헬레나(META)",
     "I404": "이404",
+    "모모 벨리아 데빌룩": "모모 베리아 데빌룩",
+    "쿠니베르티": "비토리오 쿠니베르티",
+    "레골로": "아틸리오 레골로",
+    "아브루치": "두카 델리 아브루치",
+    "가라발디": "주세페 가리발디",
+    "주세페 가라발디": "주세페 가리발디",
+    "돈스코이": "드미트리 돈스코이",
+    "컨스텔 레이션": "컨스텔레이션",
+    "타이콘 데로가": "타이콘데로가",
+    "그나이 META": "그나이제나우(META)",
+    "나나 (콜)": "나나 아스타 데빌룩",
+    "나나 (콜라보)": "나나 아스타 데빌룩",
+    "히퍼 META": "아드미랄 히퍼(META)",
+    "히퍼 (전장)": "아드미랄 히퍼",
+    "뉴욜리언스": "뉴올리언스",
+    "꼬마 오이겐": "꼬마 프린츠 오이겐",
+    "오이겐 μ": "프린츠 오이겐(μ장비)",
+    "니나 (콜)": "니나 프리드",
+    "유미아 (콜라보)": "유미아 리스펠트",
+    "파르제팔": "아우구스트 폰 파르제팔",
+    "브론슨": "클래런스 K 브론슨",
+    "파먀티 META": "파먀티 메르쿠리야(META)",
+    "나히모프": "어드미럴 나히모프",
+    "파트리샤 (콜라보)": "파트리샤 아벨하임",
 }
 
 NON_NAME_FRAGMENTS = [
@@ -82,21 +115,35 @@ def one_line(value):
 
 
 def normalize_name(value):
-    return clean(value).replace("（", "(").replace("）", ")")
+    return unicodedata.normalize("NFKC", clean(value)).replace("（", "(").replace("）", ")")
 
 
 def build_name_keys(value):
     trimmed = normalize_name(value)
     without_parentheses = re.sub(r"\s*\([^)]*\)\s*", "", trimmed).strip()
-    compact = (
+    compact = re.sub(r"[^0-9A-Za-z가-힣μ]", "", trimmed)
+    compact_without_parentheses = (
         without_parentheses.replace(" ", "")
         .replace("Ⅱ", "II")
         .replace("Ⅲ", "III")
         .replace("Ⅳ", "IV")
         .replace("Ⅴ", "V")
     )
-    keys = [trimmed, without_parentheses, compact]
+    keys = [trimmed, without_parentheses, compact, compact_without_parentheses]
     return list(dict.fromkeys(key for key in keys if key))
+
+
+def build_name_attempts(value):
+    pieces = split_name_candidates(value)
+    attempts = []
+    for size in range(min(3, len(pieces)), 1, -1):
+        for start in range(len(pieces) - size + 1):
+            attempts.append({
+                "name": " ".join(pieces[start:start + size]),
+                "indexes": tuple(range(start, start + size)),
+            })
+    attempts.extend({"name": piece, "indexes": (index,)} for index, piece in enumerate(pieces))
+    return pieces, attempts
 
 
 def split_name_candidates(value):
@@ -197,9 +244,10 @@ def is_source_group_cell(value, source_key):
     return False
 
 
-def build_group_rows(ws, values, source_key):
+def build_group_rows(ws, values, source_key, excluded_from_row=None):
     group_rows = []
-    for row in range(1, ws.max_row + 1):
+    last_row_exclusive = min(ws.max_row + 1, excluded_from_row or ws.max_row + 1)
+    for row in range(1, last_row_exclusive):
         groups = []
         section_count = 0
         for column in range(1, ws.max_column + 1):
@@ -286,8 +334,30 @@ def find_role_note(values, row, column, by_name):
     return ""
 
 
+def find_source_updated_at(ws):
+    pattern = re.compile(r"최신화\s*날짜\s*:\s*(\d{4})[./-](\d{1,2})[./-](\d{1,2})")
+    for row in ws.iter_rows():
+        for cell in row:
+            match = pattern.search(clean(cell.value))
+            if match:
+                year, month, day = (int(part) for part in match.groups())
+                return f"{year:04d}-{month:02d}-{day:02d}"
+    return ""
+
+
+def find_excluded_from_row(ws, marker):
+    if not marker:
+        return None
+    for row in ws.iter_rows():
+        if any(clean(cell.value) == marker for cell in row):
+            return row[0].row
+    return None
+
+
 def match_character(name, by_name):
     lookup = NAME_ALIASES.get(name, name)
+    if lookup.endswith(" μ"):
+        lookup = f"{lookup[:-2]}(μ장비)"
     for key in build_name_keys(lookup):
         if key in by_name:
             return by_name[key]
@@ -297,26 +367,34 @@ def match_character(name, by_name):
 def extract_source(wb, source, by_name):
     ws = wb.worksheets[source["sheet_index"]]
     values = build_merged_value_map(ws)
-    group_rows = build_group_rows(ws, values, source["key"])
+    exclusion_marker = source.get("exclusion_marker")
+    excluded_from_row = find_excluded_from_row(ws, exclusion_marker)
+    group_rows = build_group_rows(ws, values, source["key"], excluded_from_row)
     candidates = []
     unmatched = []
 
-    for row in range(1, ws.max_row + 1):
+    last_row_exclusive = min(ws.max_row + 1, excluded_from_row or ws.max_row + 1)
+    for row in range(1, last_row_exclusive):
         for column in range(1, ws.max_column + 1):
             raw = clean(ws.cell(row, column).value)
             if not raw:
                 continue
-            for name in split_name_candidates(raw):
+            pieces, attempts = build_name_attempts(raw)
+            consumed_indexes = set()
+            matched_ids = set()
+            for attempt in attempts:
+                if any(index in consumed_indexes for index in attempt["indexes"]):
+                    continue
+                name = attempt["name"]
                 character = match_character(name, by_name)
                 if not character:
-                    if 1 < len(name) <= 20 and re.search(r"[가-힣A-Za-z0-9]", name):
-                        unmatched.append({
-                            "source": source["key"],
-                            "name": name,
-                            "row": row,
-                            "column": column,
-                        })
                     continue
+
+                character_id = str(character["id"])
+                if character_id in matched_ids:
+                    continue
+                matched_ids.add(character_id)
+                consumed_indexes.update(attempt["indexes"])
 
                 candidates.append({
                     "source": source["key"],
@@ -334,13 +412,24 @@ def extract_source(wb, source, by_name):
                     "column": column,
                 })
 
-    matched_count_by_row = defaultdict(int)
+            for index, name in enumerate(pieces):
+                if index in consumed_indexes or match_character(name, by_name):
+                    continue
+                if 1 < len(name) <= 20 and re.search(r"[가-힣A-Za-z0-9]", name):
+                    unmatched.append({
+                        "source": source["key"],
+                        "name": name,
+                        "row": row,
+                        "column": column,
+                    })
+
+    matched_ids_by_row = defaultdict(set)
     for candidate in candidates:
-        matched_count_by_row[candidate["row"]] += 1
+        matched_ids_by_row[candidate["row"]].add(str(candidate["id"]))
 
     recommendations = []
     for candidate in candidates:
-        if matched_count_by_row[candidate["row"]] >= 2:
+        if len(matched_ids_by_row[candidate["row"]]) >= 2:
             recommendations.append(candidate)
         else:
             unmatched.append({
@@ -354,6 +443,9 @@ def extract_source(wb, source, by_name):
     return {
         "source": source,
         "sheet": ws.title.strip(),
+        "updatedAt": find_source_updated_at(ws),
+        "exclusionMarker": exclusion_marker,
+        "excludedFromRow": excluded_from_row,
         "rows": ws.max_row,
         "columns": ws.max_column,
         "recommendations": recommendations,
@@ -376,7 +468,11 @@ def dedupe_recommendations(recommendations):
 def write_csv(path, rows):
     with path.open("w", encoding="utf-8", newline="") as file:
         writer = csv.writer(file)
-        writer.writerows(rows)
+        for row in rows:
+            writer.writerow([
+                "\n".join(line.rstrip() for line in value.splitlines()) if isinstance(value, str) else value
+                for value in row
+            ])
 
 
 def group_by(items, key):
@@ -426,6 +522,73 @@ def write_unmatched_text_report(path, items):
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_audit_report(path, extracted, recommendations, unmatched, unrated_recent_ships):
+    lines = [
+        "# 육성 추천 데이터 감사",
+        "",
+        "## 원본 범위",
+        "",
+        "| 구분 | 원본 최신화 | 추천 엔트리 | 고유 함선 |",
+        "|---|---:|---:|---:|",
+    ]
+    for result in extracted:
+        source_key = result["source"]["key"]
+        items = [item for item in recommendations if item["source"] == source_key]
+        lines.append(
+            f"| {result['source']['label']} | {result['updatedAt'] or '미확인'} | "
+            f"{len(items)} | {len({item['name'] for item in items})} |"
+        )
+
+    blank_tiers = [item for item in recommendations if not item.get("tier")]
+    blank_groups = [item for item in recommendations if not item.get("sheetGroup")]
+    blank_notes = [item for item in recommendations if not item.get("roleNote")]
+    recommendation_rows = {(item["source"], item["row"]) for item in recommendations}
+    focused_unmatched = [
+        item for item in unmatched
+        if (item["source"], item["row"]) in recommendation_rows and item.get("reason", "not matched") == "not matched"
+    ]
+    operation_source = next(result for result in extracted if result["source"]["key"] == "operation-siren")
+    exclusion_marker = operation_source.get("exclusionMarker") or "미확인"
+    excluded_from_row = operation_source.get("excludedFromRow")
+    lines.extend([
+        "",
+        "## 구조 검사",
+        "",
+        f"- 빈 티어: {len(blank_tiers)}건",
+        f"- 빈 분류: {len(blank_groups)}건",
+        f"- 빈 역할 메모: {len(blank_notes)}건",
+        f"- 실제 추천 행에 남은 미매칭 문구: {len(focused_unmatched)}건",
+        f"- 대작전 `{exclusion_marker}` 표식 구간: 추출 제외"
+        f" (현재 {excluded_from_row}행부터)" if excluded_from_row else "- 대작전 제외 표식: 찾지 못함",
+        "",
+        f"대작전 원본에서 `{exclusion_marker}` 표식이 시작되는 구간은 "
+        "사용자 검토에 따라 앱 JSON과 추천 순위에서 제외합니다. 행 번호는 원본 구조에 따라 자동으로 다시 찾습니다.",
+        "",
+        "## 원본 미평가 신규 함선",
+        "",
+    ])
+    if unrated_recent_ships:
+        lines.extend(f"- {item['name']} ({item['id']})" for item in unrated_recent_ships)
+    else:
+        lines.append("- 없음")
+
+    if blank_notes:
+        lines.extend(["", "## 역할 메모가 빈 원본 엔트리", ""])
+        lines.extend(
+            f"- {item['source']} / {item['name']} ({item['row']}:{item['column']})"
+            for item in blank_notes
+        )
+
+    if focused_unmatched:
+        lines.extend(["", "## 추천 행에 남은 미매칭 문구", ""])
+        lines.extend(
+            f"- {item['source']} / {item['name']} ({item['row']}:{item['column']})"
+            for item in focused_unmatched
+        )
+
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def main():
     workbook_path = find_workbook_path()
     by_name = load_characters()
@@ -434,6 +597,16 @@ def main():
     extracted = [extract_source(wb, source, by_name) for source in SOURCES]
     recommendations = dedupe_recommendations([item for result in extracted for item in result["recommendations"]])
     unmatched = [item for result in extracted for item in result["unmatched"]]
+    recommendation_names = {item["name"] for item in recommendations}
+    unrated_recent_ships = []
+    for name in KNOWN_RECENT_UNRATED_SHIPS:
+        character = match_character(name, by_name)
+        if character and character["name"] not in recommendation_names:
+            unrated_recent_ships.append({
+                "id": character["id"],
+                "name": character["name"],
+                "reason": "원본 최신화 이후 미평가",
+            })
 
     output = {
         "notes": [
@@ -448,6 +621,9 @@ def main():
                 "audience": source["audience"],
                 "file": workbook_path.name,
                 "sheet": extracted[index]["sheet"],
+                "updatedAt": extracted[index]["updatedAt"],
+                "exclusionMarker": extracted[index]["exclusionMarker"],
+                "excludedFromRow": extracted[index]["excludedFromRow"],
             }
             for index, source in enumerate(SOURCES)
         ],
@@ -455,6 +631,7 @@ def main():
         "review": {
             "unmatched": unmatched[:300],
             "unmatchedTotal": len(unmatched),
+            "unratedRecentShips": unrated_recent_ships,
         },
     }
 
@@ -503,6 +680,7 @@ def main():
     )
     write_recommendation_text_report(REPORT_DIR / "review.txt", recommendations)
     write_unmatched_text_report(REPORT_DIR / "unmatched.txt", unmatched)
+    write_audit_report(REPORT_DIR / "audit.md", extracted, recommendations, unmatched, unrated_recent_ships)
 
     for source in SOURCES:
         report_name = source["report"]

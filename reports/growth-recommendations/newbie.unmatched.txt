@@ -1,6 +1,6 @@
 육성 추천표 미매칭 검토 후보
 
-총 검토 후보: 299
+총 검토 후보: 276
 
 ## newbie
 - 구축 DD (3:2) - not matched
@@ -16,9 +16,6 @@
 - 신규 이벤트 함순이 (3:60) - not matched
 - S 급 (5:1) - not matched
 - 최우선 (5:1) - not matched
-- 프린츠 (7:26) - not matched
-- 오이겐 (7:26) - not matched
-- 파르제팔 (7:58) - not matched
 - 앵커리지 점수 (8:10) - not matched
 - 절약팟 전열 (8:10) - not matched
 - 메인해역 다수 드랍 (8:10) - not matched
@@ -43,8 +40,6 @@
 - 서브 힐러 (8:48) - not matched
 - 특형 상시건조 (8:48) - not matched
 - 철혈 연구함 선택지들 (8:58) - not matched
-- 프리드리히 (11:58) - not matched
-- 데어 그로세 (11:58) - not matched
 - 공습선도 1황 (12:6) - not matched
 - 훈장교환 1순위 (12:6) - not matched
 - 항모 버퍼 (12:12) - not matched
@@ -75,10 +70,6 @@
 - 상시 획득 전함 1황 (12:58) - not matched
 - 2기 DR 연구함 (12:58) - not matched
 - A 급 (13:1) - not matched
-- META (15:16) - not matched
-- 그나이 (15:36) - not matched
-- META (15:36) - not matched
-- META (15:37) - not matched
 - 3번 자리 딜러 (16:2) - not matched
 - 6-4 보스 드랍 (16:2) - not matched
 - 보급형 공습 선도 (16:6) - not matched
@@ -124,11 +115,6 @@
 - 대공요원 + 무난한탱 (16:54) - not matched
 - 11지 이후로 활약 (16:54) - not matched
 - 3기 PR 연구함 (16:54) - not matched
-- 다이도 μ (19:13) - not matched
-- 타이콘 (19:30) - not matched
-- 데로가 (19:30) - not matched
-- 소류 META (19:32) - not matched
-- 히류 META (19:33) - not matched
 - 탱커 (20:2) - not matched
 - 탱 보조 1황 (20:2) - not matched
 - 개장템없으면 후순위 (20:2) - not matched
@@ -183,8 +169,6 @@
 - 탱커 (20:54) - not matched
 - 7기 DR 연구함 (20:54) - not matched
 - B 급 (21:1) - not matched
-- 타슈켄트 μ (23:6) - not matched
-- 아카기 μ (23:30) - not matched
 - 후열 생존버퍼 (24:2) - not matched
 - 훈장 교환 (24:2) - not matched
 - 대공 (24:4) - not matched
@@ -227,8 +211,6 @@
 - 둘다 훈장 교환 가능 (24:40) - not matched
 - 적당한 탱 (26:2) - not matched
 - 대공 (26:3) - not matched
-- 르 말랭 μ (27:4) - not matched
-- 볼티모어 μ (27:20) - not matched
 - 절혈 점수용 (28:2) - not matched
 - Z1은 Z급 버퍼 (28:2) - not matched
 - 상시 소형건조 (28:2) - not matched
@@ -239,7 +221,7 @@
 - 아이리스 (28:8) - not matched
 - 소형 상시건조 (28:8) - not matched
 - 보급형 공습선도 (28:14) - not matched
-- 차라리 아리아케 ㄱㄱ (28:14) - not matched
+- 차라리 아리아케 ᄀᄀ (28:14) - not matched
 - 상시 소형건조 (28:14) - not matched
 - 작전문서 (28:16) - not matched
 - 소형 상시건조 (28:16) - not matched
@@ -269,11 +251,6 @@
 - 프랑스 함대 파츠 (28:42) - not matched
 - 선장전, 딜 버프 (28:42) - not matched
 - 중형 상시건조 (28:42) - not matched
-- 클리블랜드 μ (31:14) - not matched
-- 론 μ (31:22) - not matched
-- 다이호 μ (31:30) - not matched
-- 일러스트리어스 μ (31:32) - not matched
-- 아크 로열 META (31:34) - not matched
 - 중앵 점수작용 (32:8) - not matched
 - 대함대 상점 (32:8) - not matched
 - 로열 점수작용 (32:12) - not matched

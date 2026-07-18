@@ -258,6 +258,8 @@ export default function GrowthRecommendationPage({ characters }) {
   const [dataError, setDataError] = useState('')
   const [openCard, setOpenCard] = useState(null)
   const currentMode = MODES.find(item => item.id === mode) || MODES[0]
+  const currentSource = recommendationData?.sources?.find(source => source.key === MODE_SOURCE[mode])
+  const unratedRecentShips = recommendationData?.review?.unratedRecentShips || []
 
   useEffect(() => {
     let ignore = false
@@ -311,6 +313,11 @@ export default function GrowthRecommendationPage({ characters }) {
             <div className="text-xs font-semibold text-gray-300">육성 추천 초안</div>
             <h2 className="mt-1 text-xl font-bold text-gray-100">{currentMode.label} 카드 추천</h2>
             <p className="mt-2 text-sm leading-6 text-gray-500">{currentMode.description}</p>
+            {currentSource?.updatedAt && (
+              <p className="mt-2 text-xs font-semibold text-gray-400">
+                원본 최신화 날짜: {formatSourceDate(currentSource.updatedAt)}
+              </p>
+            )}
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -330,6 +337,14 @@ export default function GrowthRecommendationPage({ characters }) {
           </div>
         </div>
       </div>
+
+      {unratedRecentShips.length > 0 && (
+        <div className="rounded border border-amber-800/70 bg-amber-950/25 px-4 py-3 text-sm text-amber-100">
+          <span className="font-bold">원본 미평가 신규 함선:</span>{' '}
+          {unratedRecentShips.map(ship => ship.name).join(', ')}
+          <span className="ml-2 text-xs text-amber-300/80">원본에 등급이 없어 임의로 추천 등급을 부여하지 않았습니다.</span>
+        </div>
+      )}
 
       {dataError && (
         <section className="rounded border border-rose-900/60 bg-rose-950/30 px-4 py-5 text-sm text-rose-200">
@@ -389,6 +404,11 @@ export default function GrowthRecommendationPage({ characters }) {
       )}
     </section>
   )
+}
+
+function formatSourceDate(value) {
+  const [year, month, day] = String(value).split('-').map(Number)
+  return year && month && day ? `${year}/${month}/${day}` : value
 }
 
 function LaneGroupedCards({ section, characterByName, onOpenCard }) {

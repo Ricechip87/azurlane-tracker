@@ -1,5 +1,30 @@
 # Change Log
 
+## 2026-07-18 - Audit Growth Recommendation Sources And Recover Missing Ships
+
+### Why
+- Recommendation source sheets have different update dates, so recently released ships may legitimately have no expert-assigned tier yet.
+- The extractor split multi-line ship names into fragments and missed abbreviated or differently formatted names already present in the source workbook.
+- The previous unmatched report mixed real ship-name failures with more than a thousand role descriptions and labels.
+
+### Changed
+- Read and store each source sheet's update date: main stage `2026-01-02`, Operation Siren `2026-06-03`, and newbie `2025-08-09`.
+- Join adjacent multi-line name fragments and normalize META, Muse, collaboration, abbreviated, and known typo variants.
+- Recovered 136 source entries that were previously missed by name parsing, then excluded 178 outdated Operation Siren context entries for a final 787 recommendations.
+- Count unique character IDs per row before accepting a recommendation row, preventing repeated note references from becoming false recommendations.
+- Added a focused audit report that separates recommendation-row mismatches, blank fields, source freshness, and the outdated secondary Operation Siren context block.
+- Excluded the Operation Siren section beginning at the source's `업데이트 안됨` marker, dynamically locating its current row instead of treating row 80 as a permanent boundary.
+- Marked Bristol(META), Cherbourg, Arromanches, and L'Intrépide as source-unrated recent ships without assigning guessed tiers.
+- Display the selected source's update date and the unrated recent-ship notice on the growth recommendation page.
+- Added data regression coverage for source dates, character references, recovered aliases, false-positive rows, and the recent unrated list.
+
+### Verified
+- `npm.cmd run extract:growth`
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+- `git diff --check`
+
 ## 2026-07-18 - Make Back-To-Top Navigation Global
 
 ### Why
