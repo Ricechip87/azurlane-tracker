@@ -1,5 +1,15 @@
 # Change Log
 
+## 2026-07-18 - Fit Eight Development Recommendation Cards Per Row
+
+### Fixed
+- Matched development recommendation card width to the existing growth recommendation cards so eight cards fit across the desktop content area without leaving a card-sized empty strip on the right.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-18 - Add Development Ship Recommendations
 
 ### Changed

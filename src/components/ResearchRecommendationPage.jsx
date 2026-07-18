@@ -117,7 +117,7 @@ function ResearchCard({ item, tone, onSelect }) {
     <button
       type="button"
       onClick={() => onSelect(item)}
-      className={`group relative h-[232px] w-[180px] max-w-full flex-none overflow-hidden rounded-md border-2 bg-[#272727] text-left shadow-lg outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-neutral-200 ${border}`}
+      className={`group relative h-[232px] w-[172px] max-w-full flex-none overflow-hidden rounded-md border-2 bg-[#272727] text-left shadow-lg outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-neutral-200 ${border}`}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,#3a3a3a_0%,#202020_52%,#111_100%)]" />
       <img
