@@ -98,6 +98,45 @@ export function selectPriorityResearchShips(ready, locked) {
   }
 }
 
+export function buildWebResearchRecommendationGroups(state, operationTierByName = new Map(), limit = 3) {
+  const used = new Set()
+  const takeUnique = items => {
+    const selected = []
+    for (const item of items) {
+      if (used.has(item.id)) continue
+      used.add(item.id)
+      selected.push(item)
+      if (selected.length >= limit) break
+    }
+    return selected
+  }
+  const byOperationValue = (a, b) => operationTierRank(operationTierByName.get(a.name)) - operationTierRank(operationTierByName.get(b.name))
+    || b.unlock.progress - a.unlock.progress
+    || compareReadyResearchShips(a, b)
+
+  const start = takeUnique(state.ready)
+  const unlock = takeUnique(selectPriorityResearchShips([], state.locked).items)
+  const quick = takeUnique(
+    state.locked
+      .filter(item => item.coinStrengthening?.available)
+      .sort((a, b) => b.unlock.progress - a.unlock.progress || byOperationValue(a, b)),
+  )
+  const unacquired = [...state.ready, ...state.locked]
+  const maxGeneration = Math.max(0, ...unacquired.map(item => item.generation))
+  const long = takeUnique(
+    unacquired
+      .filter(item => item.generation >= Math.max(1, maxGeneration - 2))
+      .sort(byOperationValue),
+  )
+
+  return [
+    { key: 'start', title: '지금 시작 추천', description: '현재 해금되어 바로 개발할 수 있는 최신 기수입니다.', items: start, tone: 'ready' },
+    { key: 'unlock', title: '가장 가까운 해금', description: '현재 보유 상태에서 가장 많이 진행된 다음 목표입니다.', items: unlock, tone: 'priority' },
+    { key: 'quick', title: '물자강화 추천', description: '물자강화가 가능해 개발 후 도면 부담을 줄일 수 있는 목표입니다.', items: quick, tone: 'quick' },
+    { key: 'long', title: '장기 전력 목표', description: '최신 3개 기수와 대작전 추천 가치를 반영한 장기 목표입니다.', items: long, tone: 'long' },
+  ]
+}
+
 export function getEligibleResearchXpShips(phase, characters) {
   const factions = new Set((phase.factions || []).map(normalizeFactionValue))
 

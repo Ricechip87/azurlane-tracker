@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-07-19 - Build A User-Selected Research Goal Roadmap
+
+### Changed
+- Replaced the competing automatic development lists with a persistent `내 개발 목표` selector covering all 1–8 generation ships.
+- Show the selected target's unlock progress, condition-specific acquisition or growth candidates, owned XP-farming ships, and coin/blueprint strengthening method in one inline roadmap.
+- Moved automatic recommendations below the user goal and separated them into `지금 시작`, `가장 가까운 해금`, `물자강화`, and `장기 전력` reasons.
+- Allow every automatic recommendation and completed-ship chip to set the user goal and return to the roadmap.
+- Reclassified the faction table as a collapsed tech-point milestone reference and explicitly excluded roster-count conditions from its meaning.
+
+### Verified
+- Added recommendation-group regression coverage including cross-group deduplication.
+- Reproduced empty and three-Eagle-vanguard roster recommendation groups.
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Keep A Development Goal Visible For New Players
 
 ### Changed

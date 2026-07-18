@@ -3,12 +3,38 @@ import {
   buildOperationTierByName,
   buildResearchFactionProgress,
   buildResearchRecommendationState,
+  buildWebResearchRecommendationGroups,
   calcAllFactionTechPoints,
   evaluateResearchUnlock,
   getEligibleResearchXpShips,
   getResearchUnlockCandidates,
   selectPriorityResearchShips,
 } from './researchRecommendations.js'
+
+const webRecommendationState = {
+  ready: [
+    { id: 'ready-8', name: '바로 8기', generation: 8, coinStrengthening: { available: false }, unlock: { progress: 1 } },
+    { id: 'ready-7', name: '바로 7기', generation: 7, coinStrengthening: { available: true }, unlock: { progress: 1 } },
+  ],
+  locked: [
+    { id: 'near', name: '가까운 목표', generation: 5, coinStrengthening: { available: true }, unlock: { progress: 0.7 } },
+    { id: 'quick', name: '물자강화 목표', generation: 4, coinStrengthening: { available: true }, unlock: { progress: 0.2 } },
+    { id: 'long', name: '장기 목표', generation: 8, coinStrengthening: { available: false }, unlock: { progress: 0.1 } },
+  ],
+  completed: [],
+}
+assert.deepEqual(
+  buildWebResearchRecommendationGroups(webRecommendationState, new Map([
+    ['물자강화 목표', 'SS'],
+    ['장기 목표', 'SS+'],
+  ]), 1).map(group => ({ key: group.key, names: group.items.map(item => item.name) })),
+  [
+    { key: 'start', names: ['바로 8기'] },
+    { key: 'unlock', names: ['가까운 목표'] },
+    { key: 'quick', names: ['물자강화 목표'] },
+    { key: 'long', names: ['장기 목표'] },
+  ],
+)
 
 assert.deepEqual(
   selectPriorityResearchShips(

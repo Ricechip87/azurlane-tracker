@@ -1,24 +1,24 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import researchRecommendationData from '../data/researchRecommendations.json'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
-import { normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
-import { getFactionDisplayName, getFactionDisplayText, normalizeFactionValue } from '../utils/factions.js'
+import { isAcquiredStatus, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
+import { getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
 import {
   buildOperationTierByName,
   buildResearchFactionProgress,
   buildResearchRecommendationState,
+  buildWebResearchRecommendationGroups,
   getEligibleResearchXpShips,
   getResearchUnlockCandidates,
-  selectPriorityResearchShips,
 } from '../utils/researchRecommendations.js'
 
 const RESEARCH_SHIP_BY_NAME = new Map(researchRecommendationData.ships.map(ship => [ship.name, ship]))
 
 export default function ResearchRecommendationPage({ characters }) {
-  const [selected, setSelected] = useState(null)
-  const [selectedFaction, setSelectedFaction] = useState(null)
+  const [targetId, setTargetId] = useState(() => typeof window === 'undefined' ? '' : window.localStorage.getItem('azurlane-research-target') || '')
   const [candidateRankingData, setCandidateRankingData] = useState(null)
+  const goalRef = useRef(null)
   const state = useMemo(
     () => buildResearchRecommendationState(researchRecommendationData.ships, characters),
     [characters],
@@ -27,18 +27,15 @@ export default function ResearchRecommendationPage({ characters }) {
     () => buildResearchFactionProgress(researchRecommendationData.ships, state.factionTechPoints),
     [state.factionTechPoints],
   )
-  const filterByFaction = items => selectedFaction
-    ? items.filter(item => (item.unlockRequirements || []).some(requirement => normalizeFactionValue(requirement.faction) === selectedFaction))
-    : items
-  const visibleReady = filterByFaction(state.ready)
-  const visibleLocked = filterByFaction(state.locked)
-  const visibleCompleted = filterByFaction(state.completed)
-  const visibleState = { ...state, ready: visibleReady, locked: visibleLocked, completed: visibleCompleted }
-  const prioritySelection = selectPriorityResearchShips(visibleReady, visibleLocked)
-  const priority = prioritySelection.items
-  const latestReadyGeneration = prioritySelection.mode === 'ready' ? Math.max(0, ...priority.map(item => item.generation)) : 0
-  const otherReady = visibleReady.filter(item => !priority.some(priorityItem => priorityItem.id === item.id))
-  const priorityHeading = getPriorityHeading(prioritySelection.mode, latestReadyGeneration)
+  const allItems = useMemo(
+    () => [...state.ready, ...state.locked, ...state.completed].sort((a, b) => b.generation - a.generation || a.name.localeCompare(b.name, 'ko')),
+    [state],
+  )
+  const selectedTarget = allItems.find(item => String(item.id) === String(targetId)) || null
+  const webRecommendationGroups = useMemo(
+    () => buildWebResearchRecommendationGroups(state, candidateRankingData?.operationTierByName),
+    [state, candidateRankingData],
+  )
 
   useEffect(() => {
     let cancelled = false
@@ -67,76 +64,196 @@ export default function ResearchRecommendationPage({ characters }) {
     return () => { cancelled = true }
   }, [])
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (targetId) window.localStorage.setItem('azurlane-research-target', targetId)
+    else window.localStorage.removeItem('azurlane-research-target')
+  }, [targetId])
+
+  const selectGoal = item => {
+    setTargetId(String(item.id))
+    requestAnimationFrame(() => goalRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+  }
+
   return (
-    <section className="space-y-4">
-      <ResearchSummary state={visibleState} />
+    <section className="space-y-4" ref={goalRef}>
+      <ResearchSummary state={state} />
 
-      <ResearchGuide />
-
-      <ResearchFactionProgress
-        items={factionProgress}
-        selectedFaction={selectedFaction}
-        onSelect={setSelectedFaction}
+      <ResearchGoalWorkspace
+        items={allItems}
+        selectedTarget={selectedTarget}
+        onSelectId={setTargetId}
+        characters={characters}
+        candidateRankingData={candidateRankingData}
       />
 
       <div className="rounded border border-sky-900/70 bg-sky-950/25 px-4 py-3 text-sm leading-6 text-sky-100">
         <strong>9기 반영 정책:</strong> KR 기본 데이터에 정식 편입된 뒤 추가합니다. 현재 추천은 검증된 1~8기 42명을 기준으로 계산합니다.
       </div>
 
-      <ResearchSection
-        title={priorityHeading.title}
-        description={priorityHeading.description}
-        items={priority}
-        tone="priority"
-        onSelect={setSelected}
-      />
+      <WebResearchRecommendations groups={webRecommendationGroups} onSelect={selectGoal} />
 
-      <ResearchSection
-        title="다른 개발 가능 후보"
-        description="지금 바로 개발을 시작할 수 있는 이전 기수 함선입니다."
-        items={otherReady}
-        tone="ready"
-        onSelect={setSelected}
-      />
+      <details className="rounded border border-neutral-700 bg-[#1a1a1a]">
+        <summary className="cursor-pointer bg-[#242424] px-4 py-3 text-sm font-bold text-gray-300">보조 정보 · 진영별 기술점수 이정표</summary>
+        <ResearchFactionProgress items={factionProgress} />
+      </details>
 
-      <ResearchSection
-        title="해금 조건 부족"
-        description="부족한 진영 기술점수 또는 도감 등록 수를 채우면 개발할 수 있습니다."
-        items={visibleLocked}
-        tone="locked"
-        onSelect={setSelected}
-      />
+      <CompletedResearchSection items={state.completed} onSelect={selectGoal} />
+    </section>
+  )
+}
 
-      <CompletedResearchSection items={visibleCompleted} onSelect={setSelected} />
+function ResearchGoalWorkspace({ items, selectedTarget, onSelectId, characters, candidateRankingData }) {
+  const activeItems = items.filter(item => !isResearchCompleted(item))
+  const completedItems = items.filter(isResearchCompleted)
 
-      {selected && (
-        <ResearchDetailModal
-          item={selected}
-          characters={characters}
-          candidateRankingData={candidateRankingData}
-          onClose={() => setSelected(null)}
-        />
+  return (
+    <section className="overflow-hidden rounded border border-cyan-900/70 bg-[#1a1a1a]">
+      <header className="border-b border-neutral-700 bg-[#242424] px-4 py-4">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 className="text-base font-black text-cyan-100">내 개발 목표</h2>
+            <p className="mt-1 text-xs leading-5 text-gray-500">원하는 개발함을 선택하면 해금부터 경험치작과 강화까지 현재 해야 할 일을 보여줍니다.</p>
+          </div>
+          <label className="min-w-[280px] text-xs font-bold text-gray-400">
+            목표 개발함 선택
+            <select
+              value={selectedTarget ? String(selectedTarget.id) : ''}
+              onChange={event => onSelectId(event.target.value)}
+              className="mt-1.5 w-full rounded border border-neutral-600 bg-[#181818] px-3 py-2 text-sm font-semibold text-gray-100 outline-none focus:border-cyan-500"
+            >
+              <option value="">개발함을 선택하세요</option>
+              <optgroup label="미획득 개발함">
+                {activeItems.map(item => <option key={item.id} value={item.id}>{goalOptionLabel(item)}</option>)}
+              </optgroup>
+              {completedItems.length > 0 && (
+                <optgroup label="개발 완료">
+                  {completedItems.map(item => <option key={item.id} value={item.id}>{goalOptionLabel(item)}</option>)}
+                </optgroup>
+              )}
+            </select>
+          </label>
+        </div>
+      </header>
+
+      {selectedTarget ? (
+        <ResearchGoalPanel item={selectedTarget} characters={characters} candidateRankingData={candidateRankingData} />
+      ) : (
+        <div className="px-5 py-10 text-center">
+          <div className="text-sm font-bold text-gray-300">먼저 목표 개발함을 선택하세요.</div>
+          <p className="mt-2 text-xs text-gray-600">아직 목표를 모르겠다면 아래 웹 자동 추천 카드에서 하나를 선택할 수 있습니다.</p>
+        </div>
       )}
     </section>
   )
 }
 
-function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
+function ResearchGoalPanel({ item, characters, candidateRankingData }) {
+  const completed = isResearchCompleted(item)
+  return (
+    <div className="p-4">
+      <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
+        <div>
+          <img src={getCardArtUrl(item)} alt="" className="h-[232px] w-[172px] max-w-full rounded-md border-2 border-cyan-500 bg-[#181818] object-cover object-top" />
+          <div className="mt-2 flex flex-wrap gap-1 text-[10px] font-black">
+            <CardBadge>{item.generation}기</CardBadge>
+            <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{item.planRarity}</CardBadge>
+            <CardBadge>{getFactionDisplayName(item.faction)}</CardBadge>
+            {item.coinStrengthening.available && <CardBadge tone="green">물자강화</CardBadge>}
+          </div>
+        </div>
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2">
+            <h3 className="text-2xl font-black text-white">{item.name}</h3>
+            <span className={`rounded px-2 py-1 text-[11px] font-black ${completed ? 'bg-sky-900 text-sky-200' : item.unlock.met ? 'bg-emerald-900 text-emerald-200' : 'bg-amber-900 text-amber-200'}`}>
+              {completed ? '개발 완료' : item.unlock.met ? '바로 개발 가능' : '해금 준비 중'}
+            </span>
+          </div>
+          <p className="mt-2 text-sm text-gray-400">{getFactionDisplayText(item.unlockText)}</p>
+
+          <h4 className="mt-5 text-sm font-black text-gray-200">1. 해금하려면 지금 무엇을 해야 하나요?</h4>
+          <div className="mt-2 grid gap-2 xl:grid-cols-2">
+            {item.unlock.requirements.map(requirement => {
+              const candidates = requirement.met ? [] : getResearchUnlockCandidates(requirement, characters, candidateRankingData || {})
+              const candidateTitle = requirement.type === 'roster-count' ? '추가 획득 추천 후보' : '육성 추천 후보'
+              return (
+                <div key={`${requirement.faction}-${requirement.type}`} className={`rounded border p-3 text-sm ${requirement.met ? 'border-emerald-900 bg-emerald-950/25' : 'border-amber-900 bg-amber-950/20'}`}>
+                  <div className="flex items-center justify-between gap-2">
+                    <strong>{unlockRequirementLabel(requirement)}</strong>
+                    <span className={requirement.met ? 'text-emerald-300' : 'text-amber-300'}>{requirement.current} / {requirement.value}</span>
+                  </div>
+                  <div className="mt-1 text-xs text-gray-500">{requirement.met ? '조건 충족' : requirement.type === 'roster-count' ? `${requirement.remaining}명 추가 획득 필요` : `${requirement.remaining}점 추가 필요`}</div>
+                  {candidates.length > 0 && <UnlockCandidateList candidates={candidates} title={candidateTitle} />}
+                </div>
+              )
+            })}
+          </div>
+
+          <h4 className="mt-5 text-sm font-black text-gray-200">2. 해금 후 경험치작 편성</h4>
+          <div className="mt-2 grid gap-2 xl:grid-cols-2">
+            {item.xpPhases.map(phase => {
+              const eligible = getEligibleResearchXpShips(phase, characters)
+              return (
+                <div key={phase.phase} className="rounded border border-neutral-700 bg-[#202020] p-3 text-sm">
+                  <div className="flex justify-between gap-2"><strong>{phase.phase}차 · {formatNumber(phase.requiredXp)} EXP</strong><span className="text-xs text-cyan-300">보유 {eligible.length}명</span></div>
+                  <div className="mt-1 text-xs text-gray-500">{phase.factions.map(getFactionDisplayName).join(' · ')} / {phase.lane}</div>
+                  <p className="mt-2 text-xs leading-5 text-gray-300">{eligible.length ? eligible.slice(0, 10).map(character => character.name).join(', ') : '현재 조건에 맞는 보유함이 없습니다.'}{eligible.length > 10 ? ` 외 ${eligible.length - 10}명` : ''}</p>
+                </div>
+              )
+            })}
+          </div>
+
+          <h4 className="mt-5 text-sm font-black text-gray-200">3. 개발 후 강화 방식</h4>
+          <div className={`mt-2 rounded border px-3 py-2 text-sm ${item.coinStrengthening.available ? 'border-emerald-900 bg-emerald-950/25 text-emerald-200' : 'border-violet-900 bg-violet-950/25 text-violet-200'}`}>
+            {item.coinStrengthening.available ? '물자강화 가능 · 개발 후 도면 부담을 줄여 빠르게 강화할 수 있습니다.' : '도면강화 대상 · 해당 기수 연구를 통해 강화 도면을 모아야 합니다.'}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function WebResearchRecommendations({ groups, onSelect }) {
   return (
     <section className="rounded border border-neutral-700 bg-[#1a1a1a]">
-      <header className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-700 bg-[#242424] px-4 py-3">
+      <header className="border-b border-neutral-700 bg-[#242424] px-4 py-3">
+        <h2 className="text-base font-black text-gray-100">웹 자동 추천</h2>
+        <p className="mt-1 text-xs leading-5 text-gray-500">목표를 못 정했다면 현재 보유 상태, 해금 거리, 물자강화와 대작전 추천 가치를 나눠서 확인하세요. 카드를 누르면 위 목표로 설정됩니다.</p>
+      </header>
+      <div className="grid gap-3 p-3 xl:grid-cols-2">
+        {groups.map(group => (
+          <div key={group.key} className="rounded border border-neutral-700 bg-[#202020]">
+            <div className="border-b border-neutral-700 px-3 py-2.5">
+              <h3 className="text-sm font-bold text-gray-200">{group.title}</h3>
+              <p className="mt-1 text-[11px] leading-4 text-gray-500">{group.description}</p>
+            </div>
+            {group.items.length ? (
+              <div className="flex flex-wrap gap-2 p-3">{group.items.map(item => <ResearchCard key={item.id} item={item} tone={group.tone} onSelect={onSelect} />)}</div>
+            ) : <div className="px-3 py-8 text-center text-xs text-gray-600">현재 조건에 해당하는 추천이 없습니다.</div>}
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function goalOptionLabel(item) {
+  const status = isResearchCompleted(item) ? '완료' : item.unlock.met ? '개발 가능' : '해금 준비'
+  return `${item.generation}기 · ${item.name} · ${status}`
+}
+
+function isResearchCompleted(item) {
+  return isAcquiredStatus(item.character?.acquired)
+}
+
+function ResearchFactionProgress({ items }) {
+  return (
+    <section className="border-t border-neutral-700 bg-[#1a1a1a]">
+      <header className="border-b border-neutral-700 bg-[#202020] px-4 py-3">
         <div>
-          <h3 className="text-sm font-bold text-gray-100">진영별 개발 해금 진행</h3>
-          <p className="mt-1 text-xs leading-5 text-gray-500">현재 기술점수에서 가장 가까운 해금 목표입니다. 같은 점수에서는 최신 기수부터 표시합니다.</p>
+          <h3 className="text-sm font-bold text-gray-100">진영별 기술점수 이정표</h3>
+          <p className="mt-1 text-xs leading-5 text-gray-500">목표 개발함 추천과 별개인 기술점수 참고표입니다. 도감 등록 조건은 포함하지 않습니다.</p>
         </div>
-        <button
-          type="button"
-          onClick={() => onSelect(null)}
-          disabled={!selectedFaction}
-          className={`rounded border px-3 py-1.5 text-xs font-bold ${selectedFaction ? 'border-neutral-600 bg-neutral-800 text-gray-300 hover:border-neutral-400' : 'cursor-default border-neutral-700 bg-neutral-900 text-gray-600'}`}
-        >
-          {selectedFaction ? '전체 진영 보기' : '전체 진영 표시 중'}
-        </button>
       </header>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[920px] text-xs">
@@ -144,18 +261,16 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
             <tr>
               <th className="px-3 py-2 text-left">진영</th>
               <th className="px-3 py-2 text-right">현재 기술점수</th>
-              <th className="px-3 py-2 text-left">다음 개발 추천 목표</th>
+              <th className="px-3 py-2 text-left">다음 기술점수 해금 함선</th>
               <th className="px-3 py-2 text-right">필요 점수</th>
               <th className="px-3 py-2 text-right">부족 점수</th>
-              <th className="px-3 py-2 text-center">아래 목록 필터</th>
             </tr>
           </thead>
           <tbody>
             {items.map(item => {
-              const selected = selectedFaction === item.faction
               const nextNames = item.nextTarget?.ships.join(' · ')
               return (
-                <tr key={item.faction} className={`border-t border-neutral-800 ${selected ? 'bg-cyan-950/35' : 'bg-[#242424] hover:bg-[#292929]'}`}>
+                <tr key={item.faction} className="border-t border-neutral-800 bg-[#242424] hover:bg-[#292929]">
                   <th scope="row" className="px-3 py-2.5 text-left text-sm font-bold text-gray-100">{getFactionDisplayName(item.faction)}</th>
                   <td className="px-3 py-2.5 text-right font-black text-cyan-300">{formatNumber(item.current)}점</td>
                   <td className="min-w-[300px] px-3 py-2.5 font-semibold text-gray-300" title={nextNames || '기술점수 조건 모두 충족'}>
@@ -179,16 +294,6 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
                   <td className={`px-3 py-2.5 text-right font-bold ${item.nextTarget ? 'text-amber-300' : 'text-emerald-300'}`}>
                     {item.nextTarget ? `${formatNumber(item.remaining)}점` : '0점'}
                   </td>
-                  <td className="px-3 py-2.5 text-center">
-                    <button
-                      type="button"
-                      aria-pressed={selected}
-                      onClick={() => onSelect(selected ? null : item.faction)}
-                      className={`rounded border px-2.5 py-1 font-bold ${selected ? 'border-cyan-400 bg-cyan-900/60 text-cyan-100' : 'border-neutral-600 bg-neutral-800 text-gray-300 hover:border-neutral-400'}`}
-                    >
-                      {selected ? '필터 해제' : '아래에서 이 진영만 보기'}
-                    </button>
-                  </td>
                 </tr>
               )
             })}
@@ -197,47 +302,6 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
       </div>
     </section>
   )
-}
-
-function ResearchGuide() {
-  const steps = [
-    ['1', '다음 점수 목표 확인', '진영별로 가장 가까운 개발함 해금 점수를 확인합니다.'],
-    ['2', '개발 목표 선택', '최우선 추천에서 현재 상태에 맞는 개발 또는 다음 해금 목표를 봅니다.'],
-    ['3', '부족 조건 채우기', '잠긴 함선 카드를 눌러 기술점수를 채울 육성 후보를 확인합니다.'],
-  ]
-
-  return (
-    <section className="grid gap-2 rounded border border-neutral-700 bg-[#1a1a1a] p-3 md:grid-cols-3" aria-label="개발함 추천 이용 순서">
-      {steps.map(([number, title, description]) => (
-        <div key={number} className="flex gap-3 rounded border border-neutral-800 bg-[#242424] px-3 py-2.5">
-          <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-cyan-950 text-xs font-black text-cyan-300">{number}</span>
-          <div>
-            <div className="text-xs font-bold text-gray-200">{title}</div>
-            <p className="mt-1 text-[11px] leading-4 text-gray-500">{description}</p>
-          </div>
-        </div>
-      ))}
-    </section>
-  )
-}
-
-function getPriorityHeading(mode, latestReadyGeneration) {
-  if (mode === 'ready') {
-    return {
-      title: `최우선 추천 · ${latestReadyGeneration}기`,
-      description: '현재 바로 개발할 수 있는 미획득 개발함 중 가장 최신 기수입니다.',
-    }
-  }
-  if (mode === 'progress') {
-    return {
-      title: '최우선 추천 · 해금 준비 중',
-      description: '아직 개발할 수는 없지만 현재 해금 진행도가 가장 높은 목표입니다.',
-    }
-  }
-  return {
-    title: '최우선 추천 · 입문 목표',
-    description: '진행 정보가 없을 때 먼저 살펴볼 1기 개발함입니다. 보유 진영에 맞는 목표를 선택하세요.',
-  }
 }
 
 function ResearchSummary({ state }) {
@@ -259,37 +323,17 @@ function SummaryCell({ label, value, tone }) {
   )
 }
 
-function ResearchSection({ title, description, items, tone, onSelect }) {
-  return (
-    <section className="rounded border border-neutral-700 bg-[#1a1a1a]">
-      <header className="border-b border-neutral-700 bg-[#242424] px-4 py-3">
-        <div className="flex flex-wrap items-baseline gap-3">
-          <h3 className="text-base font-bold text-gray-100">{title}</h3>
-          <span className="text-xs text-gray-500">{description}</span>
-        </div>
-      </header>
-      {items.length > 0 ? (
-        <div className="flex flex-wrap gap-2 p-3">
-          {items.map(item => (
-            <ResearchCard key={item.id} item={item} tone={tone} onSelect={onSelect} />
-          ))}
-        </div>
-      ) : (
-        <div className="px-4 py-8 text-center text-sm text-gray-600">해당하는 개발함이 없습니다.</div>
-      )}
-    </section>
-  )
-}
-
 function ResearchCard({ item, tone, onSelect }) {
   const character = item.character
   const status = normalizeAcquisitionStatus(character?.acquired)
   const artUrl = getCardArtUrl(item)
   const border = tone === 'priority'
     ? 'border-cyan-400'
-    : tone === 'ready'
+    : tone === 'ready' || tone === 'quick'
       ? 'border-emerald-500'
-      : 'border-amber-600'
+      : tone === 'long'
+        ? 'border-violet-500'
+        : 'border-amber-600'
 
   return (
     <button
@@ -348,94 +392,6 @@ function CompletedResearchSection({ items, onSelect }) {
   )
 }
 
-function ResearchDetailModal({ item, characters, candidateRankingData, onClose }) {
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-sm"
-      onClick={onClose}
-      role="presentation"
-    >
-      <div
-        className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-lg border border-neutral-600 bg-[#242424] p-5 text-gray-100 shadow-2xl"
-        onClick={event => event.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-label={`${item.name} 개발 정보`}
-      >
-        <div className="flex items-start gap-4">
-          <img src={getCardArtUrl(item)} alt="" className="h-28 w-28 flex-none rounded border border-neutral-600 bg-[#181818] object-cover object-top" />
-          <div className="min-w-0 flex-1">
-            <div className="flex flex-wrap gap-1.5 text-[11px] font-black">
-              <CardBadge>{item.generation}기</CardBadge>
-              <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{item.planRarity}</CardBadge>
-              <CardBadge>{getFactionDisplayName(item.faction)}</CardBadge>
-              <CardBadge>{item.shipType}</CardBadge>
-              {item.coinStrengthening.available && <CardBadge tone="green">물자강화 가능</CardBadge>}
-            </div>
-            <h3 className="mt-3 text-xl font-black">{item.name}</h3>
-            <p className="mt-2 text-sm text-gray-400">{getFactionDisplayText(item.unlockText)}</p>
-          </div>
-          <button type="button" onClick={onClose} className="rounded px-2 py-1 text-gray-500 hover:bg-neutral-700 hover:text-white" aria-label="닫기">✕</button>
-        </div>
-
-        <section className="mt-5">
-          <h4 className="text-sm font-bold text-gray-300">해금 조건</h4>
-          <div className="mt-2 text-[11px] font-bold text-gray-500">해금 조건을 채울 육성 후보 추천 기준</div>
-          <div className="mt-1.5 grid gap-1.5 text-[11px] leading-5 text-gray-400 sm:grid-cols-2">
-            <div className="rounded border border-neutral-700 bg-[#1a1a1a] px-2.5 py-1.5">
-              <strong className="text-emerald-300">보유함 후보</strong> · 남은 육성 단계 → 대작전 등급 → 추가 기술점수
-            </div>
-            <div className="rounded border border-neutral-700 bg-[#1a1a1a] px-2.5 py-1.5">
-              <strong className="text-sky-300">미보유함 후보</strong> · 입수 난이도 → 대작전 등급 → 추가 기술점수
-            </div>
-          </div>
-          {candidateRankingData?.operationUpdatedAt && (
-            <div className="mt-1.5 text-right text-[10px] text-gray-600">대작전 기준일 {candidateRankingData.operationUpdatedAt}</div>
-          )}
-          <div className="mt-2 grid gap-2 sm:grid-cols-2">
-            {item.unlock.requirements.length > 0 ? item.unlock.requirements.map(requirement => {
-              const candidates = requirement.met ? [] : getResearchUnlockCandidates(requirement, characters, candidateRankingData || {})
-              return (
-                <div key={`${requirement.faction}-${requirement.type}`} className={`rounded border px-3 py-2 text-sm ${requirement.met ? 'border-emerald-900 bg-emerald-950/30 text-emerald-200' : 'border-amber-900 bg-amber-950/25 text-amber-100'}`}>
-                  <div className="font-bold">{unlockRequirementLabel(requirement)}</div>
-                  <div className="mt-1 text-xs opacity-75">{requirement.current} / {requirement.value}{requirement.remaining > 0 ? ` · ${requirement.remaining} 부족` : ' · 충족'}</div>
-                  {candidates.length > 0 && (
-                    <UnlockCandidateList candidates={candidates} />
-                  )}
-                </div>
-              )
-            }) : (
-              <div className="rounded border border-emerald-900 bg-emerald-950/30 px-3 py-2 text-sm text-emerald-200">별도 해금 조건 없음</div>
-            )}
-          </div>
-        </section>
-
-        <section className="mt-5">
-          <h4 className="text-sm font-bold text-gray-300">경험치작 편성 조건</h4>
-          <div className="mt-2 space-y-2">
-            {item.xpPhases.map(phase => {
-              const eligible = getEligibleResearchXpShips(phase, characters)
-              return (
-                <div key={phase.phase} className="rounded border border-neutral-700 bg-[#1a1a1a] px-3 py-3">
-                  <div className="flex flex-wrap justify-between gap-2 text-sm">
-                    <strong>{phase.phase}차 · {formatNumber(phase.requiredXp)} EXP</strong>
-                    <span className="text-gray-400">보유 조건 일치 {eligible.length}명</span>
-                  </div>
-                  <p className="mt-1 text-xs text-gray-400">{phase.factions.map(getFactionDisplayName).join(' · ')} / {phase.lane}</p>
-                  <p className="mt-2 text-xs leading-5 text-gray-300">
-                    {eligible.length > 0 ? eligible.slice(0, 12).map(character => character.name).join(', ') : '현재 보유 상태에서 조건에 맞는 함선이 없습니다.'}
-                    {eligible.length > 12 ? ` 외 ${eligible.length - 12}명` : ''}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
-        </section>
-      </div>
-    </div>
-  )
-}
-
 function summarizeUnlock(requirements) {
   const first = requirements.find(requirement => !requirement.met) || requirements[0]
   if (!first) return '개발 가능'
@@ -457,12 +413,12 @@ function formatNumber(value) {
   return new Intl.NumberFormat('ko-KR').format(value)
 }
 
-function UnlockCandidateList({ candidates }) {
+function UnlockCandidateList({ candidates, title = '해금용 육성 추천 후보' }) {
   const visibleCandidates = candidates.slice(0, 5)
   return (
     <div className="mt-3 border-t border-current/15 pt-2 text-xs">
       <div className="flex items-center justify-between gap-2">
-        <span className="font-bold">해금용 육성 추천 후보</span>
+        <span className="font-bold">{title}</span>
         <span className="text-[10px] opacity-60">상위 {visibleCandidates.length}명 / 전체 {candidates.length}명</span>
       </div>
       <ol className="mt-2 space-y-1.5">
