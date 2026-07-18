@@ -153,6 +153,11 @@ export function groupResearchShipsByGeneration(items) {
     }))
 }
 
+export function getResearchGoalItems(state) {
+  return [...(state?.ready || []), ...(state?.locked || [])]
+    .sort((a, b) => b.generation - a.generation || a.name.localeCompare(b.name, 'ko'))
+}
+
 export function getEligibleResearchXpShips(phase, characters) {
   const factions = new Set((phase.factions || []).map(normalizeFactionValue))
 

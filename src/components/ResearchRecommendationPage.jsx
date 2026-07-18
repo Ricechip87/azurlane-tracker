@@ -12,6 +12,7 @@ import {
   buildResearchRecommendationState,
   buildWebResearchRecommendationGroups,
   getEligibleResearchXpShips,
+  getResearchGoalItems,
   getResearchUnlockCandidates,
   groupResearchShipsByGeneration,
 } from '../utils/researchRecommendations.js'
@@ -31,11 +32,12 @@ export default function ResearchRecommendationPage({ characters }) {
     () => buildResearchFactionProgress(researchRecommendationData.ships, state.factionTechPoints),
     [state.factionTechPoints],
   )
-  const allItems = useMemo(
-    () => [...state.ready, ...state.locked, ...state.completed].sort((a, b) => b.generation - a.generation || a.name.localeCompare(b.name, 'ko')),
+  const goalItems = useMemo(
+    () => getResearchGoalItems(state),
     [state],
   )
-  const selectedTarget = allItems.find(item => String(item.id) === String(targetId)) || null
+  const targetCompleted = state.completed.some(item => String(item.id) === String(targetId))
+  const selectedTarget = targetCompleted ? null : goalItems.find(item => String(item.id) === String(targetId)) || null
   const webRecommendationGroups = useMemo(
     () => buildWebResearchRecommendationGroups(state, candidateRankingData?.operationTierByName),
     [state, candidateRankingData],
@@ -71,9 +73,9 @@ export default function ResearchRecommendationPage({ characters }) {
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-    if (targetId) window.localStorage.setItem('azurlane-research-target', targetId)
+    if (targetId && !targetCompleted) window.localStorage.setItem('azurlane-research-target', targetId)
     else window.localStorage.removeItem('azurlane-research-target')
-  }, [targetId])
+  }, [targetCompleted, targetId])
 
   useLayoutEffect(() => {
     if (!pendingGoalScrollRef.current || !selectedTarget) return
@@ -93,7 +95,7 @@ export default function ResearchRecommendationPage({ characters }) {
       <div ref={goalRef} className="scroll-mt-4">
         <ResearchGoalWorkspace
           key={selectedTarget?.id || 'no-target'}
-          items={allItems}
+          items={goalItems}
           selectedTarget={selectedTarget}
           onSelect={selectGoal}
           characters={characters}
@@ -112,7 +114,7 @@ export default function ResearchRecommendationPage({ characters }) {
         <ResearchFactionProgress items={factionProgress} />
       </details>
 
-      <CompletedResearchSection items={state.completed} onSelect={selectGoal} />
+      <CompletedResearchSection items={state.completed} />
     </section>
   )
 }
@@ -180,13 +182,12 @@ function ResearchGoalPicker({ groups, selectedTarget, onSelect }) {
           <div className="flex flex-wrap gap-2 p-3">
             {group.items.map(item => {
               const selected = String(selectedTarget?.id) === String(item.id)
-              const completed = isResearchCompleted(item)
               return (
                 <button
                   key={item.id}
                   type="button"
                   onClick={() => onSelect(item)}
-                  className={`group relative h-[178px] w-[142px] max-w-full flex-none overflow-hidden rounded border-2 bg-[#272727] text-left shadow outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-white ${selected ? 'border-cyan-400' : completed ? 'border-sky-700' : item.unlock.met ? 'border-emerald-600' : 'border-neutral-600 hover:border-neutral-400'}`}
+                  className={`group relative h-[178px] w-[142px] max-w-full flex-none overflow-hidden rounded border-2 bg-[#272727] text-left shadow outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-white ${selected ? 'border-cyan-400' : item.unlock.met ? 'border-emerald-600' : 'border-neutral-600 hover:border-neutral-400'}`}
                 >
                   <img src={getCardArtUrl(item)} alt="" className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/95" />
@@ -196,8 +197,8 @@ function ResearchGoalPicker({ groups, selectedTarget, onSelect }) {
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-2.5 text-white">
                     <div className="break-keep text-sm font-black leading-5 drop-shadow">{item.name}</div>
-                    <div className={`mt-1 text-[10px] font-bold ${completed ? 'text-sky-300' : item.unlock.met ? 'text-emerald-300' : 'text-amber-300'}`}>
-                      {completed ? '개발 완료' : item.unlock.met ? '바로 개발 가능' : summarizeUnlock(item.unlock.requirements)}
+                    <div className={`mt-1 text-[10px] font-bold ${item.unlock.met ? 'text-emerald-300' : 'text-amber-300'}`}>
+                      {item.unlock.met ? '바로 개발 가능' : summarizeUnlock(item.unlock.requirements)}
                     </div>
                   </div>
                 </button>
@@ -438,7 +439,7 @@ function ResearchCard({ item, tone, onSelect }) {
   )
 }
 
-function CompletedResearchSection({ items, onSelect }) {
+function CompletedResearchSection({ items }) {
   return (
     <details className="rounded border border-neutral-700 bg-[#1a1a1a]">
       <summary className="cursor-pointer bg-[#242424] px-4 py-3 text-sm font-bold text-gray-300">
@@ -446,14 +447,12 @@ function CompletedResearchSection({ items, onSelect }) {
       </summary>
       <div className="flex flex-wrap gap-2 p-3">
         {items.map(item => (
-          <button
+          <span
             key={item.id}
-            type="button"
-            onClick={() => onSelect(item)}
-            className="rounded border border-neutral-700 bg-[#242424] px-3 py-2 text-xs text-gray-400 hover:border-neutral-500 hover:text-gray-100"
+            className="rounded border border-neutral-700 bg-[#242424] px-3 py-2 text-xs text-gray-500"
           >
             {item.generation}기 · {item.name}
-          </button>
+          </span>
         ))}
       </div>
     </details>

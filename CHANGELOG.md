@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-07-19 - Hide Completed Ships From Research Goals
+
+### Changed
+- Exclude completed research ships from the visual goal picker.
+- Clear a persisted goal when that ship is already completed, while keeping completed ships visible only in the read-only completion section.
+
+### Verified
+- Added a regression test proving completed ships are omitted from selectable research goals.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Reclassify KR Obtainability And Recommendation Filters
 
 ### Changed

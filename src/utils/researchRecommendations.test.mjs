@@ -7,10 +7,20 @@ import {
   calcAllFactionTechPoints,
   evaluateResearchUnlock,
   getEligibleResearchXpShips,
+  getResearchGoalItems,
   groupResearchShipsByGeneration,
   getResearchUnlockCandidates,
   selectPriorityResearchShips,
 } from './researchRecommendations.js'
+
+assert.deepEqual(
+  getResearchGoalItems({
+    ready: [{ id: 'ready', generation: 7, name: '개발 가능' }],
+    locked: [{ id: 'locked', generation: 8, name: '해금 필요' }],
+    completed: [{ id: 'completed', generation: 8, name: '개발 완료' }],
+  }).map(item => item.name),
+  ['해금 필요', '개발 가능'],
+)
 
 assert.deepEqual(
   groupResearchShipsByGeneration([
