@@ -3,7 +3,7 @@ import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import researchRecommendationData from '../data/researchRecommendations.json'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
-import { normalizeFactionValue } from '../utils/factions.js'
+import { getFactionDisplayName, getFactionDisplayText, normalizeFactionValue } from '../utils/factions.js'
 import {
   buildOperationTierByName,
   buildResearchFactionProgress,
@@ -148,7 +148,7 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
               const nextNames = item.nextTarget?.ships.join(' · ')
               return (
                 <tr key={item.faction} className={`border-t border-neutral-800 ${selected ? 'bg-cyan-950/35' : 'bg-[#242424] hover:bg-[#292929]'}`}>
-                  <th scope="row" className="px-3 py-2.5 text-left text-sm font-bold text-gray-100">{item.faction}</th>
+                  <th scope="row" className="px-3 py-2.5 text-left text-sm font-bold text-gray-100">{getFactionDisplayName(item.faction)}</th>
                   <td className="px-3 py-2.5 text-right font-black text-cyan-300">{formatNumber(item.current)}점</td>
                   <td className="max-w-[260px] truncate px-3 py-2.5 font-semibold text-gray-300" title={nextNames || '기술점수 조건 모두 충족'}>
                     {nextNames || <span className="text-emerald-300">모두 충족</span>}
@@ -250,7 +250,7 @@ function ResearchCard({ item, tone, onSelect }) {
         <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{item.planRarity}</CardBadge>
       </div>
       <div className="absolute right-2 top-2 flex flex-col items-end gap-1 text-[10px] font-black">
-        <CardBadge>{item.faction}</CardBadge>
+        <CardBadge>{getFactionDisplayName(item.faction)}</CardBadge>
         <CardBadge>{item.shipType}</CardBadge>
         {item.coinStrengthening.available && <CardBadge tone="green">물자강화</CardBadge>}
       </div>
@@ -307,12 +307,12 @@ function ResearchDetailModal({ item, characters, candidateRankingData, onClose }
             <div className="flex flex-wrap gap-1.5 text-[11px] font-black">
               <CardBadge>{item.generation}기</CardBadge>
               <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{item.planRarity}</CardBadge>
-              <CardBadge>{item.faction}</CardBadge>
+              <CardBadge>{getFactionDisplayName(item.faction)}</CardBadge>
               <CardBadge>{item.shipType}</CardBadge>
               {item.coinStrengthening.available && <CardBadge tone="green">물자강화 가능</CardBadge>}
             </div>
             <h3 className="mt-3 text-xl font-black">{item.name}</h3>
-            <p className="mt-2 text-sm text-gray-400">{item.unlockText}</p>
+            <p className="mt-2 text-sm text-gray-400">{getFactionDisplayText(item.unlockText)}</p>
           </div>
           <button type="button" onClick={onClose} className="rounded px-2 py-1 text-gray-500 hover:bg-neutral-700 hover:text-white" aria-label="닫기">✕</button>
         </div>
@@ -360,7 +360,7 @@ function ResearchDetailModal({ item, characters, candidateRankingData, onClose }
                     <strong>{phase.phase}차 · {formatNumber(phase.requiredXp)} EXP</strong>
                     <span className="text-gray-400">보유 조건 일치 {eligible.length}명</span>
                   </div>
-                  <p className="mt-1 text-xs text-gray-400">{phase.factions.join(' · ')} / {phase.lane}</p>
+                  <p className="mt-1 text-xs text-gray-400">{phase.factions.map(getFactionDisplayName).join(' · ')} / {phase.lane}</p>
                   <p className="mt-2 text-xs leading-5 text-gray-300">
                     {eligible.length > 0 ? eligible.slice(0, 12).map(character => character.name).join(', ') : '현재 보유 상태에서 조건에 맞는 함선이 없습니다.'}
                     {eligible.length > 12 ? ` 외 ${eligible.length - 12}명` : ''}
@@ -378,12 +378,12 @@ function ResearchDetailModal({ item, characters, candidateRankingData, onClose }
 function summarizeUnlock(requirements) {
   const first = requirements.find(requirement => !requirement.met) || requirements[0]
   if (!first) return '개발 가능'
-  return `${first.faction} ${first.remaining} 부족`
+  return `${getFactionDisplayName(first.faction)} ${first.remaining} 부족`
 }
 
 function unlockRequirementLabel(requirement) {
-  if (requirement.type === 'roster-count') return `${requirement.faction} ${requirement.lane} 도감 등록`
-  return `${requirement.faction} 기술점수`
+  if (requirement.type === 'roster-count') return `${getFactionDisplayName(requirement.faction)} ${requirement.lane} 도감 등록`
+  return `${getFactionDisplayName(requirement.faction)} 기술점수`
 }
 
 function getCardArtUrl(item) {

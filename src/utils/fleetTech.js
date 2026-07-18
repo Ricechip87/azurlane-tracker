@@ -2,7 +2,7 @@ import { normalizeFactionValue } from './factions.js'
 import { calcTechPoints } from './techPoints.js'
 
 export const MAJOR_TECH_FACTIONS = [
-  { value: '유니온', label: '유니온 (USS)', code: 'USS' },
+  { value: '유니온', label: '이글 유니온 (USS)', code: 'USS' },
   { value: '로열', label: '로열 (HMS)', code: 'HMS' },
   { value: '중앵', label: '중앵 (IJN)', code: 'IJN' },
   { value: '철혈', label: '철혈 (KMS)', code: 'KMS' },

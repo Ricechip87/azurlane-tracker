@@ -38,13 +38,13 @@ const FACTION_ALIASES = new Map([
 
 export const FACTION_ORDER = [
   { value: '전체', label: '모든 진영' },
-  { value: '유니온', label: '유니온 (USS)' },
+  { value: '유니온', label: '이글 유니온 (USS)' },
   { value: '로열', label: '로열 (HMS)' },
   { value: '중앵', label: '중앵 (IJN)' },
   { value: '철혈', label: '철혈 (KMS)' },
   { value: '동황', label: '동황 (ROC)' },
   { value: '사르데냐', label: '사르데냐 (RN)' },
-  { value: '노스유니온', label: '노스유니온 (SN)' },
+  { value: '노스유니온', label: '노스 유니온 (SN)' },
   { value: '아이리스', label: '아이리스 (FFNF)' },
   { value: '비시아', label: '비시아 (MNF)' },
   { value: '튤리퍼', label: '튤리퍼 (HNLMS)' },
@@ -56,6 +56,19 @@ export const FACTION_ORDER = [
 export function normalizeFactionValue(value) {
   const faction = String(value || '').trim()
   return FACTION_ALIASES.get(faction) || faction
+}
+
+export function getFactionDisplayName(value) {
+  const faction = normalizeFactionValue(value)
+  if (faction === '유니온') return '이글 유니온'
+  if (faction === '노스유니온') return '노스 유니온'
+  return faction
+}
+
+export function getFactionDisplayText(value) {
+  return String(value || '')
+    .replaceAll('노스유니온', '노스 유니온')
+    .replace(/(?<!이글 )(?<!노스 )유니온/g, '이글 유니온')
 }
 
 export function getFactionOptions(factions) {

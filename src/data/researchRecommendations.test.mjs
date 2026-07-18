@@ -49,6 +49,10 @@ assert.deepEqual(data.ships.find(ship => ship.name === '어드미럴 나히모�
 assert.deepEqual(data.ships.find(ship => ship.name === '드미트리 돈스코이').unlockRequirements, [
   { type: 'tech-points', faction: '노스유니온', value: 300 },
 ])
+assert.deepEqual(data.ships.find(ship => ship.name === '치칼로프').unlockRequirements, [
+  { type: 'tech-points', faction: '유니온', value: 760 },
+  { type: 'tech-points', faction: '사르데냐', value: 300 },
+])
 
 assert.equal(data.ships.filter(ship => ship.coinStrengthening.available).length, 30)
 

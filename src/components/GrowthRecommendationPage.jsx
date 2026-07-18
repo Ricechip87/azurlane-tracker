@@ -3,6 +3,7 @@ import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
+import { getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
 
 const MODES = [
   {
@@ -213,7 +214,7 @@ function getGroupTag(sheetGroup) {
 }
 
 function normalizeSummary(value) {
-  return String(value || '')
+  return getFactionDisplayText(value)
     .split('\n')
     .map(line => line.trim())
     .filter(Boolean)
@@ -495,6 +496,7 @@ function RecommendationCard({ card, character, onOpen }) {
 function getDisplayFaction(faction) {
   if (!faction) return '-'
   if (COLLAB_FACTIONS.has(faction)) return '콜라보'
+  if (faction === '유니온' || faction === '노스유니온') return getFactionDisplayName(faction)
   return FACTION_LABELS[faction] || faction
 }
 

@@ -3,7 +3,7 @@ import { calcMajorFactionTechPoints, MAJOR_TECH_FACTIONS } from './fleetTech.js'
 
 assert.deepEqual(
   MAJOR_TECH_FACTIONS.map(faction => faction.label),
-  ['유니온 (USS)', '로열 (HMS)', '중앵 (IJN)', '철혈 (KMS)']
+  ['이글 유니온 (USS)', '로열 (HMS)', '중앵 (IJN)', '철혈 (KMS)']
 )
 
 const techPoints = { acquired: 2, maxLB: 3, lv120: 5 }

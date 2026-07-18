@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-07-19 - Clarify Eagle Union And Northern Parliament Labels
+
+### Fixed
+- Display the internal `유니온` value as `이글 유니온` and `노스유니온` as `노스 유니온` across roster, filters, fleet-tech statistics, growth recommendations, and research recommendations.
+- Normalize faction names embedded in visible recommendation notes and legacy research unlock text so plain `유니온` is no longer ambiguous.
+- Added a Chkalov regression assertion that preserves the KR unlock condition as Eagle Union 760 plus Sardegna 300.
+
+### Audited
+- Compared all 197 Eagle Union/Northern Parliament character records against CN `nationality` values: 197 matched, 0 missing, 0 mismatches.
+- Cross-checked growth, obtainability, and research duplicate faction fields against the character roster: 401 matched records, 0 mismatches.
+- Cross-checked 13 Eagle Union/Northern Parliament research tech-point requirements against their KR unlock text: 0 mismatches.
+
 ## 2026-07-19 - Distinguish Unlock Conditions From Candidate Ranking
 
 ### Fixed

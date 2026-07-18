@@ -3,6 +3,7 @@ import { calcTechPoints } from '../utils/techPoints.js'
 import { ACQUISITION_STATUSES, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getDropdownMenuPosition } from '../utils/dropdownPosition.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
+import { getFactionDisplayName } from '../utils/factions.js'
 
 const RARITY_COLOR = {
   N: 'text-gray-400',
@@ -112,7 +113,7 @@ function CharacterRow({ char: c, updateUser, even }) {
         <AutoScrollingText text={c.shipType} />
       </td>
       <td className={`${TD_CENTER} text-xs text-gray-400`}>
-        <AutoScrollingText text={c.faction} />
+        <AutoScrollingText text={getFactionDisplayName(c.faction)} />
       </td>
       <td className={TD_CENTER}>
         <StatusSelect value={remodel} options={REMODEL_OPTS} onChange={v => updateUser(c.id, 'remodeled', v)}
