@@ -1,5 +1,16 @@
 # Change Log
 
+## 2026-07-19 - Distinguish Unlock Conditions From Candidate Ranking
+
+### Fixed
+- Labeled the ownership and obtainability boxes as the ranking criteria for ships recommended to raise toward an unlock condition, rather than part of the unlock condition itself.
+- Renamed the candidate list to `해금용 육성 추천 후보` and clarified remaining growth stages and additional tech-point wording.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-18 - Separate Northern Parliament From Eagle Union
 
 ### Fixed

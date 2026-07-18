@@ -319,12 +319,13 @@ function ResearchDetailModal({ item, characters, candidateRankingData, onClose }
 
         <section className="mt-5">
           <h4 className="text-sm font-bold text-gray-300">해금 조건</h4>
-          <div className="mt-2 grid gap-1.5 text-[11px] leading-5 text-gray-400 sm:grid-cols-2">
+          <div className="mt-2 text-[11px] font-bold text-gray-500">해금 조건을 채울 육성 후보 추천 기준</div>
+          <div className="mt-1.5 grid gap-1.5 text-[11px] leading-5 text-gray-400 sm:grid-cols-2">
             <div className="rounded border border-neutral-700 bg-[#1a1a1a] px-2.5 py-1.5">
-              <strong className="text-emerald-300">보유함</strong> · 남은 단계 → 대작전 등급 → 기술점수
+              <strong className="text-emerald-300">보유함 후보</strong> · 남은 육성 단계 → 대작전 등급 → 추가 기술점수
             </div>
             <div className="rounded border border-neutral-700 bg-[#1a1a1a] px-2.5 py-1.5">
-              <strong className="text-sky-300">미보유함</strong> · 입수 난이도 → 대작전 등급 → 기술점수
+              <strong className="text-sky-300">미보유함 후보</strong> · 입수 난이도 → 대작전 등급 → 추가 기술점수
             </div>
           </div>
           {candidateRankingData?.operationUpdatedAt && (
@@ -399,7 +400,7 @@ function UnlockCandidateList({ candidates }) {
   return (
     <div className="mt-3 border-t border-current/15 pt-2 text-xs">
       <div className="flex items-center justify-between gap-2">
-        <span className="font-bold">채울 후보</span>
+        <span className="font-bold">해금용 육성 추천 후보</span>
         <span className="text-[10px] opacity-60">상위 {visibleCandidates.length}명 / 전체 {candidates.length}명</span>
       </div>
       <ol className="mt-2 space-y-1.5">
