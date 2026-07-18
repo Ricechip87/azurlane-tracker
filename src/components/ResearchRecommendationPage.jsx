@@ -234,10 +234,17 @@ function ResearchDetailModal({ item, characters, candidateRankingData, onClose }
 
         <section className="mt-5">
           <h4 className="text-sm font-bold text-gray-300">해금 조건</h4>
-          <p className="mt-1 text-[11px] leading-5 text-gray-500">
-            보유함은 남은 단계 → 대작전 등급 → 기술점수, 미보유함은 입수 난이도 → 대작전 등급 → 기술점수 순입니다.
-            {candidateRankingData?.operationUpdatedAt ? ` 대작전 기준일 ${candidateRankingData.operationUpdatedAt}` : ''}
-          </p>
+          <div className="mt-2 grid gap-1.5 text-[11px] leading-5 text-gray-400 sm:grid-cols-2">
+            <div className="rounded border border-neutral-700 bg-[#1a1a1a] px-2.5 py-1.5">
+              <strong className="text-emerald-300">보유함</strong> · 남은 단계 → 대작전 등급 → 기술점수
+            </div>
+            <div className="rounded border border-neutral-700 bg-[#1a1a1a] px-2.5 py-1.5">
+              <strong className="text-sky-300">미보유함</strong> · 입수 난이도 → 대작전 등급 → 기술점수
+            </div>
+          </div>
+          {candidateRankingData?.operationUpdatedAt && (
+            <div className="mt-1.5 text-right text-[10px] text-gray-600">대작전 기준일 {candidateRankingData.operationUpdatedAt}</div>
+          )}
           <div className="mt-2 grid gap-2 sm:grid-cols-2">
             {item.unlock.requirements.length > 0 ? item.unlock.requirements.map(requirement => {
               const candidates = requirement.met ? [] : getResearchUnlockCandidates(requirement, characters, candidateRankingData || {})
@@ -246,13 +253,7 @@ function ResearchDetailModal({ item, characters, candidateRankingData, onClose }
                   <div className="font-bold">{unlockRequirementLabel(requirement)}</div>
                   <div className="mt-1 text-xs opacity-75">{requirement.current} / {requirement.value}{requirement.remaining > 0 ? ` · ${requirement.remaining} 부족` : ' · 충족'}</div>
                   {candidates.length > 0 && (
-                    <div className="mt-2 border-t border-current/15 pt-2 text-xs leading-5">
-                      <span className="font-bold">채울 후보:</span>{' '}
-                      {candidates.slice(0, 5).map(candidate => (
-                        `${candidate.name}(${candidateRankingSummary(candidate)})`
-                      )).join(', ')}
-                      {candidates.length > 5 ? ` 외 ${candidates.length - 5}명` : ''}
-                    </div>
+                    <UnlockCandidateList candidates={candidates} />
                   )}
                 </div>
               )
@@ -308,14 +309,72 @@ function formatNumber(value) {
   return new Intl.NumberFormat('ko-KR').format(value)
 }
 
-function candidateRankingSummary(candidate) {
+function UnlockCandidateList({ candidates }) {
+  const visibleCandidates = candidates.slice(0, 5)
+  return (
+    <div className="mt-3 border-t border-current/15 pt-2 text-xs">
+      <div className="flex items-center justify-between gap-2">
+        <span className="font-bold">채울 후보</span>
+        <span className="text-[10px] opacity-60">상위 {visibleCandidates.length}명 / 전체 {candidates.length}명</span>
+      </div>
+      <ol className="mt-2 space-y-1.5">
+        {visibleCandidates.map((candidate, index) => (
+          <li key={candidate.id ?? candidate.name} className="rounded border border-white/10 bg-black/25 px-2 py-2 text-gray-200">
+            <div className="flex min-w-0 items-start gap-2">
+              <span className="flex h-4 w-4 flex-none items-center justify-center rounded-full bg-black/60 text-[9px] font-black text-gray-400">{index + 1}</span>
+              <span className="min-w-0 flex-1 break-words font-bold leading-4">{candidate.name}</span>
+              {candidate.remainingTechPoints > 0 && (
+                <span className="flex-none rounded bg-amber-400 px-1.5 py-0.5 text-[10px] font-black text-black">+{candidate.remainingTechPoints}점</span>
+              )}
+            </div>
+            <div className="ml-6 mt-1.5 flex flex-wrap gap-1">
+              {candidateRankingBadges(candidate).map(badge => (
+                <CandidateBadge key={`${candidate.name}-${badge.label}`} tone={badge.tone}>{badge.label}</CandidateBadge>
+              ))}
+            </div>
+          </li>
+        ))}
+      </ol>
+      {candidates.length > visibleCandidates.length && (
+        <div className="mt-2 text-center text-[10px] opacity-60">그 외 후보 {candidates.length - visibleCandidates.length}명</div>
+      )}
+    </div>
+  )
+}
+
+function candidateRankingBadges(candidate) {
   const tier = candidate.operationTier || '미평가'
-  const points = candidate.remainingTechPoints ? `·+${candidate.remainingTechPoints}` : ''
   if (normalizeAcquisitionStatus(candidate.status) !== '미획득') {
     const remaining = candidate.remainingSteps === 1 ? '120만 남음' : `${candidate.remainingSteps}단계 남음`
-    return `보유·${remaining}·대작전 ${tier}${points}`
+    return [
+      { label: '보유', tone: 'owned' },
+      { label: remaining, tone: 'neutral' },
+      { label: `대작전 ${tier}`, tone: candidate.operationTier ? 'operation' : 'neutral' },
+    ]
   }
-  return `${candidate.difficulty?.label || '미확인'}·대작전 ${tier}${points}`
+  return [
+    { label: candidate.difficulty?.label || '미확인', tone: difficultyCandidateTone(candidate.difficulty?.key) },
+    { label: `대작전 ${tier}`, tone: candidate.operationTier ? 'operation' : 'neutral' },
+  ]
+}
+
+function difficultyCandidateTone(key) {
+  if (key === 'easy') return 'easy'
+  if (key === 'normal') return 'normal'
+  if (key === 'hard' || key === 'limited') return 'hard'
+  return 'neutral'
+}
+
+function CandidateBadge({ children, tone }) {
+  const styles = {
+    owned: 'border-emerald-700 bg-emerald-950/70 text-emerald-200',
+    easy: 'border-emerald-700 bg-emerald-950/70 text-emerald-200',
+    normal: 'border-sky-800 bg-sky-950/70 text-sky-200',
+    hard: 'border-rose-800 bg-rose-950/70 text-rose-200',
+    operation: 'border-violet-800 bg-violet-950/70 text-violet-200',
+    neutral: 'border-neutral-600 bg-neutral-800 text-gray-300',
+  }
+  return <span className={`rounded border px-1.5 py-0.5 text-[9px] font-bold ${styles[tone] || styles.neutral}`}>{children}</span>
 }
 
 function CardBadge({ children, tone = 'dark' }) {

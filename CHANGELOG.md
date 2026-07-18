@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-07-18 - Clarify Development Unlock Candidate Lists
+
+### Fixed
+- Replaced the comma-separated unlock candidate sentence with a numbered vertical list.
+- Split ownership or obtainability, remaining stages, Operation Siren tier, and obtainable tech points into separate visual badges.
+- Added visible top-candidate and total-candidate counts while preserving the existing recommendation order.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-18 - Rank Development Unlock Candidates By Practical Value
 
 ### Changed
