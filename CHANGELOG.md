@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-07-18 - Add Faction Development Unlock Progress
+
+### Changed
+- Added faction progress cards showing current fleet-tech points, the next development-ship target, remaining points, and all point-threshold markers.
+- Allow a faction progress card to filter the development recommendation sections to ships using that faction's unlock condition.
+- Keep roster ownership editing and candidate filtering out of this view because the shared personal roster already manages those states.
+- Ignore roster-count requirements in the point progress bar while preserving them in each development ship's detailed unlock conditions.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+- `git diff --check`
+
 ## 2026-07-18 - Clarify Development Unlock Candidate Lists
 
 ### Fixed

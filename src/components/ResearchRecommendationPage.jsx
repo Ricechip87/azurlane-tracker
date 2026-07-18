@@ -3,8 +3,10 @@ import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import researchRecommendationData from '../data/researchRecommendations.json'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
+import { normalizeFactionValue } from '../utils/factions.js'
 import {
   buildOperationTierByName,
+  buildResearchFactionProgress,
   buildResearchRecommendationState,
   getEligibleResearchXpShips,
   getResearchUnlockCandidates,
@@ -12,14 +14,26 @@ import {
 
 export default function ResearchRecommendationPage({ characters }) {
   const [selected, setSelected] = useState(null)
+  const [selectedFaction, setSelectedFaction] = useState(null)
   const [candidateRankingData, setCandidateRankingData] = useState(null)
   const state = useMemo(
     () => buildResearchRecommendationState(researchRecommendationData.ships, characters),
     [characters],
   )
-  const latestReadyGeneration = Math.max(0, ...state.ready.map(item => item.generation))
-  const priority = state.ready.filter(item => item.generation === latestReadyGeneration)
-  const otherReady = state.ready.filter(item => item.generation !== latestReadyGeneration)
+  const factionProgress = useMemo(
+    () => buildResearchFactionProgress(researchRecommendationData.ships, state.factionTechPoints),
+    [state.factionTechPoints],
+  )
+  const filterByFaction = items => selectedFaction
+    ? items.filter(item => (item.unlockRequirements || []).some(requirement => normalizeFactionValue(requirement.faction) === selectedFaction))
+    : items
+  const visibleReady = filterByFaction(state.ready)
+  const visibleLocked = filterByFaction(state.locked)
+  const visibleCompleted = filterByFaction(state.completed)
+  const visibleState = { ...state, ready: visibleReady, locked: visibleLocked, completed: visibleCompleted }
+  const latestReadyGeneration = Math.max(0, ...visibleReady.map(item => item.generation))
+  const priority = visibleReady.filter(item => item.generation === latestReadyGeneration)
+  const otherReady = visibleReady.filter(item => item.generation !== latestReadyGeneration)
 
   useEffect(() => {
     let cancelled = false
@@ -50,7 +64,13 @@ export default function ResearchRecommendationPage({ characters }) {
 
   return (
     <section className="space-y-4">
-      <ResearchSummary state={state} />
+      <ResearchSummary state={visibleState} />
+
+      <ResearchFactionProgress
+        items={factionProgress}
+        selectedFaction={selectedFaction}
+        onSelect={setSelectedFaction}
+      />
 
       <div className="rounded border border-sky-900/70 bg-sky-950/25 px-4 py-3 text-sm leading-6 text-sky-100">
         <strong>9기 반영 정책:</strong> KR 기본 데이터에 정식 편입된 뒤 추가합니다. 현재 추천은 검증된 1~8기 42명을 기준으로 계산합니다.
@@ -75,12 +95,12 @@ export default function ResearchRecommendationPage({ characters }) {
       <ResearchSection
         title="해금 조건 부족"
         description="부족한 진영 기술점수 또는 도감 등록 수를 채우면 개발할 수 있습니다."
-        items={state.locked}
+        items={visibleLocked}
         tone="locked"
         onSelect={setSelected}
       />
 
-      <CompletedResearchSection items={state.completed} onSelect={setSelected} />
+      <CompletedResearchSection items={visibleCompleted} onSelect={setSelected} />
 
       {selected && (
         <ResearchDetailModal
@@ -91,6 +111,82 @@ export default function ResearchRecommendationPage({ characters }) {
         />
       )}
     </section>
+  )
+}
+
+function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
+  return (
+    <section className="rounded border border-neutral-700 bg-[#1a1a1a]">
+      <header className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-700 bg-[#242424] px-4 py-3">
+        <div>
+          <h3 className="text-sm font-bold text-gray-100">진영별 개발 해금 진행</h3>
+          <p className="mt-1 text-xs text-gray-500">현재 기술점수와 다음 개발함 목표입니다. 카드를 누르면 해당 조건의 개발함만 표시합니다.</p>
+        </div>
+        <button
+          type="button"
+          onClick={() => onSelect(null)}
+          className={`rounded border px-3 py-1.5 text-xs font-bold ${selectedFaction ? 'border-neutral-600 bg-neutral-800 text-gray-300 hover:border-neutral-400' : 'border-cyan-500 bg-cyan-950/60 text-cyan-200'}`}
+        >
+          전체 보기
+        </button>
+      </header>
+      <div className="grid gap-2 p-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {items.map(item => (
+          <FactionProgressCard
+            key={item.faction}
+            item={item}
+            selected={selectedFaction === item.faction}
+            onSelect={() => onSelect(selectedFaction === item.faction ? null : item.faction)}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function FactionProgressCard({ item, selected, onSelect }) {
+  const progress = item.maxRequired > 0 ? Math.min(100, item.current / item.maxRequired * 100) : 100
+  const nextNames = item.nextTarget?.ships.join(' · ')
+  return (
+    <button
+      type="button"
+      aria-pressed={selected}
+      onClick={onSelect}
+      className={`rounded border px-3 py-3 text-left transition-colors ${selected ? 'border-cyan-400 bg-cyan-950/35 ring-1 ring-cyan-400/30' : 'border-neutral-700 bg-[#242424] hover:border-neutral-500'}`}
+    >
+      <div className="flex items-center justify-between gap-2">
+        <strong className="text-sm text-gray-100">{item.faction}</strong>
+        <span className="text-xs font-black text-cyan-300">{formatNumber(item.current)}점</span>
+      </div>
+      <div className="mt-2 min-h-9 text-[11px] leading-4">
+        {item.nextTarget ? (
+          <>
+            <div className="truncate font-bold text-gray-300" title={nextNames}>다음 · {nextNames}</div>
+            <div className="text-amber-300">{formatNumber(item.remaining)}점 부족 · 목표 {formatNumber(item.nextTarget.required)}점</div>
+          </>
+        ) : (
+          <>
+            <div className="font-bold text-emerald-300">기술점수 조건 모두 충족</div>
+            <div className="text-gray-500">최고 목표 {formatNumber(item.maxRequired)}점</div>
+          </>
+        )}
+      </div>
+      <div className="relative mt-2 h-2 rounded-full bg-neutral-800">
+        <div className={`h-full rounded-full ${item.nextTarget ? 'bg-cyan-500' : 'bg-emerald-500'}`} style={{ width: `${progress}%` }} />
+        {item.targets.map(target => (
+          <span
+            key={target.required}
+            title={`${target.ships.join(', ')} · ${target.required}점`}
+            className={`absolute top-1/2 h-3 w-0.5 -translate-x-1/2 -translate-y-1/2 ${target.met ? 'bg-emerald-200' : 'bg-gray-500'}`}
+            style={{ left: `${Math.min(100, target.required / item.maxRequired * 100)}%` }}
+          />
+        ))}
+      </div>
+      <div className="mt-1 flex justify-between text-[9px] text-gray-600">
+        <span>0</span>
+        <span>{formatNumber(item.maxRequired)}</span>
+      </div>
+    </button>
   )
 }
 

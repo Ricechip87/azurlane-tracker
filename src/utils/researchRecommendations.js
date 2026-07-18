@@ -90,6 +90,46 @@ const OBTAINABILITY_ORDER = {
   unknown: 4,
   excluded: 5,
 }
+const RESEARCH_FACTION_ORDER = ['유니온', '로열', '중앵', '철혈', '동황', '사르데냐', '노스유니온', '아이리스', '비시아', '튤리퍼']
+
+export function buildResearchFactionProgress(researchShips, factionTechPoints) {
+  const targetsByFaction = new Map()
+
+  for (const ship of researchShips || []) {
+    for (const requirement of ship.unlockRequirements || []) {
+      if (requirement.type !== 'tech-points') continue
+      const faction = normalizeFactionValue(requirement.faction)
+      if (!faction) continue
+      if (!targetsByFaction.has(faction)) targetsByFaction.set(faction, new Map())
+      const factionTargets = targetsByFaction.get(faction)
+      if (!factionTargets.has(requirement.value)) factionTargets.set(requirement.value, new Set())
+      factionTargets.get(requirement.value).add(ship.name)
+    }
+  }
+
+  return [...targetsByFaction.entries()]
+    .map(([faction, targetMap]) => {
+      const current = factionTechPoints?.[faction] || 0
+      const targets = [...targetMap.entries()]
+        .map(([required, ships]) => ({
+          required: Number(required),
+          ships: [...ships].sort((a, b) => a.localeCompare(b, 'ko')),
+          met: current >= Number(required),
+        }))
+        .sort((a, b) => a.required - b.required)
+      const nextTarget = targets.find(target => !target.met) || null
+
+      return {
+        faction,
+        current,
+        maxRequired: targets.at(-1)?.required || 0,
+        remaining: nextTarget ? nextTarget.required - current : 0,
+        nextTarget,
+        targets,
+      }
+    })
+    .sort((a, b) => researchFactionRank(a.faction) - researchFactionRank(b.faction) || a.faction.localeCompare(b.faction, 'ko'))
+}
 
 export function buildOperationTierByName(growthRecommendationData) {
   const result = new Map()
@@ -160,6 +200,11 @@ function operationTierRank(tier) {
 
 function obtainabilityRank(key) {
   return OBTAINABILITY_ORDER[key] ?? OBTAINABILITY_ORDER.unknown
+}
+
+function researchFactionRank(faction) {
+  const index = RESEARCH_FACTION_ORDER.indexOf(faction)
+  return index === -1 ? RESEARCH_FACTION_ORDER.length : index
 }
 
 function compareReadyResearchShips(a, b) {

@@ -1,12 +1,47 @@
 import assert from 'node:assert/strict'
 import {
   buildOperationTierByName,
+  buildResearchFactionProgress,
   buildResearchRecommendationState,
   calcAllFactionTechPoints,
   evaluateResearchUnlock,
   getEligibleResearchXpShips,
   getResearchUnlockCandidates,
 } from './researchRecommendations.js'
+
+assert.deepEqual(
+  buildResearchFactionProgress(
+    [
+      { name: '철혈 100', unlockRequirements: [{ type: 'tech-points', faction: '철혈', value: 100 }] },
+      { name: '철혈 300 A', unlockRequirements: [{ type: 'tech-points', faction: '철혈', value: 300 }] },
+      { name: '철혈 300 B', unlockRequirements: [{ type: 'tech-points', faction: '철혈', value: 300 }] },
+      { name: '사르데냐 200', unlockRequirements: [{ type: 'tech-points', faction: '사르데냐', value: 200 }] },
+      { name: '도감 조건', unlockRequirements: [{ type: 'roster-count', faction: '철혈', lane: '전열', value: 7 }] },
+    ],
+    { 철혈: 150, 사르데냐: 250 },
+  ),
+  [
+    {
+      faction: '철혈',
+      current: 150,
+      maxRequired: 300,
+      remaining: 150,
+      nextTarget: { required: 300, ships: ['철혈 300 A', '철혈 300 B'], met: false },
+      targets: [
+        { required: 100, ships: ['철혈 100'], met: true },
+        { required: 300, ships: ['철혈 300 A', '철혈 300 B'], met: false },
+      ],
+    },
+    {
+      faction: '사르데냐',
+      current: 250,
+      maxRequired: 200,
+      remaining: 0,
+      nextTarget: null,
+      targets: [{ required: 200, ships: ['사르데냐 200'], met: true }],
+    },
+  ],
+)
 
 assert.deepEqual(
   [...buildOperationTierByName({
