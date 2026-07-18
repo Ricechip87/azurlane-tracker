@@ -1,4 +1,4 @@
-import { isAcquiredStatus } from './acquisitionStatus.js'
+import { isAcquiredStatus, normalizeAcquisitionStatus } from './acquisitionStatus.js'
 import { normalizeFactionValue } from './factions.js'
 import { calcFleetTechCandidates } from './fleetTechCandidates.js'
 import { getShipPosition } from './shipClassifications.js'
@@ -81,17 +81,85 @@ export function getEligibleResearchXpShips(phase, characters) {
     .sort((a, b) => a.name.localeCompare(b.name, 'ko'))
 }
 
-export function getResearchUnlockCandidates(requirement, characters) {
+const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B']
+const OBTAINABILITY_ORDER = {
+  easy: 0,
+  normal: 1,
+  hard: 2,
+  limited: 3,
+  unknown: 4,
+  excluded: 5,
+}
+
+export function buildOperationTierByName(growthRecommendationData) {
+  const result = new Map()
+
+  for (const recommendation of growthRecommendationData?.recommendations || []) {
+    if (recommendation.source !== 'operation-siren' || !recommendation.name || !recommendation.tier) continue
+    const previous = result.get(recommendation.name)
+    if (!previous || operationTierRank(recommendation.tier) < operationTierRank(previous)) {
+      result.set(recommendation.name, recommendation.tier)
+    }
+  }
+
+  return result
+}
+
+export function getResearchUnlockCandidates(requirement, characters, rankingData = {}) {
   const faction = normalizeFactionValue(requirement.faction)
   if (requirement.type === 'tech-points') {
     return calcFleetTechCandidates(characters, faction)
+      .map(candidate => addResearchRankingData(candidate, rankingData))
+      .sort(compareResearchUnlockCandidates)
   }
 
   return characters
     .filter(character => !isAcquiredStatus(character.acquired))
     .filter(character => normalizeFactionValue(character.faction) === faction)
     .filter(character => getShipPosition(character.shipType) === requirement.lane)
-    .sort((a, b) => a.name.localeCompare(b.name, 'ko'))
+    .map(character => addResearchRankingData({
+      ...character,
+      status: normalizeAcquisitionStatus(character.acquired),
+      remainingSteps: 1,
+      remainingTechPoints: 0,
+    }, rankingData))
+    .sort(compareResearchUnlockCandidates)
+}
+
+function addResearchRankingData(candidate, { obtainabilityByName, operationTierByName }) {
+  const obtainability = obtainabilityByName?.get(candidate.name)
+  return {
+    ...candidate,
+    obtainability,
+    difficulty: obtainability?.difficulty || { key: 'unknown', label: '미확인' },
+    operationTier: operationTierByName?.get(candidate.name) || null,
+  }
+}
+
+function compareResearchUnlockCandidates(a, b) {
+  const ownershipDifference = Number(!isAcquiredStatus(a.status)) - Number(!isAcquiredStatus(b.status))
+  if (ownershipDifference) return ownershipDifference
+
+  if (isAcquiredStatus(a.status)) {
+    return a.remainingSteps - b.remainingSteps
+      || operationTierRank(a.operationTier) - operationTierRank(b.operationTier)
+      || b.remainingTechPoints - a.remainingTechPoints
+      || a.name.localeCompare(b.name, 'ko')
+  }
+
+  return obtainabilityRank(a.difficulty?.key) - obtainabilityRank(b.difficulty?.key)
+    || operationTierRank(a.operationTier) - operationTierRank(b.operationTier)
+    || b.remainingTechPoints - a.remainingTechPoints
+    || a.name.localeCompare(b.name, 'ko')
+}
+
+function operationTierRank(tier) {
+  const index = OPERATION_TIER_ORDER.indexOf(tier)
+  return index === -1 ? OPERATION_TIER_ORDER.length : index
+}
+
+function obtainabilityRank(key) {
+  return OBTAINABILITY_ORDER[key] ?? OBTAINABILITY_ORDER.unknown
 }
 
 function compareReadyResearchShips(a, b) {

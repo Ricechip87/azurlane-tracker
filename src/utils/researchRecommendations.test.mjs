@@ -1,11 +1,24 @@
 import assert from 'node:assert/strict'
 import {
+  buildOperationTierByName,
   buildResearchRecommendationState,
   calcAllFactionTechPoints,
   evaluateResearchUnlock,
   getEligibleResearchXpShips,
   getResearchUnlockCandidates,
 } from './researchRecommendations.js'
+
+assert.deepEqual(
+  [...buildOperationTierByName({
+    recommendations: [
+      { source: 'main', name: '테스트 함선', tier: 'SS+' },
+      { source: 'operation-siren', name: '테스트 함선', tier: 'A' },
+      { source: 'operation-siren', name: '중복 함선', tier: 'B' },
+      { source: 'operation-siren', name: '중복 함선', tier: 'S' },
+    ],
+  })],
+  [['테스트 함선', 'A'], ['중복 함선', 'S']],
+)
 
 function character(overrides = {}) {
   return {
@@ -103,4 +116,42 @@ assert.deepEqual(
     ],
   ).map(item => item.name),
   ['기술 후보'],
+)
+
+const rankedTechCandidates = [
+  character({ id: 30, name: '보유 두 단계', faction: '로열', acquired: '획득', techPoints: { acquired: 0, maxLB: 80, lv120: 80 } }),
+  character({ id: 31, name: '보유 한 단계 A', faction: '로열', acquired: '100', techPoints: { acquired: 0, maxLB: 0, lv120: 90 } }),
+  character({ id: 32, name: '보유 한 단계 SS', faction: '로열', acquired: '100', techPoints: { acquired: 0, maxLB: 0, lv120: 20 } }),
+  character({ id: 33, name: '쉬움 A 고득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 100, maxLB: 100, lv120: 100 } }),
+  character({ id: 34, name: '쉬움 SS 저득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 30, maxLB: 30, lv120: 30 } }),
+  character({ id: 35, name: '보통 SS 최고득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 200, maxLB: 200, lv120: 200 } }),
+]
+const obtainabilityByName = new Map([
+  ['쉬움 A 고득점', { difficulty: { key: 'easy', label: '쉬움' } }],
+  ['쉬움 SS 저득점', { difficulty: { key: 'easy', label: '쉬움' } }],
+  ['보통 SS 최고득점', { difficulty: { key: 'normal', label: '보통' } }],
+])
+const operationTierByName = new Map([
+  ['보유 두 단계', 'SS+'],
+  ['보유 한 단계 A', 'A'],
+  ['보유 한 단계 SS', 'SS'],
+  ['쉬움 A 고득점', 'A'],
+  ['쉬움 SS 저득점', 'SS'],
+  ['보통 SS 최고득점', 'SS'],
+])
+
+assert.deepEqual(
+  getResearchUnlockCandidates(
+    { type: 'tech-points', faction: '로열' },
+    rankedTechCandidates,
+    { obtainabilityByName, operationTierByName },
+  ).map(item => item.name),
+  [
+    '보유 한 단계 SS',
+    '보유 한 단계 A',
+    '보유 두 단계',
+    '쉬움 SS 저득점',
+    '쉬움 A 고득점',
+    '보통 SS 최고득점',
+  ],
 )

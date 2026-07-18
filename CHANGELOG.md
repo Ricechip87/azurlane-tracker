@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-07-18 - Rank Development Unlock Candidates By Practical Value
+
+### Changed
+- Prioritize already-owned ships, then fewer remaining growth stages, Operation Siren recommendation tier, and remaining fleet-tech points.
+- Rank unowned ships by obtainability, Operation Siren recommendation tier, and remaining fleet-tech points.
+- Use only the current Operation Siren recommendation source dated `2026-06-03`; main-stage and newbie tiers do not affect this ranking.
+- Show ownership or obtainability, remaining stage, Operation Siren tier, and obtainable tech points beside each unlock candidate.
+- Keep unrated ships eligible and label them as `미평가`.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+- `git diff --check`
+
 ## 2026-07-18 - Fit Eight Development Recommendation Cards Per Row
 
 ### Fixed

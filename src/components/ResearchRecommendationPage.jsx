@@ -1,7 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import researchRecommendationData from '../data/researchRecommendations.json'
+import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import {
+  buildOperationTierByName,
   buildResearchRecommendationState,
   getEligibleResearchXpShips,
   getResearchUnlockCandidates,
@@ -9,6 +12,7 @@ import {
 
 export default function ResearchRecommendationPage({ characters }) {
   const [selected, setSelected] = useState(null)
+  const [candidateRankingData, setCandidateRankingData] = useState(null)
   const state = useMemo(
     () => buildResearchRecommendationState(researchRecommendationData.ships, characters),
     [characters],
@@ -16,6 +20,33 @@ export default function ResearchRecommendationPage({ characters }) {
   const latestReadyGeneration = Math.max(0, ...state.ready.map(item => item.generation))
   const priority = state.ready.filter(item => item.generation === latestReadyGeneration)
   const otherReady = state.ready.filter(item => item.generation !== latestReadyGeneration)
+
+  useEffect(() => {
+    let cancelled = false
+
+    Promise.all([
+      fetch(growthRecommendationsUrl).then(response => {
+        if (!response.ok) throw new Error(`growthRecommendations.json ${response.status}`)
+        return response.json()
+      }),
+      fetch(shipObtainabilityUrl).then(response => {
+        if (!response.ok) throw new Error(`shipObtainability.json ${response.status}`)
+        return response.json()
+      }),
+    ]).then(([growthData, obtainabilityData]) => {
+      if (cancelled) return
+      const operationSource = (growthData.sources || []).find(source => source.key === 'operation-siren')
+      setCandidateRankingData({
+        operationTierByName: buildOperationTierByName(growthData),
+        operationUpdatedAt: operationSource?.updatedAt || null,
+        obtainabilityByName: new Map((obtainabilityData.ships || []).map(ship => [ship.name, ship])),
+      })
+    }).catch(() => {
+      if (!cancelled) setCandidateRankingData({})
+    })
+
+    return () => { cancelled = true }
+  }, [])
 
   return (
     <section className="space-y-4">
@@ -55,6 +86,7 @@ export default function ResearchRecommendationPage({ characters }) {
         <ResearchDetailModal
           item={selected}
           characters={characters}
+          candidateRankingData={candidateRankingData}
           onClose={() => setSelected(null)}
         />
       )}
@@ -170,7 +202,7 @@ function CompletedResearchSection({ items, onSelect }) {
   )
 }
 
-function ResearchDetailModal({ item, characters, onClose }) {
+function ResearchDetailModal({ item, characters, candidateRankingData, onClose }) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-sm"
@@ -202,9 +234,13 @@ function ResearchDetailModal({ item, characters, onClose }) {
 
         <section className="mt-5">
           <h4 className="text-sm font-bold text-gray-300">해금 조건</h4>
+          <p className="mt-1 text-[11px] leading-5 text-gray-500">
+            보유함은 남은 단계 → 대작전 등급 → 기술점수, 미보유함은 입수 난이도 → 대작전 등급 → 기술점수 순입니다.
+            {candidateRankingData?.operationUpdatedAt ? ` 대작전 기준일 ${candidateRankingData.operationUpdatedAt}` : ''}
+          </p>
           <div className="mt-2 grid gap-2 sm:grid-cols-2">
             {item.unlock.requirements.length > 0 ? item.unlock.requirements.map(requirement => {
-              const candidates = requirement.met ? [] : getResearchUnlockCandidates(requirement, characters)
+              const candidates = requirement.met ? [] : getResearchUnlockCandidates(requirement, characters, candidateRankingData || {})
               return (
                 <div key={`${requirement.faction}-${requirement.type}`} className={`rounded border px-3 py-2 text-sm ${requirement.met ? 'border-emerald-900 bg-emerald-950/30 text-emerald-200' : 'border-amber-900 bg-amber-950/25 text-amber-100'}`}>
                   <div className="font-bold">{unlockRequirementLabel(requirement)}</div>
@@ -213,7 +249,7 @@ function ResearchDetailModal({ item, characters, onClose }) {
                     <div className="mt-2 border-t border-current/15 pt-2 text-xs leading-5">
                       <span className="font-bold">채울 후보:</span>{' '}
                       {candidates.slice(0, 5).map(candidate => (
-                        `${candidate.name}${candidate.remainingTechPoints ? `(+${candidate.remainingTechPoints})` : ''}`
+                        `${candidate.name}(${candidateRankingSummary(candidate)})`
                       )).join(', ')}
                       {candidates.length > 5 ? ` 외 ${candidates.length - 5}명` : ''}
                     </div>
@@ -270,6 +306,16 @@ function getCardArtUrl(item) {
 
 function formatNumber(value) {
   return new Intl.NumberFormat('ko-KR').format(value)
+}
+
+function candidateRankingSummary(candidate) {
+  const tier = candidate.operationTier || '미평가'
+  const points = candidate.remainingTechPoints ? `·+${candidate.remainingTechPoints}` : ''
+  if (normalizeAcquisitionStatus(candidate.status) !== '미획득') {
+    const remaining = candidate.remainingSteps === 1 ? '120만 남음' : `${candidate.remainingSteps}단계 남음`
+    return `보유·${remaining}·대작전 ${tier}${points}`
+  }
+  return `${candidate.difficulty?.label || '미확인'}·대작전 ${tier}${points}`
 }
 
 function CardBadge({ children, tone = 'dark' }) {
