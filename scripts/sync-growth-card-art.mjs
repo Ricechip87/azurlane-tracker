@@ -4,6 +4,7 @@ import path from 'node:path'
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CHARACTERS_PATH = path.join(ROOT, 'src', 'data', 'characters.json')
 const GROWTH_RECOMMENDATIONS_PATH = path.join(ROOT, 'src', 'data', 'growthRecommendations.json')
+const RESEARCH_RECOMMENDATIONS_PATH = path.join(ROOT, 'src', 'data', 'researchRecommendations.json')
 const OUT_DIR = path.join(ROOT, 'public', 'ship-card-art')
 
 function readJson(filePath) {
@@ -18,8 +19,12 @@ function findReferenceDir() {
 }
 
 function extractRecommendationNames() {
-  const data = readJson(GROWTH_RECOMMENDATIONS_PATH)
-  return [...new Set((data.recommendations || []).map(item => item.name).filter(Boolean))]
+  const growthData = readJson(GROWTH_RECOMMENDATIONS_PATH)
+  const researchData = fs.existsSync(RESEARCH_RECOMMENDATIONS_PATH) ? readJson(RESEARCH_RECOMMENDATIONS_PATH) : { ships: [] }
+  return [...new Set([
+    ...(growthData.recommendations || []).map(item => item.name),
+    ...(researchData.ships || []).map(item => item.name),
+  ].filter(Boolean))]
 }
 
 function getSkinId(character) {
@@ -61,7 +66,7 @@ for (const name of names) {
   copied++
 }
 
-console.log(`growth card art copied: ${copied}/${names.length}`)
+console.log(`recommendation card art copied: ${copied}/${names.length}`)
 if (missing.length > 0) {
   console.log('missing:')
   for (const item of missing) console.log(JSON.stringify(item))

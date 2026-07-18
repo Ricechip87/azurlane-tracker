@@ -1,0 +1,2034 @@
+{
+  "source": {
+    "region": "KR",
+    "blueprintFile": "ship_data_blueprint.json",
+    "taskFile": "task_data_template.json",
+    "maxGeneration": 8,
+    "nextGenerationPolicy": "KR 정식 데이터 편입 후 반영",
+    "notes": [
+      "1~8기는 KR 게임 JSON을 기준으로 생성합니다.",
+      "9기는 KR 기본 데이터에 정식 편입된 뒤 추가합니다."
+    ]
+  },
+  "ships": [
+    {
+      "id": "P001",
+      "gid": 29901,
+      "name": "넵튠",
+      "generation": 1,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "경순",
+      "iconUrl": "/azurlane-tracker/ship-icons/299010.png",
+      "unlockText": "도감의 로열 네이비 선봉함대 함선 등록 갯수 20 이상",
+      "unlockRequirements": [
+        {
+          "type": "roster-count",
+          "faction": "로열",
+          "lane": "전열",
+          "value": 20
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "로열"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60012,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 로열 네이비 소속 선봉 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "로열"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60015,
+          "description": "「로열 네이비 선봉 기술 테스트 I」을 완료하여야 한다. 도면 설계의 초고가 완성되었다.카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 로열 네이비 소속 선봉 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P002",
+      "gid": 29902,
+      "name": "모나크",
+      "generation": 1,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/299020.png",
+      "unlockText": "도감의 로열 네이비 주력함대 함선 등록 갯수 10 이상",
+      "unlockRequirements": [
+        {
+          "type": "roster-count",
+          "faction": "로열",
+          "lane": "후열",
+          "value": 10
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "로열"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60022,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 로열 네이비 소속 주력 함선의 누적 획득 경험치를1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "로열"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60025,
+          "description": "「로열 네이비 주력 기술 테스트 I」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 로열 네이비 소속 주력 함선의 누적 획득 경험치를 2000000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P003",
+      "gid": 39901,
+      "name": "이부키",
+      "generation": 1,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "중순",
+      "iconUrl": "/azurlane-tracker/ship-icons/399010.png",
+      "unlockText": "도감의 사쿠라 엠파이어 선봉함대 함선 등록 갯수 20 이상",
+      "unlockRequirements": [
+        {
+          "type": "roster-count",
+          "faction": "중앵",
+          "lane": "전열",
+          "value": 20
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60032,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함선을 출격시켜, 사쿠라 엠파이어 소속 선봉 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60035,
+          "description": "「사쿠라 엠파이어 선봉 기술 테스트 I」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함선을 출격시켜, 사쿠라 엠파이어 소속 선봉 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P004",
+      "gid": 39902,
+      "name": "이즈모",
+      "generation": 1,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/399020.png",
+      "unlockText": "도감의 사쿠라 엠파이어 주력함대 함선 등록 갯수 10 이상",
+      "unlockRequirements": [
+        {
+          "type": "roster-count",
+          "faction": "중앵",
+          "lane": "후열",
+          "value": 10
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60042,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함선을 출격시켜, 사쿠라 엠파이어 소속 주력 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60045,
+          "description": "「사쿠라 엠파이어 주력 기술 테스트 I」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함선을 출격시켜, 사쿠라 엠파이어 소속 주력 함선의 누적 획득 경험치를 2000000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P005",
+      "gid": 49901,
+      "name": "론",
+      "generation": 1,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "철혈",
+      "shipType": "중순",
+      "iconUrl": "/azurlane-tracker/ship-icons/499010.png",
+      "unlockText": "도감의 메탈 블러드 선봉함대 함선 등록 갯수 7 이상",
+      "unlockRequirements": [
+        {
+          "type": "roster-count",
+          "faction": "철혈",
+          "lane": "전열",
+          "value": 7
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60052,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함선을 출격시켜, 메탈 블러드 소속 선봉 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60055,
+          "description": "「메탈 블러드 선봉 기술 테스트 I」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함선을 출격시켜, 메탈 블러드 소속 선봉 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P006",
+      "gid": 89901,
+      "name": "생 루이",
+      "generation": 1,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "아이리스",
+      "shipType": "중순",
+      "iconUrl": "/azurlane-tracker/ship-icons/899010.png",
+      "unlockText": "도감의 이글 유니온 선봉함대 함선 등록 갯수 20 이상",
+      "unlockRequirements": [
+        {
+          "type": "roster-count",
+          "faction": "유니온",
+          "lane": "전열",
+          "value": 20
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60062,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함선을 출격시켜, 이글 유니온 소속 선봉 함선의 누적 획득 경험치를 1000000축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60065,
+          "description": "「이글 유니온 선봉 기술 테스트 I」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함선을 출격시켜, 이글 유니온 소속 선봉 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P007",
+      "gid": 19901,
+      "name": "시애틀",
+      "generation": 2,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "경순",
+      "iconUrl": "/azurlane-tracker/ship-icons/199010.png",
+      "unlockText": "이글 유니온 진영 기술Pt760이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 760
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60072,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함선을 출격시켜, 이글 유니온 소속 선봉 함선의 누적 획득 경험치를 1000000축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60075,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함선을 출격시켜, 이글 유니온 소속 선봉 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P008",
+      "gid": 19902,
+      "name": "조지아",
+      "generation": 2,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/199020.png",
+      "unlockText": "이글 유니온 진영 기술Pt810이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 810
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60082,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함선을 출격시켜, 이글 유니온 소속 주력 함선의 누적 획득 경험치를 1000000축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60085,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함선을 출격시켜, 이글 유니온 소속 주력 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P009",
+      "gid": 39903,
+      "name": "키타카제",
+      "generation": 2,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "구축",
+      "iconUrl": "/azurlane-tracker/ship-icons/399030.png",
+      "unlockText": "사쿠라 엠파이어 진영 기술Pt780이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "중앵",
+          "value": 780
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60092,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함선을 출격시켜, 사쿠라 엠파이어 소속 선봉 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60095,
+          "description": "「전술 데이터 수집Ⅰ」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함선을 출격시켜, 사쿠라 엠파이어 소속 선봉 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P010",
+      "gid": 39904,
+      "name": "아즈마",
+      "generation": 2,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "중앵",
+      "shipType": "대순",
+      "iconUrl": "/azurlane-tracker/ship-icons/399040.png",
+      "unlockText": "사쿠라 엠파이어 진영 기술Pt900이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "중앵",
+          "value": 900
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "후열",
+          "requiredXp": 1200000,
+          "taskId": 60102,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함선을 출격시켜, 사쿠라 엠파이어 소속 주력 함선의 누적 획득 경험치를 1200000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "전열",
+          "requiredXp": 2400000,
+          "taskId": 60105,
+          "description": "「전술 데이터 수집Ⅰ」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함선을 출격시켜, 사쿠라 엠파이어 소속 선봉 함선의 누적 획득 경험치를 2400000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P011",
+      "gid": 49902,
+      "name": "프리드리히 데어 그로세",
+      "generation": 2,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "철혈",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/499020.png",
+      "unlockText": "메탈 블러드 진영 기술Pt630이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 630
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 1200000,
+          "taskId": 60112,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함선을 출격시켜, 메탈 블러드 소속 주력 함선의 누적 획득 경험치를 1200000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 2400000,
+          "taskId": 60115,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함선을 출격시켜, 메탈 블러드 소속 주력 함선의 누적 획득 경험치를 2400000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P012",
+      "gid": 99901,
+      "name": "가스코뉴",
+      "generation": 2,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "비시아",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/999010.png",
+      "unlockText": "이글 유니온 진영 기술Pt760이상、메탈 블러드 진영 기술Pt420이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 760
+        },
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 420
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈",
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60122,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ―― 함선을 출격시켜, 메탈 블러드、아이리스 리브레、비시아 큐리아 소속 주력 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈",
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60125,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함선을 출격시켜, 메탈 블러드、아이리스 리브레、비시아 큐리아 소속 주력 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P013",
+      "gid": 29903,
+      "name": "체셔",
+      "generation": 3,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "중순",
+      "iconUrl": "/azurlane-tracker/ship-icons/299030.png",
+      "unlockText": "로열 네이비 진영 과학 기술 포인트 700 달성",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "로열",
+          "value": 700
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "로열"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60132,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 로열 네이비 소속 선봉 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "로열"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60135,
+          "description": "「로열 네이비 선봉 기술 테스트 I」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 로열 네이비 소속 선봉 함선의 누적 획득 경험치를 2000000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P014",
+      "gid": 29904,
+      "name": "드레이크",
+      "generation": 3,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "로열",
+      "shipType": "중순",
+      "iconUrl": "/azurlane-tracker/ship-icons/299040.png",
+      "unlockText": "로열 네이비 진영 과학 기술 포인트 820 달성",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "로열",
+          "value": 820
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "로열"
+          ],
+          "lane": "전열",
+          "requiredXp": 1200000,
+          "taskId": 60142,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 로열 네이비 소속 선봉 함선의 누적 획득 경험치를 1200000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "로열"
+          ],
+          "lane": "전열",
+          "requiredXp": 2400000,
+          "taskId": 60145,
+          "description": "「로열 네이비 선봉 기술 테스트 I」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 로열 네이비 소속 선봉 함선의 누적 획득 경험치를 2400000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P015",
+      "gid": 49903,
+      "name": "마인츠",
+      "generation": 3,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "철혈",
+      "shipType": "경순",
+      "iconUrl": "/azurlane-tracker/ship-icons/499030.png",
+      "unlockText": "메탈 블러드 진영 과학 기술 포인트 550 달성",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 550
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60152,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 메탈 블러드 소속 선봉 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60155,
+          "description": "「메탈 블러드 선봉 기술 테스트 I」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 메탈 블러드 소속 선봉 함선의 누적 획득 경험치를 2000000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P016",
+      "gid": 49904,
+      "name": "오딘",
+      "generation": 3,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "철혈",
+      "shipType": "순전",
+      "iconUrl": "/azurlane-tracker/ship-icons/499040.png",
+      "unlockText": "메탈 블러드 진영 과학 기술 포인트 600 달성",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 600
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60162,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 메탈 블러드 소속 주력 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60165,
+          "description": "「메탈 블러드 주력 기술 테스트 I」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 메탈 블러드 소속 주력 함선의 누적 획득 경험치를 2000000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P017",
+      "gid": 89902,
+      "name": "샹파뉴",
+      "generation": 3,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "아이리스",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/899020.png",
+      "unlockText": "이글 유니온 진영 과학 기술 포인트 760 달성, 로열 네이비 진영 과학 기술 포인트700 달성",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 760
+        },
+        {
+          "type": "tech-points",
+          "faction": "로열",
+          "value": 700
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "유니온",
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60172,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 이글 유니온, 아이리스 리브레, 비시아 성좌 소속 주력 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "유니온",
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60175,
+          "description": "「이글 유니온 주력 기술 테스트 I」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 이글 유니온, 아이리스 리브레, 비시아 성좌 소속 주력 함선의 누적 획득 경험치를 2000000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P018",
+      "gid": 19903,
+      "name": "앵커리지",
+      "generation": 4,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "중순",
+      "iconUrl": "/azurlane-tracker/ship-icons/199030.png",
+      "unlockText": "이글 유니온 진영 기술Pt850이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 850
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60182,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ——함선을 출격시켜, 이글 유니온 소속 선봉 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60185,
+          "description": "「이글 유니온 선봉 기술 테스트I」을 완료해야 합니다. 연구는 새로운 단계에 들어섰다. 비록 개량된 설계 방안이 이론적으로 더 뛰어난 성능을 가지고 있다 하더라도, 종이 상의 데이터는 결코 실전 테스트보다 믿을만 하지 못하다. ——함선을 출격시켜, 이글 유니온 소속 선봉 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P019",
+      "gid": 39905,
+      "name": "하쿠류",
+      "generation": 4,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "중앵",
+      "shipType": "항모",
+      "iconUrl": "/azurlane-tracker/ship-icons/399050.png",
+      "unlockText": "사쿠라 엠파이어 진영 기술Pt950이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "중앵",
+          "value": 950
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "후열",
+          "requiredXp": 1200000,
+          "taskId": 60192,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ——함선을 출격시켜, 사쿠라 엠파이어 소속 주력 함선의 누적 획득 경험치를 1200000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "후열",
+          "requiredXp": 2400000,
+          "taskId": 60195,
+          "description": "「사쿠라 엠파이어 주력 기술 테스트I」을 완료해야 합니다. 연구는 새로운 단계에 들어섰다. 비록 개량된 설계 방안이 이론적으로 더 뛰어난 성능을 가지고 있다 하더라도, 종이 상의 데이터는 결코 실전 테스트보다 믿을만 하지 못하다. ——함선을 출격시켜, 사쿠라 엠파이어 소속 주력 함선의 누적 획득 경험치를 2400000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P020",
+      "gid": 49905,
+      "name": "에기르",
+      "generation": 4,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "철혈",
+      "shipType": "대순",
+      "iconUrl": "/azurlane-tracker/ship-icons/499050.png",
+      "unlockText": "메탈 블러드 진영 기술Pt700이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 700
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 1200000,
+          "taskId": 60202,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ——함선을 출격시켜, 메탈 블러드 소속 주력 함선의 누적 획득 경험치를 1200000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "전열",
+          "requiredXp": 2400000,
+          "taskId": 60205,
+          "description": "「메탈 블러드 주력 기술 테스트I」을 완료해야 합니다. 연구는 새로운 단계에 들어섰다. 비록 개량된 설계 방안이 이론적으로 더 뛰어난 성능을 가지고 있다 하더라도, 종이 상의 데이터는 결코 실전 테스트보다 믿을만 하지 못하다. ——함선을 출격시켜, 메탈 블러드 소속 선봉 함선의 누적 획득 경험치를 2400000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P021",
+      "gid": 49906,
+      "name": "아우구스트 폰 파르제팔",
+      "generation": 4,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "철혈",
+      "shipType": "항모",
+      "iconUrl": "/azurlane-tracker/ship-icons/499060.png",
+      "unlockText": "메탈 블러드 진영 기술Pt600이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 600
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60212,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ——함선을 출격시켜, 메탈 블러드 소속 주력 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60215,
+          "description": "「메탈 블러드 주력 기술 테스트I」을 완료해야 합니다. 연구는 새로운 단계에 들어섰다. 비록 개량된 설계 방안이 이론적으로 더 뛰어난 성능을 가지고 있다 하더라도, 종이 상의 데이터는 결코 실전 테스트보다 믿을만 하지 못하다. ——함선을 출격시켜, 메탈 블러드 소속 주력 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P022",
+      "gid": 69901,
+      "name": "마르코 폴로",
+      "generation": 4,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "사르데냐",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/699010.png",
+      "unlockText": "메탈 블러드 진영 기술Pt600이상, 로열 네이비 진영 과학 기술 포인트700 달성",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 600
+        },
+        {
+          "type": "tech-points",
+          "faction": "로열",
+          "value": 700
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈",
+            "사르데냐"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60222,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ——함선을 출격시켜, 메탈 블러드 또는 사르데냐 엠파이어 소속 주력 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "로열",
+            "사르데냐"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60225,
+          "description": "「메탈 블러드 주력 기술 테스트I」을 완료해야 합니다. 연구는 새로운 단계에 들어섰다. 비록 개량된 설계 방안이 이론적으로 더 뛰어난 성능을 가지고 있다 하더라도, 종이 상의 데이터는 결코 실전 테스트보다 믿을만 하지 못하다. ——함선을 출격시켜, 로열 네이비 또는 사르데냐 엠파이어 소속 주력 함선의 누적 획득 경험치를 2000000 축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P023",
+      "gid": 29905,
+      "name": "플리머스",
+      "generation": 5,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "로열",
+      "shipType": "경순",
+      "iconUrl": "/azurlane-tracker/ship-icons/299050.png",
+      "unlockText": "로열 네이비 진영 기술PT 900 도달",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "로열",
+          "value": 900
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "로열"
+          ],
+          "lane": "전열",
+          "requiredXp": 1200000,
+          "taskId": 60232,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 로열 네이비 소속 선봉 함선의 누적 획득 경험치를 1200000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "로열"
+          ],
+          "lane": "전열",
+          "requiredXp": 2400000,
+          "taskId": 60235,
+          "description": "「로열 네이비 선봉 기술 테스트 I」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 로열 네이비 소속 선봉 함선의 누적 획득 경험치를 2400000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P024",
+      "gid": 49907,
+      "name": "프린츠 루프레히트",
+      "generation": 5,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "철혈",
+      "shipType": "순전",
+      "iconUrl": "/azurlane-tracker/ship-icons/499070.png",
+      "unlockText": "메탈 블러드 진영 기술PT 700 도달",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 700
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60242,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 메탈 블러드 소속 주력 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60245,
+          "description": "「전술 데이터 수집Ⅰ」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 메탈 블러드 소속 주력 함선의 누적 획득 경험치를 2000000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P025",
+      "gid": 59901,
+      "name": "하얼빈",
+      "generation": 5,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "동황",
+      "shipType": "경순",
+      "iconUrl": "/azurlane-tracker/ship-icons/599010.png",
+      "unlockText": "이스트 글림 진영 기술PT 160 도달",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "동황",
+          "value": 160
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "동황"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60252,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 이스트 글림 소속 선봉 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "동황"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60255,
+          "description": "「이스트 글림 선봉 기술 테스트 I」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 이스트 글림 소속 선봉 함선의 누적 획득 경험치를 2000000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P026",
+      "gid": 79901,
+      "name": "치칼로프",
+      "generation": 5,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "노스유니온",
+      "shipType": "항모",
+      "iconUrl": "/azurlane-tracker/ship-icons/799010.png",
+      "unlockText": "이글 유니온 진영 기술PT 760 도달, 사르데냐 엠파이어 진영 기술PT 300 도달",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 760
+        },
+        {
+          "type": "tech-points",
+          "faction": "사르데냐",
+          "value": 300
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "사르데냐",
+            "노스유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60262,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 사르데냐 엠파이어 또는 노스 유니온 소속 주력 함선의 누적 획득 경험치를 1000000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "유니온",
+            "노스유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60265,
+          "description": "「전술 데이터 수집Ⅰ」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 이글 유니온 또는 노스 유니온 소속 주력 함선의 누적 획득 경험치를 2000000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P027",
+      "gid": 89903,
+      "name": "브레스트",
+      "generation": 5,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "아이리스",
+      "shipType": "대순",
+      "iconUrl": "/azurlane-tracker/ship-icons/899030.png",
+      "unlockText": "아이리스 리브레 진영 기술PT 250 도달",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "아이리스",
+          "value": 250
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "후열",
+          "requiredXp": 1200000,
+          "taskId": 60272,
+          "description": "개발 작업을 원활히 진행하기 위해서는, 실험 데이터를 충분히 입수하는 것이 대단히 중요하며, 축적된 실전 경험은 그중에서도 제일 효과적일 것이다. ――함대를 출격시켜, 아이리스 리브레 또는 비시아 성좌 소속 주력 함선의 누적 획득 경험치를 1200000 축적한다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "전열",
+          "requiredXp": 2400000,
+          "taskId": 60275,
+          "description": "「전술 데이터 수집Ⅰ」을 완료하여야 한다. 도면 설계의 초고가 완성되었다. 카탈로그 스펙을 과연 어느 정도로 완성할 수 있을지 검증하기 위해서는 더욱 많은 전술 데이터를 수집하여야 한다. ――함대를 출격시켜, 아이리스 리브레 또는 비시아 성좌 소속 선봉 함선의 누적 획득 경험치를 2400000축적한다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P028",
+      "gid": 19904,
+      "name": "키어사지",
+      "generation": 6,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "유니온",
+      "shipType": "항전",
+      "iconUrl": "/azurlane-tracker/ship-icons/199040.png",
+      "unlockText": "이글 유니온 진영 기술 Pt 1,000 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 1000
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 1200000,
+          "taskId": 60282,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 이글 유니온 소속 주력함대의 총 획득 경험치를 120만 축적시킨다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 2400000,
+          "taskId": 60285,
+          "description": "\"전술 데이터 수집Ⅰ\"을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 이글 유니온 소속 주력함대의 총 획득 경험치를 240만 축적시킨다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P029",
+      "gid": 39906,
+      "name": "시만토",
+      "generation": 6,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "경순",
+      "iconUrl": "/azurlane-tracker/ship-icons/399060.png",
+      "unlockText": "사쿠라 엠파이어 진영 기술 Pt 900 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "중앵",
+          "value": 900
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60292,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 사쿠라 엠파이어 소속 선봉함대의 총 획득 경험치를 100만 축적시킨다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60295,
+          "description": "\"전술 데이터 수집Ⅰ\"을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 사쿠라 엠파이어 소속 선봉함대의 총 획득 경험치를 200만 축적시킨다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P030",
+      "gid": 49908,
+      "name": "펠릭스 슐츠",
+      "generation": 6,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "철혈",
+      "shipType": "구축",
+      "iconUrl": "/azurlane-tracker/ship-icons/499080.png",
+      "unlockText": "메탈 블러드 진영 기술 Pt 850 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 850
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60302,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 메탈 블러드 소속 선봉함대의 총 획득 경험치를 100만 축적시킨다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60305,
+          "description": "\"전술 데이터 수집Ⅰ\"을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 메탈 블러드 소속 선봉함대의 총 획득 경험치를 200만 축적시킨다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P031",
+      "gid": 49909,
+      "name": "힌덴부르크",
+      "generation": 6,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "철혈",
+      "shipType": "중순",
+      "iconUrl": "/azurlane-tracker/ship-icons/499090.png",
+      "unlockText": "메탈 블러드 진영 기술 Pt 950 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 950
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "전열",
+          "requiredXp": 1200000,
+          "taskId": 60312,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 메탈 블러드 소속 선봉함대의 총 획득 경험치를 120만 축적시킨다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "전열",
+          "requiredXp": 2400000,
+          "taskId": 60315,
+          "description": "\"전술 데이터 수집Ⅰ\"을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 메탈 블러드 소속 선봉함대의 총 획득 경험치를 240만 축적시킨다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P032",
+      "gid": 99902,
+      "name": "플랑드르",
+      "generation": 6,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "비시아",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/999020.png",
+      "unlockText": "비시아 성좌 진영 기술 Pt 180 이상, 메탈 블러드 진영 기술 Pt 800 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "비시아",
+          "value": 180
+        },
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 800
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60322,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 아이리스 리브레, 비시아 성좌 소속 주력함대의 총 획득 경험치를 100만 축적시킨다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60325,
+          "description": "\"전술 데이터 수집Ⅰ\"을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 아이리스 리브레, 비시아 성좌 소속 주력함대의 총 획득 경험치를 200만 축적시킨다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": true,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P033",
+      "gid": 19905,
+      "name": "할포드",
+      "generation": 7,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "구축",
+      "iconUrl": "/azurlane-tracker/ship-icons/199050.png",
+      "unlockText": "이글 유니온 기술 Pt 950 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 950
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60332,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 이글 유니온 소속 선봉함대의 총 획득 경험치를 1,000,000 축적시킨다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60335,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 이글 유니온 소속 선봉함대의 총 획득 경험치를 2,000,000 축적시킨다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P034",
+      "gid": 39907,
+      "name": "다이센",
+      "generation": 7,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/399070.png",
+      "unlockText": "사쿠라 엠파이어 기술 Pt 950 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "중앵",
+          "value": 950
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60342,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 사쿠라 엠파이어 소속 주력함대의 총 획득 경험치를 1,000,000 축적시킨다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60345,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 사쿠라 엠파이어 소속 주력함대의 총 획득 경험치를 2,000,000 축적시킨다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P035",
+      "gid": 69902,
+      "name": "나폴리",
+      "generation": 7,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "사르데냐",
+      "shipType": "중순",
+      "iconUrl": "/azurlane-tracker/ship-icons/699020.png",
+      "unlockText": "사르데냐 엠파이어 기술 Pt 300 이상, 노스 유니온 기술 Pt 200 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "사르데냐",
+          "value": 300
+        },
+        {
+          "type": "tech-points",
+          "faction": "노스유니온",
+          "value": 200
+        },
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 200
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "사르데냐",
+            "노스유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 1200000,
+          "taskId": 60352,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 사르데냐 엠파이어 또는 노스 유니온 소속 선봉함대의 총 획득 경험치를 1,200,000 축적시킨다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "사르데냐",
+            "노스유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 2400000,
+          "taskId": 60355,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 사르데냐 엠파이어 또는 노스 유니온 소속 선봉함대의 총 획득 경험치를 2,400,000 축적시킨다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P036",
+      "gid": 79902,
+      "name": "어드미럴 나히모프",
+      "generation": 7,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "노스유니온",
+      "shipType": "항모",
+      "iconUrl": "/azurlane-tracker/ship-icons/799020.png",
+      "unlockText": "노스 유니온 기술 Pt 300 이상, 사르데냐 엠파이어 기술 Pt 200 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "노스유니온",
+          "value": 300
+        },
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 300
+        },
+        {
+          "type": "tech-points",
+          "faction": "사르데냐",
+          "value": 200
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "사르데냐",
+            "노스유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 1200000,
+          "taskId": 60362,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 사르데냐 엠파이어 또는 노스 유니온 소속 주력함대의 총 획득 경험치를 1,200,000 축적시킨다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "사르데냐",
+            "노스유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 2400000,
+          "taskId": 60365,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 사르데냐 엠파이어 또는 노스 유니온 소속 주력함대의 총 획득 경험치를 2,400,000 축적시킨다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P037",
+      "gid": 89904,
+      "name": "바야르",
+      "generation": 7,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "아이리스",
+      "shipType": "경순",
+      "iconUrl": "/azurlane-tracker/ship-icons/899040.png",
+      "unlockText": "아이리스 리브레 기술 Pt 230 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "아이리스",
+          "value": 230
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60372,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 아이리스 리브레 또는 비시아 성좌 소속 선봉함대의 총 획득 경험치를 1,000,000 축적시킨다."
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60375,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 아이리스 리브레 또는 비시아 성좌 소속 선봉함대의 총 획득 경험치를 2,000,000 축적시킨다."
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P038",
+      "gid": 19906,
+      "name": "캔자스",
+      "generation": 8,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/199060.png",
+      "unlockText": "유니온 기술Pt950이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 950
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60382,
+          "description": "개발 작업을 원활하게 진행하기 위해서는 충분한 실험 데이터 입수가 필요 불가결하다. 가장 유효한 데이터는 축적된 실전 경험이다. ――함대를 출격시켜, 유니온 소속 주력 함대의 경험치 1000000 누적 획득"
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60385,
+          "description": "「전술 데이터 수집Ⅰ」 완료 필요 도면설계의 초고를 완성하였다. 카탈로그 스펙은 과연 어디까지 실현이 가능할지, 그 검증에는 추가적인 전술 데이터 수집이 필요 불가결하다. ――함대를 출격시켜, 유니온 소속 주력 함대의 경험치 2000000 누적 획득"
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P039",
+      "gid": 49910,
+      "name": "메클렌부르크",
+      "generation": 8,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "철혈",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/499100.png",
+      "unlockText": "메탈 블러드 기술Pt950이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 950
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 1200000,
+          "taskId": 60392,
+          "description": "개발 작업을 원활하게 진행하기 위해서는 충분한 실험 데이터 입수가 필요 불가결하다. 가장 유효한 데이터는 축적된 실전 경험이다. ――함대를 출격시켜, 메탈 블러드 소속 주력 함대의 경험치 1200000 누적 획득"
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 2400000,
+          "taskId": 60395,
+          "description": "「전술 데이터 수집Ⅰ」 완료 필요 도면설계의 초고를 완성하였다. 카탈로그 스펙은 과연 어디까지 실현이 가능할지, 그 검증에는 추가적인 전술 데이터 수집이 필요 불가결하다. ――함대를 출격시켜, 메탈 블러드 소속 주력 함대의 경험치 2400000 누적 획득"
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P040",
+      "gid": 69903,
+      "name": "비토리오 쿠니베르티",
+      "generation": 8,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "사르데냐",
+      "shipType": "구축",
+      "iconUrl": "/azurlane-tracker/ship-icons/699030.png",
+      "unlockText": "사르데냐 기술Pt300이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "사르데냐",
+          "value": 300
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "사르데냐"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60402,
+          "description": "개발 작업을 원활하게 진행하기 위해서는 충분한 실험 데이터 입수가 필요 불가결하다. 가장 유효한 데이터는 축적된 실전 경험이다. ――함대를 출격시켜, 사르데냐 소속 선봉 함대의 경험치 1000000 누적 획득"
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "사르데냐"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60405,
+          "description": "「전술 데이터 수집Ⅰ」 완료 필요 도면설계의 초고를 완성하였다. 카탈로그 스펙은 과연 어디까지 실현이 가능할지, 그 검증에는 추가적인 전술 데이터 수집이 필요 불가결하다. ――함대를 출격시켜, 사르데냐 소속 선봉 함대의 경험치 2000000 누적 획득"
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P041",
+      "gid": 79903,
+      "name": "드미트리 돈스코이",
+      "generation": 8,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "노스유니온",
+      "shipType": "경순",
+      "iconUrl": "/azurlane-tracker/ship-icons/799030.png",
+      "unlockText": "노스 유니온 기술Pt300이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "노스유니온",
+          "value": 300
+        },
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 300
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "노스유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60412,
+          "description": "개발 작업을 원활하게 진행하기 위해서는 충분한 실험 데이터 입수가 필요 불가결하다. 가장 유효한 데이터는 축적된 실전 경험이다. ――함대를 출격시켜, 노스 유니온 소속 선봉 함대의 경험치 1000000 누적 획득"
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "노스유니온"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60415,
+          "description": "「전술 데이터 수집Ⅰ」 완료 필요 도면설계의 초고를 완성하였다. 카탈로그 스펙은 과연 어디까지 실현이 가능할지, 그 검증에는 추가적인 전술 데이터 수집이 필요 불가결하다. ――함대를 출격시켜, 노스 유니온 소속 선봉 함대의 경험치 2000000 누적 획득"
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P042",
+      "gid": 119901,
+      "name": "하우덴 리우",
+      "generation": 8,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "튤리퍼",
+      "shipType": "중순",
+      "iconUrl": "/azurlane-tracker/ship-icons/1199010.png",
+      "unlockText": "메탈 블러드 기술Pt800이상, 사르데냐 기술Pt200이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 800
+        },
+        {
+          "type": "tech-points",
+          "faction": "사르데냐",
+          "value": 200
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "튤리퍼",
+            "철혈",
+            "사르데냐"
+          ],
+          "lane": "전열",
+          "requiredXp": 1200000,
+          "taskId": 60422,
+          "description": "개발 작업을 원활하게 진행하기 위해서는 충분한 실험 데이터 입수가 필요 불가결하다. 가장 유효한 데이터는 축적된 실전 경험이다. ――함대를 출격시켜, 튤리퍼, 메탈 블러드 혹은 사르데냐 소속 선봉 함대의 경험치 1200000 누적 획득"
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "튤리퍼",
+            "철혈",
+            "사르데냐"
+          ],
+          "lane": "전열",
+          "requiredXp": 2400000,
+          "taskId": 60425,
+          "description": "「전술 데이터 수집Ⅰ」 완료 필요 도면설계의 초고를 완성하였다. 카탈로그 스펙은 과연 어디까지 실현이 가능할지, 그 검증에는 추가적인 전술 데이터 수집이 필요 불가결하다. ――함대를 출격시켜, 튤리퍼, 메탈 블러드 혹은 사르데냐 소속 선봉 함대의 경험치 2400000 누적 획득"
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified"
+    }
+  ]
+}

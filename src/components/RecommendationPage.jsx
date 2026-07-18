@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FleetTechPanel } from './StatsBar.jsx'
 import GrowthRecommendationPage from './GrowthRecommendationPage.jsx'
+import ResearchRecommendationPage from './ResearchRecommendationPage.jsx'
 
 const RECOMMENDATION_TABS = [
   {
@@ -62,6 +63,8 @@ export default function RecommendationPage({ characters }) {
 
       {activeTab === 'level120' ? (
         <GrowthRecommendationPage characters={characters} />
+      ) : activeTab === 'research' ? (
+        <ResearchRecommendationPage characters={characters} />
       ) : activeTab === 'tech' ? (
         <section>
           <div className="relative overflow-visible rounded border border-neutral-700 bg-[#242424]">

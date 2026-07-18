@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-07-18 - Add Development Ship Recommendations
+
+### Changed
+- Added a KR game-data extractor and verified recommendation data for all 42 development ships from PR1 through PR8.
+- Added development-ship cards grouped by unlock readiness, completion, and newest available generation.
+- Added unlock progress, missing-condition candidates, phase 1/2 XP-farming candidates, and coin-strengthening availability.
+- Added local card art for Roon and Gascogne and expanded the recommendation-art sync to cover both growth and development recommendations.
+- Kept PR9 out of the app until its ships and blueprint tasks are formally included in the KR base data.
+
+### Verified
+- `npm.cmd run extract:research`
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+- `git diff --check`
+
 ## 2026-07-18 - Complete Growth Recommendation Card Art
 
 ### Fixed
