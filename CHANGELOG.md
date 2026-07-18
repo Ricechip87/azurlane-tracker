@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-07-19 - Replace The Research Goal Combo Box With Generation Cards
+
+### Changed
+- Replaced the name-only development-ship select box with image cards grouped from the newest generation to the oldest.
+- Show each card's rarity, coin-strengthening availability, current unlock shortage, and completion state before selection.
+- Collapse the generation picker into a one-line selected-goal summary after choosing a ship, then show the existing roadmap directly below it.
+- Allow the collapsed summary to reopen the visual picker for changing the goal.
+
+### Verified
+- Added regression coverage for descending generation groups and Korean name ordering within a generation.
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Build A User-Selected Research Goal Roadmap
 
 ### Changed

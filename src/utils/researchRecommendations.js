@@ -137,6 +137,21 @@ export function buildWebResearchRecommendationGroups(state, operationTierByName 
   ]
 }
 
+export function groupResearchShipsByGeneration(items) {
+  const groups = new Map()
+  for (const item of items) {
+    const generation = Number(item.generation) || 0
+    if (!groups.has(generation)) groups.set(generation, [])
+    groups.get(generation).push(item)
+  }
+  return [...groups.entries()]
+    .sort(([a], [b]) => b - a)
+    .map(([generation, groupedItems]) => ({
+      generation,
+      items: groupedItems.sort((a, b) => a.name.localeCompare(b.name, 'ko')),
+    }))
+}
+
 export function getEligibleResearchXpShips(phase, characters) {
   const factions = new Set((phase.factions || []).map(normalizeFactionValue))
 

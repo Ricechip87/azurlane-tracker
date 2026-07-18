@@ -7,9 +7,22 @@ import {
   calcAllFactionTechPoints,
   evaluateResearchUnlock,
   getEligibleResearchXpShips,
+  groupResearchShipsByGeneration,
   getResearchUnlockCandidates,
   selectPriorityResearchShips,
 } from './researchRecommendations.js'
+
+assert.deepEqual(
+  groupResearchShipsByGeneration([
+    { id: 'g5-b', generation: 5, name: '나' },
+    { id: 'g8', generation: 8, name: '최신' },
+    { id: 'g5-a', generation: 5, name: '가' },
+  ]).map(group => ({ generation: group.generation, names: group.items.map(item => item.name) })),
+  [
+    { generation: 8, names: ['최신'] },
+    { generation: 5, names: ['가', '나'] },
+  ],
+)
 
 const webRecommendationState = {
   ready: [

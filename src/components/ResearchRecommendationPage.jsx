@@ -11,6 +11,7 @@ import {
   buildWebResearchRecommendationGroups,
   getEligibleResearchXpShips,
   getResearchUnlockCandidates,
+  groupResearchShipsByGeneration,
 } from '../utils/researchRecommendations.js'
 
 const RESEARCH_SHIP_BY_NAME = new Map(researchRecommendationData.ships.map(ship => [ship.name, ship]))
@@ -80,6 +81,7 @@ export default function ResearchRecommendationPage({ characters }) {
       <ResearchSummary state={state} />
 
       <ResearchGoalWorkspace
+        key={selectedTarget?.id || 'no-target'}
         items={allItems}
         selectedTarget={selectedTarget}
         onSelectId={setTargetId}
@@ -104,39 +106,39 @@ export default function ResearchRecommendationPage({ characters }) {
 }
 
 function ResearchGoalWorkspace({ items, selectedTarget, onSelectId, characters, candidateRankingData }) {
-  const activeItems = items.filter(item => !isResearchCompleted(item))
-  const completedItems = items.filter(isResearchCompleted)
+  const [pickerOpen, setPickerOpen] = useState(!selectedTarget)
+  const generationGroups = groupResearchShipsByGeneration(items)
+
+  const selectTarget = item => {
+    onSelectId(String(item.id))
+    setPickerOpen(false)
+  }
 
   return (
     <section className="overflow-hidden rounded border border-cyan-900/70 bg-[#1a1a1a]">
       <header className="border-b border-neutral-700 bg-[#242424] px-4 py-4">
-        <div className="flex flex-wrap items-end justify-between gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <h2 className="text-base font-black text-cyan-100">내 개발 목표</h2>
             <p className="mt-1 text-xs leading-5 text-gray-500">원하는 개발함을 선택하면 해금부터 경험치작과 강화까지 현재 해야 할 일을 보여줍니다.</p>
           </div>
-          <label className="min-w-[280px] text-xs font-bold text-gray-400">
-            목표 개발함 선택
-            <select
-              value={selectedTarget ? String(selectedTarget.id) : ''}
-              onChange={event => onSelectId(event.target.value)}
-              className="mt-1.5 w-full rounded border border-neutral-600 bg-[#181818] px-3 py-2 text-sm font-semibold text-gray-100 outline-none focus:border-cyan-500"
-            >
-              <option value="">개발함을 선택하세요</option>
-              <optgroup label="미획득 개발함">
-                {activeItems.map(item => <option key={item.id} value={item.id}>{goalOptionLabel(item)}</option>)}
-              </optgroup>
-              {completedItems.length > 0 && (
-                <optgroup label="개발 완료">
-                  {completedItems.map(item => <option key={item.id} value={item.id}>{goalOptionLabel(item)}</option>)}
-                </optgroup>
-              )}
-            </select>
-          </label>
+          <button
+            type="button"
+            onClick={() => setPickerOpen(open => !open)}
+            className={`min-w-[280px] rounded border px-3 py-2 text-left text-sm font-bold ${pickerOpen ? 'border-cyan-500 bg-cyan-950/40 text-cyan-100' : 'border-neutral-600 bg-[#181818] text-gray-100 hover:border-cyan-600'}`}
+            aria-expanded={pickerOpen}
+          >
+            <span className="flex items-center justify-between gap-3">
+              <span>{selectedTarget ? goalOptionLabel(selectedTarget) : '최신 기수부터 개발함 선택하기'}</span>
+              <span className="text-xs text-gray-500">{pickerOpen ? '▲ 접기' : '▼ 목표 변경'}</span>
+            </span>
+          </button>
         </div>
       </header>
 
-      {selectedTarget ? (
+      {pickerOpen ? (
+        <ResearchGoalPicker groups={generationGroups} selectedTarget={selectedTarget} onSelect={selectTarget} />
+      ) : selectedTarget ? (
         <ResearchGoalPanel item={selectedTarget} characters={characters} candidateRankingData={candidateRankingData} />
       ) : (
         <div className="px-5 py-10 text-center">
@@ -145,6 +147,52 @@ function ResearchGoalWorkspace({ items, selectedTarget, onSelectId, characters, 
         </div>
       )}
     </section>
+  )
+}
+
+function ResearchGoalPicker({ groups, selectedTarget, onSelect }) {
+  return (
+    <div className="space-y-4 bg-[#181818] p-4">
+      <div>
+        <h3 className="text-sm font-black text-gray-100">최신 기수부터 목표 선택</h3>
+        <p className="mt-1 text-xs text-gray-500">함선 이미지와 현재 해금 상태를 확인하고 선택하세요. 선택하면 목록이 접히고 상세 로드맵이 열립니다.</p>
+      </div>
+      {groups.map(group => (
+        <section key={group.generation} className="rounded border border-neutral-700 bg-[#202020]">
+          <header className="flex items-center justify-between border-b border-neutral-700 px-3 py-2">
+            <h4 className="text-sm font-black text-cyan-200">{group.generation}기</h4>
+            <span className="text-[11px] text-gray-600">{group.items.length}명</span>
+          </header>
+          <div className="flex flex-wrap gap-2 p-3">
+            {group.items.map(item => {
+              const selected = String(selectedTarget?.id) === String(item.id)
+              const completed = isResearchCompleted(item)
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => onSelect(item)}
+                  className={`group relative h-[178px] w-[142px] max-w-full flex-none overflow-hidden rounded border-2 bg-[#272727] text-left shadow outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-white ${selected ? 'border-cyan-400' : completed ? 'border-sky-700' : item.unlock.met ? 'border-emerald-600' : 'border-neutral-600 hover:border-neutral-400'}`}
+                >
+                  <img src={getCardArtUrl(item)} alt="" className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/95" />
+                  <div className="absolute left-1.5 top-1.5 flex gap-1 text-[9px] font-black">
+                    <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{item.planRarity}</CardBadge>
+                    {item.coinStrengthening.available && <CardBadge tone="green">물자</CardBadge>}
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-2.5 text-white">
+                    <div className="break-keep text-sm font-black leading-5 drop-shadow">{item.name}</div>
+                    <div className={`mt-1 text-[10px] font-bold ${completed ? 'text-sky-300' : item.unlock.met ? 'text-emerald-300' : 'text-amber-300'}`}>
+                      {completed ? '개발 완료' : item.unlock.met ? '바로 개발 가능' : summarizeUnlock(item.unlock.requirements)}
+                    </div>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+        </section>
+      ))}
+    </div>
   )
 }
 
