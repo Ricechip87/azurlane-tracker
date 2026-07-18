@@ -1,5 +1,16 @@
 # Change Log
 
+## 2026-07-18 - Complete Growth Recommendation Card Art
+
+### Fixed
+- Added the 45 card-art files that were missing after the growth recommendation source recovery expanded the unique recommended roster from 378 to 416 ships.
+- Added a data test that rejects any recommendation whose local card-art file is absent.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-18 - Audit Growth Recommendation Sources And Recover Missing Ships
 
 ### Why

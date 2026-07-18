@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict'
-import { readFile } from 'node:fs/promises'
+import { access, readFile } from 'node:fs/promises'
+import path from 'node:path'
 
 const data = JSON.parse(await readFile(new URL('./growthRecommendations.json', import.meta.url), 'utf8'))
 const characters = JSON.parse(await readFile(new URL('./characters.json', import.meta.url), 'utf8'))
 const characterIds = new Set(characters.map(character => String(character.id)))
+const characterById = new Map(characters.map(character => [String(character.id), character]))
 
 assert.deepEqual(
   Object.fromEntries(data.sources.map(source => [source.key, source.updatedAt])),
@@ -18,6 +20,15 @@ for (const recommendation of data.recommendations) {
   assert.ok(characterIds.has(String(recommendation.id)), `unknown character: ${recommendation.name}`)
   assert.ok(recommendation.tier, `missing tier: ${recommendation.name}`)
   assert.ok(recommendation.sheetGroup, `missing group: ${recommendation.name}`)
+}
+
+for (const characterId of new Set(data.recommendations.map(recommendation => String(recommendation.id)))) {
+  const character = characterById.get(characterId)
+  const fileName = path.basename(character.iconUrl).replace(/\.(png|webp)$/i, '.png')
+  await assert.doesNotReject(
+    access(new URL(`../../public/ship-card-art/${fileName}`, import.meta.url)),
+    `missing growth card art: ${character.name} (${fileName})`,
+  )
 }
 
 const recommendationKey = (source, name) => data.recommendations.some(item => item.source === source && item.name === name)
