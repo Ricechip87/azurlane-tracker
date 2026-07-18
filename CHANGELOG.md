@@ -1,5 +1,24 @@
 # Change Log
 
+## 2026-07-19 - Normalize KR Construction Pool Names
+
+### Fixed
+- Map the upstream ALtoy `heavy` pool and JP/EN `대형함` source text to the actual KR `중형함 건조` label.
+- Canonicalize current and historical construction sources to exactly `소형함`, `중형함`, or `특형함 상시 건조` while preserving non-construction source text.
+- Split combined construction descriptions using comma, ideographic comma, or middle-dot separators and remove duplicate pool entries.
+- Clarify in the source-review report that ALtoy values are raw source text while the applied values use KR labels.
+- Read the active KR exercise-merit shop configuration directly and classify its 59 ship entries as `연습 상점(랜덤 출현)`.
+- Stop guessing `상시 건조` when a permanent-integration timeline row does not identify its acquisition method; keep an explicit unverified fallback instead.
+- Correct Icarus, Z24, and Adventure Galley from the guessed construction route to the verified rotating exercise shop route, including recommendation difficulty and ordering.
+- Correct Emanuele Pessagno from rerun-wait to permanent exercise-shop availability; preserve construction or archive alternatives for ships that have multiple routes.
+
+### Verified
+- Added normalization, KR exercise-shop extraction, timeline fallback, and generated-data regression tests, including the duplicated Zeitz source and mixed Shimakaze source formats.
+- Audited all 870 generated ships for invalid `대형함 건조` labels and duplicate construction routes.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Classify Multiple Permanent Acquisition Routes
 
 ### Changed

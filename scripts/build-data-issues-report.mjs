@@ -127,7 +127,7 @@ function identityCard(item) {
 }
 
 function obtainCard(item) {
-  const details = `<details><summary>입수처 비교</summary><b>KR</b>${list(item.krObtain)}<b>ALtoy</b>${list(item.altoyObtain)}<b>현재 적용</b>${list(item.appliedObtain)}</details>`
+  const details = `<details><summary>입수처 비교</summary><b>KR</b>${list(item.krObtain)}<b>ALtoy 원문</b>${list(item.altoyObtain)}<b>현재 KR 표기 적용</b>${list(item.appliedObtain)}</details>`
   return card(item.name, `${item.gid} · ${item.status}`, item.reason, item.iconFile, details)
 }
 

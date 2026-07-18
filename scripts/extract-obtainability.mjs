@@ -3,7 +3,9 @@ import path from 'node:path'
 import characters from '../src/data/characters.json' with { type: 'json' }
 import activeEvents from './data/kr-active-events.json' with { type: 'json' }
 import { classifyObtainability } from './lib/obtainability-classifier.mjs'
+import { normalizeConstructionSources } from './lib/construction-sources.mjs'
 import { selectObtainSources } from './lib/obtainability-sources.mjs'
+import { buildArenaShopGids, timelineFallbackSource } from './lib/permanent-shop-sources.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const OUTPUT_PATH = path.join(ROOT, 'src/data/shipObtainability.json')
@@ -88,7 +90,7 @@ function buildPermanentTimelineInfo(timeline) {
       const normalized = normalizeName(name)
       if (!normalized || normalized === '-') continue
       const reward = String(row['임무 보상'] || '')
-      const source = reward.includes(`${name.trim()} 군수상점`) ? '군수 상점 교환' : '상시 건조'
+      const source = reward.includes(`${name.trim()} 군수상점`) ? '군수 상점 교환' : null
       info.set(normalized, { source, date: String(row['날짜'] || '') })
     }
   }
@@ -139,12 +141,13 @@ function currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSi
   for (const drop of drops) sources.push(`메인 스테이지 해역${drop.stage}`)
   if (permanentSignals.archive) sources.push('작전문서 드랍')
   if (permanentSignals.coreMonthly) sources.push('코어 월간 교환')
+  if (permanentSignals.arenaShop) sources.push('연습 상점(랜덤 출현)')
   if (lite?.light) sources.push('소형함 상시 건조')
-  if (lite?.heavy) sources.push('대형함 상시 건조')
+  if (lite?.heavy) sources.push('중형함 상시 건조')
   if (lite?.special) sources.push('특형함 상시 건조')
   sources.push(...altoyObtain.filter(source => SHOP_PATTERN.test(source) || OTHER_PERMANENT_PATTERN.test(source)))
-  if (timelineInfo && sources.length === 0) sources.push(`${timelineInfo.source} (${timelineInfo.date} 상시편입)`)
-  return normalizeList(sources.length ? sources : rawObtain)
+  if (timelineInfo && sources.length === 0) sources.push(timelineFallbackSource(timelineInfo))
+  return normalizeConstructionSources(normalizeList(sources.length ? sources : rawObtain))
 }
 
 const referenceDir = findReferenceDir()
@@ -154,6 +157,8 @@ const localShips = readJson(path.join(referenceDir, 'AzurLane', 'ship.json'))
 const krGroups = readJson(path.join(referenceDir, 'AzurLaneData', 'KR', 'ShareCfg', 'ship_data_group.json'))
 const monthShop = readJson(path.join(referenceDir, 'AzurLaneData', 'KR', 'ShareCfg', 'month_shop_template.json'))
 const activityShop = readJson(path.join(referenceDir, 'AzurLaneData', 'KR', 'ShareCfg', 'activity_shop_template.json'))
+const arenaShop = readJson(path.join(referenceDir, 'AzurLaneData', 'KR', 'ShareCfg', 'arena_data_shop.json'))
+const shopData = readJson(path.join(referenceDir, 'AzurLaneData', 'KR', 'sharecfgdata', 'shop_template.json'))
 const altoy = await loadAltoyData(referenceDir)
 const localByGid = new Map(localShips.map(ship => [Number(ship.gid), ship]))
 const localByName = new Map(localShips.map(ship => [normalizeName(ship.name), ship]))
@@ -165,6 +170,7 @@ const fullByName = new Map(altoy.full.map(ship => [normalizeName(ship.name), shi
 const archiveGids = buildArchiveGids(altoy.maps, altoy.lite)
 const permanentTimelineInfo = buildPermanentTimelineInfo(altoy.timeline)
 const coreMonthlyGids = buildCoreMonthlyGids(monthShop, activityShop)
+const arenaShopGids = buildArenaShopGids(arenaShop, shopData)
 
 const ships = characters.map(character => {
   const gid = Number(character.gid)
@@ -181,6 +187,7 @@ const ships = characters.map(character => {
     map: drops.length > 0,
     archive: archiveGids.has(Number(lite?.gid ?? full?.gid ?? gid)),
     coreMonthly: coreMonthlyGids.has(Number(lite?.gid ?? full?.gid ?? gid)),
+    arenaShop: arenaShopGids.has(Number(lite?.gid ?? full?.gid ?? gid)),
     build: Boolean(lite?.light || lite?.heavy || lite?.special),
     shop: altoyObtain.some(source => SHOP_PATTERN.test(source)),
     other: altoyObtain.some(source => OTHER_PERMANENT_PATTERN.test(source)),
@@ -192,7 +199,7 @@ const ships = characters.map(character => {
     name: character.name,
     faction: character.faction,
     obtain,
-    permanentSources: altoyObtain,
+    permanentSources: normalizeConstructionSources(altoyObtain),
     mapDrops: drops,
     permanentSignals,
     activeEvent,
@@ -201,7 +208,7 @@ const ships = characters.map(character => {
   return {
     id: character.id, gid, name: character.name, rarity: character.rarity,
     faction: character.faction, shipType: character.shipType,
-    obtain, historicalObtain: rawObtain, obtainEn: normalizeList(local?.obtain),
+    obtain, historicalObtain: normalizeConstructionSources(rawObtain), obtainEn: normalizeList(local?.obtain),
     build: { light: Boolean(lite?.light), heavy: Boolean(lite?.heavy), special: Boolean(lite?.special), limited: Boolean(lite?.limited), timer: lite?.timer || null },
     mapDrops: drops, permanentSignals, ...classification,
     verification: { localKr: localKrObtain.length > 0, localResource: Boolean(local), altoy: Boolean(full), status: compareLists(localKrObtain, altoyObtain) },

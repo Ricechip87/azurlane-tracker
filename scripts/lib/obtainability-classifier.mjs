@@ -84,7 +84,7 @@ function classifyAcquisitionRoutes({ obtain, mapDrops, permanentSignals, availab
     add('archive-drop', '작전문서 드롭', 'random', 1, archiveSources.length ? archiveSources : ['작전문서 드롭'])
   }
 
-  const constructionSources = currentSources.filter(source => /(소형함|중형함|대형함|특형함).*(상시 )?건조|상시 건조/.test(source))
+  const constructionSources = currentSources.filter(source => /(소형함|중형함|특형함).*(상시 )?건조|상시 건조/.test(source))
   if (permanentSignals.build && constructionSources.length === 0) constructionSources.push('상시 건조')
   add('construction', '상시 건조', 'random', 2, constructionSources)
 
@@ -126,6 +126,6 @@ function mapDifficultyRank(stage) {
 }
 
 function permanentReasons(signals) {
-  const labels = { map: '메인 해역 드랍', archive: '작전문서 드랍', coreMonthly: '코어 월간 교환', build: '상시 건조', shop: '상점 교환', other: '상시 획득처', timeline: 'KR 상시편입 확인' }
+  const labels = { map: '메인 해역 드랍', archive: '작전문서 드랍', coreMonthly: '코어 월간 교환', arenaShop: '연습 상점(랜덤 출현)', build: '상시 건조', shop: '상점 교환', other: '상시 획득처', timeline: 'KR 상시편입 확인' }
   return Object.entries(signals).filter(([, enabled]) => enabled).map(([key]) => labels[key]).filter(Boolean)
 }
