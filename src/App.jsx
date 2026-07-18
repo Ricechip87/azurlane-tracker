@@ -9,6 +9,7 @@ import RecommendationPage from './components/RecommendationPage'
 import { normalizeAcquisitionStatus } from './utils/acquisitionStatus.js'
 import { matchesShipClassification } from './utils/shipClassifications.js'
 import { getEffectiveRarity } from './utils/rarity.js'
+import { shouldShowBackToTop } from './utils/backToTop.js'
 import heroImage from './assets/home-anchorage-painting.png'
 import homeQIcon from './assets/home-qicon.png'
 
@@ -156,6 +157,7 @@ export default function App() {
       {activePage !== 'home' && activePage !== 'my-roster' && activePage !== 'growth-recommend' && (
         <UnderConstructionPage title={PAGE_TITLES[activePage] || '공사중'} />
       )}
+      <BackToTopButton />
     </div>
   )
 }
@@ -298,12 +300,34 @@ function MyRosterPage({ characters, filteredCharacters, filters, setFilters, upd
         <FilterPanel filters={filters} setFilters={setFilters} characters={characters} />
         <CharacterTable characters={filteredCharacters} updateUser={updateUser} />
       </main>
-      <BackToTopButton />
     </>
   )
 }
 
 function BackToTopButton() {
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const updateVisibility = () => {
+      setVisible(shouldShowBackToTop({
+        scrollY: window.scrollY,
+        viewportHeight: window.innerHeight,
+        documentHeight: document.documentElement.scrollHeight,
+      }))
+    }
+
+    updateVisibility()
+    window.addEventListener('scroll', updateVisibility, { passive: true })
+    window.addEventListener('resize', updateVisibility)
+
+    return () => {
+      window.removeEventListener('scroll', updateVisibility)
+      window.removeEventListener('resize', updateVisibility)
+    }
+  }, [])
+
+  if (!visible) return null
+
   return (
     <button
       type="button"

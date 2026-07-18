@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-07-18 - Make Back-To-Top Navigation Global
+
+### Why
+- The back-to-top button was rendered only on the roster page and stayed visible even before the user had scrolled.
+
+### Changed
+- Render one shared back-to-top button at the app level so it works on every page.
+- Show the button only when the document is scrollable and the window has moved at least `400px` from the top.
+- Keep the existing smooth-scroll behavior and fixed bottom-right placement.
+- Added regression coverage for the scroll threshold and non-scrollable documents.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+- `git diff --check`
+
 ## 2026-07-18 - Keep Growth Recommendation Cards At Their Display Size
 
 ### Why
