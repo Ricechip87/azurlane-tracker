@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-07-19 - Keep A Development Goal Visible For New Players
+
+### Changed
+- Keep the top development recommendation useful before any ship is unlocked: show the highest-progress locked target when the roster has begun making progress.
+- For a completely empty roster, show generation-one starter targets ordered by the smallest roster requirement instead of leaving the recommendation section empty.
+- Distinguish `바로 개발 가능`, `해금 준비 중`, and `입문 목표` recommendation modes in the section heading and explanation.
+- Show roster-count shortages as faction, lane, and missing ship count on recommendation cards.
+
+### Verified
+- Reproduced Brooklyn, Phoenix, and Helena at level 100: Saint Louis becomes the top in-progress unlock recommendation.
+- Reproduced an empty roster: Roon, Monarch, Izumo, Neptune, Saint Louis, and Ibuki are shown as starter targets in requirement order.
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Clarify Research Recommendation Flow
 
 ### Changed

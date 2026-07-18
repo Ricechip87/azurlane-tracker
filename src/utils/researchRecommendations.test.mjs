@@ -7,7 +7,39 @@ import {
   evaluateResearchUnlock,
   getEligibleResearchXpShips,
   getResearchUnlockCandidates,
+  selectPriorityResearchShips,
 } from './researchRecommendations.js'
+
+assert.deepEqual(
+  selectPriorityResearchShips(
+    [{ name: '8기 A', generation: 8 }, { name: '8기 B', generation: 8 }, { name: '7기', generation: 7 }],
+    [{ name: '잠김', generation: 8, unlock: { progress: 0.9 } }],
+  ),
+  { items: [{ name: '8기 A', generation: 8 }, { name: '8기 B', generation: 8 }], mode: 'ready' },
+)
+
+assert.deepEqual(
+  selectPriorityResearchShips([], [
+    { name: '진행 중', generation: 1, unlock: { progress: 0.15 } },
+    { name: '덜 진행', generation: 8, unlock: { progress: 0.1 } },
+  ]),
+  { items: [{ name: '진행 중', generation: 1, unlock: { progress: 0.15 } }], mode: 'progress' },
+)
+
+assert.deepEqual(
+  selectPriorityResearchShips([], [
+    { name: '8기 진행 없음', generation: 8, unlock: { progress: 0 } },
+    { name: '1기 입문 A', generation: 1, unlockRequirements: [{ value: 20 }], unlock: { progress: 0 } },
+    { name: '1기 입문 B', generation: 1, unlockRequirements: [{ value: 7 }], unlock: { progress: 0 } },
+  ]),
+  {
+    items: [
+      { name: '1기 입문 B', generation: 1, unlockRequirements: [{ value: 7 }], unlock: { progress: 0 } },
+      { name: '1기 입문 A', generation: 1, unlockRequirements: [{ value: 20 }], unlock: { progress: 0 } },
+    ],
+    mode: 'starter',
+  },
+)
 
 assert.deepEqual(
   buildResearchFactionProgress(

@@ -71,6 +71,33 @@ export function buildResearchRecommendationState(researchShips, characters) {
   return { ready, locked, completed, factionTechPoints }
 }
 
+export function selectPriorityResearchShips(ready, locked) {
+  if (ready.length > 0) {
+    const latestGeneration = Math.max(...ready.map(item => item.generation))
+    return {
+      items: ready.filter(item => item.generation === latestGeneration),
+      mode: 'ready',
+    }
+  }
+
+  const orderedLocked = [...locked].sort((a, b) => b.unlock.progress - a.unlock.progress || compareReadyResearchShips(a, b))
+  const topProgress = orderedLocked[0]?.unlock.progress || 0
+  if (topProgress > 0) {
+    return {
+      items: orderedLocked.filter(item => item.unlock.progress === topProgress),
+      mode: 'progress',
+    }
+  }
+
+  const starterGeneration = Math.min(...orderedLocked.map(item => item.generation))
+  return {
+    items: Number.isFinite(starterGeneration)
+      ? orderedLocked.filter(item => item.generation === starterGeneration).sort(compareStarterResearchShips)
+      : [],
+    mode: 'starter',
+  }
+}
+
 export function getEligibleResearchXpShips(phase, characters) {
   const factions = new Set((phase.factions || []).map(normalizeFactionValue))
 
@@ -212,6 +239,11 @@ function compareReadyResearchShips(a, b) {
   return b.generation - a.generation
     || planRarityScore(a.planRarity) - planRarityScore(b.planRarity)
     || a.name.localeCompare(b.name, 'ko')
+}
+
+function compareStarterResearchShips(a, b) {
+  const requirementTotal = item => (item.unlockRequirements || []).reduce((sum, requirement) => sum + Number(requirement.value || 0), 0)
+  return requirementTotal(a) - requirementTotal(b) || compareReadyResearchShips(a, b)
 }
 
 function planRarityScore(value) {

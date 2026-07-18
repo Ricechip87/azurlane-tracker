@@ -10,6 +10,7 @@ import {
   buildResearchRecommendationState,
   getEligibleResearchXpShips,
   getResearchUnlockCandidates,
+  selectPriorityResearchShips,
 } from '../utils/researchRecommendations.js'
 
 const RESEARCH_SHIP_BY_NAME = new Map(researchRecommendationData.ships.map(ship => [ship.name, ship]))
@@ -33,9 +34,11 @@ export default function ResearchRecommendationPage({ characters }) {
   const visibleLocked = filterByFaction(state.locked)
   const visibleCompleted = filterByFaction(state.completed)
   const visibleState = { ...state, ready: visibleReady, locked: visibleLocked, completed: visibleCompleted }
-  const latestReadyGeneration = Math.max(0, ...visibleReady.map(item => item.generation))
-  const priority = visibleReady.filter(item => item.generation === latestReadyGeneration)
-  const otherReady = visibleReady.filter(item => item.generation !== latestReadyGeneration)
+  const prioritySelection = selectPriorityResearchShips(visibleReady, visibleLocked)
+  const priority = prioritySelection.items
+  const latestReadyGeneration = prioritySelection.mode === 'ready' ? Math.max(0, ...priority.map(item => item.generation)) : 0
+  const otherReady = visibleReady.filter(item => !priority.some(priorityItem => priorityItem.id === item.id))
+  const priorityHeading = getPriorityHeading(prioritySelection.mode, latestReadyGeneration)
 
   useEffect(() => {
     let cancelled = false
@@ -81,8 +84,8 @@ export default function ResearchRecommendationPage({ characters }) {
       </div>
 
       <ResearchSection
-        title={latestReadyGeneration ? `최우선 추천 · ${latestReadyGeneration}기` : '최우선 추천'}
-        description="현재 해금 조건을 충족한 미획득 개발함 중 가장 최신 기수입니다."
+        title={priorityHeading.title}
+        description={priorityHeading.description}
         items={priority}
         tone="priority"
         onSelect={setSelected}
@@ -199,7 +202,7 @@ function ResearchFactionProgress({ items, selectedFaction, onSelect }) {
 function ResearchGuide() {
   const steps = [
     ['1', '다음 점수 목표 확인', '진영별로 가장 가까운 개발함 해금 점수를 확인합니다.'],
-    ['2', '개발할 함선 선택', '아래 최우선 추천에서 현재 바로 개발 가능한 최신 기수를 봅니다.'],
+    ['2', '개발 목표 선택', '최우선 추천에서 현재 상태에 맞는 개발 또는 다음 해금 목표를 봅니다.'],
     ['3', '부족 조건 채우기', '잠긴 함선 카드를 눌러 기술점수를 채울 육성 후보를 확인합니다.'],
   ]
 
@@ -216,6 +219,25 @@ function ResearchGuide() {
       ))}
     </section>
   )
+}
+
+function getPriorityHeading(mode, latestReadyGeneration) {
+  if (mode === 'ready') {
+    return {
+      title: `최우선 추천 · ${latestReadyGeneration}기`,
+      description: '현재 바로 개발할 수 있는 미획득 개발함 중 가장 최신 기수입니다.',
+    }
+  }
+  if (mode === 'progress') {
+    return {
+      title: '최우선 추천 · 해금 준비 중',
+      description: '아직 개발할 수는 없지만 현재 해금 진행도가 가장 높은 목표입니다.',
+    }
+  }
+  return {
+    title: '최우선 추천 · 입문 목표',
+    description: '진행 정보가 없을 때 먼저 살펴볼 1기 개발함입니다. 보유 진영에 맞는 목표를 선택하세요.',
+  }
 }
 
 function ResearchSummary({ state }) {
@@ -417,7 +439,8 @@ function ResearchDetailModal({ item, characters, candidateRankingData, onClose }
 function summarizeUnlock(requirements) {
   const first = requirements.find(requirement => !requirement.met) || requirements[0]
   if (!first) return '개발 가능'
-  return `${getFactionDisplayName(first.faction)} ${first.remaining} 부족`
+  if (first.type === 'roster-count') return `${getFactionDisplayName(first.faction)} ${first.lane} ${first.remaining}명 부족`
+  return `${getFactionDisplayName(first.faction)} ${first.remaining}점 부족`
 }
 
 function unlockRequirementLabel(requirement) {
