@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-07-18 - Keep Growth Recommendation Cards At Their Display Size
+
+### Why
+- Recommendation cards inherited the full width of responsive grid columns, so resizing the window changed their width while their height stayed fixed.
+
+### Changed
+- Keep recommendation cards at a consistent `172 × 214px` display size.
+- Wrap cards according to the available width instead of stretching them to fill responsive grid columns.
+- Allow cards to shrink only when the available viewport is narrower than the normal card width.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+- `git diff --check`
+
 ## 2026-07-18 - Version User Data And Backups
 
 ### Why

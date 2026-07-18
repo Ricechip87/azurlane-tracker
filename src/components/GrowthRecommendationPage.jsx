@@ -362,7 +362,7 @@ export default function GrowthRecommendationPage({ characters }) {
                   onOpenCard={setOpenCard}
                 />
               ) : (
-              <div className="grid gap-2.5 p-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
+              <div className="flex flex-wrap gap-2.5 p-3">
                 {section.cards.map(card => (
                   <RecommendationCard
                     key={`${section.id}-${card.name}`}
@@ -402,7 +402,7 @@ function LaneGroupedCards({ section, characterByName, onOpenCard }) {
       {groups.map(group => group.cards.length > 0 && (
         <div key={`${section.id}-${group.lane}`}>
           <div className="mb-2 text-xs font-bold text-gray-400">{group.lane}</div>
-          <div className="grid gap-2.5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8">
+          <div className="flex flex-wrap gap-2.5">
             {group.cards.map(card => (
               <RecommendationCard
                 key={`${section.id}-${group.lane}-${card.name}`}
@@ -430,7 +430,7 @@ function RecommendationCard({ card, character, onOpen }) {
   return (
     <button
       type="button"
-      className={`group relative h-[214px] overflow-hidden rounded-md border-2 bg-[#272727] text-left shadow-lg outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-neutral-200 ${rarityStyle.card}`}
+      className={`group relative h-[214px] w-[172px] max-w-full flex-none overflow-hidden rounded-md border-2 bg-[#272727] text-left shadow-lg outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-neutral-200 ${rarityStyle.card}`}
       onClick={() => onOpen?.({ card, character })}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,#3a3a3a_0%,#202020_52%,#111_100%)]" />
