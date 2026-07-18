@@ -209,6 +209,7 @@ assert.deepEqual(
       character({ id: 11, name: '보유 항모', faction: '로열', shipType: '항모', acquired: '획득' }),
       character({ id: 12, name: '타 진영 전함', faction: '유니온', shipType: '전함', acquired: '미획득' }),
     ],
+    { obtainabilityByName: new Map([['미획득 전함', { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'easy', label: '쉬움' } }]]) },
   ).map(item => item.name),
   ['미획득 전함'],
 )
@@ -231,11 +232,17 @@ const rankedTechCandidates = [
   character({ id: 33, name: '쉬움 A 고득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 100, maxLB: 100, lv120: 100 } }),
   character({ id: 34, name: '쉬움 SS 저득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 30, maxLB: 30, lv120: 30 } }),
   character({ id: 35, name: '보통 SS 최고득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 200, maxLB: 200, lv120: 200 } }),
+  character({ id: 36, name: '현재 이벤트 후보', faction: '로열', acquired: '미획득', techPoints: { acquired: 70, maxLB: 70, lv120: 70 } }),
+  character({ id: 37, name: '복각 대기 최고득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 300, maxLB: 300, lv120: 300 } }),
+  character({ id: 38, name: '콜라보 복각 미정', faction: '로열', acquired: '미획득', techPoints: { acquired: 400, maxLB: 400, lv120: 400 } }),
 ]
 const obtainabilityByName = new Map([
-  ['쉬움 A 고득점', { difficulty: { key: 'easy', label: '쉬움' } }],
-  ['쉬움 SS 저득점', { difficulty: { key: 'easy', label: '쉬움' } }],
-  ['보통 SS 최고득점', { difficulty: { key: 'normal', label: '보통' } }],
+  ['쉬움 A 고득점', { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'easy', label: '쉬움' } }],
+  ['쉬움 SS 저득점', { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'easy', label: '쉬움' } }],
+  ['보통 SS 최고득점', { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'normal', label: '보통' } }],
+  ['현재 이벤트 후보', { availability: { key: 'active-event', label: '현재 이벤트' }, difficulty: { key: 'event', label: '이벤트' } }],
+  ['복각 대기 최고득점', { availability: { key: 'rerun-wait', label: '복각 대기' }, difficulty: { key: 'limited', label: '현재 획득 불가' } }],
+  ['콜라보 복각 미정', { availability: { key: 'collab-unknown', label: '콜라보 복각 미정' }, difficulty: { key: 'limited', label: '현재 획득 불가' } }],
 ])
 const operationTierByName = new Map([
   ['보유 두 단계', 'SS+'],
@@ -244,6 +251,7 @@ const operationTierByName = new Map([
   ['쉬움 A 고득점', 'A'],
   ['쉬움 SS 저득점', 'SS'],
   ['보통 SS 최고득점', 'SS'],
+  ['현재 이벤트 후보', 'A'],
 ])
 
 assert.deepEqual(
@@ -258,6 +266,7 @@ assert.deepEqual(
     '보유 두 단계',
     '쉬움 SS 저득점',
     '쉬움 A 고득점',
+    '현재 이벤트 후보',
     '보통 SS 최고득점',
   ],
 )

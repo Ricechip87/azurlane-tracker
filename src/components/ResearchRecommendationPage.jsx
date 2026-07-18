@@ -1,9 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import researchRecommendationData from '../data/researchRecommendations.json'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { isAcquiredStatus, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
+import { getEffectiveRarity } from '../utils/rarity.js'
+import { getAvailability, getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import {
   buildOperationTierByName,
   buildResearchFactionProgress,
@@ -20,6 +22,7 @@ export default function ResearchRecommendationPage({ characters }) {
   const [targetId, setTargetId] = useState(() => typeof window === 'undefined' ? '' : window.localStorage.getItem('azurlane-research-target') || '')
   const [candidateRankingData, setCandidateRankingData] = useState(null)
   const goalRef = useRef(null)
+  const pendingGoalScrollRef = useRef(false)
   const state = useMemo(
     () => buildResearchRecommendationState(researchRecommendationData.ships, characters),
     [characters],
@@ -55,6 +58,7 @@ export default function ResearchRecommendationPage({ characters }) {
       const operationSource = (growthData.sources || []).find(source => source.key === 'operation-siren')
       setCandidateRankingData({
         operationTierByName: buildOperationTierByName(growthData),
+        operationRecommendationByName: buildOperationRecommendationByName(growthData),
         operationUpdatedAt: operationSource?.updatedAt || null,
         obtainabilityByName: new Map((obtainabilityData.ships || []).map(ship => [ship.name, ship])),
       })
@@ -71,23 +75,31 @@ export default function ResearchRecommendationPage({ characters }) {
     else window.localStorage.removeItem('azurlane-research-target')
   }, [targetId])
 
+  useLayoutEffect(() => {
+    if (!pendingGoalScrollRef.current || !selectedTarget) return
+    pendingGoalScrollRef.current = false
+    goalRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [selectedTarget])
+
   const selectGoal = item => {
+    pendingGoalScrollRef.current = true
     setTargetId(String(item.id))
-    requestAnimationFrame(() => goalRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
   }
 
   return (
-    <section className="space-y-4" ref={goalRef}>
+    <section className="space-y-4">
       <ResearchSummary state={state} />
 
-      <ResearchGoalWorkspace
-        key={selectedTarget?.id || 'no-target'}
-        items={allItems}
-        selectedTarget={selectedTarget}
-        onSelectId={setTargetId}
-        characters={characters}
-        candidateRankingData={candidateRankingData}
-      />
+      <div ref={goalRef} className="scroll-mt-4">
+        <ResearchGoalWorkspace
+          key={selectedTarget?.id || 'no-target'}
+          items={allItems}
+          selectedTarget={selectedTarget}
+          onSelect={selectGoal}
+          characters={characters}
+          candidateRankingData={candidateRankingData}
+        />
+      </div>
 
       <div className="rounded border border-sky-900/70 bg-sky-950/25 px-4 py-3 text-sm leading-6 text-sky-100">
         <strong>9기 반영 정책:</strong> KR 기본 데이터에 정식 편입된 뒤 추가합니다. 현재 추천은 검증된 1~8기 42명을 기준으로 계산합니다.
@@ -105,13 +117,13 @@ export default function ResearchRecommendationPage({ characters }) {
   )
 }
 
-function ResearchGoalWorkspace({ items, selectedTarget, onSelectId, characters, candidateRankingData }) {
+function ResearchGoalWorkspace({ items, selectedTarget, onSelect, characters, candidateRankingData }) {
   const [pickerOpen, setPickerOpen] = useState(!selectedTarget)
   const generationGroups = groupResearchShipsByGeneration(items)
 
   const selectTarget = item => {
-    onSelectId(String(item.id))
     setPickerOpen(false)
+    onSelect(item)
   }
 
   return (
@@ -130,7 +142,9 @@ function ResearchGoalWorkspace({ items, selectedTarget, onSelectId, characters, 
           >
             <span className="flex items-center justify-between gap-3">
               <span>{selectedTarget ? goalOptionLabel(selectedTarget) : '최신 기수부터 개발함 선택하기'}</span>
-              <span className="text-xs text-gray-500">{pickerOpen ? '▲ 접기' : '▼ 목표 변경'}</span>
+              <span className="flex-none rounded border border-cyan-700 bg-cyan-950/80 px-2 py-1 text-xs font-black text-cyan-100">
+                {pickerOpen ? '▲ 목록 접기' : '▼ 목표 변경'}
+              </span>
             </span>
           </button>
         </div>
@@ -198,6 +212,7 @@ function ResearchGoalPicker({ groups, selectedTarget, onSelect }) {
 
 function ResearchGoalPanel({ item, characters, candidateRankingData }) {
   const completed = isResearchCompleted(item)
+  const [openCandidate, setOpenCandidate] = useState(null)
   return (
     <div className="p-4">
       <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
@@ -231,7 +246,9 @@ function ResearchGoalPanel({ item, characters, candidateRankingData }) {
                     <span className={requirement.met ? 'text-emerald-300' : 'text-amber-300'}>{requirement.current} / {requirement.value}</span>
                   </div>
                   <div className="mt-1 text-xs text-gray-500">{requirement.met ? '조건 충족' : requirement.type === 'roster-count' ? `${requirement.remaining}명 추가 획득 필요` : `${requirement.remaining}점 추가 필요`}</div>
-                  {candidates.length > 0 && <UnlockCandidateList candidates={candidates} title={candidateTitle} />}
+                  {candidates.length > 0 && (
+                    <UnlockCandidateList candidates={candidates} title={candidateTitle} onOpen={setOpenCandidate} />
+                  )}
                 </div>
               )
             })}
@@ -257,6 +274,9 @@ function ResearchGoalPanel({ item, characters, candidateRankingData }) {
           </div>
         </div>
       </div>
+      {openCandidate && (
+        <ResearchCandidatePopup candidate={openCandidate} onClose={() => setOpenCandidate(null)} />
+      )}
     </div>
   )
 }
@@ -461,7 +481,7 @@ function formatNumber(value) {
   return new Intl.NumberFormat('ko-KR').format(value)
 }
 
-function UnlockCandidateList({ candidates, title = '해금용 육성 추천 후보' }) {
+function UnlockCandidateList({ candidates, title = '해금용 육성 추천 후보', onOpen }) {
   const visibleCandidates = candidates.slice(0, 5)
   return (
     <div className="mt-3 border-t border-current/15 pt-2 text-xs">
@@ -469,9 +489,16 @@ function UnlockCandidateList({ candidates, title = '해금용 육성 추천 후�
         <span className="font-bold">{title}</span>
         <span className="text-[10px] opacity-60">상위 {visibleCandidates.length}명 / 전체 {candidates.length}명</span>
       </div>
+      <div className="mt-1 text-[10px] text-cyan-300/80">후보를 누르면 추천 사유와 입수처를 볼 수 있습니다.</div>
       <ol className="mt-2 space-y-1.5">
         {visibleCandidates.map((candidate, index) => (
-          <li key={candidate.id ?? candidate.name} className="rounded border border-white/10 bg-black/25 px-2 py-2 text-gray-200">
+          <li key={candidate.id ?? candidate.name}>
+            <button
+              type="button"
+              onClick={() => onOpen?.(candidate)}
+              className="w-full rounded border border-white/10 bg-black/25 px-2 py-2 text-left text-gray-200 outline-none transition-colors hover:border-cyan-700 hover:bg-cyan-950/20 focus-visible:ring-2 focus-visible:ring-cyan-400"
+              aria-label={`${candidate.name} 상세 정보 보기`}
+            >
             <div className="flex min-w-0 items-start gap-2">
               <span className="flex h-4 w-4 flex-none items-center justify-center rounded-full bg-black/60 text-[9px] font-black text-gray-400">{index + 1}</span>
               <span className="min-w-0 flex-1 break-words font-bold leading-4">{candidate.name}</span>
@@ -484,6 +511,7 @@ function UnlockCandidateList({ candidates, title = '해금용 육성 추천 후�
                 <CandidateBadge key={`${candidate.name}-${badge.label}`} tone={badge.tone}>{badge.label}</CandidateBadge>
               ))}
             </div>
+            </button>
           </li>
         ))}
       </ol>
@@ -492,6 +520,99 @@ function UnlockCandidateList({ candidates, title = '해금용 육성 추천 후�
       )}
     </div>
   )
+}
+
+function ResearchCandidatePopup({ candidate, onClose }) {
+  const rarity = getEffectiveRarity(candidate)
+  const status = normalizeAcquisitionStatus(candidate.status ?? candidate.acquired)
+  const sourceSections = getObtainabilitySourceSections(candidate.obtainability)
+  const reason = getFactionDisplayText(candidate.recommendation?.roleNote || '').trim()
+    || '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.'
+  const cardArtUrl = getCardArtUrl(candidate)
+
+  useEffect(() => {
+    const closeOnEscape = event => {
+      if (event.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [onClose])
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/55 px-4 py-6 backdrop-blur-sm"
+      onClick={onClose}
+      role="presentation"
+    >
+      <div
+        className="relative w-full max-w-md rounded-lg border border-neutral-600 bg-[#242424] p-4 text-gray-100 shadow-2xl shadow-black/70"
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${candidate.name} 상세 정보`}
+        onClick={event => event.stopPropagation()}
+      >
+        <button type="button" onClick={onClose} className="absolute right-3 top-3 text-xl text-gray-500 hover:text-white" aria-label="닫기">×</button>
+        <div className="flex items-start gap-4 pr-6">
+          <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded border border-neutral-600 bg-[#181818]">
+            {cardArtUrl ? (
+              <img src={cardArtUrl} alt="" className="h-full w-full object-cover object-top" />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center text-2xl font-black text-gray-700">{candidate.name.slice(0, 2)}</div>
+            )}
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap gap-1.5 text-[11px] font-black">
+              <CardBadge>{candidate.operationTier || '미평가'}</CardBadge>
+              <CardBadge tone={rarity === 'UR' || rarity === 'SSR' ? 'gold' : rarity === 'SR' ? 'purple' : 'dark'}>{rarity}</CardBadge>
+              <CardBadge>{getFactionDisplayName(candidate.faction)}</CardBadge>
+              <CardBadge>{candidate.shipType || '-'}</CardBadge>
+              <CandidateBadge tone={isAcquiredStatus(status) ? 'owned' : 'neutral'}>{status}</CandidateBadge>
+              {!isAcquiredStatus(status) && (
+                <CandidateBadge tone={obtainabilityCandidateTone(candidate.obtainability)}>{obtainabilityLabel(candidate.obtainability)}</CandidateBadge>
+              )}
+            </div>
+            <h4 className="mt-3 truncate text-lg font-black text-white">{candidate.name}</h4>
+          </div>
+        </div>
+
+        <div className="mt-4 space-y-4 text-sm leading-6">
+          <section>
+            <h5 className="mb-1 text-xs font-bold text-gray-400">추천 사유</h5>
+            <p className="whitespace-pre-line rounded border border-neutral-700 bg-[#1a1a1a] px-3 py-2 text-gray-100">{reason}</p>
+          </section>
+          <section>
+            <h5 className="mb-1 text-xs font-bold text-gray-400">입수 방법</h5>
+            {sourceSections.length > 0 ? (
+              <div className="space-y-2">
+                {sourceSections.map(section => (
+                  <div key={section.label} className="rounded border border-neutral-700 bg-[#1a1a1a] px-3 py-2 text-gray-200">
+                    <div className="mb-1 text-[11px] font-bold text-gray-400">{section.label}</div>
+                    <ul className="space-y-1">
+                      {section.sources.map(source => <li key={source} className="flex gap-2"><span className="text-gray-500">•</span><span>{source}</span></li>)}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="rounded border border-neutral-700 bg-[#1a1a1a] px-3 py-2 text-gray-500">확인된 입수처 정보가 없습니다.</p>
+            )}
+          </section>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function buildOperationRecommendationByName(growthData) {
+  const result = new Map()
+  const tierByName = buildOperationTierByName(growthData)
+  for (const recommendation of growthData?.recommendations || []) {
+    if (recommendation.source !== 'operation-siren') continue
+    if (tierByName.get(recommendation.name) === recommendation.tier && !result.has(recommendation.name)) {
+      result.set(recommendation.name, recommendation)
+    }
+  }
+  return result
 }
 
 function candidateRankingBadges(candidate) {
@@ -505,7 +626,7 @@ function candidateRankingBadges(candidate) {
     ]
   }
   return [
-    { label: candidate.difficulty?.label || '미확인', tone: difficultyCandidateTone(candidate.difficulty?.key) },
+    { label: obtainabilityLabel(candidate.obtainability), tone: obtainabilityCandidateTone(candidate.obtainability) },
     { label: `대작전 ${tier}`, tone: candidate.operationTier ? 'operation' : 'neutral' },
   ]
 }
@@ -515,6 +636,14 @@ function difficultyCandidateTone(key) {
   if (key === 'normal') return 'normal'
   if (key === 'hard' || key === 'limited') return 'hard'
   return 'neutral'
+}
+
+function obtainabilityCandidateTone(obtainability) {
+  const key = getAvailability(obtainability).key
+  if (key === 'permanent') return 'normal'
+  if (key === 'active-event') return 'easy'
+  if (key === 'rerun-wait' || key === 'collab-unknown') return 'hard'
+  return difficultyCandidateTone(obtainability?.difficulty?.key)
 }
 
 function CandidateBadge({ children, tone }) {

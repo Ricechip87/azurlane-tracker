@@ -4,6 +4,7 @@ import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
 import { getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
+import { getObtainabilitySourceSections, isGrowthRecommendationEligible, obtainabilityLabel, obtainabilityRank } from '../utils/obtainability.js'
 
 const MODES = [
   {
@@ -61,15 +62,6 @@ const COLLAB_FACTIONS = new Set([
   '홀로라이브',
 ])
 const TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B']
-const DIFFICULTY_RANK = {
-  easy: 0,
-  normal: 1,
-  hard: 2,
-  limited: 3,
-  unknown: 4,
-  excluded: 9,
-}
-
 function buildRecommendationSections(mode, characters, growthRecommendationData, obtainabilityByName) {
   const characterByName = new Map(characters.map(character => [character.name, character]))
   const candidates = getCandidatesForMode(mode, characterByName, growthRecommendationData, obtainabilityByName)
@@ -168,9 +160,11 @@ function buildCandidate(recommendation, character, obtainability) {
 }
 
 function isEligibleCandidate(candidate) {
-  if (candidate.difficulty.key === 'excluded') return false
-  if (candidate.acquired) return !isLevel120Status(candidate.status)
-  return candidate.difficulty.key === 'easy'
+  return isGrowthRecommendationEligible({
+    acquired: candidate.acquired,
+    level120: isLevel120Status(candidate.status),
+    obtainability: candidate.obtainability,
+  })
 }
 
 function compareCandidates(a, b) {
@@ -200,7 +194,7 @@ function ownershipScore(candidate) {
 }
 
 function difficultyScore(candidate) {
-  return DIFFICULTY_RANK[candidate.difficulty.key] ?? DIFFICULTY_RANK.unknown
+  return obtainabilityRank(candidate.obtainability)
 }
 
 function getLane(shipType) {
@@ -479,7 +473,7 @@ function RecommendationCard({ card, character, onOpen }) {
       <div className="absolute left-2 top-2 flex max-w-[calc(100%-84px)] flex-wrap gap-1 text-[10px] font-black">
         <Badge tone="dark">{card.tier}</Badge>
         {showDifficultyBadge && (
-          <Badge tone={difficultyTone(card.difficulty?.key)}>{card.difficulty?.label || '미확인'}</Badge>
+          <Badge tone={availabilityTone(card.obtainability)}>{obtainabilityLabel(card.obtainability)}</Badge>
         )}
       </div>
 
@@ -501,11 +495,10 @@ function getDisplayFaction(faction) {
 }
 
 function getCardDetails(card) {
-  const sources = card.obtainability?.obtain || []
   const reason = normalizeSummary(card.roleNote)
   return {
     reason: reason || card.summary || '원본 추천표 기준 추천 후보입니다.',
-    sources,
+    sourceSections: getObtainabilitySourceSections(card.obtainability),
   }
 }
 
@@ -543,7 +536,7 @@ function RecommendationCardPopup({ card, character, onClose }) {
               <Badge tone="dark">{shipType}</Badge>
               <Badge tone={statusTone(status)}>{status}</Badge>
               {status === '미획득' && (
-                <Badge tone={difficultyTone(card.difficulty?.key)}>{card.difficulty?.label || '미확인'}</Badge>
+                <Badge tone={availabilityTone(card.obtainability)}>{obtainabilityLabel(card.obtainability)}</Badge>
               )}
             </div>
             <h4 className="mt-3 truncate text-lg font-black text-white">{card.name}</h4>
@@ -560,15 +553,17 @@ function RecommendationCardPopup({ card, character, onClose }) {
 
           <section>
             <h5 className="mb-1 text-xs font-bold text-gray-400">입수 방법</h5>
-            {details.sources.length > 0 ? (
-              <ul className="space-y-1 rounded border border-neutral-700 bg-[#1a1a1a] px-3 py-2 text-gray-200">
-                {details.sources.map(source => (
-                  <li key={source} className="flex gap-2">
-                    <span className="text-gray-500">•</span>
-                    <span>{source}</span>
-                  </li>
+            {details.sourceSections.length > 0 ? (
+              <div className="space-y-2">
+                {details.sourceSections.map(section => (
+                  <div key={section.label} className="rounded border border-neutral-700 bg-[#1a1a1a] px-3 py-2 text-gray-200">
+                    <div className="mb-1 text-[11px] font-bold text-gray-400">{section.label}</div>
+                    <ul className="space-y-1">
+                      {section.sources.map(source => <li key={source} className="flex gap-2"><span className="text-gray-500">•</span><span>{source}</span></li>)}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             ) : (
               <p className="rounded border border-neutral-700 bg-[#1a1a1a] px-3 py-2 text-gray-500">
                 확인된 입수처 정보가 없습니다.
@@ -641,6 +636,14 @@ function difficultyTone(key) {
   if (key === 'hard') return 'orange'
   if (key === 'limited') return 'red'
   return 'gray'
+}
+
+function availabilityTone(obtainability) {
+  const key = obtainability?.availability?.key
+  if (key === 'permanent') return 'blue'
+  if (key === 'active-event') return 'green'
+  if (key === 'rerun-wait' || key === 'collab-unknown') return 'red'
+  return difficultyTone(obtainability?.difficulty?.key)
 }
 
 function rarityCardStyle(rarity) {

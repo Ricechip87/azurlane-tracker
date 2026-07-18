@@ -3,6 +3,7 @@ import { normalizeFactionValue } from './factions.js'
 import { calcFleetTechCandidates } from './fleetTechCandidates.js'
 import { getShipPosition } from './shipClassifications.js'
 import { calcTechPoints } from './techPoints.js'
+import { isResearchCandidateActionable, obtainabilityRank } from './obtainability.js'
 
 export function calcAllFactionTechPoints(characters) {
   const result = {}
@@ -163,14 +164,6 @@ export function getEligibleResearchXpShips(phase, characters) {
 }
 
 const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B']
-const OBTAINABILITY_ORDER = {
-  easy: 0,
-  normal: 1,
-  hard: 2,
-  limited: 3,
-  unknown: 4,
-  excluded: 5,
-}
 const RESEARCH_FACTION_ORDER = ['유니온', '로열', '중앵', '철혈', '동황', '사르데냐', '노스유니온', '아이리스', '비시아', '튤리퍼']
 
 export function buildResearchFactionProgress(researchShips, factionTechPoints) {
@@ -232,6 +225,7 @@ export function getResearchUnlockCandidates(requirement, characters, rankingData
   if (requirement.type === 'tech-points') {
     return calcFleetTechCandidates(characters, faction)
       .map(candidate => addResearchRankingData(candidate, rankingData))
+      .filter(isActionableResearchCandidate)
       .sort(compareResearchUnlockCandidates)
   }
 
@@ -245,16 +239,25 @@ export function getResearchUnlockCandidates(requirement, characters, rankingData
       remainingSteps: 1,
       remainingTechPoints: 0,
     }, rankingData))
+    .filter(isActionableResearchCandidate)
     .sort(compareResearchUnlockCandidates)
 }
 
-function addResearchRankingData(candidate, { obtainabilityByName, operationTierByName }) {
+function isActionableResearchCandidate(candidate) {
+  return isResearchCandidateActionable({
+    acquired: isAcquiredStatus(candidate.status),
+    obtainability: candidate.obtainability,
+  })
+}
+
+function addResearchRankingData(candidate, { obtainabilityByName, operationTierByName, operationRecommendationByName }) {
   const obtainability = obtainabilityByName?.get(candidate.name)
   return {
     ...candidate,
     obtainability,
     difficulty: obtainability?.difficulty || { key: 'unknown', label: '미확인' },
     operationTier: operationTierByName?.get(candidate.name) || null,
+    recommendation: operationRecommendationByName?.get(candidate.name) || null,
   }
 }
 
@@ -269,7 +272,7 @@ function compareResearchUnlockCandidates(a, b) {
       || a.name.localeCompare(b.name, 'ko')
   }
 
-  return obtainabilityRank(a.difficulty?.key) - obtainabilityRank(b.difficulty?.key)
+  return obtainabilityRank(a.obtainability) - obtainabilityRank(b.obtainability)
     || operationTierRank(a.operationTier) - operationTierRank(b.operationTier)
     || b.remainingTechPoints - a.remainingTechPoints
     || a.name.localeCompare(b.name, 'ko')
@@ -278,10 +281,6 @@ function compareResearchUnlockCandidates(a, b) {
 function operationTierRank(tier) {
   const index = OPERATION_TIER_ORDER.indexOf(tier)
   return index === -1 ? OPERATION_TIER_ORDER.length : index
-}
-
-function obtainabilityRank(key) {
-  return OBTAINABILITY_ORDER[key] ?? OBTAINABILITY_ORDER.unknown
 }
 
 function researchFactionRank(faction) {

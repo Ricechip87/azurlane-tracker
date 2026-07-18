@@ -1,0 +1,26 @@
+{
+  "updatedAt": "2026-07-19",
+  "events": [
+    {
+      "name": "META전 - 브리스톨",
+      "startsAt": "2026-06-18",
+      "endsAt": "2026-09-17",
+      "ships": ["브리스톨(META)"],
+      "source": "ALtoy KR event timeline"
+    },
+    {
+      "name": "월드 투어",
+      "startsAt": "2026-06-05",
+      "endsAt": "2026-07-31",
+      "ships": ["쾨니히스베르크(META)"],
+      "source": "ALtoy KR event timeline"
+    },
+    {
+      "name": "환몽의 카발카드",
+      "startsAt": "2026-07-09",
+      "endsAt": "2026-07-23",
+      "ships": ["셰르부르", "아로망슈", "랑트레피드"],
+      "source": "https://arca.live/b/azurlane/175960700"
+    }
+  ]
+}

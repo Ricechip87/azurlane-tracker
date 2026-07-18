@@ -69,6 +69,7 @@ const report = {
     obtainabilityDifferent: obtainabilityReview.filter(item => item.status === 'different').length,
     missingReferenceImages: missingReferenceImages.length,
     cnOnlyExcluded: cnOnlyExcluded.length,
+    availability: obtainability.meta.availability || {},
   },
   identityExceptions,
   obtainabilityReview,
@@ -106,7 +107,7 @@ function renderHtml(data) {
 </head>
 <body>
   <h1>AzurLane 데이터 검토 목록</h1>
-  <div class="summary">생성: ${escapeHtml(data.generatedAt)} · 자동 오류가 아니라 사람 확인이 필요한 예외/불일치 목록입니다.</div>
+  <div class="summary">생성: ${escapeHtml(data.generatedAt)} · 자동 오류가 아니라 사람 확인이 필요한 예외/불일치 목록입니다.<br>입수 상태: 상시 획득 ${data.summary.availability.permanent || 0} · 현재 이벤트 ${data.summary.availability['active-event'] || 0} · 복각 대기 ${data.summary.availability['rerun-wait'] || 0} · 콜라보 복각 미정 ${data.summary.availability['collab-unknown'] || 0}</div>
   ${section('식별자 보조 매칭', `${data.identityExceptions.length}명 · 앱 gid와 ALtoy gid가 달라 이름으로 연결`, data.identityExceptions.map(identityCard))}
   ${section('입수처 교차검증', `${data.obtainabilityReview.length}명 · ALtoy 단독 ${data.summary.obtainabilityAltoyOnly}, ALtoy 최신값 적용 ${data.summary.obtainabilityDifferent}`, data.obtainabilityReview.map(obtainCard))}
   ${section('참고 이미지 원본 미제공', `${data.missingReferenceImages.length}명 · 앱 아이콘은 정상이며 painting 원본 검토용`, data.missingReferenceImages.map(imageCard))}

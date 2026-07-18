@@ -1,6 +1,5 @@
 import assert from 'node:assert/strict'
 import {
-  MANUAL_UNAVAILABLE_GIDS,
   PREFER_ALTOY_GIDS,
   selectObtainSources,
 } from './obtainability-sources.mjs'
@@ -21,9 +20,8 @@ assert.deepEqual(selectObtainSources({
   altoyObtain: ['ALtoy 입수처'],
 }), ['KR 입수처'])
 
-assert.ok(MANUAL_UNAVAILABLE_GIDS.has(10300010))
 assert.deepEqual(selectObtainSources({
   gid: 10300010,
   localKrObtain: [],
   altoyObtain: ['이벤트：저편에서의 만남'],
-}), ['입수 못함'])
+}), ['이벤트：저편에서의 만남'])

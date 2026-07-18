@@ -1,5 +1,50 @@
 # Change Log
 
+## 2026-07-19 - Reclassify KR Obtainability And Recommendation Filters
+
+### Changed
+- Split temporal availability (`상시 획득`, `현재 이벤트`, `복각 대기`, `콜라보 복각 미정`) from acquisition difficulty for all 870 KR-visible ships.
+- Cross-check permanent acquisition through ALtoy build pools, main-map drops, War Archive drops, permanent shops, and the KR permanent-integration timeline without modifying the reference folder.
+- Resolve KR Core Monthly ship goods by joining `month_shop_template` with `activity_shop_template`; correct seven missed permanent ships including Independence, Fupo, and Little San Diego.
+- Reclassify the six Utawarerumono ships from a manual `추천 제외` override to the same `콜라보 복각 미정` state as every other past collaboration.
+- Show current acquisition sources instead of frozen debut-event descriptions for ships that later entered permanent acquisition.
+- Make growth recommendations and research unlock candidates share one availability policy: owned ships remain actionable, while unowned ships require a permanent or currently active KR source.
+- Keep the growth page's existing unowned priority rule (easy permanent sources) and additionally allow ships obtainable in the current KR event.
+- Preserve legacy obtainability JSON interpretation so existing clients do not break while the generated schema gains `availability`.
+- Display permanent ships simply as `상시 획득` while retaining difficulty only for internal ranking, and show current permanent sources alongside historical event sources in detail popups.
+
+### Verified
+- Added classifier, generated-data, shared-filter, and research-candidate regression tests.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
+## 2026-07-19 - Refine Research Unlock Candidates And Details
+
+### Changed
+- Keep the existing owned-state, remaining-step, acquisition-difficulty, Operation Siren tier, and tech-point ranking while removing unowned ships classified as `추천 제외` from actionable unlock candidates.
+- Make each unlock candidate row open a ship detail popup with recommendation context and verified acquisition sources.
+- Reuse the latest Operation Siren recommendation note as the candidate reason when available.
+- Increase the contrast of the collapsed `목표 변경` control so its action is visually distinct from the selected ship name.
+
+### Verified
+- Added a regression case proving an unowned `추천 제외` ship is omitted even when it grants the most tech points.
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
+## 2026-07-19 - Align The Selected Research Goal After Picker Collapse
+
+### Fixed
+- After selecting a ship from a lower generation, wait for the visual picker to collapse and then smoothly align the viewport to the `내 개발 목표` header.
+- Use the goal workspace itself as the scroll target instead of the page summary above it.
+- Apply the same aligned scroll behavior when selecting a goal from the web recommendations or completed list.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Replace The Research Goal Combo Box With Generation Cards
 
 ### Changed

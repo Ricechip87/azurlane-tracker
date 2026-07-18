@@ -1,14 +1,3 @@
-export const UNAVAILABLE_OBTAIN = '입수 못함'
-
-export const MANUAL_UNAVAILABLE_GIDS = new Set([
-  10300010,
-  10300020,
-  10300030,
-  10300040,
-  10300050,
-  10300060,
-])
-
 export const PREFER_ALTOY_GIDS = new Set([
   40199,
   40210,
@@ -34,7 +23,6 @@ export const PREFER_ALTOY_GIDS = new Set([
 ])
 
 export function selectObtainSources({ gid, localKrObtain = [], altoyObtain = [] }) {
-  if (MANUAL_UNAVAILABLE_GIDS.has(Number(gid))) return [UNAVAILABLE_OBTAIN]
   if (PREFER_ALTOY_GIDS.has(Number(gid)) && altoyObtain.length > 0) return altoyObtain
   if (localKrObtain.length > 0) return localKrObtain
   if (altoyObtain.length > 0) return altoyObtain

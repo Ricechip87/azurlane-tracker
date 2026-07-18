@@ -1,340 +1,227 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import characters from '../src/data/characters.json' with { type: 'json' }
-import {
-  selectObtainSources,
-  UNAVAILABLE_OBTAIN,
-} from './lib/obtainability-sources.mjs'
+import activeEvents from './data/kr-active-events.json' with { type: 'json' }
+import { classifyObtainability } from './lib/obtainability-classifier.mjs'
+import { selectObtainSources } from './lib/obtainability-sources.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const OUTPUT_PATH = path.join(ROOT, 'src/data/shipObtainability.json')
 const ALTOY_BASE_URL = 'https://jforplay.github.io/altoy'
-const ALTOY_FILES = [
-  'data/ship_info_lite.json',
-  'data/ship_info_data.json',
-]
-const DIFFICULTY = {
-  EASY: { rank: 1, key: 'easy', label: '쉬움' },
-  NORMAL: { rank: 2, key: 'normal', label: '보통' },
-  HARD: { rank: 3, key: 'hard', label: '어려움' },
-  LIMITED: { rank: 4, key: 'limited', label: '한정/복각 대기' },
-  EXCLUDED: { rank: 5, key: 'excluded', label: '추천 제외' },
-  UNKNOWN: { rank: 9, key: 'unknown', label: '미확인' },
-}
+const SHOP_PATTERN = /^(META ?상점|원형 상점|군수 상점|상점의 대함대|코어 상점|코어 교환|특별 ?보급|함대 상점|훈장 상점|훈장 교환)/
+const OTHER_PERMANENT_PATTERN = /^(META ?상점|소형함 건조|중형함 건조|대형함 건조|특형함 건조|훈장|코어|군수 상점|원형 상점|함대 상점|연습 상점|지원 신청|특별 ?보급|상설 UR|UR Exchange|상점의 대함대|주간 임무|도감 업적|출석 스탬프|히든 임무|연구 ?도크)/
 
-const easyPatterns = [
-  /^함대 상점 교환$/,
-  /^군수 상점 교환$/,
-  /^훈장 상점 교환$/,
-  /^상점의 대함대 보급에서 획득 가능$/,
-  /^주간 임무$/,
-  /^도감 업적 달성$/,
-  /^출석 스탬프$/,
-  /^작전 파일:/,
-  /^히든 임무/,
-  /^메인 스테이지 해역[1-4]-[1-4]$/,
-]
-
-const normalPatterns = [
-  /^META상점 교환$/,
-  /^(소형함|중형함|대형함|특형함) 건조$/,
-  /^대형함 건조[,·] 특형함 건조$/,
-  /^대형함 건조·특형함 건조$/,
-  /^중형함 건조、특형함 건조$/,
-  /^훈장 상점 교환\(랜덤 갱신\)$/,
-  /^훈장 교환\(랜덤 출현\)$/,
-  /^훈장 지원\((랜덤 갱신|확률적 출현)\)$/,
-  /^지원 신청\(랜덤 출현\)$/,
-  /^특별 ?보급/,
-  /^코어 (상점|교환 획득)$/,
-  /^원형 상점 교환$/,
-  /^연구 ?도크$/,
-  /^메인 스테이지 해역(?:[5-9]|1[0-2])-[1-4]$/,
-]
-
-const hardPatterns = [
-  /^상설 UR 함선 교환$/,
-  /^UR Exchange$/,
-  /META 연구실|META 연구실·|메타랩/,
-  /^메인 스테이지 해역1[3-6]-[1-4]$/,
-  /^추천 획득 해역 16-4$/,
-]
-
-const limitedPatterns = [
-  /^(기간 한정|한정 건조|한정 이벤트|이벤트|이벤트：|이벤트:|이벤트 :)/,
-]
-
-function readJson(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, 'utf8'))
-}
-
-function writeJson(filePath, data) {
-  fs.mkdirSync(path.dirname(filePath), { recursive: true })
-  fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8')
+function readJson(filePath) { return JSON.parse(fs.readFileSync(filePath, 'utf8')) }
+function writeJson(filePath, data) { fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8') }
+function normalizeList(values) { return [...new Set((values || []).map(value => String(value).trim()).filter(Boolean))] }
+function normalizeName(value) { return String(value || '').normalize('NFKC').toLowerCase().replace(/[\s·ㆍ・.()（）]/g, '') }
+function descriptionList(value) {
+  if (!Array.isArray(value)) return []
+  return normalizeList(value.map(item => Array.isArray(item) ? item[0] : item))
 }
 
 function findReferenceDir() {
-  const candidates = fs.readdirSync(ROOT, { withFileTypes: true })
+  return fs.readdirSync(ROOT, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
     .map(entry => path.join(ROOT, entry.name))
-
-  return candidates.find(candidate =>
-    fs.existsSync(path.join(candidate, 'AzurLaneData', 'KR', 'ShareCfg', 'ship_data_group.json')) &&
-    fs.existsSync(path.join(candidate, 'AzurLane', 'ship.json'))
-  )
+    .find(candidate => fs.existsSync(path.join(candidate, 'AzurLaneData', 'KR', 'ShareCfg', 'ship_data_group.json')) && fs.existsSync(path.join(candidate, 'AzurLane', 'ship.json')))
 }
 
-function getDescriptionList(description) {
-  if (!Array.isArray(description)) return []
-  return description
-    .map(item => Array.isArray(item) ? item[0] : item)
-    .filter(Boolean)
-    .map(item => String(item).trim())
-    .filter(Boolean)
-}
-
-function normalizeList(values) {
-  return [...new Set((values || []).map(value => String(value).trim()).filter(Boolean))]
-}
-
-function normalizeName(value) {
-  return String(value || '').normalize('NFKC').toLowerCase().replace(/[·ㆍ\s()（）・]/g, '')
-}
-
-function buildKrGroupByGid(krGroup) {
-  const byGid = new Map()
-  for (const row of Object.values(krGroup)) {
-    if (!row || typeof row !== 'object') continue
-    const gid = Number(row.group_type)
-    if (!Number.isFinite(gid)) continue
-    byGid.set(gid, row)
-  }
-  return byGid
-}
-
-async function fetchAltoySnapshots(referenceDir) {
-  const snapshotDir = path.join(referenceDir, 'ALtoy')
-  const result = {}
-
-  for (const file of ALTOY_FILES) {
-    const snapshotPath = path.join(snapshotDir, file)
-    try {
-      const response = await fetch(`${ALTOY_BASE_URL}/${file}`)
-      if (!response.ok) throw new Error(`HTTP ${response.status}`)
-      const data = await response.json()
-      writeJson(snapshotPath, data)
-      result[file] = { data, status: 'fetched', path: snapshotPath }
-    } catch (error) {
-      if (fs.existsSync(snapshotPath)) {
-        result[file] = { data: readJson(snapshotPath), status: 'cached', path: snapshotPath, error: String(error.message || error) }
-      } else {
-        result[file] = { data: null, status: 'unavailable', path: snapshotPath, error: String(error.message || error) }
-      }
+async function loadAltoyData(referenceDir) {
+  const sourceRoot = process.env.ALTOY_SOURCE_ROOT
+  if (sourceRoot) {
+    const repoRoot = path.resolve(sourceRoot)
+    return {
+      lite: readJson(path.join(repoRoot, 'public/data/ship_info_lite.json')),
+      full: readJson(path.join(repoRoot, 'public/data/ship_info_data.json')),
+      maps: readJson(path.join(repoRoot, 'public/data/maps/map_data_full.json')),
+      timeline: readJson(path.join(repoRoot, 'src/data/kr_event_timeline.json')),
+      source: 'ALtoy source checkout (read-only)',
     }
   }
 
+  const cachedRoot = path.join(referenceDir, 'ALtoy')
+  const [lite, full, maps, timeline] = await Promise.all([
+    fetchJson(`${ALTOY_BASE_URL}/data/ship_info_lite.json`, path.join(cachedRoot, 'data/ship_info_lite.json')),
+    fetchJson(`${ALTOY_BASE_URL}/data/ship_info_data.json`, path.join(cachedRoot, 'data/ship_info_data.json')),
+    fetchJson(`${ALTOY_BASE_URL}/data/maps/map_data_full.json`, null),
+    fetchJson('https://raw.githubusercontent.com/JforPlay/altoy/main/src/data/kr_event_timeline.json', null),
+  ])
+  return { lite, full, maps, timeline, source: ALTOY_BASE_URL }
+}
+
+async function fetchJson(url, fallbackPath) {
+  try {
+    const response = await fetch(url)
+    if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`)
+    return response.json()
+  } catch (error) {
+    if (fallbackPath && fs.existsSync(fallbackPath)) return readJson(fallbackPath)
+    throw error
+  }
+}
+
+function buildKrGroupByGid(rows) {
+  return new Map(Object.values(rows).filter(Boolean).map(row => [Number(row.group_type), row]))
+}
+
+function buildArchiveGids(mapData, liteData) {
+  const idToGid = new Map(liteData.map(ship => [Number(ship.id), Number(ship.gid)]))
+  const gids = new Set()
+  for (const [key, chapter] of Object.entries(mapData || {})) {
+    if (!key.startsWith('a_')) continue
+    for (const drop of chapter.ship_drops_archive || []) {
+      const gid = idToGid.get(Number(drop.id))
+      if (gid) gids.add(gid)
+    }
+    const special = chapter.special_drop
+    if (special?.type === 4) gids.add(idToGid.get(Number(special.id)) || Number(special.id))
+  }
+  return gids
+}
+
+function buildPermanentTimelineInfo(timeline) {
+  const info = new Map()
+  for (const row of timeline || []) {
+    if (!String(row['복각여부'] || '').includes('상시편입')) continue
+    for (const name of String(row['함순이'] || '').split(/[,，]/)) {
+      const normalized = normalizeName(name)
+      if (!normalized || normalized === '-') continue
+      const reward = String(row['임무 보상'] || '')
+      const source = reward.includes(`${name.trim()} 군수상점`) ? '군수 상점 교환' : '상시 건조'
+      info.set(normalized, { source, date: String(row['날짜'] || '') })
+    }
+  }
+  return info
+}
+
+function buildCoreMonthlyGids(monthShop, activityShop) {
+  const gids = new Set()
+  for (const month of Object.values(monthShop || {})) {
+    for (const goodsId of month.core_shop_goods || []) {
+      const goods = activityShop?.[goodsId]
+      if (goods?.commodity_type !== 4) continue
+      const skinId = Number(goods.commodity_id)
+      if (Number.isFinite(skinId)) gids.add(Math.floor(skinId / 10))
+    }
+  }
+  return gids
+}
+
+function currentEventFor(name, today = new Date().toISOString().slice(0, 10)) {
+  return (activeEvents.events || []).find(event => event.ships.includes(name) && event.startsAt <= today && today <= event.endsAt) || null
+}
+
+function mapDrops(lite) {
+  const result = []
+  for (const [chapterIndex, entries] of (lite?.maps || []).entries()) {
+    for (const entry of entries || []) {
+      if (Number.isFinite(Number(entry.map))) result.push({ stage: `${chapterIndex + 1}-${Number(entry.map)}`, type: entry.type === 1 ? 'boss' : 'normal' })
+    }
+  }
   return result
 }
 
-function getBuildInfo(localShip, altoy) {
-  return {
-    light: Boolean(altoy?.light),
-    heavy: Boolean(altoy?.heavy),
-    special: Boolean(altoy?.special),
-    limited: Boolean(altoy?.limited),
-    timer: altoy?.timer || null,
-    localObtainEn: normalizeList(localShip?.obtain || []),
-  }
-}
-
-function getMapDrops(altoy) {
-  if (!Array.isArray(altoy?.maps)) return []
-  const drops = []
-
-  altoy.maps.forEach((chapterMaps, chapterIndex) => {
-    if (!Array.isArray(chapterMaps)) return
-    chapterMaps.forEach(entry => {
-      if (!entry || typeof entry !== 'object') return
-      const chapter = chapterIndex + 1
-      const map = Number(entry.map)
-      if (!Number.isFinite(map)) return
-      drops.push({
-        stage: `${chapter}-${map}`,
-        type: entry.type === 1 ? 'boss' : 'normal',
-      })
-    })
-  })
-
-  return drops
-}
-
-function matchAny(value, patterns) {
-  return patterns.some(pattern => pattern.test(value))
-}
-
-function classifyObtainSource(source) {
-  if (source === UNAVAILABLE_OBTAIN) return DIFFICULTY.EXCLUDED
-  if (matchAny(source, easyPatterns)) return DIFFICULTY.EASY
-  if (matchAny(source, normalPatterns)) return DIFFICULTY.NORMAL
-  if (matchAny(source, hardPatterns)) return DIFFICULTY.HARD
-  if (matchAny(source, limitedPatterns)) return DIFFICULTY.LIMITED
-  return DIFFICULTY.UNKNOWN
-}
-
-function classifyDifficulty(obtain, build) {
-  if (obtain.includes(UNAVAILABLE_OBTAIN)) {
-    return {
-      key: DIFFICULTY.EXCLUDED.key,
-      label: DIFFICULTY.EXCLUDED.label,
-      reasons: [UNAVAILABLE_OBTAIN],
-    }
-  }
-
-  const sourceDifficulties = obtain.map(classifyObtainSource)
-  let selected = sourceDifficulties.reduce(
-    (current, next) => next.rank < current.rank ? next : current,
-    DIFFICULTY.UNKNOWN,
-  )
-  const reasons = obtain.map((source, index) => `${source}: ${sourceDifficulties[index].label}`)
-
-  if (selected === DIFFICULTY.UNKNOWN && build.limited) {
-    selected = DIFFICULTY.LIMITED
-    reasons.push('한정 건조 플래그')
-  }
-
-  if (obtain.length === 0 && (build.light || build.heavy || build.special)) {
-    selected = DIFFICULTY.NORMAL
-    reasons.push('건조 플래그만 확인됨')
-  }
-
-  return {
-    key: selected.key,
-    label: selected.label,
-    reasons: normalizeList(reasons),
-  }
-}
-
 function compareLists(local, altoy) {
-  const localSet = new Set(local)
-  const altoySet = new Set(altoy)
-  const missingInAltoy = local.filter(item => !altoySet.has(item))
-  const missingInLocal = altoy.filter(item => !localSet.has(item))
-
-  if (local.length === 0 && altoy.length === 0) return 'empty'
-  if (missingInAltoy.length === 0 && missingInLocal.length === 0) return 'matched'
-  if (local.length === 0 && altoy.length > 0) return 'altoy-only'
-  if (local.length > 0 && altoy.length === 0) return 'local-only'
+  const localSet = new Set(local), altoySet = new Set(altoy)
+  if (!local.length && !altoy.length) return 'empty'
+  if (local.every(item => altoySet.has(item)) && altoy.every(item => localSet.has(item))) return 'matched'
+  if (!local.length) return 'altoy-only'
+  if (!altoy.length) return 'local-only'
   return 'different'
 }
 
-function buildRecord(character, sources) {
-  const gid = Number(character.gid)
-  const normalizedName = normalizeName(character.name)
-  const localShip = sources.localShipByGid.get(gid) || sources.localShipByName.get(normalizedName)
-  const krGroup = sources.krGroupByGid.get(gid)
-  const altoy = sources.altoyByGid.get(gid) || sources.altoyByName.get(normalizedName)
+function currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent }) {
+  if (activeEvent) return [`현재 이벤트: ${activeEvent.name} (${activeEvent.endsAt}까지)`]
+  if (!Object.values(permanentSignals).some(Boolean)) return rawObtain
 
-  const localKrObtain = getDescriptionList(krGroup?.description)
-  const altoyObtain = normalizeList(altoy?.description || [])
-  const obtain = selectObtainSources({ gid, localKrObtain, altoyObtain })
-  const build = getBuildInfo(localShip, altoy)
-  const mapDrops = getMapDrops(altoy)
-  const difficulty = classifyDifficulty(obtain, build)
-  const verification = {
-    localKr: localKrObtain.length > 0,
-    localResource: Boolean(localShip),
-    altoy: Boolean(altoy),
-    status: compareLists(localKrObtain, altoyObtain),
-  }
-
-  return {
-    id: character.id,
-    gid,
-    name: character.name,
-    rarity: character.rarity,
-    faction: character.faction,
-    shipType: character.shipType,
-    obtain,
-    obtainEn: build.localObtainEn,
-    build: {
-      light: build.light,
-      heavy: build.heavy,
-      special: build.special,
-      limited: build.limited,
-      timer: build.timer,
-    },
-    mapDrops,
-    difficulty,
-    verification,
-  }
-}
-
-function summarize(records, altoySnapshots) {
-  const summary = {
-    generatedAt: new Date().toISOString(),
-    total: records.length,
-    withObtain: records.filter(record => record.obtain.length > 0).length,
-    withoutObtain: records.filter(record => record.obtain.length === 0).length,
-    verification: Object.fromEntries(
-      [...new Set(records.map(record => record.verification.status))]
-        .sort()
-        .map(status => [status, records.filter(record => record.verification.status === status).length])
-    ),
-    difficulty: Object.fromEntries(
-      [...new Set(records.map(record => record.difficulty.key))]
-        .sort()
-        .map(key => [key, records.filter(record => record.difficulty.key === key).length])
-    ),
-    altoySnapshots: Object.fromEntries(
-      Object.entries(altoySnapshots).map(([file, snapshot]) => [file, {
-        status: snapshot.status,
-        path: path.relative(ROOT, snapshot.path).replaceAll(path.sep, '/'),
-        error: snapshot.error || null,
-      }])
-    ),
-  }
-
-  return summary
+  const sources = []
+  for (const drop of drops) sources.push(`메인 스테이지 해역${drop.stage}`)
+  if (permanentSignals.archive) sources.push('작전문서 드랍')
+  if (permanentSignals.coreMonthly) sources.push('코어 월간 교환')
+  if (lite?.light) sources.push('소형함 상시 건조')
+  if (lite?.heavy) sources.push('대형함 상시 건조')
+  if (lite?.special) sources.push('특형함 상시 건조')
+  sources.push(...altoyObtain.filter(source => SHOP_PATTERN.test(source) || OTHER_PERMANENT_PATTERN.test(source)))
+  if (timelineInfo && sources.length === 0) sources.push(`${timelineInfo.source} (${timelineInfo.date} 상시편입)`)
+  return normalizeList(sources.length ? sources : rawObtain)
 }
 
 const referenceDir = findReferenceDir()
-if (!referenceDir) {
-  throw new Error('참고용 원본 폴더를 찾지 못했습니다.')
-}
+if (!referenceDir) throw new Error('참고용 원본 폴더를 찾지 못했습니다.')
 
-const localShip = readJson(path.join(referenceDir, 'AzurLane', 'ship.json'))
-const krGroup = readJson(path.join(referenceDir, 'AzurLaneData', 'KR', 'ShareCfg', 'ship_data_group.json'))
-const altoySnapshots = await fetchAltoySnapshots(referenceDir)
-const altoyFullData = Array.isArray(altoySnapshots['data/ship_info_data.json'].data)
-  ? altoySnapshots['data/ship_info_data.json'].data
-  : []
+const localShips = readJson(path.join(referenceDir, 'AzurLane', 'ship.json'))
+const krGroups = readJson(path.join(referenceDir, 'AzurLaneData', 'KR', 'ShareCfg', 'ship_data_group.json'))
+const monthShop = readJson(path.join(referenceDir, 'AzurLaneData', 'KR', 'ShareCfg', 'month_shop_template.json'))
+const activityShop = readJson(path.join(referenceDir, 'AzurLaneData', 'KR', 'ShareCfg', 'activity_shop_template.json'))
+const altoy = await loadAltoyData(referenceDir)
+const localByGid = new Map(localShips.map(ship => [Number(ship.gid), ship]))
+const localByName = new Map(localShips.map(ship => [normalizeName(ship.name), ship]))
+const krByGid = buildKrGroupByGid(krGroups)
+const liteByGid = new Map(altoy.lite.map(ship => [Number(ship.gid), ship]))
+const liteByName = new Map(altoy.lite.map(ship => [normalizeName(ship.name), ship]))
+const fullByGid = new Map(altoy.full.map(ship => [Number(ship.gid), ship]))
+const fullByName = new Map(altoy.full.map(ship => [normalizeName(ship.name), ship]))
+const archiveGids = buildArchiveGids(altoy.maps, altoy.lite)
+const permanentTimelineInfo = buildPermanentTimelineInfo(altoy.timeline)
+const coreMonthlyGids = buildCoreMonthlyGids(monthShop, activityShop)
 
-const sources = {
-  localShipByGid: new Map(localShip.map(row => [Number(row.gid), row])),
-  localShipByName: new Map(localShip.map(row => [normalizeName(row.name), row])),
-  krGroupByGid: buildKrGroupByGid(krGroup),
-  altoyByGid: new Map(altoyFullData.map(row => [Number(row.gid), row])),
-  altoyByName: new Map(altoyFullData.map(row => [normalizeName(row.name), row])),
-}
+const ships = characters.map(character => {
+  const gid = Number(character.gid)
+  const nameKey = normalizeName(character.name)
+  const local = localByGid.get(gid) || localByName.get(nameKey)
+  const lite = liteByGid.get(gid) || liteByName.get(nameKey)
+  const full = fullByGid.get(gid) || fullByName.get(nameKey)
+  const localKrObtain = descriptionList(krByGid.get(gid)?.description)
+  const altoyObtain = normalizeList(full?.description)
+  const rawObtain = selectObtainSources({ gid, localKrObtain, altoyObtain })
+  const drops = mapDrops(lite)
+  const timelineInfo = permanentTimelineInfo.get(nameKey)
+  const permanentSignals = {
+    map: drops.length > 0,
+    archive: archiveGids.has(Number(lite?.gid ?? full?.gid ?? gid)),
+    coreMonthly: coreMonthlyGids.has(Number(lite?.gid ?? full?.gid ?? gid)),
+    build: Boolean(lite?.light || lite?.heavy || lite?.special),
+    shop: altoyObtain.some(source => SHOP_PATTERN.test(source)),
+    other: altoyObtain.some(source => OTHER_PERMANENT_PATTERN.test(source)),
+    timeline: Boolean(timelineInfo),
+  }
+  const activeEvent = currentEventFor(character.name)
+  const obtain = currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent })
+  const classification = classifyObtainability({
+    name: character.name,
+    faction: character.faction,
+    obtain,
+    permanentSources: altoyObtain,
+    mapDrops: drops,
+    permanentSignals,
+    activeEvent,
+  })
 
-const records = characters
-  .map(character => buildRecord(character, sources))
-  .sort((a, b) => a.gid - b.gid)
+  return {
+    id: character.id, gid, name: character.name, rarity: character.rarity,
+    faction: character.faction, shipType: character.shipType,
+    obtain, historicalObtain: rawObtain, obtainEn: normalizeList(local?.obtain),
+    build: { light: Boolean(lite?.light), heavy: Boolean(lite?.heavy), special: Boolean(lite?.special), limited: Boolean(lite?.limited), timer: lite?.timer || null },
+    mapDrops: drops, permanentSignals, ...classification,
+    verification: { localKr: localKrObtain.length > 0, localResource: Boolean(local), altoy: Boolean(full), status: compareLists(localKrObtain, altoyObtain) },
+  }
+}).sort((a, b) => a.gid - b.gid)
 
+const countBy = (items, selector) => Object.fromEntries([...new Set(items.map(selector))].sort().map(key => [key, items.filter(item => selector(item) === key).length]))
 const output = {
   meta: {
-    note: 'App-ready obtainability data generated from local reference files and cross-checked against ALtoy snapshots.',
-    sources: {
-      localKr: '참고용/AzurLaneData/KR/ShareCfg/ship_data_group.json',
-      localResource: '참고용/AzurLane/ship.json',
-      altoy: `${ALTOY_BASE_URL}/data/ship_info_data.json`,
-    },
-    ...summarize(records, altoySnapshots),
+    note: 'KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.',
+    generatedAt: new Date().toISOString(), total: ships.length,
+    withObtain: ships.filter(ship => ship.obtain.length).length,
+    withoutObtain: ships.filter(ship => !ship.obtain.length).length,
+    availability: countBy(ships, ship => ship.availability.key),
+    difficulty: countBy(ships, ship => ship.difficulty.key),
+    source: altoy.source,
   },
-  ships: records,
+  ships,
 }
 
 writeJson(OUTPUT_PATH, output)
-
 console.log(`Wrote ${path.relative(ROOT, OUTPUT_PATH)}`)
 console.log(JSON.stringify(output.meta, null, 2))
