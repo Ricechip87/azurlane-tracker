@@ -1,5 +1,25 @@
 # Change Log
 
+## 2026-07-18 - Version User Data And Backups
+
+### Why
+- Browser user data had no schema marker, and backup v1 could not evolve without risking incompatible imports or silent data loss.
+
+### Changed
+- Added a versioned v2 envelope for LocalStorage and exported JSON backups while keeping the app UI on the existing per-ship data shape.
+- Added automatic migration for versionless browser data, raw legacy JSON, and v1 backups.
+- Normalize legacy acquisition and remodel values during migration, while preserving unknown ship IDs and fields for forward compatibility.
+- Preserve the original LocalStorage value under `azurlane-userdata-recovery` before migration or when malformed data is detected.
+- Reject backups created by a newer schema with an actionable message instead of guessing how to convert them.
+- Show migration and recovery notices in the backup panel and report the source/target versions after an imported backup is converted.
+- Added regression tests for v0, v1, v2, malformed, recovery, legacy-value, and future-version cases.
+
+### Verified
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+- `git diff --check`
+
 ## 2026-07-18 - Keep Status Dropdowns Inside The Viewport
 
 ### Why

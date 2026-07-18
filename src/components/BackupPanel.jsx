@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
-import { createBackup, parseBackup } from '../utils/backup.js'
+import { createBackup, parseBackupWithMetadata } from '../utils/backup.js'
 
-export default function BackupPanel({ userData, setUserData, compact = false }) {
+export default function BackupPanel({ userData, setUserData, storageMessage = '', compact = false }) {
   const fileInputRef = useRef(null)
   const [message, setMessage] = useState('')
   const savedCount = Object.keys(userData).length
@@ -57,14 +57,17 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
 
     try {
       const text = await file.text()
-      const nextUserData = parseBackup(text)
-      setUserData(nextUserData)
-      setMessage(`복원 완료: ${Object.keys(nextUserData).length}명`)
+      const result = parseBackupWithMetadata(text)
+      setUserData(result.userData)
+      setMessage(result.migrated
+        ? `백업 v${result.fromVersion} → v${result.toVersion} 변환 및 복원 완료: ${Object.keys(result.userData).length}명`
+        : `복원 완료: ${Object.keys(result.userData).length}명`)
     } catch (error) {
       setMessage(error instanceof Error ? error.message : '복원에 실패했습니다.')
     }
   }
 
+  const displayMessage = message || storageMessage
   const controls = (
     <>
       <button
@@ -99,7 +102,7 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
         <span className="text-sm font-semibold text-gray-300">입력 데이터</span>
         <span className="text-xs text-gray-500">저장 {savedCount}명</span>
         {controls}
-        {message && <span className="text-xs text-gray-400">{message}</span>}
+        {displayMessage && <span className="text-xs text-gray-400">{displayMessage}</span>}
       </div>
     )
   }
@@ -115,8 +118,8 @@ export default function BackupPanel({ userData, setUserData, compact = false }) 
         {controls}
       </div>
 
-      {message && (
-        <div className="mt-2 text-xs text-gray-400">{message}</div>
+      {displayMessage && (
+        <div className="mt-2 text-xs text-gray-400">{displayMessage}</div>
       )}
     </div>
   )

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import charactersUrl from './data/characters.json?url'
-import { useLocalStorage } from './hooks/useLocalStorage'
+import { useUserDataStorage } from './hooks/useUserDataStorage.js'
 import FilterPanel from './components/FilterPanel'
 import CharacterTable from './components/CharacterTable'
 import StatsBar from './components/StatsBar'
@@ -66,7 +66,7 @@ export default function App() {
   const [characters, setCharacters] = useState([])
   const [charactersLoaded, setCharactersLoaded] = useState(false)
   const [charactersError, setCharactersError] = useState('')
-  const [userData, setUserData] = useLocalStorage('azurlane-userdata', {})
+  const [userData, setUserData, storageMessage] = useUserDataStorage('azurlane-userdata')
   const [filters, setFilters] = useState(INITIAL_FILTERS)
 
   useEffect(() => {
@@ -143,6 +143,7 @@ export default function App() {
           updateUser={updateUser}
           userData={userData}
           setUserData={setUserData}
+          storageMessage={storageMessage}
         />
       ) : (
         <DataLoadStatePage error={charactersError} />
@@ -279,13 +280,13 @@ function HomePage() {
   )
 }
 
-function MyRosterPage({ characters, filteredCharacters, filters, setFilters, updateUser, userData, setUserData }) {
+function MyRosterPage({ characters, filteredCharacters, filters, setFilters, updateUser, userData, setUserData, storageMessage }) {
   return (
     <>
       <header className="border-b border-neutral-800 bg-[#1f1f1f] px-6 py-4">
         <div className="mx-auto flex max-w-[1500px] flex-wrap items-center gap-4">
           <h1 className="text-xl font-bold text-gray-100">내 함순이 정보</h1>
-          <BackupPanel userData={userData} setUserData={setUserData} compact />
+          <BackupPanel userData={userData} setUserData={setUserData} storageMessage={storageMessage} compact />
         </div>
       </header>
 
