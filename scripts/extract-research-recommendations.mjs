@@ -64,9 +64,7 @@ function parseUnlockRequirements(unlockWord) {
   }
 
   const requirements = []
-  for (const [sourceName, faction] of FACTION_PATTERNS) {
-    const index = text.indexOf(sourceName)
-    if (index === -1) continue
+  for (const { sourceName, faction, index } of findFactionMentions(text)) {
     const afterFaction = text.slice(index + sourceName.length)
     const valueMatch = afterFaction.match(/[\s\S]{0,45}?([\d][\d,]*)\s*(?:달성|도달|이상)/)
     if (!valueMatch) continue
@@ -79,6 +77,22 @@ function parseUnlockRequirements(unlockWord) {
       item.faction === requirement.faction && item.value === requirement.value
     )))
     .map(({ index: _index, ...requirement }) => requirement)
+}
+
+function findFactionMentions(text) {
+  const matches = FACTION_PATTERNS
+    .map(([sourceName, faction]) => ({ sourceName, faction, index: text.indexOf(sourceName) }))
+    .filter(match => match.index >= 0)
+    .sort((a, b) => a.index - b.index || b.sourceName.length - a.sourceName.length)
+  const accepted = []
+
+  for (const match of matches) {
+    const end = match.index + match.sourceName.length
+    const overlaps = accepted.some(item => match.index < item.end && end > item.index)
+    if (!overlaps) accepted.push({ ...match, end })
+  }
+
+  return accepted
 }
 
 function findFirstFaction(text) {

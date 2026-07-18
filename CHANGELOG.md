@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-07-18 - Separate Northern Parliament From Eagle Union
+
+### Fixed
+- Prevented the research extractor from matching `유니온` inside `노스 유니온` and incorrectly adding an Eagle Union requirement beside the Northern Parliament requirement.
+- Regenerated Napoli, Admiral Nakhimov, and Dmitri Donskoi unlock conditions from the KR blueprint source without the false USS requirement.
+- Added Korean official faction names and `PRAN` to the shared faction normalizer while preserving `SN → 노스유니온` and `USS → 유니온` as separate mappings.
+- Added regression coverage for all three affected development ships and the supplied faction-name/code mapping.
+
+### Verified
+- `npm.cmd run extract:research`
+- `npm.cmd run test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+- `git diff --check`
+
 ## 2026-07-18 - Simplify Faction Development Progress
 
 ### Fixed

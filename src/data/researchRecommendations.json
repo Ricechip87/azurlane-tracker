@@ -1643,11 +1643,6 @@
           "type": "tech-points",
           "faction": "노스유니온",
           "value": 200
-        },
-        {
-          "type": "tech-points",
-          "faction": "유니온",
-          "value": 200
         }
       ],
       "xpPhases": [
@@ -1695,11 +1690,6 @@
         {
           "type": "tech-points",
           "faction": "노스유니온",
-          "value": 300
-        },
-        {
-          "type": "tech-points",
-          "faction": "유니온",
           "value": 300
         },
         {
@@ -1939,11 +1929,6 @@
         {
           "type": "tech-points",
           "faction": "노스유니온",
-          "value": 300
-        },
-        {
-          "type": "tech-points",
-          "faction": "유니온",
           "value": 300
         }
       ],
