@@ -472,7 +472,8 @@ function unlockRequirementLabel(requirement) {
 }
 
 function getCardArtUrl(item) {
-  const fileName = item.iconUrl.split('/').pop().replace(/\.(png|webp)$/i, '.png')
+  const fileName = item?.iconUrl?.split('/').pop()?.replace(/\.(png|webp)$/i, '.png')
+  if (!fileName) return ''
   return `${import.meta.env.BASE_URL}ship-card-art/${fileName}`
 }
 

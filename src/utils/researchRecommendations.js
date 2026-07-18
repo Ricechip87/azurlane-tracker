@@ -228,8 +228,12 @@ export function buildOperationTierByName(growthRecommendationData) {
 export function getResearchUnlockCandidates(requirement, characters, rankingData = {}) {
   const faction = normalizeFactionValue(requirement.faction)
   if (requirement.type === 'tech-points') {
+    const characterByName = new Map(characters.map(character => [character.name, character]))
     return calcFleetTechCandidates(characters, faction)
-      .map(candidate => addResearchRankingData(candidate, rankingData))
+      .map(candidate => addResearchRankingData({
+        ...characterByName.get(candidate.name),
+        ...candidate,
+      }, rankingData))
       .filter(isActionableResearchCandidate)
       .sort(compareResearchUnlockCandidates)
   }

@@ -239,7 +239,7 @@ const rankedTechCandidates = [
   character({ id: 30, name: '보유 두 단계', faction: '로열', acquired: '획득', techPoints: { acquired: 0, maxLB: 80, lv120: 80 } }),
   character({ id: 31, name: '보유 한 단계 A', faction: '로열', acquired: '100', techPoints: { acquired: 0, maxLB: 0, lv120: 90 } }),
   character({ id: 32, name: '보유 한 단계 SS', faction: '로열', acquired: '100', techPoints: { acquired: 0, maxLB: 0, lv120: 20 } }),
-  character({ id: 33, name: '쉬움 A 고득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 100, maxLB: 100, lv120: 100 } }),
+  character({ id: 33, name: '쉬움 A 고득점', faction: '로열', acquired: '미획득', iconUrl: '/ship-icons/easy.png', techPoints: { acquired: 100, maxLB: 100, lv120: 100 } }),
   character({ id: 34, name: '쉬움 SS 저득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 30, maxLB: 30, lv120: 30 } }),
   character({ id: 35, name: '보통 SS 최고득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 200, maxLB: 200, lv120: 200 } }),
   character({ id: 36, name: '현재 이벤트 후보', faction: '로열', acquired: '미획득', techPoints: { acquired: 70, maxLB: 70, lv120: 70 } }),
@@ -280,3 +280,11 @@ assert.deepEqual(
     '보통 SS 최고득점',
   ],
 )
+
+const popupCandidate = getResearchUnlockCandidates(
+  { type: 'tech-points', faction: '로열' },
+  rankedTechCandidates,
+  { obtainabilityByName, operationTierByName },
+).find(item => item.name === '쉬움 A 고득점')
+assert.equal(popupCandidate.iconUrl, '/ship-icons/easy.png', '기술점수 후보 팝업에 원본 이미지 정보를 유지한다')
+assert.equal(popupCandidate.shipType, '구축', '기술점수 후보 팝업에 원본 함종 정보를 유지한다')

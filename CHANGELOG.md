@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-07-19 - Fix Research Candidate Detail Crash
+
+### Fixed
+- Preserve the source ship's image, faction, and ship type when building fleet-tech unlock candidates.
+- Guard the detail popup against missing image URLs so a malformed candidate cannot blank the page.
+
+### Verified
+- Added a regression test proving tech-point candidates retain popup image and ship-type data.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Hide Completed Ships From Research Goals
 
 ### Changed
