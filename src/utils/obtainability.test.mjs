@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { getAvailability, getObtainabilitySourceSections, getPrimaryAcquisitionRoute, isCurrentlyObtainable, isGrowthRecommendationEligible, isResearchCandidateActionable, obtainabilityLabel, obtainabilityRank } from './obtainability.js'
+import { getAvailability, getObtainabilitySourceSections, getPrimaryAcquisitionRoute, isCurrentlyObtainable, isGrowthRecommendationEligible, isResearchCandidateActionable, obtainabilityCompactLabel, obtainabilityLabel, obtainabilityRank } from './obtainability.js'
 
 const permanentEasy = { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'easy', label: '쉬움' } }
 const permanentNormal = { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'normal', label: '보통' } }
@@ -31,6 +31,7 @@ const mixedPermanent = {
   primaryRoute: { key: 'core-monthly', label: '코어 월간 교환', certainty: 'guaranteed', rank: 0, sources: ['코어 월간 교환'] },
 }
 assert.equal(obtainabilityLabel(mixedPermanent), '상시 획득 · 코어 월간 교환')
+assert.equal(obtainabilityCompactLabel(mixedPermanent), '코어 교환', '카드에서는 상시 획득 접두어와 긴 경로명을 줄인다')
 assert.equal(getPrimaryAcquisitionRoute(mixedPermanent).key, 'core-monthly')
 assert.equal(obtainabilityRank(mixedPermanent), 0)
 assert.equal(isGrowthRecommendationEligible({ acquired: false, level120: false, obtainability: mixedPermanent }), true, '확정 교환 후보는 미보유 육성 추천에 포함')
@@ -45,6 +46,9 @@ const highMapPermanent = {
 }
 assert.equal(isGrowthRecommendationEligible({ acquired: false, level120: false, obtainability: highMapPermanent }), false, '고해역 드롭 미보유함은 육성 추천에서 후순위 제외')
 assert.equal(obtainabilityLabel(highMapPermanent), '상시 획득 · 고해역 드롭')
+assert.equal(obtainabilityCompactLabel(highMapPermanent), '고해역 드롭')
+assert.equal(obtainabilityCompactLabel(activeEvent), '현재 이벤트')
+assert.equal(obtainabilityCompactLabel(collab), '복각 미정')
 assert.deepEqual(getObtainabilitySourceSections({
   ...permanentEasy,
   obtain: ['코어 월간 교환'],

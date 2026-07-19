@@ -5,7 +5,7 @@ import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { isAcquiredStatus, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
-import { getAvailability, getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
+import { getAvailability, getObtainabilitySourceSections, obtainabilityCompactLabel, obtainabilityLabel } from '../utils/obtainability.js'
 import {
   buildOperationTierByName,
   buildResearchFactionProgress,
@@ -626,7 +626,7 @@ function candidateRankingBadges(candidate) {
     ]
   }
   return [
-    { label: obtainabilityLabel(candidate.obtainability), tone: obtainabilityCandidateTone(candidate.obtainability) },
+    { label: obtainabilityCompactLabel(candidate.obtainability), tone: obtainabilityCandidateTone(candidate.obtainability) },
     { label: `대작전 ${tier}`, tone: candidate.operationTier ? 'operation' : 'neutral' },
   ]
 }
@@ -655,7 +655,7 @@ function CandidateBadge({ children, tone }) {
     operation: 'border-violet-800 bg-violet-950/70 text-violet-200',
     neutral: 'border-neutral-600 bg-neutral-800 text-gray-300',
   }
-  return <span className={`rounded border px-1.5 py-0.5 text-[9px] font-bold ${styles[tone] || styles.neutral}`}>{children}</span>
+  return <span className={`whitespace-nowrap rounded border px-1.5 py-0.5 text-[9px] font-bold ${styles[tone] || styles.neutral}`}>{children}</span>
 }
 
 function CardBadge({ children, tone = 'dark' }) {

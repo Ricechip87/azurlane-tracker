@@ -4,7 +4,7 @@ import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
 import { getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
-import { getObtainabilitySourceSections, isGrowthRecommendationEligible, obtainabilityLabel, obtainabilityRank } from '../utils/obtainability.js'
+import { getObtainabilitySourceSections, isGrowthRecommendationEligible, obtainabilityCompactLabel, obtainabilityLabel, obtainabilityRank } from '../utils/obtainability.js'
 
 const MODES = [
   {
@@ -473,7 +473,7 @@ function RecommendationCard({ card, character, onOpen }) {
       <div className="absolute left-2 top-2 flex max-w-[calc(100%-84px)] flex-wrap gap-1 text-[10px] font-black">
         <Badge tone="dark">{card.tier}</Badge>
         {showDifficultyBadge && (
-          <Badge tone={availabilityTone(card.obtainability)}>{obtainabilityLabel(card.obtainability)}</Badge>
+          <Badge tone={availabilityTone(card.obtainability)} title={obtainabilityLabel(card.obtainability)}>{obtainabilityCompactLabel(card.obtainability)}</Badge>
         )}
       </div>
 
@@ -595,7 +595,7 @@ function EmptyRecommendationSection() {
   )
 }
 
-function Badge({ children, tone = 'gray' }) {
+function Badge({ children, tone = 'gray', title }) {
   const tones = {
     gray: 'bg-gray-700 text-gray-100',
     blue: 'bg-neutral-600 text-white',
@@ -609,7 +609,7 @@ function Badge({ children, tone = 'gray' }) {
   }
 
   return (
-    <span className={`rounded-full px-1.5 py-0.5 ${tones[tone] || tones.gray}`}>
+    <span title={title} className={`whitespace-nowrap rounded-full px-1.5 py-0.5 ${tones[tone] || tones.gray}`}>
       {children}
     </span>
   )

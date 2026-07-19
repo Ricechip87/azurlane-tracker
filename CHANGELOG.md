@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-07-19 - Compact Acquisition Badges
+
+### Changed
+- Show only the representative acquisition method on compact growth and research candidate cards, such as `확정 교환`, `랜덤 상점`, or `상시 건조`.
+- Keep the full `상시 획득 · 대표 입수처` wording and all source details in the ship detail popup.
+- Prevent compact badges from wrapping internally on narrow cards.
+
+### Verified
+- Added compact-label regression tests for permanent routes, current events, and collaboration rerun states.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Normalize KR Construction Pool Names
 
 ### Fixed
