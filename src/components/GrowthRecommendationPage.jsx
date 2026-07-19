@@ -3,8 +3,8 @@ import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
-import { getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
-import { getObtainabilitySourceSections, isGrowthRecommendationEligible, obtainabilityCompactLabel, obtainabilityLabel, obtainabilityRank } from '../utils/obtainability.js'
+import { getFactionBadgeName, getFactionDisplayText } from '../utils/factions.js'
+import { getObtainabilitySourceSections, isGrowthRecommendationEligible, obtainabilityLabel, obtainabilityRank } from '../utils/obtainability.js'
 
 const MODES = [
   {
@@ -33,19 +33,6 @@ const MODE_SOURCE = {
 const MAIN_FORCE_TYPES = new Set(['전함', '순전', '항전', '항모', '경항모', '모니터'])
 const SUBMARINE_TYPES = new Set(['잠수', '잠수항모'])
 const POSITION_TYPES = ['구축', '경순', '중순', '대순', '전함', '순전', '항모', '경항모']
-const FACTION_LABELS = {
-  유니온: 'USS',
-  로열: 'HMS',
-  중앵: 'IJN',
-  철혈: 'KMS',
-  동황: 'ROC',
-  노스유니온: 'SN',
-  아이리스: 'FFNF',
-  비시아: 'MNF',
-  사르데냐: 'RN',
-  튤리퍼: 'HNLMS',
-  템페스타: '템페스타',
-}
 const COLLAB_FACTIONS = new Set([
   'DOAX VV',
   '그리드맨',
@@ -440,7 +427,6 @@ function RecommendationCard({ card, character, onOpen }) {
   const rarityStyle = rarityCardStyle(rarity)
   const cardArtUrl = getCardArtUrl(character)
   const status = card.status || normalizeAcquisitionStatus(character?.acquired)
-  const showDifficultyBadge = status === '미획득'
 
   return (
     <button
@@ -472,9 +458,6 @@ function RecommendationCard({ card, character, onOpen }) {
       </div>
       <div className="absolute left-2 top-2 flex max-w-[calc(100%-84px)] flex-wrap gap-1 text-[10px] font-black">
         <Badge tone="dark">{card.tier}</Badge>
-        {showDifficultyBadge && (
-          <Badge tone={availabilityTone(card.obtainability)} title={obtainabilityLabel(card.obtainability)}>{obtainabilityCompactLabel(card.obtainability)}</Badge>
-        )}
       </div>
 
       <div className="absolute inset-x-0 bottom-0 p-3 text-white">
@@ -490,8 +473,7 @@ function RecommendationCard({ card, character, onOpen }) {
 function getDisplayFaction(faction) {
   if (!faction) return '-'
   if (COLLAB_FACTIONS.has(faction)) return '콜라보'
-  if (faction === '유니온' || faction === '노스유니온') return getFactionDisplayName(faction)
-  return FACTION_LABELS[faction] || faction
+  return getFactionBadgeName(faction)
 }
 
 function getCardDetails(card) {

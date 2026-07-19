@@ -3,9 +3,9 @@ import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import researchRecommendationData from '../data/researchRecommendations.json'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { isAcquiredStatus, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
-import { getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
+import { getFactionBadgeName, getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
-import { getAvailability, getObtainabilitySourceSections, obtainabilityCompactLabel, obtainabilityLabel } from '../utils/obtainability.js'
+import { getAvailability, getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import {
   buildOperationTierByName,
   buildResearchFactionProgress,
@@ -222,7 +222,7 @@ function ResearchGoalPanel({ item, characters, candidateRankingData }) {
           <div className="mt-2 flex flex-wrap gap-1 text-[10px] font-black">
             <CardBadge>{item.generation}기</CardBadge>
             <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{item.planRarity}</CardBadge>
-            <CardBadge>{getFactionDisplayName(item.faction)}</CardBadge>
+            <CardBadge>{getFactionBadgeName(item.faction)}</CardBadge>
             {item.coinStrengthening.available && <CardBadge tone="green">물자강화</CardBadge>}
           </div>
         </div>
@@ -424,7 +424,7 @@ function ResearchCard({ item, tone, onSelect }) {
         <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{item.planRarity}</CardBadge>
       </div>
       <div className="absolute right-2 top-2 flex flex-col items-end gap-1 text-[10px] font-black">
-        <CardBadge>{getFactionDisplayName(item.faction)}</CardBadge>
+        <CardBadge>{getFactionBadgeName(item.faction)}</CardBadge>
         <CardBadge>{item.shipType}</CardBadge>
         {item.coinStrengthening.available && <CardBadge tone="green">물자강화</CardBadge>}
       </div>
@@ -564,7 +564,7 @@ function ResearchCandidatePopup({ candidate, onClose }) {
             <div className="flex flex-wrap gap-1.5 text-[11px] font-black">
               <CardBadge>{candidate.operationTier || '미평가'}</CardBadge>
               <CardBadge tone={rarity === 'UR' || rarity === 'SSR' ? 'gold' : rarity === 'SR' ? 'purple' : 'dark'}>{rarity}</CardBadge>
-              <CardBadge>{getFactionDisplayName(candidate.faction)}</CardBadge>
+              <CardBadge>{getFactionBadgeName(candidate.faction)}</CardBadge>
               <CardBadge>{candidate.shipType || '-'}</CardBadge>
               <CandidateBadge tone={isAcquiredStatus(status) ? 'owned' : 'neutral'}>{status}</CandidateBadge>
               {!isAcquiredStatus(status) && (
@@ -626,7 +626,6 @@ function candidateRankingBadges(candidate) {
     ]
   }
   return [
-    { label: obtainabilityCompactLabel(candidate.obtainability), tone: obtainabilityCandidateTone(candidate.obtainability) },
     { label: `대작전 ${tier}`, tone: candidate.operationTier ? 'operation' : 'neutral' },
   ]
 }

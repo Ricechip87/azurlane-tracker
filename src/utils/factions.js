@@ -65,6 +65,24 @@ export function getFactionDisplayName(value) {
   return faction
 }
 
+const FACTION_BADGE_NAMES = {
+  유니온: 'USS',
+  로열: 'HMS',
+  중앵: 'IJN',
+  철혈: 'KMS',
+  동황: 'ROC',
+  노스유니온: 'SN',
+  아이리스: 'FFNF',
+  비시아: 'MNF',
+  사르데냐: 'RN',
+  튤리퍼: 'HNLMS',
+}
+
+export function getFactionBadgeName(value) {
+  const faction = normalizeFactionValue(value)
+  return FACTION_BADGE_NAMES[faction] || faction
+}
+
 export function getFactionDisplayText(value) {
   return String(value || '')
     .replaceAll('노스유니온', '노스 유니온')

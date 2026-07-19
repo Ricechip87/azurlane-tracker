@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { getFactionDisplayName, getFactionDisplayText, getFactionOptions, normalizeFactionValue } from './factions.js'
+import { getFactionBadgeName, getFactionDisplayName, getFactionDisplayText, getFactionOptions, normalizeFactionValue } from './factions.js'
 
 assert.equal(normalizeFactionValue('유니온'), '유니온')
 assert.equal(normalizeFactionValue('USS'), '유니온')
@@ -32,6 +32,10 @@ assert.equal(getFactionDisplayName('USS'), '이글 유니온')
 assert.equal(getFactionDisplayName('노스유니온'), '노스 유니온')
 assert.equal(getFactionDisplayName('SN'), '노스 유니온')
 assert.equal(getFactionDisplayName('로열'), '로열')
+assert.equal(getFactionBadgeName('유니온'), 'USS')
+assert.equal(getFactionBadgeName('USS'), 'USS')
+assert.equal(getFactionBadgeName('노스유니온'), 'SN')
+assert.equal(getFactionBadgeName('로열'), 'HMS')
 assert.equal(getFactionDisplayText('유니온 점수 / 노스유니온 조합'), '이글 유니온 점수 / 노스 유니온 조합')
 assert.equal(getFactionDisplayText('이글 유니온 또는 노스 유니온'), '이글 유니온 또는 노스 유니온')
 

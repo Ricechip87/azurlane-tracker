@@ -54,30 +54,6 @@ export function obtainabilityLabel(obtainability) {
   return availability.label
 }
 
-const COMPACT_ROUTE_LABELS = {
-  'fixed-exchange': '확정 교환',
-  'core-monthly': '코어 교환',
-  'rotating-exchange': '랜덤 상점',
-  'guaranteed-reward': '확정 보상',
-  'map-drop': '해역 드롭',
-  'later-map-drop': '해역 드롭',
-  'high-map-drop': '고해역 드롭',
-  'archive-drop': '작전문서',
-  construction: '상시 건조',
-  'special-exchange': '특수 교환',
-  'other-permanent': '상시 획득',
-}
-
-export function obtainabilityCompactLabel(obtainability) {
-  const availability = getAvailability(obtainability)
-  if (availability.key === 'permanent') {
-    const route = getPrimaryAcquisitionRoute(obtainability)
-    return COMPACT_ROUTE_LABELS[route?.key] || route?.label || availability.label
-  }
-  if (availability.key === 'collab-unknown') return '복각 미정'
-  return availability.label
-}
-
 export function getPrimaryAcquisitionRoute(obtainability) {
   if (obtainability?.primaryRoute) return obtainability.primaryRoute
   if (obtainability?.acquisitionRoutes?.length) {

@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-07-19 - Simplify Recommendation Card Badges
+
+### Changed
+- Remove acquisition-route badges from growth cards and research candidate rows; the full availability and source details remain in their click popups.
+- Use compact faction codes on ship badges, including `USS` for Eagle Union, while retaining `이글 유니온` in explanatory text and unlock requirements.
+
+### Verified
+- Added faction-badge regression tests for USS, HMS, and SN aliases.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Compact Acquisition Badges
 
 ### Changed
