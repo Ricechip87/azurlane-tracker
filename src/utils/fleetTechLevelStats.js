@@ -9,19 +9,32 @@ export function calcFleetTechLevelStats(majorFactionTechPoints) {
 
   for (const faction of MAJOR_TECH_FACTIONS) {
     const currentLevel = currentLevels[faction.value]
-    const appliedBonuses = new Set()
-    for (const bonus of currentLevel?.bonuses || []) {
-      const shipType = normalizeStatShipTypeValue(bonus.shipType)
-      const bonusKey = `${shipType}:${bonus.stat}`
-      if (appliedBonuses.has(bonusKey)) continue
-      appliedBonuses.add(bonusKey)
-
-      if (!result[shipType]) result[shipType] = {}
-      result[shipType][bonus.stat] = (result[shipType][bonus.stat] || 0) + (bonus.value || 0)
+    for (const bonus of summarizeFleetTechLevelEffects(currentLevel)) {
+      if (!result[bonus.shipType]) result[bonus.shipType] = {}
+      result[bonus.shipType][bonus.stat] = (result[bonus.shipType][bonus.stat] || 0) + bonus.value
     }
   }
 
   return result
+}
+
+export function summarizeFleetTechLevelEffects(level) {
+  const effects = []
+  const seen = new Set()
+
+  for (const bonus of level?.bonuses || []) {
+    const shipType = normalizeStatShipTypeValue(bonus.shipType)
+    const key = `${shipType}:${bonus.stat}`
+    if (seen.has(key)) continue
+    seen.add(key)
+    effects.push({
+      shipType,
+      stat: bonus.stat,
+      value: bonus.value || 0,
+    })
+  }
+
+  return effects
 }
 
 export function calcFleetTechLevels(majorFactionTechPoints) {

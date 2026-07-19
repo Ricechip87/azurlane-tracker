@@ -13,7 +13,7 @@ const downloads = [
 ]
 
 for (const region of ['CN', 'EN', 'JP', 'KR', 'TW']) {
-  for (const file of ['fleet_tech_ship_template.json', 'ship_data_group.json']) {
+  for (const file of ['fleet_tech_ship_template.json', 'fleet_tech_template.json', 'fleet_tech_group.json', 'ship_data_group.json']) {
     downloads.push([`${rawData}/${region}/ShareCfg/${file}`, `참고용/AzurLaneData/${region}/ShareCfg/${file}`])
   }
 }

@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict'
 import {
+  buildFactionTechLevels,
   officialRecordToCharacterTech,
+  parseFleetTechSheet,
   parseFleetTechLua,
   selectFleetTechRecord,
 } from './fleet-tech-sources.mjs'
@@ -91,3 +93,32 @@ const translated = officialRecordToCharacterTech({
 })
 assert.deepEqual(translated.statAcquired.shipTypes, ['중순', '초순', '모니터'])
 assert.deepEqual(translated.techPoints, { acquired: 22, maxLB: 44, lv120: 32 })
+
+const parsedSheet = parseFleetTechSheet([
+  '001,테스트함,,,,13,26,19,,구축,,,1,,,,,,,,,구축,,,2',
+  'M062,브리스톨(META),,,,13,26,19,,구축,,,1,,,,,,,,,구축,,,2',
+].join('\n'))
+assert.deepEqual(parsedSheet.byId.get('1').techPoints, { acquired: 13, maxLB: 26, lv120: 19 })
+assert.deepEqual(parsedSheet.byName.get('브리스톨(META)').stat120, { shipTypes: ['구축'], stat: '내구', value: 2 })
+
+const factionLevels = buildFactionTechLevels({
+  1: { techs: [1001] },
+}, {
+  1001: {
+    pt: 300,
+    add: [
+      [[6, 7], 5, 1],
+      [[3, 18], 2, 2],
+    ],
+  },
+})
+assert.deepEqual(factionLevels.USS, [{
+  level: 1,
+  pt: 300,
+  bonuses: [
+    { shipType: '경항모', stat: '항공', value: 1 },
+    { shipType: '항모', stat: '항공', value: 1 },
+    { shipType: '중순', stat: '화력', value: 2 },
+    { shipType: '대형순', stat: '화력', value: 2 },
+  ],
+}])

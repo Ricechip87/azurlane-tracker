@@ -5,8 +5,7 @@ import {
   FLEET_TECH_CANDIDATE_BASIS,
   splitFleetTechCandidates,
 } from '../../utils/fleetTechCandidates.js'
-import { calcFleetTechProgress } from '../../utils/fleetTechLevelStats.js'
-import { normalizeStatShipTypeValue } from '../../utils/shipClassifications.js'
+import { calcFleetTechProgress, summarizeFleetTechLevelEffects } from '../../utils/fleetTechLevelStats.js'
 
 const publicAssetUrl = path => `${import.meta.env.BASE_URL}${path}`
 const fleetTechGuideImage = publicAssetUrl('images/loading-illustrations/100021-painting.png')
@@ -323,22 +322,7 @@ function LevelEffectTable({ effects }) {
 }
 
 function summarizeLevelEffects(level) {
-  const effects = []
-  const seen = new Set()
-
-  for (const bonus of level?.bonuses || []) {
-    const shipType = normalizeStatShipTypeValue(bonus.shipType)
-    const key = `${shipType}:${bonus.stat}`
-    if (seen.has(key)) continue
-    seen.add(key)
-    effects.push({
-      shipType,
-      stat: bonus.stat,
-      value: bonus.value || 0,
-    })
-  }
-
-  return effects.sort((a, b) => {
+  return summarizeFleetTechLevelEffects(level).sort((a, b) => {
     const shipTypeRank = SHIP_TYPE_ORDER.indexOf(a.shipType) - SHIP_TYPE_ORDER.indexOf(b.shipType)
     if (shipTypeRank !== 0) return shipTypeRank
     return STAT_ORDER.indexOf(a.stat) - STAT_ORDER.indexOf(b.stat)

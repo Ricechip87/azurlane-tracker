@@ -1,5 +1,24 @@
 # Change Log
 
+## 2026-07-20 - Audit and Refactor Fleet-Tech Data
+
+### Verified
+- Cross-checked all 870 displayed ships against the current CN fleet-tech Lua, KR fallback data, and the latest JP technical-score sheet; 738 ships have official score data, 132 ships are official non-tech entries with 0/0/0, and no mismatches or unexplained records remain.
+- Cross-checked faction level thresholds and effects against CN, EN, JP, KR, and TW official data; all five regions match the app data.
+- Confirmed the product rule that reaching a faction point threshold is treated as completing that faction level research.
+
+### Changed
+- Added a repeatable `audit:fleet-tech` command and generated JSON/Markdown reports for ship scores, stat bonuses, faction thresholds, and faction level effects.
+- Centralized the JP technical-score CSV parser and faction-level conversion used by refresh and audit scripts.
+- Centralized normalized fleet-tech effect summarization so the statistics calculator and UI cannot diverge or show duplicate destroyer effects.
+- Include faction level group/template files in future reference-data synchronization.
+
+### Verified Commands
+- `npm.cmd run audit:fleet-tech`
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-20 - Rebuild Fleet-Tech Candidate Ranking
 
 ### Changed

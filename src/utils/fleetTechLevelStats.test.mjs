@@ -1,10 +1,26 @@
 import assert from 'node:assert/strict'
-import { calcFleetTechLevels, calcFleetTechLevelStats, calcFleetTechProgress, findCurrentLevel, findNextLevel } from './fleetTechLevelStats.js'
+import {
+  calcFleetTechLevels,
+  calcFleetTechLevelStats,
+  calcFleetTechProgress,
+  findCurrentLevel,
+  findNextLevel,
+  summarizeFleetTechLevelEffects,
+} from './fleetTechLevelStats.js'
 
 assert.equal(findCurrentLevel([{ level: 1, pt: 300 }, { level: 2, pt: 600 }], 299), null)
 assert.deepEqual(findCurrentLevel([{ level: 1, pt: 300 }, { level: 2, pt: 600 }], 600), { level: 2, pt: 600 })
 assert.deepEqual(findNextLevel([{ level: 1, pt: 300 }, { level: 2, pt: 600 }], 299), { level: 1, pt: 300 })
 assert.deepEqual(findNextLevel([{ level: 1, pt: 300 }, { level: 2, pt: 600 }], 600), null)
+
+assert.deepEqual(summarizeFleetTechLevelEffects({ bonuses: [
+  { shipType: '구축', stat: '대공', value: 2 },
+  { shipType: '구축', stat: '대공', value: 2 },
+  { shipType: '초순', stat: '화력', value: 1 },
+]}), [
+  { shipType: '구축', stat: '대공', value: 2 },
+  { shipType: '대형순', stat: '화력', value: 1 },
+])
 
 const levelStats = calcFleetTechLevelStats({
   유니온: 5937,
