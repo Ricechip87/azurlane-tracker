@@ -1,6 +1,6 @@
 import { normalizeAcquisitionStatus } from './acquisitionStatus.js'
 import { normalizeFactionValue } from './factions.js'
-import { getAvailability, getPrimaryAcquisitionRoute, obtainabilityRank } from './obtainability.js'
+import { obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
 import { getShipPosition } from './shipClassifications.js'
 
@@ -91,7 +91,7 @@ function toCandidate(character, options) {
     operationTier,
     obtainability,
   }
-  candidate.recommendationReasons = buildRecommendationReasons(candidate, basis)
+  candidate.recommendationReasons = buildRecommendationReasons(candidate)
   return candidate
 }
 
@@ -155,24 +155,6 @@ function operationTierRank(tier) {
   return index === -1 ? OPERATION_TIER_ORDER.length : index
 }
 
-function buildRecommendationReasons(candidate, basis) {
-  const reasons = []
-
-  if (candidate.status === '미획득') {
-    const route = getPrimaryAcquisitionRoute(candidate.obtainability)
-    const availability = getAvailability(candidate.obtainability)
-    reasons.push(route?.label || availability.label)
-  } else {
-    reasons.push('보유')
-    if (basis === FLEET_TECH_CANDIDATE_BASIS.MAX_LB && candidate.remainingSteps === 1) {
-      reasons.push('풀돌만 남음')
-    } else if (candidate.remainingSteps === 1) {
-      reasons.push('120만 남음')
-    } else {
-      reasons.push(`${candidate.remainingSteps}단계 남음`)
-    }
-  }
-
-  reasons.push(candidate.operationTier ? `대작전 ${candidate.operationTier}` : '대작전 미평가')
-  return reasons
+function buildRecommendationReasons(candidate) {
+  return [candidate.operationTier ? `대작전 ${candidate.operationTier}` : '대작전 미평가']
 }
