@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-07-19 - Harden Recommendation Popups and Data Errors
+
+### Fixed
+- Give growth and research candidate popups the same dismissal behavior: backdrop click, protected inner clicks, close button, and Escape key.
+- Constrain both popup dialogs to the viewport and allow internal vertical scrolling on narrow or short screens.
+- Surface research-candidate helper-data load failures instead of silently degrading unowned-candidate inclusion and Operation Siren ranking.
+
+### Verified
+- Confirmed both popup paths expose dialog semantics and bounded overflow behavior.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Align Recommendation Card Headers
 
 ### Changed

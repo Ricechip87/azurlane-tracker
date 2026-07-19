@@ -492,14 +492,29 @@ function RecommendationCardPopup({ card, character, onClose }) {
   const cardArtUrl = getCardArtUrl(character)
   const details = getCardDetails(card)
 
+  useEffect(() => {
+    const closeOnEscape = event => {
+      if (event.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [onClose])
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/55 px-4 py-6 backdrop-blur-sm"
       onClick={onClose}
       role="presentation"
     >
-      <div className="w-full max-w-md rounded-lg border border-neutral-600 bg-[#242424] p-4 text-gray-100 shadow-2xl shadow-black/70">
-        <div className="flex items-start gap-4">
+      <div
+        className="relative max-h-[calc(100dvh-3rem)] w-full max-w-md overflow-y-auto rounded-lg border border-neutral-600 bg-[#242424] p-4 text-gray-100 shadow-2xl shadow-black/70"
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${card.name} 상세 정보`}
+        onClick={event => event.stopPropagation()}
+      >
+        <button type="button" onClick={onClose} className="absolute right-3 top-3 text-xl text-gray-500 hover:text-white" aria-label="닫기">×</button>
+        <div className="flex items-start gap-4 pr-6">
           <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded border border-neutral-600 bg-[#181818]">
             {cardArtUrl ? (
               <img src={cardArtUrl} alt="" className="h-full w-full object-cover object-top" />

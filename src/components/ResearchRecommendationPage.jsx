@@ -22,6 +22,7 @@ const RESEARCH_SHIP_BY_NAME = new Map(researchRecommendationData.ships.map(ship 
 export default function ResearchRecommendationPage({ characters }) {
   const [targetId, setTargetId] = useState(() => typeof window === 'undefined' ? '' : window.localStorage.getItem('azurlane-research-target') || '')
   const [candidateRankingData, setCandidateRankingData] = useState(null)
+  const [candidateDataError, setCandidateDataError] = useState('')
   const goalRef = useRef(null)
   const pendingGoalScrollRef = useRef(false)
   const state = useMemo(
@@ -64,8 +65,12 @@ export default function ResearchRecommendationPage({ characters }) {
         operationUpdatedAt: operationSource?.updatedAt || null,
         obtainabilityByName: new Map((obtainabilityData.ships || []).map(ship => [ship.name, ship])),
       })
-    }).catch(() => {
-      if (!cancelled) setCandidateRankingData({})
+      setCandidateDataError('')
+    }).catch(error => {
+      if (!cancelled) {
+        setCandidateRankingData({})
+        setCandidateDataError(error instanceof Error ? error.message : '알 수 없는 오류')
+      }
     })
 
     return () => { cancelled = true }
@@ -91,6 +96,14 @@ export default function ResearchRecommendationPage({ characters }) {
   return (
     <section className="space-y-4">
       <ResearchSummary state={state} />
+
+      {candidateDataError && (
+        <div className="rounded border border-amber-800/70 bg-amber-950/25 px-4 py-3 text-sm leading-6 text-amber-100" role="alert">
+          <strong>개발함 후보 보조 데이터를 불러오지 못했습니다.</strong>{' '}
+          미보유 후보와 대작전 기준 추천 순위가 일부 생략될 수 있습니다.
+          <span className="ml-2 text-xs text-amber-300/80">({candidateDataError})</span>
+        </div>
+      )}
 
       <div ref={goalRef} className="scroll-mt-4">
         <ResearchGoalWorkspace
@@ -548,7 +561,7 @@ function ResearchCandidatePopup({ candidate, onClose }) {
       role="presentation"
     >
       <div
-        className="relative w-full max-w-md rounded-lg border border-neutral-600 bg-[#242424] p-4 text-gray-100 shadow-2xl shadow-black/70"
+        className="relative max-h-[calc(100dvh-3rem)] w-full max-w-md overflow-y-auto rounded-lg border border-neutral-600 bg-[#242424] p-4 text-gray-100 shadow-2xl shadow-black/70"
         role="dialog"
         aria-modal="true"
         aria-label={`${candidate.name} 상세 정보`}
