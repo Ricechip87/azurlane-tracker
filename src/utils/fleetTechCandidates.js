@@ -174,6 +174,5 @@ function buildRecommendationReasons(candidate, basis) {
   }
 
   reasons.push(candidate.operationTier ? `대작전 ${candidate.operationTier}` : '대작전 미평가')
-  reasons.push(`+${candidate.remainingTechPoints}점`)
   return reasons
 }

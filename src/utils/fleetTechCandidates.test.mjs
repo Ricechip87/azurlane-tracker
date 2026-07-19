@@ -239,8 +239,8 @@ assert.deepEqual(blendedCandidates.map(candidate => candidate.name), [
   '미보유 쉬움',
   '미보유 어려움 고평가',
 ])
-assert.deepEqual(blendedCandidates[0].recommendationReasons, ['보유', '120만 남음', '대작전 SS', '+20점'])
-assert.deepEqual(blendedCandidates[2].recommendationReasons, ['상점 확정 교환', '대작전 A', '+90점'])
+assert.deepEqual(blendedCandidates[0].recommendationReasons, ['보유', '120만 남음', '대작전 SS'])
+assert.deepEqual(blendedCandidates[2].recommendationReasons, ['상점 확정 교환', '대작전 A'])
 
 const lowerTierCandidates = calcFleetTechCandidates([
   {
