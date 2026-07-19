@@ -4,7 +4,7 @@ import researchRecommendationData from '../data/researchRecommendations.json'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { isAcquiredStatus, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getFactionBadgeName, getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
-import { getEffectiveRarity } from '../utils/rarity.js'
+import { getEffectiveRarity, getResearchRarityLabel } from '../utils/rarity.js'
 import { getAvailability, getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import {
   buildOperationTierByName,
@@ -192,7 +192,10 @@ function ResearchGoalPicker({ groups, selectedTarget, onSelect }) {
                   <img src={getCardArtUrl(item)} alt="" className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/95" />
                   <div className="absolute left-1.5 top-1.5 flex gap-1 text-[9px] font-black">
-                    <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{item.planRarity}</CardBadge>
+                    <CardBadge>{item.generation}기</CardBadge>
+                    <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{getResearchRarityLabel(item.planRarity)}</CardBadge>
+                  </div>
+                  <div className="absolute right-1.5 top-1.5 flex flex-col items-end gap-1 text-[9px] font-black">
                     {item.coinStrengthening.available && <CardBadge tone="green">물자</CardBadge>}
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-2.5 text-white">
@@ -221,7 +224,7 @@ function ResearchGoalPanel({ item, characters, candidateRankingData }) {
           <img src={getCardArtUrl(item)} alt="" className="h-[232px] w-[172px] max-w-full rounded-md border-2 border-cyan-500 bg-[#181818] object-cover object-top" />
           <div className="mt-2 flex flex-wrap gap-1 text-[10px] font-black">
             <CardBadge>{item.generation}기</CardBadge>
-            <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{item.planRarity}</CardBadge>
+            <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{getResearchRarityLabel(item.planRarity)}</CardBadge>
             <CardBadge>{getFactionBadgeName(item.faction)}</CardBadge>
             {item.coinStrengthening.available && <CardBadge tone="green">물자강화</CardBadge>}
           </div>
@@ -421,7 +424,7 @@ function ResearchCard({ item, tone, onSelect }) {
 
       <div className="absolute left-2 top-2 flex gap-1 text-[10px] font-black">
         <CardBadge>{item.generation}기</CardBadge>
-        <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{item.planRarity}</CardBadge>
+        <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{getResearchRarityLabel(item.planRarity)}</CardBadge>
       </div>
       <div className="absolute right-2 top-2 flex flex-col items-end gap-1 text-[10px] font-black">
         <CardBadge>{getFactionBadgeName(item.faction)}</CardBadge>
@@ -664,5 +667,5 @@ function CardBadge({ children, tone = 'dark' }) {
     purple: 'border-violet-300/50 bg-violet-600 text-white',
     green: 'border-emerald-300/50 bg-emerald-500 text-black',
   }
-  return <span className={`rounded-full border px-1.5 py-0.5 shadow-sm ${styles[tone] || styles.dark}`}>{children}</span>
+  return <span className={`whitespace-nowrap rounded-full border px-1.5 py-0.5 shadow-sm ${styles[tone] || styles.dark}`}>{children}</span>
 }

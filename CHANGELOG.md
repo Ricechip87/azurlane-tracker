@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-07-19 - Align Recommendation Card Headers
+
+### Changed
+- Standardize the top-left card header as `recommendation tier + rarity` for growth cards and `generation + research/ship rarity` for research cards.
+- Display research rarity as `DR · UR` or `PR · SSR` without changing the existing bottom role and unlock-progress summaries.
+- Keep faction, ship type, and progression badges in the top-right group; move compact research material-strengthening status there as well.
+
+### Verified
+- Added regression tests for DR/UR and PR/SSR parallel labels.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Simplify Recommendation Card Badges
 
 ### Changed

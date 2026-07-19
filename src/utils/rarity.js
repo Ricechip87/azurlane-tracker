@@ -14,3 +14,9 @@ export function getEffectiveRarity(character) {
   if (!isRemodeled(character)) return rarity
   return RARITY_UPGRADE[rarity] || rarity
 }
+
+export function getResearchRarityLabel(planRarity) {
+  if (planRarity === 'DR') return 'DR · UR'
+  if (planRarity === 'PR') return 'PR · SSR'
+  return planRarity || '-'
+}
