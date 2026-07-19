@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import FleetTechPanel from './fleet-tech/FleetTechPanel.jsx'
 import GrowthRecommendationPage from './GrowthRecommendationPage.jsx'
 import ResearchRecommendationPage from './ResearchRecommendationPage.jsx'
+import TechPointRecommendationPage from './TechPointRecommendationPage.jsx'
 
 const RECOMMENDATION_TABS = [
   {
@@ -66,11 +66,7 @@ export default function RecommendationPage({ characters }) {
       ) : activeTab === 'research' ? (
         <ResearchRecommendationPage characters={characters} />
       ) : activeTab === 'tech' ? (
-        <section>
-          <div className="relative overflow-visible rounded border border-neutral-700 bg-[#242424]">
-            <FleetTechPanel characters={characters} detailMode="inline" />
-          </div>
-        </section>
+        <TechPointRecommendationPage characters={characters} />
       ) : (
         <RecommendationPlaceholder tab={currentTab} />
       )}

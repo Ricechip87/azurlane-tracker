@@ -32,7 +32,7 @@ const FLEET_TECH_GUIDE_IMAGES = {
   철혈: kmsFleetTechImage,
 }
 
-export default function FleetTechPanel({ characters, className = '', detailMode = 'popover' }) {
+export default function FleetTechPanel({ characters, className = '', detailMode = 'popover', candidateRankingData = null }) {
   const majorFactionTechPoints = calcMajorFactionTechPoints(characters)
   const majorFactionTechProgress = calcFleetTechProgress(majorFactionTechPoints)
   const usesInlineDetail = detailMode === 'inline'
@@ -168,6 +168,7 @@ export default function FleetTechPanel({ characters, className = '', detailMode 
                         faction={faction}
                         progress={progress}
                         characters={characters}
+                        candidateRankingData={candidateRankingData}
                         onMouseEnter={cancelPreviewClose}
                         onMouseLeave={schedulePreviewClose}
                       />
@@ -192,6 +193,7 @@ export default function FleetTechPanel({ characters, className = '', detailMode 
                   faction={inlineFaction}
                   progress={inlineProgress}
                   characters={characters}
+                  candidateRankingData={candidateRankingData}
                 />
               )
             ) : (
@@ -348,9 +350,9 @@ const CANDIDATE_BASIS_OPTIONS = [
   { value: FLEET_TECH_CANDIDATE_BASIS.MAX_LB, label: '벽뉴비 권장' },
 ]
 
-function TechCandidatePopover({ faction, progress, characters, onMouseEnter, onMouseLeave }) {
+function TechCandidatePopover({ faction, progress, characters, candidateRankingData, onMouseEnter, onMouseLeave }) {
   const [basis, setBasis] = useState(FLEET_TECH_CANDIDATE_BASIS.LEVEL_120)
-  const candidates = calcFleetTechCandidates(characters, faction.value, { basis })
+  const candidates = calcFleetTechCandidates(characters, faction.value, { basis, ...candidateRankingData })
   const candidateGroups = splitFleetTechCandidates(candidates, basis)
   const hasCandidates = candidates.length > 0
 
@@ -376,9 +378,9 @@ function TechCandidatePopover({ faction, progress, characters, onMouseEnter, onM
   )
 }
 
-function TechCandidateSection({ faction, progress, characters }) {
+function TechCandidateSection({ faction, progress, characters, candidateRankingData }) {
   const [basis, setBasis] = useState(FLEET_TECH_CANDIDATE_BASIS.LEVEL_120)
-  const candidates = calcFleetTechCandidates(characters, faction.value, { basis })
+  const candidates = calcFleetTechCandidates(characters, faction.value, { basis, ...candidateRankingData })
   const candidateGroups = splitFleetTechCandidates(candidates, basis)
   const hasCandidates = candidates.length > 0
 
@@ -391,7 +393,7 @@ function TechCandidateSection({ faction, progress, characters }) {
             <span className="text-xs text-gray-500">{formatNextLevelProgress(progress)}</span>
           </div>
           <p className="mt-1 text-xs text-gray-500">
-            (현재 보유·육성 단계와 남은 기술점수를 기준으로 추천됩니다.)
+            보유 여부·남은 단계·입수 난이도·대작전 등급·기술점수를 함께 반영합니다.
           </p>
         </div>
         <CandidateBasisToggle basis={basis} setBasis={setBasis} />
@@ -448,14 +450,14 @@ function CandidateTable({ basis, candidateGroups }) {
     <div className="h-full overflow-auto">
       <table className="w-full table-fixed text-xs">
         <colgroup>
-          <col className="w-[24%]" />
+          <col className={showsLevel120 ? 'w-[30%]' : 'w-[32%]'} />
+          <col className={showsLevel120 ? 'w-[7%]' : 'w-[8%]'} />
           <col className="w-[8%]" />
-          <col className="w-[8%]" />
-          <col className="w-[12%]" />
-          <col className="w-[10%]" />
-          <col className="w-[10%]" />
-          {showsLevel120 && <col className="w-[10%]" />}
-          <col className="w-[18%]" />
+          <col className={showsLevel120 ? 'w-[11%]' : 'w-[12%]'} />
+          <col className={showsLevel120 ? 'w-[9%]' : 'w-[10%]'} />
+          <col className={showsLevel120 ? 'w-[9%]' : 'w-[10%]'} />
+          {showsLevel120 && <col className="w-[9%]" />}
+          <col className={showsLevel120 ? 'w-[17%]' : 'w-[20%]'} />
         </colgroup>
         <thead className="sticky top-0 z-10 bg-[#242424] text-gray-500">
           <tr>
@@ -503,7 +505,12 @@ function CandidateRows({ candidates, columnSpan, showsLevel120 }) {
 
   return candidates.map(candidate => (
     <tr key={candidate.id} className="hover:bg-[#2a2a2a]">
-      <td className="truncate px-3 py-1.5 text-gray-200">{candidate.name}</td>
+      <td className="px-3 py-1.5">
+        <div className="truncate text-gray-200">{candidate.name}</div>
+        <div className="mt-0.5 truncate text-[10px] text-gray-500" title={candidate.recommendationReasons.join(' · ')}>
+          {candidate.recommendationReasons.join(' · ')}
+        </div>
+      </td>
       <td className={`px-2 py-1.5 text-center font-bold ${RARITY_COLOR[candidate.rarity] || 'text-gray-400'}`}>{candidate.rarity}</td>
       <td className="px-2 py-1.5 text-center text-gray-500">{candidate.position}</td>
       <td className="px-2 py-1.5 text-center text-gray-400">{candidate.status}</td>

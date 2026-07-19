@@ -168,7 +168,7 @@ export function getEligibleResearchXpShips(phase, characters) {
     .sort((a, b) => a.name.localeCompare(b.name, 'ko'))
 }
 
-const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B']
+const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B', 'C+']
 const RESEARCH_FACTION_ORDER = ['유니온', '로열', '중앵', '철혈', '동황', '사르데냐', '노스유니온', '아이리스', '비시아', '튤리퍼']
 
 export function buildResearchFactionProgress(researchShips, factionTechPoints) {

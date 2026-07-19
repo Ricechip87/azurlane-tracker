@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-07-20 - Rebuild Fleet-Tech Candidate Ranking
+
+### Changed
+- Replace the temporary fleet-tech ordering with a blended ranking based on ownership, remaining progression, unowned-ship obtainability, the latest Operation Siren recommendation tier, and obtainable tech points.
+- Keep the existing rarity groups and `벽청년 이상` / `벽뉴비 권장` modes while applying the new priority inside each group.
+- Load growth-recommendation and obtainability data for the fleet-tech page and show a visible warning if either source fails.
+- Show each candidate's recommendation evidence directly below its name and document the full ranking order above the panel.
+
+### Verified
+- Added regression coverage for owned-first ordering, progression distance, obtainability, Operation Siren tier, obtainable points, and recommendation reasons.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Refactor Application Structure
 
 ### Changed

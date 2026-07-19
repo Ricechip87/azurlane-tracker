@@ -1,5 +1,6 @@
 import { normalizeAcquisitionStatus } from './acquisitionStatus.js'
 import { normalizeFactionValue } from './factions.js'
+import { getAvailability, getPrimaryAcquisitionRoute, obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
 import { getShipPosition } from './shipClassifications.js'
 
@@ -10,6 +11,8 @@ const RARITY_ORDER = {
   R: 3,
   N: 4,
 }
+
+const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B', 'C+']
 
 export const FLEET_TECH_CANDIDATE_BASIS = {
   LEVEL_120: 'level120',
@@ -31,7 +34,11 @@ export function calcFleetTechCandidates(characters, factionValue, options = {}) 
   const basis = options.basis || FLEET_TECH_CANDIDATE_BASIS.LEVEL_120
   return characters
     .filter(character => normalizeFactionValue(character.faction) === factionValue)
-    .map(character => toCandidate(character, basis))
+    .map(character => toCandidate(character, {
+      basis,
+      operationTierByName: options.operationTierByName,
+      obtainabilityByName: options.obtainabilityByName,
+    }))
     .filter(Boolean)
     .sort(compareCandidates)
 }
@@ -44,7 +51,8 @@ export function splitFleetTechCandidates(candidates, basis = FLEET_TECH_CANDIDAT
   }))
 }
 
-function toCandidate(character, basis) {
+function toCandidate(character, options) {
+  const { basis, operationTierByName, obtainabilityByName } = options
   const status = normalizeAcquisitionStatus(character.acquired)
   const techPoints = character.techPoints || { acquired: 0, maxLB: 0, lv120: 0 }
   const rarity = getEffectiveRarity(character)
@@ -63,7 +71,10 @@ function toCandidate(character, basis) {
   const position = getShipPosition(character.shipType)
   if (basis === FLEET_TECH_CANDIDATE_BASIS.MAX_LB && position === '기타') return null
 
-  return {
+  const operationTier = operationTierByName?.get(character.name) || ''
+  const obtainability = obtainabilityByName?.get(character.name) || null
+
+  const candidate = {
     id: character.id,
     name: character.name,
     rarity,
@@ -77,7 +88,11 @@ function toCandidate(character, basis) {
     remainingSteps,
     remainingTechPoints,
     group: getCandidateGroupKey(rarity, basis),
+    operationTier,
+    obtainability,
   }
+  candidate.recommendationReasons = buildRecommendationReasons(candidate, basis)
+  return candidate
 }
 
 function getCandidateGroups(basis) {
@@ -110,8 +125,11 @@ function stageValue(value, completed) {
 
 function compareCandidates(a, b) {
   return groupRank(a) - groupRank(b)
-    || b.remainingTechPoints - a.remainingTechPoints
+    || ownershipRank(a) - ownershipRank(b)
     || a.remainingSteps - b.remainingSteps
+    || unownedObtainabilityRank(a) - unownedObtainabilityRank(b)
+    || operationTierRank(a.operationTier) - operationTierRank(b.operationTier)
+    || b.remainingTechPoints - a.remainingTechPoints
     || rarityRank(a) - rarityRank(b)
     || a.name.localeCompare(b.name, 'ko')
 }
@@ -122,4 +140,40 @@ function groupRank(candidate) {
 
 function rarityRank(candidate) {
   return RARITY_ORDER[candidate.rarity] ?? 99
+}
+
+function ownershipRank(candidate) {
+  return candidate.status === '미획득' ? 1 : 0
+}
+
+function unownedObtainabilityRank(candidate) {
+  return candidate.status === '미획득' ? obtainabilityRank(candidate.obtainability) : 0
+}
+
+function operationTierRank(tier) {
+  const index = OPERATION_TIER_ORDER.indexOf(tier)
+  return index === -1 ? OPERATION_TIER_ORDER.length : index
+}
+
+function buildRecommendationReasons(candidate, basis) {
+  const reasons = []
+
+  if (candidate.status === '미획득') {
+    const route = getPrimaryAcquisitionRoute(candidate.obtainability)
+    const availability = getAvailability(candidate.obtainability)
+    reasons.push(route?.label || availability.label)
+  } else {
+    reasons.push('보유')
+    if (basis === FLEET_TECH_CANDIDATE_BASIS.MAX_LB && candidate.remainingSteps === 1) {
+      reasons.push('풀돌만 남음')
+    } else if (candidate.remainingSteps === 1) {
+      reasons.push('120만 남음')
+    } else {
+      reasons.push(`${candidate.remainingSteps}단계 남음`)
+    }
+  }
+
+  reasons.push(candidate.operationTier ? `대작전 ${candidate.operationTier}` : '대작전 미평가')
+  reasons.push(`+${candidate.remainingTechPoints}점`)
+  return reasons
 }
