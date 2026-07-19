@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FleetTechPanel } from './StatsBar.jsx'
+import FleetTechPanel from './fleet-tech/FleetTechPanel.jsx'
 import GrowthRecommendationPage from './GrowthRecommendationPage.jsx'
 import ResearchRecommendationPage from './ResearchRecommendationPage.jsx'
 

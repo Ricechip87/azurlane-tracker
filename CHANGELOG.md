@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-07-19 - Refactor Application Structure
+
+### Changed
+- Reduce `App.jsx` to application state, data loading, filtering, and page routing; move navigation, page layouts, and the global back-to-top control into focused components.
+- Extract character filtering and growth-recommendation ranking into pure utility modules with regression tests.
+- Share one accessible recommendation dialog and detail layout between growth and research recommendations.
+- Separate the fleet-tech detail panel from the compact roster statistics component.
+- Remove unused Vite starter styles and image assets.
+
+### Verified
+- Added character-filter and growth-recommendation logic regression tests.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-19 - Harden Recommendation Popups and Data Errors
 
 ### Fixed
