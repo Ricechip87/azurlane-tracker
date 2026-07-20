@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-07-20 - Separate Submarine Fleet-Tech Candidates
+
+### Changed
+- Move submarine and submarine-carrier candidates out of the normal rarity groups into a dedicated final `잠수함 계열` section.
+- Keep submarine candidates separate from regular ships while retaining Operation Siren tiers when ordering candidates inside the submarine section.
+- Keep submarine candidates in research-ship unlock recommendations but always place them after every regular candidate, then rank submarines by the same internal criteria.
+- Clarify the separate submarine policy in the fleet-tech recommendation guidance.
+
+### Verified
+- Added regression coverage for submarine grouping, Operation Siren ordering inside that group, submarine recommendation reasons, and last-place research unlock ordering.
+- `npm.cmd test`
+- `npm.cmd run lint`
+- `npm.cmd run build`
+
 ## 2026-07-20 - Audit and Refactor Fleet-Tech Data
 
 ### Verified

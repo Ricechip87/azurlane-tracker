@@ -543,8 +543,10 @@ function ResearchCandidatePopup({ candidate, onClose }) {
   const rarity = getEffectiveRarity(candidate)
   const status = normalizeAcquisitionStatus(candidate.status ?? candidate.acquired)
   const sourceSections = getObtainabilitySourceSections(candidate.obtainability)
-  const reason = getFactionDisplayText(candidate.recommendation?.roleNote || '').trim()
-    || '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.'
+  const reason = candidate.isSubmarine
+    ? '잠수함 계열은 일반 해금 후보와 분리해 맨 마지막에 배치한 후보입니다.'
+    : getFactionDisplayText(candidate.recommendation?.roleNote || '').trim()
+      || '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.'
   const cardArtUrl = getCardArtUrl(candidate)
 
   return (
@@ -589,6 +591,14 @@ function buildOperationRecommendationByName(growthData) {
 }
 
 function candidateRankingBadges(candidate) {
+  if (candidate.isSubmarine) {
+    const isOwned = normalizeAcquisitionStatus(candidate.status) !== '미획득'
+    return [
+      { label: isOwned ? '보유' : '잠수함 계열', tone: isOwned ? 'owned' : 'neutral' },
+      ...(isOwned ? [{ label: candidate.remainingSteps === 1 ? '120만 남음' : `${candidate.remainingSteps}단계 남음`, tone: 'neutral' }] : []),
+      { label: `대작전 ${candidate.operationTier || '미평가'}`, tone: candidate.operationTier ? 'operation' : 'neutral' },
+    ]
+  }
   const tier = candidate.operationTier || '미평가'
   if (normalizeAcquisitionStatus(candidate.status) !== '미획득') {
     const remaining = candidate.remainingSteps === 1 ? '120만 남음' : `${candidate.remainingSteps}단계 남음`

@@ -271,6 +271,9 @@ function addResearchRankingData(candidate, { obtainabilityByName, operationTierB
 }
 
 function compareResearchUnlockCandidates(a, b) {
+  const submarineDifference = Number(Boolean(a.isSubmarine)) - Number(Boolean(b.isSubmarine))
+  if (submarineDifference) return submarineDifference
+
   const ownershipDifference = Number(!isAcquiredStatus(a.status)) - Number(!isAcquiredStatus(b.status))
   if (ownershipDifference) return ownershipDifference
 

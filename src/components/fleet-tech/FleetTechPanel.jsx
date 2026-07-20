@@ -377,7 +377,7 @@ function TechCandidateSection({ faction, progress, characters, candidateRankingD
             <span className="text-xs text-gray-500">{formatNextLevelProgress(progress)}</span>
           </div>
           <p className="mt-1 text-xs text-gray-500">
-            보유 여부·남은 단계·입수 난이도·대작전 등급·기술점수를 함께 반영합니다.
+            보유 여부·남은 단계·입수 난이도·대작전 등급·기술점수를 함께 반영합니다. 잠수함 계열은 일반 함선과 분리한 마지막 별도 후보 안에서 같은 기준으로 정렬합니다.
           </p>
         </div>
         <CandidateBasisToggle basis={basis} setBasis={setBasis} />

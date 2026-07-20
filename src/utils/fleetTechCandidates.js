@@ -2,7 +2,7 @@ import { normalizeAcquisitionStatus } from './acquisitionStatus.js'
 import { normalizeFactionValue } from './factions.js'
 import { obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
-import { getShipPosition } from './shipClassifications.js'
+import { getShipClassification, getShipPosition } from './shipClassifications.js'
 
 const RARITY_ORDER = {
   UR: 0,
@@ -22,6 +22,7 @@ export const FLEET_TECH_CANDIDATE_BASIS = {
 const LEVEL_120_GROUPS = [
   { key: 'high', title: 'UR / SSR', rarities: new Set(['UR', 'SSR']) },
   { key: 'low', title: 'SR / R / N', rarities: new Set(['SR', 'R', 'N']) },
+  { key: 'submarine', title: '잠수함 계열', rarities: new Set() },
 ]
 
 const MAX_LB_GROUPS = [
@@ -70,6 +71,7 @@ function toCandidate(character, options) {
 
   const position = getShipPosition(character.shipType)
   if (basis === FLEET_TECH_CANDIDATE_BASIS.MAX_LB && position === '기타') return null
+  const isSubmarine = getShipClassification(character.shipType) === '잠수'
 
   const operationTier = operationTierByName?.get(character.name) || ''
   const obtainability = obtainabilityByName?.get(character.name) || null
@@ -87,7 +89,8 @@ function toCandidate(character, options) {
     },
     remainingSteps,
     remainingTechPoints,
-    group: getCandidateGroupKey(rarity, basis),
+    group: getCandidateGroupKey(rarity, basis, isSubmarine),
+    isSubmarine,
     operationTier,
     obtainability,
   }
@@ -99,7 +102,8 @@ function getCandidateGroups(basis) {
   return basis === FLEET_TECH_CANDIDATE_BASIS.MAX_LB ? MAX_LB_GROUPS : LEVEL_120_GROUPS
 }
 
-function getCandidateGroupKey(rarity, basis) {
+function getCandidateGroupKey(rarity, basis, isSubmarine = false) {
+  if (basis === FLEET_TECH_CANDIDATE_BASIS.LEVEL_120 && isSubmarine) return 'submarine'
   return getCandidateGroups(basis).find(group => group.rarities.has(rarity))?.key || 'low'
 }
 
@@ -135,6 +139,7 @@ function compareCandidates(a, b) {
 }
 
 function groupRank(candidate) {
+  if (candidate.group === 'submarine') return 2
   return candidate.group === 'high' ? 0 : 1
 }
 
@@ -156,5 +161,8 @@ function operationTierRank(tier) {
 }
 
 function buildRecommendationReasons(candidate) {
+  if (candidate.isSubmarine) {
+    return ['잠수함 계열', candidate.operationTier ? `대작전 ${candidate.operationTier}` : '대작전 미평가']
+  }
   return [candidate.operationTier ? `대작전 ${candidate.operationTier}` : '대작전 미평가']
 }

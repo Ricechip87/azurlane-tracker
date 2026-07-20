@@ -70,12 +70,14 @@ assert.deepEqual(candidates[0].stages, {
 })
 
 const split = splitFleetTechCandidates(candidates)
-assert.deepEqual(split.map(group => group.title), ['UR / SSR', 'SR / R / N'])
+assert.deepEqual(split.map(group => group.title), ['UR / SSR', 'SR / R / N', '잠수함 계열'])
 assert.deepEqual(split[0].candidates.map(candidate => candidate.name), ['SSR 100', 'UR acquired', 'SSR missing'])
-assert.deepEqual(split[1].candidates.map(candidate => candidate.name), ['SR bonus'])
+assert.deepEqual(split[1].candidates.map(candidate => candidate.name), [])
+assert.deepEqual(split[2].candidates.map(candidate => candidate.name), ['SR bonus'])
 assert.equal(split[0].candidates[0].position, '전열')
 assert.equal(split[0].candidates[1].position, '후열')
-assert.equal(split[1].candidates[0].position, '기타')
+assert.equal(split[2].candidates[0].position, '기타')
+assert.deepEqual(split[2].candidates[0].recommendationReasons, ['잠수함 계열', '대작전 미평가'])
 
 const maxLbCandidates = calcFleetTechCandidates([
   {
@@ -265,3 +267,36 @@ const lowerTierCandidates = calcFleetTechCandidates([
   operationTierByName: new Map([['대작전 C+ 함선', 'C+']]),
 })
 assert.deepEqual(lowerTierCandidates.map(candidate => candidate.name), ['대작전 C+ 함선', '대작전 미평가 함선'])
+
+const submarineCandidates = calcFleetTechCandidates([
+  {
+    id: 50,
+    name: '대작전 SS 저득점 잠수함',
+    rarity: 'SSR',
+    shipType: '잠수',
+    faction: '로열',
+    acquired: '100',
+    techPoints: { lv120: 10 },
+  },
+  {
+    id: 51,
+    name: '대작전 미평가 고득점 잠수항모',
+    rarity: 'SR',
+    shipType: '잠수항모',
+    faction: '로열',
+    acquired: '100',
+    techPoints: { lv120: 30 },
+  },
+], '로열', {
+  operationTierByName: new Map([['대작전 SS 저득점 잠수함', 'SS']]),
+})
+
+assert.deepEqual(submarineCandidates.map(candidate => candidate.name), [
+  '대작전 SS 저득점 잠수함',
+  '대작전 미평가 고득점 잠수항모',
+])
+assert.deepEqual(submarineCandidates.map(candidate => candidate.group), ['submarine', 'submarine'])
+assert.deepEqual(submarineCandidates.map(candidate => candidate.recommendationReasons), [
+  ['잠수함 계열', '대작전 SS'],
+  ['잠수함 계열', '대작전 미평가'],
+])

@@ -245,6 +245,7 @@ const rankedTechCandidates = [
   character({ id: 36, name: '현재 이벤트 후보', faction: '로열', acquired: '미획득', techPoints: { acquired: 70, maxLB: 70, lv120: 70 } }),
   character({ id: 37, name: '복각 대기 최고득점', faction: '로열', acquired: '미획득', techPoints: { acquired: 300, maxLB: 300, lv120: 300 } }),
   character({ id: 38, name: '콜라보 복각 미정', faction: '로열', acquired: '미획득', techPoints: { acquired: 400, maxLB: 400, lv120: 400 } }),
+  character({ id: 39, name: '잠수함 고득점', faction: '로열', shipType: '잠수', acquired: '100', techPoints: { acquired: 0, maxLB: 0, lv120: 999 } }),
 ]
 const obtainabilityByName = new Map([
   ['쉬움 A 고득점', { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'easy', label: '쉬움' } }],
@@ -278,6 +279,7 @@ assert.deepEqual(
     '쉬움 A 고득점',
     '현재 이벤트 후보',
     '보통 SS 최고득점',
+    '잠수함 고득점',
   ],
 )
 
