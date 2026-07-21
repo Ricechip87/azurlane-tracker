@@ -2,6 +2,7 @@ import { useState } from 'react'
 import GrowthRecommendationPage from './GrowthRecommendationPage.jsx'
 import ResearchRecommendationPage from './ResearchRecommendationPage.jsx'
 import TechPointRecommendationPage from './TechPointRecommendationPage.jsx'
+import AdditionalStatRecommendationPage from './AdditionalStatRecommendationPage.jsx'
 
 const RECOMMENDATION_TABS = [
   {
@@ -67,6 +68,8 @@ export default function RecommendationPage({ characters }) {
         <ResearchRecommendationPage characters={characters} />
       ) : activeTab === 'tech' ? (
         <TechPointRecommendationPage characters={characters} />
+      ) : activeTab === 'bonus-stat' ? (
+        <AdditionalStatRecommendationPage characters={characters} />
       ) : (
         <RecommendationPlaceholder tab={currentTab} />
       )}

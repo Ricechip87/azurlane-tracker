@@ -1,0 +1,401 @@
+{
+  "generatedAt": "2026-07-22 06:44:34 KST",
+  "policy": {
+    "configuredShipTypes": [
+      "구축",
+      "경순",
+      "중순",
+      "대형순",
+      "순전",
+      "전함",
+      "항전",
+      "모니터",
+      "경항모",
+      "항모",
+      "잠수",
+      "잠항모"
+    ],
+    "ignoredShipTypes": [
+      "공작",
+      "운송",
+      "범선"
+    ],
+    "ranking": [
+      "공용 적용",
+      "보유 여부",
+      "남은 단계",
+      "입수 난이도",
+      "대작전 등급",
+      "증가량",
+      "희귀도",
+      "이름"
+    ]
+  },
+  "matrix": {
+    "구축": {
+      "priorities": [
+        "뇌격",
+        "회피",
+        "화력",
+        "장전",
+        "명중"
+      ],
+      "actualStats": [
+        "내구",
+        "뇌격",
+        "대공",
+        "대잠",
+        "명중",
+        "장전",
+        "화력",
+        "회피"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 228,
+        "stat120": 228
+      },
+      "candidateCounts": {
+        "내구": 213,
+        "뇌격": 28,
+        "대공": 30,
+        "대잠": 26,
+        "명중": 16,
+        "장전": 20,
+        "화력": 61,
+        "회피": 34
+      }
+    },
+    "경순": {
+      "priorities": [
+        "대공",
+        "화력",
+        "장전",
+        "명중",
+        "뇌격"
+      ],
+      "actualStats": [
+        "내구",
+        "뇌격",
+        "대공",
+        "대잠",
+        "명중",
+        "장전",
+        "화력",
+        "회피"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 139,
+        "stat120": 139
+      },
+      "candidateCounts": {
+        "내구": 89,
+        "뇌격": 26,
+        "대공": 35,
+        "대잠": 12,
+        "명중": 31,
+        "장전": 17,
+        "화력": 46,
+        "회피": 5
+      }
+    },
+    "중순": {
+      "priorities": [
+        "화력",
+        "장전",
+        "명중",
+        "뇌격"
+      ],
+      "actualStats": [
+        "내구",
+        "뇌격",
+        "대공",
+        "명중",
+        "장전",
+        "화력",
+        "회피"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 98,
+        "stat120": 98
+      },
+      "candidateCounts": {
+        "내구": 89,
+        "뇌격": 14,
+        "대공": 14,
+        "명중": 10,
+        "장전": 9,
+        "화력": 41,
+        "회피": 5
+      }
+    },
+    "대형순": {
+      "priorities": [
+        "화력",
+        "장전",
+        "명중",
+        "뇌격"
+      ],
+      "actualStats": [
+        "내구",
+        "뇌격",
+        "대공",
+        "명중",
+        "장전",
+        "화력",
+        "회피"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 96,
+        "stat120": 96
+      },
+      "candidateCounts": {
+        "내구": 87,
+        "뇌격": 14,
+        "대공": 14,
+        "명중": 8,
+        "장전": 9,
+        "화력": 41,
+        "회피": 5
+      }
+    },
+    "순전": {
+      "priorities": [
+        "화력",
+        "장전",
+        "명중"
+      ],
+      "actualStats": [
+        "내구",
+        "대공",
+        "명중",
+        "장전",
+        "화력",
+        "회피"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 120,
+        "stat120": 120
+      },
+      "candidateCounts": {
+        "내구": 115,
+        "대공": 5,
+        "명중": 14,
+        "장전": 16,
+        "화력": 67,
+        "회피": 21
+      }
+    },
+    "전함": {
+      "priorities": [
+        "화력",
+        "장전",
+        "명중"
+      ],
+      "actualStats": [
+        "내구",
+        "대공",
+        "명중",
+        "장전",
+        "화력",
+        "회피"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 120,
+        "stat120": 98
+      },
+      "candidateCounts": {
+        "내구": 115,
+        "대공": 5,
+        "명중": 14,
+        "장전": 16,
+        "화력": 65,
+        "회피": 1
+      }
+    },
+    "항전": {
+      "priorities": [
+        "화력",
+        "항공",
+        "장전",
+        "명중"
+      ],
+      "actualStats": [
+        "내구",
+        "대공",
+        "명중",
+        "장전",
+        "화력",
+        "회피"
+      ],
+      "configuredWithoutCurrentSource": [
+        "항공"
+      ],
+      "sourceCounts": {
+        "statAcquired": 120,
+        "stat120": 98
+      },
+      "candidateCounts": {
+        "내구": 115,
+        "대공": 5,
+        "명중": 14,
+        "장전": 16,
+        "화력": 65,
+        "회피": 1
+      }
+    },
+    "모니터": {
+      "priorities": [
+        "화력",
+        "장전",
+        "명중"
+      ],
+      "actualStats": [
+        "내구",
+        "뇌격",
+        "대공",
+        "명중",
+        "장전",
+        "화력",
+        "회피"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 96,
+        "stat120": 96
+      },
+      "candidateCounts": {
+        "내구": 87,
+        "뇌격": 14,
+        "대공": 14,
+        "명중": 8,
+        "장전": 9,
+        "화력": 41,
+        "회피": 5
+      }
+    },
+    "경항모": {
+      "priorities": [
+        "항공",
+        "장전",
+        "명중"
+      ],
+      "actualStats": [
+        "내구",
+        "대공",
+        "대잠",
+        "명중",
+        "장전",
+        "항공"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 96,
+        "stat120": 96
+      },
+      "candidateCounts": {
+        "내구": 62,
+        "대공": 7,
+        "대잠": 28,
+        "명중": 15,
+        "장전": 32,
+        "항공": 45
+      }
+    },
+    "항모": {
+      "priorities": [
+        "항공",
+        "장전",
+        "명중"
+      ],
+      "actualStats": [
+        "내구",
+        "대공",
+        "대잠",
+        "명중",
+        "장전",
+        "항공"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 64,
+        "stat120": 86
+      },
+      "candidateCounts": {
+        "내구": 57,
+        "대공": 7,
+        "대잠": 4,
+        "명중": 15,
+        "장전": 28,
+        "항공": 39
+      }
+    },
+    "잠수": {
+      "priorities": [
+        "뇌격",
+        "명중",
+        "회피"
+      ],
+      "actualStats": [
+        "내구",
+        "뇌격",
+        "명중",
+        "화력",
+        "회피"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 36,
+        "stat120": 34
+      },
+      "candidateCounts": {
+        "내구": 12,
+        "뇌격": 33,
+        "명중": 14,
+        "화력": 2,
+        "회피": 9
+      }
+    },
+    "잠항모": {
+      "priorities": [
+        "뇌격",
+        "명중",
+        "항공",
+        "회피"
+      ],
+      "actualStats": [
+        "내구",
+        "뇌격",
+        "명중",
+        "항공",
+        "화력",
+        "회피"
+      ],
+      "configuredWithoutCurrentSource": [],
+      "sourceCounts": {
+        "statAcquired": 36,
+        "stat120": 36
+      },
+      "candidateCounts": {
+        "내구": 12,
+        "뇌격": 33,
+        "명중": 14,
+        "항공": 2,
+        "화력": 2,
+        "회피": 9
+      }
+    }
+  },
+  "broadCoverage": {
+    "모니터중순대형순공용": 192,
+    "경항모항모공용": 150
+  },
+  "invalidBonusCount": 0,
+  "invalidBonuses": [],
+  "unexpectedSourceShipTypes": []
+}

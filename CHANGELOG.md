@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-07-22 - Add Additional-Stat Recommendations
+
+### Added
+- Add a working `추가 스탯작 추천` page for the 12 combat ship types from destroyers through submarine carriers, while excluding repair, munition, and sailing ships.
+- Let users choose a ship type and one of its explicitly prioritized effective stats, then show the current ship-derived and faction-level bonuses separately.
+- Recommend ships with unfinished acquisition or level-120 bonuses and show each candidate's status, target ship types, stage progress, obtainable stat, recommendation reason, and acquisition details.
+- Add a repeatable `audit:additional-stats` command and JSON/Markdown reports for supported types, configured priorities, malformed bonuses, unexpected source types, and shared-target coverage.
+
+### Changed
+- Rank candidates by shared-target coverage, ownership, remaining stages, obtainability, Operation Siren tier, obtainable stat, rarity, and name.
+- Prioritize bonuses shared by heavy cruisers, large cruisers, and monitors for monitor goals; prioritize bonuses shared by light and standard carriers for light-carrier goals.
+- Keep explicitly requested stats selectable even when the current source data contains no matching bonus, so missing candidates are visible instead of silently hiding the choice.
+
+### Verified
+- Confirmed 192 monitor/heavy-cruiser/large-cruiser shared source records and 150 light-carrier/carrier shared source records, with no malformed bonuses or unexpected source ship types.
+- Added regression coverage for priorities, aliases, exclusions, shared-target ordering, progression stages, and candidate sorting.
+
 ## 2026-07-20 - Separate Submarine Fleet-Tech Candidates
 
 ### Changed
