@@ -26,7 +26,7 @@ const statCharacters = [
   { statAcquired: { shipTypes: ['구축'], stat: '명중', value: 1 }, stat120: { shipTypes: ['구축'], stat: '뇌격', value: 1 } },
   { statAcquired: { shipTypes: ['구축'], stat: '회피', value: 1 }, stat120: { shipTypes: ['전함'], stat: '화력', value: 1 } },
 ]
-assert.deepEqual(getAvailableAdditionalStats('구축', statCharacters), ['뇌격', '회피', '화력', '장전', '명중', '내구', '대공'])
+assert.deepEqual(getAvailableAdditionalStats('구축', statCharacters), ['뇌격', '회피', '화력', '장전', '명중'])
 
 const candidates = buildAdditionalStatCandidates([
   {

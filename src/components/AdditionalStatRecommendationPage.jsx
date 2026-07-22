@@ -5,7 +5,6 @@ import {
   ADDITIONAL_STAT_SHIP_TYPES,
   buildAdditionalStatCandidates,
   getAdditionalStatLabel,
-  getAdditionalStatPriorities,
   getAvailableAdditionalStats,
 } from '../utils/additionalStatRecommendations.js'
 import { calcMajorFactionTechPoints } from '../utils/fleetTech.js'
@@ -23,8 +22,7 @@ export default function AdditionalStatRecommendationPage({ characters }) {
   const [rankingData, setRankingData] = useState(null)
   const [dataError, setDataError] = useState('')
   const [openCandidate, setOpenCandidate] = useState(null)
-  const stats = useMemo(() => getAvailableAdditionalStats(shipType, characters), [shipType, characters])
-  const explicitStats = useMemo(() => new Set(getAdditionalStatPriorities(shipType)), [shipType])
+  const stats = useMemo(() => getAvailableAdditionalStats(shipType), [shipType])
   const selectedStat = stats.includes(stat) ? stat : stats[0] || ''
 
   useEffect(() => {
@@ -104,7 +102,7 @@ export default function AdditionalStatRecommendationPage({ characters }) {
       <section className="border border-neutral-700 bg-[#202020]">
         <div className="border-b border-neutral-700 px-4 py-3">
           <h2 className="text-sm font-bold text-gray-100">2. 스탯 선택</h2>
-          <p className="mt-1 text-xs text-gray-500">왼쪽부터 지정 우선순위이며, 나머지 스탯은 뒤에 표시합니다.</p>
+          <p className="mt-1 text-xs text-gray-500">왼쪽부터 해당 함종의 유효 스탯 우선순위입니다.</p>
         </div>
         <div className="flex flex-wrap gap-2 p-4">
           {stats.map((item, index) => (
@@ -114,7 +112,7 @@ export default function AdditionalStatRecommendationPage({ characters }) {
               onClick={() => setStat(item)}
               className={`rounded border px-3 py-1.5 text-xs transition-colors ${selectedStat === item ? 'border-amber-500 bg-amber-950/50 text-amber-200' : 'border-neutral-700 bg-[#181818] text-gray-400 hover:border-neutral-500 hover:text-gray-200'}`}
             >
-              <span className="mr-1 font-black text-gray-500">{explicitStats.has(item) ? index + 1 : '기타'}</span>
+              <span className="mr-1 font-black text-gray-500">{index + 1}</span>
               {getAdditionalStatLabel(item)}
             </button>
           ))}

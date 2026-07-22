@@ -12,6 +12,7 @@
 - Rank candidates by shared-target coverage, ownership, remaining stages, obtainability, Operation Siren tier, obtainable stat, rarity, and name.
 - Prioritize bonuses shared by heavy cruisers, large cruisers, and monitors for monitor goals; prioritize bonuses shared by light and standard carriers for light-carrier goals.
 - Keep explicitly requested stats selectable even when the current source data contains no matching bonus, so missing candidates are visible instead of silently hiding the choice.
+- Show only the explicitly prioritized effective stats in the stat selector and hide unprioritized `기타` entries.
 
 ### Verified
 - Confirmed 192 monitor/heavy-cruiser/large-cruiser shared source records and 150 light-carrier/carrier shared source records, with no malformed bonuses or unexpected source ship types.

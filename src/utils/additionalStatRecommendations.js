@@ -53,21 +53,8 @@ export function getAdditionalStatLabel(stat) {
   return STAT_LABELS[stat] || stat
 }
 
-export function getAvailableAdditionalStats(shipType, characters) {
-  if (!PRIORITIES[shipType]) return []
-  const stats = new Set(PRIORITIES[shipType])
-
-  for (const character of characters) {
-    for (const data of [character.statAcquired, character.stat120]) {
-      if (!data?.stat || !targetsShipType(data, shipType)) continue
-      stats.add(data.stat)
-    }
-  }
-
-  return [...stats].sort((a, b) => (
-    getAdditionalStatPriority(shipType, a) - getAdditionalStatPriority(shipType, b)
-      || a.localeCompare(b, 'ko')
-  ))
+export function getAvailableAdditionalStats(shipType) {
+  return getAdditionalStatPriorities(shipType)
 }
 
 export function buildAdditionalStatCandidates(characters, shipType, stat, rankingData = {}) {
