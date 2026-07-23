@@ -3,11 +3,11 @@
     "region": "KR",
     "blueprintFile": "ship_data_blueprint.json",
     "taskFile": "task_data_template.json",
-    "maxGeneration": 8,
+    "maxGeneration": 9,
     "nextGenerationPolicy": "KR 정식 데이터 편입 후 반영",
     "notes": [
-      "1~8기는 KR 게임 JSON을 기준으로 생성합니다.",
-      "9기는 KR 기본 데이터에 정식 편입된 뒤 추가합니다."
+      "1~9기는 KR 게임 데이터를 기준으로 생성합니다.",
+      "참고용 JSON에 아직 없는 최신 기수는 교차 검증한 KR Lua 보정 데이터로 채우며, JSON에 편입되면 원본을 우선합니다."
     ]
   },
   "ships": [
@@ -2014,6 +2014,233 @@
         "source": "game-data"
       },
       "sourceStatus": "verified"
+    },
+    {
+      "id": "P043",
+      "gid": 29906,
+      "generation": 9,
+      "unlockText": "로열 네이비 기술 Pt 700 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "로열",
+          "value": 700
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "로열"
+          ],
+          "lane": "후열",
+          "requiredXp": 1000000,
+          "taskId": 60432
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "로열"
+          ],
+          "lane": "후열",
+          "requiredXp": 2000000,
+          "taskId": 60435
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified",
+      "name": "던컨",
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "순전",
+      "iconUrl": "/azurlane-tracker/ship-icons/299060.png"
+    },
+    {
+      "id": "P044",
+      "gid": 39908,
+      "generation": 9,
+      "unlockText": "사쿠라 엠파이어 기술 Pt 1000 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "중앵",
+          "value": 1000
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60442
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "중앵"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60445
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified",
+      "name": "타카하시",
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "경순",
+      "iconUrl": "/azurlane-tracker/ship-icons/399080.png"
+    },
+    {
+      "id": "P045",
+      "gid": 49911,
+      "generation": 9,
+      "unlockText": "메탈 블러드 기술 Pt 1050 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "철혈",
+          "value": 1050
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 1200000,
+          "taskId": 60452
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "철혈"
+          ],
+          "lane": "후열",
+          "requiredXp": 2400000,
+          "taskId": 60455
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified",
+      "name": "막스 임멜만",
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "철혈",
+      "shipType": "항모",
+      "iconUrl": "/azurlane-tracker/ship-icons/499110.png"
+    },
+    {
+      "id": "P046",
+      "gid": 89905,
+      "generation": 9,
+      "unlockText": "아이리스 리브레 기술 Pt 280 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "아이리스",
+          "value": 280
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "전열",
+          "requiredXp": 1000000,
+          "taskId": 60462
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "아이리스",
+            "비시아"
+          ],
+          "lane": "전열",
+          "requiredXp": 2000000,
+          "taskId": 60465
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified",
+      "name": "오라주",
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "아이리스",
+      "shipType": "구축",
+      "iconUrl": "/azurlane-tracker/ship-icons/899050.png"
+    },
+    {
+      "id": "P047",
+      "gid": 129901,
+      "generation": 9,
+      "unlockText": "이글 유니온 기술 Pt 950 이상, 로열 네이비 기술 Pt 1000 이상",
+      "unlockRequirements": [
+        {
+          "type": "tech-points",
+          "faction": "유니온",
+          "value": 950
+        },
+        {
+          "type": "tech-points",
+          "faction": "로열",
+          "value": 1000
+        }
+      ],
+      "xpPhases": [
+        {
+          "phase": 1,
+          "factions": [
+            "로열"
+          ],
+          "lane": "후열",
+          "requiredXp": 1200000,
+          "taskId": 60472
+        },
+        {
+          "phase": 2,
+          "factions": [
+            "유니온"
+          ],
+          "lane": "후열",
+          "requiredXp": 2400000,
+          "taskId": 60475
+        }
+      ],
+      "coinStrengthening": {
+        "available": false,
+        "source": "game-data"
+      },
+      "sourceStatus": "verified",
+      "name": "발파라이소",
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "페드레리아",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/1299010.png"
     }
   ]
 }

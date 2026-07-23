@@ -12,6 +12,9 @@ assert.equal(normalizeFactionValue('SN'), '노스유니온')
 assert.equal(normalizeFactionValue('FFNF'), '아이리스')
 assert.equal(normalizeFactionValue('MNF'), '비시아')
 assert.equal(normalizeFactionValue('HNLMS'), '튤리퍼')
+assert.equal(normalizeFactionValue('Liga de Pedrería'), '페드레리아')
+assert.equal(normalizeFactionValue('Liga de Pedreria'), '페드레리아')
+assert.equal(normalizeFactionValue('屠龙联盟'), '페드레리아')
 assert.equal(normalizeFactionValue('이글 유니온'), '유니온')
 assert.equal(normalizeFactionValue('로열 네이비'), '로열')
 assert.equal(normalizeFactionValue('노스 유니온'), '노스유니온')
@@ -36,6 +39,7 @@ assert.equal(getFactionBadgeName('유니온'), 'USS')
 assert.equal(getFactionBadgeName('USS'), 'USS')
 assert.equal(getFactionBadgeName('노스유니온'), 'SN')
 assert.equal(getFactionBadgeName('로열'), 'HMS')
+assert.equal(getFactionBadgeName('페드레리아'), '페드레리아')
 assert.equal(getFactionDisplayText('유니온 점수 / 노스유니온 조합'), '이글 유니온 점수 / 노스 유니온 조합')
 assert.equal(getFactionDisplayText('이글 유니온 또는 노스 유니온'), '이글 유니온 또는 노스 유니온')
 
@@ -47,6 +51,10 @@ assert.deepEqual(
 assert.equal(
   getFactionOptions(['노스유니온']).find(o => o.value === '노스유니온').label,
   '노스 유니온 (SN)'
+)
+assert.equal(
+  getFactionOptions(['페드레리아']).find(o => o.value === '페드레리아').label,
+  '페드레리아'
 )
 
 assert.equal(getFactionOptions(['라이자', '기타']).find(o => o.value === '__faction-primary-divider').disabled, true)

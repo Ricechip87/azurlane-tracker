@@ -4,6 +4,7 @@ import path from 'node:path'
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CHARACTERS_PATH = path.join(ROOT, 'src', 'data', 'characters.json')
 const OUTPUT_PATH = path.join(ROOT, 'src', 'data', 'researchRecommendations.json')
+const OVERRIDES_PATH = path.join(ROOT, 'src', 'data', 'researchRecommendationOverrides.json')
 
 const FACTION_PATTERNS = [
   ['이글 유니온', '유니온'],
@@ -19,6 +20,10 @@ const FACTION_PATTERNS = [
   ['비시아 성좌', '비시아'],
   ['비시아 큐리아', '비시아'],
   ['튤리퍼', '튤리퍼'],
+  ['Liga de Pedrería', '페드레리아'],
+  ['Liga de Pedreria', '페드레리아'],
+  ['屠龙联盟', '페드레리아'],
+  ['페드레리아', '페드레리아'],
 ]
 
 const FACTION_BY_NATIONALITY_ID = new Map([
@@ -33,6 +38,7 @@ const FACTION_BY_NATIONALITY_ID = new Map([
   [9, '비시아'],
   [10, '템페스타'],
   [11, '튤리퍼'],
+  [12, '페드레리아'],
 ])
 
 function readJson(filePath) {
@@ -135,7 +141,7 @@ const tasks = readJson(taskPath)
 const characters = readJson(CHARACTERS_PATH)
 const characterByGid = new Map(characters.map(character => [Number(character.gid), character]))
 
-const ships = blueprints.map(blueprint => {
+const sourceShips = blueprints.map(blueprint => {
   const character = characterByGid.get(Number(blueprint.id))
   if (!character) throw new Error(`개발함 캐릭터를 찾지 못했습니다: gid ${blueprint.id}`)
 
@@ -163,7 +169,29 @@ const ships = blueprints.map(blueprint => {
     },
     sourceStatus: 'verified',
   }
-}).sort((a, b) => a.generation - b.generation || String(a.id).localeCompare(String(b.id)))
+})
+
+const sourceShipIds = new Set(sourceShips.map(ship => String(ship.id)))
+const overrideShips = readJson(OVERRIDES_PATH).ships
+  .filter(override => !sourceShipIds.has(String(override.id)))
+  .map(override => {
+    const character = characterByGid.get(Number(override.gid))
+    if (!character) throw new Error(`개발함 보정 캐릭터를 찾지 못했습니다: gid ${override.gid}`)
+    return {
+      ...override,
+      id: character.id,
+      gid: character.gid,
+      name: character.name,
+      planRarity: character.rarity === 'UR' ? 'DR' : 'PR',
+      rarity: character.rarity,
+      faction: character.faction,
+      shipType: character.shipType,
+      iconUrl: character.iconUrl,
+    }
+  })
+
+const ships = [...sourceShips, ...overrideShips]
+  .sort((a, b) => a.generation - b.generation || String(a.id).localeCompare(String(b.id)))
 
 const output = {
   source: {
@@ -173,8 +201,8 @@ const output = {
     maxGeneration: Math.max(...ships.map(ship => ship.generation)),
     nextGenerationPolicy: 'KR 정식 데이터 편입 후 반영',
     notes: [
-      '1~8기는 KR 게임 JSON을 기준으로 생성합니다.',
-      '9기는 KR 기본 데이터에 정식 편입된 뒤 추가합니다.',
+      '1~9기는 KR 게임 데이터를 기준으로 생성합니다.',
+      '참고용 JSON에 아직 없는 최신 기수는 교차 검증한 KR Lua 보정 데이터로 채우며, JSON에 편입되면 원본을 우선합니다.',
     ],
   },
   ships,

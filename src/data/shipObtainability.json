@@ -1,27 +1,27 @@
 {
   "meta": {
     "note": "KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.",
-    "generatedAt": "2026-07-18T21:58:37.414Z",
-    "total": 870,
-    "withObtain": 870,
+    "generatedAt": "2026-07-23T12:21:36.105Z",
+    "total": 875,
+    "withObtain": 875,
     "withoutObtain": 0,
     "availability": {
       "active-event": 5,
       "collab-unknown": 89,
-      "permanent": 601,
-      "rerun-wait": 175
+      "permanent": 609,
+      "rerun-wait": 172
     },
     "difficulty": {
       "easy": 327,
       "event": 5,
-      "hard": 59,
-      "limited": 264,
-      "normal": 215
+      "hard": 64,
+      "limited": 261,
+      "normal": 218
     },
     "acquisitionRoutes": {
       "active-event": 5,
       "archive-drop": 63,
-      "construction": 320,
+      "construction": 323,
       "core-monthly": 25,
       "fixed-exchange": 112,
       "guaranteed-reward": 21,
@@ -29,7 +29,7 @@
       "later-map-drop": 114,
       "map-drop": 81,
       "rotating-exchange": 216,
-      "special-exchange": 63
+      "special-exchange": 68
     },
     "source": "https://jforplay.github.io/altoy"
   },
@@ -33819,6 +33819,77 @@
       }
     },
     {
+      "id": "P043",
+      "gid": 29906,
+      "name": "던컨",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "순전",
+      "obtain": [
+        "연구도크"
+      ],
+      "historicalObtain": [
+        "연구도크"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": true,
+        "timeline": false
+      },
+      "availability": {
+        "key": "permanent",
+        "label": "상시 획득"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "연구도크"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "연구도크"
+        ]
+      },
+      "difficulty": {
+        "key": "hard",
+        "label": "어려움",
+        "reasons": [
+          "상시 획득처",
+          "연구도크"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
       "id": 151,
       "gid": 30101,
       "name": "후부키",
@@ -48307,6 +48378,77 @@
       }
     },
     {
+      "id": "P044",
+      "gid": 39908,
+      "name": "타카하시",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "경순",
+      "obtain": [
+        "연구도크"
+      ],
+      "historicalObtain": [
+        "연구도크"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": true,
+        "timeline": false
+      },
+      "availability": {
+        "key": "permanent",
+        "label": "상시 획득"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "연구도크"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "연구도크"
+        ]
+      },
+      "difficulty": {
+        "key": "hard",
+        "label": "어려움",
+        "reasons": [
+          "상시 획득처",
+          "연구도크"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
       "id": 233,
       "gid": 40101,
       "name": "Z1",
@@ -56013,6 +56155,77 @@
       }
     },
     {
+      "id": "P045",
+      "gid": 49911,
+      "name": "막스 임멜만",
+      "rarity": "UR",
+      "faction": "철혈",
+      "shipType": "항모",
+      "obtain": [
+        "연구도크"
+      ],
+      "historicalObtain": [
+        "연구도크"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": true,
+        "timeline": false
+      },
+      "availability": {
+        "key": "permanent",
+        "label": "상시 획득"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "연구도크"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "연구도크"
+        ]
+      },
+      "difficulty": {
+        "key": "hard",
+        "label": "어려움",
+        "reasons": [
+          "상시 획득처",
+          "연구도크"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
       "id": 253,
       "gid": 50101,
       "name": "안샨",
@@ -62179,7 +62392,7 @@
       "faction": "노스유니온",
       "shipType": "경순",
       "obtain": [
-        "한정 이벤트: 극지 폭풍"
+        "소형함 상시 건조"
       ],
       "historicalObtain": [
         "한정 이벤트: 극지 폭풍"
@@ -62188,10 +62401,10 @@
         "Event: Frostfall"
       ],
       "build": {
-        "light": false,
+        "light": true,
         "heavy": false,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "01:32:00"
       },
       "mapDrops": [],
@@ -62200,29 +62413,50 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
-        "other": false,
-        "timeline": false
+        "other": true,
+        "timeline": true
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "소형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "construction",
+        "label": "상시 건조",
+        "certainty": "random",
+        "rank": 2,
+        "sources": [
+          "소형함 상시 건조"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "복각 대기"
+          "상시 건조",
+          "상시 획득처",
+          "KR 상시편입 확인",
+          "소형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -62483,7 +62717,7 @@
       "faction": "노스유니온",
       "shipType": "중순",
       "obtain": [
-        "한정 이벤트: 극지 폭풍"
+        "중형함 상시 건조"
       ],
       "historicalObtain": [
         "한정 이벤트: 극지 폭풍"
@@ -62493,9 +62727,9 @@
       ],
       "build": {
         "light": false,
-        "heavy": false,
+        "heavy": true,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "02:05:00"
       },
       "mapDrops": [],
@@ -62504,29 +62738,50 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
-        "other": false,
-        "timeline": false
+        "other": true,
+        "timeline": true
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "중형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "construction",
+        "label": "상시 건조",
+        "certainty": "random",
+        "rank": 2,
+        "sources": [
+          "중형함 상시 건조"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "복각 대기"
+          "상시 건조",
+          "상시 획득처",
+          "KR 상시편입 확인",
+          "중형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -62963,7 +63218,7 @@
       "faction": "노스유니온",
       "shipType": "전함",
       "obtain": [
-        "한정 이벤트: 극지 폭풍"
+        "중형함 상시 건조"
       ],
       "historicalObtain": [
         "한정 이벤트: 극지 폭풍"
@@ -62973,9 +63228,9 @@
       ],
       "build": {
         "light": false,
-        "heavy": false,
+        "heavy": true,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "03:40:00"
       },
       "mapDrops": [],
@@ -62984,29 +63239,50 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
-        "other": false,
-        "timeline": false
+        "other": true,
+        "timeline": true
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "중형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "construction",
+        "label": "상시 건조",
+        "certainty": "random",
+        "rank": 2,
+        "sources": [
+          "중형함 상시 건조"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "복각 대기"
+          "상시 건조",
+          "상시 획득처",
+          "KR 상시편입 확인",
+          "중형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {
@@ -65563,6 +65839,77 @@
       }
     },
     {
+      "id": "P046",
+      "gid": 89905,
+      "name": "오라주",
+      "rarity": "SSR",
+      "faction": "아이리스",
+      "shipType": "구축",
+      "obtain": [
+        "연구도크"
+      ],
+      "historicalObtain": [
+        "연구도크"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": true,
+        "timeline": false
+      },
+      "availability": {
+        "key": "permanent",
+        "label": "상시 획득"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "연구도크"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "연구도크"
+        ]
+      },
+      "difficulty": {
+        "key": "hard",
+        "label": "어려움",
+        "reasons": [
+          "상시 획득처",
+          "연구도크"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
       "id": 351,
       "gid": 90101,
       "name": "르 마르스",
@@ -67524,6 +67871,77 @@
         "localResource": true,
         "altoy": true,
         "status": "matched"
+      }
+    },
+    {
+      "id": "P047",
+      "gid": 129901,
+      "name": "발파라이소",
+      "rarity": "UR",
+      "faction": "페드레리아",
+      "shipType": "전함",
+      "obtain": [
+        "연구도크"
+      ],
+      "historicalObtain": [
+        "연구도크"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": true,
+        "timeline": false
+      },
+      "availability": {
+        "key": "permanent",
+        "label": "상시 획득"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "연구도크"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "연구도크"
+        ]
+      },
+      "difficulty": {
+        "key": "hard",
+        "label": "어려움",
+        "reasons": [
+          "상시 획득처",
+          "연구도크"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {

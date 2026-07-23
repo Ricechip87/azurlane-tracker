@@ -118,7 +118,7 @@ export default function ResearchRecommendationPage({ characters }) {
       </div>
 
       <div className="rounded border border-sky-900/70 bg-sky-950/25 px-4 py-3 text-sm leading-6 text-sky-100">
-        <strong>9기 반영 정책:</strong> KR 기본 데이터에 정식 편입된 뒤 추가합니다. 현재 추천은 검증된 1~8기 42명을 기준으로 계산합니다.
+        <strong>9기 반영 완료:</strong> KR 인게임 해금 조건·경험치 임무·기술점수를 교차 검증한 1~9기 47명을 기준으로 계산합니다.
       </div>
 
       <WebResearchRecommendations groups={webRecommendationGroups} onSelect={selectGoal} />

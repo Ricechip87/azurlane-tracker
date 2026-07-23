@@ -34,6 +34,9 @@ const FACTION_ALIASES = new Map([
   ['Tulipa', '튤리퍼'],
   ['튤리퍼 왕국', '튤리퍼'],
   ['튤리파', '튤리퍼'],
+  ['Liga de Pedrería', '페드레리아'],
+  ['Liga de Pedreria', '페드레리아'],
+  ['屠龙联盟', '페드레리아'],
 ])
 
 export const FACTION_ORDER = [
@@ -48,6 +51,7 @@ export const FACTION_ORDER = [
   { value: '아이리스', label: '아이리스 (FFNF)' },
   { value: '비시아', label: '비시아 (MNF)' },
   { value: '튤리퍼', label: '튤리퍼 (HNLMS)' },
+  { value: '페드레리아', label: '페드레리아' },
   { value: 'META', label: 'META' },
   { value: '템페스타', label: '템페스타' },
   { value: '기타', label: '기타' },

@@ -1,5 +1,27 @@
 # Change Log
 
+## 2026-07-23 - Add Pedrería and Research Series 9
+
+### Added
+- Add the new `페드레리아` faction across roster filtering, faction labels, badges, and recommendation ordering.
+- Add all five KR research-series 9 ships: 던컨, 타카하시, 막스 임멜만, 오라주, and 발파라이소.
+- Add local icons and research card artwork for all five ships.
+
+### Changed
+- Extend development recommendations from series 1–8 (42 ships) to series 1–9 (47 ships).
+- Apply the verified KR unlock requirements, both XP phases, research-dock obtainability, and ship-specific fleet-tech points and stat bonuses.
+- Keep series 9 out of growth-recommendation tiers until the external recommendation source evaluates them.
+- Use a checked-in KR Lua fallback for series 9 while the public AzurLaneData JSON and ALtoy research tracker remain one generation behind; prefer the standard JSON automatically once it catches up.
+
+## 2026-07-23 - Refine Additional-Stat Recommendation Layout
+
+### Changed
+- Move ship-type and effective-stat selection, current totals, and ranking guidance into one compact left control panel.
+- Replace the sparse full-width candidate table with a responsive two-column card list.
+- Add local ship artwork and compact rarity, status, Operation Siren tier, obtainability, target, stage, and remaining-gain badges to every candidate.
+- Fall back to the complete local ship-icon set when a candidate has no card artwork.
+- Stack the control panel above the candidate list on narrow screens and keep it visible beside the list on wide screens.
+
 ## 2026-07-22 - Add Additional-Stat Recommendations
 
 ### Added

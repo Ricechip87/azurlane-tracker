@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-07-18T21:59:16.883Z",
+  "generatedAt": "2026-07-23T15:49:42.086Z",
   "summary": {
     "identityExceptions": 6,
-    "obtainabilityAltoyOnly": 19,
-    "obtainabilityDifferent": 21,
-    "missingReferenceImages": 37,
-    "cnOnlyExcluded": 5,
+    "obtainabilityAltoyOnly": 24,
+    "obtainabilityDifferent": 24,
+    "missingReferenceImages": 42,
+    "cnOnlyExcluded": 3,
     "availability": {
       "active-event": 5,
       "collab-unknown": 89,
-      "permanent": 601,
-      "rerun-wait": 175
+      "permanent": 609,
+      "rerun-wait": 172
     },
     "acquisitionRoutes": {
       "active-event": 5,
       "archive-drop": 63,
-      "construction": 320,
+      "construction": 323,
       "core-monthly": 25,
       "fixed-exchange": 112,
       "guaranteed-reward": 21,
@@ -23,7 +23,7 @@
       "later-map-drop": 114,
       "map-drop": 81,
       "rotating-exchange": 216,
-      "special-exchange": 63
+      "special-exchange": 68
     }
   },
   "identityExceptions": [
@@ -84,6 +84,21 @@
   ],
   "obtainabilityReview": [
     {
+      "gid": 29906,
+      "name": "던컨",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "연구도크"
+      ],
+      "appliedObtain": [
+        "연구도크"
+      ],
+      "iconFile": "299060.png"
+    },
+    {
       "gid": 30321,
       "name": "꼬마 운젠",
       "status": "altoy-only",
@@ -112,6 +127,21 @@
         "이벤트: 아직 미숙한 수호자"
       ],
       "iconFile": "305170.png"
+    },
+    {
+      "gid": 39908,
+      "name": "타카하시",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "연구도크"
+      ],
+      "appliedObtain": [
+        "연구도크"
+      ],
+      "iconFile": "399080.png"
     },
     {
       "gid": 40114,
@@ -264,6 +294,75 @@
       "iconFile": "408150.png"
     },
     {
+      "gid": 49911,
+      "name": "막스 임멜만",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "연구도크"
+      ],
+      "appliedObtain": [
+        "연구도크"
+      ],
+      "iconFile": "499110.png"
+    },
+    {
+      "gid": 70207,
+      "name": "보로실로프",
+      "status": "different",
+      "reason": "KR 스냅샷과 ALtoy의 입수처 문구가 서로 다름",
+      "resolution": "review",
+      "krObtain": [
+        "한정 이벤트: 극지 폭풍"
+      ],
+      "altoyObtain": [
+        "이벤트: 극지 폭풍",
+        "소형함 건조"
+      ],
+      "appliedObtain": [
+        "소형함 상시 건조"
+      ],
+      "iconFile": "702070.png"
+    },
+    {
+      "gid": 70302,
+      "name": "쿠르스크",
+      "status": "different",
+      "reason": "KR 스냅샷과 ALtoy의 입수처 문구가 서로 다름",
+      "resolution": "review",
+      "krObtain": [
+        "한정 이벤트: 극지 폭풍"
+      ],
+      "altoyObtain": [
+        "이벤트: 극지 폭풍",
+        "대형함 건조"
+      ],
+      "appliedObtain": [
+        "중형함 상시 건조"
+      ],
+      "iconFile": "703020.png"
+    },
+    {
+      "gid": 70507,
+      "name": "세바스토폴",
+      "status": "different",
+      "reason": "KR 스냅샷과 ALtoy의 입수처 문구가 서로 다름",
+      "resolution": "review",
+      "krObtain": [
+        "한정 이벤트: 극지 폭풍"
+      ],
+      "altoyObtain": [
+        "이벤트: 극지 폭풍",
+        "대형함 건조"
+      ],
+      "appliedObtain": [
+        "중형함 상시 건조"
+      ],
+      "iconFile": "705070.png"
+    },
+    {
       "gid": 80106,
       "name": "랑트레피드",
       "status": "altoy-only",
@@ -307,6 +406,21 @@
         "현재 이벤트: 환몽의 카발카드 (2026-07-23까지)"
       ],
       "iconFile": "818010.png"
+    },
+    {
+      "gid": 89905,
+      "name": "오라주",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "연구도크"
+      ],
+      "appliedObtain": [
+        "연구도크"
+      ],
+      "iconFile": "899050.png"
     },
     {
       "gid": 90114,
@@ -380,6 +494,21 @@
         "중형함 상시 건조"
       ],
       "iconFile": "904020.png"
+    },
+    {
+      "gid": 129901,
+      "name": "발파라이소",
+      "status": "altoy-only",
+      "reason": "ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음",
+      "resolution": "review",
+      "krObtain": [],
+      "altoyObtain": [
+        "연구도크"
+      ],
+      "appliedObtain": [
+        "연구도크"
+      ],
+      "iconFile": "1299010.png"
     },
     {
       "gid": 970101,
@@ -748,7 +877,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "101050.png"
     },
     {
@@ -758,7 +887,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "101060.png"
     },
     {
@@ -768,7 +897,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "101070.png"
     },
     {
@@ -778,7 +907,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "101090.png"
     },
     {
@@ -788,7 +917,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "101120.png"
     },
     {
@@ -798,7 +927,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "101170.png"
     },
     {
@@ -808,7 +937,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "101240.png"
     },
     {
@@ -818,7 +947,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "101250.png"
     },
     {
@@ -828,7 +957,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "103030.png"
     },
     {
@@ -838,7 +967,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "103040.png"
     },
     {
@@ -848,7 +977,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "103060.png"
     },
     {
@@ -858,7 +987,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "103070.png"
     },
     {
@@ -868,7 +997,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "106010.png"
     },
     {
@@ -878,7 +1007,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "107070.png"
     },
     {
@@ -888,7 +1017,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "201010.png"
     },
     {
@@ -898,7 +1027,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "201080.png"
     },
     {
@@ -908,7 +1037,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "201090.png"
     },
     {
@@ -918,7 +1047,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "201100.png"
     },
     {
@@ -928,7 +1057,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "201120.png"
     },
     {
@@ -938,7 +1067,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "201210.png"
     },
     {
@@ -948,7 +1077,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "201220.png"
     },
     {
@@ -958,7 +1087,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "203020.png"
     },
     {
@@ -968,7 +1097,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "203030.png"
     },
     {
@@ -978,7 +1107,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "203040.png"
     },
     {
@@ -988,7 +1117,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "203050.png"
     },
     {
@@ -998,7 +1127,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "204030.png"
     },
     {
@@ -1008,8 +1137,20 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "205060.png"
+    },
+    {
+      "gid": 29906,
+      "name": "던컨",
+      "skinId": 299060,
+      "missing": [
+        "icon.png",
+        "shipyard.png",
+        "painting.png"
+      ],
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 icon.png, shipyard.png, painting.png가 없음 (앱 공개 이미지는 별도 보충)",
+      "iconFile": "299060.png"
     },
     {
       "gid": 31201,
@@ -1018,8 +1159,20 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "312010.png"
+    },
+    {
+      "gid": 39908,
+      "name": "타카하시",
+      "skinId": 399080,
+      "missing": [
+        "icon.png",
+        "shipyard.png",
+        "painting.png"
+      ],
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 icon.png, shipyard.png, painting.png가 없음 (앱 공개 이미지는 별도 보충)",
+      "iconFile": "399080.png"
     },
     {
       "gid": 40123,
@@ -1028,7 +1181,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "401230.png"
     },
     {
@@ -1038,7 +1191,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "403030.png"
     },
     {
@@ -1048,8 +1201,44 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "405010.png"
+    },
+    {
+      "gid": 49911,
+      "name": "막스 임멜만",
+      "skinId": 499110,
+      "missing": [
+        "icon.png",
+        "shipyard.png",
+        "painting.png"
+      ],
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 icon.png, shipyard.png, painting.png가 없음 (앱 공개 이미지는 별도 보충)",
+      "iconFile": "499110.png"
+    },
+    {
+      "gid": 89905,
+      "name": "오라주",
+      "skinId": 899050,
+      "missing": [
+        "icon.png",
+        "shipyard.png",
+        "painting.png"
+      ],
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 icon.png, shipyard.png, painting.png가 없음 (앱 공개 이미지는 별도 보충)",
+      "iconFile": "899050.png"
+    },
+    {
+      "gid": 129901,
+      "name": "발파라이소",
+      "skinId": 1299010,
+      "missing": [
+        "icon.png",
+        "shipyard.png",
+        "painting.png"
+      ],
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 icon.png, shipyard.png, painting.png가 없음 (앱 공개 이미지는 별도 보충)",
+      "iconFile": "1299010.png"
     },
     {
       "gid": 1030001,
@@ -1058,7 +1247,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "10300010.webp"
     },
     {
@@ -1068,7 +1257,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "10300020.webp"
     },
     {
@@ -1078,7 +1267,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "10300030.webp"
     },
     {
@@ -1088,7 +1277,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "10300040.webp"
     },
     {
@@ -1098,7 +1287,7 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "10300050.webp"
     },
     {
@@ -1108,33 +1297,23 @@
       "missing": [
         "painting.png"
       ],
-      "reason": "Fernando2603 원격 경로에서 painting.png를 찾지 못함",
+      "reason": "읽기 전용 참고용/Fernando 스냅샷에 painting.png가 없음 (앱 공개 이미지는 별도 보충)",
       "iconFile": "10300060.webp"
     }
   ],
   "cnOnlyExcluded": [
     {
-      "gid": 29906,
+      "gid": 20115,
       "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
       "iconFile": null
     },
     {
-      "gid": 39908,
+      "gid": 20237,
       "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
       "iconFile": null
     },
     {
-      "gid": 49911,
-      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
-      "iconFile": null
-    },
-    {
-      "gid": 89905,
-      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
-      "iconFile": null
-    },
-    {
-      "gid": 129901,
+      "gid": 20314,
       "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
       "iconFile": null
     }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22 06:44:34 KST",
+  "generatedAt": "2026-07-23 21:25:07 KST",
   "policy": {
     "configuredShipTypes": [
       "구축",
@@ -52,12 +52,12 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 228,
-        "stat120": 228
+        "statAcquired": 229,
+        "stat120": 229
       },
       "candidateCounts": {
-        "내구": 213,
-        "뇌격": 28,
+        "내구": 214,
+        "뇌격": 29,
         "대공": 30,
         "대잠": 26,
         "명중": 16,
@@ -86,13 +86,13 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 139,
-        "stat120": 139
+        "statAcquired": 140,
+        "stat120": 140
       },
       "candidateCounts": {
         "내구": 89,
-        "뇌격": 26,
-        "대공": 35,
+        "뇌격": 27,
+        "대공": 36,
         "대잠": 12,
         "명중": 31,
         "장전": 17,
@@ -178,15 +178,15 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 120,
-        "stat120": 120
+        "statAcquired": 122,
+        "stat120": 122
       },
       "candidateCounts": {
-        "내구": 115,
+        "내구": 117,
         "대공": 5,
-        "명중": 14,
+        "명중": 15,
         "장전": 16,
-        "화력": 67,
+        "화력": 68,
         "회피": 21
       }
     },
@@ -206,15 +206,15 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 120,
-        "stat120": 98
+        "statAcquired": 122,
+        "stat120": 100
       },
       "candidateCounts": {
-        "내구": 115,
+        "내구": 117,
         "대공": 5,
-        "명중": 14,
+        "명중": 15,
         "장전": 16,
-        "화력": 65,
+        "화력": 66,
         "회피": 1
       }
     },
@@ -237,15 +237,15 @@
         "항공"
       ],
       "sourceCounts": {
-        "statAcquired": 120,
-        "stat120": 98
+        "statAcquired": 122,
+        "stat120": 100
       },
       "candidateCounts": {
-        "내구": 115,
+        "내구": 117,
         "대공": 5,
-        "명중": 14,
+        "명중": 15,
         "장전": 16,
-        "화력": 65,
+        "화력": 66,
         "회피": 1
       }
     },
@@ -295,16 +295,16 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 96,
-        "stat120": 96
+        "statAcquired": 97,
+        "stat120": 97
       },
       "candidateCounts": {
-        "내구": 62,
+        "내구": 63,
         "대공": 7,
         "대잠": 28,
         "명중": 15,
         "장전": 32,
-        "항공": 45
+        "항공": 46
       }
     },
     "항모": {
@@ -323,16 +323,16 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 64,
-        "stat120": 86
+        "statAcquired": 65,
+        "stat120": 87
       },
       "candidateCounts": {
-        "내구": 57,
+        "내구": 58,
         "대공": 7,
         "대잠": 4,
         "명중": 15,
         "장전": 28,
-        "항공": 39
+        "항공": 40
       }
     },
     "잠수": {
@@ -393,7 +393,7 @@
   },
   "broadCoverage": {
     "모니터중순대형순공용": 192,
-    "경항모항모공용": 150
+    "경항모항모공용": 152
   },
   "invalidBonusCount": 0,
   "invalidBonuses": [],

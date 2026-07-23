@@ -7,23 +7,24 @@ import { officialRecordToCharacterTech, parseFleetTechLua } from './lib/fleet-te
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const paths = {
   characters: 'src/data/characters.json',
-  altoy: '참고용/ALtoy/data/ship_info_data.json',
-  krShips: '참고용/AzurLaneData/KR/ShareCfg/ship_data_group.json',
+  altoy: process.env.ALTOY_DATA_PATH || '참고용/ALtoy/data/ship_info_data.json',
+  krShips: process.env.KR_SHIP_GROUP_PATH || '참고용/AzurLaneData/KR/ShareCfg/ship_data_group.json',
   cnJsonTech: '참고용/AzurLaneData/CN/ShareCfg/fleet_tech_ship_template.json',
   enTech: '참고용/AzurLaneData/EN/ShareCfg/fleet_tech_ship_template.json',
   jpTech: '참고용/AzurLaneData/JP/ShareCfg/fleet_tech_ship_template.json',
   krTech: '참고용/AzurLaneData/KR/ShareCfg/fleet_tech_ship_template.json',
   twTech: '참고용/AzurLaneData/TW/ShareCfg/fleet_tech_ship_template.json',
-  cnTech: '참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua',
+  cnTech: process.env.CN_TECH_LUA_PATH || '참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua',
 }
 
-const readJson = relative => JSON.parse(fs.readFileSync(path.join(root, relative), 'utf8'))
+const resolveSourcePath = sourcePath => path.isAbsolute(sourcePath) ? sourcePath : path.join(root, sourcePath)
+const readJson = sourcePath => JSON.parse(fs.readFileSync(resolveSourcePath(sourcePath), 'utf8'))
 const characters = readJson(paths.characters)
 const altoy = readJson(paths.altoy)
 const krShips = readJson(paths.krShips)
 const regionalTech = Object.fromEntries(['cnJsonTech', 'enTech', 'jpTech', 'krTech', 'twTech'].map(name => [name, readJson(paths[name])]))
 const krTech = regionalTech.krTech
-const cnTech = parseFleetTechLua(fs.readFileSync(path.join(root, paths.cnTech), 'utf8'))
+const cnTech = parseFleetTechLua(fs.readFileSync(resolveSourcePath(paths.cnTech), 'utf8'))
 const altoyByGid = new Map(altoy.map(ship => [String(ship.gid), ship]))
 const altoyByName = new Map(altoy.map(ship => [normalizeName(ship.name), ship]))
 const appGids = new Set(characters.map(ship => String(ship.gid)))
@@ -87,8 +88,8 @@ const report = {
     cnOnlyShipsDisplayed: false,
   },
   sources: Object.fromEntries(Object.entries(paths).map(([name, relative]) => [name, {
-    path: relative,
-    sha256: sha256(path.join(root, relative)),
+    path: displaySourcePath(relative),
+    sha256: sha256(resolveSourcePath(relative)),
   }])),
   display: {
     appCount: characters.length,
@@ -139,6 +140,11 @@ function normalizeName(value) {
 
 function sha256(file) {
   return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')
+}
+
+function displaySourcePath(sourcePath) {
+  if (!path.isAbsolute(sourcePath)) return sourcePath
+  return `external/${path.basename(sourcePath)}`
 }
 
 function pick(record, fields) {

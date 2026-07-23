@@ -12,7 +12,9 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const referenceRoot = path.join(root, '참고용')
 const regions = ['CN', 'EN', 'JP', 'KR', 'TW']
 const sheetPath = path.join(referenceRoot, '벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv')
-const cnLuaPath = path.join(referenceRoot, 'AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua')
+const cnLuaPath = process.env.CN_TECH_LUA_PATH
+  ? path.resolve(process.env.CN_TECH_LUA_PATH)
+  : path.join(referenceRoot, 'AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua')
 const appCharactersPath = path.join(root, 'src/data/characters.json')
 const appLevelsPath = path.join(root, 'src/data/fleetTechLevelBonuses.json')
 const nameAliases = { 잉그러햄: '잉그레이엄' }

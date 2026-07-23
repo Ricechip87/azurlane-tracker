@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T21:59:16.717Z",
+  "generatedAt": "2026-07-23T15:49:41.963Z",
   "policy": {
     "displayScope": "ALtoy/KR service roster only; name fallback handles six Utawarerumono skin-ID identities",
     "fleetTechPriority": [
@@ -13,11 +13,11 @@
   "sources": {
     "characters": {
       "path": "src/data/characters.json",
-      "sha256": "e269f5ead7c6268fd66b5e7a2d94bab19ce1897f541001121ba478fd727080d5"
+      "sha256": "53462029adf1c6d7033a167152f1cdb98477b92de0a3ebc906e7793795f2985b"
     },
     "altoy": {
-      "path": "참고용/ALtoy/data/ship_info_data.json",
-      "sha256": "945b0c5af60f057b908f9afaba97659e48a3f00b74e6099d9dc297c4d71bcbbd"
+      "path": "external/altoy-data.json",
+      "sha256": "d431849de8c8cd7a167430be476f59fda2e858bfd8cd2f274ef028dc1f20bb9b"
     },
     "krShips": {
       "path": "참고용/AzurLaneData/KR/ShareCfg/ship_data_group.json",
@@ -44,13 +44,13 @@
       "sha256": "58fbcfbbd1c745bc1f95872900e4283b29524e84f8bb68ec1474f931ab6b2c50"
     },
     "cnTech": {
-      "path": "참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
-      "sha256": "8287d14f939dcffc3dd23458762260bda7f3829d6c075552ca8ca9af21e2cb02"
+      "path": "external/lua-cn-tech.lua",
+      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
     }
   },
   "display": {
-    "appCount": 870,
-    "altoyCount": 870,
+    "appCount": 875,
+    "altoyCount": 875,
     "krCount": 857,
     "outOfScope": [],
     "altoyMissingInApp": [],
@@ -100,16 +100,14 @@
     ]
   },
   "fleetTech": {
-    "cnCount": 742,
+    "cnCount": 745,
     "krCount": 727,
-    "displayedWithCn": 737,
+    "displayedWithCn": 742,
     "displayedWithoutCn": 133,
     "cnOnlyExcludedGids": [
-      29906,
-      39908,
-      49911,
-      89905,
-      129901
+      20115,
+      20237,
+      20314
     ],
     "cnKrMismatchCount": 0,
     "cnKrMismatches": [],
@@ -131,7 +129,7 @@
   },
   "images": {
     "publicIconMissing": [],
-    "referenceMissingCount": 37,
+    "referenceMissingCount": 42,
     "referenceMissing": [
       {
         "gid": 10105,
@@ -350,10 +348,30 @@
         ]
       },
       {
+        "gid": 29906,
+        "name": "던컨",
+        "skinId": 299060,
+        "missing": [
+          "icon.png",
+          "shipyard.png",
+          "painting.png"
+        ]
+      },
+      {
         "gid": 31201,
         "name": "아카시",
         "skinId": 312010,
         "missing": [
+          "painting.png"
+        ]
+      },
+      {
+        "gid": 39908,
+        "name": "타카하시",
+        "skinId": 399080,
+        "missing": [
+          "icon.png",
+          "shipyard.png",
           "painting.png"
         ]
       },
@@ -378,6 +396,36 @@
         "name": "비스마르크",
         "skinId": 405010,
         "missing": [
+          "painting.png"
+        ]
+      },
+      {
+        "gid": 49911,
+        "name": "막스 임멜만",
+        "skinId": 499110,
+        "missing": [
+          "icon.png",
+          "shipyard.png",
+          "painting.png"
+        ]
+      },
+      {
+        "gid": 89905,
+        "name": "오라주",
+        "skinId": 899050,
+        "missing": [
+          "icon.png",
+          "shipyard.png",
+          "painting.png"
+        ]
+      },
+      {
+        "gid": 129901,
+        "name": "발파라이소",
+        "skinId": 1299010,
+        "missing": [
+          "icon.png",
+          "shipyard.png",
           "painting.png"
         ]
       },

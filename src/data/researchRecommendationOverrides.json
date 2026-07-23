@@ -1,0 +1,80 @@
+{
+  "ships": [
+    {
+      "id": "P043",
+      "gid": 29906,
+      "generation": 9,
+      "unlockText": "로열 네이비 기술 Pt 700 이상",
+      "unlockRequirements": [
+        { "type": "tech-points", "faction": "로열", "value": 700 }
+      ],
+      "xpPhases": [
+        { "phase": 1, "factions": ["로열"], "lane": "후열", "requiredXp": 1000000, "taskId": 60432 },
+        { "phase": 2, "factions": ["로열"], "lane": "후열", "requiredXp": 2000000, "taskId": 60435 }
+      ],
+      "coinStrengthening": { "available": false, "source": "game-data" },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P044",
+      "gid": 39908,
+      "generation": 9,
+      "unlockText": "사쿠라 엠파이어 기술 Pt 1000 이상",
+      "unlockRequirements": [
+        { "type": "tech-points", "faction": "중앵", "value": 1000 }
+      ],
+      "xpPhases": [
+        { "phase": 1, "factions": ["중앵"], "lane": "전열", "requiredXp": 1000000, "taskId": 60442 },
+        { "phase": 2, "factions": ["중앵"], "lane": "전열", "requiredXp": 2000000, "taskId": 60445 }
+      ],
+      "coinStrengthening": { "available": false, "source": "game-data" },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P045",
+      "gid": 49911,
+      "generation": 9,
+      "unlockText": "메탈 블러드 기술 Pt 1050 이상",
+      "unlockRequirements": [
+        { "type": "tech-points", "faction": "철혈", "value": 1050 }
+      ],
+      "xpPhases": [
+        { "phase": 1, "factions": ["철혈"], "lane": "후열", "requiredXp": 1200000, "taskId": 60452 },
+        { "phase": 2, "factions": ["철혈"], "lane": "후열", "requiredXp": 2400000, "taskId": 60455 }
+      ],
+      "coinStrengthening": { "available": false, "source": "game-data" },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P046",
+      "gid": 89905,
+      "generation": 9,
+      "unlockText": "아이리스 리브레 기술 Pt 280 이상",
+      "unlockRequirements": [
+        { "type": "tech-points", "faction": "아이리스", "value": 280 }
+      ],
+      "xpPhases": [
+        { "phase": 1, "factions": ["아이리스", "비시아"], "lane": "전열", "requiredXp": 1000000, "taskId": 60462 },
+        { "phase": 2, "factions": ["아이리스", "비시아"], "lane": "전열", "requiredXp": 2000000, "taskId": 60465 }
+      ],
+      "coinStrengthening": { "available": false, "source": "game-data" },
+      "sourceStatus": "verified"
+    },
+    {
+      "id": "P047",
+      "gid": 129901,
+      "generation": 9,
+      "unlockText": "이글 유니온 기술 Pt 950 이상, 로열 네이비 기술 Pt 1000 이상",
+      "unlockRequirements": [
+        { "type": "tech-points", "faction": "유니온", "value": 950 },
+        { "type": "tech-points", "faction": "로열", "value": 1000 }
+      ],
+      "xpPhases": [
+        { "phase": 1, "factions": ["로열"], "lane": "후열", "requiredXp": 1200000, "taskId": 60472 },
+        { "phase": 2, "factions": ["유니온"], "lane": "후열", "requiredXp": 2400000, "taskId": 60475 }
+      ],
+      "coinStrengthening": { "available": false, "source": "game-data" },
+      "sourceStatus": "verified"
+    }
+  ]
+}

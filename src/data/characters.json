@@ -26582,6 +26582,166 @@
     "iconUrl": "/azurlane-tracker/ship-icons/9706050.png"
   },
   {
+    "id": "P043",
+    "name": "던컨",
+    "rarity": "SSR",
+    "shipType": "순전",
+    "faction": "로열",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "순전",
+        "전함",
+        "항전"
+      ],
+      "stat": "내구",
+      "value": 2
+    },
+    "stat120": {
+      "shipTypes": [
+        "순전",
+        "전함",
+        "항전"
+      ],
+      "stat": "화력",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 26,
+      "maxLB": 52,
+      "lv120": 39
+    },
+    "gid": 29906,
+    "iconUrl": "/azurlane-tracker/ship-icons/299060.png"
+  },
+  {
+    "id": "P044",
+    "name": "타카하시",
+    "rarity": "SSR",
+    "shipType": "경순",
+    "faction": "중앵",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "대공",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "뇌격",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 16,
+      "maxLB": 33,
+      "lv120": 25
+    },
+    "gid": 39908,
+    "iconUrl": "/azurlane-tracker/ship-icons/399080.png"
+  },
+  {
+    "id": "P045",
+    "name": "막스 임멜만",
+    "rarity": "UR",
+    "shipType": "항모",
+    "faction": "철혈",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경항모",
+        "항모"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경항모",
+        "항모"
+      ],
+      "stat": "항공",
+      "value": 2
+    },
+    "techPoints": {
+      "acquired": 62,
+      "maxLB": 124,
+      "lv120": 92
+    },
+    "gid": 49911,
+    "iconUrl": "/azurlane-tracker/ship-icons/499110.png"
+  },
+  {
+    "id": "P046",
+    "name": "오라주",
+    "rarity": "SSR",
+    "shipType": "구축",
+    "faction": "아이리스",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "뇌격",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 18,
+      "maxLB": 36,
+      "lv120": 26
+    },
+    "gid": 89905,
+    "iconUrl": "/azurlane-tracker/ship-icons/899050.png"
+  },
+  {
+    "id": "P047",
+    "name": "발파라이소",
+    "rarity": "UR",
+    "shipType": "전함",
+    "faction": "페드레리아",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "순전",
+        "전함",
+        "항전"
+      ],
+      "stat": "내구",
+      "value": 2
+    },
+    "stat120": {
+      "shipTypes": [
+        "순전",
+        "전함",
+        "항전"
+      ],
+      "stat": "명중",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 56,
+      "maxLB": 114,
+      "lv120": 86
+    },
+    "gid": 129901,
+    "iconUrl": "/azurlane-tracker/ship-icons/1299010.png"
+  },
+  {
     "id": "M062",
     "name": "브리스톨(META)",
     "rarity": "SSR",

@@ -17,6 +17,12 @@ for (const name of ['쿠온', '네코네', '루루티에', '우루루', '사라�
 for (const name of ['셰르부르', '아로망슈', '랑트레피드', '브리스톨(META)', '쾨니히스베르크(META)']) {
   assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, 'active-event', `${name} KR 현재 획득 가능`)
 }
+for (const name of ['던컨', '타카하시', '막스 임멜만', '오라주', '발파라이소']) {
+  const ship = data.ships.find(item => item.name === name)
+  assert.equal(ship?.availability.key, 'permanent', `${name} KR 연구 도크 상시 획득`)
+  assert.deepEqual(ship?.obtain, ['연구도크'], `${name} 입수처`)
+  assert.equal(ship?.primaryRoute.key, 'special-exchange', `${name} 연구 개발 경로`)
+}
 for (const name of ['이카로스', '미유키', 'Z24', '에밀 베르탱', '어드벤처 갤리']) {
   assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, 'permanent', `${name} KR 상시편입`)
 }
