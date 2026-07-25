@@ -1,4 +1,5 @@
 import { normalizeAcquisitionStatus } from './acquisitionStatus.js'
+import { normalizeFactionValue } from './factions.js'
 import { getEffectiveRarity } from './rarity.js'
 import { matchesShipClassification } from './shipClassifications.js'
 
@@ -30,9 +31,11 @@ export function matchesCharacterFilters(character, filters) {
   if (!matchesShipClassification(character.shipType, filters.shipType)) return false
 
   if (filters.faction !== '전체') {
+    const characterFaction = normalizeFactionValue(character.faction)
+    const selectedFaction = normalizeFactionValue(filters.faction)
     const matchesFaction = filters.faction === '기타'
-      ? character.faction === '기타' || isCollabCharacter(character)
-      : character.faction === filters.faction
+      ? characterFaction === '기타' || isCollabCharacter(character)
+      : characterFaction === selectedFaction
     if (!matchesFaction) return false
   }
 

@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-07-26 - Align Tempesta and Pedrería Faction Codes
+
+### Changed
+- Use the new in-game faction codes consistently: `MOT` for 템페스타 and `LDP` for 페드레리아.
+- Show `템페스타 (MOT)` and `페드레리아 (LDP)` in faction filters while keeping full Korean names in roster and explanatory text.
+- Show compact `MOT` and `LDP` badges on growth and research recommendation cards and popups.
+- Accept `MOT`, `Tempesta`, `LDP`, `Liga de Pedrería`, and `屠龙联盟` as source aliases without changing the internal Korean faction values.
+- Match the in-game faction order around `HNLMS → LDP → META → MOT → 기타`.
+- Centralize faction order, display names, filter labels, and card badges so recommendation views cannot drift from the roster filter when another faction is added.
+- Preserve `MOT` when it is part of an official ship prefix such as `MOT São Martinho`, while still expanding standalone faction-code text.
+
+### Verified
+- Cross-checked current KR/CN `ship_data_group.lua`, ALtoy full/lite data, and generated app data: all four sources contain the same 16 Tempesta ships and one Pedrería ship by gid.
+- Added regression coverage for source aliases, filter labels, compact badges, faction ordering, and filtering raw `MOT`/`LDP` values.
+
 ## 2026-07-23 - Add Pedrería and Research Series 9
 
 ### Added

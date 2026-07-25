@@ -133,3 +133,31 @@ for (const expected of identityCorrections) {
   assert.equal(character.gid, expected.gid)
   assert.equal(character.iconUrl, `/azurlane-tracker/ship-icons/${expected.iconFile}`)
 }
+
+assert.deepEqual(
+  characters
+    .filter(character => character.faction === '템페스타')
+    .map(character => character.name)
+    .sort((a, b) => a.localeCompare(b, 'ko')),
+  [
+    '건스웨이',
+    '골든 하인드',
+    '돌핀',
+    '라임',
+    '로열 제임스',
+    '로열 포춘',
+    '메리 셀러스트',
+    '상 마르티뉴',
+    '아미티',
+    '어드벤처',
+    '어드벤처 갤리',
+    '위다',
+    '퀸 앤즈 리벤지',
+    '팬시',
+    '펄',
+    '포츠머스 어드벤처',
+  ].sort((a, b) => a.localeCompare(b, 'ko')),
+  '템페스타(MOT) 16명을 모두 같은 진영으로 분류',
+)
+assert.equal(characters.filter(character => character.faction === '페드레리아').length, 1, '페드레리아(LDP) 함선 분류')
+assert.ok(characters.every(character => !['MOT', 'LDP'].includes(character.faction)), '생성 데이터는 내부 표준 진영명을 사용')

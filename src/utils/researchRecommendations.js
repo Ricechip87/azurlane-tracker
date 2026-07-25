@@ -1,5 +1,5 @@
 import { isAcquiredStatus, normalizeAcquisitionStatus } from './acquisitionStatus.js'
-import { normalizeFactionValue } from './factions.js'
+import { getFactionSortIndex, normalizeFactionValue } from './factions.js'
 import { calcFleetTechCandidates } from './fleetTechCandidates.js'
 import { getShipPosition } from './shipClassifications.js'
 import { calcTechPoints } from './techPoints.js'
@@ -169,8 +169,6 @@ export function getEligibleResearchXpShips(phase, characters) {
 }
 
 const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B', 'C+']
-const RESEARCH_FACTION_ORDER = ['유니온', '로열', '중앵', '철혈', '동황', '사르데냐', '노스유니온', '아이리스', '비시아', '튤리퍼', '페드레리아']
-
 export function buildResearchFactionProgress(researchShips, factionTechPoints) {
   const targetsByFaction = new Map()
   const generationByShipName = new Map((researchShips || []).map(ship => [ship.name, Number(ship.generation) || 0]))
@@ -208,7 +206,7 @@ export function buildResearchFactionProgress(researchShips, factionTechPoints) {
         targets,
       }
     })
-    .sort((a, b) => researchFactionRank(a.faction) - researchFactionRank(b.faction) || a.faction.localeCompare(b.faction, 'ko'))
+    .sort((a, b) => getFactionSortIndex(a.faction) - getFactionSortIndex(b.faction) || a.faction.localeCompare(b.faction, 'ko'))
 }
 
 export function buildOperationTierByName(growthRecommendationData) {
@@ -293,11 +291,6 @@ function compareResearchUnlockCandidates(a, b) {
 function operationTierRank(tier) {
   const index = OPERATION_TIER_ORDER.indexOf(tier)
   return index === -1 ? OPERATION_TIER_ORDER.length : index
-}
-
-function researchFactionRank(faction) {
-  const index = RESEARCH_FACTION_ORDER.indexOf(faction)
-  return index === -1 ? RESEARCH_FACTION_ORDER.length : index
 }
 
 function compareReadyResearchShips(a, b) {

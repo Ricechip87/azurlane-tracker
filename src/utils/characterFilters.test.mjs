@@ -16,4 +16,17 @@ assert.deepEqual(filterCharacters(characters, { ...DEFAULT_CHARACTER_FILTERS, re
 assert.deepEqual(filterCharacters(characters, { ...DEFAULT_CHARACTER_FILTERS, favoritesOnly: true }).map(c => c.id), ['001'])
 assert.deepEqual(filterCharacters(characters, { ...DEFAULT_CHARACTER_FILTERS, researchOnly: true }).map(c => c.id), ['P001'])
 
+const codedFactionCharacters = [
+  { id: 'MOT001', name: '템페스타 코드 함선', faction: 'MOT', shipType: '범선' },
+  { id: 'LDP001', name: '페드레리아 코드 함선', faction: 'LDP', shipType: '전함' },
+]
+assert.deepEqual(
+  filterCharacters(codedFactionCharacters, { ...DEFAULT_CHARACTER_FILTERS, faction: '템페스타' }).map(c => c.id),
+  ['MOT001'],
+)
+assert.deepEqual(
+  filterCharacters(codedFactionCharacters, { ...DEFAULT_CHARACTER_FILTERS, faction: '페드레리아' }).map(c => c.id),
+  ['LDP001'],
+)
+
 console.log('character filter tests passed')
