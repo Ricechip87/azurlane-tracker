@@ -2,6 +2,7 @@ import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from '
 import { obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
 import { normalizeStatShipTypeValue } from './shipClassifications.js'
+import { getShipObtainability } from './shipObtainabilityLookup.js'
 
 export const ADDITIONAL_STAT_SHIP_TYPES = [
   '구축', '경순', '중순', '대형순', '순전', '전함', '항전', '모니터',
@@ -91,7 +92,7 @@ function toCandidate(character, shipType, stat, rankingData) {
   const broadTargets = BROAD_COVERAGE_TARGETS[shipType] || []
   const broadCoverage = broadTargets.length > 0 && broadTargets.every(target => targetShipTypes.includes(target))
   const operationTier = rankingData.operationTierByName?.get(character.name) || ''
-  const obtainability = rankingData.obtainabilityByName?.get(character.name) || null
+  const obtainability = getShipObtainability(rankingData.obtainabilityByName, character) || null
 
   return {
     ...character,

@@ -2,6 +2,7 @@ import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from '
 import { getFactionDisplayText } from './factions.js'
 import { isGrowthRecommendationEligible, obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
+import { getShipObtainability } from './shipObtainabilityLookup.js'
 
 export const GROWTH_MODE_SOURCE = {
   main: 'main',
@@ -78,7 +79,9 @@ function getCandidatesForMode(mode, characterByName, growthRecommendationData, o
   for (const recommendation of growthRecommendationData.recommendations || []) {
     if (recommendation.source !== source) continue
     const character = characterByName.get(recommendation.name)
-    const obtainability = obtainabilityByName.get(recommendation.name)
+    const obtainability = character
+      ? getShipObtainability(obtainabilityByName, character)
+      : obtainabilityByName.get(recommendation.name)
     const candidate = buildCandidate(recommendation, character, obtainability)
     if (!isEligibleCandidate(candidate)) continue
 

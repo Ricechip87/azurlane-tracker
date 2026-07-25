@@ -1,13 +1,13 @@
 {
   "source": {
     "region": "KR",
-    "blueprintFile": "ship_data_blueprint.json",
-    "taskFile": "task_data_template.json",
+    "blueprintFile": "ship_data_blueprint.lua",
+    "taskFile": "task_data_template.lua",
     "maxGeneration": 9,
     "nextGenerationPolicy": "KR 정식 데이터 편입 후 반영",
     "notes": [
       "1~9기는 KR 게임 데이터를 기준으로 생성합니다.",
-      "참고용 JSON에 아직 없는 최신 기수는 교차 검증한 KR Lua 보정 데이터로 채우며, JSON에 편입되면 원본을 우선합니다."
+      "최신 KR Lua의 개발함·임무 데이터를 직접 사용합니다."
     ]
   },
   "ships": [
@@ -439,7 +439,7 @@
       "planRarity": "DR",
       "rarity": "UR",
       "faction": "중앵",
-      "shipType": "대순",
+      "shipType": "초순",
       "iconUrl": "/azurlane-tracker/ship-icons/399040.png",
       "unlockText": "사쿠라 엠파이어 진영 기술Pt900이상",
       "unlockRequirements": [
@@ -917,7 +917,7 @@
       "planRarity": "DR",
       "rarity": "UR",
       "faction": "철혈",
-      "shipType": "대순",
+      "shipType": "초순",
       "iconUrl": "/azurlane-tracker/ship-icons/499050.png",
       "unlockText": "메탈 블러드 진영 기술Pt700이상",
       "unlockRequirements": [
@@ -1253,7 +1253,7 @@
       "planRarity": "DR",
       "rarity": "UR",
       "faction": "아이리스",
-      "shipType": "대순",
+      "shipType": "초순",
       "iconUrl": "/azurlane-tracker/ship-icons/899030.png",
       "unlockText": "아이리스 리브레 진영 기술PT 250 도달",
       "unlockRequirements": [
@@ -2018,7 +2018,13 @@
     {
       "id": "P043",
       "gid": 29906,
+      "name": "던컨",
       "generation": 9,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "순전",
+      "iconUrl": "/azurlane-tracker/ship-icons/299060.png",
       "unlockText": "로열 네이비 기술 Pt 700 이상",
       "unlockRequirements": [
         {
@@ -2035,7 +2041,8 @@
           ],
           "lane": "후열",
           "requiredXp": 1000000,
-          "taskId": 60432
+          "taskId": 60432,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 로열 네이비 소속 주력함대의 총 획득 경험치를 1,000,000 축적시킨다."
         },
         {
           "phase": 2,
@@ -2044,25 +2051,26 @@
           ],
           "lane": "후열",
           "requiredXp": 2000000,
-          "taskId": 60435
+          "taskId": 60435,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 로열 네이비 소속 주력함대의 총 획득 경험치를 2,000,000 축적시킨다."
         }
       ],
       "coinStrengthening": {
         "available": false,
         "source": "game-data"
       },
-      "sourceStatus": "verified",
-      "name": "던컨",
-      "planRarity": "PR",
-      "rarity": "SSR",
-      "faction": "로열",
-      "shipType": "순전",
-      "iconUrl": "/azurlane-tracker/ship-icons/299060.png"
+      "sourceStatus": "verified"
     },
     {
       "id": "P044",
       "gid": 39908,
+      "name": "타카하시",
       "generation": 9,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "경순",
+      "iconUrl": "/azurlane-tracker/ship-icons/399080.png",
       "unlockText": "사쿠라 엠파이어 기술 Pt 1000 이상",
       "unlockRequirements": [
         {
@@ -2079,7 +2087,8 @@
           ],
           "lane": "전열",
           "requiredXp": 1000000,
-          "taskId": 60442
+          "taskId": 60442,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 사쿠라 엠파이어 소속 선봉함대의 총 획득 경험치를 1,000,000 축적시킨다."
         },
         {
           "phase": 2,
@@ -2088,25 +2097,26 @@
           ],
           "lane": "전열",
           "requiredXp": 2000000,
-          "taskId": 60445
+          "taskId": 60445,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 사쿠라 엠파이어 소속 선봉함대의 총 획득 경험치를 2,000,000 축적시킨다."
         }
       ],
       "coinStrengthening": {
         "available": false,
         "source": "game-data"
       },
-      "sourceStatus": "verified",
-      "name": "타카하시",
-      "planRarity": "PR",
-      "rarity": "SSR",
-      "faction": "중앵",
-      "shipType": "경순",
-      "iconUrl": "/azurlane-tracker/ship-icons/399080.png"
+      "sourceStatus": "verified"
     },
     {
       "id": "P045",
       "gid": 49911,
+      "name": "막스 임멜만",
       "generation": 9,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "철혈",
+      "shipType": "항모",
+      "iconUrl": "/azurlane-tracker/ship-icons/499110.png",
       "unlockText": "메탈 블러드 기술 Pt 1050 이상",
       "unlockRequirements": [
         {
@@ -2123,7 +2133,8 @@
           ],
           "lane": "후열",
           "requiredXp": 1200000,
-          "taskId": 60452
+          "taskId": 60452,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 메탈 블러드 소속 주력함대의 총 획득 경험치를 1,200,000 축적시킨다."
         },
         {
           "phase": 2,
@@ -2132,25 +2143,26 @@
           ],
           "lane": "후열",
           "requiredXp": 2400000,
-          "taskId": 60455
+          "taskId": 60455,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 메탈 블러드 소속 주력함대의 총 획득 경험치를 2,400,000 축적시킨다."
         }
       ],
       "coinStrengthening": {
         "available": false,
         "source": "game-data"
       },
-      "sourceStatus": "verified",
-      "name": "막스 임멜만",
-      "planRarity": "DR",
-      "rarity": "UR",
-      "faction": "철혈",
-      "shipType": "항모",
-      "iconUrl": "/azurlane-tracker/ship-icons/499110.png"
+      "sourceStatus": "verified"
     },
     {
       "id": "P046",
       "gid": 89905,
+      "name": "오라주",
       "generation": 9,
+      "planRarity": "PR",
+      "rarity": "SSR",
+      "faction": "아이리스",
+      "shipType": "구축",
+      "iconUrl": "/azurlane-tracker/ship-icons/899050.png",
       "unlockText": "아이리스 리브레 기술 Pt 280 이상",
       "unlockRequirements": [
         {
@@ -2168,7 +2180,8 @@
           ],
           "lane": "전열",
           "requiredXp": 1000000,
-          "taskId": 60462
+          "taskId": 60462,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 아이리스 리브레 또는 비시아 성좌 소속 선봉함대의 총 획득 경험치를 1,000,000 축적시킨다."
         },
         {
           "phase": 2,
@@ -2178,25 +2191,26 @@
           ],
           "lane": "전열",
           "requiredXp": 2000000,
-          "taskId": 60465
+          "taskId": 60465,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 아이리스 리브레 또는 비시아 성좌 소속 선봉함대의 총 획득 경험치를 2,000,000 축적시킨다."
         }
       ],
       "coinStrengthening": {
         "available": false,
         "source": "game-data"
       },
-      "sourceStatus": "verified",
-      "name": "오라주",
-      "planRarity": "PR",
-      "rarity": "SSR",
-      "faction": "아이리스",
-      "shipType": "구축",
-      "iconUrl": "/azurlane-tracker/ship-icons/899050.png"
+      "sourceStatus": "verified"
     },
     {
       "id": "P047",
       "gid": 129901,
+      "name": "발파라이소",
       "generation": 9,
+      "planRarity": "DR",
+      "rarity": "UR",
+      "faction": "페드레리아",
+      "shipType": "전함",
+      "iconUrl": "/azurlane-tracker/ship-icons/1299010.png",
       "unlockText": "이글 유니온 기술 Pt 950 이상, 로열 네이비 기술 Pt 1000 이상",
       "unlockRequirements": [
         {
@@ -2218,7 +2232,8 @@
           ],
           "lane": "후열",
           "requiredXp": 1200000,
-          "taskId": 60472
+          "taskId": 60472,
+          "description": "개발 작업의 원활한 진행에는 충분한 실험 데이터 입수가 필수적이고, 축적된 실전 경험이 가장 효과적이다. ――함대를 출격시켜 로열 네이비 소속 주력함대의 총 획득 경험치를 1,200,000 축적시킨다."
         },
         {
           "phase": 2,
@@ -2227,20 +2242,15 @@
           ],
           "lane": "후열",
           "requiredXp": 2400000,
-          "taskId": 60475
+          "taskId": 60475,
+          "description": "「전술 데이터 수집Ⅰ」을 완료해야 한다. 도면 설계의 초고가 완성되었다. 카탈로그상의 스펙을 과연 얼마까지 실현할 수 있을지, 이를 검증하기 위해서는 새로운 전술 데이터의 수집이 필수적이다. ――함대를 출격시켜 이글 유니온 소속 주력함대의 총 획득 경험치를 2,400,000 축적시킨다."
         }
       ],
       "coinStrengthening": {
         "available": false,
         "source": "game-data"
       },
-      "sourceStatus": "verified",
-      "name": "발파라이소",
-      "planRarity": "DR",
-      "rarity": "UR",
-      "faction": "페드레리아",
-      "shipType": "전함",
-      "iconUrl": "/azurlane-tracker/ship-icons/1299010.png"
+      "sourceStatus": "verified"
     }
   ]
 }

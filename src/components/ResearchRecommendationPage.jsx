@@ -7,6 +7,7 @@ import { getFactionBadgeName, getFactionDisplayName, getFactionDisplayText } fro
 import { getEffectiveRarity, getResearchRarityLabel } from '../utils/rarity.js'
 import { getAvailability, getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
+import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import {
   buildOperationTierByName,
   buildResearchFactionProgress,
@@ -64,7 +65,7 @@ export default function ResearchRecommendationPage({ characters }) {
         operationTierByName: buildOperationTierByName(growthData),
         operationRecommendationByName: buildOperationRecommendationByName(growthData),
         operationUpdatedAt: operationSource?.updatedAt || null,
-        obtainabilityByName: new Map((obtainabilityData.ships || []).map(ship => [ship.name, ship])),
+        obtainabilityByName: createShipObtainabilityLookup(obtainabilityData.ships),
       })
       setCandidateDataError('')
     }).catch(error => {

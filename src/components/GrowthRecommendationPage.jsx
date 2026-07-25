@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
+import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import { normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
 import { getFactionBadgeName } from '../utils/factions.js'
@@ -76,7 +77,7 @@ export default function GrowthRecommendationPage({ characters }) {
 
         if (ignore) return
         setRecommendationData(recommendations)
-        setObtainabilityMap(new Map((obtainability.ships || []).map(ship => [ship.name, ship])))
+        setObtainabilityMap(createShipObtainabilityLookup(obtainability.ships))
         setDataError('')
       } catch (error) {
         if (ignore) return

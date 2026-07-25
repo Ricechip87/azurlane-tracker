@@ -3,28 +3,35 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { officialRecordToCharacterTech, parseFleetTechLua } from './lib/fleet-tech-sources.mjs'
+import { parseShipDataGroupGidsLua } from './lib/research-lua-sources.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const sourceRoot = process.env.AUDIT_SOURCE_ROOT
+  ? path.resolve(process.env.AUDIT_SOURCE_ROOT)
+  : path.join(root, '참고용')
+const sourcePath = (...segments) => path.join(sourceRoot, ...segments)
 const paths = {
   characters: 'src/data/characters.json',
-  altoy: process.env.ALTOY_DATA_PATH || '참고용/ALtoy/data/ship_info_data.json',
-  krShips: process.env.KR_SHIP_GROUP_PATH || '참고용/AzurLaneData/KR/ShareCfg/ship_data_group.json',
-  cnJsonTech: '참고용/AzurLaneData/CN/ShareCfg/fleet_tech_ship_template.json',
-  enTech: '참고용/AzurLaneData/EN/ShareCfg/fleet_tech_ship_template.json',
-  jpTech: '참고용/AzurLaneData/JP/ShareCfg/fleet_tech_ship_template.json',
-  krTech: '참고용/AzurLaneData/KR/ShareCfg/fleet_tech_ship_template.json',
-  twTech: '참고용/AzurLaneData/TW/ShareCfg/fleet_tech_ship_template.json',
-  cnTech: process.env.CN_TECH_LUA_PATH || '참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua',
+  altoy: process.env.ALTOY_DATA_PATH || sourcePath('ALtoy', 'data', 'ship_info_data.json'),
+  krShips: process.env.KR_SHIP_GROUP_PATH || sourcePath('AzurLaneLuaScripts', 'KR', 'sharecfg', 'ship_data_group.lua'),
+  cnTech: process.env.CN_TECH_LUA_PATH || sourcePath('AzurLaneLuaScripts', 'CN', 'sharecfg', 'fleet_tech_ship_template.lua'),
+  enTech: sourcePath('AzurLaneLuaScripts', 'EN', 'sharecfg', 'fleet_tech_ship_template.lua'),
+  jpTech: sourcePath('AzurLaneLuaScripts', 'JP', 'sharecfg', 'fleet_tech_ship_template.lua'),
+  krTech: sourcePath('AzurLaneLuaScripts', 'KR', 'sharecfg', 'fleet_tech_ship_template.lua'),
+  twTech: sourcePath('AzurLaneLuaScripts', 'TW', 'sharecfg', 'fleet_tech_ship_template.lua'),
 }
 
 const resolveSourcePath = sourcePath => path.isAbsolute(sourcePath) ? sourcePath : path.join(root, sourcePath)
 const readJson = sourcePath => JSON.parse(fs.readFileSync(resolveSourcePath(sourcePath), 'utf8'))
 const characters = readJson(paths.characters)
 const altoy = readJson(paths.altoy)
-const krShips = readJson(paths.krShips)
-const regionalTech = Object.fromEntries(['cnJsonTech', 'enTech', 'jpTech', 'krTech', 'twTech'].map(name => [name, readJson(paths[name])]))
+const krShipGids = new Set(parseShipDataGroupGidsLua(fs.readFileSync(resolveSourcePath(paths.krShips), 'utf8')).map(String))
+const regionalTech = Object.fromEntries(['cnTech', 'enTech', 'jpTech', 'krTech', 'twTech'].map(name => [
+  name,
+  parseFleetTechLua(fs.readFileSync(resolveSourcePath(paths[name]), 'utf8')),
+]))
 const krTech = regionalTech.krTech
-const cnTech = parseFleetTechLua(fs.readFileSync(resolveSourcePath(paths.cnTech), 'utf8'))
+const cnTech = regionalTech.cnTech
 const altoyByGid = new Map(altoy.map(ship => [String(ship.gid), ship]))
 const altoyByName = new Map(altoy.map(ship => [normalizeName(ship.name), ship]))
 const appGids = new Set(characters.map(ship => String(ship.gid)))
@@ -39,7 +46,7 @@ for (const ship of characters) {
     if (source) identityFallbacks.push({ appId: ship.id, name: ship.name, appGid: ship.gid, altoyGid: source.gid, skinId: source.skin_id })
   }
   if (source) matchedAlttoy.set(String(source.gid), ship)
-  else if (!krShips[String(ship.gid)]) displayOutOfScope.push({ id: ship.id, gid: ship.gid, name: ship.name })
+  else if (!krShipGids.has(String(ship.gid))) displayOutOfScope.push({ id: ship.id, gid: ship.gid, name: ship.name })
 }
 
 const altoyMissingInApp = altoy
@@ -67,13 +74,16 @@ const cnKrMismatches = Object.keys(cnTech)
 
 const imageMissing = []
 const publicIconMissing = []
+const checkReferenceImages = process.env.SKIP_REFERENCE_IMAGE_AUDIT !== '1'
 for (const ship of altoy) {
-  const base = path.join(root, '참고용/AzurLane/images/skin', String(ship.skin_id))
-  const missing = []
-  if (!fs.existsSync(path.join(base, 'icon.png')) && !fs.existsSync(path.join(base, 'icon.webp'))) missing.push('icon.png')
-  if (!fs.existsSync(path.join(base, 'shipyard.png')) && !fs.existsSync(path.join(base, 'shipyard.webp'))) missing.push('shipyard.png')
-  if (!fs.existsSync(path.join(base, 'painting.png'))) missing.push('painting.png')
-  if (missing.length) imageMissing.push({ gid: ship.gid, name: ship.name, skinId: ship.skin_id, missing })
+  if (checkReferenceImages) {
+    const base = path.join(sourceRoot, 'AzurLane/images/skin', String(ship.skin_id))
+    const missing = []
+    if (!fs.existsSync(path.join(base, 'icon.png')) && !fs.existsSync(path.join(base, 'icon.webp'))) missing.push('icon.png')
+    if (!fs.existsSync(path.join(base, 'shipyard.png')) && !fs.existsSync(path.join(base, 'shipyard.webp'))) missing.push('shipyard.png')
+    if (!fs.existsSync(path.join(base, 'painting.png'))) missing.push('painting.png')
+    if (missing.length) imageMissing.push({ gid: ship.gid, name: ship.name, skinId: ship.skin_id, missing })
+  }
   if (!fs.existsSync(path.join(root, 'public/ship-icons', `${ship.skin_id}.png`))
     && !fs.existsSync(path.join(root, 'public/ship-icons', `${ship.skin_id}.webp`))) {
     publicIconMissing.push({ gid: ship.gid, name: ship.name, skinId: ship.skin_id })
@@ -86,6 +96,7 @@ const report = {
     displayScope: 'ALtoy/KR service roster only; name fallback handles six Utawarerumono skin-ID identities',
     fleetTechPriority: ['CN Lua', 'KR JSON', 'JP-based maintained tech sheet', 'existing app value'],
     cnOnlyShipsDisplayed: false,
+    sourceMode: process.env.AUDIT_SOURCE_ROOT ? 'explicit-reference-root' : 'latest-synced-reference',
   },
   sources: Object.fromEntries(Object.entries(paths).map(([name, relative]) => [name, {
     path: displaySourcePath(relative),
@@ -94,7 +105,7 @@ const report = {
   display: {
     appCount: characters.length,
     altoyCount: altoy.length,
-    krCount: Object.keys(krShips).length,
+    krCount: krShipGids.size,
     outOfScope: displayOutOfScope,
     altoyMissingInApp,
     identityFallbacks,
@@ -107,8 +118,8 @@ const report = {
     cnOnlyExcludedGids: Object.keys(cnTech).filter(gid => !appGids.has(gid)).map(Number),
     cnKrMismatchCount: cnKrMismatches.length,
     cnKrMismatches,
-    regionalJsonCounts: Object.fromEntries(Object.entries(regionalTech).map(([name, records]) => [name, Object.keys(records).length])),
-    regionalJsonVsCnMismatchCounts: Object.fromEntries(Object.entries(regionalTech).map(([name, records]) => [
+    regionalLuaCounts: Object.fromEntries(Object.entries(regionalTech).map(([name, records]) => [name, Object.keys(records).length])),
+    regionalLuaVsCnMismatchCounts: Object.fromEntries(Object.entries(regionalTech).map(([name, records]) => [
       name,
       Object.keys(records).filter(gid => cnTech[gid]
         && stable(pick(cnTech[gid], techFields)) !== stable(pick(records[gid], techFields))).length,
@@ -126,7 +137,7 @@ const output = path.join(root, 'reports/data-sources/latest.json')
 fs.mkdirSync(path.dirname(output), { recursive: true })
 fs.writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`, 'utf8')
 
-console.log(`데이터 감사 완료: 앱 ${characters.length}척 / ALtoy ${altoy.length}척 / KR ${Object.keys(krShips).length}척`)
+console.log(`데이터 감사 완료: 앱 ${characters.length}척 / ALtoy ${altoy.length}척 / KR ${krShipGids.size}척`)
 console.log(`CN 기술 ${report.fleetTech.displayedWithCn}척 반영, CN 미수록 ${report.fleetTech.displayedWithoutCn}척, CN 전용 ${report.fleetTech.cnOnlyExcludedGids.length}척 제외`)
 console.log(`참고 이미지 누락 ${imageMissing.length}척, 공개 아이콘 누락 ${publicIconMissing.length}척`)
 
@@ -144,6 +155,11 @@ function sha256(file) {
 
 function displaySourcePath(sourcePath) {
   if (!path.isAbsolute(sourcePath)) return sourcePath
+  const relativeToSource = path.relative(sourceRoot, sourcePath)
+  if (!relativeToSource.startsWith('..') && !path.isAbsolute(relativeToSource)) {
+    const label = process.env.AUDIT_SOURCE_ROOT ? 'explicit' : '참고용'
+    return `${label}/${relativeToSource.replaceAll('\\', '/')}`
+  }
   return `external/${path.basename(sourcePath)}`
 }
 

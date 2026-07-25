@@ -1,0 +1,176 @@
+{
+  "generatedAt": "2026-07-25T23:37:15.286Z",
+  "policy": {
+    "data": "원격 원천을 임시 경로에서 전부 검증한 뒤 자동 관리 경로만 교체",
+    "images": "별도 이미지 동기화에서 기존 파일을 보존하고 누락 파일만 추가",
+    "preserved": [
+      "참고용/AzurLane/images",
+      "참고용/검산용.json",
+      "자동 관리 목록 밖의 사용자 자료"
+    ]
+  },
+  "installedPaths": [
+    "AzurLaneData",
+    "ALtoy/data",
+    "AzurLaneLuaScripts",
+    "AzurLane/ship.json",
+    "벽람 함순이도감 v2.1.8_배포용의 사본.xlsx",
+    "벽람 함순이도감 v2.1.8_배포용의 사본 - [ 메인시트.csv",
+    "벽람 함순이도감 v2.1.8_배포용의 사본 - [ 인식각성 추천표(메인해역).csv",
+    "벽람 함순이도감 v2.1.8_배포용의 사본 - 인식각성 추천표(대작전).csv",
+    "벽람 함순이도감 v2.1.8_배포용의 사본 - 맨땅뉴비 추천 함순이표.csv",
+    "벽람 함순이도감 v2.1.8_배포용의 사본 - 1~9기 연구함 경험치작 정리.csv",
+    "벽람 함순이도감 v2.1.8_배포용의 사본 - 1~9기 연구함 물자강화 장비 추가시점.csv",
+    "벽람항로(일) - アズールレーン.xlsx",
+    "벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv"
+  ],
+  "removedLegacyPaths": [],
+  "sources": [
+    {
+      "id": "altoy-full",
+      "url": "https://jforplay.github.io/altoy/data/ship_info_data.json",
+      "relativePath": "ALtoy/data/ship_info_data.json",
+      "bytes": 5531480,
+      "sha256": "d431849de8c8cd7a167430be476f59fda2e858bfd8cd2f274ef028dc1f20bb9b"
+    },
+    {
+      "id": "altoy-lite",
+      "url": "https://jforplay.github.io/altoy/data/ship_info_lite.json",
+      "relativePath": "ALtoy/data/ship_info_lite.json",
+      "bytes": 273062,
+      "sha256": "d3f9a4bd84b3a0413f330de6f70002a8d28b483e1be75ccd50f3ba6ed3c82cbb"
+    },
+    {
+      "id": "azurlane-data",
+      "url": "https://github.com/AzurLaneTools/AzurLaneData.git",
+      "relativePath": "AzurLaneData",
+      "commit": "4cca5c2437007b62d30a6235fcfc0c0203231378"
+    },
+    {
+      "id": "cn-fleet-tech-lua",
+      "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/CN/sharecfg/fleet_tech_ship_template.lua",
+      "relativePath": "AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
+      "bytes": 242876,
+      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+    },
+    {
+      "id": "en-fleet-tech-lua",
+      "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/EN/sharecfg/fleet_tech_ship_template.lua",
+      "relativePath": "AzurLaneLuaScripts/EN/sharecfg/fleet_tech_ship_template.lua",
+      "bytes": 242876,
+      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+    },
+    {
+      "id": "fernando-ships",
+      "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/ship.json",
+      "relativePath": "AzurLane/ship.json",
+      "bytes": 4085685,
+      "sha256": "6132ef585791956961c0575a6788cdab579e7beda83a10da6cd413a24edda922"
+    },
+    {
+      "id": "fleet-tech-ship-score",
+      "url": "https://docs.google.com/spreadsheets/d/1R5u6fgr3e6XvfqQ3_GMuroeNfe2ShiY65akzzwDnwTs/export?format=csv&gid=1194876348",
+      "relativePath": "벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv",
+      "bytes": 86718,
+      "sha256": "48406ecb7d201517d06d898bedb0dd7f05ae73df4ef668fd3ce63834b67d5d02"
+    },
+    {
+      "id": "fleet-tech-workbook",
+      "url": "https://docs.google.com/spreadsheets/d/1R5u6fgr3e6XvfqQ3_GMuroeNfe2ShiY65akzzwDnwTs/export?format=xlsx",
+      "relativePath": "벽람항로(일) - アズールレーン.xlsx",
+      "bytes": 717009,
+      "sha256": "87e1efa77f36fdbe8f4861f293e816b5957ac3bbc6cd2d92ebdca61b1c8ba8a6"
+    },
+    {
+      "id": "growth-guide-workbook",
+      "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=xlsx",
+      "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본.xlsx",
+      "bytes": 8047660,
+      "sha256": "f8639bb3e9ec5d4ae25753bfed02305d1e6656ea3f33eb3734ae19435044fb17"
+    },
+    {
+      "id": "growth-main-sea",
+      "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=csv&gid=1100559522",
+      "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - [ 인식각성 추천표(메인해역).csv",
+      "bytes": 19180,
+      "sha256": "e002d53030b1ee79e567c4992c035d83228de98dd5c97c0bb70dc8fa7f342df2"
+    },
+    {
+      "id": "growth-main-sheet",
+      "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=csv&gid=438662354",
+      "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - [ 메인시트.csv",
+      "bytes": 130050,
+      "sha256": "9979f030f0d707cb439340414e5ada9b1c0fa193a3e9c012206b47348bdc4e07"
+    },
+    {
+      "id": "growth-new-player",
+      "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/gviz/tq?tqx=out:csv&sheet=%EB%A7%A8%EB%95%85%EB%89%B4%EB%B9%84%20%EC%B6%94%EC%B2%9C%20%ED%95%A8%EC%88%9C%EC%9D%B4%ED%91%9C",
+      "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - 맨땅뉴비 추천 함순이표.csv",
+      "bytes": 23411,
+      "sha256": "07e3f5298e9821bacb59b64a4f6130072b40051a7fbf41593c87cedf2fe491e6"
+    },
+    {
+      "id": "growth-operation-siren",
+      "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/gviz/tq?tqx=out:csv&sheet=%EC%9D%B8%EC%8B%9D%EA%B0%81%EC%84%B1%20%EC%B6%94%EC%B2%9C%ED%91%9C(%EB%8C%80%EC%9E%91%EC%A0%84)",
+      "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - 인식각성 추천표(대작전).csv",
+      "bytes": 43359,
+      "sha256": "8c8df24d7bb2483687f640c2c9ecf1ef7720bf63fb080206dac18097a96f9b87"
+    },
+    {
+      "id": "jp-fleet-tech-lua",
+      "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/JP/sharecfg/fleet_tech_ship_template.lua",
+      "relativePath": "AzurLaneLuaScripts/JP/sharecfg/fleet_tech_ship_template.lua",
+      "bytes": 242876,
+      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+    },
+    {
+      "id": "kr-blueprint-lua",
+      "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/ship_data_blueprint.lua",
+      "relativePath": "AzurLaneLuaScripts/KR/sharecfg/ship_data_blueprint.lua",
+      "bytes": 54913,
+      "sha256": "c741844c1feec4fd1c065a27862e21332dc51ec66f04bc558a11d68dff184181"
+    },
+    {
+      "id": "kr-fleet-tech-lua",
+      "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/fleet_tech_ship_template.lua",
+      "relativePath": "AzurLaneLuaScripts/KR/sharecfg/fleet_tech_ship_template.lua",
+      "bytes": 241901,
+      "sha256": "8287d14f939dcffc3dd23458762260bda7f3829d6c075552ca8ca9af21e2cb02"
+    },
+    {
+      "id": "kr-research-task-lua",
+      "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/task_data_template.lua",
+      "relativePath": "AzurLaneLuaScripts/KR/sharecfgdata/task_data_template.lua",
+      "bytes": 7233883,
+      "sha256": "8455a604b4fb01cad6c06fdeb79b6119dc3f2a042b685390f6a1fcfc7d0543b9"
+    },
+    {
+      "id": "kr-ship-data-group-lua",
+      "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/ship_data_group.lua",
+      "relativePath": "AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
+      "bytes": 523885,
+      "sha256": "138d6c082029152caec0c00e9b1465a7514a10c0d8a2791fe804f320ee33a224"
+    },
+    {
+      "id": "research-exp",
+      "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=csv&gid=838613390",
+      "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - 1~9기 연구함 경험치작 정리.csv",
+      "bytes": 6083,
+      "sha256": "66105800a383c5c8a1f4cd647dc8049c71440d375e5c38a82913f4627379f76b"
+    },
+    {
+      "id": "research-strengthening",
+      "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=csv&gid=1660629242",
+      "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - 1~9기 연구함 물자강화 장비 추가시점.csv",
+      "bytes": 4009,
+      "sha256": "e4fb5048587efbe679a13e4833f560dd9fc6522a2b1ec50b20a315d80a28ce9a"
+    },
+    {
+      "id": "tw-fleet-tech-lua",
+      "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/TW/sharecfg/fleet_tech_ship_template.lua",
+      "relativePath": "AzurLaneLuaScripts/TW/sharecfg/fleet_tech_ship_template.lua",
+      "bytes": 240306,
+      "sha256": "9cf0d0da8aa587e0767e558c67cae4b7fd96b4024791866674fa6e4271d36dbe"
+    }
+  ]
+}

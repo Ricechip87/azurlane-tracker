@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T15:49:41.963Z",
+  "generatedAt": "2026-07-25T23:43:44.597Z",
   "policy": {
     "displayScope": "ALtoy/KR service roster only; name fallback handles six Utawarerumono skin-ID identities",
     "fleetTechPriority": [
@@ -8,100 +8,54 @@
       "JP-based maintained tech sheet",
       "existing app value"
     ],
-    "cnOnlyShipsDisplayed": false
+    "cnOnlyShipsDisplayed": false,
+    "sourceMode": "latest-synced-reference"
   },
   "sources": {
     "characters": {
       "path": "src/data/characters.json",
-      "sha256": "53462029adf1c6d7033a167152f1cdb98477b92de0a3ebc906e7793795f2985b"
+      "sha256": "7b9560bb82017f26c4f5ce819ddc2e9be37784874bd9a4faea639e8e4648c711"
     },
     "altoy": {
-      "path": "external/altoy-data.json",
+      "path": "참고용/ALtoy/data/ship_info_data.json",
       "sha256": "d431849de8c8cd7a167430be476f59fda2e858bfd8cd2f274ef028dc1f20bb9b"
     },
     "krShips": {
-      "path": "참고용/AzurLaneData/KR/ShareCfg/ship_data_group.json",
-      "sha256": "42d650b26f6713c7afebc372ddb0889187c54a42c92974daf1ec07bbb8e3c300"
-    },
-    "cnJsonTech": {
-      "path": "참고용/AzurLaneData/CN/ShareCfg/fleet_tech_ship_template.json",
-      "sha256": "38fba8bb5f9daf9288b5f264389640c3fb4281159ac08ca55b2291079bff79ae"
-    },
-    "enTech": {
-      "path": "참고용/AzurLaneData/EN/ShareCfg/fleet_tech_ship_template.json",
-      "sha256": "38fba8bb5f9daf9288b5f264389640c3fb4281159ac08ca55b2291079bff79ae"
-    },
-    "jpTech": {
-      "path": "참고용/AzurLaneData/JP/ShareCfg/fleet_tech_ship_template.json",
-      "sha256": "38fba8bb5f9daf9288b5f264389640c3fb4281159ac08ca55b2291079bff79ae"
-    },
-    "krTech": {
-      "path": "참고용/AzurLaneData/KR/ShareCfg/fleet_tech_ship_template.json",
-      "sha256": "38fba8bb5f9daf9288b5f264389640c3fb4281159ac08ca55b2291079bff79ae"
-    },
-    "twTech": {
-      "path": "참고용/AzurLaneData/TW/ShareCfg/fleet_tech_ship_template.json",
-      "sha256": "58fbcfbbd1c745bc1f95872900e4283b29524e84f8bb68ec1474f931ab6b2c50"
+      "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
+      "sha256": "138d6c082029152caec0c00e9b1465a7514a10c0d8a2791fe804f320ee33a224"
     },
     "cnTech": {
-      "path": "external/lua-cn-tech.lua",
+      "path": "참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
       "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+    },
+    "enTech": {
+      "path": "참고용/AzurLaneLuaScripts/EN/sharecfg/fleet_tech_ship_template.lua",
+      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+    },
+    "jpTech": {
+      "path": "참고용/AzurLaneLuaScripts/JP/sharecfg/fleet_tech_ship_template.lua",
+      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+    },
+    "krTech": {
+      "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/fleet_tech_ship_template.lua",
+      "sha256": "8287d14f939dcffc3dd23458762260bda7f3829d6c075552ca8ca9af21e2cb02"
+    },
+    "twTech": {
+      "path": "참고용/AzurLaneLuaScripts/TW/sharecfg/fleet_tech_ship_template.lua",
+      "sha256": "9cf0d0da8aa587e0767e558c67cae4b7fd96b4024791866674fa6e4271d36dbe"
     }
   },
   "display": {
     "appCount": 875,
     "altoyCount": 875,
-    "krCount": 857,
+    "krCount": 875,
     "outOfScope": [],
     "altoyMissingInApp": [],
-    "identityFallbacks": [
-      {
-        "appId": "Z031",
-        "name": "쿠온",
-        "appGid": 10300010,
-        "altoyGid": 1030001,
-        "skinId": 10300010
-      },
-      {
-        "appId": "Z032",
-        "name": "네코네",
-        "appGid": 10300020,
-        "altoyGid": 1030002,
-        "skinId": 10300020
-      },
-      {
-        "appId": "Z033",
-        "name": "루루티에",
-        "appGid": 10300030,
-        "altoyGid": 1030003,
-        "skinId": 10300030
-      },
-      {
-        "appId": "Z034",
-        "name": "우루루",
-        "appGid": 10300040,
-        "altoyGid": 1030004,
-        "skinId": 10300040
-      },
-      {
-        "appId": "Z035",
-        "name": "사라나",
-        "appGid": 10300050,
-        "altoyGid": 1030005,
-        "skinId": 10300050
-      },
-      {
-        "appId": "Z036",
-        "name": "후미뤼르",
-        "appGid": 10300060,
-        "altoyGid": 1030006,
-        "skinId": 10300060
-      }
-    ]
+    "identityFallbacks": []
   },
   "fleetTech": {
     "cnCount": 745,
-    "krCount": 727,
+    "krCount": 742,
     "displayedWithCn": 742,
     "displayedWithoutCn": 133,
     "cnOnlyExcludedGids": [
@@ -111,15 +65,15 @@
     ],
     "cnKrMismatchCount": 0,
     "cnKrMismatches": [],
-    "regionalJsonCounts": {
-      "cnJsonTech": 727,
-      "enTech": 727,
-      "jpTech": 727,
-      "krTech": 727,
-      "twTech": 722
+    "regionalLuaCounts": {
+      "cnTech": 745,
+      "enTech": 745,
+      "jpTech": 745,
+      "krTech": 742,
+      "twTech": 737
     },
-    "regionalJsonVsCnMismatchCounts": {
-      "cnJsonTech": 0,
+    "regionalLuaVsCnMismatchCounts": {
+      "cnTech": 0,
       "enTech": 0,
       "jpTech": 0,
       "krTech": 0,
@@ -129,306 +83,8 @@
   },
   "images": {
     "publicIconMissing": [],
-    "referenceMissingCount": 42,
+    "referenceMissingCount": 6,
     "referenceMissing": [
-      {
-        "gid": 10105,
-        "name": "그리들리",
-        "skinId": 101050,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10106,
-        "name": "크레이븐",
-        "skinId": 101060,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10107,
-        "name": "맥콜",
-        "skinId": 101070,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10109,
-        "name": "플레처",
-        "skinId": 101090,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10112,
-        "name": "대처",
-        "skinId": 101120,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10117,
-        "name": "라피",
-        "skinId": 101170,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10124,
-        "name": "심즈",
-        "skinId": 101240,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10125,
-        "name": "허먼",
-        "skinId": 101250,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10303,
-        "name": "노샘프턴",
-        "skinId": 103030,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10304,
-        "name": "시카고",
-        "skinId": 103040,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10306,
-        "name": "포틀랜드",
-        "skinId": 103060,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10307,
-        "name": "인디애나폴리스",
-        "skinId": 103070,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10601,
-        "name": "롱 아일랜드",
-        "skinId": 106010,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 10707,
-        "name": "호넷",
-        "skinId": 107070,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20101,
-        "name": "아마존",
-        "skinId": 201010,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20108,
-        "name": "코멧",
-        "skinId": 201080,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20109,
-        "name": "크레센트",
-        "skinId": 201090,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20110,
-        "name": "시그넷",
-        "skinId": 201100,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20112,
-        "name": "포춘",
-        "skinId": 201120,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20121,
-        "name": "재블린",
-        "skinId": 201210,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20122,
-        "name": "주노",
-        "skinId": 201220,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20302,
-        "name": "슈롭셔",
-        "skinId": 203020,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20303,
-        "name": "켄트",
-        "skinId": 203030,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20304,
-        "name": "서포크",
-        "skinId": 203040,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20305,
-        "name": "노포크",
-        "skinId": 203050,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20403,
-        "name": "후드",
-        "skinId": 204030,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 20506,
-        "name": "프린스 오브 웨일즈",
-        "skinId": 205060,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 29906,
-        "name": "던컨",
-        "skinId": 299060,
-        "missing": [
-          "icon.png",
-          "shipyard.png",
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 31201,
-        "name": "아카시",
-        "skinId": 312010,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 39908,
-        "name": "타카하시",
-        "skinId": 399080,
-        "missing": [
-          "icon.png",
-          "shipyard.png",
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 40123,
-        "name": "Z23",
-        "skinId": 401230,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 40303,
-        "name": "프린츠 오이겐",
-        "skinId": 403030,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 40501,
-        "name": "비스마르크",
-        "skinId": 405010,
-        "missing": [
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 49911,
-        "name": "막스 임멜만",
-        "skinId": 499110,
-        "missing": [
-          "icon.png",
-          "shipyard.png",
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 89905,
-        "name": "오라주",
-        "skinId": 899050,
-        "missing": [
-          "icon.png",
-          "shipyard.png",
-          "painting.png"
-        ]
-      },
-      {
-        "gid": 129901,
-        "name": "발파라이소",
-        "skinId": 1299010,
-        "missing": [
-          "icon.png",
-          "shipyard.png",
-          "painting.png"
-        ]
-      },
       {
         "gid": 1030001,
         "name": "쿠온",

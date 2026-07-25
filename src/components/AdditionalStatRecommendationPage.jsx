@@ -12,6 +12,7 @@ import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
 import { getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import { buildOperationTierByName } from '../utils/researchRecommendations.js'
 import { calcStatsByShipType, mergeStatsByShipType } from '../utils/rosterStats.js'
+import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
 
 const RARITY_BADGE_CLASS = {
@@ -44,7 +45,7 @@ export default function AdditionalStatRecommendationPage({ characters }) {
         if (ignore) return
         setRankingData({
           operationTierByName: buildOperationTierByName(growthData),
-          obtainabilityByName: new Map((obtainabilityData.ships || []).map(ship => [ship.name, ship])),
+          obtainabilityByName: createShipObtainabilityLookup(obtainabilityData.ships),
         })
         setDataError('')
       })

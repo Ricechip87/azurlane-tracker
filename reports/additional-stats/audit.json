@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23 21:25:07 KST",
+  "generatedAt": "2026-07-26 08:38:16 KST",
   "policy": {
     "configuredShipTypes": [
       "구축",
@@ -52,14 +52,14 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 229,
-        "stat120": 229
+        "statAcquired": 228,
+        "stat120": 228
       },
       "candidateCounts": {
-        "내구": 214,
+        "내구": 213,
         "뇌격": 29,
         "대공": 30,
-        "대잠": 26,
+        "대잠": 25,
         "명중": 16,
         "장전": 20,
         "화력": 61,

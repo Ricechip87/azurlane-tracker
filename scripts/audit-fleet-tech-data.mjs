@@ -6,15 +6,18 @@ import {
   officialRecordToCharacterTech,
   parseFleetTechLua,
   parseFleetTechSheet,
+  selectFleetTechSheetRecord,
 } from './lib/fleet-tech-sources.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const referenceRoot = path.join(root, '참고용')
+const sourceRoot = process.env.AUDIT_SOURCE_ROOT
+  ? path.resolve(process.env.AUDIT_SOURCE_ROOT)
+  : path.join(root, '참고용')
 const regions = ['CN', 'EN', 'JP', 'KR', 'TW']
-const sheetPath = path.join(referenceRoot, '벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv')
+const sheetPath = path.join(sourceRoot, '벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv')
 const cnLuaPath = process.env.CN_TECH_LUA_PATH
   ? path.resolve(process.env.CN_TECH_LUA_PATH)
-  : path.join(referenceRoot, 'AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua')
+  : path.join(sourceRoot, 'AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua')
 const appCharactersPath = path.join(root, 'src/data/characters.json')
 const appLevelsPath = path.join(root, 'src/data/fleetTechLevelBonuses.json')
 const nameAliases = { 잉그러햄: '잉그레이엄' }
@@ -24,9 +27,12 @@ const appLevels = readJson(appLevelsPath)
 const cnLua = parseFleetTechLua(fs.readFileSync(cnLuaPath, 'utf8'))
 const sheet = parseFleetTechSheet(fs.readFileSync(sheetPath, 'utf8'), { nameAliases })
 const regional = Object.fromEntries(regions.map(region => {
-  const shareCfg = path.join(referenceRoot, `AzurLaneData/${region}/ShareCfg`)
+  const shareCfg = path.join(sourceRoot, `AzurLaneData/${region}/ShareCfg`)
   return [region, {
-    ships: readJson(path.join(shareCfg, 'fleet_tech_ship_template.json')),
+    ships: parseFleetTechLua(fs.readFileSync(
+      path.join(sourceRoot, `AzurLaneLuaScripts/${region}/sharecfg/fleet_tech_ship_template.lua`),
+      'utf8',
+    )),
     levels: buildFactionTechLevels(
       readJson(path.join(shareCfg, 'fleet_tech_group.json')),
       readJson(path.join(shareCfg, 'fleet_tech_template.json')),
@@ -37,13 +43,13 @@ const regional = Object.fromEntries(regions.map(region => {
 const shipMismatches = []
 const shipsWithoutSource = []
 const shipsWithoutTechData = []
-const sourceCounts = { 'cn-lua': 0, 'kr-json': 0, 'jp-sheet': 0 }
+const sourceCounts = { 'cn-lua': 0, 'kr-lua': 0, 'jp-sheet': 0 }
 
 for (const ship of characters) {
   const gid = String(ship.gid)
   const cnRecord = cnLua[gid]
   const krRecord = regional.KR.ships[gid]
-  const sheetRecord = sheet.byName.get(ship.name) || sheet.byId.get(String(ship.id))
+  const sheetRecord = selectFleetTechSheetRecord(sheet, ship)
   let expected
   let source
 
@@ -52,7 +58,7 @@ for (const ship of characters) {
     source = 'cn-lua'
   } else if (krRecord) {
     expected = officialRecordToCharacterTech(krRecord, ship)
-    source = 'kr-json'
+    source = 'kr-lua'
   } else if (sheetRecord) {
     expected = pickShipTech(sheetRecord)
     source = 'jp-sheet'
@@ -81,13 +87,16 @@ const report = {
   generatedAt: `${new Date().toLocaleString('sv-SE', { timeZone: 'Asia/Seoul' })} KST`,
   policy: {
     displayedRoster: 'KR/ALtoy 교차 검증 범위',
-    shipTechPriority: ['CN Lua', 'KR JSON', 'JP 기술점수 시트'],
+    shipTechPriority: ['CN Lua', 'KR Lua', 'JP 기술점수 시트'],
     factionLevelAssumption: '보유 기술점수가 임계치에 도달하면 해당 레벨 연구도 완료한 것으로 간주',
+    sourceMode: process.env.AUDIT_SOURCE_ROOT ? 'explicit-reference-root' : 'latest-synced-reference',
   },
   sources: {
     cnLua: relative(cnLuaPath),
     jpSheet: relative(sheetPath),
-    regionalJson: regions.map(region => `참고용/AzurLaneData/${region}/ShareCfg`),
+    regionalLua: regions.map(region => process.env.AUDIT_SOURCE_ROOT
+      ? `live/AzurLaneLuaScripts/${region}/sharecfg/fleet_tech_ship_template.lua`
+      : `참고용/AzurLaneLuaScripts/${region}/sharecfg/fleet_tech_ship_template.lua`),
   },
   ships: {
     appCount: characters.length,
@@ -170,6 +179,9 @@ function readJson(file) {
 }
 
 function relative(file) {
+  if (process.env.AUDIT_SOURCE_ROOT) {
+    return `live/${path.relative(sourceRoot, file).replaceAll('\\', '/')}`
+  }
   return path.relative(root, file).replaceAll('\\', '/')
 }
 

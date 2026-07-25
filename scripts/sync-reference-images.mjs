@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { fetchRemoteImage } from './lib/remote-image.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const altoy = JSON.parse(fs.readFileSync(path.join(root, '참고용/ALtoy/data/ship_info_data.json'), 'utf8'))
@@ -9,7 +10,6 @@ const results = []
 
 await mapLimit(altoy, 5, async ship => {
   const directory = path.join(root, '참고용/AzurLane/images/skin', String(ship.skin_id))
-  fs.mkdirSync(directory, { recursive: true })
   const result = { gid: ship.gid, name: ship.name, skinId: ship.skin_id, downloaded: [], unavailable: [] }
 
   await ensureFernando(result, directory, 'painting.png')
@@ -41,7 +41,7 @@ const report = {
 }
 const output = path.join(root, 'reports/data-sources/image-sync.json')
 fs.mkdirSync(path.dirname(output), { recursive: true })
-fs.writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`, 'utf8')
+writeAtomic(output, Buffer.from(`${JSON.stringify(report, null, 2)}\n`, 'utf8'))
 console.log(`참고 이미지 확인 완료: ${altoy.length}척, 갱신 ${report.changedShips}척, 원격 미제공 기록 ${report.unavailableShips}척`)
 
 async function ensureFernando(result, directory, filename) {
@@ -50,28 +50,31 @@ async function ensureFernando(result, directory, filename) {
 }
 
 async function download(result, url, destination, label) {
-  try {
-    const response = await fetch(url)
-    if (!response.ok) throw new Error(`HTTP ${response.status}`)
-    const bytes = new Uint8Array(await response.arrayBuffer())
-    const temporary = `${destination}.tmp-${process.pid}`
-    try {
-      fs.writeFileSync(temporary, bytes)
-      fs.renameSync(temporary, destination)
-    } finally {
-      if (fs.existsSync(temporary)) fs.rmSync(temporary)
-    }
-    result.downloaded.push({ label, bytes: bytes.byteLength })
-    return true
-  } catch (error) {
-    result.unavailable.push({ label, error: String(error.message || error), url })
+  const remote = await fetchRemoteImage(url)
+  if (!remote.ok) {
+    result.unavailable.push({ label, error: remote.error, url })
     return false
   }
+  // Local write failures must stop the sync instead of being misreported as remote 404s.
+  writeAtomic(destination, remote.bytes)
+  result.downloaded.push({ label, bytes: remote.bytes.byteLength })
+  return true
 }
 
 function copyFallback(result, source, destination, label) {
-  fs.copyFileSync(source, destination)
+  writeAtomic(destination, fs.readFileSync(source))
   result.downloaded.push({ label, bytes: fs.statSync(destination).size })
+}
+
+function writeAtomic(destination, bytes) {
+  fs.mkdirSync(path.dirname(destination), { recursive: true })
+  const temporary = `${destination}.tmp-${process.pid}`
+  try {
+    fs.writeFileSync(temporary, bytes)
+    fs.renameSync(temporary, destination)
+  } finally {
+    if (fs.existsSync(temporary)) fs.rmSync(temporary)
+  }
 }
 
 function hasEither(directory, first, second) {

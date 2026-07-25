@@ -107,6 +107,7 @@ const expectedCharacters = [
 const identityCorrections = [
   { id: 'M060', name: '엘베(META)', gid: 970605, iconFile: '9706050.png' },
   { id: 'M061', name: '쾨니히스베르크(META)', gid: 970212, iconFile: '9702120.png' },
+  { id: 'Z004', name: '벨', gid: 1010004, iconFile: '10100040.png' },
 ]
 
 for (const expected of expectedCharacters) {
@@ -132,6 +133,15 @@ for (const expected of identityCorrections) {
   assert.equal(character.name, expected.name)
   assert.equal(character.gid, expected.gid)
   assert.equal(character.iconUrl, `/azurlane-tracker/ship-icons/${expected.iconFile}`)
+}
+
+const collabBell = characters.find(item => item.id === 'Z004')
+assert.deepEqual(collabBell.techPoints, { acquired: 0, maxLB: 0, lv120: 0 })
+assert.deepEqual(collabBell.statAcquired, { shipTypes: [], stat: '', value: 0 })
+assert.deepEqual(collabBell.stat120, { shipTypes: [], stat: '', value: 0 })
+
+for (const gid of [20404, 30406, 30407, 30408, 40407]) {
+  assert.equal(characters.find(item => item.gid === gid)?.shipType, '순전', `${gid} 공식 순전 분류`)
 }
 
 assert.deepEqual(

@@ -4,6 +4,7 @@ import { calcFleetTechCandidates } from './fleetTechCandidates.js'
 import { getShipPosition } from './shipClassifications.js'
 import { calcTechPoints } from './techPoints.js'
 import { isResearchCandidateActionable, obtainabilityRank } from './obtainability.js'
+import { getShipObtainability } from './shipObtainabilityLookup.js'
 
 export function calcAllFactionTechPoints(characters) {
   const result = {}
@@ -258,7 +259,7 @@ function isActionableResearchCandidate(candidate) {
 }
 
 function addResearchRankingData(candidate, { obtainabilityByName, operationTierByName, operationRecommendationByName }) {
-  const obtainability = obtainabilityByName?.get(candidate.name)
+  const obtainability = getShipObtainability(obtainabilityByName, candidate)
   return {
     ...candidate,
     obtainability,

@@ -1,10 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { parseResearchBlueprintLua, parseResearchTasksLua } from './lib/research-lua-sources.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CHARACTERS_PATH = path.join(ROOT, 'src', 'data', 'characters.json')
 const OUTPUT_PATH = path.join(ROOT, 'src', 'data', 'researchRecommendations.json')
-const OVERRIDES_PATH = path.join(ROOT, 'src', 'data', 'researchRecommendationOverrides.json')
 
 const FACTION_PATTERNS = [
   ['이글 유니온', '유니온'],
@@ -53,7 +53,7 @@ function findReferenceRoot() {
   return fs.readdirSync(ROOT, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
     .map(entry => path.join(ROOT, entry.name))
-    .find(candidate => fs.existsSync(path.join(candidate, 'AzurLaneData', 'KR', 'ShareCfg', 'ship_data_blueprint.json')))
+    .find(candidate => fs.existsSync(path.join(candidate, 'AzurLaneLuaScripts', 'KR', 'sharecfg', 'ship_data_blueprint.lua')))
 }
 
 function stripMarkup(value) {
@@ -138,10 +138,11 @@ function parseXpPhase(task, phase) {
 const referenceRoot = findReferenceRoot()
 if (!referenceRoot) throw new Error('참고용 AzurLaneData KR 원천을 찾지 못했습니다.')
 
-const blueprintPath = path.join(referenceRoot, 'AzurLaneData', 'KR', 'ShareCfg', 'ship_data_blueprint.json')
-const taskPath = path.join(referenceRoot, 'AzurLaneData', 'KR', 'sharecfgdata', 'task_data_template.json')
-const blueprints = Object.values(readJson(blueprintPath)).filter(item => item && typeof item === 'object' && !Array.isArray(item))
-const tasks = readJson(taskPath)
+const blueprintPath = path.join(referenceRoot, 'AzurLaneLuaScripts', 'KR', 'sharecfg', 'ship_data_blueprint.lua')
+const taskPath = path.join(referenceRoot, 'AzurLaneLuaScripts', 'KR', 'sharecfgdata', 'task_data_template.lua')
+const blueprints = parseResearchBlueprintLua(fs.readFileSync(blueprintPath, 'utf8'))
+const wantedTaskIds = new Set(blueprints.flatMap(blueprint => (blueprint.unlock_task || []).map(([taskId]) => taskId)))
+const tasks = parseResearchTasksLua(fs.readFileSync(taskPath, 'utf8'), wantedTaskIds)
 const characters = readJson(CHARACTERS_PATH)
 const characterByGid = new Map(characters.map(character => [Number(character.gid), character]))
 
@@ -175,26 +176,7 @@ const sourceShips = blueprints.map(blueprint => {
   }
 })
 
-const sourceShipIds = new Set(sourceShips.map(ship => String(ship.id)))
-const overrideShips = readJson(OVERRIDES_PATH).ships
-  .filter(override => !sourceShipIds.has(String(override.id)))
-  .map(override => {
-    const character = characterByGid.get(Number(override.gid))
-    if (!character) throw new Error(`개발함 보정 캐릭터를 찾지 못했습니다: gid ${override.gid}`)
-    return {
-      ...override,
-      id: character.id,
-      gid: character.gid,
-      name: character.name,
-      planRarity: character.rarity === 'UR' ? 'DR' : 'PR',
-      rarity: character.rarity,
-      faction: character.faction,
-      shipType: character.shipType,
-      iconUrl: character.iconUrl,
-    }
-  })
-
-const ships = [...sourceShips, ...overrideShips]
+const ships = sourceShips
   .sort((a, b) => a.generation - b.generation || String(a.id).localeCompare(String(b.id)))
 
 const output = {
@@ -206,11 +188,17 @@ const output = {
     nextGenerationPolicy: 'KR 정식 데이터 편입 후 반영',
     notes: [
       '1~9기는 KR 게임 데이터를 기준으로 생성합니다.',
-      '참고용 JSON에 아직 없는 최신 기수는 교차 검증한 KR Lua 보정 데이터로 채우며, JSON에 편입되면 원본을 우선합니다.',
+      '최신 KR Lua의 개발함·임무 데이터를 직접 사용합니다.',
     ],
   },
   ships,
 }
 
-fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`, 'utf8')
+const temporaryOutput = `${OUTPUT_PATH}.tmp-${process.pid}`
+try {
+  fs.writeFileSync(temporaryOutput, `${JSON.stringify(output, null, 2)}\n`, 'utf8')
+  fs.renameSync(temporaryOutput, OUTPUT_PATH)
+} finally {
+  if (fs.existsSync(temporaryOutput)) fs.rmSync(temporaryOutput)
+}
 console.log(`research recommendations generated: ${ships.length} ships, generation 1-${output.source.maxGeneration}`)

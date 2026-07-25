@@ -1,25 +1,25 @@
 {
   "meta": {
     "note": "KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.",
-    "generatedAt": "2026-07-23T12:21:36.105Z",
+    "generatedAt": "2026-07-25T23:45:54.911Z",
     "total": 875,
     "withObtain": 875,
     "withoutObtain": 0,
     "availability": {
-      "active-event": 5,
+      "active-event": 2,
       "collab-unknown": 89,
       "permanent": 609,
-      "rerun-wait": 172
+      "rerun-wait": 175
     },
     "difficulty": {
       "easy": 327,
-      "event": 5,
+      "event": 2,
       "hard": 64,
-      "limited": 261,
+      "limited": 264,
       "normal": 218
     },
     "acquisitionRoutes": {
-      "active-event": 5,
+      "active-event": 2,
       "archive-drop": 63,
       "construction": 323,
       "core-monthly": 25,
@@ -8863,10 +8863,10 @@
       }
     },
     {
-      "id": 329,
+      "id": 330,
       "gid": 10214,
-      "name": "덴버",
-      "rarity": "SR",
+      "name": "몬트필리어",
+      "rarity": "SSR",
       "faction": "유니온",
       "shipType": "경순",
       "obtain": [
@@ -8937,10 +8937,10 @@
       }
     },
     {
-      "id": 330,
+      "id": 329,
       "gid": 10215,
-      "name": "몬트필리어",
-      "rarity": "SSR",
+      "name": "덴버",
+      "rarity": "SR",
       "faction": "유니온",
       "shipType": "경순",
       "obtain": [
@@ -19991,7 +19991,7 @@
       "name": "괌",
       "rarity": "UR",
       "faction": "유니온",
-      "shipType": "대순",
+      "shipType": "초순",
       "obtain": [
         "한정 이벤트: 빛을 쫓는 별의 바다"
       ],
@@ -29819,7 +29819,7 @@
       "name": "꼬마 리나운",
       "rarity": "SR",
       "faction": "로열",
-      "shipType": "전함",
+      "shipType": "순전",
       "obtain": [
         "중형함 상시 건조"
       ],
@@ -43522,7 +43522,7 @@
       "name": "꼬마 히에이",
       "rarity": "SR",
       "faction": "중앵",
-      "shipType": "전함",
+      "shipType": "순전",
       "obtain": [
         "중형함 상시 건조"
       ],
@@ -43598,7 +43598,7 @@
       "name": "꼬마 아마기",
       "rarity": "SR",
       "faction": "중앵",
-      "shipType": "전함",
+      "shipType": "순전",
       "obtain": [
         "중형함 상시 건조"
       ],
@@ -43672,7 +43672,7 @@
       "name": "콘고(µ장비)",
       "rarity": "SR",
       "faction": "중앵",
-      "shipType": "전함",
+      "shipType": "순전",
       "obtain": [
         "이벤트: 공명의 Passion"
       ],
@@ -47664,7 +47664,7 @@
       "name": "이13",
       "rarity": "SSR",
       "faction": "중앵",
-      "shipType": "잠수항모",
+      "shipType": "잠항모",
       "obtain": [
         "특형함 상시 건조"
       ],
@@ -47741,7 +47741,7 @@
       "name": "이404",
       "rarity": "UR",
       "faction": "중앵",
-      "shipType": "잠수항모",
+      "shipType": "잠항모",
       "obtain": [
         "이벤트: 아마하라에 바치는 춤"
       ],
@@ -47795,7 +47795,7 @@
       "name": "카시노",
       "rarity": "SR",
       "faction": "중앵",
-      "shipType": "운송함",
+      "shipType": "운송",
       "obtain": [
         "특형함 상시 건조"
       ],
@@ -48091,7 +48091,7 @@
       "name": "아즈마",
       "rarity": "UR",
       "faction": "중앵",
-      "shipType": "대순",
+      "shipType": "초순",
       "obtain": [
         "연구 도크"
       ],
@@ -52612,7 +52612,7 @@
       "name": "꼬마 에기르",
       "rarity": "SR",
       "faction": "철혈",
-      "shipType": "대순",
+      "shipType": "초순",
       "obtain": [
         "한정 이벤트: 「심연의 나라의 지배자」"
       ],
@@ -53181,7 +53181,7 @@
       "name": "아드미랄 젠커",
       "rarity": "SSR",
       "faction": "철혈",
-      "shipType": "전함",
+      "shipType": "순전",
       "obtain": [
         "이벤트: 네온 시티의 탐색자"
       ],
@@ -55722,7 +55722,7 @@
       "name": "에기르",
       "rarity": "UR",
       "faction": "철혈",
-      "shipType": "대순",
+      "shipType": "초순",
       "obtain": [
         "연구 도크"
       ],
@@ -58070,7 +58070,7 @@
       "name": "딩안",
       "rarity": "SR",
       "faction": "동황",
-      "shipType": "운송함",
+      "shipType": "운송",
       "obtain": [
         "코어 월간 교환",
         "코어 상점"
@@ -63475,7 +63475,7 @@
       "name": "크론시타트",
       "rarity": "UR",
       "faction": "노스유니온",
-      "shipType": "대순",
+      "shipType": "초순",
       "obtain": [
         "중형함 상시 건조",
         "특형함 상시 건조",
@@ -64176,7 +64176,7 @@
       "faction": "아이리스",
       "shipType": "구축",
       "obtain": [
-        "현재 이벤트: 환몽의 카발카드 (2026-07-23까지)"
+        "이벤트: 환몽의 카발카드"
       ],
       "historicalObtain": [
         "이벤트: 환몽의 카발카드"
@@ -64201,36 +64201,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "환몽의 카발카드",
-        "endsAt": "2026-07-23"
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 환몽의 카발카드"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 환몽의 카발카드"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -65181,7 +65161,7 @@
       "faction": "아이리스",
       "shipType": "경항모",
       "obtain": [
-        "현재 이벤트: 환몽의 카발카드 (2026-07-23까지)"
+        "이벤트: 환몽의 카발카드"
       ],
       "historicalObtain": [
         "이벤트: 환몽의 카발카드"
@@ -65206,36 +65186,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "환몽의 카발카드",
-        "endsAt": "2026-07-23"
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 환몽의 카발카드"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 환몽의 카발카드"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -65482,7 +65442,7 @@
       "faction": "아이리스",
       "shipType": "대순",
       "obtain": [
-        "현재 이벤트: 환몽의 카발카드 (2026-07-23까지)"
+        "이벤트: 환몽의 카발카드"
       ],
       "historicalObtain": [
         "이벤트: 환몽의 카발카드"
@@ -65507,36 +65467,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "환몽의 카발카드",
-        "endsAt": "2026-07-23"
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 환몽의 카발카드"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 환몽의 카발카드"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -65698,7 +65638,7 @@
       "name": "브레스트",
       "rarity": "UR",
       "faction": "아이리스",
-      "shipType": "대순",
+      "shipType": "초순",
       "obtain": [
         "연구 도크"
       ],
@@ -73036,6 +72976,318 @@
       }
     },
     {
+      "id": "Z031",
+      "gid": 1030001,
+      "name": "쿠온",
+      "rarity": "SSR",
+      "faction": "칭송받는자",
+      "shipType": "중순",
+      "obtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "historicalObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": "02:05:00"
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "collab-unknown",
+        "label": "콜라보 복각 미정"
+      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
+      "difficulty": {
+        "key": "limited",
+        "label": "현재 획득 불가",
+        "reasons": [
+          "콜라보 복각 미정"
+        ]
+      },
+      "verification": {
+        "localKr": true,
+        "localResource": false,
+        "altoy": true,
+        "status": "matched"
+      }
+    },
+    {
+      "id": "Z032",
+      "gid": 1030002,
+      "name": "네코네",
+      "rarity": "SSR",
+      "faction": "칭송받는자",
+      "shipType": "구축",
+      "obtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "historicalObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": "00:23:00"
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "collab-unknown",
+        "label": "콜라보 복각 미정"
+      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
+      "difficulty": {
+        "key": "limited",
+        "label": "현재 획득 불가",
+        "reasons": [
+          "콜라보 복각 미정"
+        ]
+      },
+      "verification": {
+        "localKr": true,
+        "localResource": false,
+        "altoy": true,
+        "status": "matched"
+      }
+    },
+    {
+      "id": "Z033",
+      "gid": 1030003,
+      "name": "루루티에",
+      "rarity": "SSR",
+      "faction": "칭송받는자",
+      "shipType": "경순",
+      "obtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "historicalObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": "01:48:00"
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "collab-unknown",
+        "label": "콜라보 복각 미정"
+      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
+      "difficulty": {
+        "key": "limited",
+        "label": "현재 획득 불가",
+        "reasons": [
+          "콜라보 복각 미정"
+        ]
+      },
+      "verification": {
+        "localKr": true,
+        "localResource": false,
+        "altoy": true,
+        "status": "matched"
+      }
+    },
+    {
+      "id": "Z034",
+      "gid": 1030004,
+      "name": "우루루",
+      "rarity": "SR",
+      "faction": "칭송받는자",
+      "shipType": "경항모",
+      "obtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "historicalObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": "02:25:00"
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "collab-unknown",
+        "label": "콜라보 복각 미정"
+      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
+      "difficulty": {
+        "key": "limited",
+        "label": "현재 획득 불가",
+        "reasons": [
+          "콜라보 복각 미정"
+        ]
+      },
+      "verification": {
+        "localKr": true,
+        "localResource": false,
+        "altoy": true,
+        "status": "matched"
+      }
+    },
+    {
+      "id": "Z035",
+      "gid": 1030005,
+      "name": "사라나",
+      "rarity": "SR",
+      "faction": "칭송받는자",
+      "shipType": "경항모",
+      "obtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "historicalObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "collab-unknown",
+        "label": "콜라보 복각 미정"
+      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
+      "difficulty": {
+        "key": "limited",
+        "label": "현재 획득 불가",
+        "reasons": [
+          "콜라보 복각 미정"
+        ]
+      },
+      "verification": {
+        "localKr": true,
+        "localResource": false,
+        "altoy": true,
+        "status": "matched"
+      }
+    },
+    {
+      "id": "Z036",
+      "gid": 1030006,
+      "name": "후미뤼르",
+      "rarity": "SR",
+      "faction": "칭송받는자",
+      "shipType": "항모",
+      "obtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "historicalObtain": [
+        "이벤트：저편에서의 만남"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "collab-unknown",
+        "label": "콜라보 복각 미정"
+      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
+      "difficulty": {
+        "key": "limited",
+        "label": "현재 획득 불가",
+        "reasons": [
+          "콜라보 복각 미정"
+        ]
+      },
+      "verification": {
+        "localKr": true,
+        "localResource": false,
+        "altoy": true,
+        "status": "matched"
+      }
+    },
+    {
       "id": "Z041",
       "gid": 1040001,
       "name": "키즈나 아이",
@@ -74661,7 +74913,7 @@
       "name": "아키즈키 리츠코",
       "rarity": "SR",
       "faction": "아이마스",
-      "shipType": "운송함",
+      "shipType": "운송",
       "obtain": [
         "한정 이벤트: 바다에 울려퍼지는 아이돌 노래"
       ],
@@ -75255,7 +75507,7 @@
       "name": "공주",
       "rarity": "SSR",
       "faction": "그리드맨",
-      "shipType": "운송함",
+      "shipType": "운송",
       "obtain": [
         "한정 이벤트: 호광은 교차하는 세계에서"
       ],
@@ -75579,7 +75831,7 @@
       "name": "칼라 이데아스",
       "rarity": "SSR",
       "faction": "라이자",
-      "shipType": "대순",
+      "shipType": "초순",
       "obtain": [
         "한정 이벤트: 연금술사와 비밀 유적 군도"
       ],
@@ -77083,318 +77335,6 @@
         "localResource": true,
         "altoy": true,
         "status": "matched"
-      }
-    },
-    {
-      "id": "Z031",
-      "gid": 10300010,
-      "name": "쿠온",
-      "rarity": "SSR",
-      "faction": "칭송받는자",
-      "shipType": "중순",
-      "obtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "historicalObtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "obtainEn": [],
-      "build": {
-        "light": false,
-        "heavy": false,
-        "special": false,
-        "limited": true,
-        "timer": "02:05:00"
-      },
-      "mapDrops": [],
-      "permanentSignals": {
-        "map": false,
-        "archive": false,
-        "coreMonthly": false,
-        "arenaShop": false,
-        "build": false,
-        "shop": false,
-        "other": false,
-        "timeline": false
-      },
-      "availability": {
-        "key": "collab-unknown",
-        "label": "콜라보 복각 미정"
-      },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
-      "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
-        "reasons": [
-          "콜라보 복각 미정"
-        ]
-      },
-      "verification": {
-        "localKr": false,
-        "localResource": false,
-        "altoy": true,
-        "status": "altoy-only"
-      }
-    },
-    {
-      "id": "Z032",
-      "gid": 10300020,
-      "name": "네코네",
-      "rarity": "SSR",
-      "faction": "칭송받는자",
-      "shipType": "구축",
-      "obtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "historicalObtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "obtainEn": [],
-      "build": {
-        "light": false,
-        "heavy": false,
-        "special": false,
-        "limited": true,
-        "timer": "00:23:00"
-      },
-      "mapDrops": [],
-      "permanentSignals": {
-        "map": false,
-        "archive": false,
-        "coreMonthly": false,
-        "arenaShop": false,
-        "build": false,
-        "shop": false,
-        "other": false,
-        "timeline": false
-      },
-      "availability": {
-        "key": "collab-unknown",
-        "label": "콜라보 복각 미정"
-      },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
-      "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
-        "reasons": [
-          "콜라보 복각 미정"
-        ]
-      },
-      "verification": {
-        "localKr": false,
-        "localResource": false,
-        "altoy": true,
-        "status": "altoy-only"
-      }
-    },
-    {
-      "id": "Z033",
-      "gid": 10300030,
-      "name": "루루티에",
-      "rarity": "SSR",
-      "faction": "칭송받는자",
-      "shipType": "경순",
-      "obtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "historicalObtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "obtainEn": [],
-      "build": {
-        "light": false,
-        "heavy": false,
-        "special": false,
-        "limited": true,
-        "timer": "01:48:00"
-      },
-      "mapDrops": [],
-      "permanentSignals": {
-        "map": false,
-        "archive": false,
-        "coreMonthly": false,
-        "arenaShop": false,
-        "build": false,
-        "shop": false,
-        "other": false,
-        "timeline": false
-      },
-      "availability": {
-        "key": "collab-unknown",
-        "label": "콜라보 복각 미정"
-      },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
-      "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
-        "reasons": [
-          "콜라보 복각 미정"
-        ]
-      },
-      "verification": {
-        "localKr": false,
-        "localResource": false,
-        "altoy": true,
-        "status": "altoy-only"
-      }
-    },
-    {
-      "id": "Z034",
-      "gid": 10300040,
-      "name": "우루루",
-      "rarity": "SR",
-      "faction": "칭송받는자",
-      "shipType": "경항모",
-      "obtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "historicalObtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "obtainEn": [],
-      "build": {
-        "light": false,
-        "heavy": false,
-        "special": false,
-        "limited": true,
-        "timer": "02:25:00"
-      },
-      "mapDrops": [],
-      "permanentSignals": {
-        "map": false,
-        "archive": false,
-        "coreMonthly": false,
-        "arenaShop": false,
-        "build": false,
-        "shop": false,
-        "other": false,
-        "timeline": false
-      },
-      "availability": {
-        "key": "collab-unknown",
-        "label": "콜라보 복각 미정"
-      },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
-      "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
-        "reasons": [
-          "콜라보 복각 미정"
-        ]
-      },
-      "verification": {
-        "localKr": false,
-        "localResource": false,
-        "altoy": true,
-        "status": "altoy-only"
-      }
-    },
-    {
-      "id": "Z035",
-      "gid": 10300050,
-      "name": "사라나",
-      "rarity": "SR",
-      "faction": "칭송받는자",
-      "shipType": "경항모",
-      "obtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "historicalObtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "obtainEn": [],
-      "build": {
-        "light": false,
-        "heavy": false,
-        "special": false,
-        "limited": false,
-        "timer": null
-      },
-      "mapDrops": [],
-      "permanentSignals": {
-        "map": false,
-        "archive": false,
-        "coreMonthly": false,
-        "arenaShop": false,
-        "build": false,
-        "shop": false,
-        "other": false,
-        "timeline": false
-      },
-      "availability": {
-        "key": "collab-unknown",
-        "label": "콜라보 복각 미정"
-      },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
-      "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
-        "reasons": [
-          "콜라보 복각 미정"
-        ]
-      },
-      "verification": {
-        "localKr": false,
-        "localResource": false,
-        "altoy": true,
-        "status": "altoy-only"
-      }
-    },
-    {
-      "id": "Z036",
-      "gid": 10300060,
-      "name": "후미뤼르",
-      "rarity": "SR",
-      "faction": "칭송받는자",
-      "shipType": "항모",
-      "obtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "historicalObtain": [
-        "이벤트：저편에서의 만남"
-      ],
-      "obtainEn": [],
-      "build": {
-        "light": false,
-        "heavy": false,
-        "special": false,
-        "limited": false,
-        "timer": null
-      },
-      "mapDrops": [],
-      "permanentSignals": {
-        "map": false,
-        "archive": false,
-        "coreMonthly": false,
-        "arenaShop": false,
-        "build": false,
-        "shop": false,
-        "other": false,
-        "timeline": false
-      },
-      "availability": {
-        "key": "collab-unknown",
-        "label": "콜라보 복각 미정"
-      },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
-      "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
-        "reasons": [
-          "콜라보 복각 미정"
-        ]
-      },
-      "verification": {
-        "localKr": false,
-        "localResource": false,
-        "altoy": true,
-        "status": "altoy-only"
       }
     }
   ]

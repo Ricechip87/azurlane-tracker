@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
 import shipObtainabilityUrl from '../data/shipObtainability.json?url'
 import { buildOperationTierByName } from '../utils/researchRecommendations.js'
+import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import FleetTechPanel from './fleet-tech/FleetTechPanel.jsx'
 
 export default function TechPointRecommendationPage({ characters }) {
@@ -27,7 +28,7 @@ export default function TechPointRecommendationPage({ characters }) {
         if (ignore) return
         setCandidateRankingData({
           operationTierByName: buildOperationTierByName(growthData),
-          obtainabilityByName: new Map((obtainabilityData.ships || []).map(ship => [ship.name, ship])),
+          obtainabilityByName: createShipObtainabilityLookup(obtainabilityData.ships),
         })
       } catch (error) {
         if (ignore) return

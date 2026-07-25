@@ -54,9 +54,22 @@ export function parseFleetTechLua(text) {
 
 export function selectFleetTechRecord({ cn, kr, sheet }) {
   if (cn) return { record: cn, source: 'cn-lua' }
-  if (kr) return { record: kr, source: 'kr-json' }
+  if (kr) return { record: kr, source: 'kr-lua' }
   if (sheet) return { record: sheet, source: 'tech-sheet' }
   return { record: null, source: 'existing' }
+}
+
+export function selectFleetTechSheetRecord(sheetRecords, character) {
+  const byName = sheetRecords.byName.get(character.name)
+  if (byName && sheetRecordAppliesToCharacter(byName, character)) return byName
+
+  const byId = sheetRecords.byId.get(normalizeSheetId(character.id))
+  if (byId
+    && normalizeTechName(byId.name) === normalizeTechName(character.name)
+    && sheetRecordAppliesToCharacter(byId, character)) {
+    return byId
+  }
+  return undefined
 }
 
 export function officialRecordToCharacterTech(record, fallback = {}) {
@@ -180,6 +193,19 @@ function sameShipTypes(left, right) {
   const aliases = { 잠수함: '잠수', 잠수항모: '잠항모', 대형순: '초순', 정규항모: '항모' }
   const normalize = values => [...new Set(values.map(value => aliases[value] || value))].sort()
   return JSON.stringify(normalize(left)) === JSON.stringify(normalize(right))
+}
+
+function sheetRecordAppliesToCharacter(record, character) {
+  const appliedTypes = [...new Set([
+    ...(record.statAcquired?.shipTypes || []),
+    ...(record.stat120?.shipTypes || []),
+  ].map(normalizeDisplayShipType))]
+  if (!appliedTypes.length) return true
+  return appliedTypes.includes(normalizeDisplayShipType(character.shipType))
+}
+
+function normalizeTechName(value) {
+  return String(value || '').normalize('NFKC').toLowerCase().replace(/[·ㆍ\s()（）・]/g, '')
 }
 
 function parseCsvLine(line) {

@@ -1,5 +1,30 @@
 # Change Log
 
+## 2026-07-26 - Refresh and Audit Reference Sources Safely
+
+### Changed
+- Make the full data-source audit refresh AzurLaneData, ALtoy, Fernando, CN Lua, and both maintained Google Sheets before comparing app data.
+- Stage and validate every managed source before replacing the corresponding `참고용/` path, with rollback and cleanup of temporary/backup files on failure.
+- Preserve reference images, `검산용.json`, and unmanaged user files while removing three unused legacy intermediate files after a successful refresh.
+- Keep image synchronization incremental: create required skin folders and download only missing painting, icon, and shipyard assets without overwriting existing files.
+- Add a network-free local audit command and document the refresh/audit boundary.
+- Resolve recommendation sheets by trimmed sheet name instead of workbook position, so newly inserted tabs cannot silently shift all three growth sources.
+- Preserve stable app identities by name and verify gid/skin identity against current ALtoy data when spreadsheet row IDs move.
+- Regenerate current obtainability after the July event ended, moving 셰르부르, 아로망슈, and 랑트레피드 from active event to rerun wait.
+- Copy public recommendation card art only when missing; add the correctly mapped 몬트필리어 artwork without overwriting curated existing files.
+- Use the latest KR roster and research Lua plus CN/EN/JP/KR/TW fleet-tech Lua as audit sources instead of delayed regional JSON snapshots.
+- Generate all research-series 1–9 unlock and XP data directly from KR Lua and remove the obsolete series-9 manual fallback.
+- Match obtainability by gid, then id, and allow name fallback only for unique names so the two ships named 벨 cannot overwrite each other.
+- Correct five battlecruisers that the spreadsheet labeled as battleships by preferring ALtoy ship types, while preserving identity by gid for duplicate names.
+- Validate complete PNG/WebP downloads, fail on network/5xx responses, write generated JSON atomically, lock concurrent refreshes, and preserve rollback backups when restoration fails.
+- Prune recommendation-card artwork that is no longer referenced by either growth or research recommendations.
+
+### Verified
+- Added regression coverage for the exact managed-path allowlist, preservation rules, legacy cleanup, and rejection of paths outside the reference boundary.
+- Added regression coverage for sheet-name selection and shifted spreadsheet identity matching.
+- Added regression coverage for multiline CSV, remote image failures and truncation, refresh locking and rollback, KR Lua parsing, duplicate-name obtainability, collab 벨 technology isolation, and corrected battlecruiser types.
+- Re-ran the complete remote refresh: app, ALtoy, and latest KR roster all contain the same 875 ships; all five regional fleet-tech sources match CN on common records.
+
 ## 2026-07-26 - Align Tempesta and Pedrería Faction Codes
 
 ### Changed

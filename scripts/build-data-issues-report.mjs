@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { PREFER_ALTOY_GIDS } from './lib/obtainability-sources.mjs'
+import { parseShipDataGroupGidsLua } from './lib/research-lua-sources.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const readJson = sourcePath => JSON.parse(fs.readFileSync(
@@ -11,8 +12,14 @@ const readJson = sourcePath => JSON.parse(fs.readFileSync(
 const audit = readJson('reports/data-sources/latest.json')
 const characters = readJson('src/data/characters.json')
 const obtainability = readJson('src/data/shipObtainability.json')
-const altoy = readJson(process.env.ALTOY_DATA_PATH || '참고용/ALtoy/data/ship_info_data.json')
-const krGroups = readJson(process.env.KR_SHIP_GROUP_PATH || '참고용/AzurLaneData/KR/ShareCfg/ship_data_group.json')
+const sourceRoot = process.env.AUDIT_SOURCE_ROOT
+  ? path.resolve(process.env.AUDIT_SOURCE_ROOT)
+  : path.join(root, '참고용')
+const altoy = readJson(process.env.ALTOY_DATA_PATH || path.join(sourceRoot, 'ALtoy/data/ship_info_data.json'))
+const krGroups = readJson(process.env.KR_SHIP_GROUP_PATH || path.join(sourceRoot, 'AzurLaneData/KR/ShareCfg/ship_data_group.json'))
+const krRosterPath = path.join(sourceRoot, 'AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua')
+const krRosterGids = new Set(parseShipDataGroupGidsLua(fs.readFileSync(krRosterPath, 'utf8')).map(Number))
+const sourceLabel = process.env.AUDIT_SOURCE_ROOT ? '지정한 최신 KR 원천' : '최신 동기화 KR 원천'
 
 const charactersByGid = new Map(characters.map(ship => [String(ship.gid), ship]))
 const charactersByName = new Map(characters.map(ship => [normalizeName(ship.name), ship]))
@@ -27,7 +34,8 @@ const identityExceptions = audit.display.identityFallbacks.map(issue => ({
 }))
 
 const obtainabilityReview = obtainability.ships
-  .filter(ship => ['altoy-only', 'different'].includes(ship.verification.status))
+  .filter(ship => ship.verification.status === 'different'
+    || (ship.verification.status === 'altoy-only' && !krRosterGids.has(Number(ship.gid))))
   .map(ship => {
     const character = charactersByGid.get(String(ship.gid)) || charactersByName.get(normalizeName(ship.name))
     const altoyShip = altoyByGid.get(String(ship.gid)) || altoyByName.get(normalizeName(ship.name))
@@ -37,10 +45,10 @@ const obtainabilityReview = obtainability.ships
       name: ship.name,
       status: ship.verification.status,
       reason: ship.verification.status === 'altoy-only'
-        ? 'ALtoy에는 입수처가 있으나 현재 KR 스냅샷에는 없음'
+        ? `ALtoy에는 입수처가 있으나 ${sourceLabel}에는 없음`
         : PREFER_ALTOY_GIDS.has(Number(ship.gid))
-          ? 'KR 스냅샷보다 최신인 ALtoy 입수처를 적용함'
-          : 'KR 스냅샷과 ALtoy의 입수처 문구가 서로 다름',
+          ? `${sourceLabel}보다 최신인 ALtoy 입수처를 적용함`
+          : `${sourceLabel}과 ALtoy의 입수처 문구가 서로 다름`,
       resolution: PREFER_ALTOY_GIDS.has(Number(ship.gid)) ? 'altoy-applied' : 'review',
       krObtain: descriptions(krGroup?.description),
       altoyObtain: unique(altoyShip?.description || []),
@@ -53,7 +61,7 @@ const missingReferenceImages = audit.images.referenceMissing.map(issue => {
   const character = charactersByGid.get(String(issue.gid)) || charactersByName.get(normalizeName(issue.name))
   return {
     ...issue,
-    reason: `읽기 전용 참고용/Fernando 스냅샷에 ${issue.missing.join(', ')}가 없음 (앱 공개 이미지는 별도 보충)`,
+    reason: `Fernando 원격 원천에도 ${issue.missing.join(', ')}가 없어 자동 보충하지 못함 (앱 공개 이미지는 별도 확인)`,
     iconFile: iconFile(character, issue.skinId),
   }
 })
@@ -114,7 +122,7 @@ function renderHtml(data) {
   <div class="summary">생성: ${escapeHtml(data.generatedAt)} · 자동 오류가 아니라 사람 확인이 필요한 예외/불일치 목록입니다.<br>입수 상태: 상시 획득 ${data.summary.availability.permanent || 0} · 현재 이벤트 ${data.summary.availability['active-event'] || 0} · 복각 대기 ${data.summary.availability['rerun-wait'] || 0} · 콜라보 복각 미정 ${data.summary.availability['collab-unknown'] || 0}<br>상시 입수 방법: 확정 상점 ${data.summary.acquisitionRoutes['fixed-exchange'] || 0} · 코어 월간 ${data.summary.acquisitionRoutes['core-monthly'] || 0} · 랜덤 상점 ${data.summary.acquisitionRoutes['rotating-exchange'] || 0} · 상시 건조 ${data.summary.acquisitionRoutes.construction || 0} · 고해역 드롭 ${data.summary.acquisitionRoutes['high-map-drop'] || 0}</div>
   ${section('식별자 보조 매칭', `${data.identityExceptions.length}명 · 앱 gid와 ALtoy gid가 달라 이름으로 연결`, data.identityExceptions.map(identityCard))}
   ${section('입수처 교차검증', `${data.obtainabilityReview.length}명 · ALtoy 단독 ${data.summary.obtainabilityAltoyOnly}, ALtoy 최신값 적용 ${data.summary.obtainabilityDifferent}`, data.obtainabilityReview.map(obtainCard))}
-  ${section('참고용 이미지 스냅샷 누락', `${data.missingReferenceImages.length}명 · 앱 아이콘은 정상이며 읽기 전용 참고용 폴더와의 차이`, data.missingReferenceImages.map(imageCard))}
+  ${section('원격 미제공 참고 이미지', `${data.missingReferenceImages.length}명 · 최신 원격 원천에도 없어 자동 보충하지 못한 파일`, data.missingReferenceImages.map(imageCard))}
   ${section('CN 선행 함선 제외', `${data.cnOnlyExcluded.length}건 · KR/ALtoy 범위에 들어오기 전까지 표시하지 않음`, data.cnOnlyExcluded.map(cnCard))}
 </body>
 </html>\n`

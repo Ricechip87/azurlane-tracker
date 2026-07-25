@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 참고용/
+/.reference-sync.lock
+/.reference-sync-stage-*
+/.reference-sync-backup-*
 
 # Editor directories and files
 .vscode/*

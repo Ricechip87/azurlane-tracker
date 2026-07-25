@@ -14,7 +14,10 @@ assert.equal(data.meta.acquisitionRoutes['core-monthly'], 25, 'KR 코어 월간 
 for (const name of ['쿠온', '네코네', '루루티에', '우루루', '사라나', '후미뤼르']) {
   assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, 'collab-unknown', `${name}도 다른 콜라보와 동일하게 분류`)
 }
-for (const name of ['셰르부르', '아로망슈', '랑트레피드', '브리스톨(META)', '쾨니히스베르크(META)']) {
+for (const name of ['셰르부르', '아로망슈', '랑트레피드']) {
+  assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, 'rerun-wait', `${name} KR 이벤트 종료 후 복각 대기`)
+}
+for (const name of ['브리스톨(META)', '쾨니히스베르크(META)']) {
   assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, 'active-event', `${name} KR 현재 획득 가능`)
 }
 for (const name of ['던컨', '타카하시', '막스 임멜만', '오라주', '발파라이소']) {

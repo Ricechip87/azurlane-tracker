@@ -5,6 +5,7 @@ import {
   parseFleetTechSheet,
   parseFleetTechLua,
   selectFleetTechRecord,
+  selectFleetTechSheetRecord,
 } from './fleet-tech-sources.mjs'
 
 const lua = `
@@ -73,7 +74,7 @@ const cn = { pt_get: 22 }
 const kr = { pt_get: 21 }
 const sheet = { pt_get: 20 }
 assert.deepEqual(selectFleetTechRecord({ cn, kr, sheet }), { record: cn, source: 'cn-lua' })
-assert.deepEqual(selectFleetTechRecord({ kr, sheet }), { record: kr, source: 'kr-json' })
+assert.deepEqual(selectFleetTechRecord({ kr, sheet }), { record: kr, source: 'kr-lua' })
 assert.deepEqual(selectFleetTechRecord({ sheet }), { record: sheet, source: 'tech-sheet' })
 assert.deepEqual(selectFleetTechRecord({}), { record: null, source: 'existing' })
 
@@ -100,6 +101,16 @@ const parsedSheet = parseFleetTechSheet([
 ].join('\n'))
 assert.deepEqual(parsedSheet.byId.get('1').techPoints, { acquired: 13, maxLB: 26, lv120: 19 })
 assert.deepEqual(parsedSheet.byName.get('브리스톨(META)').stat120, { shipTypes: ['구축'], stat: '내구', value: 2 })
+assert.equal(selectFleetTechSheetRecord(parsedSheet, {
+  id: 'Z004',
+  name: '테스트함',
+  shipType: '항모',
+}), undefined)
+assert.equal(selectFleetTechSheetRecord(parsedSheet, {
+  id: 'moved-id',
+  name: '테스트함',
+  shipType: '구축',
+}), parsedSheet.byName.get('테스트함'))
 
 const factionLevels = buildFactionTechLevels({
   1: { techs: [1001] },

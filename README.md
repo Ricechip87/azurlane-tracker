@@ -41,4 +41,12 @@ npm.cmd run build
 
 ## 로컬 참고 자료
 
-`참고용/` 폴더는 CSV, 원본 에셋, 임시 참고 자료를 보관하는 로컬 전용 폴더입니다. Git에는 포함하지 않습니다.
+`참고용/` 폴더는 CSV, 원본 에셋, 검산 자료를 보관하는 로컬 전용 폴더이며 Git에는 포함하지 않습니다.
+
+- `npm.cmd run sync:data-sources`: AzurLaneData, ALtoy, Fernando, 최신 KR roster·연구함 Lua, 5개 서버 기술 Lua와 두 공개 Google Sheets를 임시 폴더에 내려받아 검증한 뒤 자동 관리 원천만 교체합니다.
+- `npm.cmd run sync:reference-images`: ALtoy 함선 목록과 Fernando 이미지 원천을 비교해 없는 이미지와 하위 폴더만 추가합니다. 기존 이미지는 덮어쓰거나 삭제하지 않습니다.
+- `npm.cmd run audit:data-sources`: 위 데이터·이미지 동기화를 먼저 실행한 뒤 앱 데이터와 교차 검증 보고서를 만듭니다.
+- `npm.cmd run audit:data-sources:local`: 네트워크 갱신 없이 마지막으로 동기화한 참고 자료만 다시 검사합니다.
+- `npm.cmd run refresh:data`: 원천과 이미지를 갱신한 뒤 캐릭터·기술점수·육성·개발함·입수처 JSON 및 필요한 카드 아트를 다시 만들고 최종 감사를 실행합니다.
+
+동기화는 `검산용.json`, 이미지 폴더, 자동 관리 목록 밖의 사용자 자료를 보존합니다. 원격 파일을 전부 검증하기 전에는 기존 자료를 교체하지 않습니다. 정상 롤백이 확인된 임시 파일과 교체용 백업은 정리하며, 복원 자체가 실패하면 수동 복구를 위해 백업을 보존합니다.

@@ -1,38 +1,39 @@
 {
-  "generatedAt": "2026-07-23 21:25:07 KST",
+  "generatedAt": "2026-07-26 08:43:44 KST",
   "policy": {
     "displayedRoster": "KR/ALtoy 교차 검증 범위",
     "shipTechPriority": [
       "CN Lua",
-      "KR JSON",
+      "KR Lua",
       "JP 기술점수 시트"
     ],
-    "factionLevelAssumption": "보유 기술점수가 임계치에 도달하면 해당 레벨 연구도 완료한 것으로 간주"
+    "factionLevelAssumption": "보유 기술점수가 임계치에 도달하면 해당 레벨 연구도 완료한 것으로 간주",
+    "sourceMode": "latest-synced-reference"
   },
   "sources": {
-    "cnLua": "../.tmp-azurlane-pr9-20260723/lua-kr-tech.lua",
+    "cnLua": "참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
     "jpSheet": "참고용/벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv",
-    "regionalJson": [
-      "참고용/AzurLaneData/CN/ShareCfg",
-      "참고용/AzurLaneData/EN/ShareCfg",
-      "참고용/AzurLaneData/JP/ShareCfg",
-      "참고용/AzurLaneData/KR/ShareCfg",
-      "참고용/AzurLaneData/TW/ShareCfg"
+    "regionalLua": [
+      "참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
+      "참고용/AzurLaneLuaScripts/EN/sharecfg/fleet_tech_ship_template.lua",
+      "참고용/AzurLaneLuaScripts/JP/sharecfg/fleet_tech_ship_template.lua",
+      "참고용/AzurLaneLuaScripts/KR/sharecfg/fleet_tech_ship_template.lua",
+      "참고용/AzurLaneLuaScripts/TW/sharecfg/fleet_tech_ship_template.lua"
     ]
   },
   "ships": {
     "appCount": 875,
-    "cnOfficialCount": 742,
+    "cnOfficialCount": 745,
     "sourceCounts": {
       "cn-lua": 742,
-      "kr-json": 0,
-      "jp-sheet": 1
+      "kr-lua": 0,
+      "jp-sheet": 0
     },
     "mismatchCount": 0,
     "mismatches": [],
     "withoutSourceCount": 0,
     "withoutSource": [],
-    "officialNonTechCount": 132,
+    "officialNonTechCount": 133,
     "regionalVsCnMismatchCounts": {
       "CN": 0,
       "EN": 0,

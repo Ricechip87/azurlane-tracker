@@ -11,13 +11,6 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'))
 }
 
-function findReferenceDir() {
-  return fs.readdirSync(ROOT, { withFileTypes: true })
-    .filter(entry => entry.isDirectory())
-    .map(entry => path.join(ROOT, entry.name))
-    .find(candidate => fs.existsSync(path.join(candidate, 'AzurLane', 'images', 'skin')))
-}
-
 function extractRecommendationNames() {
   const growthData = readJson(GROWTH_RECOMMENDATIONS_PATH)
   const researchData = fs.existsSync(RESEARCH_RECOMMENDATIONS_PATH) ? readJson(RESEARCH_RECOMMENDATIONS_PATH) : { ships: [] }
@@ -33,15 +26,19 @@ function getSkinId(character) {
   return fileName.replace(/\.(png|webp)$/i, '')
 }
 
-const referenceDir = findReferenceDir()
-if (!referenceDir) throw new Error('참고용 AzurLane skin 폴더를 찾지 못했습니다.')
+const referenceDir = path.join(ROOT, '참고용')
+if (!fs.existsSync(path.join(referenceDir, 'AzurLane', 'images', 'skin'))) {
+  throw new Error('참고용 AzurLane skin 폴더를 찾지 못했습니다.')
+}
 
 const characters = readJson(CHARACTERS_PATH)
 const characterByName = new Map(characters.map(character => [character.name, character]))
 const sourceSkinDir = path.join(referenceDir, 'AzurLane', 'images', 'skin')
 const names = extractRecommendationNames()
 const missing = []
+const desiredFiles = new Set()
 let copied = 0
+let preserved = 0
 
 fs.mkdirSync(OUT_DIR, { recursive: true })
 
@@ -56,17 +53,36 @@ for (const name of names) {
 
   const source = path.join(sourceSkinDir, skinId, 'shipyard.png')
   const target = path.join(OUT_DIR, `${skinId}.png`)
+  desiredFiles.add(`${skinId}.png`)
+
+  if (fs.existsSync(target)) {
+    preserved++
+    continue
+  }
 
   if (!fs.existsSync(source)) {
     missing.push({ name, skinId, reason: 'shipyard-not-found' })
     continue
   }
 
-  fs.copyFileSync(source, target)
+  const temporary = `${target}.tmp-${process.pid}`
+  try {
+    fs.copyFileSync(source, temporary)
+    fs.renameSync(temporary, target)
+  } finally {
+    if (fs.existsSync(temporary)) fs.rmSync(temporary)
+  }
   copied++
 }
 
-console.log(`recommendation card art copied: ${copied}/${names.length}`)
+const removed = fs.readdirSync(OUT_DIR, { withFileTypes: true })
+  .filter(entry => entry.isFile() && /^\d+\.png$/i.test(entry.name) && !desiredFiles.has(entry.name))
+  .map(entry => {
+    fs.rmSync(path.join(OUT_DIR, entry.name))
+    return entry.name
+  })
+
+console.log(`recommendation card art: ${copied} copied, ${preserved} preserved, ${removed.length} stale removed, ${missing.length} unavailable`)
 if (missing.length > 0) {
   console.log('missing:')
   for (const item of missing) console.log(JSON.stringify(item))

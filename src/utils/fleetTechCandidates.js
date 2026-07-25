@@ -3,6 +3,7 @@ import { normalizeFactionValue } from './factions.js'
 import { obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
 import { getShipClassification, getShipPosition } from './shipClassifications.js'
+import { getShipObtainability } from './shipObtainabilityLookup.js'
 
 const RARITY_ORDER = {
   UR: 0,
@@ -74,7 +75,7 @@ function toCandidate(character, options) {
   const isSubmarine = getShipClassification(character.shipType) === '잠수'
 
   const operationTier = operationTierByName?.get(character.name) || ''
-  const obtainability = obtainabilityByName?.get(character.name) || null
+  const obtainability = getShipObtainability(obtainabilityByName, character) || null
 
   const candidate = {
     id: character.id,

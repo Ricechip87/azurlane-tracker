@@ -1,11 +1,15 @@
 import csv
 import json
 import re
+import sys
 import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
+sys.dont_write_bytecode = True
+
 import openpyxl
+from lib.growth_sheet_selection import find_sheet
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,14 +29,14 @@ SOURCES = [
         "key": "main",
         "label": "메인해역",
         "audience": "벽청년 이상",
-        "sheet_index": 2,
+        "sheet_name": "인식각성 추천표(메인해역)",
         "report": "main",
     },
     {
         "key": "operation-siren",
         "label": "대작전",
         "audience": "벽청년 이상",
-        "sheet_index": 3,
+        "sheet_name": "인식각성 추천표(대작전)",
         "report": "operation-siren",
         "exclusion_marker": "업데이트 안됨",
     },
@@ -40,7 +44,7 @@ SOURCES = [
         "key": "newbie",
         "label": "맨땅뉴비",
         "audience": "벽뉴비 권장",
-        "sheet_index": 4,
+        "sheet_name": "맨땅뉴비 추천 함순이표",
         "report": "newbie",
     },
 ]
@@ -365,7 +369,7 @@ def match_character(name, by_name):
 
 
 def extract_source(wb, source, by_name):
-    ws = wb.worksheets[source["sheet_index"]]
+    ws = find_sheet(wb, source["sheet_name"])
     values = build_merged_value_map(ws)
     exclusion_marker = source.get("exclusion_marker")
     excluded_from_row = find_excluded_from_row(ws, exclusion_marker)
