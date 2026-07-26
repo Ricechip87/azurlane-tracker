@@ -7,7 +7,7 @@ import { buildFleetRecommendation } from '../utils/fleetRecommendations.js'
 import { calcMajorFactionTechPoints } from '../utils/fleetTech.js'
 import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
 import { getRecommendationCardArtUrl } from '../utils/recommendationCardArt.js'
-import { buildOperationTierByName } from '../utils/researchRecommendations.js'
+import { buildOperationTierByName } from '../utils/recommendationRanking.js'
 import { calcStatsByShipType, mergeStatsByShipType } from '../utils/rosterStats.js'
 
 const RARITY_BADGE = {

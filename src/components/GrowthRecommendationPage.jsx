@@ -5,7 +5,6 @@ import shipObtainabilityData from '../data/shipObtainability.json'
 import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import { normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
-import { getRecommendationCardArtUrl } from '../utils/recommendationCardArt.js'
 import { getFactionBadgeName } from '../utils/factions.js'
 import { getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import {
@@ -17,6 +16,7 @@ import {
   normalizeGrowthSummary,
 } from '../utils/growthRecommendations.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
+import { RecommendationShipArtwork } from './recommendations/RecommendationShipArtwork.jsx'
 
 const MODES = [
   {
@@ -278,7 +278,6 @@ function RecommendationCard({ card, character, onOpen }) {
   const faction = getDisplayFaction(character?.faction)
   const shipType = character?.shipType || card.tags[0]
   const rarityStyle = rarityCardStyle(rarity)
-  const cardArtUrl = getRecommendationCardArtUrl(character, import.meta.env.BASE_URL)
   const status = card.status || normalizeAcquisitionStatus(character?.acquired)
 
   return (
@@ -288,18 +287,12 @@ function RecommendationCard({ card, character, onOpen }) {
       onClick={() => onOpen?.({ card, character })}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,#3a3a3a_0%,#202020_52%,#111_100%)]" />
-      {cardArtUrl ? (
-        <img
-          src={cardArtUrl}
-          alt=""
-          className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105"
-          loading="lazy"
-        />
-      ) : (
-        <div className="absolute inset-0 flex items-center justify-center bg-[#202020] text-3xl font-black text-gray-700">
-          {card.name.slice(0, 2)}
-        </div>
-      )}
+      <RecommendationShipArtwork
+        character={character}
+        name={card.name}
+        className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/90" />
       <div className="absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-black/50 to-transparent" />
@@ -342,20 +335,17 @@ function RecommendationCardPopup({ card, character, onClose }) {
   const faction = getDisplayFaction(character?.faction)
   const shipType = character?.shipType || card.tags[0]
   const status = card.status || normalizeAcquisitionStatus(character?.acquired)
-  const cardArtUrl = getRecommendationCardArtUrl(character, import.meta.env.BASE_URL)
   const details = getCardDetails(card)
 
   return (
     <RecommendationDialog name={card.name} onClose={onClose}>
         <div className="flex items-start gap-4 pr-6">
           <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded border border-neutral-600 bg-[#181818]">
-            {cardArtUrl ? (
-              <img src={cardArtUrl} alt="" className="h-full w-full object-cover object-top" />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center text-2xl font-black text-gray-700">
-                {card.name.slice(0, 2)}
-              </div>
-            )}
+            <RecommendationShipArtwork
+              character={character}
+              name={card.name}
+              className="h-full w-full object-cover object-top"
+            />
           </div>
 
           <div className="min-w-0 flex-1">

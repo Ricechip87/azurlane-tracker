@@ -5,12 +5,11 @@ import shipObtainabilityData from '../data/shipObtainability.json'
 import { isAcquiredStatus, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getFactionBadgeName, getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
 import { getEffectiveRarity, getResearchRarityLabel } from '../utils/rarity.js'
-import { getRecommendationCardArtUrl } from '../utils/recommendationCardArt.js'
 import { getAvailability, getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
+import { RecommendationShipArtwork } from './recommendations/RecommendationShipArtwork.jsx'
 import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import {
-  buildOperationTierByName,
   buildResearchFactionProgress,
   buildResearchRecommendationState,
   buildWebResearchRecommendationGroups,
@@ -19,6 +18,7 @@ import {
   getResearchUnlockCandidates,
   groupResearchShipsByGeneration,
 } from '../utils/researchRecommendations.js'
+import { buildOperationTierByName } from '../utils/recommendationRanking.js'
 
 const RESEARCH_SHIP_BY_NAME = new Map(researchRecommendationData.ships.map(ship => [ship.name, ship]))
 
@@ -172,7 +172,7 @@ function ResearchGoalPicker({ groups, selectedTarget, onSelect }) {
                   onClick={() => onSelect(item)}
                   className={`group relative h-[178px] w-[142px] max-w-full flex-none overflow-hidden rounded border-2 bg-[#272727] text-left shadow outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-white ${selected ? 'border-cyan-400' : item.unlock.met ? 'border-emerald-600' : 'border-neutral-600 hover:border-neutral-400'}`}
                 >
-                  <img src={getRecommendationCardArtUrl(item, import.meta.env.BASE_URL)} alt="" className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  <RecommendationShipArtwork character={item} className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/95" />
                   <div className="absolute left-1.5 top-1.5 flex gap-1 text-[9px] font-black">
                     <CardBadge>{item.generation}기</CardBadge>
@@ -204,7 +204,7 @@ function ResearchGoalPanel({ item, characters, candidateRankingData }) {
     <div className="p-4">
       <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
         <div>
-          <img src={getRecommendationCardArtUrl(item, import.meta.env.BASE_URL)} alt="" className="h-[232px] w-[172px] max-w-full rounded-md border-2 border-cyan-500 bg-[#181818] object-cover object-top" />
+          <RecommendationShipArtwork character={item} className="h-[232px] w-[172px] max-w-full rounded-md border-2 border-cyan-500 bg-[#181818] object-cover object-top" />
           <div className="mt-2 flex flex-wrap gap-1 text-[10px] font-black">
             <CardBadge>{item.generation}기</CardBadge>
             <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{getResearchRarityLabel(item.planRarity)}</CardBadge>
@@ -381,7 +381,6 @@ function SummaryCell({ label, value, tone }) {
 function ResearchCard({ item, tone, onSelect }) {
   const character = item.character
   const status = normalizeAcquisitionStatus(character?.acquired)
-  const artUrl = getRecommendationCardArtUrl(item, import.meta.env.BASE_URL)
   const border = tone === 'priority'
     ? 'border-cyan-400'
     : tone === 'ready' || tone === 'quick'
@@ -397,9 +396,8 @@ function ResearchCard({ item, tone, onSelect }) {
       className={`group relative h-[232px] w-[172px] max-w-full flex-none overflow-hidden rounded-md border-2 bg-[#272727] text-left shadow-lg outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-neutral-200 ${border}`}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_24%,#3a3a3a_0%,#202020_52%,#111_100%)]" />
-      <img
-        src={artUrl}
-        alt=""
+      <RecommendationShipArtwork
+        character={item}
         className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-105"
         loading="lazy"
       />
@@ -510,17 +508,11 @@ function ResearchCandidatePopup({ candidate, onClose }) {
     ? '잠수함 계열은 일반 해금 후보와 분리해 맨 마지막에 배치한 후보입니다.'
     : getFactionDisplayText(candidate.recommendation?.roleNote || '').trim()
       || '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.'
-  const cardArtUrl = getRecommendationCardArtUrl(candidate, import.meta.env.BASE_URL)
-
   return (
     <RecommendationDialog name={candidate.name} onClose={onClose}>
         <div className="flex items-start gap-4 pr-6">
           <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded border border-neutral-600 bg-[#181818]">
-            {cardArtUrl ? (
-              <img src={cardArtUrl} alt="" className="h-full w-full object-cover object-top" />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center text-2xl font-black text-gray-700">{candidate.name.slice(0, 2)}</div>
-            )}
+            <RecommendationShipArtwork character={candidate} className="h-full w-full object-cover object-top" />
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap gap-1.5 text-[11px] font-black">

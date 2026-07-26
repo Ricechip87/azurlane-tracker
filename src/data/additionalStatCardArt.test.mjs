@@ -32,4 +32,4 @@ for (const character of relevantCharacters) {
   assert.ok(width / height >= 0.7 && width / height <= 0.8, `${character.name} card-art aspect ratio`)
 }
 
-console.log(`additional-stat card art tests passed (${relevantCharacters.length} ships)`)
+console.log(`additional-stat candidate card art passed (${relevantCharacters.length}/${relevantCharacters.length}, missing 0)`)

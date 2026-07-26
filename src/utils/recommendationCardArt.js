@@ -20,6 +20,13 @@ export function getRecommendationCardArtUrl(character, baseUrl) {
   return `${normalizedBase}ship-card-art/${fileName}`
 }
 
+export function getRecommendationArtworkUrls(character, baseUrl) {
+  return [...new Set([
+    getRecommendationCardArtUrl(character, baseUrl),
+    character?.iconUrl || '',
+  ].filter(Boolean))]
+}
+
 export function isAdditionalStatCardArtCandidate(character) {
   return ['statAcquired', 'stat120'].some(phase => {
     const bonus = character?.[phase]

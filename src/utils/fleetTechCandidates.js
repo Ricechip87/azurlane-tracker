@@ -2,6 +2,7 @@ import { normalizeAcquisitionStatus } from './acquisitionStatus.js'
 import { normalizeFactionValue } from './factions.js'
 import { obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
+import { operationTierRank } from './recommendationRanking.js'
 import { getShipClassification, getShipPosition } from './shipClassifications.js'
 import { getShipObtainability } from './shipObtainabilityLookup.js'
 
@@ -12,8 +13,6 @@ const RARITY_ORDER = {
   R: 3,
   N: 4,
 }
-
-const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B', 'C+']
 
 export const FLEET_TECH_CANDIDATE_BASIS = {
   LEVEL_120: 'level120',
@@ -154,11 +153,6 @@ function ownershipRank(candidate) {
 
 function unownedObtainabilityRank(candidate) {
   return candidate.status === '미획득' ? obtainabilityRank(candidate.obtainability) : 0
-}
-
-function operationTierRank(tier) {
-  const index = OPERATION_TIER_ORDER.indexOf(tier)
-  return index === -1 ? OPERATION_TIER_ORDER.length : index
 }
 
 function buildRecommendationReasons(candidate) {

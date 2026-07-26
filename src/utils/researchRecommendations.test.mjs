@@ -1,6 +1,5 @@
 import assert from 'node:assert/strict'
 import {
-  buildOperationTierByName,
   buildResearchFactionProgress,
   buildResearchRecommendationState,
   buildWebResearchRecommendationGroups,
@@ -122,18 +121,6 @@ assert.deepEqual(
       targets: [{ required: 200, ships: ['사르데냐 200'], met: true }],
     },
   ],
-)
-
-assert.deepEqual(
-  [...buildOperationTierByName({
-    recommendations: [
-      { source: 'main', name: '테스트 함선', tier: 'SS+' },
-      { source: 'operation-siren', name: '테스트 함선', tier: 'A' },
-      { source: 'operation-siren', name: '중복 함선', tier: 'B' },
-      { source: 'operation-siren', name: '중복 함선', tier: 'S' },
-    ],
-  })],
-  [['테스트 함선', 'A'], ['중복 함선', 'S']],
 )
 
 function character(overrides = {}) {

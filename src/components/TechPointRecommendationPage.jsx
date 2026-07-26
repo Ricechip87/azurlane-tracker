@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import growthRecommendationData from '../data/growthRecommendations.json'
 import shipObtainabilityData from '../data/shipObtainability.json'
-import { buildOperationTierByName } from '../utils/researchRecommendations.js'
+import { buildOperationTierByName } from '../utils/recommendationRanking.js'
 import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import FleetTechPanel from './fleet-tech/FleetTechPanel.jsx'
 

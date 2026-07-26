@@ -11,12 +11,12 @@ import {
 import { calcMajorFactionTechPoints } from '../utils/fleetTech.js'
 import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
 import { getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
-import { buildOperationTierByName } from '../utils/researchRecommendations.js'
-import { getRecommendationCardArtUrl } from '../utils/recommendationCardArt.js'
+import { buildOperationTierByName } from '../utils/recommendationRanking.js'
 import { getStatDisplayName } from '../utils/statLabels.js'
 import { calcStatsByShipType, mergeStatsByShipType } from '../utils/rosterStats.js'
 import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
+import { RecommendationShipArtwork } from './recommendations/RecommendationShipArtwork.jsx'
 
 const RARITY_BADGE_CLASS = {
   UR: 'bg-red-950 text-red-200',
@@ -285,7 +285,7 @@ function CandidateCard({ candidate, onOpen }) {
       className="group flex min-w-0 overflow-hidden rounded border border-neutral-700 bg-[#181818] text-left transition-colors hover:border-cyan-800 hover:bg-[#222]"
     >
       <div className="h-28 w-24 flex-none overflow-hidden border-r border-neutral-700 bg-neutral-900">
-        <ShipArtwork
+        <RecommendationShipArtwork
           character={candidate}
           loading="lazy"
           className="h-full w-full object-cover object-top transition-transform duration-200 group-hover:scale-105"
@@ -337,7 +337,7 @@ function CandidatePopup({ candidate, onClose }) {
     <RecommendationDialog name={candidate.name} onClose={onClose}>
       <div className="flex items-start gap-4 pr-6">
         <div className="h-24 w-24 flex-none overflow-hidden rounded border border-neutral-600 bg-[#181818]">
-          <ShipArtwork character={candidate} className="h-full w-full object-cover object-top" />
+          <RecommendationShipArtwork character={candidate} className="h-full w-full object-cover object-top" />
         </div>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap gap-1.5 text-[11px] font-black">
@@ -355,31 +355,6 @@ function CandidatePopup({ candidate, onClose }) {
       </div>
       <RecommendationDetails reason={reason} sourceSections={getObtainabilitySourceSections(candidate.obtainability)} />
     </RecommendationDialog>
-  )
-}
-
-function ShipArtwork({ character, className, loading }) {
-  const cardArtUrl = getRecommendationCardArtUrl(character, import.meta.env.BASE_URL)
-  const iconUrl = character?.iconUrl || ''
-  if (!cardArtUrl && !iconUrl) {
-    return <div className="flex h-full items-center justify-center text-[10px] text-gray-700">이미지 없음</div>
-  }
-
-  return (
-    <img
-      src={cardArtUrl || iconUrl}
-      alt=""
-      loading={loading}
-      className={className}
-      onError={event => {
-        if (iconUrl && event.currentTarget.dataset.fallbackApplied !== 'true') {
-          event.currentTarget.dataset.fallbackApplied = 'true'
-          event.currentTarget.src = iconUrl
-          return
-        }
-        event.currentTarget.style.display = 'none'
-      }}
-    />
   )
 }
 

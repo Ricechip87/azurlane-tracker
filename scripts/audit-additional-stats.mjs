@@ -2,9 +2,12 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
+  ADDITIONAL_STAT_CATEGORIES,
   ADDITIONAL_STATS,
   ADDITIONAL_STAT_SHIP_TYPES,
+  buildAdditionalStatCategoryCandidates,
   buildAdditionalStatCandidates,
+  getAdditionalStatsForCategory,
   getAdditionalStatPriorities,
   getAvailableAdditionalShipTypes,
 } from '../src/utils/additionalStatRecommendations.js'
@@ -63,6 +66,49 @@ const statShipTypeMatrix = Object.fromEntries(ADDITIONAL_STATS.map(stat => [
   stat,
   getAvailableAdditionalShipTypes(stat),
 ]))
+const categoryAudit = Object.fromEntries(ADDITIONAL_STAT_CATEGORIES.map(category => {
+  const stats = getAdditionalStatsForCategory(category.id)
+  const statCoverage = Object.fromEntries(stats.map(stat => {
+    const availableShipTypes = new Set(getAvailableAdditionalShipTypes(stat))
+    const applicableShipTypes = category.shipTypes.filter(shipType => availableShipTypes.has(shipType))
+    const groupedIds = candidateIdSet(
+      buildAdditionalStatCategoryCandidates(characters, applicableShipTypes, stat),
+    )
+    const individualIds = candidateIdSet(applicableShipTypes.flatMap(shipType => (
+      buildAdditionalStatCandidates(characters, shipType, stat)
+    )))
+    return [stat, {
+      applicableShipTypes,
+      groupedCandidateCount: groupedIds.size,
+      individualUnionCount: individualIds.size,
+      missingCandidateIds: [...individualIds].filter(id => !groupedIds.has(id)),
+      unexpectedCandidateIds: [...groupedIds].filter(id => !individualIds.has(id)),
+    }]
+  }))
+  return [category.id, {
+    label: category.label,
+    shipTypes: category.shipTypes,
+    stats,
+    statCoverage,
+  }]
+}))
+const categoryCandidateMismatches = Object.entries(categoryAudit).flatMap(([categoryId, category]) => (
+  Object.entries(category.statCoverage)
+    .filter(([, coverage]) => coverage.missingCandidateIds.length || coverage.unexpectedCandidateIds.length)
+    .map(([stat, coverage]) => ({ categoryId, stat, ...coverage }))
+))
+const categoryMatrix = Object.fromEntries(Object.entries(categoryAudit).map(([categoryId, category]) => [
+  categoryId,
+  {
+    label: category.label,
+    shipTypes: category.shipTypes,
+    stats: category.stats,
+    candidateCounts: Object.fromEntries(Object.entries(category.statCoverage).map(([stat, coverage]) => [
+      stat,
+      coverage.groupedCandidateCount,
+    ])),
+  },
+]))
 const broadCoverage = {
   모니터중순대형순공용: countBroadCoverage('모니터', '중순', '대형순'),
   경항모항모공용: countBroadCoverage('경항모', '항모'),
@@ -72,6 +118,7 @@ const report = {
   policy: {
     configuredShipTypes: ADDITIONAL_STAT_SHIP_TYPES,
     configuredStats: ADDITIONAL_STATS,
+    categories: ADDITIONAL_STAT_CATEGORIES,
     ignoredShipTypes: [...ignoredShipTypes],
     ranking: ['공용 적용', '보유 여부', '남은 단계', '입수 난이도', '대작전 등급', '증가량', '희귀도', '이름'],
   },
@@ -83,6 +130,8 @@ const report = {
   unlistedPriorityStats,
   unusedConfiguredStats,
   statShipTypeMatrix,
+  categoryMatrix,
+  categoryCandidateMismatches,
 }
 
 const outputDir = path.join(root, 'reports/additional-stats')
@@ -93,6 +142,7 @@ fs.writeFileSync(path.join(outputDir, 'audit.md'), buildMarkdown(report), 'utf8'
 console.log(`추가 스탯 추천 함종: ${ADDITIONAL_STAT_SHIP_TYPES.length}종 / 제외 ${[...ignoredShipTypes].join(', ')}`)
 console.log(`잘못된 보너스: ${invalidBonuses.length}건 / 미분류 원천 함종: ${sourceOnlyShipTypes.length}종`)
 console.log(`스탯-함종 매핑 누락: 우선순위 미노출 ${unlistedPriorityStats.length}건 / 미사용 노출 스탯 ${unusedConfiguredStats.length}건`)
+console.log(`함종 분류 후보 합집합: ${ADDITIONAL_STAT_CATEGORIES.length}개 분류 / 불일치 ${categoryCandidateMismatches.length}건`)
 console.log(`공용 적용 원천: 모니터+중순+대형순 ${broadCoverage.모니터중순대형순공용}건, 경항모+항모 ${broadCoverage.경항모항모공용}건`)
 
 if (
@@ -100,7 +150,12 @@ if (
   || sourceOnlyShipTypes.length
   || unlistedPriorityStats.length
   || unusedConfiguredStats.length
+  || categoryCandidateMismatches.length
 ) process.exitCode = 1
+
+function candidateIdSet(candidates) {
+  return new Set(candidates.map(candidate => String(candidate.id)))
+}
 
 function countBroadCoverage(...requiredShipTypes) {
   return characters.reduce((count, character) => count + ['statAcquired', 'stat120'].filter(phase => {
@@ -116,6 +171,12 @@ function buildMarkdown(value) {
   const statRows = Object.entries(value.statShipTypeMatrix).map(([stat, shipTypes]) => (
     `| ${stat} | ${shipTypes.join(', ')} |`
   )).join('\n')
+  const categoryRows = Object.values(value.categoryMatrix).map(category => {
+    const candidateSummary = Object.entries(category.candidateCounts)
+      .map(([stat, count]) => `${stat} ${count}명`)
+      .join(', ')
+    return `| ${category.label} | ${category.shipTypes.join(', ')} | ${category.stats.join(' > ')} | ${candidateSummary} |`
+  }).join('\n')
   return `# 추가 스탯작 추천 데이터 감사\n\n` +
     `- 생성 시각: ${value.generatedAt}\n` +
     `- 추천 함종: ${value.policy.configuredShipTypes.length}종\n` +
@@ -125,10 +186,13 @@ function buildMarkdown(value) {
     `- 미분류 원천 함종: ${value.unexpectedSourceShipTypes.length}종\n` +
     `- 우선순위 미노출 스탯: ${value.unlistedPriorityStats.length}건\n` +
     `- 미사용 노출 스탯: ${value.unusedConfiguredStats.length}건\n` +
+    `- 함종 분류 후보 합집합 불일치: ${value.categoryCandidateMismatches.length}건\n` +
     `- 모니터·중순·대형순 공용 원천: ${value.broadCoverage.모니터중순대형순공용}건\n` +
     `- 경항모·항모 공용 원천: ${value.broadCoverage.경항모항모공용}건\n\n` +
     `| 함종 | 지정 우선순위 | 현재 원천 스탯 | 지정했지만 현재 원천 없음 |\n` +
     `|---|---|---|---|\n${rows}\n\n` +
+    `## 함종 분류별 유효 스탯과 후보\n\n` +
+    `| 분류 | 포함 함종 | 유효 스탯 | 현재 후보 수 |\n|---|---|---|---|\n${categoryRows}\n\n` +
     `## 스탯별 선택 가능 함종\n\n` +
     `| 스탯 | 함종 |\n|---|---|\n${statRows}\n`
 }

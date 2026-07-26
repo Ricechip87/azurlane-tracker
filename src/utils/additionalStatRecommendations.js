@@ -1,6 +1,7 @@
 import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from './acquisitionStatus.js'
 import { obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
+import { operationTierRank } from './recommendationRanking.js'
 import { normalizeStatShipTypeValue } from './shipClassifications.js'
 import { getShipObtainability } from './shipObtainabilityLookup.js'
 import { normalizeStatName } from './statLabels.js'
@@ -50,7 +51,6 @@ const CATEGORY_STAT_ORDER = {
   carrier: ['항공', '장전', '명중'],
   submarine: ['뇌격', '명중', '항공', '회피'],
 }
-const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B', 'C+']
 const RARITY_ORDER = { UR: 0, SSR: 1, SR: 2, R: 3, N: 4 }
 
 export function getAdditionalStatPriorities(shipType) {
@@ -204,11 +204,6 @@ function countRemainingSteps(status, acquiredValue, level120Value) {
 
 function unownedObtainabilityRank(candidate) {
   return candidate.status === '미획득' ? obtainabilityRank(candidate.obtainability) : 0
-}
-
-function operationTierRank(tier) {
-  const index = OPERATION_TIER_ORDER.indexOf(tier)
-  return index < 0 ? OPERATION_TIER_ORDER.length : index
 }
 
 function matchesAnyBonus(data, shipTypes, stat) {

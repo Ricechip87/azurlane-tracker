@@ -1,5 +1,21 @@
 # Change Log
 
+## 2026-07-27 - Audit and Refactor Recommendation Tabs
+
+### Changed
+- Reorganize additional-stat recommendations around six ship-class groups, followed by effective stat and optional detailed ship type.
+- Keep shared-target bonuses first in grouped additional-stat results and show current bonuses separately for every applicable detailed ship type.
+- Centralize Operation Siren tier ordering and lookup generation used by research, fleet-tech, and additional-stat recommendations.
+- Share one recommendation artwork component across growth, research, and additional-stat cards and dialogs, with deterministic card-art → icon → text fallback.
+- Clarify the additional-stat artwork audit output as candidate coverage rather than total roster image coverage.
+
+### Verified
+- Cross-check the four non-fleet recommendation tabs against the current 875-ship app, ALtoy, and KR roster data.
+- Confirm zero fleet-tech mismatches across CN/EN/JP/KR/TW and zero malformed or unmapped additional-stat bonuses.
+- Confirm complete artwork for growth recommendations (416/416), research ships (47/47), and additional-stat candidates (634/634); all 875 ships retain public icons.
+- Add cross-tab progression coverage proving that Lv.120 remains eligible for growth recommendations while completing fleet-tech and additional-stat Lv.120 stages, and only Lv.125 completes growth recommendations.
+- Add a full-data grouped-candidate audit proving every additional-stat category equals the union of its detailed ship-type candidates.
+
 ## 2026-07-27 - Filter Growth Recommendations by Ship Type
 
 ### Added

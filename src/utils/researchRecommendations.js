@@ -4,6 +4,7 @@ import { calcFleetTechCandidates } from './fleetTechCandidates.js'
 import { getShipPosition } from './shipClassifications.js'
 import { calcTechPoints } from './techPoints.js'
 import { isResearchCandidateActionable, obtainabilityRank } from './obtainability.js'
+import { operationTierRank } from './recommendationRanking.js'
 import { getShipObtainability } from './shipObtainabilityLookup.js'
 
 export function calcAllFactionTechPoints(characters) {
@@ -169,7 +170,6 @@ export function getEligibleResearchXpShips(phase, characters) {
     .sort((a, b) => a.name.localeCompare(b.name, 'ko'))
 }
 
-const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B', 'C+']
 export function buildResearchFactionProgress(researchShips, factionTechPoints) {
   const targetsByFaction = new Map()
   const generationByShipName = new Map((researchShips || []).map(ship => [ship.name, Number(ship.generation) || 0]))
@@ -208,20 +208,6 @@ export function buildResearchFactionProgress(researchShips, factionTechPoints) {
       }
     })
     .sort((a, b) => getFactionSortIndex(a.faction) - getFactionSortIndex(b.faction) || a.faction.localeCompare(b.faction, 'ko'))
-}
-
-export function buildOperationTierByName(growthRecommendationData) {
-  const result = new Map()
-
-  for (const recommendation of growthRecommendationData?.recommendations || []) {
-    if (recommendation.source !== 'operation-siren' || !recommendation.name || !recommendation.tier) continue
-    const previous = result.get(recommendation.name)
-    if (!previous || operationTierRank(recommendation.tier) < operationTierRank(previous)) {
-      result.set(recommendation.name, recommendation.tier)
-    }
-  }
-
-  return result
 }
 
 export function getResearchUnlockCandidates(requirement, characters, rankingData = {}) {
@@ -287,11 +273,6 @@ function compareResearchUnlockCandidates(a, b) {
     || operationTierRank(a.operationTier) - operationTierRank(b.operationTier)
     || b.remainingTechPoints - a.remainingTechPoints
     || a.name.localeCompare(b.name, 'ko')
-}
-
-function operationTierRank(tier) {
-  const index = OPERATION_TIER_ORDER.indexOf(tier)
-  return index === -1 ? OPERATION_TIER_ORDER.length : index
 }
 
 function compareReadyResearchShips(a, b) {
