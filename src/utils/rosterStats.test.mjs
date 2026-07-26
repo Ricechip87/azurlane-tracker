@@ -73,6 +73,32 @@ assert.deepEqual(
   calcStatsByShipType([
     {
       acquired: '획득',
+      statAcquired: { shipTypes: ['전함'], stat: '포격', value: 2 },
+    },
+    {
+      acquired: '획득',
+      statAcquired: { shipTypes: ['전함'], stat: '화력', value: 3 },
+    },
+  ], 'acquired'),
+  {
+    전함: { 화력: 5 },
+  },
+)
+
+assert.deepEqual(
+  mergeStatsByShipType(
+    { 구축: { 뇌격: 2 } },
+    { 구축: { 뇌장: 3 } },
+  ),
+  {
+    구축: { 뇌격: 5 },
+  },
+)
+
+assert.deepEqual(
+  calcStatsByShipType([
+    {
+      acquired: '획득',
       statAcquired: { shipTypes: ['경항모', '정규항모'], stat: '대잠', value: 1 },
     },
   ], 'acquired'),

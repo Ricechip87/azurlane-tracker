@@ -4,6 +4,7 @@ import { ACQUISITION_STATUSES, normalizeAcquisitionStatus } from '../utils/acqui
 import { getDropdownMenuPosition } from '../utils/dropdownPosition.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
 import { getFactionDisplayName } from '../utils/factions.js'
+import { getStatDisplayName } from '../utils/statLabels.js'
 
 const RARITY_COLOR = {
   N: 'text-gray-400',
@@ -210,7 +211,7 @@ function StatCell({ data }) {
       )}
       {data.stat && (
         <div className="text-gray-300">
-          <span className="text-blue-300">{data.stat}</span>
+          <span className="text-blue-300">{getStatDisplayName(data.stat)}</span>
           {data.value > 0 && <span className="text-gray-400"> +{data.value}</span>}
         </div>
       )}

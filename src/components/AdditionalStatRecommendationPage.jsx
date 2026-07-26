@@ -4,7 +4,6 @@ import shipObtainabilityData from '../data/shipObtainability.json'
 import {
   ADDITIONAL_STATS,
   buildAdditionalStatCandidates,
-  getAdditionalStatLabel,
   resolveAdditionalStatSelection,
 } from '../utils/additionalStatRecommendations.js'
 import { calcMajorFactionTechPoints } from '../utils/fleetTech.js'
@@ -12,6 +11,7 @@ import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
 import { getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import { buildOperationTierByName } from '../utils/researchRecommendations.js'
 import { getRecommendationCardArtUrl } from '../utils/recommendationCardArt.js'
+import { getStatDisplayName } from '../utils/statLabels.js'
 import { calcStatsByShipType, mergeStatsByShipType } from '../utils/rosterStats.js'
 import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
@@ -110,7 +110,7 @@ function AdditionalStatControlPanel({
               onClick={() => onStatChange(item)}
               className={`rounded border px-2 py-2 text-left text-xs font-semibold transition-colors ${selectedStat === item ? 'border-amber-500 bg-amber-950/40 text-amber-200' : 'border-neutral-700 bg-[#181818] text-gray-400 hover:border-neutral-500 hover:text-gray-200'}`}
             >
-              {getAdditionalStatLabel(item)}
+              {getStatDisplayName(item)}
             </button>
           ))}
         </div>
@@ -134,7 +134,7 @@ function AdditionalStatControlPanel({
 
       <div className="border-t border-neutral-700 p-3">
         <div className="rounded border border-cyan-900/70 bg-cyan-950/20 px-3 py-3">
-          <div className="text-[10px] text-cyan-300/70">{shipType} {getAdditionalStatLabel(selectedStat)} 현재 합계</div>
+          <div className="text-[10px] text-cyan-300/70">{shipType} {getStatDisplayName(selectedStat)} 현재 합계</div>
           <div className="mt-1 text-2xl font-black text-cyan-300">+{shipStatValue + factionLevelValue}</div>
           <div className="mt-3 grid grid-cols-2 gap-2 border-t border-cyan-900/50 pt-2 text-[10px]">
             <StatBreakdown label="함선 획득·120" value={shipStatValue} tone="text-blue-300" />
@@ -174,7 +174,7 @@ function CandidatePanel({ shipType, selectedStat, candidates, onOpen }) {
     <section className="min-w-0 overflow-hidden border border-neutral-700 bg-[#202020]">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-700 bg-[#262626] px-4 py-3">
         <div>
-          <h2 className="text-sm font-bold text-gray-100">{shipType} · {getAdditionalStatLabel(selectedStat)} 육성 후보</h2>
+          <h2 className="text-sm font-bold text-gray-100">{shipType} · {getStatDisplayName(selectedStat)} 육성 후보</h2>
           <p className="mt-1 text-[11px] text-gray-500">미완료 획득 보너스와 120 보너스만 표시합니다. 카드를 누르면 입수처를 볼 수 있습니다.</p>
         </div>
         <span className="rounded bg-cyan-950 px-2 py-1 text-xs font-bold text-cyan-300">{candidates.length}명</span>
@@ -252,7 +252,7 @@ function StageBadge({ label, stage }) {
 function CandidatePopup({ candidate, onClose }) {
   const reason = candidate.broadCoverage
     ? `${candidate.targetShipTypes.join('·')}에 함께 적용되는 공용 보너스라 우선 배치했습니다.`
-    : `${candidate.selectedShipType} ${getAdditionalStatLabel(candidate.selectedStat)}을(를) 앞으로 +${candidate.remainingGain} 얻을 수 있습니다.`
+    : `${candidate.selectedShipType} ${getStatDisplayName(candidate.selectedStat)}을(를) 앞으로 +${candidate.remainingGain} 얻을 수 있습니다.`
 
   return (
     <RecommendationDialog name={candidate.name} onClose={onClose}>
@@ -267,7 +267,7 @@ function CandidatePopup({ candidate, onClose }) {
             <span className="rounded bg-neutral-900 px-2 py-1">{candidate.operationTier ? `대작전 ${candidate.operationTier}` : '대작전 미평가'}</span>
           </div>
           <h3 className="mt-3 truncate text-lg font-black text-white">{candidate.name}</h3>
-          <p className="mt-1 text-sm font-bold text-amber-300">{getAdditionalStatLabel(candidate.selectedStat)} +{candidate.remainingGain}</p>
+          <p className="mt-1 text-sm font-bold text-amber-300">{getStatDisplayName(candidate.selectedStat)} +{candidate.remainingGain}</p>
         </div>
       </div>
       <div className="mt-4 grid grid-cols-2 gap-2 text-xs">

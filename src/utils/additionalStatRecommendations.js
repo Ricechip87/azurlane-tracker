@@ -3,6 +3,7 @@ import { obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
 import { normalizeStatShipTypeValue } from './shipClassifications.js'
 import { getShipObtainability } from './shipObtainabilityLookup.js'
+import { normalizeStatName } from './statLabels.js'
 
 export const ADDITIONAL_STAT_SHIP_TYPES = [
   '구축', '경순', '중순', '대형순', '순전', '전함', '항전', '모니터',
@@ -27,11 +28,6 @@ const PRIORITIES = {
 }
 
 const FALLBACK_STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '장전', '명중', '회피', '대잠']
-const STAT_LABELS = {
-  뇌격: '뇌격 (뇌장)',
-  화력: '화력 (포격)',
-  회피: '회피 (기동)',
-}
 const BROAD_COVERAGE_TARGETS = {
   모니터: ['중순', '대형순'],
   경항모: ['항모'],
@@ -52,17 +48,15 @@ export function getAdditionalStatPriority(shipType, stat) {
   return priorities.length + (fallback >= 0 ? fallback : FALLBACK_STAT_ORDER.length)
 }
 
-export function getAdditionalStatLabel(stat) {
-  return STAT_LABELS[stat] || stat
-}
-
 export function getAvailableAdditionalShipTypes(stat) {
-  if (!stat) return []
-  return ADDITIONAL_STAT_SHIP_TYPES.filter(shipType => PRIORITIES[shipType]?.includes(stat))
+  const normalizedStat = normalizeStatName(stat)
+  if (!normalizedStat) return []
+  return ADDITIONAL_STAT_SHIP_TYPES.filter(shipType => PRIORITIES[shipType]?.includes(normalizedStat))
 }
 
 export function resolveAdditionalStatSelection(stat, shipType) {
-  const selectedStat = ADDITIONAL_STATS.includes(stat) ? stat : ADDITIONAL_STATS[0]
+  const normalizedStat = normalizeStatName(stat)
+  const selectedStat = ADDITIONAL_STATS.includes(normalizedStat) ? normalizedStat : ADDITIONAL_STATS[0]
   const shipTypes = getAvailableAdditionalShipTypes(selectedStat)
   return {
     stat: selectedStat,
@@ -152,7 +146,9 @@ function operationTierRank(tier) {
 }
 
 function matchesBonus(data, shipType, stat) {
-  return data?.stat === stat && targetsShipType(data, shipType) && Number(data.value || 0) > 0
+  return normalizeStatName(data?.stat) === normalizeStatName(stat)
+    && targetsShipType(data, shipType)
+    && Number(data.value || 0) > 0
 }
 
 function targetsShipType(data, shipType) {

@@ -22,6 +22,15 @@ assert.deepEqual(summarizeFleetTechLevelEffects({ bonuses: [
   { shipType: '대형순', stat: '화력', value: 1 },
 ])
 
+assert.deepEqual(summarizeFleetTechLevelEffects({ bonuses: [
+  { shipType: '구축', stat: '뇌격', value: 2 },
+  { shipType: '구축', stat: '뇌장', value: 2 },
+  { shipType: '전함', stat: '포격', value: 1 },
+]}), [
+  { shipType: '구축', stat: '뇌격', value: 2 },
+  { shipType: '전함', stat: '화력', value: 1 },
+])
+
 const levelStats = calcFleetTechLevelStats({
   유니온: 5937,
   로열: 4332,

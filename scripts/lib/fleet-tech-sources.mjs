@@ -1,3 +1,5 @@
+import { normalizeStatName } from '../../src/utils/statLabels.js'
+
 const SCALAR_FIELDS = [
   'id',
   'pt_get',
@@ -179,7 +181,7 @@ function parseOfficialStat(shipTypeIds, attrId, value, fallbackStat) {
   if (!stat || !parsedValue) return { shipTypes: [], stat: '', value: 0 }
 
   let shipTypes = [...new Set((shipTypeIds || []).map(id => SHIP_TYPE_BY_ID[id]).filter(Boolean))]
-  const fallbackShipTypes = fallbackStat?.stat === stat && fallbackStat.value === parsedValue
+  const fallbackShipTypes = normalizeStatName(fallbackStat?.stat) === stat && fallbackStat.value === parsedValue
     ? fallbackStat.shipTypes || []
     : []
   if (sameShipTypes(shipTypes, fallbackShipTypes)) shipTypes = [...fallbackShipTypes]

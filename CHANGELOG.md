@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-07-26 - Standardize Displayed Stat Names
+
+### Changed
+- Keep the internal fleet-tech keys unchanged while displaying 뇌격 as 뇌장, 화력 as 포격, and 회피 as 기동 throughout the web UI.
+- Share one stat display-name helper across roster, fleet-tech, and additional-stat recommendation screens.
+- Accept both 뇌격/뇌장, 화력/포격, and 회피/기동 as input aliases and normalize them to one internal key across imports, calculations, audits, and recommendation matching.
+
 ## 2026-07-26 - Complete Additional-Stat Card Artwork
 
 ### Fixed

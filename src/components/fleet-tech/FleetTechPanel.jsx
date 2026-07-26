@@ -6,6 +6,7 @@ import {
   splitFleetTechCandidates,
 } from '../../utils/fleetTechCandidates.js'
 import { calcFleetTechProgress, summarizeFleetTechLevelEffects } from '../../utils/fleetTechLevelStats.js'
+import { getStatDisplayName } from '../../utils/statLabels.js'
 
 const publicAssetUrl = path => `${import.meta.env.BASE_URL}${path}`
 const fleetTechGuideImage = publicAssetUrl('images/loading-illustrations/100021-painting.png')
@@ -262,7 +263,7 @@ function LevelEffectPopover({ faction, progress, onMouseEnter, onMouseLeave }) {
               {effects.map(effect => (
                 <tr key={`${effect.shipType}:${effect.stat}`} className="hover:bg-[#2a2a2a]">
                   <td className="px-3 py-1.5 text-gray-300">{effect.shipType}</td>
-                  <td className="px-3 py-1.5 text-gray-400">{effect.stat}</td>
+                  <td className="px-3 py-1.5 text-gray-400">{getStatDisplayName(effect.stat)}</td>
                   <td className="px-3 py-1.5 text-right font-bold text-yellow-300">+{effect.value}</td>
                 </tr>
               ))}
@@ -312,7 +313,7 @@ function LevelEffectTable({ effects }) {
         {effects.map(effect => (
           <tr key={`${effect.shipType}:${effect.stat}`} className="hover:bg-[#2a2a2a]">
             <td className="px-3 py-1.5 text-gray-300">{effect.shipType}</td>
-            <td className="px-3 py-1.5 text-gray-400">{effect.stat}</td>
+            <td className="px-3 py-1.5 text-gray-400">{getStatDisplayName(effect.stat)}</td>
             <td className="px-3 py-1.5 text-right font-bold text-yellow-300">+{effect.value}</td>
           </tr>
         ))}

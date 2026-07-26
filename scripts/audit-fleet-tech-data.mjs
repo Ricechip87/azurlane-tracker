@@ -8,6 +8,7 @@ import {
   parseFleetTechSheet,
   selectFleetTechSheetRecord,
 } from './lib/fleet-tech-sources.mjs'
+import { normalizeStatName } from '../src/utils/statLabels.js'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sourceRoot = process.env.AUDIT_SOURCE_ROOT
@@ -150,9 +151,14 @@ function compareOfficialShipRecords(cnRecords, regionalRecords) {
 function pickShipTech(record) {
   return {
     techPoints: record.techPoints,
-    statAcquired: record.statAcquired,
-    stat120: record.stat120,
+    statAcquired: normalizeStatBlock(record.statAcquired),
+    stat120: normalizeStatBlock(record.stat120),
   }
+}
+
+function normalizeStatBlock(block) {
+  if (!block) return block
+  return { ...block, stat: normalizeStatName(block.stat) }
 }
 
 function hasTechData(record) {

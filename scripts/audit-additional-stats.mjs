@@ -9,6 +9,7 @@ import {
   getAvailableAdditionalShipTypes,
 } from '../src/utils/additionalStatRecommendations.js'
 import { normalizeStatShipTypeValue } from '../src/utils/shipClassifications.js'
+import { normalizeStatName } from '../src/utils/statLabels.js'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const characters = JSON.parse(fs.readFileSync(path.join(root, 'src/data/characters.json'), 'utf8'))
@@ -30,7 +31,7 @@ for (const character of characters) {
     for (const rawShipType of new Set(bonus.shipTypes)) {
       const shipType = normalizeStatShipTypeValue(rawShipType)
       if (!actualStatsByType.has(shipType)) actualStatsByType.set(shipType, new Set())
-      actualStatsByType.get(shipType).add(bonus.stat)
+      actualStatsByType.get(shipType).add(normalizeStatName(bonus.stat))
       if (!sourceCountsByType.has(shipType)) sourceCountsByType.set(shipType, { statAcquired: 0, stat120: 0 })
       sourceCountsByType.get(shipType)[phase]++
     }

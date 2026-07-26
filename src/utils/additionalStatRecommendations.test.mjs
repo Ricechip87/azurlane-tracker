@@ -3,7 +3,6 @@ import {
   ADDITIONAL_STATS,
   ADDITIONAL_STAT_SHIP_TYPES,
   buildAdditionalStatCandidates,
-  getAdditionalStatLabel,
   getAdditionalStatPriority,
   getAvailableAdditionalShipTypes,
   resolveAdditionalStatSelection,
@@ -19,10 +18,6 @@ assert.ok(getAdditionalStatPriority('구축', '대공') > getAdditionalStatPrior
 assert.equal(getAdditionalStatPriority('경순', '대공'), 0)
 assert.equal(getAdditionalStatPriority('항전', '항공'), 1)
 assert.equal(getAdditionalStatPriority('공작', '내구'), Number.POSITIVE_INFINITY)
-assert.equal(getAdditionalStatLabel('뇌격'), '뇌격 (뇌장)')
-assert.equal(getAdditionalStatLabel('화력'), '화력 (포격)')
-assert.equal(getAdditionalStatLabel('회피'), '회피 (기동)')
-
 assert.deepEqual(ADDITIONAL_STATS, ['뇌격', '화력', '대공', '항공', '장전', '명중', '회피'])
 assert.deepEqual(getAvailableAdditionalShipTypes('항공'), ['항전', '경항모', '항모', '잠항모'])
 assert.deepEqual(getAvailableAdditionalShipTypes('대공'), ['경순'])
@@ -40,6 +35,11 @@ assert.deepEqual(resolveAdditionalStatSelection('대공', '경순'), {
 assert.deepEqual(resolveAdditionalStatSelection('기타', '공작'), {
   stat: '뇌격',
   shipType: '구축',
+  shipTypes: ['구축', '경순', '중순', '대형순', '잠수', '잠항모'],
+})
+assert.deepEqual(resolveAdditionalStatSelection('뇌장', '잠수'), {
+  stat: '뇌격',
+  shipType: '잠수',
   shipTypes: ['구축', '경순', '중순', '대형순', '잠수', '잠항모'],
 })
 
@@ -104,6 +104,15 @@ const partialMonitorCoverage = buildAdditionalStatCandidates([{
   stat120: { shipTypes: ['중순', '모니터'], stat: '화력', value: 2 },
 }], '모니터', '화력')
 assert.equal(partialMonitorCoverage[0].broadCoverage, false)
+
+const aliasStatCandidates = buildAdditionalStatCandidates([{
+  id: 6,
+  name: '포격 별칭',
+  rarity: 'SR',
+  acquired: '100',
+  stat120: { shipTypes: ['전함'], stat: '포격', value: 2 },
+}], '전함', '화력')
+assert.equal(aliasStatCandidates[0].remainingGain, 2)
 
 const carrierCandidates = buildAdditionalStatCandidates([
   {

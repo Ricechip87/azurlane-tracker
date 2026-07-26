@@ -4,6 +4,7 @@ import { isAcquiredStatus, isLevel120Status } from '../src/utils/acquisitionStat
 import { MAJOR_TECH_FACTIONS, calcMajorFactionTechPoints } from '../src/utils/fleetTech.js'
 import { calcFleetTechLevelStats } from '../src/utils/fleetTechLevelStats.js'
 import { normalizeStatShipTypeValue } from '../src/utils/shipClassifications.js'
+import { normalizeStatName } from '../src/utils/statLabels.js'
 
 const USER_DATA_PATH = process.argv[2] || '참고용/검산용.json'
 
@@ -81,12 +82,13 @@ for (const [shipType, expectedStats] of Object.entries(IN_GAME)) {
 
 function addStat(target, sourceLog, shipType, statData, label) {
   if (!shipType || !statData.stat || !statData.value) return
+  const stat = normalizeStatName(statData.stat)
   if (!target[shipType]) target[shipType] = {}
-  target[shipType][statData.stat] = (target[shipType][statData.stat] || 0) + statData.value
+  target[shipType][stat] = (target[shipType][stat] || 0) + statData.value
 
   if (!sourceLog[shipType]) sourceLog[shipType] = {}
-  if (!sourceLog[shipType][statData.stat]) sourceLog[shipType][statData.stat] = []
-  sourceLog[shipType][statData.stat].push(`${label} +${statData.value}`)
+  if (!sourceLog[shipType][stat]) sourceLog[shipType][stat] = []
+  sourceLog[shipType][stat].push(`${label} +${statData.value}`)
 }
 
 function normalizeTargetSet(shipTypes) {
@@ -111,12 +113,13 @@ function calcFleetTechLevelContributors(majorFactionTechPoints) {
     const appliedBonuses = new Set()
     for (const bonus of currentLevel?.bonuses || []) {
       const shipType = normalizeStatShipTypeValue(bonus.shipType)
-      const bonusKey = `${shipType}:${bonus.stat}`
+      const stat = normalizeStatName(bonus.stat)
+      const bonusKey = `${shipType}:${stat}`
       if (appliedBonuses.has(bonusKey)) continue
       appliedBonuses.add(bonusKey)
       if (!result[shipType]) result[shipType] = {}
-      if (!result[shipType][bonus.stat]) result[shipType][bonus.stat] = []
-      result[shipType][bonus.stat].push(`${faction.label} Lv.${currentLevel.level} +${bonus.value}`)
+      if (!result[shipType][stat]) result[shipType][stat] = []
+      result[shipType][stat].push(`${faction.label} Lv.${currentLevel.level} +${bonus.value}`)
     }
   }
 

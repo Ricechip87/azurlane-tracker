@@ -3,6 +3,7 @@ import {
   ADDITIONAL_STAT_SHIP_TYPES,
 } from './additionalStatRecommendations.js'
 import { normalizeStatShipTypeValue } from './shipClassifications.js'
+import { normalizeStatName } from './statLabels.js'
 
 const ADDITIONAL_STAT_SET = new Set(ADDITIONAL_STATS)
 const ADDITIONAL_SHIP_TYPE_SET = new Set(ADDITIONAL_STAT_SHIP_TYPES)
@@ -22,7 +23,7 @@ export function getRecommendationCardArtUrl(character, baseUrl) {
 export function isAdditionalStatCardArtCandidate(character) {
   return ['statAcquired', 'stat120'].some(phase => {
     const bonus = character?.[phase]
-    return ADDITIONAL_STAT_SET.has(bonus?.stat)
+    return ADDITIONAL_STAT_SET.has(normalizeStatName(bonus?.stat))
       && bonus?.shipTypes?.some(shipType => (
         ADDITIONAL_SHIP_TYPE_SET.has(normalizeStatShipTypeValue(shipType))
       ))

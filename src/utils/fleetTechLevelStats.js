@@ -1,6 +1,7 @@
 import fleetTechLevelBonuses from '../data/fleetTechLevelBonuses.json' with { type: 'json' }
 import { MAJOR_TECH_FACTIONS } from './fleetTech.js'
 import { normalizeStatShipTypeValue } from './shipClassifications.js'
+import { normalizeStatName } from './statLabels.js'
 
 export function calcFleetTechLevelStats(majorFactionTechPoints) {
   const result = {}
@@ -11,7 +12,8 @@ export function calcFleetTechLevelStats(majorFactionTechPoints) {
     const currentLevel = currentLevels[faction.value]
     for (const bonus of summarizeFleetTechLevelEffects(currentLevel)) {
       if (!result[bonus.shipType]) result[bonus.shipType] = {}
-      result[bonus.shipType][bonus.stat] = (result[bonus.shipType][bonus.stat] || 0) + bonus.value
+      const stat = normalizeStatName(bonus.stat)
+      result[bonus.shipType][stat] = (result[bonus.shipType][stat] || 0) + bonus.value
     }
   }
 
@@ -24,12 +26,13 @@ export function summarizeFleetTechLevelEffects(level) {
 
   for (const bonus of level?.bonuses || []) {
     const shipType = normalizeStatShipTypeValue(bonus.shipType)
-    const key = `${shipType}:${bonus.stat}`
+    const stat = normalizeStatName(bonus.stat)
+    const key = `${shipType}:${stat}`
     if (seen.has(key)) continue
     seen.add(key)
     effects.push({
       shipType,
-      stat: bonus.stat,
+      stat,
       value: bonus.value || 0,
     })
   }

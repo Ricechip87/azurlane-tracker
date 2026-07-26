@@ -4,6 +4,7 @@ import process from 'node:process'
 import { fileURLToPath } from 'url'
 import { normalizeFactionValue } from '../src/utils/factions.js'
 import { normalizeShipTypeValue } from '../src/utils/shipClassifications.js'
+import { normalizeStatName } from '../src/utils/statLabels.js'
 import { SHIP_TYPE_BY_ID } from './lib/fleet-tech-sources.mjs'
 import {
   buildExistingCharacterIndexes,
@@ -70,12 +71,12 @@ const characters = dataRows.map(cols => {
     skillPoints: parseInt(cols[14]) || 0,
     statAcquired: {
       shipTypes: [cols[15], cols[16], cols[17]].map(s => s.trim()).filter(Boolean),
-      stat: cols[18].trim(),
+      stat: normalizeStatName(cols[18]),
       value: parseInt(cols[19]) || 0,
     },
     stat120: {
       shipTypes: [cols[20], cols[21], cols[22]].map(s => s.trim()).filter(Boolean),
-      stat: cols[23].trim(),
+      stat: normalizeStatName(cols[23]),
       value: parseInt(cols[24]) || 0,
     },
   }
