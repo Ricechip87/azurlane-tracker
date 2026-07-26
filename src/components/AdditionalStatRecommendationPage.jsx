@@ -239,7 +239,7 @@ function StatSummary({ categoryLabel, selectedStat, summaries }) {
             </div>
             <div className="mt-2 grid grid-cols-2 gap-2 border-t border-cyan-900/40 pt-1.5">
               <StatBreakdown label="함선" value={summary.shipStatValue} tone="text-blue-300" />
-              <StatBreakdown label="기술 LV" value={summary.factionLevelValue} tone="text-purple-300" />
+              <StatBreakdown label="진영 기술 보너스" value={summary.factionLevelValue} tone="text-purple-300" />
             </div>
           </div>
         ))}
