@@ -1,12 +1,43 @@
 import assert from 'node:assert/strict'
 import {
+  ADDITIONAL_STAT_CATEGORIES,
   ADDITIONAL_STATS,
   ADDITIONAL_STAT_SHIP_TYPES,
+  buildAdditionalStatCategoryCandidates,
   buildAdditionalStatCandidates,
+  getAdditionalStatsForCategory,
   getAdditionalStatPriority,
   getAvailableAdditionalShipTypes,
+  resolveAdditionalStatCategorySelection,
   resolveAdditionalStatSelection,
 } from './additionalStatRecommendations.js'
+
+assert.deepEqual(ADDITIONAL_STAT_CATEGORIES, [
+  { id: 'destroyer', label: '구축', shipTypes: ['구축'] },
+  { id: 'light-cruiser', label: '경순', shipTypes: ['경순'] },
+  { id: 'heavy-cruiser', label: '중순류', shipTypes: ['중순', '대형순'] },
+  { id: 'battleship', label: '전함류', shipTypes: ['순전', '전함', '항전', '모니터'] },
+  { id: 'carrier', label: '항모류', shipTypes: ['경항모', '항모'] },
+  { id: 'submarine', label: '잠수함류', shipTypes: ['잠수', '잠항모'] },
+])
+assert.deepEqual(getAdditionalStatsForCategory('carrier'), ['항공', '장전', '명중'])
+assert.deepEqual(getAdditionalStatsForCategory('battleship'), ['화력', '항공', '장전', '명중'])
+assert.deepEqual(getAdditionalStatsForCategory('submarine'), ['뇌격', '명중', '항공', '회피'])
+assert.deepEqual(resolveAdditionalStatCategorySelection('carrier', '뇌격', '구축'), {
+  category: ADDITIONAL_STAT_CATEGORIES[4],
+  stats: ['항공', '장전', '명중'],
+  stat: '항공',
+  shipTypes: ['경항모', '항모'],
+  shipType: '',
+})
+assert.deepEqual(resolveAdditionalStatCategorySelection('heavy-cruiser', '장전', '대형순'), {
+  category: ADDITIONAL_STAT_CATEGORIES[2],
+  stats: ['화력', '장전', '명중', '뇌격'],
+  stat: '장전',
+  shipTypes: ['중순', '대형순'],
+  shipType: '대형순',
+})
+assert.equal(resolveAdditionalStatCategorySelection('battleship', '항공', '순전').shipType, '')
 
 assert.deepEqual(ADDITIONAL_STAT_SHIP_TYPES, [
   '순전', '전함', '항전', '모니터', '경항모', '항모',
@@ -132,3 +163,34 @@ const carrierCandidates = buildAdditionalStatCandidates([
   },
 ], '경항모', '항공')
 assert.deepEqual(carrierCandidates.map(candidate => candidate.name), ['항모 공용', '경항모 전용'])
+
+const groupedCarrierCandidates = buildAdditionalStatCategoryCandidates([
+  {
+    id: 20,
+    name: '항모류 공용',
+    rarity: 'SR',
+    acquired: '100',
+    stat120: { shipTypes: ['경항모', '항모'], stat: '항공', value: 1 },
+  },
+  {
+    id: 21,
+    name: '항모 전용',
+    rarity: 'SSR',
+    acquired: '100',
+    stat120: { shipTypes: ['항모'], stat: '항공', value: 2 },
+  },
+  {
+    id: 22,
+    name: '경항모 전용',
+    rarity: 'SSR',
+    acquired: '100',
+    stat120: { shipTypes: ['경항모'], stat: '항공', value: 3 },
+  },
+], ['경항모', '항모'], '항공')
+assert.deepEqual(
+  groupedCarrierCandidates.map(candidate => candidate.name),
+  ['항모류 공용', '경항모 전용', '항모 전용'],
+)
+assert.equal(groupedCarrierCandidates[0].broadCoverage, true)
+assert.equal(groupedCarrierCandidates[0].remainingGain, 1)
+assert.deepEqual(groupedCarrierCandidates[0].selectedShipTypes, ['경항모', '항모'])

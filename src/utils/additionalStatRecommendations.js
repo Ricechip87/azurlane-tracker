@@ -11,6 +11,15 @@ export const ADDITIONAL_STAT_SHIP_TYPES = [
   '잠수', '잠항모',
 ]
 
+export const ADDITIONAL_STAT_CATEGORIES = [
+  { id: 'destroyer', label: '구축', shipTypes: ['구축'] },
+  { id: 'light-cruiser', label: '경순', shipTypes: ['경순'] },
+  { id: 'heavy-cruiser', label: '중순류', shipTypes: ['중순', '대형순'] },
+  { id: 'battleship', label: '전함류', shipTypes: ['순전', '전함', '항전', '모니터'] },
+  { id: 'carrier', label: '항모류', shipTypes: ['경항모', '항모'] },
+  { id: 'submarine', label: '잠수함류', shipTypes: ['잠수', '잠항모'] },
+]
+
 export const ADDITIONAL_STATS = ['뇌격', '대공', '화력', '항공', '장전', '명중', '회피']
 
 const PRIORITIES = {
@@ -32,6 +41,14 @@ const FALLBACK_STAT_ORDER = ['내구', '화력', '뇌격', '대공', '항공', '
 const BROAD_COVERAGE_TARGETS = {
   모니터: ['중순', '대형순'],
   경항모: ['항모'],
+}
+const CATEGORY_STAT_ORDER = {
+  destroyer: ['뇌격', '회피', '화력', '장전', '명중'],
+  'light-cruiser': ['대공', '화력', '장전', '명중', '뇌격'],
+  'heavy-cruiser': ['화력', '장전', '명중', '뇌격'],
+  battleship: ['화력', '항공', '장전', '명중'],
+  carrier: ['항공', '장전', '명중'],
+  submarine: ['뇌격', '명중', '항공', '회피'],
 }
 const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B', 'C+']
 const RARITY_ORDER = { UR: 0, SSR: 1, SR: 2, R: 3, N: 4 }
@@ -55,6 +72,28 @@ export function getAvailableAdditionalShipTypes(stat) {
   return ADDITIONAL_STAT_SHIP_TYPES.filter(shipType => PRIORITIES[shipType]?.includes(normalizedStat))
 }
 
+export function getAdditionalStatsForCategory(categoryId) {
+  return [...(CATEGORY_STAT_ORDER[categoryId] || [])]
+}
+
+export function resolveAdditionalStatCategorySelection(categoryId, stat, shipType = '') {
+  const category = ADDITIONAL_STAT_CATEGORIES.find(item => item.id === categoryId)
+    || ADDITIONAL_STAT_CATEGORIES[0]
+  const stats = getAdditionalStatsForCategory(category.id)
+  const normalizedStat = normalizeStatName(stat)
+  const selectedStat = stats.includes(normalizedStat) ? normalizedStat : stats[0] || ''
+  return {
+    category,
+    stats,
+    stat: selectedStat,
+    shipTypes: [...category.shipTypes],
+    shipType: category.shipTypes.includes(shipType)
+      && PRIORITIES[shipType]?.includes(selectedStat)
+      ? shipType
+      : '',
+  }
+}
+
 export function resolveAdditionalStatSelection(stat, shipType) {
   const normalizedStat = normalizeStatName(stat)
   const selectedStat = ADDITIONAL_STATS.includes(normalizedStat) ? normalizedStat : ADDITIONAL_STATS[0]
@@ -70,17 +109,42 @@ export function buildAdditionalStatCandidates(characters, shipType, stat, rankin
   if (!PRIORITIES[shipType] || !stat) return []
 
   return characters
-    .map(character => toCandidate(character, shipType, stat, rankingData))
+    .map(character => toCandidate(
+      character,
+      [shipType],
+      stat,
+      rankingData,
+      BROAD_COVERAGE_TARGETS[shipType] || [],
+    ))
     .filter(Boolean)
     .sort(compareCandidates)
 }
 
-function toCandidate(character, shipType, stat, rankingData) {
+export function buildAdditionalStatCategoryCandidates(characters, shipTypes, stat, rankingData = {}) {
+  const selectedShipTypes = [...new Set(
+    (shipTypes || []).filter(shipType => PRIORITIES[shipType]?.includes(normalizeStatName(stat))),
+  )]
+  if (!selectedShipTypes.length || !stat) return []
+
+  const broadCoverageTargets = selectedShipTypes.length > 1 ? selectedShipTypes : []
+  return characters
+    .map(character => toCandidate(
+      character,
+      selectedShipTypes,
+      stat,
+      rankingData,
+      broadCoverageTargets,
+    ))
+    .filter(Boolean)
+    .sort(compareCandidates)
+}
+
+function toCandidate(character, selectedShipTypes, stat, rankingData, broadCoverageTargets) {
   const status = normalizeAcquisitionStatus(character.acquired)
   const acquiredCompleted = isAcquiredStatus(status)
   const level120Completed = isLevel120Status(status)
-  const acquiredApplicable = matchesBonus(character.statAcquired, shipType, stat)
-  const level120Applicable = matchesBonus(character.stat120, shipType, stat)
+  const acquiredApplicable = matchesAnyBonus(character.statAcquired, selectedShipTypes, stat)
+  const level120Applicable = matchesAnyBonus(character.stat120, selectedShipTypes, stat)
   const acquiredValue = !acquiredCompleted && acquiredApplicable
     ? Number(character.statAcquired.value || 0)
     : 0
@@ -97,8 +161,8 @@ function toCandidate(character, shipType, stat, rankingData) {
   const targetShipTypes = [...new Set(pendingBonuses.flatMap(data => (
     (data.shipTypes || []).map(normalizeStatShipTypeValue)
   )))]
-  const broadTargets = BROAD_COVERAGE_TARGETS[shipType] || []
-  const broadCoverage = broadTargets.length > 0 && broadTargets.every(target => targetShipTypes.includes(target))
+  const broadCoverage = broadCoverageTargets.length > 0
+    && pendingBonuses.some(data => bonusCoversTargets(data, stat, broadCoverageTargets))
   const operationTier = rankingData.operationTierByName?.get(character.name) || ''
   const obtainability = getShipObtainability(rankingData.obtainabilityByName, character) || null
 
@@ -106,7 +170,8 @@ function toCandidate(character, shipType, stat, rankingData) {
     ...character,
     status,
     rarity: getEffectiveRarity(character),
-    selectedShipType: shipType,
+    selectedShipType: selectedShipTypes.length === 1 ? selectedShipTypes[0] : selectedShipTypes.join('·'),
+    selectedShipTypes: [...selectedShipTypes],
     selectedStat: stat,
     targetShipTypes,
     broadCoverage,
@@ -146,10 +211,18 @@ function operationTierRank(tier) {
   return index < 0 ? OPERATION_TIER_ORDER.length : index
 }
 
-function matchesBonus(data, shipType, stat) {
+function matchesAnyBonus(data, shipTypes, stat) {
   return normalizeStatName(data?.stat) === normalizeStatName(stat)
-    && targetsShipType(data, shipType)
+    && shipTypes.some(shipType => targetsShipType(data, shipType))
     && Number(data.value || 0) > 0
+}
+
+function bonusCoversTargets(data, stat, shipTypes) {
+  if (normalizeStatName(data?.stat) !== normalizeStatName(stat) || Number(data?.value || 0) <= 0) {
+    return false
+  }
+  const targets = (data?.shipTypes || []).map(normalizeStatShipTypeValue)
+  return shipTypes.every(shipType => targets.includes(shipType))
 }
 
 function targetsShipType(data, shipType) {

@@ -2,9 +2,11 @@ import { useMemo, useState } from 'react'
 import growthRecommendationData from '../data/growthRecommendations.json'
 import shipObtainabilityData from '../data/shipObtainability.json'
 import {
-  ADDITIONAL_STATS,
+  ADDITIONAL_STAT_CATEGORIES,
+  buildAdditionalStatCategoryCandidates,
   buildAdditionalStatCandidates,
-  resolveAdditionalStatSelection,
+  getAvailableAdditionalShipTypes,
+  resolveAdditionalStatCategorySelection,
 } from '../utils/additionalStatRecommendations.js'
 import { calcMajorFactionTechPoints } from '../utils/fleetTech.js'
 import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
@@ -25,7 +27,8 @@ const RARITY_BADGE_CLASS = {
 }
 
 export default function AdditionalStatRecommendationPage({ characters }) {
-  const [shipType, setShipType] = useState('구축')
+  const [categoryId, setCategoryId] = useState('destroyer')
+  const [shipType, setShipType] = useState('')
   const [stat, setStat] = useState('뇌격')
   const [openCandidate, setOpenCandidate] = useState(null)
   const rankingData = useMemo(() => ({
@@ -33,11 +36,25 @@ export default function AdditionalStatRecommendationPage({ characters }) {
     obtainabilityByName: createShipObtainabilityLookup(shipObtainabilityData.ships),
   }), [])
   const selection = useMemo(
-    () => resolveAdditionalStatSelection(stat, shipType),
-    [shipType, stat],
+    () => resolveAdditionalStatCategorySelection(categoryId, stat, shipType),
+    [categoryId, shipType, stat],
   )
+  const applicableShipTypes = useMemo(() => {
+    const availableTypes = new Set(getAvailableAdditionalShipTypes(selection.stat))
+    return selection.shipTypes.filter(type => availableTypes.has(type))
+  }, [selection.shipTypes, selection.stat])
+  const selectedShipTypes = useMemo(
+    () => (selection.shipType ? [selection.shipType] : applicableShipTypes),
+    [applicableShipTypes, selection.shipType],
+  )
+  const selectCategory = nextCategoryId => {
+    const nextSelection = resolveAdditionalStatCategorySelection(nextCategoryId, stat)
+    setCategoryId(nextSelection.category.id)
+    setStat(nextSelection.stat)
+    setShipType('')
+  }
   const selectStat = nextStat => {
-    const nextSelection = resolveAdditionalStatSelection(nextStat, selection.shipType)
+    const nextSelection = resolveAdditionalStatCategorySelection(categoryId, nextStat, selection.shipType)
     setStat(nextSelection.stat)
     setShipType(nextSelection.shipType)
   }
@@ -49,29 +66,44 @@ export default function AdditionalStatRecommendationPage({ characters }) {
   const factionLevelStats = useMemo(() => (
     calcFleetTechLevelStats(calcMajorFactionTechPoints(characters))
   ), [characters])
-  const shipStatValue = shipStats[selection.shipType]?.[selection.stat] || 0
-  const factionLevelValue = factionLevelStats[selection.shipType]?.[selection.stat] || 0
-  const candidates = useMemo(() => buildAdditionalStatCandidates(
-    characters,
-    selection.shipType,
-    selection.stat,
-    rankingData || {},
-  ), [characters, rankingData, selection.shipType, selection.stat])
+  const statSummaries = useMemo(() => selectedShipTypes.map(type => ({
+    shipType: type,
+    shipStatValue: shipStats[type]?.[selection.stat] || 0,
+    factionLevelValue: factionLevelStats[type]?.[selection.stat] || 0,
+  })), [factionLevelStats, selectedShipTypes, selection.stat, shipStats])
+  const candidates = useMemo(() => (
+    selection.shipType
+      ? buildAdditionalStatCandidates(
+        characters,
+        selection.shipType,
+        selection.stat,
+        rankingData || {},
+      )
+      : buildAdditionalStatCategoryCandidates(
+        characters,
+        applicableShipTypes,
+        selection.stat,
+        rankingData || {},
+      )
+  ), [applicableShipTypes, characters, rankingData, selection.shipType, selection.stat])
 
   return (
     <section className="space-y-3">
       <div className="grid items-start gap-3 xl:grid-cols-[300px_minmax(0,1fr)]">
         <AdditionalStatControlPanel
+          categories={ADDITIONAL_STAT_CATEGORIES}
+          category={selection.category}
+          onCategoryChange={selectCategory}
           shipType={selection.shipType}
-          shipTypes={selection.shipTypes}
+          shipTypes={applicableShipTypes}
           onShipTypeChange={setShipType}
+          stats={selection.stats}
           selectedStat={selection.stat}
           onStatChange={selectStat}
-          shipStatValue={shipStatValue}
-          factionLevelValue={factionLevelValue}
+          statSummaries={statSummaries}
         />
         <CandidatePanel
-          shipType={selection.shipType}
+          targetLabel={selection.shipType || selection.category.label}
           selectedStat={selection.stat}
           candidates={candidates}
           onOpen={setOpenCandidate}
@@ -86,24 +118,43 @@ export default function AdditionalStatRecommendationPage({ characters }) {
 }
 
 function AdditionalStatControlPanel({
+  categories,
+  category,
+  onCategoryChange,
   shipType,
   shipTypes,
   onShipTypeChange,
+  stats,
   selectedStat,
   onStatChange,
-  shipStatValue,
-  factionLevelValue,
+  statSummaries,
 }) {
   return (
     <aside className="overflow-hidden border border-neutral-700 bg-[#202020] xl:sticky xl:top-3">
       <div className="border-b border-neutral-700 bg-[#262626] px-4 py-3">
         <h2 className="text-sm font-bold text-gray-100">추가 스탯 목표</h2>
-        <p className="mt-1 text-[11px] leading-4 text-gray-500">유효 스탯을 고른 뒤 함종을 선택하면 남은 육성 후보를 보여줍니다.</p>
+        <p className="mt-1 text-[11px] leading-4 text-gray-500">함종 분류와 유효 스탯을 선택하면 남은 육성 후보를 보여줍니다.</p>
       </div>
 
-      <ControlSection title="1. 유효 스탯">
+      <ControlSection title="1. 함종 분류">
         <div className="grid grid-cols-2 gap-1.5">
-          {ADDITIONAL_STATS.map(item => (
+          {categories.map(item => (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => onCategoryChange(item.id)}
+              className={`rounded border px-2 py-2 text-xs font-semibold transition-colors ${category.id === item.id ? 'border-cyan-500 bg-cyan-950/50 text-cyan-200' : 'border-neutral-700 bg-[#181818] text-gray-400 hover:border-neutral-500 hover:text-gray-200'}`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+        <p className="mt-2 text-[10px] text-gray-600">공작·운송·범선은 추천 대상에서 제외</p>
+      </ControlSection>
+
+      <ControlSection title="2. 유효 스탯">
+        <div className="grid grid-cols-2 gap-1.5">
+          {stats.map(item => (
             <button
               key={item}
               type="button"
@@ -116,8 +167,16 @@ function AdditionalStatControlPanel({
         </div>
       </ControlSection>
 
-      <ControlSection title="2. 강화할 함종">
-        <div className="grid grid-cols-3 gap-1.5">
+      {shipTypes.length > 1 && (
+        <ControlSection title="3. 세부 함종 (선택)">
+          <div className="grid grid-cols-3 gap-1.5">
+            <button
+              type="button"
+              onClick={() => onShipTypeChange('')}
+              className={`rounded border px-2 py-2 text-xs font-semibold transition-colors ${!shipType ? 'border-cyan-500 bg-cyan-950/50 text-cyan-200' : 'border-neutral-700 bg-[#181818] text-gray-400 hover:border-neutral-500 hover:text-gray-200'}`}
+            >
+              전체
+            </button>
           {shipTypes.map(type => (
             <button
               key={type}
@@ -128,19 +187,17 @@ function AdditionalStatControlPanel({
               {type}
             </button>
           ))}
-        </div>
-        <p className="mt-2 text-[10px] text-gray-600">선택한 스탯이 유효한 함종만 표시 · 공작·운송·범선 제외</p>
-      </ControlSection>
+          </div>
+          <p className="mt-2 text-[10px] text-gray-600">전체에서는 분류 공용 보너스를 먼저 표시</p>
+        </ControlSection>
+      )}
 
       <div className="border-t border-neutral-700 p-3">
-        <div className="rounded border border-cyan-900/70 bg-cyan-950/20 px-3 py-3">
-          <div className="text-[10px] text-cyan-300/70">{shipType} {getStatDisplayName(selectedStat)} 현재 합계</div>
-          <div className="mt-1 text-2xl font-black text-cyan-300">+{shipStatValue + factionLevelValue}</div>
-          <div className="mt-3 grid grid-cols-2 gap-2 border-t border-cyan-900/50 pt-2 text-[10px]">
-            <StatBreakdown label="함선 획득·120" value={shipStatValue} tone="text-blue-300" />
-            <StatBreakdown label="진영 기술 LV" value={factionLevelValue} tone="text-purple-300" />
-          </div>
-        </div>
+        <StatSummary
+          categoryLabel={category.label}
+          selectedStat={selectedStat}
+          summaries={statSummaries}
+        />
       </div>
 
       <div className="border-t border-neutral-700 px-3 py-3 text-[10px] leading-4 text-gray-500">
@@ -169,12 +226,34 @@ function StatBreakdown({ label, value, tone }) {
   )
 }
 
-function CandidatePanel({ shipType, selectedStat, candidates, onOpen }) {
+function StatSummary({ categoryLabel, selectedStat, summaries }) {
+  return (
+    <div className="rounded border border-cyan-900/70 bg-cyan-950/20 px-3 py-3">
+      <div className="text-[10px] text-cyan-300/70">{categoryLabel} {getStatDisplayName(selectedStat)} 현재 합계</div>
+      <div className={`mt-2 grid gap-2 ${summaries.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+        {summaries.map(summary => (
+          <div key={summary.shipType} className="rounded border border-cyan-900/40 bg-neutral-950/20 px-2 py-2">
+            <div className="text-[10px] font-bold text-gray-400">{summary.shipType}</div>
+            <div className="mt-0.5 text-xl font-black text-cyan-300">
+              +{summary.shipStatValue + summary.factionLevelValue}
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-2 border-t border-cyan-900/40 pt-1.5">
+              <StatBreakdown label="함선" value={summary.shipStatValue} tone="text-blue-300" />
+              <StatBreakdown label="기술 LV" value={summary.factionLevelValue} tone="text-purple-300" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function CandidatePanel({ targetLabel, selectedStat, candidates, onOpen }) {
   return (
     <section className="min-w-0 overflow-hidden border border-neutral-700 bg-[#202020]">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-700 bg-[#262626] px-4 py-3">
         <div>
-          <h2 className="text-sm font-bold text-gray-100">{shipType} · {getStatDisplayName(selectedStat)} 육성 후보</h2>
+          <h2 className="text-sm font-bold text-gray-100">{targetLabel} · {getStatDisplayName(selectedStat)} 육성 후보</h2>
           <p className="mt-1 text-[11px] text-gray-500">미완료 획득 보너스와 120 보너스만 표시합니다. 카드를 누르면 입수처를 볼 수 있습니다.</p>
         </div>
         <span className="rounded bg-cyan-950 px-2 py-1 text-xs font-bold text-cyan-300">{candidates.length}명</span>
