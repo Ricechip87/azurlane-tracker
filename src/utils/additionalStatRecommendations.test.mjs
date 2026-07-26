@@ -9,8 +9,9 @@ import {
 } from './additionalStatRecommendations.js'
 
 assert.deepEqual(ADDITIONAL_STAT_SHIP_TYPES, [
-  '구축', '경순', '중순', '대형순', '순전', '전함', '항전', '모니터',
-  '경항모', '항모', '잠수', '잠항모',
+  '순전', '전함', '항전', '모니터', '경항모', '항모',
+  '구축', '경순', '중순', '대형순',
+  '잠수', '잠항모',
 ])
 assert.equal(getAdditionalStatPriority('구축', '뇌격'), 0)
 assert.equal(getAdditionalStatPriority('구축', '회피'), 1)

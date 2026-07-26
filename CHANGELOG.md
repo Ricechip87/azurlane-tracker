@@ -7,6 +7,7 @@
 - Share one stat display-name helper across roster, fleet-tech, and additional-stat recommendation screens.
 - Accept both 뇌격/뇌장, 화력/포격, and 회피/기동 as input aliases and normalize them to one internal key across imports, calculations, audits, and recommendation matching.
 - Reorder the additional-stat selector as 뇌장·대공, 포격·항공, 장전·명중, 기동.
+- Reorder applicable ship-type buttons by 후열, 전열, and 기타 while preserving stat-based filtering.
 
 ## 2026-07-26 - Complete Additional-Stat Card Artwork
 
