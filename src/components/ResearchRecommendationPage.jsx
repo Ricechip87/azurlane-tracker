@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
-import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
+import growthRecommendationData from '../data/growthRecommendations.json'
 import researchRecommendationData from '../data/researchRecommendations.json'
-import shipObtainabilityUrl from '../data/shipObtainability.json?url'
+import shipObtainabilityData from '../data/shipObtainability.json'
 import { isAcquiredStatus, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getFactionBadgeName, getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
 import { getEffectiveRarity, getResearchRarityLabel } from '../utils/rarity.js'
@@ -23,8 +23,15 @@ const RESEARCH_SHIP_BY_NAME = new Map(researchRecommendationData.ships.map(ship 
 
 export default function ResearchRecommendationPage({ characters }) {
   const [targetId, setTargetId] = useState(() => typeof window === 'undefined' ? '' : window.localStorage.getItem('azurlane-research-target') || '')
-  const [candidateRankingData, setCandidateRankingData] = useState(null)
-  const [candidateDataError, setCandidateDataError] = useState('')
+  const candidateRankingData = useMemo(() => {
+    const operationSource = (growthRecommendationData.sources || []).find(source => source.key === 'operation-siren')
+    return {
+      operationTierByName: buildOperationTierByName(growthRecommendationData),
+      operationRecommendationByName: buildOperationRecommendationByName(growthRecommendationData),
+      operationUpdatedAt: operationSource?.updatedAt || null,
+      obtainabilityByName: createShipObtainabilityLookup(shipObtainabilityData.ships),
+    }
+  }, [])
   const goalRef = useRef(null)
   const pendingGoalScrollRef = useRef(false)
   const state = useMemo(
@@ -47,38 +54,6 @@ export default function ResearchRecommendationPage({ characters }) {
   )
 
   useEffect(() => {
-    let cancelled = false
-
-    Promise.all([
-      fetch(growthRecommendationsUrl).then(response => {
-        if (!response.ok) throw new Error(`growthRecommendations.json ${response.status}`)
-        return response.json()
-      }),
-      fetch(shipObtainabilityUrl).then(response => {
-        if (!response.ok) throw new Error(`shipObtainability.json ${response.status}`)
-        return response.json()
-      }),
-    ]).then(([growthData, obtainabilityData]) => {
-      if (cancelled) return
-      const operationSource = (growthData.sources || []).find(source => source.key === 'operation-siren')
-      setCandidateRankingData({
-        operationTierByName: buildOperationTierByName(growthData),
-        operationRecommendationByName: buildOperationRecommendationByName(growthData),
-        operationUpdatedAt: operationSource?.updatedAt || null,
-        obtainabilityByName: createShipObtainabilityLookup(obtainabilityData.ships),
-      })
-      setCandidateDataError('')
-    }).catch(error => {
-      if (!cancelled) {
-        setCandidateRankingData({})
-        setCandidateDataError(error instanceof Error ? error.message : '알 수 없는 오류')
-      }
-    })
-
-    return () => { cancelled = true }
-  }, [])
-
-  useEffect(() => {
     if (typeof window === 'undefined') return
     if (targetId && !targetCompleted) window.localStorage.setItem('azurlane-research-target', targetId)
     else window.localStorage.removeItem('azurlane-research-target')
@@ -98,14 +73,6 @@ export default function ResearchRecommendationPage({ characters }) {
   return (
     <section className="space-y-4">
       <ResearchSummary state={state} />
-
-      {candidateDataError && (
-        <div className="rounded border border-amber-800/70 bg-amber-950/25 px-4 py-3 text-sm leading-6 text-amber-100" role="alert">
-          <strong>개발함 후보 보조 데이터를 불러오지 못했습니다.</strong>{' '}
-          미보유 후보와 대작전 기준 추천 순위가 일부 생략될 수 있습니다.
-          <span className="ml-2 text-xs text-amber-300/80">({candidateDataError})</span>
-        </div>
-      )}
 
       <div ref={goalRef} className="scroll-mt-4">
         <ResearchGoalWorkspace

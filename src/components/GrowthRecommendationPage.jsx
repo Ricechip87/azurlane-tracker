@@ -1,7 +1,7 @@
 
-import { useEffect, useMemo, useState } from 'react'
-import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
-import shipObtainabilityUrl from '../data/shipObtainability.json?url'
+import { useMemo, useState } from 'react'
+import growthRecommendationData from '../data/growthRecommendations.json'
+import shipObtainabilityData from '../data/shipObtainability.json'
 import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import { normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
@@ -49,48 +49,15 @@ const COLLAB_FACTIONS = new Set([
 ])
 export default function GrowthRecommendationPage({ characters }) {
   const [mode, setMode] = useState('main')
-  const [recommendationData, setRecommendationData] = useState(null)
-  const [obtainabilityMap, setObtainabilityMap] = useState(null)
-  const [dataError, setDataError] = useState('')
   const [openCard, setOpenCard] = useState(null)
+  const recommendationData = growthRecommendationData
+  const obtainabilityMap = useMemo(
+    () => createShipObtainabilityLookup(shipObtainabilityData.ships),
+    [],
+  )
   const currentMode = MODES.find(item => item.id === mode) || MODES[0]
   const currentSource = recommendationData?.sources?.find(source => source.key === GROWTH_MODE_SOURCE[mode])
   const unratedRecentShips = recommendationData?.review?.unratedRecentShips || []
-
-  useEffect(() => {
-    let ignore = false
-
-    async function loadRecommendationData() {
-      try {
-        const [recommendationResponse, obtainabilityResponse] = await Promise.all([
-          fetch(growthRecommendationsUrl),
-          fetch(shipObtainabilityUrl),
-        ])
-
-        if (!recommendationResponse.ok) throw new Error(`growthRecommendations.json ${recommendationResponse.status}`)
-        if (!obtainabilityResponse.ok) throw new Error(`shipObtainability.json ${obtainabilityResponse.status}`)
-
-        const [recommendations, obtainability] = await Promise.all([
-          recommendationResponse.json(),
-          obtainabilityResponse.json(),
-        ])
-
-        if (ignore) return
-        setRecommendationData(recommendations)
-        setObtainabilityMap(createShipObtainabilityLookup(obtainability.ships))
-        setDataError('')
-      } catch (error) {
-        if (ignore) return
-        setDataError(error instanceof Error ? error.message : '알 수 없는 오류')
-      }
-    }
-
-    loadRecommendationData()
-
-    return () => {
-      ignore = true
-    }
-  }, [])
 
   const characterByName = useMemo(() => (
     new Map(characters.map(character => [character.name, character]))
@@ -142,19 +109,7 @@ export default function GrowthRecommendationPage({ characters }) {
         </div>
       )}
 
-      {dataError && (
-        <section className="rounded border border-rose-900/60 bg-rose-950/30 px-4 py-5 text-sm text-rose-200">
-          육성 추천 데이터를 불러오지 못했습니다. ({dataError})
-        </section>
-      )}
-
-      {!dataError && (!recommendationData || !obtainabilityMap) && (
-        <section className="rounded border border-neutral-700 bg-[#1a1a1a] px-4 py-5 text-sm text-gray-400">
-          육성 추천 데이터를 불러오는 중입니다.
-        </section>
-      )}
-
-      {!dataError && recommendationData && obtainabilityMap && (
+      {recommendationData && obtainabilityMap && (
         <div className="space-y-4">
         {recommendationSections.map(section => (
           <section key={section.id} className="rounded border border-neutral-700 bg-[#1a1a1a]">

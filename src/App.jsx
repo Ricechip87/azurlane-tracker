@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
-import charactersUrl from './data/characters.json?url'
+import { useMemo, useState } from 'react'
+import characterData from './data/characters.json'
 import RecommendationPage from './components/RecommendationPage.jsx'
 import BackToTopButton from './components/layout/BackToTopButton.jsx'
 import TopMenu from './components/layout/TopMenu.jsx'
@@ -15,32 +15,11 @@ import { DEFAULT_CHARACTER_FILTERS, filterCharacters } from './utils/characterFi
 
 export default function App() {
   const [activePage, setActivePage] = useState('home')
-  const [characters, setCharacters] = useState([])
-  const [charactersLoaded, setCharactersLoaded] = useState(false)
-  const [charactersError, setCharactersError] = useState('')
+  const characters = characterData
+  const charactersLoaded = true
+  const charactersError = ''
   const [userData, setUserData, storageMessage] = useUserDataStorage('azurlane-userdata')
   const [filters, setFilters] = useState(DEFAULT_CHARACTER_FILTERS)
-
-  useEffect(() => {
-    let ignore = false
-
-    async function loadCharacters() {
-      try {
-        const response = await fetch(charactersUrl)
-        if (!response.ok) throw new Error(`characters.json ${response.status}`)
-        const data = await response.json()
-        if (ignore) return
-        setCharacters(data)
-        setCharactersLoaded(true)
-      } catch (error) {
-        if (ignore) return
-        setCharactersError(error instanceof Error ? error.message : '알 수 없는 오류')
-      }
-    }
-
-    loadCharacters()
-    return () => { ignore = true }
-  }, [])
 
   const updateUser = (id, field, value) => {
     setUserData(previous => ({

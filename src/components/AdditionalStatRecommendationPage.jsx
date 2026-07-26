@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from 'react'
-import growthRecommendationsUrl from '../data/growthRecommendations.json?url'
-import shipObtainabilityUrl from '../data/shipObtainability.json?url'
+import { useMemo, useState } from 'react'
+import growthRecommendationData from '../data/growthRecommendations.json'
+import shipObtainabilityData from '../data/shipObtainability.json'
 import {
   ADDITIONAL_STAT_SHIP_TYPES,
   buildAdditionalStatCandidates,
@@ -26,37 +26,13 @@ const RARITY_BADGE_CLASS = {
 export default function AdditionalStatRecommendationPage({ characters }) {
   const [shipType, setShipType] = useState('구축')
   const [stat, setStat] = useState('뇌격')
-  const [rankingData, setRankingData] = useState(null)
-  const [dataError, setDataError] = useState('')
   const [openCandidate, setOpenCandidate] = useState(null)
+  const rankingData = useMemo(() => ({
+    operationTierByName: buildOperationTierByName(growthRecommendationData),
+    obtainabilityByName: createShipObtainabilityLookup(shipObtainabilityData.ships),
+  }), [])
   const stats = useMemo(() => getAvailableAdditionalStats(shipType), [shipType])
   const selectedStat = stats.includes(stat) ? stat : stats[0] || ''
-
-  useEffect(() => {
-    let ignore = false
-
-    Promise.all([fetch(growthRecommendationsUrl), fetch(shipObtainabilityUrl)])
-      .then(async ([growthResponse, obtainabilityResponse]) => {
-        if (!growthResponse.ok) throw new Error(`growthRecommendations.json ${growthResponse.status}`)
-        if (!obtainabilityResponse.ok) throw new Error(`shipObtainability.json ${obtainabilityResponse.status}`)
-        return Promise.all([growthResponse.json(), obtainabilityResponse.json()])
-      })
-      .then(([growthData, obtainabilityData]) => {
-        if (ignore) return
-        setRankingData({
-          operationTierByName: buildOperationTierByName(growthData),
-          obtainabilityByName: createShipObtainabilityLookup(obtainabilityData.ships),
-        })
-        setDataError('')
-      })
-      .catch(error => {
-        if (ignore) return
-        setRankingData({})
-        setDataError(error instanceof Error ? error.message : '알 수 없는 오류')
-      })
-
-    return () => { ignore = true }
-  }, [])
 
   const shipStats = useMemo(() => mergeStatsByShipType(
     calcStatsByShipType(characters, 'acquired'),
@@ -76,12 +52,6 @@ export default function AdditionalStatRecommendationPage({ characters }) {
 
   return (
     <section className="space-y-3">
-      {dataError && (
-        <div className="border border-amber-800/70 bg-amber-950/25 px-4 py-3 text-xs text-amber-200">
-          대작전·입수 난이도 데이터를 불러오지 못해 기본 후보 순서로 표시합니다. ({dataError})
-        </div>
-      )}
-
       <div className="grid items-start gap-3 xl:grid-cols-[300px_minmax(0,1fr)]">
         <AdditionalStatControlPanel
           shipType={shipType}

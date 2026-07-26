@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-07-26 - Prevent Recommendation Data 404s After Deployment
+
+### Fixed
+- Bundle character, growth-recommendation, and ship-obtainability data with the application code instead of fetching separately hashed JSON assets.
+- Keep growth, research, fleet-tech, and additional-stat recommendations on the same deployment version as their supporting data, including when a browser still has an older application bundle cached.
+
+### Verified
+- Add a structural regression audit that rejects separately hashed runtime recommendation JSON imports.
+
 ## 2026-07-26 - Keep Lv.120 Ships in Growth Recommendations
 
 ### Changed
