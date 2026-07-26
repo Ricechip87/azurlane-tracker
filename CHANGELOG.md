@@ -3,9 +3,10 @@
 ## 2026-07-27 - Filter Growth Recommendations by Ship Type
 
 ### Added
-- Add ship-type buttons above the growth recommendation sections with the number of unique candidates for each type.
-- Apply the selected type to every recommendation section, including priority, secondary, special-role, lane, and submarine groups.
+- Add independent ship-type buttons to every growth recommendation section with the number of unique candidates for each type.
+- Show only types that actually exist in that section, so vanguard and main-fleet sections cannot expose filters from the opposite lane.
 - Normalize source aliases such as `대순` and `초순` into the displayed `대형순` filter.
+- Keep submarine carriers in the dedicated submarine section instead of treating `잠항모` as a vanguard type.
 
 ### Verified
 - Add regression coverage for filtering across multiple sections, ship-type aliases, and duplicate candidate counting.

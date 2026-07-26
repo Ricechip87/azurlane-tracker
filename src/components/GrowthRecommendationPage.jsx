@@ -53,7 +53,7 @@ const COLLAB_FACTIONS = new Set([
 ])
 export default function GrowthRecommendationPage({ characters }) {
   const [mode, setMode] = useState('main')
-  const [shipTypeFilter, setShipTypeFilter] = useState('전체')
+  const [shipTypeFilters, setShipTypeFilters] = useState({})
   const [openCard, setOpenCard] = useState(null)
   const recommendationData = growthRecommendationData
   const obtainabilityMap = useMemo(
@@ -72,17 +72,6 @@ export default function GrowthRecommendationPage({ characters }) {
       ? buildGrowthRecommendationSections(mode, characters, recommendationData, obtainabilityMap)
       : []
   ), [mode, characters, recommendationData, obtainabilityMap])
-  const shipTypeCounts = useMemo(
-    () => countGrowthRecommendationShipTypes(allRecommendationSections),
-    [allRecommendationSections],
-  )
-  const activeShipTypeFilter = shipTypeFilter === '전체' || shipTypeCounts[shipTypeFilter]
-    ? shipTypeFilter
-    : '전체'
-  const recommendationSections = useMemo(
-    () => filterGrowthRecommendationSections(allRecommendationSections, activeShipTypeFilter),
-    [activeShipTypeFilter, allRecommendationSections],
-  )
 
   return (
     <section className="space-y-4">
@@ -106,7 +95,7 @@ export default function GrowthRecommendationPage({ characters }) {
                 type="button"
                 onClick={() => {
                   setMode(item.id)
-                  setShipTypeFilter('전체')
+                  setShipTypeFilters({})
                   setOpenCard(null)
                 }}
                 className={`rounded border px-3 py-2 text-sm font-semibold transition-colors ${mode === item.id ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#1a1a1a] text-gray-400 hover:border-neutral-500 hover:text-gray-100'}`}
@@ -126,46 +115,20 @@ export default function GrowthRecommendationPage({ characters }) {
         </div>
       )}
 
-      <GrowthShipTypeFilter
-        selected={activeShipTypeFilter}
-        counts={shipTypeCounts}
-        onChange={setShipTypeFilter}
-      />
-
       {recommendationData && obtainabilityMap && (
         <div className="space-y-4">
-        {recommendationSections.map(section => (
-          <section key={section.id} className="rounded border border-neutral-700 bg-[#1a1a1a]">
-            <div className="border-b border-neutral-700 bg-[#242424] px-4 py-3">
-              <div className="flex flex-wrap items-baseline gap-3">
-                <h3 className="text-base font-bold text-gray-100">{section.title}</h3>
-                <span className="text-xs text-gray-500">{section.description}</span>
-              </div>
-            </div>
-
-            {section.cards.length > 0 ? (
-              section.groupByLane ? (
-                <LaneGroupedCards
-                  section={section}
-                  characterByName={characterByName}
-                  onOpenCard={setOpenCard}
-                />
-              ) : (
-              <div className="flex flex-wrap gap-2 p-3">
-                {section.cards.map(card => (
-                  <RecommendationCard
-                    key={`${section.id}-${card.name}`}
-                    card={card}
-                    character={characterByName.get(card.name)}
-                    onOpen={setOpenCard}
-                  />
-                ))}
-              </div>
-              )
-            ) : (
-              <EmptyRecommendationSection />
-            )}
-          </section>
+        {allRecommendationSections.map(section => (
+          <GrowthRecommendationSection
+            key={section.id}
+            section={section}
+            selectedShipType={shipTypeFilters[section.id] || '전체'}
+            onShipTypeChange={shipType => setShipTypeFilters(previous => ({
+              ...previous,
+              [section.id]: shipType,
+            }))}
+            characterByName={characterByName}
+            onOpenCard={setOpenCard}
+          />
         ))}
       </div>
       )}
@@ -180,6 +143,60 @@ export default function GrowthRecommendationPage({ characters }) {
   )
 }
 
+function GrowthRecommendationSection({
+  section,
+  selectedShipType,
+  onShipTypeChange,
+  characterByName,
+  onOpenCard,
+}) {
+  const counts = countGrowthRecommendationShipTypes([section])
+  const activeShipType = selectedShipType === '전체' || counts[selectedShipType]
+    ? selectedShipType
+    : '전체'
+  const [displaySection] = filterGrowthRecommendationSections([section], activeShipType)
+
+  return (
+    <section className="rounded border border-neutral-700 bg-[#1a1a1a]">
+      <div className="border-b border-neutral-700 bg-[#242424] px-4 py-3">
+        <div className="flex flex-wrap items-baseline gap-3">
+          <h3 className="text-base font-bold text-gray-100">{section.title}</h3>
+          <span className="text-xs text-gray-500">{section.description}</span>
+        </div>
+      </div>
+
+      <GrowthShipTypeFilter
+        selected={activeShipType}
+        counts={counts}
+        onChange={onShipTypeChange}
+      />
+
+      {displaySection.cards.length > 0 ? (
+        displaySection.groupByLane ? (
+          <LaneGroupedCards
+            section={displaySection}
+            characterByName={characterByName}
+            onOpenCard={onOpenCard}
+          />
+        ) : (
+        <div className="flex flex-wrap gap-2 p-3">
+          {displaySection.cards.map(card => (
+            <RecommendationCard
+              key={`${displaySection.id}-${card.name}`}
+              card={card}
+              character={characterByName.get(card.name)}
+              onOpen={onOpenCard}
+            />
+          ))}
+        </div>
+        )
+      ) : (
+        <EmptyRecommendationSection />
+      )}
+    </section>
+  )
+}
+
 function GrowthShipTypeFilter({ selected, counts, onChange }) {
   const knownTypes = GROWTH_SHIP_TYPE_FILTER_ORDER.filter(shipType => counts[shipType])
   const extraTypes = Object.keys(counts)
@@ -189,14 +206,8 @@ function GrowthShipTypeFilter({ selected, counts, onChange }) {
   const total = Object.values(counts).reduce((sum, count) => sum + count, 0)
 
   return (
-    <section className="border border-neutral-700 bg-[#202020]">
-      <div className="border-b border-neutral-700 bg-[#262626] px-4 py-3">
-        <div className="flex flex-wrap items-baseline gap-3">
-          <h3 className="text-sm font-bold text-gray-100">추천 함종 선택</h3>
-          <span className="text-[11px] text-gray-500">선택한 함종만 최우선·차순위 등 모든 추천 구역에 표시합니다.</span>
-        </div>
-      </div>
-      <div className="flex flex-wrap gap-2 p-3">
+    <div className="flex flex-wrap items-center gap-2 border-b border-neutral-800 bg-[#202020] px-3 py-2">
+      <span className="mr-1 text-[11px] font-bold text-gray-500">함종</span>
         <ShipTypeFilterButton
           label="전체"
           count={total}
@@ -212,8 +223,7 @@ function GrowthShipTypeFilter({ selected, counts, onChange }) {
             onClick={() => onChange(shipType)}
           />
         ))}
-      </div>
-    </section>
+    </div>
   )
 }
 

@@ -30,7 +30,7 @@ export const GROWTH_SHIP_TYPE_FILTER_ORDER = [
 ]
 
 const MAIN_FORCE_TYPES = new Set(['전함', '순전', '항전', '항모', '경항모', '모니터'])
-const SUBMARINE_TYPES = new Set(['잠수', '잠수항모'])
+const SUBMARINE_TYPES = new Set(['잠수', '잠수항모', '잠항모'])
 const POSITION_TYPES = ['구축', '경순', '중순', '대순', '전함', '순전', '항모', '경항모']
 const TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B']
 export function buildGrowthRecommendationSections(mode, characters, growthRecommendationData, obtainabilityByName) {
