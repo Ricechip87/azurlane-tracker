@@ -11,12 +11,12 @@ assert.equal(isCurrentlyObtainable(permanentEasy), true)
 assert.equal(isCurrentlyObtainable(activeEvent), true)
 assert.equal(isCurrentlyObtainable(rerunWait), false)
 assert.equal(isCurrentlyObtainable(collab), false)
-assert.equal(isGrowthRecommendationEligible({ acquired: false, level120: false, obtainability: permanentEasy }), true)
-assert.equal(isGrowthRecommendationEligible({ acquired: false, level120: false, obtainability: permanentNormal }), false)
-assert.equal(isGrowthRecommendationEligible({ acquired: false, level120: false, obtainability: activeEvent }), true)
-assert.equal(isGrowthRecommendationEligible({ acquired: false, level120: false, obtainability: rerunWait }), false)
-assert.equal(isGrowthRecommendationEligible({ acquired: true, level120: false, obtainability: rerunWait }), true)
-assert.equal(isGrowthRecommendationEligible({ acquired: true, level120: true, obtainability: permanentEasy }), false)
+assert.equal(isGrowthRecommendationEligible({ acquired: false, level125: false, obtainability: permanentEasy }), true)
+assert.equal(isGrowthRecommendationEligible({ acquired: false, level125: false, obtainability: permanentNormal }), false)
+assert.equal(isGrowthRecommendationEligible({ acquired: false, level125: false, obtainability: activeEvent }), true)
+assert.equal(isGrowthRecommendationEligible({ acquired: false, level125: false, obtainability: rerunWait }), false)
+assert.equal(isGrowthRecommendationEligible({ acquired: true, level125: false, obtainability: rerunWait }), true)
+assert.equal(isGrowthRecommendationEligible({ acquired: true, level125: true, obtainability: permanentEasy }), false)
 assert.equal(isResearchCandidateActionable({ acquired: false, obtainability: permanentNormal }), true)
 assert.equal(isResearchCandidateActionable({ acquired: false, obtainability: activeEvent }), true)
 assert.equal(isResearchCandidateActionable({ acquired: false, obtainability: rerunWait }), false)
@@ -33,7 +33,7 @@ const mixedPermanent = {
 assert.equal(obtainabilityLabel(mixedPermanent), '상시 획득 · 코어 월간 교환')
 assert.equal(getPrimaryAcquisitionRoute(mixedPermanent).key, 'core-monthly')
 assert.equal(obtainabilityRank(mixedPermanent), 0)
-assert.equal(isGrowthRecommendationEligible({ acquired: false, level120: false, obtainability: mixedPermanent }), true, '확정 교환 후보는 미보유 육성 추천에 포함')
+assert.equal(isGrowthRecommendationEligible({ acquired: false, level125: false, obtainability: mixedPermanent }), true, '확정 교환 후보는 미보유 육성 추천에 포함')
 assert.deepEqual(getObtainabilitySourceSections(mixedPermanent), [
   { label: '코어 월간 교환 · 확정', sources: ['코어 월간 교환'] },
   { label: '상시 건조 · 확률', sources: ['소형함 상시 건조'] },
@@ -43,7 +43,7 @@ const highMapPermanent = {
   difficulty: { key: 'hard', label: '어려움' },
   primaryRoute: { key: 'high-map-drop', label: '고해역 드롭', certainty: 'random', rank: 3, sources: ['메인 스테이지 해역13-4'] },
 }
-assert.equal(isGrowthRecommendationEligible({ acquired: false, level120: false, obtainability: highMapPermanent }), false, '고해역 드롭 미보유함은 육성 추천에서 후순위 제외')
+assert.equal(isGrowthRecommendationEligible({ acquired: false, level125: false, obtainability: highMapPermanent }), false, '고해역 드롭 미보유함은 육성 추천에서 후순위 제외')
 assert.equal(obtainabilityLabel(highMapPermanent), '상시 획득 · 고해역 드롭')
 assert.deepEqual(getObtainabilitySourceSections({
   ...permanentEasy,

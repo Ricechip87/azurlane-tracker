@@ -22,8 +22,8 @@ export function isCurrentlyObtainable(obtainability) {
   return ['permanent', 'active-event'].includes(getAvailability(obtainability).key)
 }
 
-export function isGrowthRecommendationEligible({ acquired, level120, obtainability }) {
-  if (acquired) return !level120
+export function isGrowthRecommendationEligible({ acquired, level125, obtainability }) {
+  if (acquired) return !level125
   const availability = getAvailability(obtainability)
   if (availability.key === 'active-event') return true
   if (availability.key !== 'permanent') return false

@@ -1,4 +1,4 @@
-import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from './acquisitionStatus.js'
+import { isAcquiredStatus, isLevel120Status, isLevel125Status, normalizeAcquisitionStatus } from './acquisitionStatus.js'
 import { getFactionDisplayText } from './factions.js'
 import { isGrowthRecommendationEligible, obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
@@ -116,7 +116,7 @@ function buildCandidate(recommendation, character, obtainability) {
 function isEligibleCandidate(candidate) {
   return isGrowthRecommendationEligible({
     acquired: candidate.acquired,
-    level120: isLevel120Status(candidate.status),
+    level125: isLevel125Status(candidate.status),
     obtainability: candidate.obtainability,
   })
 }
@@ -141,6 +141,7 @@ function tierScore(tier) {
 
 function ownershipScore(candidate) {
   if (!candidate.acquired) return 4
+  if (candidate.status === '120') return -1
   if (candidate.status === '100') return 0
   if (candidate.status === '풀돌') return 1
   if (candidate.status === '획득') return 2

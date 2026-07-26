@@ -4,6 +4,7 @@ import {
   isAcquiredStatus,
   isLevel100Status,
   isLevel120Status,
+  isLevel125Status,
   normalizeAcquisitionStatus,
 } from './acquisitionStatus.js'
 import { calcTechPoints } from './techPoints.js'
@@ -26,6 +27,8 @@ assert.equal(isLevel120Status('풀돌'), false)
 assert.equal(isLevel120Status('100'), false)
 assert.equal(isLevel120Status('120'), true)
 assert.equal(isLevel120Status('125'), true)
+assert.equal(isLevel125Status('120'), false)
+assert.equal(isLevel125Status('125'), true)
 
 const techPoints = { acquired: 3, maxLB: 7, lv120: 5 }
 assert.equal(calcTechPoints({ acquired: '미획득', techPoints }), 0)

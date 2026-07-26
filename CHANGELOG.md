@@ -1,5 +1,15 @@
 # Change Log
 
+## 2026-07-26 - Keep Lv.120 Ships in Growth Recommendations
+
+### Changed
+- Treat only Lv.125 as completed for growth recommendations, so owned Lv.120 ships remain visible until their final level cap is reached.
+- Rank Lv.120 candidates ahead of lower progression states within the same recommendation tier.
+- Keep the existing Lv.120 completion meaning unchanged for fleet-tech bonuses and roster-position statistics.
+
+### Verified
+- Added regression coverage proving Lv.120 ships remain in growth recommendations while Lv.125 ships are excluded.
+
 ## 2026-07-26 - Refresh and Audit Reference Sources Safely
 
 ### Changed

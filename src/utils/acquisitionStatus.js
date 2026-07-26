@@ -22,3 +22,7 @@ export function isLevel100Status(status) {
 export function isLevel120Status(status) {
   return ['120', '125'].includes(normalizeAcquisitionStatus(status))
 }
+
+export function isLevel125Status(status) {
+  return normalizeAcquisitionStatus(status) === '125'
+}
