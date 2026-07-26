@@ -7,6 +7,7 @@ const componentPaths = [
   'src/components/TechPointRecommendationPage.jsx',
   'src/components/AdditionalStatRecommendationPage.jsx',
 ]
+const fleetComponentPath = 'src/components/FleetRecommendationPage.jsx'
 
 const appSource = await readFile(new URL('../src/App.jsx', import.meta.url), 'utf8')
 assert.doesNotMatch(
@@ -39,5 +40,33 @@ for (const componentPath of componentPaths) {
     `${componentPath} must statically include ship obtainability data`,
   )
 }
+
+const fleetSource = await readFile(new URL(`../${fleetComponentPath}`, import.meta.url), 'utf8')
+for (const dataFile of [
+  'shipCombatData.json',
+  'equipmentDirectStats.json',
+  'stageRequirements.json',
+]) {
+  assert.doesNotMatch(
+    fleetSource,
+    new RegExp(`${dataFile.replace('.', '\\.')}\\?url`),
+    `${fleetComponentPath} must not emit ${dataFile} as a fetch-only asset`,
+  )
+  assert.match(
+    fleetSource,
+    new RegExp(`${dataFile.replace('.', '\\.')}['"]`),
+    `${fleetComponentPath} must statically include ${dataFile}`,
+  )
+}
+
+const recommendationPageSource = await readFile(
+  new URL('../src/components/RecommendationPage.jsx', import.meta.url),
+  'utf8',
+)
+assert.match(
+  recommendationPageSource,
+  /lazy\(\(\) => import\('\.\/FleetRecommendationPage\.jsx'\)\)/,
+  'large fleet recommendation data must load only when the fleet tab is opened',
+)
 
 console.log('recommendation runtime data audit passed')

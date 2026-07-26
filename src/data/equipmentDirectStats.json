@@ -1,0 +1,8542 @@
+{
+  "meta": {
+    "source": "AzurLaneData KR equip_data_statistics.json",
+    "enhancement": 10,
+    "policy": "직접 능력치만 포함. 확률·조건부·공격·회복·보호막 효과 제외.",
+    "availability": "첫 버전은 장비 수량 및 복각 상태를 자동 판정하지 않음."
+  },
+  "equipment": [
+    {
+      "id": 31080,
+      "name": "100mm 2연장 98식 고각포改",
+      "icon": "31080",
+      "type": 1,
+      "rarity": 6,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25,
+        "antiair": 40
+      }
+    },
+    {
+      "id": 90160,
+      "name": "138.6mm 연장포 Mle 1934",
+      "icon": "50160",
+      "type": 1,
+      "rarity": 6,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 55
+      }
+    },
+    {
+      "id": 3720,
+      "name": "12파운드 롱 캐논",
+      "icon": "3680",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        22,
+        23
+      ],
+      "stats": {
+        "firepower": 35
+      }
+    },
+    {
+      "id": 11240,
+      "name": "127mm 연장 양용포 Mk12",
+      "icon": "11200",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 20,
+        "antiair": 25
+      }
+    },
+    {
+      "id": 11260,
+      "name": "시제형 137mm 연장 양용포 Mk1",
+      "icon": "11260",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "firepower": 35,
+        "antiair": 10
+      }
+    },
+    {
+      "id": 21460,
+      "name": "연장포120mm 고평양용포 Mark XI",
+      "icon": "21460",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 20,
+        "antiair": 25
+      }
+    },
+    {
+      "id": 21600,
+      "name": "114mm 연장 양용포 MarkIV",
+      "icon": "21600",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25,
+        "antiair": 20
+      }
+    },
+    {
+      "id": 21620,
+      "name": "113mm 단장 양용포 Mark IV",
+      "icon": "21620",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25,
+        "antiair": 20
+      }
+    },
+    {
+      "id": 31040,
+      "name": "98식 100mm 연장 고사포",
+      "icon": "31000",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 15,
+        "antiair": 30
+      }
+    },
+    {
+      "id": 31300,
+      "name": "127mm 연장포 (D형)",
+      "icon": "31300",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 30,
+        "antiair": 15
+      }
+    },
+    {
+      "id": 41160,
+      "name": "연장포 128mm SKC41 고평양용포改",
+      "icon": "41160",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 30,
+        "antiair": 15
+      }
+    },
+    {
+      "id": 85040,
+      "name": "B-13 연장 130mm 주포 B-2LM",
+      "icon": "85000",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 35
+      }
+    },
+    {
+      "id": 90140,
+      "name": "138.6mm 단장포 Mle 1929",
+      "icon": "50100",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 35
+      }
+    },
+    {
+      "id": 95960,
+      "name": "연장 135mm 주포 Model 1938",
+      "icon": "55920",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 30,
+        "antiair": 15
+      }
+    },
+    {
+      "id": 96100,
+      "name": "시제형 2연장 130mm 주포 Model1936",
+      "icon": "56100",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 35,
+        "antiair": 10
+      }
+    },
+    {
+      "id": 150080,
+      "name": "구식 중화포",
+      "icon": "150040",
+      "type": 1,
+      "rarity": 5,
+      "shipTypes": [
+        22,
+        23
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 3700,
+      "name": "12파운드 캐논",
+      "icon": "3680",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        22,
+        23
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 7240,
+      "name": "130mm 단장포",
+      "icon": "7200",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 11140,
+      "name": "127mm 단장포",
+      "icon": "11100",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 11160,
+      "name": "연장포127mm 부포",
+      "icon": "11160",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 11220,
+      "name": "127mm 연장 양용포 Mk12",
+      "icon": "11200",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 11,
+        "antiair": 14
+      }
+    },
+    {
+      "id": 21160,
+      "name": "연장포102mm 부포 Mark XVI",
+      "icon": "21160",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 21240,
+      "name": "102mm 3연장 부포",
+      "icon": "21200",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 21440,
+      "name": "120mm 연장포",
+      "icon": "21400",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 21540,
+      "name": "134mm 연장 고사포",
+      "icon": "21500",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 10,
+        "antiair": 15
+      }
+    },
+    {
+      "id": 31020,
+      "name": "98식 100mm 연장 고사포",
+      "icon": "31000",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 9,
+        "antiair": 16
+      }
+    },
+    {
+      "id": 31060,
+      "name": "100mm88식 화포",
+      "icon": "31060",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 10
+      }
+    },
+    {
+      "id": 31180,
+      "name": "120mm 단장 고각포",
+      "icon": "31180",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 10,
+        "antiair": 15
+      }
+    },
+    {
+      "id": 31240,
+      "name": "127mm 연장포",
+      "icon": "31200",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 31280,
+      "name": "127mm 연장포改",
+      "icon": "31280",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 41060,
+      "name": "연장포 127mm KM40 주포",
+      "icon": "41060",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 41140,
+      "name": "128mm SKC/41 연장 양용포",
+      "icon": "41100",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 15,
+        "antiair": 10
+      }
+    },
+    {
+      "id": 90120,
+      "name": "138.6mm 단장포 Mle 1929",
+      "icon": "50100",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 90540,
+      "name": "130mm 연장포 Mle1935",
+      "icon": "50500",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 90740,
+      "name": "138.6mm 단장포 Mle1927",
+      "icon": "50700",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 95440,
+      "name": "120mm 연장포 Model1936",
+      "icon": "55400",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 95580,
+      "name": "120mm 연장포",
+      "icon": "55560",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 95940,
+      "name": "연장 135mm 주포 Model 1938",
+      "icon": "55920",
+      "type": 1,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 15,
+        "antiair": 10
+      }
+    },
+    {
+      "id": 22280,
+      "name": "시제형 4연장 152mm 주포",
+      "icon": "22280",
+      "type": 2,
+      "rarity": 6,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 12160,
+      "name": "3연장 152mm 주포 Mk16",
+      "icon": "12160",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 12200,
+      "name": "시제형 3연장 152mm 양용포 Mk17",
+      "icon": "12200",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 30,
+        "antiair": 15
+      }
+    },
+    {
+      "id": 22260,
+      "name": "시제형 152mm 3연장포",
+      "icon": "22260",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 32240,
+      "name": "155mm 3연장포",
+      "icon": "32200",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 32260,
+      "name": "시제형 155mm 3연장포改",
+      "icon": "32260",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 32360,
+      "name": "시제형 150mm 3연장 5식 고각포",
+      "icon": "32360",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 30,
+        "antiair": 15
+      }
+    },
+    {
+      "id": 42080,
+      "name": "시제형 연장 SKC28식 150mm 주포改",
+      "icon": "42080",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 42360,
+      "name": "시제형 150mm Tbts KC 42T식 연장포",
+      "icon": "42360",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 85160,
+      "name": "152mm 3연장포 B-38 MK5",
+      "icon": "85120",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 85500,
+      "name": "180mm 3연장포 B-1-P Model 1932",
+      "icon": "85460",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 85640,
+      "name": "시제형 180mm 3연장포 B-1-P Model1932 개조",
+      "icon": "85640",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 90260,
+      "name": "152mm 3연장포 Mle1930 (유탄)",
+      "icon": "50200",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 95640,
+      "name": "3연장 152mm 주포 Model 1934",
+      "icon": "55600",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 95660,
+      "name": "시제형 152mm 3연장포 Model 1936",
+      "icon": "55660",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 12140,
+      "name": "152mm 3연장포",
+      "icon": "12100",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 22140,
+      "name": "152mm 연장포",
+      "icon": "22100",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 22240,
+      "name": "152mm 3연장포",
+      "icon": "22200",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 32140,
+      "name": "140mm 연장포",
+      "icon": "32100",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 32220,
+      "name": "155mm 3연장포",
+      "icon": "32200",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 32340,
+      "name": "152mm 연장포",
+      "icon": "32300",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 42040,
+      "name": "150mm SKC/28 단장포",
+      "icon": "42000",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 42060,
+      "name": "연장포 SKC28식 150mm 부포",
+      "icon": "42060",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 42140,
+      "name": "150mm SKC/25 3연장포",
+      "icon": "42100",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 42160,
+      "name": "150mm SKC/25 3연장포改",
+      "icon": "42160",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 42240,
+      "name": "150mm TbtsKC/36 연장포",
+      "icon": "42200",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 42340,
+      "name": "단장 TbtsKC36식 150mm 주포",
+      "icon": "42300",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 85140,
+      "name": "B-38 3연장 152mm 주포 Mk5",
+      "icon": "85120",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 85480,
+      "name": "B-1-P 3연장 180mm 주포 Model1932",
+      "icon": "85460",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 85680,
+      "name": "B-1-K 180mm 단장포",
+      "icon": "85680",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 85700,
+      "name": "B-38 152mm 연장포 MK17",
+      "icon": "85700",
+      "type": 2,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 23120,
+      "name": "시제형 234mm 3연장포",
+      "icon": "23120",
+      "type": 3,
+      "rarity": 6,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 33120,
+      "name": "시제형 203mm/55 3연장포",
+      "icon": "33120",
+      "type": 3,
+      "rarity": 6,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 43160,
+      "name": "시제형 203mm SKC 3연장포改",
+      "icon": "43160",
+      "type": 3,
+      "rarity": 6,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 85800,
+      "name": "SM-40 시제형 220mm 3연장포",
+      "icon": "85800",
+      "type": 3,
+      "rarity": 6,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 7300,
+      "name": "시제형 203mm 3연장포",
+      "icon": "7300",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 13160,
+      "name": "3연장 203mm 주포 Mk15",
+      "icon": "13160",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 23100,
+      "name": "시제형 234mm 연장포",
+      "icon": "23100",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 23200,
+      "name": "시제형 3연장 203mm 주포 Mark IX",
+      "icon": "23200",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 23220,
+      "name": "시제형 203mm 3연장포 Mark X",
+      "icon": "23220",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 33060,
+      "name": "시제형 203mm 연장포 (3호)",
+      "icon": "33060",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 43040,
+      "name": "203mm SKC 연장포",
+      "icon": "43000",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 43060,
+      "name": "시제형 203mm SKC 3연장포",
+      "icon": "43060",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 43080,
+      "name": "2연장 203mm SKC 주포改",
+      "icon": "43080",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 85580,
+      "name": "시제형 3연장 240mm 주포",
+      "icon": "85580",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 90900,
+      "name": "2연장 203mm 주포 Mle1931",
+      "icon": "50860",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 95240,
+      "name": "203mm 연장포 Model1927",
+      "icon": "55200",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 96120,
+      "name": "시제형 254mm 3연장포 Model 1939",
+      "icon": "56120",
+      "type": 3,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 13080,
+      "name": "3연장 203mm 주포 Mk14",
+      "icon": "13080",
+      "type": 3,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 13140,
+      "name": "개량형 203mm 3연장포",
+      "icon": "13100",
+      "type": 3,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 23040,
+      "name": "203mm 연장포",
+      "icon": "23000",
+      "type": 3,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 33040,
+      "name": "203mm 연장포",
+      "icon": "33000",
+      "type": 3,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 33080,
+      "name": "203mm 연장포改",
+      "icon": "33080",
+      "type": 3,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 43020,
+      "name": "203mm SKC 연장포",
+      "icon": "43000",
+      "type": 3,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 90880,
+      "name": "2연장 203mm 주포 Mle1931",
+      "icon": "50860",
+      "type": 3,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 91140,
+      "name": "2연장 203mm 주포 Mle1924",
+      "icon": "51100",
+      "type": 3,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 95220,
+      "name": "203mm 연장포 Model1927",
+      "icon": "55200",
+      "type": 3,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 95340,
+      "name": "203mm 연장포 Model1924",
+      "icon": "55300",
+      "type": 3,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 14460,
+      "name": "406mm 3연장포 Mk7",
+      "icon": "14400",
+      "type": 4,
+      "rarity": 6,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 14500,
+      "name": "시제형 457mm 연장포 Mk A",
+      "icon": "14500",
+      "type": 4,
+      "rarity": 6,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 24400,
+      "name": "시제형 406mm 3연장포 Mk.II",
+      "icon": "24400",
+      "type": 4,
+      "rarity": 6,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 34240,
+      "name": "460mm 3연장포",
+      "icon": "34200",
+      "type": 4,
+      "rarity": 6,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 44320,
+      "name": "시제형 305mm 4연장포 SKC39",
+      "icon": "44320",
+      "type": 4,
+      "rarity": 6,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 96240,
+      "name": "시제형 406mm 3연장포 Model 1940改",
+      "icon": "56240",
+      "type": 4,
+      "rarity": 6,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 14040,
+      "name": "305mm 3연장포 Mk8",
+      "icon": "14000",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 14360,
+      "name": "시제형 3연장 406mm 주포 MkD",
+      "icon": "14360",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 14440,
+      "name": "406mm 3연장포 Mk7",
+      "icon": "14400",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 14480,
+      "name": "시제형 406mm/45 3연장포 MK7",
+      "icon": "14480",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 14520,
+      "name": "시제형 연장 406mm 주포 Mk4",
+      "icon": "14520",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 14540,
+      "name": "시제형 406mm 3연장포 Mk6改",
+      "icon": "14540",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 24040,
+      "name": "356mm 4연장포",
+      "icon": "24000",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 24160,
+      "name": "시제형 381mm 3연장포",
+      "icon": "24160",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 24240,
+      "name": "406mm 3연장포",
+      "icon": "24200",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 24340,
+      "name": "381mm 연장포·改",
+      "icon": "24300",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 34160,
+      "name": "410mm 연장포 (삼식탄)",
+      "icon": "34100",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25,
+        "antiair": 25
+      }
+    },
+    {
+      "id": 34180,
+      "name": "시제형 410mm 3연장포",
+      "icon": "34180",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 34220,
+      "name": "460mm 3연장포",
+      "icon": "34200",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 34320,
+      "name": "시제형 410mm 연장포 mod.A",
+      "icon": "34320",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 44140,
+      "name": "380mm SKC 연장포",
+      "icon": "44100",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 44200,
+      "name": "시제형 406mm SKC 연장포",
+      "icon": "44200",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 44300,
+      "name": "시제형 305mm SKC39 3연장포",
+      "icon": "44300",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 44500,
+      "name": "시제형 380mm SKC 3연장포",
+      "icon": "44500",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 85340,
+      "name": "B-37 3연장 406mm 주포 Mk-1",
+      "icon": "85300",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 90440,
+      "name": "380mm 4연장포 Mle 1935",
+      "icon": "50400",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 90480,
+      "name": "시제형 380mm 3연장포 Mle1935",
+      "icon": "50480",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 91000,
+      "name": "시제형 406mm/50 3연장포",
+      "icon": "51000",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 95040,
+      "name": "381mm 3연장포 Model1934",
+      "icon": "55000",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 95900,
+      "name": "시제형 3연장 406mm 주포 Model 1940",
+      "icon": "55900",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 150140,
+      "name": "구식 데미캐넌",
+      "icon": "150100",
+      "type": 4,
+      "rarity": 5,
+      "shipTypes": [
+        24
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 14020,
+      "name": "305mm 3연장포 Mk8",
+      "icon": "14000",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 14160,
+      "name": "시제형 4연장 356mm 주포 MkB",
+      "icon": "14160",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 14240,
+      "name": "406mm 연장포 Mk5",
+      "icon": "14200",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 14260,
+      "name": "연장포 406mm 주포 Mk8",
+      "icon": "14260",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 14340,
+      "name": "406mm 3연장포 Mk6",
+      "icon": "14300",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 14380,
+      "name": "3연장 406mm 주포 Mk2",
+      "icon": "14380",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 14420,
+      "name": "406mm 3연장포 Mk7",
+      "icon": "14400",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 24020,
+      "name": "356mm 4연장포",
+      "icon": "24000",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 24060,
+      "name": "연장포356mm 주포",
+      "icon": "24060",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 24140,
+      "name": "381mm 연장포",
+      "icon": "24100",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 24220,
+      "name": "406mm 3연장포",
+      "icon": "24200",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 24320,
+      "name": "381mm 연장포·改",
+      "icon": "24300",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 34140,
+      "name": "410mm 연장포",
+      "icon": "34100",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 34200,
+      "name": "460mm 3연장포",
+      "icon": "34200",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 34300,
+      "name": "410mm 연장포改",
+      "icon": "34300",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 44040,
+      "name": "283mm SKC/34 3연장포",
+      "icon": "44000",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 44120,
+      "name": "380mm SKC 연장포",
+      "icon": "44100",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 85320,
+      "name": "B-37 3연장 406mm 주포 Mk-1",
+      "icon": "85300",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 85740,
+      "name": "356mm 3연장포 Model 1913",
+      "icon": "85740",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 90340,
+      "name": "330mm 4연장포 Mle 1931",
+      "icon": "50300",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 90420,
+      "name": "380mm 4연장포 Mle 1935",
+      "icon": "50400",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 95020,
+      "name": "381mm 3연장포 Model1934",
+      "icon": "55000",
+      "type": 4,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 35340,
+      "name": "610mm 5연장 어뢰",
+      "icon": "35300",
+      "type": 5,
+      "rarity": 6,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 70
+      }
+    },
+    {
+      "id": 45240,
+      "name": "533mm 5연장 자기 어뢰",
+      "icon": "45200",
+      "type": 5,
+      "rarity": 6,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 70
+      }
+    },
+    {
+      "id": 5240,
+      "name": "533mm 5연장 어뢰",
+      "icon": "5200",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 5640,
+      "name": "550mm 4연장 어뢰改 (탄약 조정)",
+      "icon": "5640",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 5660,
+      "name": "550mm 어뢰 세트 (3연장+2연장)",
+      "icon": "5660",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 15240,
+      "name": "5연장 533mm 어뢰Mk17",
+      "icon": "15240",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 15300,
+      "name": "533mm 어뢰 Mark35 (4연사)",
+      "icon": "15300",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 25040,
+      "name": "5연장 533mm 어뢰 Mark IX",
+      "icon": "25040",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 35240,
+      "name": "610mm 4연장 어뢰",
+      "icon": "35200",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 35260,
+      "name": "4연장 610mm 어뢰改",
+      "icon": "35260",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 35320,
+      "name": "610mm 5연장 어뢰",
+      "icon": "35300",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 45140,
+      "name": "533mm 4연장 자기 어뢰",
+      "icon": "45100",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 45160,
+      "name": "533mm 4연장 자기 어뢰改",
+      "icon": "45160",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 45220,
+      "name": "533mm 5연장 자기 어뢰",
+      "icon": "45200",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 96280,
+      "name": "시제형 533mm 4연장 어뢰Si 270",
+      "icon": "56280",
+      "type": 5,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 5140,
+      "name": "533mm 4연장 어뢰",
+      "icon": "5100",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 5220,
+      "name": "533mm 5연장 어뢰",
+      "icon": "5200",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 5440,
+      "name": "550mm 3연장 어뢰",
+      "icon": "5400",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 5600,
+      "name": "550mm 4연장 어뢰",
+      "icon": "5600",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 5620,
+      "name": "550mm 4연장 어뢰 (탄약 조정)",
+      "icon": "5620",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 15220,
+      "name": "4연장 533mm 어뢰Mk17",
+      "icon": "15220",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 25020,
+      "name": "4연장 533mm 어뢰 Mark IX",
+      "icon": "25020",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 35140,
+      "name": "610mm 3연장 어뢰",
+      "icon": "35100",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 35160,
+      "name": "3연장 610mm 어뢰改",
+      "icon": "35160",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 35220,
+      "name": "610mm 4연장 어뢰",
+      "icon": "35200",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 35300,
+      "name": "610mm 5연장 어뢰",
+      "icon": "35300",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 45040,
+      "name": "533mm 3연장 자기 어뢰",
+      "icon": "45000",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 45120,
+      "name": "533mm 4연장 자기 어뢰",
+      "icon": "45100",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 45200,
+      "name": "533mm 5연장 자기 어뢰",
+      "icon": "45200",
+      "type": 5,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 16480,
+      "name": "76mm 연장 RF포 Mk37",
+      "icon": "16480",
+      "type": 6,
+      "rarity": 6,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 50,
+        "accuracy": 15
+      }
+    },
+    {
+      "id": 90620,
+      "name": "57mm/L60 연장 보포스 대공기관포 Mle1951",
+      "icon": "50620",
+      "type": 6,
+      "rarity": 6,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 65
+      }
+    },
+    {
+      "id": 16080,
+      "name": "연장포 76mm RF 화포 Mk27",
+      "icon": "16080",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 16440,
+      "name": "40mm 4연장 보포스 기관포",
+      "icon": "16400",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 26240,
+      "name": "40mm 8연장 폼폼 포",
+      "icon": "26200",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 26540,
+      "name": "113mm 연장 고사포",
+      "icon": "26500",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 26600,
+      "name": "연장 보포스 40mm 기관포 STAAG",
+      "icon": "26600",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45,
+        "accuracy": 10
+      }
+    },
+    {
+      "id": 26620,
+      "name": "40mm 연장 보포스 해즐미어",
+      "icon": "26620",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45,
+        "accuracy": 5
+      }
+    },
+    {
+      "id": 26640,
+      "name": "134mm 연장 고각포",
+      "icon": "21500",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 30,
+        "firepower": 15
+      }
+    },
+    {
+      "id": 26660,
+      "name": "6연장 보포스 40mm 대공포",
+      "icon": "26660",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 36360,
+      "name": "96식 25mm 3연장 폭풍피격기포",
+      "icon": "36360",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 36560,
+      "name": "100mm 연장 고사포",
+      "icon": "36560",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 36660,
+      "name": "127mm 연장 고각포改",
+      "icon": "36660",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 36700,
+      "name": "시제형 5식 40mm 고사기관포",
+      "icon": "36700",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 36740,
+      "name": "80mm 연장 98식 고각포",
+      "icon": "36740",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 46340,
+      "name": "105mm SKC 연장 고사포",
+      "icon": "46300",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 46360,
+      "name": "연장 105mmSKC 고사포 개조형",
+      "icon": "46360",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 46400,
+      "name": "시제형 4연장 30mm 기관포",
+      "icon": "46400",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 46420,
+      "name": "시제형 55mm Gerät 58 대공포",
+      "icon": "46420",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 90600,
+      "name": "2연장 37mm 고사포 Mle1936",
+      "icon": "50600",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 95140,
+      "name": "90mm 단장 고각포 Model1939",
+      "icon": "55100",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 95160,
+      "name": "시제형 연장 90mm 고각포 Model 1939",
+      "icon": "55160",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 96260,
+      "name": "시제형 20mm Scotti 6연장 기관포 Model1941",
+      "icon": "56260",
+      "type": 6,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 16060,
+      "name": "76mm 고사포 개조형",
+      "icon": "16060",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 16140,
+      "name": "20mm 연장 엘리콘 기관포",
+      "icon": "16100",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 16160,
+      "name": "4연장 20mm 에리콘 고사포 Mk15",
+      "icon": "16160",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 16240,
+      "name": "28mm 4연장 「시카고 피아노」",
+      "icon": "16200",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 16340,
+      "name": "40mm 연장 보포스 기관포",
+      "icon": "16300",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 16420,
+      "name": "40mm 4연장 보포스 기관포",
+      "icon": "16400",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 26060,
+      "name": "연장포40mm 보포스 대공포 Mark I",
+      "icon": "26060",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 26140,
+      "name": "40mm 4연장 폼폼 포",
+      "icon": "26100",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 26220,
+      "name": "40mm 8연장 폼폼 포",
+      "icon": "26200",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 26340,
+      "name": "76mm 고사포",
+      "icon": "26300",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 26360,
+      "name": "20mm 에리콘 고사포 MkII",
+      "icon": "26360",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 26380,
+      "name": "20mm 연장 엘리콘 고각포 Mk.V",
+      "icon": "26380",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 26440,
+      "name": "102mm 고사포",
+      "icon": "26400",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 26460,
+      "name": "120mm 고사포 Mark VIII",
+      "icon": "26460",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 26520,
+      "name": "113mm 연장 고사포",
+      "icon": "26500",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 36240,
+      "name": "25mm 연장 대공 기관총",
+      "icon": "36200",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 36340,
+      "name": "25mm 3연장 대공 기관총",
+      "icon": "36300",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 36440,
+      "name": "비식 40mm 연장 기관포",
+      "icon": "36400",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 36540,
+      "name": "76mm 고사포",
+      "icon": "36500",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 36580,
+      "name": "80mm 고사포",
+      "icon": "36580",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 36640,
+      "name": "127mm 연장 고사포",
+      "icon": "36600",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 46060,
+      "name": "연장포 88mm SKC32 고사포",
+      "icon": "46060",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 46240,
+      "name": "37mm 연장 기관포",
+      "icon": "46200",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 46260,
+      "name": "연장 37mm Flak M43 기관총",
+      "icon": "46260",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 46320,
+      "name": "105mm SKC 연장 고사포",
+      "icon": "46300",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 46440,
+      "name": "40mm Flak28 기관총",
+      "icon": "46440",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 85220,
+      "name": "37mm대공포 70-K",
+      "icon": "85180",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 85280,
+      "name": "B-54 100mm 연장 대공포",
+      "icon": "85240",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 85400,
+      "name": "B-34 100mm 연장 대공포 MZ-14",
+      "icon": "85360",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 90580,
+      "name": "37mm 연장 고사포 Mle1933",
+      "icon": "90580",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 95120,
+      "name": "90mm 단장 고각포 Model1939",
+      "icon": "55100",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 95540,
+      "name": "37mm 연장 기관포 Model1932",
+      "icon": "55500",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 96200,
+      "name": "65mm 대공포 Model 1939",
+      "icon": "56200",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 96220,
+      "name": "20mm Breda 연장 대공 기관포",
+      "icon": "56220",
+      "type": 6,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 25
+      }
+    },
+    {
+      "id": 85600,
+      "name": "시제형 함상식 La-9",
+      "icon": "85600",
+      "type": 7,
+      "rarity": 6,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 65
+      }
+    },
+    {
+      "id": 17060,
+      "name": "F2A 버팔로(타치대)",
+      "icon": "17060",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 17260,
+      "name": "F4U 콜세어 (VF-17 졸리로저스)",
+      "icon": "17260",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 17340,
+      "name": "F6F 헬캣",
+      "icon": "17300",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 17360,
+      "name": "F7F 타이거캣",
+      "icon": "17360",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 17380,
+      "name": "F8F 베어캣",
+      "icon": "17380",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 17420,
+      "name": "시제형 XF5U 플라잉 팬케이크",
+      "icon": "17420",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 17440,
+      "name": "F6F 헬캣(HVAR 탑재형)",
+      "icon": "17440",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 27060,
+      "name": "시파이어 FR.47",
+      "icon": "27060",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 27140,
+      "name": "시팽",
+      "icon": "27100",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 27300,
+      "name": "시 퓨리",
+      "icon": "27300",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 27320,
+      "name": "시 호넷",
+      "icon": "27320",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 37240,
+      "name": "제로센 52형",
+      "icon": "37200",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 37340,
+      "name": "렛푸",
+      "icon": "37300",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 37400,
+      "name": "시덴改二",
+      "icon": "37400",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 37460,
+      "name": "시제형 시덴改四",
+      "icon": "37460",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 47140,
+      "name": "Me-155A 함상전투기",
+      "icon": "47100",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 47160,
+      "name": "시제 함재형 BF-109G",
+      "icon": "47160",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 47180,
+      "name": "시제형 FW-190 A-6/R6 (함재기형)",
+      "icon": "47180",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 47200,
+      "name": "시제형 함상식 FW-190 G-3/R1",
+      "icon": "47200",
+      "type": 7,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 17080,
+      "name": "시제형 XF2A-4 버팔로",
+      "icon": "17080",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 17140,
+      "name": "F4F 와일드캣",
+      "icon": "17100",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 17240,
+      "name": "F4U 콜세어",
+      "icon": "17200",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 17320,
+      "name": "F6F 헬캣",
+      "icon": "17300",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 17400,
+      "name": "XF5F 스카이로켓",
+      "icon": "17400",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 27040,
+      "name": "시파이어",
+      "icon": "27000",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 27120,
+      "name": "시팽",
+      "icon": "27100",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 37140,
+      "name": "제로센 21형",
+      "icon": "37100",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 37160,
+      "name": "제로 32모델",
+      "icon": "37160",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 37220,
+      "name": "제로센 52형",
+      "icon": "37200",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 37320,
+      "name": "렛푸",
+      "icon": "37300",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 47040,
+      "name": "BF-109T 함상전투기",
+      "icon": "47000",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 47080,
+      "name": "시제형 함상 FW-190 A-5",
+      "icon": "47080",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 47120,
+      "name": "Me-155A 함상전투기",
+      "icon": "47100",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 91220,
+      "name": "D.790",
+      "icon": "51220",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 95760,
+      "name": "G.50 프리치아",
+      "icon": "55720",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 95840,
+      "name": "Re.2001 알리에테",
+      "icon": "55800",
+      "type": 7,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 28400,
+      "name": "와이번",
+      "icon": "28400",
+      "type": 8,
+      "rarity": 6,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 65
+      }
+    },
+    {
+      "id": 28420,
+      "name": "시제형 스피어피쉬",
+      "icon": "28420",
+      "type": 8,
+      "rarity": 6,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 65
+      }
+    },
+    {
+      "id": 18060,
+      "name": "TBD데버스테이터(VT-8중대)",
+      "icon": "18060",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 18180,
+      "name": "TBM 어벤져(VT-18중대)",
+      "icon": "18180",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 18220,
+      "name": "XTB2D-1 스카이파이렛",
+      "icon": "18220",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 28060,
+      "name": "소드피쉬 (818중대)",
+      "icon": "28060",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 28140,
+      "name": "바라쿠다",
+      "icon": "28100",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 28200,
+      "name": "파이어브랜드",
+      "icon": "28200",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 28220,
+      "name": "파이어크레스트",
+      "icon": "28220",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 38240,
+      "name": "류세이",
+      "icon": "38200",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 38260,
+      "name": "류세이·改",
+      "icon": "38260",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 38300,
+      "name": "시제형 사이운",
+      "icon": "38300",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 48040,
+      "name": "Ju-87 D-4",
+      "icon": "48040",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 85560,
+      "name": "시제형 VIT-2(VK-107)",
+      "icon": "85560",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 85620,
+      "name": "시제형 VIT-2(모드 체인지)",
+      "icon": "85620",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 91240,
+      "name": "BR.810",
+      "icon": "51240",
+      "type": 8,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 18140,
+      "name": "TBF 어벤저",
+      "icon": "18100",
+      "type": 8,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 28040,
+      "name": "소드피쉬",
+      "icon": "28000",
+      "type": 8,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 28120,
+      "name": "바라쿠다",
+      "icon": "28100",
+      "type": 8,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 28340,
+      "name": "페어리 알바코어",
+      "icon": "28300",
+      "type": 8,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 38140,
+      "name": "텐잔",
+      "icon": "38100",
+      "type": 8,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 38160,
+      "name": "텐잔改",
+      "icon": "38160",
+      "type": 8,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 38220,
+      "name": "류세이",
+      "icon": "38200",
+      "type": 8,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 48020,
+      "name": "Fi-167 함상 뇌격기",
+      "icon": "48020",
+      "type": 8,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 91360,
+      "name": "Late.299",
+      "icon": "51360",
+      "type": 8,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 19300,
+      "name": "AD-1 스카이레이더",
+      "icon": "19300",
+      "type": 9,
+      "rarity": 6,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 65
+      }
+    },
+    {
+      "id": 39340,
+      "name": "시제 함재형 텐라이",
+      "icon": "39340",
+      "type": 9,
+      "rarity": 6,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 65
+      }
+    },
+    {
+      "id": 17280,
+      "name": "F4U(VBF-94 중대)",
+      "icon": "17280",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 19060,
+      "name": "SBD 돈틀리스 (맥클러스키대)",
+      "icon": "19060",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 19160,
+      "name": "실험형XSB3C-1",
+      "icon": "19160",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 19240,
+      "name": "BTD-1 디스트로이어",
+      "icon": "19200",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 29200,
+      "name": "파이어플라이",
+      "icon": "29200",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 29220,
+      "name": "페어리 파이어플라이(1771중대)",
+      "icon": "29220",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 29300,
+      "name": "바라쿠다(831중대)",
+      "icon": "29300",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 39140,
+      "name": "스이세이",
+      "icon": "39100",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 39160,
+      "name": "스이세이 12형A",
+      "icon": "39160",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 39320,
+      "name": "스이세이 21형",
+      "icon": "39320",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        10
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 85540,
+      "name": "시제 함재형 Su-2",
+      "icon": "85540",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 85660,
+      "name": "시제형 Su-6 (함재형)",
+      "icon": "85660",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 91340,
+      "name": "LN.401",
+      "icon": "51340",
+      "type": 9,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 19140,
+      "name": "SB2C 헬다이버",
+      "icon": "19100",
+      "type": 9,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 19220,
+      "name": "BTD-1 디스트로이어",
+      "icon": "19200",
+      "type": 9,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 29140,
+      "name": "풀머",
+      "icon": "29100",
+      "type": 9,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 39040,
+      "name": "99식 함상폭격기",
+      "icon": "39000",
+      "type": 9,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 39060,
+      "name": "99식 함상폭격기改",
+      "icon": "39060",
+      "type": 9,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 39120,
+      "name": "스이세이",
+      "icon": "39100",
+      "type": 9,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 49040,
+      "name": "Ju-87C 급강하폭격기",
+      "icon": "49000",
+      "type": 9,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 85780,
+      "name": "LBSh",
+      "icon": "85780",
+      "type": 9,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 91320,
+      "name": "V-156-F",
+      "icon": "51320",
+      "type": 9,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 640,
+      "name": "수호의 깃발",
+      "icon": "640",
+      "type": 10,
+      "rarity": 6,
+      "shipTypes": [
+        4,
+        5,
+        7,
+        10
+      ],
+      "stats": {
+        "evasion": 15,
+        "accuracy": 10,
+        "luck": 5
+      }
+    },
+    {
+      "id": 2640,
+      "name": "93식 산소어뢰",
+      "icon": "2600",
+      "type": 10,
+      "rarity": 6,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        8,
+        11,
+        17,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 100,
+        "reload": 10
+      }
+    },
+    {
+      "id": 3580,
+      "name": "해군성 사격 통제 설비",
+      "icon": "3580",
+      "type": 10,
+      "rarity": 6,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "accuracy": 53,
+        "firepower": 40
+      }
+    },
+    {
+      "id": 500,
+      "name": "비버즈 휘장",
+      "icon": "500",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 35,
+        "health": 75
+      }
+    },
+    {
+      "id": 520,
+      "name": "진주의 눈물",
+      "icon": "520",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 540,
+      "name": "냥냥펀치",
+      "icon": "540",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 300
+      }
+    },
+    {
+      "id": 600,
+      "name": "1식 철갑탄",
+      "icon": "600",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10
+      ],
+      "stats": {
+        "firepower": 55,
+        "accuracy": 15
+      }
+    },
+    {
+      "id": 620,
+      "name": "초중량탄 (SHS)",
+      "icon": "620",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10
+      ],
+      "stats": {
+        "firepower": 70
+      }
+    },
+    {
+      "id": 720,
+      "name": "약속의 증명",
+      "icon": "720",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        8,
+        17
+      ],
+      "stats": {
+        "evasion": 20,
+        "health": 150
+      }
+    },
+    {
+      "id": 820,
+      "name": "개척자 휘장",
+      "icon": "820",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7
+      ],
+      "stats": {
+        "aviation": 100,
+        "health": 60
+      }
+    },
+    {
+      "id": 840,
+      "name": "엘리트 응급 수리(유니온)",
+      "icon": "840",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 500,
+        "antiair": 20
+      }
+    },
+    {
+      "id": 860,
+      "name": "워싱턴 해군 조약",
+      "icon": "860",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 20,
+        "accuracy": 30
+      }
+    },
+    {
+      "id": 880,
+      "name": "넬슨의 수기 신호",
+      "icon": "880",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10
+      ],
+      "stats": {
+        "firepower": 50,
+        "accuracy": 20
+      }
+    },
+    {
+      "id": 960,
+      "name": "FuMO 25",
+      "icon": "960",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        2,
+        3,
+        4,
+        5,
+        10,
+        13,
+        18,
+        19
+      ],
+      "stats": {
+        "accuracy": 29,
+        "firepower": 26
+      }
+    },
+    {
+      "id": 1040,
+      "name": "함정 수리설비",
+      "icon": "1000",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        12
+      ],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 1060,
+      "name": "6CRH 철갑탄",
+      "icon": "1060",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45,
+        "accuracy": 20
+      }
+    },
+    {
+      "id": 1160,
+      "name": "고성능 대공 레이더",
+      "icon": "1160",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 100
+      }
+    },
+    {
+      "id": 1260,
+      "name": "고성능 사격 제어 레이더",
+      "icon": "1260",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "accuracy": 36,
+        "firepower": 30
+      }
+    },
+    {
+      "id": 1440,
+      "name": "유압식 캐터펄트",
+      "icon": "1400",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "aviation": 100,
+        "health": 75
+      }
+    },
+    {
+      "id": 1540,
+      "name": "SG 레이더",
+      "icon": "1500",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "accuracy": 35,
+        "evasion": 15
+      }
+    },
+    {
+      "id": 1760,
+      "name": "강화 유압식 조타장치",
+      "icon": "1760",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "evasion": 40,
+        "health": 60
+      }
+    },
+    {
+      "id": 2620,
+      "name": "93식 산소어뢰",
+      "icon": "2600",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        8,
+        11,
+        17,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 70,
+        "reload": 10
+      }
+    },
+    {
+      "id": 2740,
+      "name": "533mm 자기 어뢰",
+      "icon": "2700",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        11,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 70,
+        "accuracy": 15
+      }
+    },
+    {
+      "id": 3040,
+      "name": "개량형 소나",
+      "icon": "3000",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        20,
+        21
+      ],
+      "stats": {
+        "asw": 35,
+        "accuracy": 12
+      }
+    },
+    {
+      "id": 3140,
+      "name": "개량형 축전지",
+      "icon": "3140",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "evasion": 15
+      }
+    },
+    {
+      "id": 3200,
+      "name": "VH 장갑 강판",
+      "icon": "3200",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        7,
+        10,
+        18
+      ],
+      "stats": {
+        "health": 650
+      }
+    },
+    {
+      "id": 3300,
+      "name": "사신의 인",
+      "icon": "3300",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        20,
+        21
+      ],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 3660,
+      "name": "크라운",
+      "icon": "3660",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        1
+      ],
+      "stats": {
+        "health": 350,
+        "luck": 2
+      }
+    },
+    {
+      "id": 3800,
+      "name": "매화 이야기",
+      "icon": "3800",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 3840,
+      "name": "“요정 마법” 포스터",
+      "icon": "3840",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "accuracy": 36,
+        "evasion": 15
+      }
+    },
+    {
+      "id": 89000,
+      "name": "랜덤 워드 생성기",
+      "icon": "89000",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "accuracy": 25,
+        "evasion": 15
+      }
+    },
+    {
+      "id": 89020,
+      "name": "표코표코",
+      "icon": "89020",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 500,
+        "luck": 2
+      }
+    },
+    {
+      "id": 89040,
+      "name": "인텔리젼트 칩",
+      "icon": "89040",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 245,
+        "speed": 8
+      }
+    },
+    {
+      "id": 89060,
+      "name": "팀 엠블렘",
+      "icon": "89060",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 15,
+        "accuracy": 25
+      }
+    },
+    {
+      "id": 89080,
+      "name": "게이머의 증명",
+      "icon": "89080",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 89100,
+      "name": "옥수수 등",
+      "icon": "89100",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "asw": 24,
+        "health": 120
+      }
+    },
+    {
+      "id": 89120,
+      "name": "안키모",
+      "icon": "89120",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 245,
+        "speed": 8
+      }
+    },
+    {
+      "id": 89140,
+      "name": "치열의 노래",
+      "icon": "89140",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "antiair": 35,
+        "accuracy": 30
+      }
+    },
+    {
+      "id": 89160,
+      "name": "활력의 노래",
+      "icon": "89160",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "antiair": 35,
+        "accuracy": 30
+      }
+    },
+    {
+      "id": 89180,
+      "name": "빛나는 노래",
+      "icon": "89180",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "antiair": 35,
+        "accuracy": 30
+      }
+    },
+    {
+      "id": 89200,
+      "name": "댄싱 슈즈",
+      "icon": "89200",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 28,
+        "speed": 5
+      }
+    },
+    {
+      "id": 89220,
+      "name": "댄스 스커트",
+      "icon": "89220",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 89240,
+      "name": "각성 구슬",
+      "icon": "89240",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 15,
+        "accuracy": 25
+      }
+    },
+    {
+      "id": 89260,
+      "name": "마음의 열쇠",
+      "icon": "89260",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "antiair": 35,
+        "accuracy": 30
+      }
+    },
+    {
+      "id": 89280,
+      "name": "아이돌 팔찌",
+      "icon": "89280",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 15,
+        "accuracy": 25
+      }
+    },
+    {
+      "id": 89300,
+      "name": "배틀 트랙토 맥스",
+      "icon": "89300",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "firepower": 25,
+        "evasion": 15
+      }
+    },
+    {
+      "id": 89320,
+      "name": "그리드맨 칼리버",
+      "icon": "89320",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 28
+      }
+    },
+    {
+      "id": 89340,
+      "name": "버스터 보르",
+      "icon": "89340",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 89360,
+      "name": "스카이 비터",
+      "icon": "89360",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "antiair": 55
+      }
+    },
+    {
+      "id": 89380,
+      "name": "다이나믹 캐논",
+      "icon": "89380",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        4,
+        5,
+        10,
+        13,
+        18,
+        19
+      ],
+      "stats": {
+        "firepower": 30
+      }
+    },
+    {
+      "id": 89400,
+      "name": "골드번",
+      "icon": "89400",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 89420,
+      "name": "프람",
+      "icon": "89420",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "torpedo": 35,
+        "evasion": 10
+      }
+    },
+    {
+      "id": 89440,
+      "name": "레헤른",
+      "icon": "89440",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 34
+      }
+    },
+    {
+      "id": 89460,
+      "name": "플래직",
+      "icon": "89460",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "antiair": 55
+      }
+    },
+    {
+      "id": 89480,
+      "name": "루프트",
+      "icon": "89480",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 400,
+        "speed": 4
+      }
+    },
+    {
+      "id": 89500,
+      "name": "엘릭시르제",
+      "icon": "89500",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "aviation": 100
+      }
+    },
+    {
+      "id": 89520,
+      "name": "신비한 우의",
+      "icon": "89520",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "aviation": 60,
+        "evasion": 6
+      }
+    },
+    {
+      "id": 89540,
+      "name": "아포칼립스",
+      "icon": "89540",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 60
+      }
+    },
+    {
+      "id": 89560,
+      "name": "Ｎ／Ａ",
+      "icon": "89560",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45,
+        "accuracy": 10
+      }
+    },
+    {
+      "id": 89580,
+      "name": "창세의 망치",
+      "icon": "89580",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "torpedo": 70
+      }
+    },
+    {
+      "id": 89600,
+      "name": "버블 탄환",
+      "icon": "89600",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "accuracy": 25,
+        "firepower": 17
+      }
+    },
+    {
+      "id": 89620,
+      "name": "에너지아니카",
+      "icon": "89620",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "antiair": 35,
+        "accuracy": 30
+      }
+    },
+    {
+      "id": 89680,
+      "name": "시노비의 메달",
+      "icon": "89680",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "antiair": 35,
+        "accuracy": 30
+      }
+    },
+    {
+      "id": 89700,
+      "name": "시노비의 닌자복",
+      "icon": "89700",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 89720,
+      "name": "인술 두루마리",
+      "icon": "89720",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "accuracy": 25,
+        "firepower": 17
+      }
+    },
+    {
+      "id": 89740,
+      "name": "열정의 μ티켓",
+      "icon": "89740",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "antiair": 35,
+        "accuracy": 30
+      }
+    },
+    {
+      "id": 89760,
+      "name": "\"Alizarin\" 응원 타올",
+      "icon": "89760",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 89780,
+      "name": "\"Cyanidin\" 응원 타올",
+      "icon": "89780",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 91260,
+      "name": "아이리스 천사의 날개",
+      "icon": "51260",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7,
+        10,
+        22,
+        23,
+        24
+      ],
+      "stats": {
+        "aviation": 90,
+        "evasion": 12
+      }
+    },
+    {
+      "id": 150280,
+      "name": "이세계 모험 단말기",
+      "icon": "150280",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 150360,
+      "name": "운송용 고속 드론",
+      "icon": "150360",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        11,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "firepower": 25,
+        "antiair": 20
+      }
+    },
+    {
+      "id": 150380,
+      "name": "귀중품 상자",
+      "icon": "150380",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        22,
+        23,
+        24
+      ],
+      "stats": {
+        "health": 550,
+        "reload": 10
+      }
+    },
+    {
+      "id": 150440,
+      "name": "보글보글 요리 군",
+      "icon": "150440",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 500,
+        "luck": 2
+      }
+    },
+    {
+      "id": 150460,
+      "name": "매출 상승 머신",
+      "icon": "150460",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 15,
+        "accuracy": 25
+      }
+    },
+    {
+      "id": 150480,
+      "name": "존재감 제거 스프레이",
+      "icon": "150480",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 28,
+        "speed": 5
+      }
+    },
+    {
+      "id": 150500,
+      "name": "일이 재밌어지는 기계",
+      "icon": "150500",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "accuracy": 25,
+        "firepower": 17
+      }
+    },
+    {
+      "id": 150520,
+      "name": "쑥쑥 성장 군",
+      "icon": "150520",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        3,
+        4,
+        5,
+        10,
+        13,
+        18,
+        19
+      ],
+      "stats": {
+        "firepower": 30
+      }
+    },
+    {
+      "id": 150540,
+      "name": "오싹오싹 호러 군",
+      "icon": "150540",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 45,
+        "accuracy": 10
+      }
+    },
+    {
+      "id": 150560,
+      "name": "번쩍번쩍 아우라 군",
+      "icon": "150560",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 150680,
+      "name": "그랑샤인",
+      "icon": "150680",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "antiair": 55
+      }
+    },
+    {
+      "id": 150700,
+      "name": "슈피리어 그리모어",
+      "icon": "150700",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "aviation": 100
+      }
+    },
+    {
+      "id": 150720,
+      "name": "엔데 미티어",
+      "icon": "150720",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "aviation": 60,
+        "evasion": 6
+      }
+    },
+    {
+      "id": 150740,
+      "name": "패너시어 스피어",
+      "icon": "150740",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 400,
+        "speed": 4
+      }
+    },
+    {
+      "id": 150760,
+      "name": "지옥의 큐브",
+      "icon": "150760",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "accuracy": 35,
+        "evasion": 15
+      }
+    },
+    {
+      "id": 150780,
+      "name": "천상의 천구의",
+      "icon": "150780",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 150800,
+      "name": "플라미",
+      "icon": "150800",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 150860,
+      "name": "미카엘",
+      "icon": "150860",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 150880,
+      "name": "세피라",
+      "icon": "150880",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 28,
+        "speed": 5
+      }
+    },
+    {
+      "id": 150900,
+      "name": "거대 주먹밥",
+      "icon": "150900",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 400,
+        "speed": 4
+      }
+    },
+    {
+      "id": 151020,
+      "name": "더 유람자",
+      "icon": "151020",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "accuracy": 36,
+        "evasion": 15
+      }
+    },
+    {
+      "id": 151060,
+      "name": "제로 프로토콜 키",
+      "icon": "151060",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 400,
+        "speed": 4
+      }
+    },
+    {
+      "id": 151080,
+      "name": "치라이 데코 펜",
+      "icon": "151080",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 151100,
+      "name": "그라비아 패널",
+      "icon": "151100",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "antiair": 35,
+        "accuracy": 30
+      }
+    },
+    {
+      "id": 151120,
+      "name": "행복의 클로버",
+      "icon": "151120",
+      "type": 10,
+      "rarity": 5,
+      "shipTypes": [],
+      "stats": {
+        "health": 500,
+        "luck": 2
+      }
+    },
+    {
+      "id": 560,
+      "name": "「닝하이」 수상기",
+      "icon": "560",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        2,
+        3,
+        18
+      ],
+      "stats": {
+        "accuracy": 35
+      }
+    },
+    {
+      "id": 580,
+      "name": "91식 철갑탄",
+      "icon": "580",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10
+      ],
+      "stats": {
+        "firepower": 35,
+        "accuracy": 10
+      }
+    },
+    {
+      "id": 660,
+      "name": "100/150호 항공 연료",
+      "icon": "660",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "aviation": 70
+      }
+    },
+    {
+      "id": 680,
+      "name": "호밍 비컨",
+      "icon": "680",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "aviation": 60
+      }
+    },
+    {
+      "id": 700,
+      "name": "98식 발포지연장치",
+      "icon": "700",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10,
+        13
+      ],
+      "stats": {
+        "firepower": 32
+      }
+    },
+    {
+      "id": 760,
+      "name": "정찰 보고·뉴욕 근해",
+      "icon": "760",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 15,
+        "health": 120
+      }
+    },
+    {
+      "id": 780,
+      "name": "기밀 문서·극지 해협",
+      "icon": "780",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "firepower": 20,
+        "health": 180
+      }
+    },
+    {
+      "id": 800,
+      "name": "강화 내압각 설계안",
+      "icon": "800",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 35,
+        "health": 100
+      }
+    },
+    {
+      "id": 940,
+      "name": "작전 보고: AF",
+      "icon": "940",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 980,
+      "name": "기밀 문서·일지 잔본",
+      "icon": "980",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "torpedo": 20,
+        "health": 180
+      }
+    },
+    {
+      "id": 1020,
+      "name": "함정 수리설비",
+      "icon": "1000",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        12
+      ],
+      "stats": {
+        "health": 350
+      }
+    },
+    {
+      "id": 1140,
+      "name": "대공 레이더",
+      "icon": "1100",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 70
+      }
+    },
+    {
+      "id": 1240,
+      "name": "화기 관제 레이더",
+      "icon": "1200",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        3,
+        4,
+        5,
+        10,
+        13,
+        18,
+        19
+      ],
+      "stats": {
+        "accuracy": 24,
+        "firepower": 21
+      }
+    },
+    {
+      "id": 1340,
+      "name": "방뢰 벌지",
+      "icon": "1300",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        11,
+        12,
+        13,
+        18,
+        19
+      ],
+      "stats": {
+        "health": 350
+      }
+    },
+    {
+      "id": 1420,
+      "name": "유압식 캐터펄트",
+      "icon": "1400",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "aviation": 70,
+        "health": 60
+      }
+    },
+    {
+      "id": 1520,
+      "name": "SG 레이더",
+      "icon": "1500",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "accuracy": 24,
+        "evasion": 10
+      }
+    },
+    {
+      "id": 1840,
+      "name": "개량형 보일러",
+      "icon": "1800",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "health": 245,
+        "speed": 8
+      }
+    },
+    {
+      "id": 1960,
+      "name": "마리니에르 혼",
+      "icon": "1960",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 18,
+        "health": 100
+      }
+    },
+    {
+      "id": 2040,
+      "name": "연료 필터",
+      "icon": "2000",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "health": 350,
+        "evasion": 5
+      }
+    },
+    {
+      "id": 2140,
+      "name": "외부 연료탱크",
+      "icon": "2100",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "aviation": 70,
+        "health": 60
+      }
+    },
+    {
+      "id": 2240,
+      "name": "자동 장전장치",
+      "icon": "2200",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "reload": 35,
+        "firepower": 7
+      }
+    },
+    {
+      "id": 2340,
+      "name": "자이로스코프",
+      "icon": "2300",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "accuracy": 35,
+        "speed": 8
+      }
+    },
+    {
+      "id": 2440,
+      "name": "응급 수리 장비",
+      "icon": "2400",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 2600,
+      "name": "93식 산소어뢰",
+      "icon": "2600",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        8,
+        11,
+        17,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45,
+        "reload": 10
+      }
+    },
+    {
+      "id": 2720,
+      "name": "533mm 자기 어뢰",
+      "icon": "2700",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        11,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 49,
+        "accuracy": 10
+      }
+    },
+    {
+      "id": 2800,
+      "name": "94식 고사 장치",
+      "icon": "2800",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "antiair": 55,
+        "accuracy": 10
+      }
+    },
+    {
+      "id": 2940,
+      "name": "기본형 소나",
+      "icon": "2900",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        20,
+        21
+      ],
+      "stats": {
+        "asw": 18,
+        "accuracy": 9
+      }
+    },
+    {
+      "id": 3020,
+      "name": "개량형 소나",
+      "icon": "3000",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        20,
+        21
+      ],
+      "stats": {
+        "asw": 24,
+        "accuracy": 10
+      }
+    },
+    {
+      "id": 3220,
+      "name": "VC 장갑 강판",
+      "icon": "3220",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        7,
+        10,
+        18
+      ],
+      "stats": {
+        "health": 520
+      }
+    },
+    {
+      "id": 3560,
+      "name": "파손된 연설문",
+      "icon": "3560",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "accuracy": 20,
+        "evasion": 15
+      }
+    },
+    {
+      "id": 3600,
+      "name": "사르데냐의 초대장",
+      "icon": "3600",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "firepower": 12,
+        "evasion": 15
+      }
+    },
+    {
+      "id": 3620,
+      "name": "결계 통행 증서",
+      "icon": "3620",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "torpedo": 50,
+        "health": 47
+      }
+    },
+    {
+      "id": 3640,
+      "name": "알비온의 보고서",
+      "icon": "3640",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 120,
+        "aviation": 30
+      }
+    },
+    {
+      "id": 3740,
+      "name": "구형 포환",
+      "icon": "3740",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        22,
+        23,
+        24
+      ],
+      "stats": {
+        "firepower": 40,
+        "reload": 25
+      }
+    },
+    {
+      "id": 3760,
+      "name": "돛줄 부품",
+      "icon": "3760",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        22,
+        23,
+        24
+      ],
+      "stats": {
+        "health": 360,
+        "evasion": 30
+      }
+    },
+    {
+      "id": 3780,
+      "name": "눈 덮인 꿈",
+      "icon": "3780",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 450,
+        "luck": 2
+      }
+    },
+    {
+      "id": 3860,
+      "name": "여왕의 스케줄(기밀)",
+      "icon": "3860",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "firepower": 15,
+        "evasion": 12
+      }
+    },
+    {
+      "id": 3880,
+      "name": "작전 보고·극지 폭풍",
+      "icon": "3880",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "firepower": 15,
+        "accuracy": 10
+      }
+    },
+    {
+      "id": 3900,
+      "name": "「신석 샘플」연구 노트",
+      "icon": "3900",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "aviation": 30,
+        "firepower": 15
+      }
+    },
+    {
+      "id": 3920,
+      "name": "오아시스 기압계",
+      "icon": "3920",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 20,
+        "accuracy": 15
+      }
+    },
+    {
+      "id": 3940,
+      "name": "정예 항공 정비 만쥬",
+      "icon": "3940",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        6,
+        7,
+        10
+      ],
+      "stats": {
+        "aviation": 60
+      }
+    },
+    {
+      "id": 3960,
+      "name": "박람회 기념 티켓",
+      "icon": "3960",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 450,
+        "speed": 3
+      }
+    },
+    {
+      "id": 3980,
+      "name": "모의 전자 대항전 커맨드",
+      "icon": "3980",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 15500,
+      "name": "PBY-5A 카탈리나 수상기",
+      "icon": "15500",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        3,
+        11,
+        18,
+        20,
+        21
+      ],
+      "stats": {
+        "accuracy": 35,
+        "asw": 30
+      }
+    },
+    {
+      "id": 91280,
+      "name": "십자 브로치",
+      "icon": "51280",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 350
+      }
+    },
+    {
+      "id": 150000,
+      "name": "자수 금낭",
+      "icon": "150000",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150020,
+      "name": "템페스타 플래그",
+      "icon": "150020",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "evasion": 20
+      }
+    },
+    {
+      "id": 150160,
+      "name": "과일 보급품",
+      "icon": "150160",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        22,
+        23,
+        24
+      ],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150180,
+      "name": "항해 망원경",
+      "icon": "150180",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        22,
+        23,
+        24
+      ],
+      "stats": {
+        "accuracy": 24,
+        "evasion": 10
+      }
+    },
+    {
+      "id": 150200,
+      "name": "별의 바다 B2O 구역 통행증",
+      "icon": "150200",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "aviation": 35,
+        "antiair": 20
+      }
+    },
+    {
+      "id": 150240,
+      "name": "환창의 낚싯대",
+      "icon": "150240",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10
+      ],
+      "stats": {
+        "accuracy": 27,
+        "firepower": 20
+      }
+    },
+    {
+      "id": 150260,
+      "name": "어센션 박스",
+      "icon": "150260",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150300,
+      "name": "남겨진 시간의 잔향",
+      "icon": "150300",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        7
+      ],
+      "stats": {
+        "aviation": 70
+      }
+    },
+    {
+      "id": 150320,
+      "name": "이상한 장치 「D」",
+      "icon": "150320",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150340,
+      "name": "공동 연습 기념 코인(한정판)",
+      "icon": "150340",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150400,
+      "name": "포도탄",
+      "icon": "150400",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        22,
+        23,
+        24
+      ],
+      "stats": {
+        "firepower": 35,
+        "accuracy": 10
+      }
+    },
+    {
+      "id": 150420,
+      "name": "주류 보급품",
+      "icon": "150420",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        22,
+        23,
+        24
+      ],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150580,
+      "name": "유대의 손수건",
+      "icon": "150580",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150600,
+      "name": "푸보의 완벽한 계획",
+      "icon": "150600",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150620,
+      "name": "티아라 프레페리타",
+      "icon": "150620",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [
+        4,
+        5,
+        10
+      ],
+      "stats": {
+        "accuracy": 27,
+        "firepower": 20
+      }
+    },
+    {
+      "id": 150640,
+      "name": "튤리퍼 꽃다발",
+      "icon": "150640",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150660,
+      "name": "나의 보물 고래",
+      "icon": "150660",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150820,
+      "name": "사쿠라 엠파이어의 초대장",
+      "icon": "150820",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "firepower": 12,
+        "evasion": 15
+      }
+    },
+    {
+      "id": 150840,
+      "name": "자유 군도 초대장",
+      "icon": "150840",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 150920,
+      "name": "미스터리 아쿠아",
+      "icon": "150920",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "firepower": 12,
+        "evasion": 15
+      }
+    },
+    {
+      "id": 150940,
+      "name": "감독의 각본",
+      "icon": "150940",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 450,
+        "speed": 3
+      }
+    },
+    {
+      "id": 150960,
+      "name": "옥션 초대장",
+      "icon": "150960",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "firepower": 20,
+        "health": 180
+      }
+    },
+    {
+      "id": 150980,
+      "name": "나비와 대나무의 유희",
+      "icon": "150980",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 151000,
+      "name": "나비와 매화의 유희",
+      "icon": "151000",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 500
+      }
+    },
+    {
+      "id": 151040,
+      "name": "시스템 지명수배",
+      "icon": "151040",
+      "type": 10,
+      "rarity": 4,
+      "shipTypes": [],
+      "stats": {
+        "health": 350,
+        "speed": 3
+      }
+    },
+    {
+      "id": 13180,
+      "name": "305mm 3연장포 Mk8",
+      "icon": "14000",
+      "type": 11,
+      "rarity": 6,
+      "shipTypes": [
+        18
+      ],
+      "stats": {
+        "firepower": 65
+      }
+    },
+    {
+      "id": 33100,
+      "name": "시제형 3연장 310mm 포",
+      "icon": "33100",
+      "type": 11,
+      "rarity": 5,
+      "shipTypes": [
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 44400,
+      "name": "시제형 3연장 305mm SKC39 주포(대형순양함용)",
+      "icon": "44400",
+      "type": 11,
+      "rarity": 5,
+      "shipTypes": [
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 44420,
+      "name": "시제형 283mm/54.5 3연장포 ",
+      "icon": "44420",
+      "type": 11,
+      "rarity": 5,
+      "shipTypes": [
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 85520,
+      "name": "B-50 3연장 305mm 주포 Mk-15",
+      "icon": "85520",
+      "type": 11,
+      "rarity": 5,
+      "shipTypes": [
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 90360,
+      "name": "시제형 4연장 330mm 주포 Mle1931(대형순양함용)",
+      "icon": "50360",
+      "type": 11,
+      "rarity": 5,
+      "shipTypes": [
+        18
+      ],
+      "stats": {
+        "firepower": 45
+      }
+    },
+    {
+      "id": 43140,
+      "name": "283mm SKC/28 3연장포",
+      "icon": "43100",
+      "type": 11,
+      "rarity": 4,
+      "shipTypes": [
+        18
+      ],
+      "stats": {
+        "firepower": 25
+      }
+    },
+    {
+      "id": 17460,
+      "name": "시제형 F8F 베어캣(수상기)",
+      "icon": "17460",
+      "type": 12,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        10,
+        17
+      ],
+      "stats": {
+        "aviation": 45
+      }
+    },
+    {
+      "id": 37420,
+      "name": "2식 수상전투기",
+      "icon": "37420",
+      "type": 12,
+      "rarity": 4,
+      "shipTypes": [
+        10,
+        17
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 37440,
+      "name": "카와니시 N1K 쿄후",
+      "icon": "37440",
+      "type": 12,
+      "rarity": 4,
+      "shipTypes": [
+        10,
+        17
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 39240,
+      "name": "즈이운",
+      "icon": "39200",
+      "type": 12,
+      "rarity": 4,
+      "shipTypes": [
+        10,
+        17
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 39300,
+      "name": "세이란",
+      "icon": "39300",
+      "type": 12,
+      "rarity": 4,
+      "shipTypes": [
+        10,
+        17
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 91200,
+      "name": "FBA 19",
+      "icon": "51160",
+      "type": 12,
+      "rarity": 4,
+      "shipTypes": [
+        10,
+        17
+      ],
+      "stats": {
+        "aviation": 25
+      }
+    },
+    {
+      "id": 35580,
+      "name": "잠수함용 95식 산소 어뢰改",
+      "icon": "35580",
+      "type": 13,
+      "rarity": 6,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 70
+      }
+    },
+    {
+      "id": 45460,
+      "name": "잠수함용 G7e 어뢰改",
+      "icon": "45460",
+      "type": 13,
+      "rarity": 6,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 65
+      }
+    },
+    {
+      "id": 15140,
+      "name": "잠수함용 Mark 16 어뢰",
+      "icon": "15100",
+      "type": 13,
+      "rarity": 5,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 15160,
+      "name": "잠수함용 Mark28 어뢰",
+      "icon": "15160",
+      "type": 13,
+      "rarity": 5,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 25200,
+      "name": "잠수함용 Mark 12 어뢰-페리",
+      "icon": "25200",
+      "type": 13,
+      "rarity": 5,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 25300,
+      "name": "잠수함용 Mark 20 S어뢰-페터",
+      "icon": "25300",
+      "type": 13,
+      "rarity": 5,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 35540,
+      "name": "잠수함용 95식 산소 어뢰",
+      "icon": "35500",
+      "type": 13,
+      "rarity": 5,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 35560,
+      "name": "잠수함용 96식 산소 어뢰",
+      "icon": "35560",
+      "type": 13,
+      "rarity": 5,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 45440,
+      "name": "잠수함용 G7e 음향 유도 어뢰",
+      "icon": "45400",
+      "type": 13,
+      "rarity": 5,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 5540,
+      "name": "잠수함용 550mm 24V 어뢰",
+      "icon": "5500",
+      "type": 13,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 15040,
+      "name": "잠수함용 Mark 14 어뢰",
+      "icon": "15000",
+      "type": 13,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 15060,
+      "name": "잠수함용 Mark18 어뢰",
+      "icon": "15060",
+      "type": 13,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 15120,
+      "name": "잠수함용 Mark 16 어뢰",
+      "icon": "15100",
+      "type": 13,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 25140,
+      "name": "잠수함용 Mark VIII 어뢰",
+      "icon": "25100",
+      "type": 13,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 35440,
+      "name": "잠수함용 92식 중어뢰",
+      "icon": "35400",
+      "type": 13,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 35460,
+      "name": "잠수함용 92식 어뢰改",
+      "icon": "35460",
+      "type": 13,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 35520,
+      "name": "잠수함용 95식 산소 어뢰",
+      "icon": "35500",
+      "type": 13,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 45340,
+      "name": "잠수함용 G7a 어뢰",
+      "icon": "45300",
+      "type": 13,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 45420,
+      "name": "잠수함용 G7e 음향 유도 어뢰",
+      "icon": "45400",
+      "type": 13,
+      "rarity": 4,
+      "shipTypes": [
+        8,
+        17
+      ],
+      "stats": {
+        "torpedo": 25
+      }
+    },
+    {
+      "id": 25800,
+      "name": "대잠 박격포(헷지호그)",
+      "icon": "25800",
+      "type": 14,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        2,
+        20,
+        21
+      ],
+      "stats": {
+        "asw": 45
+      }
+    },
+    {
+      "id": 4140,
+      "name": "개량형 폭뢰 발사기",
+      "icon": "4100",
+      "type": 14,
+      "rarity": 4,
+      "shipTypes": [
+        1,
+        2,
+        20,
+        21
+      ],
+      "stats": {
+        "asw": 25
+      }
+    },
+    {
+      "id": 4260,
+      "name": "페어리 가닛",
+      "icon": "4260",
+      "type": 15,
+      "rarity": 5,
+      "shipTypes": [
+        6
+      ],
+      "stats": {
+        "asw": 45
+      }
+    },
+    {
+      "id": 4360,
+      "name": "TBM 어벤져 (VT-51)",
+      "icon": "4360",
+      "type": 15,
+      "rarity": 5,
+      "shipTypes": [
+        6
+      ],
+      "stats": {
+        "asw": 45
+      }
+    },
+    {
+      "id": 4240,
+      "name": "소드피쉬 Mark.II-ASV",
+      "icon": "4200",
+      "type": 15,
+      "rarity": 4,
+      "shipTypes": [
+        6
+      ],
+      "stats": {
+        "asw": 25
+      }
+    },
+    {
+      "id": 4340,
+      "name": "TBM-3 어벤져",
+      "icon": "4300",
+      "type": 15,
+      "rarity": 4,
+      "shipTypes": [
+        6
+      ],
+      "stats": {
+        "asw": 25
+      }
+    },
+    {
+      "id": 740,
+      "name": "FI-282 헬리콥터",
+      "icon": "740",
+      "type": 17,
+      "rarity": 4,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "asw": 24
+      }
+    },
+    {
+      "id": 3400,
+      "name": "\"94식 40cm 포\" 부속",
+      "icon": "3400",
+      "type": 18,
+      "rarity": 5,
+      "shipTypes": [
+        19
+      ],
+      "stats": {
+        "health": 750
+      }
+    },
+    {
+      "id": 89640,
+      "name": "게(영수증 포함)",
+      "icon": "89640",
+      "type": 18,
+      "rarity": 5,
+      "shipTypes": [
+        19
+      ],
+      "stats": {
+        "health": 750
+      }
+    },
+    {
+      "id": 89660,
+      "name": "용 모양 장식품",
+      "icon": "89660",
+      "type": 18,
+      "rarity": 5,
+      "shipTypes": [
+        19
+      ],
+      "stats": {
+        "health": 750
+      }
+    },
+    {
+      "id": 3500,
+      "name": "군장 보급(항공)",
+      "icon": "3500",
+      "type": 18,
+      "rarity": 4,
+      "shipTypes": [
+        19
+      ],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 3520,
+      "name": "군장 보급(중소구경 무기)",
+      "icon": "3520",
+      "type": 18,
+      "rarity": 4,
+      "shipTypes": [
+        19
+      ],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 3540,
+      "name": "군장 보급(어뢰)",
+      "icon": "3540",
+      "type": 18,
+      "rarity": 4,
+      "shipTypes": [
+        19
+      ],
+      "stats": {
+        "health": 550
+      }
+    },
+    {
+      "id": 3820,
+      "name": "E형 수상기",
+      "icon": "3820",
+      "type": 18,
+      "rarity": 4,
+      "shipTypes": [
+        19
+      ],
+      "stats": {
+        "health": 300,
+        "aviation": 35
+      }
+    },
+    {
+      "id": 96000,
+      "name": "SY-1",
+      "icon": "56000",
+      "type": 20,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 96020,
+      "name": "SY-1갑",
+      "icon": "56020",
+      "type": 20,
+      "rarity": 5,
+      "shipTypes": [
+        1,
+        20,
+        21
+      ],
+      "stats": {
+        "torpedo": 45
+      }
+    },
+    {
+      "id": 16460,
+      "name": "127mm 연장 양용포 Mk12(시한 신관)",
+      "icon": "16460",
+      "type": 21,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10
+      ],
+      "stats": {
+        "antiair": 35,
+        "firepower": 10
+      }
+    },
+    {
+      "id": 26680,
+      "name": "134mm 고각연장포(시한 신관)",
+      "icon": "26680",
+      "type": 21,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10
+      ],
+      "stats": {
+        "antiair": 30,
+        "firepower": 15
+      }
+    },
+    {
+      "id": 36720,
+      "name": "127mm 연장 고각포改(시한 신관)",
+      "icon": "36720",
+      "type": 21,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    },
+    {
+      "id": 46380,
+      "name": "105mm SKC 연장 고각포 개수(시한 신관)",
+      "icon": "46380",
+      "type": 21,
+      "rarity": 5,
+      "shipTypes": [
+        4,
+        5,
+        10
+      ],
+      "stats": {
+        "antiair": 45
+      }
+    }
+  ]
+}

@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import GrowthRecommendationPage from './GrowthRecommendationPage.jsx'
 import ResearchRecommendationPage from './ResearchRecommendationPage.jsx'
 import TechPointRecommendationPage from './TechPointRecommendationPage.jsx'
 import AdditionalStatRecommendationPage from './AdditionalStatRecommendationPage.jsx'
+
+const FleetRecommendationPage = lazy(() => import('./FleetRecommendationPage.jsx'))
 
 const RECOMMENDATION_TABS = [
   {
@@ -70,10 +72,22 @@ export default function RecommendationPage({ characters }) {
         <TechPointRecommendationPage characters={characters} />
       ) : activeTab === 'bonus-stat' ? (
         <AdditionalStatRecommendationPage characters={characters} />
+      ) : activeTab === 'fleet' ? (
+        <Suspense fallback={<RecommendationLoading />}>
+          <FleetRecommendationPage characters={characters} />
+        </Suspense>
       ) : (
         <RecommendationPlaceholder tab={currentTab} />
       )}
     </main>
+  )
+}
+
+function RecommendationLoading() {
+  return (
+    <div className="flex min-h-[360px] items-center justify-center border border-neutral-700 bg-[#202020] text-sm text-gray-500">
+      편성 계산 데이터를 불러오는 중입니다.
+    </div>
   )
 }
 

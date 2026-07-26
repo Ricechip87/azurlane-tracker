@@ -10,6 +10,9 @@ const outputs = [
   'src/data/growthRecommendations.json',
   'src/data/researchRecommendations.json',
   'src/data/shipObtainability.json',
+  'src/data/shipCombatData.json',
+  'src/data/equipmentDirectStats.json',
+  'src/data/stageRequirements.json',
 ]
 const commands = [
   [process.execPath, ['scripts/convert-csv.js']],
@@ -17,6 +20,7 @@ const commands = [
   ['python', ['-B', 'scripts/extract-growth-recommendations.py']],
   [process.execPath, ['scripts/extract-research-recommendations.mjs']],
   [process.execPath, ['scripts/extract-obtainability.mjs']],
+  [process.execPath, ['scripts/extract-fleet-recommendation-data.mjs']],
   [process.execPath, ['scripts/sync-recommendation-card-art.mjs']],
 ]
 

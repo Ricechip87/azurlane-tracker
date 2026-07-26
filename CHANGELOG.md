@@ -1,5 +1,26 @@
 # Change Log
 
+## 2026-07-27 - Add the First Fleet Recommendation Model
+
+### Added
+- Add a working fleet recommendation tab for KR normal stages 1–15 with separate boss, mob, support, and optional submarine fleets.
+- Offer current-roster and theoretical-strongest modes, first-clear and safe-area-farming modes, and standard/high-end +10 equipment profiles.
+- Generate normalized combat data for all 875 ships from ALtoy, +10 direct equipment stats from KR AzurLaneData, and 60 normal-stage requirement records from KR `chapter_template`.
+- Apply ship level, limit break, enhancement, affection, retrofit, research development level 30 from Lv.100, crafted unique augments, ship/faction fleet technology, and direct equipment stats.
+- Display original KR air-control/evasion requirements beside a separate +10% safety target without claiming an exact air-control pass before the carrier-slot formula is implemented.
+
+### Changed
+- Load the large fleet-recommendation data only when the fleet tab opens.
+- Keep the same ship unique across boss, mob, support, and submarine fleets.
+- Weight chapter 13 toward aviation/anti-air, chapter 14 toward survival, and chapter 15 more heavily toward aviation/anti-air while preserving Operation Siren recommendation tiers as an external value signal.
+
+### Verified
+- Add source extraction, generated-data integrity, runtime-bundling, progression-rule, affinity, safety-margin, and no-duplicate-fleet regression tests.
+- Pass the full test suite, ESLint, production build, and repeated semantic generation checks.
+
+### Known Scope
+- Ship skills, probability/conditional effects, weapon damage simulation, exact carrier-slot air-control calculation, and limited-equipment account counts are not yet treated as numeric pass/fail inputs.
+
 ## 2026-07-26 - Standardize Displayed Stat Names
 
 ### Changed

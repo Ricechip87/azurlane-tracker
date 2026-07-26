@@ -1,0 +1,1069 @@
+{
+  "meta": {
+    "source": "AzurLaneData KR chapter_template.json",
+    "safetyMargin": 0.1,
+    "policy": "원천의 수치 요구와 추천 휴리스틱을 구분해 표시."
+  },
+  "stages": [
+    {
+      "id": 101,
+      "chapter": 1,
+      "name": "1–1",
+      "subtitle": "근해 연습 ",
+      "unlockLevel": 0,
+      "airDominance": 6,
+      "bestAirDominance": 150,
+      "avoidRequirement": 40,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 102,
+      "chapter": 1,
+      "name": "1–2",
+      "subtitle": "치욕의 날",
+      "unlockLevel": 0,
+      "airDominance": 12,
+      "bestAirDominance": 150,
+      "avoidRequirement": 34,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 103,
+      "chapter": 1,
+      "name": "1–3",
+      "subtitle": "불타오르는 군항",
+      "unlockLevel": 0,
+      "airDominance": 18,
+      "bestAirDominance": 150,
+      "avoidRequirement": 38,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 104,
+      "chapter": 1,
+      "name": "1–4",
+      "subtitle": "동쪽에서 온 적",
+      "unlockLevel": 0,
+      "airDominance": 24,
+      "bestAirDominance": 150,
+      "avoidRequirement": 42,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 201,
+      "chapter": 2,
+      "name": "2–1",
+      "subtitle": "툴라기섬 지원",
+      "unlockLevel": 0,
+      "airDominance": 45,
+      "bestAirDominance": 150,
+      "avoidRequirement": 50,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 202,
+      "chapter": 2,
+      "name": "2–2",
+      "subtitle": "태양에 드리운 먹구름",
+      "unlockLevel": 10,
+      "airDominance": 55,
+      "bestAirDominance": 150,
+      "avoidRequirement": 50,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 203,
+      "chapter": 2,
+      "name": "2–3",
+      "subtitle": "출전! 산호해",
+      "unlockLevel": 10,
+      "airDominance": 65,
+      "bestAirDominance": 150,
+      "avoidRequirement": 54,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 204,
+      "chapter": 2,
+      "name": "2–4",
+      "subtitle": "구원, 요크타운",
+      "unlockLevel": 10,
+      "airDominance": 80,
+      "bestAirDominance": 150,
+      "avoidRequirement": 58,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 301,
+      "chapter": 3,
+      "name": "3–1",
+      "subtitle": "미드웨이 결전!",
+      "unlockLevel": 20,
+      "airDominance": 110,
+      "bestAirDominance": 150,
+      "avoidRequirement": 66,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 302,
+      "chapter": 3,
+      "name": "3–2",
+      "subtitle": "운명의 5분 ",
+      "unlockLevel": 20,
+      "airDominance": 125,
+      "bestAirDominance": 165,
+      "avoidRequirement": 66,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 303,
+      "chapter": 3,
+      "name": "3–3",
+      "subtitle": "배수의 진",
+      "unlockLevel": 20,
+      "airDominance": 145,
+      "bestAirDominance": 190,
+      "avoidRequirement": 70,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 304,
+      "chapter": 3,
+      "name": "3–4",
+      "subtitle": "최후의 반격",
+      "unlockLevel": 20,
+      "airDominance": 175,
+      "bestAirDominance": 230,
+      "avoidRequirement": 74,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 401,
+      "chapter": 4,
+      "name": "4–1",
+      "subtitle": "새벽녘의 사신",
+      "unlockLevel": 25,
+      "airDominance": 120,
+      "bestAirDominance": 160,
+      "avoidRequirement": 82,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 402,
+      "chapter": 4,
+      "name": "4–2",
+      "subtitle": "피로 물든 새벽",
+      "unlockLevel": 25,
+      "airDominance": 135,
+      "bestAirDominance": 180,
+      "avoidRequirement": 82,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 403,
+      "chapter": 4,
+      "name": "4–3",
+      "subtitle": "동솔로몬 조우전",
+      "unlockLevel": 25,
+      "airDominance": 155,
+      "bestAirDominance": 205,
+      "avoidRequirement": 86,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 404,
+      "chapter": 4,
+      "name": "4–4",
+      "subtitle": "복수전",
+      "unlockLevel": 25,
+      "airDominance": 180,
+      "bestAirDominance": 235,
+      "avoidRequirement": 90,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 501,
+      "chapter": 5,
+      "name": "5–1",
+      "subtitle": "수송 저지 작전",
+      "unlockLevel": 30,
+      "airDominance": 215,
+      "bestAirDominance": 280,
+      "avoidRequirement": 98,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 502,
+      "chapter": 5,
+      "name": "5–2",
+      "subtitle": "산타크루즈의 하늘",
+      "unlockLevel": 30,
+      "airDominance": 250,
+      "bestAirDominance": 325,
+      "avoidRequirement": 98,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 503,
+      "chapter": 5,
+      "name": "5–3",
+      "subtitle": "호넷의 죽음",
+      "unlockLevel": 30,
+      "airDominance": 295,
+      "bestAirDominance": 385,
+      "avoidRequirement": 102,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 504,
+      "chapter": 5,
+      "name": "5–4",
+      "subtitle": "전장에서의 퇴각",
+      "unlockLevel": 30,
+      "airDominance": 345,
+      "bestAirDominance": 450,
+      "avoidRequirement": 106,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 601,
+      "chapter": 6,
+      "name": "6–1",
+      "subtitle": "야밤의 대결",
+      "unlockLevel": 40,
+      "airDominance": 225,
+      "bestAirDominance": 295,
+      "avoidRequirement": 114,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 602,
+      "chapter": 6,
+      "name": "6–2",
+      "subtitle": "전면 반격",
+      "unlockLevel": 40,
+      "airDominance": 255,
+      "bestAirDominance": 335,
+      "avoidRequirement": 114,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 603,
+      "chapter": 6,
+      "name": "6–3",
+      "subtitle": "거포 최후의 결전 ",
+      "unlockLevel": 40,
+      "airDominance": 290,
+      "bestAirDominance": 380,
+      "avoidRequirement": 118,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 604,
+      "chapter": 6,
+      "name": "6–4",
+      "subtitle": "솔로몬의 악몽",
+      "unlockLevel": 40,
+      "airDominance": 325,
+      "bestAirDominance": 425,
+      "avoidRequirement": 122,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 701,
+      "chapter": 7,
+      "name": "7–1",
+      "subtitle": "증원 저지",
+      "unlockLevel": 50,
+      "airDominance": 370,
+      "bestAirDominance": 485,
+      "avoidRequirement": 130,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 702,
+      "chapter": 7,
+      "name": "7–2",
+      "subtitle": "난전",
+      "unlockLevel": 50,
+      "airDominance": 425,
+      "bestAirDominance": 555,
+      "avoidRequirement": 130,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 703,
+      "chapter": 7,
+      "name": "7–3",
+      "subtitle": "기습",
+      "unlockLevel": 50,
+      "airDominance": 480,
+      "bestAirDominance": 625,
+      "avoidRequirement": 134,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 704,
+      "chapter": 7,
+      "name": "7–4",
+      "subtitle": "예상 밖의 혼란",
+      "unlockLevel": 50,
+      "airDominance": 535,
+      "bestAirDominance": 700,
+      "avoidRequirement": 138,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 801,
+      "chapter": 8,
+      "name": "8–1",
+      "subtitle": "차가운 바람",
+      "unlockLevel": 60,
+      "airDominance": 590,
+      "bestAirDominance": 770,
+      "avoidRequirement": 134,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 802,
+      "chapter": 8,
+      "name": "8–2",
+      "subtitle": "북극권의 새벽녘",
+      "unlockLevel": 60,
+      "airDominance": 650,
+      "bestAirDominance": 845,
+      "avoidRequirement": 134,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 803,
+      "chapter": 8,
+      "name": "8–3",
+      "subtitle": "빙해의 거친 파도",
+      "unlockLevel": 60,
+      "airDominance": 710,
+      "bestAirDominance": 925,
+      "avoidRequirement": 138,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 804,
+      "chapter": 8,
+      "name": "8–4",
+      "subtitle": "잊혀진 전장 ",
+      "unlockLevel": 60,
+      "airDominance": 770,
+      "bestAirDominance": 1005,
+      "avoidRequirement": 142,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 901,
+      "chapter": 9,
+      "name": "9–1",
+      "subtitle": "불길한 밤",
+      "unlockLevel": 65,
+      "airDominance": 840,
+      "bestAirDominance": 1095,
+      "avoidRequirement": 138,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 902,
+      "chapter": 9,
+      "name": "9–2",
+      "subtitle": "요격 작전",
+      "unlockLevel": 65,
+      "airDominance": 915,
+      "bestAirDominance": 1190,
+      "avoidRequirement": 138,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 903,
+      "chapter": 9,
+      "name": "9–3",
+      "subtitle": "어둠 속의 빛",
+      "unlockLevel": 65,
+      "airDominance": 990,
+      "bestAirDominance": 1290,
+      "avoidRequirement": 142,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 904,
+      "chapter": 9,
+      "name": "9–4",
+      "subtitle": "헬레나 ",
+      "unlockLevel": 65,
+      "airDominance": 1065,
+      "bestAirDominance": 1385,
+      "avoidRequirement": 146,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1001,
+      "chapter": 10,
+      "name": "10–1",
+      "subtitle": "다시 출격하라, 다시!",
+      "unlockLevel": 70,
+      "airDominance": 1155,
+      "bestAirDominance": 1505,
+      "avoidRequirement": 142,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 0,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치"
+      ]
+    },
+    {
+      "id": 1002,
+      "chapter": 10,
+      "name": "10–2",
+      "subtitle": "선제공격!",
+      "unlockLevel": 70,
+      "airDominance": 1250,
+      "bestAirDominance": 1625,
+      "avoidRequirement": 142,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1003,
+      "chapter": 10,
+      "name": "10–3",
+      "subtitle": "승리를 틈타서",
+      "unlockLevel": 70,
+      "airDominance": 1345,
+      "bestAirDominance": 1750,
+      "avoidRequirement": 146,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1004,
+      "chapter": 10,
+      "name": "10–4",
+      "subtitle": "불의의 반격",
+      "unlockLevel": 70,
+      "airDominance": 1440,
+      "bestAirDominance": 1875,
+      "avoidRequirement": 150,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1101,
+      "chapter": 11,
+      "name": "11–1",
+      "subtitle": "새벽의 상륙작전",
+      "unlockLevel": 75,
+      "airDominance": 1520,
+      "bestAirDominance": 1980,
+      "avoidRequirement": 146,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1102,
+      "chapter": 11,
+      "name": "11–2",
+      "subtitle": "폭풍우의 밤",
+      "unlockLevel": 75,
+      "airDominance": 1610,
+      "bestAirDominance": 2095,
+      "avoidRequirement": 146,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1103,
+      "chapter": 11,
+      "name": "11–3",
+      "subtitle": "솔로몬의 기사단",
+      "unlockLevel": 75,
+      "airDominance": 1700,
+      "bestAirDominance": 2210,
+      "avoidRequirement": 150,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1104,
+      "chapter": 11,
+      "name": "11–4",
+      "subtitle": "밤을 가르며",
+      "unlockLevel": 75,
+      "airDominance": 1790,
+      "bestAirDominance": 2330,
+      "avoidRequirement": 154,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1201,
+      "chapter": 12,
+      "name": "12–1",
+      "subtitle": "정보전의 전투 성과",
+      "unlockLevel": 80,
+      "airDominance": 1890,
+      "bestAirDominance": 2460,
+      "avoidRequirement": 150,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1202,
+      "chapter": 12,
+      "name": "12–2",
+      "subtitle": "기습공격",
+      "unlockLevel": 80,
+      "airDominance": 1995,
+      "bestAirDominance": 2595,
+      "avoidRequirement": 150,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1203,
+      "chapter": 12,
+      "name": "12–3",
+      "subtitle": "하늘의 결전",
+      "unlockLevel": 80,
+      "airDominance": 2100,
+      "bestAirDominance": 2730,
+      "avoidRequirement": 154,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1204,
+      "chapter": 12,
+      "name": "12–4",
+      "subtitle": "태스크포스",
+      "unlockLevel": 80,
+      "airDominance": 2205,
+      "bestAirDominance": 2870,
+      "avoidRequirement": 158,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1301,
+      "chapter": 13,
+      "name": "13–1",
+      "subtitle": "격전의 하늘",
+      "unlockLevel": 85,
+      "airDominance": 2315,
+      "bestAirDominance": 3010,
+      "avoidRequirement": 154,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1302,
+      "chapter": 13,
+      "name": "13–2",
+      "subtitle": "머나먼 하늘의 피리",
+      "unlockLevel": 85,
+      "airDominance": 2450,
+      "bestAirDominance": 3185,
+      "avoidRequirement": 154,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1303,
+      "chapter": 13,
+      "name": "13–3",
+      "subtitle": "분투의 날개",
+      "unlockLevel": 85,
+      "airDominance": 2585,
+      "bestAirDominance": 3365,
+      "avoidRequirement": 158,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1304,
+      "chapter": 13,
+      "name": "13–4",
+      "subtitle": "날아 내려온 봉황",
+      "unlockLevel": 85,
+      "airDominance": 2720,
+      "bestAirDominance": 3540,
+      "avoidRequirement": 162,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1401,
+      "chapter": 14,
+      "name": "14–1",
+      "subtitle": "야간 조우",
+      "unlockLevel": 90,
+      "airDominance": 1985,
+      "bestAirDominance": 2580,
+      "avoidRequirement": 160,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": true,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "야간/기상 격자",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1402,
+      "chapter": 14,
+      "name": "14–2",
+      "subtitle": "T자 대결",
+      "unlockLevel": 90,
+      "airDominance": 2085,
+      "bestAirDominance": 2710,
+      "avoidRequirement": 160,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": true,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "야간/기상 격자",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1403,
+      "chapter": 14,
+      "name": "14–3",
+      "subtitle": "격추전",
+      "unlockLevel": 90,
+      "airDominance": 2185,
+      "bestAirDominance": 2840,
+      "avoidRequirement": 164,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": true,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "야간/기상 격자",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1404,
+      "chapter": 14,
+      "name": "14–4",
+      "subtitle": "아침 햇살 속 추격",
+      "unlockLevel": 90,
+      "airDominance": 2385,
+      "bestAirDominance": 3100,
+      "avoidRequirement": 168,
+      "supportFleetCount": 0,
+      "submarineFleetCount": 1,
+      "nightBattle": true,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "야간/기상 격자",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1501,
+      "chapter": 15,
+      "name": "15–1",
+      "subtitle": "새벽의 돌격",
+      "unlockLevel": 95,
+      "airDominance": 2435,
+      "bestAirDominance": 3165,
+      "avoidRequirement": 164,
+      "supportFleetCount": 1,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "지원 함대 1개",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1502,
+      "chapter": 15,
+      "name": "15–2",
+      "subtitle": "승부 결정",
+      "unlockLevel": 95,
+      "airDominance": 2555,
+      "bestAirDominance": 3325,
+      "avoidRequirement": 164,
+      "supportFleetCount": 1,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "지원 함대 1개",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1503,
+      "chapter": 15,
+      "name": "15–3",
+      "subtitle": "긴급 지원",
+      "unlockLevel": 95,
+      "airDominance": 2685,
+      "bestAirDominance": 3490,
+      "avoidRequirement": 168,
+      "supportFleetCount": 1,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "지원 함대 1개",
+        "잠수함대 1개"
+      ]
+    },
+    {
+      "id": 1504,
+      "chapter": 15,
+      "name": "15–4",
+      "subtitle": "새장 속의 학",
+      "unlockLevel": 95,
+      "airDominance": 2820,
+      "bestAirDominance": 3665,
+      "avoidRequirement": 172,
+      "supportFleetCount": 1,
+      "submarineFleetCount": 1,
+      "nightBattle": false,
+      "directRules": [
+        "항공 우세 수치",
+        "매복 회피 수치",
+        "지원 함대 1개",
+        "잠수함대 1개"
+      ]
+    }
+  ]
+}
