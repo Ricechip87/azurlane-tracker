@@ -9,6 +9,8 @@ export const ADDITIONAL_STAT_SHIP_TYPES = [
   '경항모', '항모', '잠수', '잠항모',
 ]
 
+export const ADDITIONAL_STATS = ['뇌격', '화력', '대공', '항공', '장전', '명중', '회피']
+
 const PRIORITIES = {
   구축: ['뇌격', '회피', '화력', '장전', '명중'],
   경순: ['대공', '화력', '장전', '명중', '뇌격'],
@@ -54,8 +56,19 @@ export function getAdditionalStatLabel(stat) {
   return STAT_LABELS[stat] || stat
 }
 
-export function getAvailableAdditionalStats(shipType) {
-  return getAdditionalStatPriorities(shipType)
+export function getAvailableAdditionalShipTypes(stat) {
+  if (!stat) return []
+  return ADDITIONAL_STAT_SHIP_TYPES.filter(shipType => PRIORITIES[shipType]?.includes(stat))
+}
+
+export function resolveAdditionalStatSelection(stat, shipType) {
+  const selectedStat = ADDITIONAL_STATS.includes(stat) ? stat : ADDITIONAL_STATS[0]
+  const shipTypes = getAvailableAdditionalShipTypes(selectedStat)
+  return {
+    stat: selectedStat,
+    shipType: shipTypes.includes(shipType) ? shipType : shipTypes[0] || '',
+    shipTypes,
+  }
 }
 
 export function buildAdditionalStatCandidates(characters, shipType, stat, rankingData = {}) {

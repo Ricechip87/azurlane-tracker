@@ -1,10 +1,12 @@
 import assert from 'node:assert/strict'
 import {
+  ADDITIONAL_STATS,
   ADDITIONAL_STAT_SHIP_TYPES,
   buildAdditionalStatCandidates,
   getAdditionalStatLabel,
   getAdditionalStatPriority,
-  getAvailableAdditionalStats,
+  getAvailableAdditionalShipTypes,
+  resolveAdditionalStatSelection,
 } from './additionalStatRecommendations.js'
 
 assert.deepEqual(ADDITIONAL_STAT_SHIP_TYPES, [
@@ -21,12 +23,25 @@ assert.equal(getAdditionalStatLabel('뇌격'), '뇌격 (뇌장)')
 assert.equal(getAdditionalStatLabel('화력'), '화력 (포격)')
 assert.equal(getAdditionalStatLabel('회피'), '회피 (기동)')
 
-const statCharacters = [
-  { statAcquired: { shipTypes: ['구축'], stat: '내구', value: 1 }, stat120: { shipTypes: ['구축'], stat: '대공', value: 1 } },
-  { statAcquired: { shipTypes: ['구축'], stat: '명중', value: 1 }, stat120: { shipTypes: ['구축'], stat: '뇌격', value: 1 } },
-  { statAcquired: { shipTypes: ['구축'], stat: '회피', value: 1 }, stat120: { shipTypes: ['전함'], stat: '화력', value: 1 } },
-]
-assert.deepEqual(getAvailableAdditionalStats('구축', statCharacters), ['뇌격', '회피', '화력', '장전', '명중'])
+assert.deepEqual(ADDITIONAL_STATS, ['뇌격', '화력', '대공', '항공', '장전', '명중', '회피'])
+assert.deepEqual(getAvailableAdditionalShipTypes('항공'), ['항전', '경항모', '항모', '잠항모'])
+assert.deepEqual(getAvailableAdditionalShipTypes('대공'), ['경순'])
+assert.deepEqual(getAvailableAdditionalShipTypes(''), [])
+assert.deepEqual(resolveAdditionalStatSelection('항공', '구축'), {
+  stat: '항공',
+  shipType: '항전',
+  shipTypes: ['항전', '경항모', '항모', '잠항모'],
+})
+assert.deepEqual(resolveAdditionalStatSelection('대공', '경순'), {
+  stat: '대공',
+  shipType: '경순',
+  shipTypes: ['경순'],
+})
+assert.deepEqual(resolveAdditionalStatSelection('기타', '공작'), {
+  stat: '뇌격',
+  shipType: '구축',
+  shipTypes: ['구축', '경순', '중순', '대형순', '잠수', '잠항모'],
+})
 
 const candidates = buildAdditionalStatCandidates([
   {

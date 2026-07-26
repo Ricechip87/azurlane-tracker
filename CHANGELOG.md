@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-07-26 - Select Additional Stat Before Ship Type
+
+### Changed
+- Reorder the additional-stat controls so users choose the stat goal before choosing a ship type.
+- Show only ship types for which the selected stat is effective, while preserving the existing torpedo/destroyer default.
+
+### Verified
+- Add coverage for stat-to-ship-type availability, including aviation and anti-air edge cases.
+
 ## 2026-07-26 - Prevent Recommendation Data 404s After Deployment
 
 ### Fixed

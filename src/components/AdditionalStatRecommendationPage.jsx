@@ -2,10 +2,10 @@ import { useMemo, useState } from 'react'
 import growthRecommendationData from '../data/growthRecommendations.json'
 import shipObtainabilityData from '../data/shipObtainability.json'
 import {
-  ADDITIONAL_STAT_SHIP_TYPES,
+  ADDITIONAL_STATS,
   buildAdditionalStatCandidates,
   getAdditionalStatLabel,
-  getAvailableAdditionalStats,
+  resolveAdditionalStatSelection,
 } from '../utils/additionalStatRecommendations.js'
 import { calcMajorFactionTechPoints } from '../utils/fleetTech.js'
 import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
@@ -31,8 +31,15 @@ export default function AdditionalStatRecommendationPage({ characters }) {
     operationTierByName: buildOperationTierByName(growthRecommendationData),
     obtainabilityByName: createShipObtainabilityLookup(shipObtainabilityData.ships),
   }), [])
-  const stats = useMemo(() => getAvailableAdditionalStats(shipType), [shipType])
-  const selectedStat = stats.includes(stat) ? stat : stats[0] || ''
+  const selection = useMemo(
+    () => resolveAdditionalStatSelection(stat, shipType),
+    [shipType, stat],
+  )
+  const selectStat = nextStat => {
+    const nextSelection = resolveAdditionalStatSelection(nextStat, selection.shipType)
+    setStat(nextSelection.stat)
+    setShipType(nextSelection.shipType)
+  }
 
   const shipStats = useMemo(() => mergeStatsByShipType(
     calcStatsByShipType(characters, 'acquired'),
@@ -41,30 +48,30 @@ export default function AdditionalStatRecommendationPage({ characters }) {
   const factionLevelStats = useMemo(() => (
     calcFleetTechLevelStats(calcMajorFactionTechPoints(characters))
   ), [characters])
-  const shipStatValue = shipStats[shipType]?.[selectedStat] || 0
-  const factionLevelValue = factionLevelStats[shipType]?.[selectedStat] || 0
+  const shipStatValue = shipStats[selection.shipType]?.[selection.stat] || 0
+  const factionLevelValue = factionLevelStats[selection.shipType]?.[selection.stat] || 0
   const candidates = useMemo(() => buildAdditionalStatCandidates(
     characters,
-    shipType,
-    selectedStat,
+    selection.shipType,
+    selection.stat,
     rankingData || {},
-  ), [characters, rankingData, selectedStat, shipType])
+  ), [characters, rankingData, selection.shipType, selection.stat])
 
   return (
     <section className="space-y-3">
       <div className="grid items-start gap-3 xl:grid-cols-[300px_minmax(0,1fr)]">
         <AdditionalStatControlPanel
-          shipType={shipType}
+          shipType={selection.shipType}
+          shipTypes={selection.shipTypes}
           onShipTypeChange={setShipType}
-          stats={stats}
-          selectedStat={selectedStat}
-          onStatChange={setStat}
+          selectedStat={selection.stat}
+          onStatChange={selectStat}
           shipStatValue={shipStatValue}
           factionLevelValue={factionLevelValue}
         />
         <CandidatePanel
-          shipType={shipType}
-          selectedStat={selectedStat}
+          shipType={selection.shipType}
+          selectedStat={selection.stat}
           candidates={candidates}
           onOpen={setOpenCandidate}
         />
@@ -79,8 +86,8 @@ export default function AdditionalStatRecommendationPage({ characters }) {
 
 function AdditionalStatControlPanel({
   shipType,
+  shipTypes,
   onShipTypeChange,
-  stats,
   selectedStat,
   onStatChange,
   shipStatValue,
@@ -90,12 +97,27 @@ function AdditionalStatControlPanel({
     <aside className="overflow-hidden border border-neutral-700 bg-[#202020] xl:sticky xl:top-3">
       <div className="border-b border-neutral-700 bg-[#262626] px-4 py-3">
         <h2 className="text-sm font-bold text-gray-100">추가 스탯 목표</h2>
-        <p className="mt-1 text-[11px] leading-4 text-gray-500">함종과 유효 스탯을 선택하면 남은 육성 후보를 보여줍니다.</p>
+        <p className="mt-1 text-[11px] leading-4 text-gray-500">유효 스탯을 고른 뒤 함종을 선택하면 남은 육성 후보를 보여줍니다.</p>
       </div>
 
-      <ControlSection title="1. 강화할 함종">
+      <ControlSection title="1. 유효 스탯">
+        <div className="grid grid-cols-2 gap-1.5">
+          {ADDITIONAL_STATS.map(item => (
+            <button
+              key={item}
+              type="button"
+              onClick={() => onStatChange(item)}
+              className={`rounded border px-2 py-2 text-left text-xs font-semibold transition-colors ${selectedStat === item ? 'border-amber-500 bg-amber-950/40 text-amber-200' : 'border-neutral-700 bg-[#181818] text-gray-400 hover:border-neutral-500 hover:text-gray-200'}`}
+            >
+              {getAdditionalStatLabel(item)}
+            </button>
+          ))}
+        </div>
+      </ControlSection>
+
+      <ControlSection title="2. 강화할 함종">
         <div className="grid grid-cols-3 gap-1.5">
-          {ADDITIONAL_STAT_SHIP_TYPES.map(type => (
+          {shipTypes.map(type => (
             <button
               key={type}
               type="button"
@@ -106,23 +128,7 @@ function AdditionalStatControlPanel({
             </button>
           ))}
         </div>
-        <p className="mt-2 text-[10px] text-gray-600">공작·운송·범선 제외</p>
-      </ControlSection>
-
-      <ControlSection title="2. 유효 스탯">
-        <div className="space-y-1.5">
-          {stats.map((item, index) => (
-            <button
-              key={item}
-              type="button"
-              onClick={() => onStatChange(item)}
-              className={`flex w-full items-center gap-2 rounded border px-3 py-2 text-left text-xs transition-colors ${selectedStat === item ? 'border-amber-500 bg-amber-950/40 text-amber-200' : 'border-neutral-700 bg-[#181818] text-gray-400 hover:border-neutral-500 hover:text-gray-200'}`}
-            >
-              <span className={`flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-black ${selectedStat === item ? 'bg-amber-400 text-black' : 'bg-neutral-800 text-gray-500'}`}>{index + 1}</span>
-              <span className="font-semibold">{getAdditionalStatLabel(item)}</span>
-            </button>
-          ))}
-        </div>
+        <p className="mt-2 text-[10px] text-gray-600">선택한 스탯이 유효한 함종만 표시 · 공작·운송·범선 제외</p>
       </ControlSection>
 
       <div className="border-t border-neutral-700 p-3">
