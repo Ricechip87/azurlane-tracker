@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-07-26 - Complete Additional-Stat Card Artwork
+
+### Fixed
+- Include every ship that can appear in additional-stat recommendations in the existing recommendation-card artwork synchronization.
+- Use the same local AzurLane `shipyard.png` portrait source as growth and research recommendation cards instead of falling back to square ship icons.
+
+### Verified
+- Require complete high-resolution portrait PNG card artwork for all potential additional-stat recommendation ships.
+
 ## 2026-07-26 - Select Additional Stat Before Ship Type
 
 ### Changed

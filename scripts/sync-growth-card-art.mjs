@@ -1,5 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import {
+  ADDITIONAL_STATS,
+  ADDITIONAL_STAT_SHIP_TYPES,
+} from '../src/utils/additionalStatRecommendations.js'
+import { normalizeStatShipTypeValue } from '../src/utils/shipClassifications.js'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CHARACTERS_PATH = path.join(ROOT, 'src', 'data', 'characters.json')
@@ -11,12 +16,23 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'))
 }
 
-function extractRecommendationNames() {
+function extractRecommendationNames(characters) {
   const growthData = readJson(GROWTH_RECOMMENDATIONS_PATH)
   const researchData = fs.existsSync(RESEARCH_RECOMMENDATIONS_PATH) ? readJson(RESEARCH_RECOMMENDATIONS_PATH) : { ships: [] }
+  const additionalStats = new Set(ADDITIONAL_STATS)
+  const additionalShipTypes = new Set(ADDITIONAL_STAT_SHIP_TYPES)
+  const additionalStatNames = characters
+    .filter(character => ['statAcquired', 'stat120'].some(phase => {
+      const bonus = character[phase]
+      return additionalStats.has(bonus?.stat)
+        && bonus?.shipTypes?.some(shipType => additionalShipTypes.has(normalizeStatShipTypeValue(shipType)))
+    }))
+    .map(character => character.name)
+
   return [...new Set([
     ...(growthData.recommendations || []).map(item => item.name),
     ...(researchData.ships || []).map(item => item.name),
+    ...additionalStatNames,
   ].filter(Boolean))]
 }
 
@@ -34,7 +50,7 @@ if (!fs.existsSync(path.join(referenceDir, 'AzurLane', 'images', 'skin'))) {
 const characters = readJson(CHARACTERS_PATH)
 const characterByName = new Map(characters.map(character => [character.name, character]))
 const sourceSkinDir = path.join(referenceDir, 'AzurLane', 'images', 'skin')
-const names = extractRecommendationNames()
+const names = extractRecommendationNames(characters)
 const missing = []
 const desiredFiles = new Set()
 let copied = 0
