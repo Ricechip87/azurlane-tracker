@@ -219,9 +219,9 @@ function ControlSection({ title, children }) {
 
 function StatBreakdown({ label, value, tone }) {
   return (
-    <div>
-      <div className="text-gray-500">{label}</div>
-      <div className={`mt-0.5 text-sm font-black ${tone}`}>+{value}</div>
+    <div className="flex items-center justify-between gap-1.5 py-1">
+      <div className="whitespace-nowrap text-[10px] text-gray-500">{label}</div>
+      <div className={`shrink-0 text-xs font-black ${tone}`}>+{value}</div>
     </div>
   )
 }
@@ -233,11 +233,13 @@ function StatSummary({ categoryLabel, selectedStat, summaries }) {
       <div className={`mt-2 grid gap-2 ${summaries.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
         {summaries.map(summary => (
           <div key={summary.shipType} className="rounded border border-cyan-900/40 bg-neutral-950/20 px-2 py-2">
-            <div className="text-[10px] font-bold text-gray-400">{summary.shipType}</div>
-            <div className="mt-0.5 text-xl font-black text-cyan-300">
-              +{summary.shipStatValue + summary.factionLevelValue}
+            <div className="flex items-end justify-between gap-2">
+              <div className="text-[10px] font-bold text-gray-400">{summary.shipType}</div>
+              <div className="text-lg font-black leading-none text-cyan-300">
+                +{summary.shipStatValue + summary.factionLevelValue}
+              </div>
             </div>
-            <div className="mt-2 grid grid-cols-2 gap-2 border-t border-cyan-900/40 pt-1.5">
+            <div className="mt-2 divide-y divide-cyan-900/30 border-t border-cyan-900/40 pt-1">
               <StatBreakdown label="함선" value={summary.shipStatValue} tone="text-blue-300" />
               <StatBreakdown label="진영 기술 보너스" value={summary.factionLevelValue} tone="text-purple-300" />
             </div>

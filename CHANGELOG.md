@@ -8,7 +8,7 @@
 - Centralize Operation Siren tier ordering and lookup generation used by research, fleet-tech, and additional-stat recommendations.
 - Share one recommendation artwork component across growth, research, and additional-stat cards and dialogs, with deterministic card-art → icon → text fallback.
 - Clarify the additional-stat artwork audit output as candidate coverage rather than total roster image coverage.
-- Rename the additional-stat summary label from `기술 LV` to `진영 기술 보너스` so it describes the accumulated stat bonus instead of looking like a level count.
+- Rename the additional-stat summary label from `기술 LV` to `진영 기술 보너스` and stack the ship/faction breakdown into full-width rows so narrow summary cards remain readable.
 
 ### Verified
 - Cross-check the four non-fleet recommendation tabs against the current 875-ship app, ALtoy, and KR roster data.
