@@ -1,27 +1,22 @@
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
-import path from 'node:path'
 import characters from './characters.json' with { type: 'json' }
 import {
-  ADDITIONAL_STATS,
-  ADDITIONAL_STAT_SHIP_TYPES,
-} from '../utils/additionalStatRecommendations.js'
-import { normalizeStatShipTypeValue } from '../utils/shipClassifications.js'
+  getRecommendationCardArtFileName,
+  getRecommendationCardArtUrl,
+  isAdditionalStatCardArtCandidate,
+} from '../utils/recommendationCardArt.js'
 
-const stats = new Set(ADDITIONAL_STATS)
-const shipTypes = new Set(ADDITIONAL_STAT_SHIP_TYPES)
-const relevantCharacters = characters.filter(character => (
-  ['statAcquired', 'stat120'].some(phase => {
-    const bonus = character[phase]
-    return stats.has(bonus?.stat)
-      && bonus?.shipTypes?.some(shipType => shipTypes.has(normalizeStatShipTypeValue(shipType)))
-  })
-))
+const relevantCharacters = characters.filter(isAdditionalStatCardArtCandidate)
 
 assert.ok(relevantCharacters.length > 0)
+assert.equal(
+  getRecommendationCardArtUrl({ iconUrl: '/ship-icons/123.webp' }, '/azurlane-tracker'),
+  '/azurlane-tracker/ship-card-art/123.png',
+)
 
 for (const character of relevantCharacters) {
-  const fileName = path.basename(character.iconUrl || '').replace(/\.(png|webp)$/i, '.png')
+  const fileName = getRecommendationCardArtFileName(character)
   assert.ok(fileName, `${character.name} must have a card-art file name`)
 
   const data = await readFile(new URL(`../../public/ship-card-art/${fileName}`, import.meta.url))

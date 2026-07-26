@@ -5,6 +5,8 @@
 ### Fixed
 - Include every ship that can appear in additional-stat recommendations in the existing recommendation-card artwork synchronization.
 - Use the same local AzurLane `shipyard.png` portrait source as growth and research recommendation cards instead of falling back to square ship icons.
+- Share one card-art filename, URL, and additional-stat eligibility rule across the UI, synchronization, and tests.
+- Run recommendation-card synchronization during both full data refreshes and source audits.
 
 ### Verified
 - Require complete high-resolution portrait PNG card artwork for all potential additional-stat recommendation ships.

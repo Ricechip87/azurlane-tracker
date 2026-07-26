@@ -5,6 +5,7 @@ import shipObtainabilityData from '../data/shipObtainability.json'
 import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import { normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
+import { getRecommendationCardArtUrl } from '../utils/recommendationCardArt.js'
 import { getFactionBadgeName } from '../utils/factions.js'
 import { getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import {
@@ -194,7 +195,7 @@ function RecommendationCard({ card, character, onOpen }) {
   const faction = getDisplayFaction(character?.faction)
   const shipType = character?.shipType || card.tags[0]
   const rarityStyle = rarityCardStyle(rarity)
-  const cardArtUrl = getCardArtUrl(character)
+  const cardArtUrl = getRecommendationCardArtUrl(character, import.meta.env.BASE_URL)
   const status = card.status || normalizeAcquisitionStatus(character?.acquired)
 
   return (
@@ -258,7 +259,7 @@ function RecommendationCardPopup({ card, character, onClose }) {
   const faction = getDisplayFaction(character?.faction)
   const shipType = character?.shipType || card.tags[0]
   const status = card.status || normalizeAcquisitionStatus(character?.acquired)
-  const cardArtUrl = getCardArtUrl(character)
+  const cardArtUrl = getRecommendationCardArtUrl(character, import.meta.env.BASE_URL)
   const details = getCardDetails(card)
 
   return (
@@ -291,12 +292,6 @@ function RecommendationCardPopup({ card, character, onClose }) {
         <RecommendationDetails reason={details.reason} sourceSections={details.sourceSections} />
     </RecommendationDialog>
   )
-}
-
-function getCardArtUrl(character) {
-  const fileName = character?.iconUrl?.split('/').pop()
-  if (!fileName) return ''
-  return `${import.meta.env.BASE_URL}ship-card-art/${fileName.replace(/\.(png|webp)$/i, '.png')}`
 }
 
 function EmptyRecommendationSection() {

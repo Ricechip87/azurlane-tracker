@@ -1,10 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import {
-  ADDITIONAL_STATS,
-  ADDITIONAL_STAT_SHIP_TYPES,
-} from '../src/utils/additionalStatRecommendations.js'
-import { normalizeStatShipTypeValue } from '../src/utils/shipClassifications.js'
+  getRecommendationCardArtFileName,
+  isAdditionalStatCardArtCandidate,
+} from '../src/utils/recommendationCardArt.js'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CHARACTERS_PATH = path.join(ROOT, 'src', 'data', 'characters.json')
@@ -19,14 +18,8 @@ function readJson(filePath) {
 function extractRecommendationNames(characters) {
   const growthData = readJson(GROWTH_RECOMMENDATIONS_PATH)
   const researchData = fs.existsSync(RESEARCH_RECOMMENDATIONS_PATH) ? readJson(RESEARCH_RECOMMENDATIONS_PATH) : { ships: [] }
-  const additionalStats = new Set(ADDITIONAL_STATS)
-  const additionalShipTypes = new Set(ADDITIONAL_STAT_SHIP_TYPES)
   const additionalStatNames = characters
-    .filter(character => ['statAcquired', 'stat120'].some(phase => {
-      const bonus = character[phase]
-      return additionalStats.has(bonus?.stat)
-        && bonus?.shipTypes?.some(shipType => additionalShipTypes.has(normalizeStatShipTypeValue(shipType)))
-    }))
+    .filter(isAdditionalStatCardArtCandidate)
     .map(character => character.name)
 
   return [...new Set([
@@ -37,9 +30,7 @@ function extractRecommendationNames(characters) {
 }
 
 function getSkinId(character) {
-  const iconUrl = character?.iconUrl || ''
-  const fileName = iconUrl.split('/').pop() || ''
-  return fileName.replace(/\.(png|webp)$/i, '')
+  return getRecommendationCardArtFileName(character).replace(/\.png$/i, '')
 }
 
 const referenceDir = path.join(ROOT, '참고용')

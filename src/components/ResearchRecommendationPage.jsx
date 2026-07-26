@@ -5,6 +5,7 @@ import shipObtainabilityData from '../data/shipObtainability.json'
 import { isAcquiredStatus, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
 import { getFactionBadgeName, getFactionDisplayName, getFactionDisplayText } from '../utils/factions.js'
 import { getEffectiveRarity, getResearchRarityLabel } from '../utils/rarity.js'
+import { getRecommendationCardArtUrl } from '../utils/recommendationCardArt.js'
 import { getAvailability, getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
 import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
@@ -171,7 +172,7 @@ function ResearchGoalPicker({ groups, selectedTarget, onSelect }) {
                   onClick={() => onSelect(item)}
                   className={`group relative h-[178px] w-[142px] max-w-full flex-none overflow-hidden rounded border-2 bg-[#272727] text-left shadow outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-white ${selected ? 'border-cyan-400' : item.unlock.met ? 'border-emerald-600' : 'border-neutral-600 hover:border-neutral-400'}`}
                 >
-                  <img src={getCardArtUrl(item)} alt="" className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+                  <img src={getRecommendationCardArtUrl(item, import.meta.env.BASE_URL)} alt="" className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/95" />
                   <div className="absolute left-1.5 top-1.5 flex gap-1 text-[9px] font-black">
                     <CardBadge>{item.generation}기</CardBadge>
@@ -203,7 +204,7 @@ function ResearchGoalPanel({ item, characters, candidateRankingData }) {
     <div className="p-4">
       <div className="grid gap-4 lg:grid-cols-[180px_minmax(0,1fr)]">
         <div>
-          <img src={getCardArtUrl(item)} alt="" className="h-[232px] w-[172px] max-w-full rounded-md border-2 border-cyan-500 bg-[#181818] object-cover object-top" />
+          <img src={getRecommendationCardArtUrl(item, import.meta.env.BASE_URL)} alt="" className="h-[232px] w-[172px] max-w-full rounded-md border-2 border-cyan-500 bg-[#181818] object-cover object-top" />
           <div className="mt-2 flex flex-wrap gap-1 text-[10px] font-black">
             <CardBadge>{item.generation}기</CardBadge>
             <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{getResearchRarityLabel(item.planRarity)}</CardBadge>
@@ -380,7 +381,7 @@ function SummaryCell({ label, value, tone }) {
 function ResearchCard({ item, tone, onSelect }) {
   const character = item.character
   const status = normalizeAcquisitionStatus(character?.acquired)
-  const artUrl = getCardArtUrl(item)
+  const artUrl = getRecommendationCardArtUrl(item, import.meta.env.BASE_URL)
   const border = tone === 'priority'
     ? 'border-cyan-400'
     : tone === 'ready' || tone === 'quick'
@@ -456,12 +457,6 @@ function unlockRequirementLabel(requirement) {
   return `${getFactionDisplayName(requirement.faction)} 기술점수`
 }
 
-function getCardArtUrl(item) {
-  const fileName = item?.iconUrl?.split('/').pop()?.replace(/\.(png|webp)$/i, '.png')
-  if (!fileName) return ''
-  return `${import.meta.env.BASE_URL}ship-card-art/${fileName}`
-}
-
 function formatNumber(value) {
   return new Intl.NumberFormat('ko-KR').format(value)
 }
@@ -515,7 +510,7 @@ function ResearchCandidatePopup({ candidate, onClose }) {
     ? '잠수함 계열은 일반 해금 후보와 분리해 맨 마지막에 배치한 후보입니다.'
     : getFactionDisplayText(candidate.recommendation?.roleNote || '').trim()
       || '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.'
-  const cardArtUrl = getCardArtUrl(candidate)
+  const cardArtUrl = getRecommendationCardArtUrl(candidate, import.meta.env.BASE_URL)
 
   return (
     <RecommendationDialog name={candidate.name} onClose={onClose}>

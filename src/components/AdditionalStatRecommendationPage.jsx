@@ -11,6 +11,7 @@ import { calcMajorFactionTechPoints } from '../utils/fleetTech.js'
 import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
 import { getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import { buildOperationTierByName } from '../utils/researchRecommendations.js'
+import { getRecommendationCardArtUrl } from '../utils/recommendationCardArt.js'
 import { calcStatsByShipType, mergeStatsByShipType } from '../utils/rosterStats.js'
 import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
@@ -279,7 +280,7 @@ function CandidatePopup({ candidate, onClose }) {
 }
 
 function ShipArtwork({ character, className, loading }) {
-  const cardArtUrl = getCardArtUrl(character)
+  const cardArtUrl = getRecommendationCardArtUrl(character, import.meta.env.BASE_URL)
   const iconUrl = character?.iconUrl || ''
   if (!cardArtUrl && !iconUrl) {
     return <div className="flex h-full items-center justify-center text-[10px] text-gray-700">이미지 없음</div>
@@ -301,11 +302,6 @@ function ShipArtwork({ character, className, loading }) {
       }}
     />
   )
-}
-
-function getCardArtUrl(character) {
-  const fileName = character?.iconUrl?.split('/').pop()?.replace(/\.(png|webp)$/i, '.png')
-  return fileName ? `${import.meta.env.BASE_URL}ship-card-art/${fileName}` : ''
 }
 
 function formatStage(stage) {

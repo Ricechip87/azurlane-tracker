@@ -17,7 +17,7 @@ const commands = [
   ['python', ['-B', 'scripts/extract-growth-recommendations.py']],
   [process.execPath, ['scripts/extract-research-recommendations.mjs']],
   [process.execPath, ['scripts/extract-obtainability.mjs']],
-  [process.execPath, ['scripts/sync-growth-card-art.mjs']],
+  [process.execPath, ['scripts/sync-recommendation-card-art.mjs']],
 ]
 
 const before = Object.fromEntries(outputs.map(file => [file, semanticHash(file)]))
