@@ -6,6 +6,7 @@
 - Keep the internal fleet-tech keys unchanged while displaying 뇌격 as 뇌장, 화력 as 포격, and 회피 as 기동 throughout the web UI.
 - Share one stat display-name helper across roster, fleet-tech, and additional-stat recommendation screens.
 - Accept both 뇌격/뇌장, 화력/포격, and 회피/기동 as input aliases and normalize them to one internal key across imports, calculations, audits, and recommendation matching.
+- Reorder the additional-stat selector as 뇌장·대공, 포격·항공, 장전·명중, 기동.
 
 ## 2026-07-26 - Complete Additional-Stat Card Artwork
 

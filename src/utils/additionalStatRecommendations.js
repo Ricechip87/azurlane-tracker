@@ -10,7 +10,7 @@ export const ADDITIONAL_STAT_SHIP_TYPES = [
   '경항모', '항모', '잠수', '잠항모',
 ]
 
-export const ADDITIONAL_STATS = ['뇌격', '화력', '대공', '항공', '장전', '명중', '회피']
+export const ADDITIONAL_STATS = ['뇌격', '대공', '화력', '항공', '장전', '명중', '회피']
 
 const PRIORITIES = {
   구축: ['뇌격', '회피', '화력', '장전', '명중'],

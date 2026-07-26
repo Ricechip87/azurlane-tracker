@@ -18,7 +18,7 @@ assert.ok(getAdditionalStatPriority('구축', '대공') > getAdditionalStatPrior
 assert.equal(getAdditionalStatPriority('경순', '대공'), 0)
 assert.equal(getAdditionalStatPriority('항전', '항공'), 1)
 assert.equal(getAdditionalStatPriority('공작', '내구'), Number.POSITIVE_INFINITY)
-assert.deepEqual(ADDITIONAL_STATS, ['뇌격', '화력', '대공', '항공', '장전', '명중', '회피'])
+assert.deepEqual(ADDITIONAL_STATS, ['뇌격', '대공', '화력', '항공', '장전', '명중', '회피'])
 assert.deepEqual(getAvailableAdditionalShipTypes('항공'), ['항전', '경항모', '항모', '잠항모'])
 assert.deepEqual(getAvailableAdditionalShipTypes('대공'), ['경순'])
 assert.deepEqual(getAvailableAdditionalShipTypes(''), [])
