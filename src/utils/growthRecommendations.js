@@ -2,6 +2,7 @@ import { isAcquiredStatus, isLevel120Status, isLevel125Status, normalizeAcquisit
 import { getFactionDisplayText } from './factions.js'
 import { isGrowthRecommendationEligible, obtainabilityRank } from './obtainability.js'
 import { getEffectiveRarity } from './rarity.js'
+import { normalizeStatShipTypeValue } from './shipClassifications.js'
 import { getShipObtainability } from './shipObtainabilityLookup.js'
 
 export const GROWTH_MODE_SOURCE = {
@@ -9,6 +10,24 @@ export const GROWTH_MODE_SOURCE = {
   operation: 'operation-siren',
   newbie: 'newbie',
 }
+
+export const GROWTH_SHIP_TYPE_FILTER_ORDER = [
+  '구축',
+  '경순',
+  '중순',
+  '대형순',
+  '순전',
+  '전함',
+  '항전',
+  '모니터',
+  '경항모',
+  '항모',
+  '공작',
+  '운송',
+  '잠수',
+  '잠항모',
+  '범선',
+]
 
 const MAIN_FORCE_TYPES = new Set(['전함', '순전', '항전', '항모', '경항모', '모니터'])
 const SUBMARINE_TYPES = new Set(['잠수', '잠수항모'])
@@ -70,6 +89,46 @@ export function buildGrowthRecommendationSections(mode, characters, growthRecomm
       cards: cardsForSection(submarineCandidates, 32),
     },
   ]
+}
+
+export function filterGrowthRecommendationSections(sections, shipType) {
+  const normalizedFilter = normalizeGrowthShipType(shipType)
+  if (!normalizedFilter || normalizedFilter === '전체') return sections
+
+  return sections.map(section => ({
+    ...section,
+    cards: section.cards.filter(card => getGrowthCardShipType(card) === normalizedFilter),
+  }))
+}
+
+export function countGrowthRecommendationShipTypes(sections) {
+  const seen = new Set()
+  const counts = {}
+
+  for (const section of sections || []) {
+    for (const card of section.cards || []) {
+      const shipType = getGrowthCardShipType(card)
+      if (!shipType || shipType === '-') continue
+      const identity = `${card.character?.id || card.name}::${shipType}`
+      if (seen.has(identity)) continue
+      seen.add(identity)
+      counts[shipType] = (counts[shipType] || 0) + 1
+    }
+  }
+
+  return counts
+}
+
+function getGrowthCardShipType(card) {
+  return normalizeGrowthShipType(
+    card?.character?.shipType
+    || card?.shipType
+    || card?.tags?.[0],
+  )
+}
+
+function normalizeGrowthShipType(shipType) {
+  return normalizeStatShipTypeValue(shipType)
 }
 
 function getCandidatesForMode(mode, characterByName, growthRecommendationData, obtainabilityByName) {

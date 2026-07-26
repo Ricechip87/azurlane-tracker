@@ -10,7 +10,10 @@ import { getFactionBadgeName } from '../utils/factions.js'
 import { getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import {
   GROWTH_MODE_SOURCE,
+  GROWTH_SHIP_TYPE_FILTER_ORDER,
   buildGrowthRecommendationSections,
+  countGrowthRecommendationShipTypes,
+  filterGrowthRecommendationSections,
   normalizeGrowthSummary,
 } from '../utils/growthRecommendations.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
@@ -50,6 +53,7 @@ const COLLAB_FACTIONS = new Set([
 ])
 export default function GrowthRecommendationPage({ characters }) {
   const [mode, setMode] = useState('main')
+  const [shipTypeFilter, setShipTypeFilter] = useState('전체')
   const [openCard, setOpenCard] = useState(null)
   const recommendationData = growthRecommendationData
   const obtainabilityMap = useMemo(
@@ -63,11 +67,22 @@ export default function GrowthRecommendationPage({ characters }) {
   const characterByName = useMemo(() => (
     new Map(characters.map(character => [character.name, character]))
   ), [characters])
-  const recommendationSections = useMemo(() => (
+  const allRecommendationSections = useMemo(() => (
     recommendationData && obtainabilityMap
       ? buildGrowthRecommendationSections(mode, characters, recommendationData, obtainabilityMap)
       : []
   ), [mode, characters, recommendationData, obtainabilityMap])
+  const shipTypeCounts = useMemo(
+    () => countGrowthRecommendationShipTypes(allRecommendationSections),
+    [allRecommendationSections],
+  )
+  const activeShipTypeFilter = shipTypeFilter === '전체' || shipTypeCounts[shipTypeFilter]
+    ? shipTypeFilter
+    : '전체'
+  const recommendationSections = useMemo(
+    () => filterGrowthRecommendationSections(allRecommendationSections, activeShipTypeFilter),
+    [activeShipTypeFilter, allRecommendationSections],
+  )
 
   return (
     <section className="space-y-4">
@@ -91,6 +106,7 @@ export default function GrowthRecommendationPage({ characters }) {
                 type="button"
                 onClick={() => {
                   setMode(item.id)
+                  setShipTypeFilter('전체')
                   setOpenCard(null)
                 }}
                 className={`rounded border px-3 py-2 text-sm font-semibold transition-colors ${mode === item.id ? 'border-neutral-500 bg-neutral-700 text-white' : 'border-neutral-700 bg-[#1a1a1a] text-gray-400 hover:border-neutral-500 hover:text-gray-100'}`}
@@ -109,6 +125,12 @@ export default function GrowthRecommendationPage({ characters }) {
           <span className="ml-2 text-xs text-amber-300/80">원본에 등급이 없어 임의로 추천 등급을 부여하지 않았습니다.</span>
         </div>
       )}
+
+      <GrowthShipTypeFilter
+        selected={activeShipTypeFilter}
+        counts={shipTypeCounts}
+        onChange={setShipTypeFilter}
+      />
 
       {recommendationData && obtainabilityMap && (
         <div className="space-y-4">
@@ -155,6 +177,57 @@ export default function GrowthRecommendationPage({ characters }) {
         />
       )}
     </section>
+  )
+}
+
+function GrowthShipTypeFilter({ selected, counts, onChange }) {
+  const knownTypes = GROWTH_SHIP_TYPE_FILTER_ORDER.filter(shipType => counts[shipType])
+  const extraTypes = Object.keys(counts)
+    .filter(shipType => !GROWTH_SHIP_TYPE_FILTER_ORDER.includes(shipType))
+    .sort((a, b) => a.localeCompare(b, 'ko'))
+  const shipTypes = [...knownTypes, ...extraTypes]
+  const total = Object.values(counts).reduce((sum, count) => sum + count, 0)
+
+  return (
+    <section className="border border-neutral-700 bg-[#202020]">
+      <div className="border-b border-neutral-700 bg-[#262626] px-4 py-3">
+        <div className="flex flex-wrap items-baseline gap-3">
+          <h3 className="text-sm font-bold text-gray-100">추천 함종 선택</h3>
+          <span className="text-[11px] text-gray-500">선택한 함종만 최우선·차순위 등 모든 추천 구역에 표시합니다.</span>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-2 p-3">
+        <ShipTypeFilterButton
+          label="전체"
+          count={total}
+          selected={selected === '전체'}
+          onClick={() => onChange('전체')}
+        />
+        {shipTypes.map(shipType => (
+          <ShipTypeFilterButton
+            key={shipType}
+            label={shipType}
+            count={counts[shipType]}
+            selected={selected === shipType}
+            onClick={() => onChange(shipType)}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function ShipTypeFilterButton({ label, count, selected, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={selected}
+      className={`rounded border px-3 py-2 text-xs font-semibold transition-colors ${selected ? 'border-cyan-500 bg-cyan-950/50 text-cyan-200' : 'border-neutral-700 bg-[#181818] text-gray-400 hover:border-neutral-500 hover:text-gray-100'}`}
+    >
+      {label}
+      <span className={`ml-1.5 text-[10px] ${selected ? 'text-cyan-300' : 'text-gray-600'}`}>{count}명</span>
+    </button>
   )
 }
 

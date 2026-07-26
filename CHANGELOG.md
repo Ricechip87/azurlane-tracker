@@ -1,5 +1,15 @@
 # Change Log
 
+## 2026-07-27 - Filter Growth Recommendations by Ship Type
+
+### Added
+- Add ship-type buttons above the growth recommendation sections with the number of unique candidates for each type.
+- Apply the selected type to every recommendation section, including priority, secondary, special-role, lane, and submarine groups.
+- Normalize source aliases such as `대순` and `초순` into the displayed `대형순` filter.
+
+### Verified
+- Add regression coverage for filtering across multiple sections, ship-type aliases, and duplicate candidate counting.
+
 ## 2026-07-27 - Mark Fleet Recommendations as In Progress
 
 ### Changed
