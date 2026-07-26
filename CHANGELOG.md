@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-07-27 - Mark Fleet Recommendations as In Progress
+
+### Changed
+- Add a large, high-contrast `만드는 중` notice to the fleet-recommendation header.
+- State that the current output is experimental and not a completed recommendation so users do not mistake the first model for a verified final result.
+
 ## 2026-07-27 - Add the First Fleet Recommendation Model
 
 ### Added

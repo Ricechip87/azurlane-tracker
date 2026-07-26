@@ -46,9 +46,19 @@ export default function RecommendationPage({ characters }) {
   return (
     <main className="mx-auto max-w-[1500px] p-4 space-y-4">
       <header className="border border-neutral-700 bg-[#242424] px-5 py-4">
-        <div className="text-xs font-semibold text-gray-300">육성/편성 추천</div>
-        <h1 className="mt-1 text-2xl font-bold text-gray-100">{currentTab.title}</h1>
-        <p className="mt-2 whitespace-pre-line text-sm leading-6 text-gray-500">{currentTab.description}</p>
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div className="text-xs font-semibold text-gray-300">육성/편성 추천</div>
+            <h1 className="mt-1 text-2xl font-bold text-gray-100">{currentTab.title}</h1>
+            <p className="mt-2 whitespace-pre-line text-sm leading-6 text-gray-500">{currentTab.description}</p>
+          </div>
+          {activeTab === 'fleet' && (
+            <div className="rounded border-2 border-amber-500 bg-amber-950/50 px-6 py-3 text-center shadow-[0_0_24px_rgba(245,158,11,0.16)]">
+              <div className="text-3xl font-black tracking-widest text-amber-300 sm:text-4xl">만드는 중</div>
+              <div className="mt-1 text-xs font-bold text-amber-100/80">현재 결과는 시험용이며 완성된 추천이 아닙니다.</div>
+            </div>
+          )}
+        </div>
       </header>
 
       <div className="flex flex-wrap gap-2 border-b border-neutral-700">
