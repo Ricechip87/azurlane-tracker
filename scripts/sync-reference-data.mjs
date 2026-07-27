@@ -37,6 +37,12 @@ const downloads = [
     type: 'json',
   },
   {
+    id: 'altoy-skill-template',
+    url: 'https://jforplay.github.io/altoy/data/sim/skill_data_template.json',
+    relativePath: 'ALtoy/data/sim/skill_data_template.json',
+    type: 'json',
+  },
+  {
     id: 'fernando-ships',
     url: 'https://raw.githubusercontent.com/Fernando2603/AzurLane/main/ship.json',
     relativePath: 'AzurLane/ship.json',
@@ -233,6 +239,10 @@ function validateStagedData() {
   const lite = readJson('ALtoy/data/ship_info_lite.json')
   if (!Array.isArray(full) || !Array.isArray(lite) || full.length < 800 || full.length !== lite.length) {
     throw new Error(`ALtoy 함선 수 검증 실패: full ${full.length}, lite ${lite.length}`)
+  }
+  const altoySkills = readJson('ALtoy/data/sim/skill_data_template.json')
+  if (!altoySkills || Array.isArray(altoySkills) || Object.keys(altoySkills).length < 3000) {
+    throw new Error(`ALtoy 스킬 원천 검증 실패: ${Object.keys(altoySkills || {}).length}`)
   }
 
   const fernando = readJson('AzurLane/ship.json')

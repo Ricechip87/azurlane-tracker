@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { lazy, Suspense, useMemo, useState } from 'react'
 import characterData from './data/characters.json'
 import RecommendationPage from './components/RecommendationPage.jsx'
 import BackToTopButton from './components/layout/BackToTopButton.jsx'
@@ -12,6 +12,8 @@ import {
 import { PAGE_TITLES } from './config/navigation.js'
 import { useUserDataStorage } from './hooks/useUserDataStorage.js'
 import { DEFAULT_CHARACTER_FILTERS, filterCharacters } from './utils/characterFilters.js'
+
+const ShipDatabasePage = lazy(() => import('./components/ShipDatabasePage.jsx'))
 
 export default function App() {
   const [activePage, setActivePage] = useState('home')
@@ -54,10 +56,25 @@ export default function App() {
       {activePage === 'growth-recommend' && (charactersLoaded
         ? <RecommendationPage characters={enriched} />
         : dataStatePage)}
-      {!['home', 'my-roster', 'growth-recommend'].includes(activePage) && (
+      {activePage === 'ship-db' && (charactersLoaded ? (
+        <Suspense fallback={<ShipDatabaseLoading />}>
+          <ShipDatabasePage characters={characters} />
+        </Suspense>
+      ) : dataStatePage)}
+      {!['home', 'my-roster', 'growth-recommend', 'ship-db'].includes(activePage) && (
         <UnderConstructionPage title={PAGE_TITLES[activePage] || '공사중'} />
       )}
       <BackToTopButton />
     </div>
+  )
+}
+
+function ShipDatabaseLoading() {
+  return (
+    <main className="mx-auto max-w-[1500px] p-4">
+      <div className="flex min-h-[360px] items-center justify-center border border-neutral-700 bg-[#242424] text-sm text-gray-500">
+        함순이 DB 데이터를 불러오는 중입니다.
+      </div>
+    </main>
   )
 }
