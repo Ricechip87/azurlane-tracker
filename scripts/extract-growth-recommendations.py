@@ -10,6 +10,7 @@ sys.dont_write_bytecode = True
 
 import openpyxl
 from lib.growth_sheet_selection import find_sheet
+from lib.growth_name_matching import normalize_growth_source_name
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,7 +57,6 @@ NEWBIE_EXTRA_GROUP_RE = re.compile(r"(상시|무딱|힐러|연구함|신규|이�
 MAIN_HEALER_GROUP_RE = re.compile(r"(메인 힐러|서브 힐러)")
 
 NAME_ALIASES = {
-    "아마기(항공모함)": "아마기(항모)",
     "하이덴 리우": "하우덴 리우",
     "렉싱턴2": "렉싱턴Ⅱ",
     "렉싱턴 2": "렉싱턴Ⅱ",
@@ -360,7 +360,8 @@ def find_excluded_from_row(ws, marker):
 
 
 def match_character(name, by_name):
-    lookup = NAME_ALIASES.get(name, name)
+    source_name = normalize_growth_source_name(name)
+    lookup = NAME_ALIASES.get(source_name, source_name)
     if lookup.endswith(" μ"):
         lookup = f"{lookup[:-2]}(μ장비)"
     for key in build_name_keys(lookup):

@@ -1,9 +1,8 @@
 import sys
-from importlib.util import module_from_spec, spec_from_file_location
-from pathlib import Path
 
 sys.dont_write_bytecode = True
 
+from lib.growth_name_matching import normalize_growth_source_name
 from lib.growth_sheet_selection import find_sheet
 
 
@@ -35,14 +34,8 @@ except KeyError as error:
 else:
     raise AssertionError("없는 시트 이름은 실패해야 합니다.")
 
-extractor_path = Path(__file__).with_name("extract-growth-recommendations.py")
-extractor_spec = spec_from_file_location("growth_recommendation_extractor", extractor_path)
-extractor = module_from_spec(extractor_spec)
-extractor_spec.loader.exec_module(extractor)
-characters_by_name = extractor.load_characters()
-
-assert extractor.match_character("아마기", characters_by_name)["name"] == "아마기"
-assert extractor.match_character("아마기(항모)", characters_by_name)["name"] == "아마기(항모)"
-assert extractor.match_character("아마기(항공모함)", characters_by_name)["name"] == "아마기(항모)"
+assert normalize_growth_source_name("아마기") == "아마기"
+assert normalize_growth_source_name("아마기(항모)") == "아마기(항모)"
+assert normalize_growth_source_name("아마기(항공모함)") == "아마기(항모)"
 
 print("growth recommendation sheet selection tests passed")
