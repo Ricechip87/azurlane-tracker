@@ -22,6 +22,25 @@ for (const recommendation of data.recommendations) {
   assert.ok(recommendation.sheetGroup, `missing group: ${recommendation.name}`)
 }
 
+for (const source of ['main', 'operation-siren']) {
+  const carrierAmagi = data.recommendations.find(item => (
+    item.source === source
+    && item.sheetGroup === '항모 CV, 경항모 CVL'
+    && item.name === '아마기(항모)'
+  ))
+  assert.equal(carrierAmagi?.id, 660, `${source} 항모 추천의 아마기는 항모 아마기여야 합니다.`)
+  assert.equal(carrierAmagi?.shipType, '항모')
+}
+assert.equal(
+  data.recommendations.some(item => (
+    item.name === '아마기'
+    && item.shipType === '순전'
+    && item.sheetGroup === '전함 BB, 순전 BC'
+  )),
+  true,
+  '일반 아마기의 순전 추천은 그대로 유지해야 합니다.',
+)
+
 for (const characterId of new Set(data.recommendations.map(recommendation => String(recommendation.id)))) {
   const character = characterById.get(characterId)
   const fileName = path.basename(character.iconUrl).replace(/\.(png|webp)$/i, '.png')

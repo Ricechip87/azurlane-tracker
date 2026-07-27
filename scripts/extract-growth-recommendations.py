@@ -56,6 +56,7 @@ NEWBIE_EXTRA_GROUP_RE = re.compile(r"(상시|무딱|힐러|연구함|신규|이�
 MAIN_HEALER_GROUP_RE = re.compile(r"(메인 힐러|서브 힐러)")
 
 NAME_ALIASES = {
+    "아마기(항공모함)": "아마기(항모)",
     "하이덴 리우": "하우덴 리우",
     "렉싱턴2": "렉싱턴Ⅱ",
     "렉싱턴 2": "렉싱턴Ⅱ",
