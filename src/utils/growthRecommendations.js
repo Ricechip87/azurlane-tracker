@@ -63,7 +63,7 @@ export function buildGrowthRecommendationSections(mode, characters, growthRecomm
     {
       id: 'vanguard',
       title: '전열 기준 추천',
-      description: '구축, 경순, 중순류를 함종별 최대 8명씩 추천합니다. 중순류에는 대형순(초순·대순)이 포함됩니다.',
+      description: '구축, 경순, 중순을 함종별 최대 8명씩 추천합니다.',
       cards: cardsForShipTypeQuotas(
         regularCandidates.filter(candidate => candidate.lane === '전열'),
         8,
