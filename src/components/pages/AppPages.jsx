@@ -35,7 +35,7 @@ export function HomePage() {
           </p>
         </div>
         <p className="absolute bottom-5 left-5 max-w-[440px] text-sm leading-6 text-gray-200">
-          출처 : 벽람항로 각종 유저 정리 스프레드 시트들 및 위키<br />
+          출처 : 벽람항로 공개 게임 데이터·GitHub 저장소·유저 정리 스프레드시트 및 위키 등<br />
           (문제가 될 시 샷다 내림.)
         </p>
       </section>
