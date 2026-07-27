@@ -15,10 +15,10 @@ export const ADDITIONAL_STAT_SHIP_TYPES = [
 export const ADDITIONAL_STAT_CATEGORIES = [
   { id: 'destroyer', label: '구축', shipTypes: ['구축'] },
   { id: 'light-cruiser', label: '경순', shipTypes: ['경순'] },
-  { id: 'heavy-cruiser', label: '중순류', shipTypes: ['중순', '대형순'] },
-  { id: 'battleship', label: '전함류', shipTypes: ['순전', '전함', '항전', '모니터'] },
-  { id: 'carrier', label: '항모류', shipTypes: ['경항모', '항모'] },
-  { id: 'submarine', label: '잠수함류', shipTypes: ['잠수', '잠항모'] },
+  { id: 'heavy-cruiser', label: '중순', shipTypes: ['중순', '대형순'] },
+  { id: 'battleship', label: '전함', shipTypes: ['순전', '전함', '항전', '모니터'] },
+  { id: 'carrier', label: '항모', shipTypes: ['경항모', '항모'] },
+  { id: 'submarine', label: '잠수함', shipTypes: ['잠수', '잠항모'] },
 ]
 
 export const ADDITIONAL_STATS = ['뇌격', '대공', '화력', '항공', '장전', '명중', '회피']

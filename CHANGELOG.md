@@ -12,6 +12,7 @@
 - Balance growth-recommendation sections with independent per-type quotas: 8 each for vanguard, main-fleet, and position-fill types, and 4 each for special-role and submarine types, without reallocating unused slots.
 - Treat `대형순`, `대순`, and `초순` as regional names for the same ship type and include all of them in the `중순` filter group across growth recommendations and the roster, while preserving the source label on each ship.
 - Mix the selected per-type growth candidates back into recommendation-rank order when `전체` is selected, while keeping type-specific filters ranked within the selected type.
+- Shorten the additional-stat category button labels from `중순류·전함류·항모류·잠수함류` to `중순·전함·항모·잠수함` without changing their grouped ship-type logic.
 
 ### Verified
 - Cross-check the four non-fleet recommendation tabs against the current 875-ship app, ALtoy, and KR roster data.
