@@ -32,6 +32,8 @@ export const GROWTH_SHIP_TYPE_FILTER_ORDER = [
 const MAIN_FORCE_TYPES = new Set(['전함', '순전', '항전', '항모', '경항모', '모니터'])
 const SUBMARINE_TYPES = new Set(['잠수', '잠수항모', '잠항모'])
 const POSITION_TYPES = ['구축', '경순', '중순', '대순', '전함', '순전', '항모', '경항모']
+const VANGUARD_RECOMMENDATION_TYPES = ['구축', '경순', '중순', '대형순']
+const MAIN_FORCE_RECOMMENDATION_TYPES = ['순전', '전함', '경항모', '항모']
 const TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B']
 export function buildGrowthRecommendationSections(mode, characters, growthRecommendationData, obtainabilityByName) {
   const characterByName = new Map(characters.map(character => [character.name, character]))
@@ -61,32 +63,43 @@ export function buildGrowthRecommendationSections(mode, characters, growthRecomm
     {
       id: 'vanguard',
       title: '전열 기준 추천',
-      description: '구축, 경순, 중순, 대순 등 전열 포지션 보강 후보입니다.',
-      cards: cardsForSection(regularCandidates.filter(candidate => candidate.lane === '전열'), 24),
+      description: '구축, 경순, 중순, 대형순을 함종별 최대 8명씩 추천합니다.',
+      cards: cardsForShipTypeQuotas(
+        regularCandidates.filter(candidate => candidate.lane === '전열'),
+        8,
+        VANGUARD_RECOMMENDATION_TYPES,
+      ),
     },
     {
       id: 'main-force',
       title: '후열 기준 추천',
-      description: '전함, 항모, 경항모 등 후열 포지션 보강 후보입니다.',
-      cards: cardsForSection(regularCandidates.filter(candidate => candidate.lane === '후열'), 24),
+      description: '순전, 전함, 경항모, 항모를 함종별 최대 8명씩 추천합니다.',
+      cards: cardsForShipTypeQuotas(
+        regularCandidates.filter(candidate => candidate.lane === '후열'),
+        8,
+        MAIN_FORCE_RECOMMENDATION_TYPES,
+      ),
     },
     {
       id: 'special',
       title: '특수 항목 추천',
-      description: '힐러, 버퍼, 디버퍼, 서포터 역할이 명확한 후보입니다.',
-      cards: cardsForSection(regularCandidates.filter(isSpecialCandidate), 24),
+      description: '힐러, 버퍼, 디버퍼, 서포터 역할이 명확한 후보를 함종별 최대 4명씩 추천합니다.',
+      cards: cardsForShipTypeQuotas(regularCandidates.filter(isSpecialCandidate), 4),
     },
     {
       id: 'position-fill',
       title: '포지션 보강 추천',
-      description: '현재 보유함 기준으로 120 이상 UR/SSR 수가 부족한 함종부터 보강합니다.',
-      cards: cardsForSection(getPositionFillCandidates(regularCandidates, characters), 24),
+      description: '현재 보유함 기준으로 120 이상 UR/SSR 수가 부족한 함종을 각각 최대 8명씩 추천합니다.',
+      cards: cardsForShipTypeQuotas(
+        getPositionFillCandidates(regularCandidates, characters),
+        8,
+      ),
     },
     {
       id: 'submarine',
       title: '잠수함 추천',
-      description: '잠수함은 엔드 콘텐츠 성격이 강해서 기존 추천과 분리해 맨 마지막에 따로 모아둡니다.',
-      cards: cardsForSection(submarineCandidates, 32),
+      description: '엔드 콘텐츠용 잠수함 후보를 세부 함종별 최대 4명씩 따로 추천합니다.',
+      cards: cardsForShipTypeQuotas(submarineCandidates, 4),
     },
   ]
 }
@@ -191,6 +204,22 @@ function compareCandidates(a, b) {
 
 function cardsForSection(cards, limit) {
   return cards.slice(0, limit)
+}
+
+function cardsForShipTypeQuotas(cards, limitPerType, shipTypes) {
+  const availableTypes = [...new Set(cards.map(getGrowthCardShipType).filter(Boolean))]
+  const orderedTypes = shipTypes || [
+    ...GROWTH_SHIP_TYPE_FILTER_ORDER.filter(shipType => availableTypes.includes(shipType)),
+    ...availableTypes
+      .filter(shipType => !GROWTH_SHIP_TYPE_FILTER_ORDER.includes(shipType))
+      .sort((a, b) => a.localeCompare(b, 'ko')),
+  ]
+
+  return orderedTypes.flatMap(shipType => (
+    cards
+      .filter(card => getGrowthCardShipType(card) === shipType)
+      .slice(0, limitPerType)
+  ))
 }
 
 function tierScore(tier) {

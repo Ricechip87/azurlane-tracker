@@ -9,6 +9,7 @@
 - Share one recommendation artwork component across growth, research, and additional-stat cards and dialogs, with deterministic card-art → icon → text fallback.
 - Clarify the additional-stat artwork audit output as candidate coverage rather than total roster image coverage.
 - Rename the additional-stat summary label from `기술 LV` to `진영 기술 보너스`, stack the ship/faction breakdown into full-width rows, and list multi-type summaries as separate full-width cards.
+- Balance growth-recommendation sections with independent per-type quotas: 8 each for vanguard, main-fleet, and position-fill types, and 4 each for special-role and submarine types, without reallocating unused slots.
 
 ### Verified
 - Cross-check the four non-fleet recommendation tabs against the current 875-ship app, ALtoy, and KR roster data.
