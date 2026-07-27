@@ -106,11 +106,14 @@ export function buildGrowthRecommendationSections(mode, characters, growthRecomm
 
 export function filterGrowthRecommendationSections(sections, shipType) {
   const normalizedFilter = normalizeGrowthShipType(shipType)
-  if (!normalizedFilter || normalizedFilter === '전체') return sections
 
   return sections.map(section => ({
     ...section,
-    cards: section.cards.filter(card => getGrowthCardShipTypeGroup(card) === normalizedFilter),
+    cards: (
+      !normalizedFilter || normalizedFilter === '전체'
+        ? [...section.cards]
+        : section.cards.filter(card => getGrowthCardShipTypeGroup(card) === normalizedFilter)
+    ).sort(compareCandidates),
   }))
 }
 

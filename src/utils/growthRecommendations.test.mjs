@@ -225,6 +225,26 @@ assert.deepEqual(
   '구역별 함종 버튼에는 해당 구역에 실제 존재하는 함종만 표시해야 합니다.',
 )
 
+const mixedRankSections = [{
+  id: 'mixed-ranks',
+  cards: [
+    { name: '구축 A', shipType: '구축', tier: 'A', row: 4, column: 1 },
+    { name: '구축 B+', shipType: '구축', tier: 'B+', row: 5, column: 1 },
+    { name: '경순 A+', shipType: '경순', tier: 'A+', row: 3, column: 1 },
+    { name: '경순 B', shipType: '경순', tier: 'B', row: 6, column: 1 },
+  ],
+}]
+assert.deepEqual(
+  filterGrowthRecommendationSections(mixedRankSections, '전체')[0].cards.map(card => card.name),
+  ['경순 A+', '구축 A', '구축 B+', '경순 B'],
+  '전체 필터는 함종별 묶음을 풀고 모든 후보를 추천 등급 순서로 섞어 표시해야 합니다.',
+)
+assert.deepEqual(
+  filterGrowthRecommendationSections(mixedRankSections, '구축')[0].cards.map(card => card.name),
+  ['구축 A', '구축 B+'],
+  '함종 필터는 선택한 함종 안에서 추천 등급 순서를 유지해야 합니다.',
+)
+
 const submarineCharacter = {
   id: 'sub-carrier',
   name: '잠항모 후보',
