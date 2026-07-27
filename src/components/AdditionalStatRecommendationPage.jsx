@@ -230,7 +230,7 @@ function StatSummary({ categoryLabel, selectedStat, summaries }) {
   return (
     <div className="rounded border border-cyan-900/70 bg-cyan-950/20 px-3 py-3">
       <div className="text-[10px] text-cyan-300/70">{categoryLabel} {getStatDisplayName(selectedStat)} 현재 합계</div>
-      <div className={`mt-2 grid gap-2 ${summaries.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+      <div className="mt-2 grid grid-cols-1 gap-2">
         {summaries.map(summary => (
           <div key={summary.shipType} className="rounded border border-cyan-900/40 bg-neutral-950/20 px-2 py-2">
             <div className="flex items-end justify-between gap-2">
