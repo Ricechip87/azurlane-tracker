@@ -8,7 +8,7 @@ import { getEffectiveRarity, getResearchRarityLabel } from '../utils/rarity.js'
 import { getAvailability, getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
 import { RecommendationShipArtwork } from './recommendations/RecommendationShipArtwork.jsx'
-import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
+import { createShipObtainabilityLookup, getShipObtainability } from '../utils/shipObtainabilityLookup.js'
 import {
   buildResearchFactionProgress,
   buildResearchRecommendationState,
@@ -246,11 +246,40 @@ function ResearchGoalPanel({ item, characters, candidateRankingData }) {
           <div className="mt-2 grid gap-2 xl:grid-cols-2">
             {item.xpPhases.map(phase => {
               const eligible = getEligibleResearchXpShips(phase, characters)
+              const visibleCandidates = eligible.slice(0, 5).map(character => ({
+                ...character,
+                status: normalizeAcquisitionStatus(character.acquired),
+                obtainability: getShipObtainability(candidateRankingData?.obtainabilityByName, character),
+                operationTier: candidateRankingData?.operationTierByName?.get(character.name) || null,
+                recommendation: candidateRankingData?.operationRecommendationByName?.get(character.name) || null,
+                researchXpCandidate: true,
+              }))
               return (
                 <div key={phase.phase} className="rounded border border-neutral-700 bg-[#202020] p-3 text-sm">
                   <div className="flex justify-between gap-2"><strong>{phase.phase}차 · {formatNumber(phase.requiredXp)} EXP</strong><span className="text-xs text-cyan-300">보유 {eligible.length}명</span></div>
                   <div className="mt-1 text-xs text-gray-500">{phase.factions.map(getFactionDisplayName).join(' · ')} / {phase.lane}</div>
-                  <p className="mt-2 text-xs leading-5 text-gray-300">{eligible.length ? eligible.slice(0, 10).map(character => character.name).join(', ') : '현재 조건에 맞는 보유함이 없습니다.'}{eligible.length > 10 ? ` 외 ${eligible.length - 10}명` : ''}</p>
+                  {visibleCandidates.length ? (
+                    <>
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        {visibleCandidates.map(candidate => (
+                          <button
+                            key={candidate.id ?? candidate.name}
+                            type="button"
+                            onClick={() => setOpenCandidate(candidate)}
+                            className="rounded border border-neutral-600 bg-[#181818] px-2 py-1.5 text-xs font-bold text-gray-200 outline-none hover:border-cyan-600 hover:bg-cyan-950/25 focus-visible:ring-2 focus-visible:ring-cyan-400"
+                            aria-label={`${candidate.name} 상세 정보 보기`}
+                          >
+                            {candidate.name}
+                          </button>
+                        ))}
+                      </div>
+                      {eligible.length > visibleCandidates.length && (
+                        <div className="mt-2 text-[10px] text-gray-500">그 외 {eligible.length - visibleCandidates.length}명</div>
+                      )}
+                    </>
+                  ) : (
+                    <p className="mt-2 text-xs leading-5 text-gray-400">현재 조건에 맞는 보유함이 없습니다.</p>
+                  )}
                 </div>
               )
             })}
@@ -506,7 +535,9 @@ function ResearchCandidatePopup({ candidate, onClose }) {
   const status = normalizeAcquisitionStatus(candidate.status ?? candidate.acquired)
   const sourceSections = getObtainabilitySourceSections(candidate.obtainability)
   const recommendationReason = getFactionDisplayText(candidate.recommendation?.roleNote || '').trim()
-    || '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.'
+    || (candidate.researchXpCandidate
+      ? '선택한 개발함의 경험치작 진영·포지션 조건에 맞는 보유 함선입니다.'
+      : '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.')
   const reason = candidate.isSubmarine
     ? '잠수함 계열은 일반 해금 후보와 분리해 맨 마지막에 배치한 후보입니다.'
     : formatGrowthRecommendationReason(

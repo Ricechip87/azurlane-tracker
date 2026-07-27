@@ -1,4 +1,4 @@
-import { isAcquiredStatus, normalizeAcquisitionStatus } from './acquisitionStatus.js'
+import { isAcquiredStatus, isLevel125Status, normalizeAcquisitionStatus } from './acquisitionStatus.js'
 import { getFactionSortIndex, normalizeFactionValue } from './factions.js'
 import { calcFleetTechCandidates } from './fleetTechCandidates.js'
 import { getShipPosition } from './shipClassifications.js'
@@ -165,6 +165,7 @@ export function getEligibleResearchXpShips(phase, characters) {
 
   return characters
     .filter(character => isAcquiredStatus(character.acquired))
+    .filter(character => !isLevel125Status(character.acquired))
     .filter(character => factions.has(normalizeFactionValue(character.faction)))
     .filter(character => getShipPosition(character.shipType) === phase.lane)
     .sort((a, b) => a.name.localeCompare(b.name, 'ko'))

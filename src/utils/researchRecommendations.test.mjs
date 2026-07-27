@@ -199,6 +199,19 @@ assert.deepEqual(
 )
 
 assert.deepEqual(
+  getEligibleResearchXpShips(
+    { factions: ['로열'], lane: '전열' },
+    [
+      character({ id: 101, name: 'A 120', faction: '로열', shipType: '구축', acquired: '120' }),
+      character({ id: 102, name: 'B 획득', faction: '로열', shipType: '경순', acquired: '획득' }),
+      character({ id: 103, name: 'C 125', faction: '로열', shipType: '중순', acquired: '125' }),
+    ],
+  ).map(item => item.name),
+  ['A 120', 'B 획득'],
+  '경험치작 후보는 120까지 포함하고 125만 제외한다',
+)
+
+assert.deepEqual(
   getResearchUnlockCandidates(
     { type: 'roster-count', faction: '로열', lane: '후열' },
     [
