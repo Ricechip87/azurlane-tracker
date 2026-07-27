@@ -1521,7 +1521,7 @@
       "tier": "B+",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "구축 버프",
-      "requiresUniqueEquipment": false,
+      "requiresUniqueEquipment": true,
       "row": 23,
       "column": 39
     },

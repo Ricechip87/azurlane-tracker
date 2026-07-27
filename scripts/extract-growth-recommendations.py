@@ -10,7 +10,7 @@ sys.dont_write_bytecode = True
 
 import openpyxl
 from lib.growth_sheet_selection import find_sheet
-from lib.growth_name_matching import normalize_growth_source_name, uses_unique_equipment
+from lib.growth_name_matching import build_name_keys, normalize_growth_source_name, uses_unique_equipment
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -122,21 +122,6 @@ def one_line(value):
 
 def normalize_name(value):
     return unicodedata.normalize("NFKC", clean(value)).replace("（", "(").replace("）", ")")
-
-
-def build_name_keys(value):
-    trimmed = normalize_name(value)
-    without_parentheses = re.sub(r"\s*\([^)]*\)\s*", "", trimmed).strip()
-    compact = re.sub(r"[^0-9A-Za-z가-힣μ]", "", trimmed)
-    compact_without_parentheses = (
-        without_parentheses.replace(" ", "")
-        .replace("Ⅱ", "II")
-        .replace("Ⅲ", "III")
-        .replace("Ⅳ", "IV")
-        .replace("Ⅴ", "V")
-    )
-    keys = [trimmed, without_parentheses, compact, compact_without_parentheses]
-    return list(dict.fromkeys(key for key in keys if key))
 
 
 def build_name_attempts(value):
@@ -518,6 +503,9 @@ def write_recommendation_text_report(path, items):
                 lines.append(f"- {sheet_group}")
                 for item in group_items:
                     note = one_line(item.get("roleNote", ""))
+                    if item.get("requiresUniqueEquipment"):
+                        prefix = "\uc804\uc6a9\uc7a5\ube44 \uae30\uc900"
+                        note = f"{prefix} / {note}" if note else prefix
                     note_text = f" - {note}" if note else ""
                     lines.append(
                         f"  - {item['name']} [{item['rarity']}/{item['faction']}/{item['shipType']}]"

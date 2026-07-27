@@ -14,15 +14,23 @@ export function getRecommendationCardArtFileName(character) {
 }
 
 export function getRecommendationCardArtUrl(character, baseUrl) {
-  const fileName = getRecommendationCardArtFileName(character)
+  const pngFileName = getRecommendationCardArtFileName(character)
+  const fileName = /\.webp$/i.test(character?.iconUrl || '')
+    ? pngFileName.replace(/\.png$/i, '.webp')
+    : pngFileName
   if (!fileName) return ''
   const normalizedBase = String(baseUrl || '/').replace(/\/?$/, '/')
   return `${normalizedBase}ship-card-art/${fileName}`
 }
 
 export function getRecommendationArtworkUrls(character, baseUrl) {
+  const preferredUrl = getRecommendationCardArtUrl(character, baseUrl)
+  const alternateUrl = /\.webp$/i.test(preferredUrl)
+    ? preferredUrl.replace(/\.webp$/i, '.png')
+    : preferredUrl.replace(/\.png$/i, '.webp')
   return [...new Set([
-    getRecommendationCardArtUrl(character, baseUrl),
+    preferredUrl,
+    alternateUrl,
     character?.iconUrl || '',
   ].filter(Boolean))]
 }

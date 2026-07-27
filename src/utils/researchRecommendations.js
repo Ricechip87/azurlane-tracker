@@ -213,10 +213,10 @@ export function buildResearchFactionProgress(researchShips, factionTechPoints) {
 export function getResearchUnlockCandidates(requirement, characters, rankingData = {}) {
   const faction = normalizeFactionValue(requirement.faction)
   if (requirement.type === 'tech-points') {
-    const characterByName = new Map(characters.map(character => [character.name, character]))
+    const characterById = new Map(characters.map(character => [String(character.id), character]))
     return calcFleetTechCandidates(characters, faction)
       .map(candidate => addResearchRankingData({
-        ...characterByName.get(candidate.name),
+        ...characterById.get(String(candidate.id)),
         ...candidate,
       }, rankingData))
       .filter(isActionableResearchCandidate)

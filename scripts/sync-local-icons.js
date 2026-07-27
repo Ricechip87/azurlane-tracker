@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { syncLocalIconAsset } from './lib/local-icon-assets.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.join(__dirname, '..')
@@ -104,19 +105,11 @@ function copyIcon(gid) {
 }
 
 function copyIconBySkinId(skinId) {
-  const source = path.join(LOCAL_DATA, 'images', 'skin', skinId, 'icon.png')
-  fs.mkdirSync(OUT_DIR, { recursive: true })
-
-  if (fs.existsSync(source)) {
-    const fileName = `${skinId}.png`
-    fs.copyFileSync(source, path.join(OUT_DIR, fileName))
-    return `/azurlane-tracker/ship-icons/${fileName}`
-  }
-
-  const existingWebp = path.join(OUT_DIR, `${skinId}.webp`)
-  if (fs.existsSync(existingWebp)) return `/azurlane-tracker/ship-icons/${skinId}.webp`
-
-  return null
+  return syncLocalIconAsset({
+    sourceSkinDir: path.join(LOCAL_DATA, 'images', 'skin'),
+    outputDir: OUT_DIR,
+    skinId,
+  })
 }
 
 const characters = readJson(CHARS_PATH)
@@ -128,6 +121,12 @@ const missing = []
 let resolved = 0
 
 const updated = characters.map(char => {
+  const existingIconUrl = char.gid ? copyIcon(char.gid) : null
+  if (existingIconUrl) {
+    resolved++
+    return { ...char, iconUrl: existingIconUrl }
+  }
+
   const ship = resolveShip(char, shipsById, shipsByName)
   if (!ship?.gid && !ship?.skinId) {
     missing.push({ id: char.id, name: char.name, reason: 'ship-not-found' })
@@ -141,7 +140,7 @@ const updated = characters.map(char => {
   }
 
   resolved++
-  return { ...char, gid: ship.gid ?? ship.skinId, iconUrl }
+  return { ...char, gid: char.gid ?? ship.gid ?? ship.skinId, iconUrl }
 })
 
 fs.writeFileSync(CHARS_PATH, `${JSON.stringify(updated, null, 2)}\n`, 'utf-8')

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import characters from './characters.json' with { type: 'json' }
 import {
@@ -12,19 +13,22 @@ const relevantCharacters = characters.filter(isAdditionalStatCardArtCandidate)
 assert.ok(relevantCharacters.length > 0)
 assert.equal(
   getRecommendationCardArtUrl({ iconUrl: '/ship-icons/123.webp' }, '/azurlane-tracker'),
-  '/azurlane-tracker/ship-card-art/123.png',
+  '/azurlane-tracker/ship-card-art/123.webp',
 )
 
 for (const character of relevantCharacters) {
-  const fileName = getRecommendationCardArtFileName(character)
-  assert.ok(fileName, `${character.name} must have a card-art file name`)
+  const pngFile = getRecommendationCardArtFileName(character)
+  const fileName = [pngFile, pngFile.replace(/\.png$/i, '.webp')].find(candidate => (
+    existsSync(new URL(`../../public/ship-card-art/${candidate}`, import.meta.url))
+  ))
+  assert.ok(fileName, `${character.name} must have PNG or WEBP card art`)
 
   const data = await readFile(new URL(`../../public/ship-card-art/${fileName}`, import.meta.url))
-  assert.equal(
-    data.subarray(0, 8).toString('hex'),
-    '89504e470d0a1a0a',
-    `${character.name} card art must be PNG`,
-  )
+  const isPng = data.subarray(0, 8).toString('hex') === '89504e470d0a1a0a'
+  const isWebp = data.subarray(0, 4).toString('ascii') === 'RIFF'
+    && data.subarray(8, 12).toString('ascii') === 'WEBP'
+  assert.ok(isPng || isWebp, `${character.name} card art must be PNG or WEBP`)
+  if (!isPng) continue
   const width = data.readUInt32BE(16)
   const height = data.readUInt32BE(20)
   assert.ok(width >= 192, `${character.name} card-art width`)

@@ -6,9 +6,9 @@ import stageRequirementData from '../data/stageRequirements.json'
 import { buildFleetRecommendation } from '../utils/fleetRecommendations.js'
 import { calcMajorFactionTechPoints } from '../utils/fleetTech.js'
 import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
-import { getRecommendationCardArtUrl } from '../utils/recommendationCardArt.js'
 import { buildOperationTierByName } from '../utils/recommendationRanking.js'
 import { calcStatsByShipType, mergeStatsByShipType } from '../utils/rosterStats.js'
+import { RecommendationShipArtwork } from './recommendations/RecommendationShipArtwork.jsx'
 
 const RARITY_BADGE = {
   UR: 'bg-red-950 text-red-100',
@@ -335,12 +335,15 @@ function FleetLane({ label, ships, tone }) {
 }
 
 function FleetShipCard({ ship, tone }) {
-  const image = getRecommendationCardArtUrl(ship, import.meta.env.BASE_URL)
   const border = tone === 'amber' ? 'border-amber-700/70' : tone === 'purple' ? 'border-purple-700/70' : 'border-cyan-800/70'
   return (
     <article className={`min-w-0 overflow-hidden rounded border ${border} bg-[#171717]`}>
       <div className="flex min-h-[104px]">
-        <img src={image} alt="" className="h-[104px] w-[82px] shrink-0 object-cover object-top" />
+        <RecommendationShipArtwork
+          character={ship}
+          className="h-[104px] w-[82px] shrink-0 object-cover object-top"
+          loading="lazy"
+        />
         <div className="min-w-0 flex-1 p-2">
           <div className="flex items-center gap-1">
             <strong className="truncate text-xs text-gray-100">{ship.name}</strong>

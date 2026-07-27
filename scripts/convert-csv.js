@@ -15,6 +15,14 @@ import {
 import { parseCsvRecords } from './lib/csv-records.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const ICON_DIR = path.join(__dirname, '../public/ship-icons')
+
+function getLocalIconUrl(skinId) {
+  const extension = ['png', 'webp'].find(candidate => (
+    fs.existsSync(path.join(ICON_DIR, `${skinId}.${candidate}`))
+  ))
+  return extension ? `/azurlane-tracker/ship-icons/${skinId}.${extension}` : ''
+}
 
 const CSV_PATH = path.join(__dirname, '../참고용/벽람 함순이도감 v2.1.8_배포용의 사본 - [ 메인시트.csv')
 const OUT_PATH = path.join(__dirname, '../src/data/characters.json')
@@ -86,7 +94,7 @@ const characters = dataRows.map(cols => {
     ...base,
     ...(altoy ? {
       gid: altoy.gid,
-      iconUrl: `/azurlane-tracker/ship-icons/${altoy.skin_id}.png`,
+      iconUrl: getLocalIconUrl(altoy.skin_id) || existing.iconUrl,
     } : {}),
     // Fleet tech detail fields are refreshed separately from CN/KR/sheet sources.
     // Preserve their established app labels and ordering when this roster CSV is regenerated.

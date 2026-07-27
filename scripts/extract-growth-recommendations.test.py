@@ -3,6 +3,7 @@ import sys
 sys.dont_write_bytecode = True
 
 from lib.growth_name_matching import (
+    build_name_keys,
     normalize_growth_source_name,
     uses_unique_equipment,
 )
@@ -55,5 +56,9 @@ assert uses_unique_equipment("포미더블（전장）") is True
 assert uses_unique_equipment("유키카제") is False
 assert uses_unique_equipment("론(μ장비)") is False
 assert uses_unique_equipment("전장 지원") is False
+
+assert uses_unique_equipment("\ud6c4\ubd80\ud0a4 (\uc804\uc7a5, \uad6c\ucd95)") is True
+assert build_name_keys("\uce74\uc2a4\ubbf8(\ucf5c)")[0] == "\uce74\uc2a4\ubbf8(\ucf5c\ub77c\ubcf4)"
+assert build_name_keys("\uce74\uc640\uce74\uc81c (META)")[1] == "\uce74\uc640\uce74\uc81cMETA"
 
 print("growth recommendation sheet selection tests passed")

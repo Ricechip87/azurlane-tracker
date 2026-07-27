@@ -2,31 +2,14 @@ import fs from 'node:fs'
 import path from 'node:path'
 import {
   getRecommendationCardArtFileName,
-  isAdditionalStatCardArtCandidate,
 } from '../src/utils/recommendationCardArt.js'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CHARACTERS_PATH = path.join(ROOT, 'src', 'data', 'characters.json')
-const GROWTH_RECOMMENDATIONS_PATH = path.join(ROOT, 'src', 'data', 'growthRecommendations.json')
-const RESEARCH_RECOMMENDATIONS_PATH = path.join(ROOT, 'src', 'data', 'researchRecommendations.json')
 const OUT_DIR = path.join(ROOT, 'public', 'ship-card-art')
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'))
-}
-
-function extractRecommendationNames(characters) {
-  const growthData = readJson(GROWTH_RECOMMENDATIONS_PATH)
-  const researchData = fs.existsSync(RESEARCH_RECOMMENDATIONS_PATH) ? readJson(RESEARCH_RECOMMENDATIONS_PATH) : { ships: [] }
-  const additionalStatNames = characters
-    .filter(isAdditionalStatCardArtCandidate)
-    .map(character => character.name)
-
-  return [...new Set([
-    ...(growthData.recommendations || []).map(item => item.name),
-    ...(researchData.ships || []).map(item => item.name),
-    ...additionalStatNames,
-  ].filter(Boolean))]
 }
 
 function getSkinId(character) {
@@ -39,9 +22,7 @@ if (!fs.existsSync(path.join(referenceDir, 'AzurLane', 'images', 'skin'))) {
 }
 
 const characters = readJson(CHARACTERS_PATH)
-const characterByName = new Map(characters.map(character => [character.name, character]))
 const sourceSkinDir = path.join(referenceDir, 'AzurLane', 'images', 'skin')
-const names = extractRecommendationNames(characters)
 const missing = []
 const desiredFiles = new Set()
 let copied = 0
@@ -49,8 +30,8 @@ let preserved = 0
 
 fs.mkdirSync(OUT_DIR, { recursive: true })
 
-for (const name of names) {
-  const character = characterByName.get(name)
+for (const character of characters) {
+  const name = character.name
   const skinId = getSkinId(character)
 
   if (!skinId) {
@@ -58,17 +39,28 @@ for (const name of names) {
     continue
   }
 
-  const source = path.join(sourceSkinDir, skinId, 'shipyard.png')
-  const target = path.join(OUT_DIR, `${skinId}.png`)
-  desiredFiles.add(`${skinId}.png`)
+  const sourceExtension = ['png', 'webp'].find(extension => (
+    fs.existsSync(path.join(sourceSkinDir, skinId, `shipyard.${extension}`))
+  ))
+  if (!sourceExtension) {
+    const existingExtension = ['png', 'webp'].find(extension => (
+      fs.existsSync(path.join(OUT_DIR, `${skinId}.${extension}`))
+    ))
+    if (existingExtension) {
+      desiredFiles.add(`${skinId}.${existingExtension}`)
+      preserved++
+      continue
+    }
+    missing.push({ name, skinId, reason: 'shipyard-and-public-fallback-not-found' })
+    continue
+  }
+  const fileName = `${skinId}.${sourceExtension}`
+  const source = path.join(sourceSkinDir, skinId, `shipyard.${sourceExtension}`)
+  const target = path.join(OUT_DIR, fileName)
+  desiredFiles.add(fileName)
 
   if (fs.existsSync(target)) {
     preserved++
-    continue
-  }
-
-  if (!fs.existsSync(source)) {
-    missing.push({ name, skinId, reason: 'shipyard-not-found' })
     continue
   }
 
@@ -82,15 +74,17 @@ for (const name of names) {
   copied++
 }
 
+if (missing.length > 0) {
+  console.log('missing:')
+  for (const item of missing) console.log(JSON.stringify(item))
+  throw new Error(`recommendation card art sync aborted: ${missing.length} ships have no source or public fallback`)
+}
+
 const removed = fs.readdirSync(OUT_DIR, { withFileTypes: true })
-  .filter(entry => entry.isFile() && /^\d+\.png$/i.test(entry.name) && !desiredFiles.has(entry.name))
+  .filter(entry => entry.isFile() && /^\d+\.(png|webp)$/i.test(entry.name) && !desiredFiles.has(entry.name))
   .map(entry => {
     fs.rmSync(path.join(OUT_DIR, entry.name))
     return entry.name
   })
 
 console.log(`recommendation card art: ${copied} copied, ${preserved} preserved, ${removed.length} stale removed, ${missing.length} unavailable`)
-if (missing.length > 0) {
-  console.log('missing:')
-  for (const item of missing) console.log(JSON.stringify(item))
-}

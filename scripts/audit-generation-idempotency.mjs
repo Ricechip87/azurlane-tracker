@@ -13,9 +13,13 @@ const outputs = [
   'src/data/shipCombatData.json',
   'src/data/equipmentDirectStats.json',
   'src/data/stageRequirements.json',
+  'public/ship-icons',
+  'public/ship-card-art',
+  'reports/growth-recommendations',
 ]
 const commands = [
   [process.execPath, ['scripts/convert-csv.js']],
+  [process.execPath, ['scripts/sync-local-icons.js']],
   [process.execPath, ['scripts/add-tech-points.js']],
   ['python', ['-B', 'scripts/extract-growth-recommendations.py']],
   [process.execPath, ['scripts/extract-research-recommendations.mjs']],
@@ -35,7 +39,24 @@ if (changed.length) throw new Error(`반복 생성 결과가 달라졌습니다:
 console.log('semantic generation idempotency: passed')
 
 function semanticHash(relativePath) {
-  const value = JSON.parse(fs.readFileSync(path.join(root, relativePath), 'utf8'))
+  const absolutePath = path.join(root, relativePath)
+  if (fs.statSync(absolutePath).isDirectory()) return directoryHash(absolutePath)
+  const value = JSON.parse(fs.readFileSync(absolutePath, 'utf8'))
   if (value.meta) delete value.meta.generatedAt
   return crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex')
+}
+
+function directoryHash(directory) {
+  const hash = crypto.createHash('sha256')
+  const visit = current => {
+    for (const entry of fs.readdirSync(current, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+      const absolutePath = path.join(current, entry.name)
+      const relativePath = path.relative(directory, absolutePath).replaceAll('\\', '/')
+      hash.update(relativePath)
+      if (entry.isDirectory()) visit(absolutePath)
+      else hash.update(fs.readFileSync(absolutePath))
+    }
+  }
+  visit(directory)
+  return hash.digest('hex')
 }

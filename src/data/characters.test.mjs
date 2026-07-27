@@ -171,3 +171,12 @@ assert.deepEqual(
 )
 assert.equal(characters.filter(character => character.faction === '페드레리아').length, 1, '페드레리아(LDP) 함선 분류')
 assert.ok(characters.every(character => !['MOT', 'LDP'].includes(character.faction)), '생성 데이터는 내부 표준 진영명을 사용')
+
+for (const character of characters) {
+  const iconFile = character.iconUrl?.split('/').pop()
+  assert.ok(iconFile, `${character.name} must have an icon URL`)
+  assert.ok(
+    existsSync(new URL(`../../public/ship-icons/${iconFile}`, import.meta.url)),
+    `${character.name} iconUrl must point to an existing public asset`,
+  )
+}

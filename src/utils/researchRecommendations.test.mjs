@@ -277,3 +277,13 @@ const popupCandidate = getResearchUnlockCandidates(
 ).find(item => item.name === '쉬움 A 고득점')
 assert.equal(popupCandidate.iconUrl, '/ship-icons/easy.png', '기술점수 후보 팝업에 원본 이미지 정보를 유지한다')
 assert.equal(popupCandidate.shipType, '구축', '기술점수 후보 팝업에 원본 함종 정보를 유지한다')
+
+const duplicateNameCandidate = getResearchUnlockCandidates(
+  { type: 'tech-points', faction: '로열' },
+  [
+    character({ id: 659, name: '동명이인', faction: '로열', shipType: '구축', acquired: '100', iconUrl: '/ship-icons/659.png' }),
+    character({ id: 'Z004', name: '동명이인', faction: '기타', shipType: '항모', iconUrl: '/ship-icons/Z004.png' }),
+  ],
+).find(item => String(item.id) === '659')
+assert.equal(duplicateNameCandidate.shipType, '구축', '동명이인은 이름이 아닌 ID로 원본 데이터를 병합한다')
+assert.equal(duplicateNameCandidate.iconUrl, '/ship-icons/659.png', '동명이인의 이미지도 ID 기준으로 유지한다')

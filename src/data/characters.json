@@ -24685,7 +24685,7 @@
       "lv120": 0
     },
     "gid": 1030001,
-    "iconUrl": "/azurlane-tracker/ship-icons/10300010.png"
+    "iconUrl": "/azurlane-tracker/ship-icons/10300010.webp"
   },
   {
     "id": "Z032",
@@ -24711,7 +24711,7 @@
       "lv120": 0
     },
     "gid": 1030002,
-    "iconUrl": "/azurlane-tracker/ship-icons/10300020.png"
+    "iconUrl": "/azurlane-tracker/ship-icons/10300020.webp"
   },
   {
     "id": "Z033",
@@ -24737,7 +24737,7 @@
       "lv120": 0
     },
     "gid": 1030003,
-    "iconUrl": "/azurlane-tracker/ship-icons/10300030.png"
+    "iconUrl": "/azurlane-tracker/ship-icons/10300030.webp"
   },
   {
     "id": "Z034",
@@ -24763,7 +24763,7 @@
       "lv120": 0
     },
     "gid": 1030004,
-    "iconUrl": "/azurlane-tracker/ship-icons/10300040.png"
+    "iconUrl": "/azurlane-tracker/ship-icons/10300040.webp"
   },
   {
     "id": "Z035",
@@ -24789,7 +24789,7 @@
       "lv120": 0
     },
     "gid": 1030005,
-    "iconUrl": "/azurlane-tracker/ship-icons/10300050.png"
+    "iconUrl": "/azurlane-tracker/ship-icons/10300050.webp"
   },
   {
     "id": "Z036",
@@ -24815,7 +24815,7 @@
       "lv120": 0
     },
     "gid": 1030006,
-    "iconUrl": "/azurlane-tracker/ship-icons/10300060.png"
+    "iconUrl": "/azurlane-tracker/ship-icons/10300060.webp"
   },
   {
     "id": "Z041",
