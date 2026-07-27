@@ -37,6 +37,9 @@ const SOURCE_REPORT_NAMES = new Map([
 ])
 const characterByName = new Map()
 for (const character of characters) {
+  characterByName.set(normalizeName(character.name), character)
+}
+for (const character of characters) {
   for (const key of buildNameKeys(character.name)) {
     if (!characterByName.has(key)) characterByName.set(key, character)
   }
@@ -72,6 +75,18 @@ const NON_NAME_HINTS = [
 
 function normalizeName(value) {
   return String(value || '').trim()
+}
+
+function normalizeSourceName(value) {
+  const normalized = normalizeName(value)
+    .normalize('NFKC')
+    .replace(/\(\s*콜\s*\)/g, '(콜라보)')
+    .replace(/\s+\(\s*(항모|항공모함|전함|μ장비)\s*\)/g, '($1)')
+  return NAME_ALIASES.get(normalized) || normalized
+}
+
+function usesUniqueEquipment(name) {
+  return /\(\s*전장\s*\)/.test(normalizeName(name).normalize('NFKC'))
 }
 
 function buildNameKeys(value) {
@@ -286,7 +301,7 @@ function extractSource(source) {
       const name = cleanCell(cell)
       if (!isProbablyNameCell(name, source)) return
 
-      const lookupName = NAME_ALIASES.get(name) || name
+      const lookupName = normalizeSourceName(name)
       const character = buildNameKeys(lookupName).map(key => characterByName.get(key)).find(Boolean)
       if (!character) {
         if (/^[가-힣A-Za-z0-9 .·μ()ⅡⅢ-]+$/.test(name) && name.length <= 20) {
@@ -312,6 +327,7 @@ function extractSource(source) {
         tier: findTier(rows, rowIndex),
         sheetGroup: findColumnGroup(rowIndex, columnIndex, groupRows),
         roleNote: findRoleNote(rows, rowIndex, columnIndex),
+        requiresUniqueEquipment: usesUniqueEquipment(name),
         row: rowIndex + 1,
         column: columnIndex + 1,
       })
@@ -358,6 +374,7 @@ function dedupeRecommendations(recommendations) {
       recommendation.tier,
       recommendation.sheetGroup,
       recommendation.roleNote,
+      recommendation.requiresUniqueEquipment,
       recommendation.row,
       recommendation.column,
     ].join('|')

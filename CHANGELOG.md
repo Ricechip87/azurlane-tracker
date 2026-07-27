@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-07-28 - Mark Unique-Equipment Recommendations
+
+### Changed
+- Preserve each guide-sheet `(전장)` marker and prefix both card and dialog recommendation reasons with `전용장비 장착 시 기준`.
+- Prefer exact ship names over parenthetical fallback aliases so regular `론` and `가스코뉴` recommendations no longer resolve to their separate μ-rigging variants.
+- Keep identity qualifiers such as `아마기(항모)`, `카가(전함)`, and `(μ장비)` as distinct ships while treating only `(전장)` as an equipment condition.
+- Expand the guide-sheet abbreviation `(콜)` to `(콜라보)` before matching so collab names cannot fall back to same-named regular ships.
+
+### Verified
+- Confirm 33 recommendations retain the source workbook's `(전장)` marker across the main-area, Operation Siren, and newbie guides.
+- Add extraction, generated-data, and display-reason regression coverage.
+
 ## 2026-07-27 - Audit and Refactor Recommendation Tabs
 
 ### Changed

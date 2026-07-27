@@ -193,8 +193,16 @@ function buildCandidate(recommendation, character, obtainability) {
     acquired: isAcquiredStatus(status),
     lane: getLane(shipType),
     tags: [shipType, getGroupTag(recommendation.sheetGroup)].filter(Boolean),
-    summary: roleSummary || '원본 추천표 등급 기준 후보',
+    summary: formatGrowthRecommendationReason(
+      roleSummary || '원본 추천표 등급 기준 후보',
+      recommendation.requiresUniqueEquipment,
+    ),
   }
+}
+
+export function formatGrowthRecommendationReason(reason, requiresUniqueEquipment = false) {
+  if (!requiresUniqueEquipment) return reason
+  return `전용장비 장착 시 기준 · ${reason}`
 }
 
 function isEligibleCandidate(candidate) {

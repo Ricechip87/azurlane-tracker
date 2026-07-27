@@ -323,9 +323,8 @@ function getDisplayFaction(faction) {
 }
 
 function getCardDetails(card) {
-  const reason = normalizeGrowthSummary(card.roleNote)
   return {
-    reason: reason || card.summary || '원본 추천표 기준 추천 후보입니다.',
+    reason: card.summary || normalizeGrowthSummary(card.roleNote) || '원본 추천표 기준 추천 후보입니다.',
     sourceSections: getObtainabilitySourceSections(card.obtainability),
   }
 }

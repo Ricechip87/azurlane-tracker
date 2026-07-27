@@ -49,6 +49,7 @@
       "tier": "SS",
       "sheetGroup": "구축 DD",
       "roleNote": "딜탱 / 보조 / 힐",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 2
     },
@@ -64,6 +65,7 @@
       "tier": "SS",
       "sheetGroup": "구축 DD",
       "roleNote": "탱 / 대잠 / 대공",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 4
     },
@@ -79,6 +81,7 @@
       "tier": "SS",
       "sheetGroup": "구축 DD",
       "roleNote": "만능 육각형",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 6
     },
@@ -94,6 +97,7 @@
       "tier": "SS",
       "sheetGroup": "경순 CL",
       "roleNote": "균형잡힌 공방\n유틸 + 짤힐",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 12
     },
@@ -109,6 +113,7 @@
       "tier": "SS",
       "sheetGroup": "경순 CL",
       "roleNote": "최상위 대공 + 힐",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 14
     },
@@ -124,6 +129,7 @@
       "tier": "SS",
       "sheetGroup": "경순 CL",
       "roleNote": "상위 대공 성능",
+      "requiresUniqueEquipment": true,
       "row": 7,
       "column": 22
     },
@@ -139,6 +145,7 @@
       "tier": "SS",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "최상급 대공\n최상급 탱킹",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 24
     },
@@ -154,6 +161,7 @@
       "tier": "SS",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "탱 / 딜 / 보조 / 힐\n꽉찬 육각형",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 26
     },
@@ -169,6 +177,7 @@
       "tier": "SS",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "전열 탱 보조 1황\n구축 탱커 1황\n개장 필요",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 36
     },
@@ -184,6 +193,7 @@
       "tier": "S",
       "sheetGroup": "구축 DD",
       "roleNote": "대공 / 지원탄막",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 8
     },
@@ -199,6 +209,7 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "경순 딜러 1황\n기함 전함 딜버프",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 12
     },
@@ -214,6 +225,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "쫄팟 보스팟\n둘다 탱잘함",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 24
     },
@@ -229,6 +241,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "실드 무시 딜러\n탱커",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 26
     },
@@ -244,6 +257,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "보스 전용 탱커",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 28
     },
@@ -259,6 +273,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "연막탄 탱킹 보조",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 30
     },
@@ -274,6 +289,7 @@
       "tier": "S",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "탱커 보조",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 36
     },
@@ -289,6 +305,7 @@
       "tier": "A+",
       "sheetGroup": "구축 DD",
       "roleNote": "탱커 2황",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 2
     },
@@ -304,6 +321,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "확고한 탱킹능력\n낮은 딜 기여도",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 12
     },
@@ -319,6 +337,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "확고한 탱킹능력\n낮은 딜 기여도",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 12
     },
@@ -334,6 +353,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "확고한 탱킹능력\n낮은 딜 기여도",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 13
     },
@@ -349,6 +369,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "태생 보딱 중\n탱킹 1황",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 14
     },
@@ -364,6 +385,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "분신을 활용한 탱",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 16
     },
@@ -379,6 +401,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "무난하게 좋음\n타함대 지원탄막",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 24
     },
@@ -394,6 +417,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "대공요원 중\n2등으로 단단함",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 26
     },
@@ -409,6 +433,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "튼튼한 서포터형\n드레이크",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 28
     },
@@ -424,6 +449,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "기함보호\n3번자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 30
     },
@@ -439,6 +465,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "전열 딜러 1황",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 32
     },
@@ -454,6 +481,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "전열 딜러 2황",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 34
     },
@@ -469,6 +497,7 @@
       "tier": "A+",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "대공 / 대잠\n공습선도 + 기함보호",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 36
     },
@@ -484,6 +513,7 @@
       "tier": "A+",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "분신을 통한 탱킹보조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 38
     },
@@ -499,6 +529,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "대공 / 기타보조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 2
     },
@@ -514,6 +545,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "무난한 탱커",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 4
     },
@@ -529,6 +561,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "무난한 탱커",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 5
     },
@@ -544,6 +577,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 6
     },
@@ -559,6 +593,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "무난한 탱커 / 불사",
+      "requiresUniqueEquipment": true,
       "row": 19,
       "column": 8
     },
@@ -574,6 +609,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "높은 공격력\n연막탄",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 12
     },
@@ -589,6 +625,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "경장 방뢰요원",
+      "requiresUniqueEquipment": true,
       "row": 19,
       "column": 14
     },
@@ -604,6 +641,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "경순 드레이크",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 16
     },
@@ -619,6 +657,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "경순 드레이크",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 17
     },
@@ -634,6 +673,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "하루카, 릿카\n상위호환",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 18
     },
@@ -649,6 +689,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "5초 무적\n준최상급 딜링",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 20
     },
@@ -664,6 +705,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "준최상급 \n3번자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 22
     },
@@ -679,6 +721,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "준최상급 \n3번자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 23
     },
@@ -694,6 +737,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "고성능 대체 탱커들",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 24
     },
@@ -709,6 +753,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "고성능 대체 탱커들",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 25
     },
@@ -724,6 +769,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "고성능 대체 탱커들",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 26
     },
@@ -731,14 +777,15 @@
       "source": "main",
       "sourceLabel": "메인해역",
       "audience": "벽청년 이상",
-      "id": 479,
-      "name": "론(µ장비)",
+      "id": "P005",
+      "name": "론",
       "rarity": "SSR",
       "faction": "철혈",
       "shipType": "중순",
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "고성능 대체 탱커들",
+      "requiresUniqueEquipment": true,
       "row": 19,
       "column": 27
     },
@@ -754,6 +801,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "고출력 중순 표준",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 28
     },
@@ -769,6 +817,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "딜탱 다 잘함 + 파갑",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 30
     },
@@ -784,6 +833,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "미항팟 항공 버퍼\n무난한 탱킹",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 32
     },
@@ -799,6 +849,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "쫄팟/단기전의 신",
+      "requiresUniqueEquipment": true,
       "row": 19,
       "column": 34
     },
@@ -814,6 +865,7 @@
       "tier": "A",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "공습선도 1황\n14지에서 좋음",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 36
     },
@@ -829,6 +881,7 @@
       "tier": "A",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "대공 + 항공뎀증",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 38
     },
@@ -844,6 +897,7 @@
       "tier": "A",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "디버프 완화 (14지)\n15지 사용불가",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 40
     },
@@ -859,6 +913,7 @@
       "tier": "A",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "탄약 + 1",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 42
     },
@@ -874,6 +929,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "대공",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 2
     },
@@ -889,6 +945,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 4
     },
@@ -904,6 +961,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 4
     },
@@ -919,6 +977,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 5
     },
@@ -934,6 +993,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 5
     },
@@ -949,6 +1009,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 6
     },
@@ -964,6 +1025,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 6
     },
@@ -979,6 +1041,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 7
     },
@@ -994,6 +1057,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 7
     },
@@ -1009,6 +1073,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "경장 특화",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 8
     },
@@ -1024,6 +1089,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "경장 특화",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 9
     },
@@ -1039,6 +1105,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "높은 공격력\n순양함 대항 특화",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 10
     },
@@ -1054,6 +1121,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "무난하게 좋은 성능",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 12
     },
@@ -1069,6 +1137,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "무난하게 좋은 성능",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 13
     },
@@ -1084,6 +1153,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "딜 낮고 튼튼한\n드레이크",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 14
     },
@@ -1099,6 +1169,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "포격특화 경순",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 16
     },
@@ -1114,6 +1185,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "포격특화 경순",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 16
     },
@@ -1129,6 +1201,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "포격특화 경순",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 17
     },
@@ -1144,6 +1217,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "콜라보 경순\n쫄팟기용",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 18
     },
@@ -1159,6 +1233,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "콜라보 경순\n쫄팟기용",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 19
     },
@@ -1174,6 +1249,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "보조/포격 특화경순",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 20
     },
@@ -1189,6 +1265,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "보조/포격 특화경순",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 21
     },
@@ -1204,6 +1281,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "보조/포격 특화경순",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 21
     },
@@ -1219,6 +1297,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "탱 경순",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 22
     },
@@ -1234,6 +1313,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "탱 경순",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 23
     },
@@ -1249,6 +1329,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "위의 A+급 없을때 대체 메인 or 서브탱커 추천 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 24
     },
@@ -1264,6 +1345,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "위의 A+급 없을때 대체 메인 or 서브탱커 추천 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 25
     },
@@ -1279,6 +1361,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "위의 A+급 없을때 대체 메인 or 서브탱커 추천 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 26
     },
@@ -1294,6 +1377,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "위의 A+급 없을때 대체 메인 or 서브탱커 추천 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 27
     },
@@ -1309,6 +1393,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "위의 A+급 없을때 대체 메인 or 서브탱커 추천 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 28
     },
@@ -1324,6 +1409,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "위의 A+급 없을때 대체 메인 or 서브탱커 추천 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 29
     },
@@ -1339,6 +1425,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "위의 A+급 없을때 대체 메인 or 서브탱커 추천 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 30
     },
@@ -1354,6 +1441,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "위의 A+급 없을때 대체 메인 or 서브탱커 추천 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 31
     },
@@ -1369,6 +1457,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "쫄팟 A+급 탱커",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 32
     },
@@ -1384,6 +1473,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 34
     },
@@ -1399,6 +1489,7 @@
       "tier": "B+",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "레이더 탐지",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 36
     },
@@ -1414,6 +1505,7 @@
       "tier": "B+",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "미국 전열/항공 버퍼",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 38
     },
@@ -1429,6 +1521,7 @@
       "tier": "B+",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "구축 버프",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 39
     },
@@ -1444,6 +1537,7 @@
       "tier": "B+",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "공습선도, 대잠",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 40
     },
@@ -1459,6 +1553,7 @@
       "tier": "B+",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "탄약 + 1",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 42
     },
@@ -1474,6 +1569,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "무난한\n3번자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 2
     },
@@ -1489,6 +1585,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "무난한\n3번자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 3
     },
@@ -1504,6 +1601,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "무난한\n3번자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 3
     },
@@ -1519,6 +1617,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "0.9 유다치",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 4
     },
@@ -1534,6 +1633,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "0.9 유다치",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 4
     },
@@ -1549,6 +1649,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "0.9 유다치",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 5
     },
@@ -1564,6 +1665,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "0.9 유다치",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 5
     },
@@ -1579,6 +1681,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "0.9 유다치",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 6
     },
@@ -1594,6 +1697,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "경장 특화",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 7
     },
@@ -1609,6 +1713,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "경장 특화",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 7
     },
@@ -1624,6 +1729,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "전열 짤힐",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 8
     },
@@ -1639,6 +1745,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "기동 / 항속\n탱 보조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 10
     },
@@ -1654,6 +1761,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 12
     },
@@ -1669,6 +1777,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 12
     },
@@ -1684,6 +1793,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 13
     },
@@ -1699,6 +1809,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 13
     },
@@ -1714,6 +1825,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "버퍼 겸 3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 14
     },
@@ -1729,6 +1841,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "버퍼 겸 3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 15
     },
@@ -1744,6 +1857,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "뇌격특화 경순",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 16
     },
@@ -1759,6 +1873,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "뇌격특화 경순",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 16
     },
@@ -1774,6 +1889,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "뇌격특화 경순",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 17
     },
@@ -1789,6 +1905,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "뇌격특화 경순",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 17
     },
@@ -1804,6 +1921,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 대공맨",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 18
     },
@@ -1819,6 +1937,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 대공맨",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 18
     },
@@ -1834,6 +1953,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 대공맨",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 19
     },
@@ -1849,6 +1969,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 대공맨",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 19
     },
@@ -1864,6 +1985,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 딜러\n뇌격 버프",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 20
     },
@@ -1879,6 +2001,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "포격 버프\n탱 경순",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 22
     },
@@ -1894,6 +2017,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "차선급 대체 탱커 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 24
     },
@@ -1909,6 +2033,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "차선급 대체 탱커 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 25
     },
@@ -1924,6 +2049,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "차선급 대체 탱커 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 26
     },
@@ -1939,6 +2065,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "차선급 대체 탱커 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 27
     },
@@ -1954,6 +2081,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "차선급 대체 탱커 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 28
     },
@@ -1969,6 +2097,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "차선급 대체 탱커 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 29
     },
@@ -1976,14 +2105,15 @@
       "source": "main",
       "sourceLabel": "메인해역",
       "audience": "벽청년 이상",
-      "id": 424,
-      "name": "카스미",
-      "rarity": "SR",
-      "faction": "중앵",
-      "shipType": "구축",
+      "id": "Z063",
+      "name": "카스미 (콜라보)",
+      "rarity": "SSR",
+      "faction": "DOAX VV",
+      "shipType": "중순",
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "차선급 대체 탱커 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 30
     },
@@ -1999,6 +2129,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "차선급 대체 탱커 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 30
     },
@@ -2014,6 +2145,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "차선급 대체 탱커 라인업\n(왼쪽에 있을수록 우선순위 높음)",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 31
     },
@@ -2029,6 +2161,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 32
     },
@@ -2044,6 +2177,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 33
     },
@@ -2059,6 +2193,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 33
     },
@@ -2074,6 +2209,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 34
     },
@@ -2089,6 +2225,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 34
     },
@@ -2104,6 +2241,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 35
     },
@@ -2119,6 +2257,7 @@
       "tier": "B",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "항모 버퍼\n죽어도 버프유지",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 36
     },
@@ -2134,6 +2273,7 @@
       "tier": "B",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "경장 상대버퍼",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 38
     },
@@ -2149,6 +2289,7 @@
       "tier": "B",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "공습 선도",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 40
     },
@@ -2164,6 +2305,7 @@
       "tier": "B",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "공습 선도",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 41
     },
@@ -2179,6 +2321,7 @@
       "tier": "B",
       "sheetGroup": "버퍼 / 디버퍼",
       "roleNote": "탄약 + 1",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 42
     },
@@ -2194,6 +2337,7 @@
       "tier": "SS",
       "sheetGroup": "메인 힐러",
       "roleNote": "쫄팟, 광역힐\n선장전",
+      "requiresUniqueEquipment": false,
       "row": 34,
       "column": 2
     },
@@ -2209,6 +2353,7 @@
       "tier": "SS",
       "sheetGroup": "서브 힐러",
       "roleNote": "신세대의 힐러",
+      "requiresUniqueEquipment": false,
       "row": 34,
       "column": 4
     },
@@ -2224,6 +2369,7 @@
       "tier": "SS",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄 보스 딜러\n서브 힐러",
+      "requiresUniqueEquipment": false,
       "row": 34,
       "column": 8
     },
@@ -2239,6 +2385,7 @@
       "tier": "SS",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "후열 보호\n아퀼라와 시너지",
+      "requiresUniqueEquipment": false,
       "row": 34,
       "column": 22
     },
@@ -2254,6 +2401,7 @@
       "tier": "SS",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "스마트 힐\n실드",
+      "requiresUniqueEquipment": false,
       "row": 34,
       "column": 26
     },
@@ -2269,6 +2417,7 @@
       "tier": "SS",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄약 오링 완화\n소환",
+      "requiresUniqueEquipment": false,
       "row": 34,
       "column": 30
     },
@@ -2284,6 +2433,7 @@
       "tier": "SS",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "높은 공격력\n+ 강력한 범위딜",
+      "requiresUniqueEquipment": false,
       "row": 34,
       "column": 34
     },
@@ -2299,6 +2449,7 @@
       "tier": "SS",
       "sheetGroup": "잠수 SS",
       "roleNote": "최강 잠수함",
+      "requiresUniqueEquipment": false,
       "row": 34,
       "column": 38
     },
@@ -2314,6 +2465,7 @@
       "tier": "S",
       "sheetGroup": "메인 힐러",
       "roleNote": "쫄팟 힐러\n기믹 실드+힐",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 2
     },
@@ -2329,6 +2481,7 @@
       "tier": "S",
       "sheetGroup": "서브 힐러",
       "roleNote": "높은 공격력\n딸피 스마트 힐",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 4
     },
@@ -2344,6 +2497,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "높은 제공권/생존력",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 6
     },
@@ -2359,6 +2513,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "제공권 + 반장전\n타함대 항공버프",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 8
     },
@@ -2374,6 +2529,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "쫄 보스 둘다 잘함",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 20
     },
@@ -2389,6 +2545,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "보스전 특화\n강한 대공",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 22
     },
@@ -2404,6 +2561,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "수동시 SS\n선장전",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 24
     },
@@ -2419,6 +2577,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "높은 공격력",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 26
     },
@@ -2434,6 +2593,7 @@
       "tier": "S",
       "sheetGroup": "잠수 SS",
       "roleNote": "미잠\n높은 산소량",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 36
     },
@@ -2449,6 +2609,7 @@
       "tier": "S",
       "sheetGroup": "잠수 SS",
       "roleNote": "미잠\n높은 산소량",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 36
     },
@@ -2464,6 +2625,7 @@
       "tier": "S",
       "sheetGroup": "잠수 SS",
       "roleNote": "미잠\n높은 산소량",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 37
     },
@@ -2479,6 +2641,7 @@
       "tier": "S",
       "sheetGroup": "잠수 SS",
       "roleNote": "미잠\n높은 산소량",
+      "requiresUniqueEquipment": false,
       "row": 38,
       "column": 37
     },
@@ -2494,6 +2657,7 @@
       "tier": "A+",
       "sheetGroup": "메인 힐러",
       "roleNote": "이중 선장전\n타함대 힐",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 2
     },
@@ -2509,6 +2673,7 @@
       "tier": "A+",
       "sheetGroup": "서브 힐러",
       "roleNote": "대체 서브힐러",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 4
     },
@@ -2524,6 +2689,7 @@
       "tier": "A+",
       "sheetGroup": "서브 힐러",
       "roleNote": "대체 서브힐러",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 5
     },
@@ -2539,6 +2705,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "2 전투기 + 제공권",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 6
     },
@@ -2554,6 +2721,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "2 전투기 + 제공권",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 8
     },
@@ -2569,6 +2737,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "제공권 GOAT",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 10
     },
@@ -2584,6 +2753,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전투기 8대\n특수 부포 + 대공",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 12
     },
@@ -2599,6 +2769,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "항공피해감소 / \n타함대 지원",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 14
     },
@@ -2614,6 +2785,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "광역딜, 좋은 탄막\n후열 딜 보충",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 20
     },
@@ -2629,6 +2801,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "아군 딜 증가\n보스 팟 특화",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 22
     },
@@ -2644,6 +2817,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "쫄 보스 둘다 잘함",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 24
     },
@@ -2659,6 +2833,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전함 최강 버퍼",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 26
     },
@@ -2674,6 +2849,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "쫄 보스 둘 다 잘함",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 30
     },
@@ -2689,6 +2865,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "근접 방어\n전열 생존 보조",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 32
     },
@@ -2704,6 +2881,7 @@
       "tier": "A+",
       "sheetGroup": "잠수 SS",
       "roleNote": "독잠\n상위 U 보트들",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 36
     },
@@ -2719,6 +2897,7 @@
       "tier": "A+",
       "sheetGroup": "잠수 SS",
       "roleNote": "독잠\n상위 U 보트들",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 36
     },
@@ -2734,6 +2913,7 @@
       "tier": "A+",
       "sheetGroup": "잠수 SS",
       "roleNote": "독잠\n상위 U 보트들",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 37
     },
@@ -2749,6 +2929,7 @@
       "tier": "A+",
       "sheetGroup": "잠수 SS",
       "roleNote": "독잠\n상위 U 보트들",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 37
     },
@@ -2764,6 +2945,7 @@
       "tier": "A+",
       "sheetGroup": "잠수 SS",
       "roleNote": "원거리 지원",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 38
     },
@@ -2779,6 +2961,7 @@
       "tier": "A+",
       "sheetGroup": "잠수 SS",
       "roleNote": "원거리 지원",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 39
     },
@@ -2794,6 +2977,7 @@
       "tier": "A",
       "sheetGroup": "메인 힐러",
       "roleNote": "대체 메인힐러",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 2
     },
@@ -2809,6 +2993,7 @@
       "tier": "A",
       "sheetGroup": "메인 힐러",
       "roleNote": "대체 메인힐러",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 3
     },
@@ -2824,6 +3009,7 @@
       "tier": "A",
       "sheetGroup": "서브 힐러",
       "roleNote": "대체 서브힐러",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 4
     },
@@ -2839,6 +3025,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "높은 DPS\n일항팟",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 6
     },
@@ -2854,6 +3041,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "높은 DPS\n일항팟",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 7
     },
@@ -2869,6 +3057,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "높은 DPS\n일항팟",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 7
     },
@@ -2884,6 +3073,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "3 장갑 다 잘팸\n높은 탱킹력",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 8
     },
@@ -2899,6 +3089,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "3 장갑 다 잘팸\n높은 탱킹력",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 9
     },
@@ -2914,6 +3105,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "안정성 높은\n엔터프라이즈 +",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 10
     },
@@ -2929,6 +3121,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "안정성 높은\n엔터프라이즈 +",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 10
     },
@@ -2944,6 +3137,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "안정성 높은\n엔터프라이즈 +",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 11
     },
@@ -2959,6 +3153,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "단기전 특화",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 12
     },
@@ -2974,6 +3169,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "대경장\n보조 유틸",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 14
     },
@@ -2989,6 +3185,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "강한 딜\n보조 유틸",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 16
     },
@@ -3004,6 +3201,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 18
     },
@@ -3019,6 +3217,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄막 우수 전함",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 20
     },
@@ -3034,6 +3233,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄막 우수 전함",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 20
     },
@@ -3049,6 +3249,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄막 우수 전함",
+      "requiresUniqueEquipment": true,
       "row": 46,
       "column": 21
     },
@@ -3064,6 +3265,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄막 우수 전함",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 21
     },
@@ -3079,6 +3281,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "준 최강 딜러",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 22
     },
@@ -3094,6 +3297,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "준 최강 딜러",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 23
     },
@@ -3109,6 +3313,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "개전 탄막\n준 최강 딜러",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 24
     },
@@ -3124,6 +3329,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "오와리 하위호환",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 26
     },
@@ -3139,6 +3345,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "오와리 하위호환",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 27
     },
@@ -3154,6 +3361,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "딜 높음 + 탱 보조",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 28
     },
@@ -3169,6 +3377,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "딜 높음 + 탱 보조",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 29
     },
@@ -3184,6 +3393,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난한 콜라보 전함",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 30
     },
@@ -3199,6 +3409,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난한 콜라보 전함",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 31
     },
@@ -3214,6 +3425,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난한 콜라보 전함",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 31
     },
@@ -3229,6 +3441,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "안정적인 탄막\n높은 공격력",
+      "requiresUniqueEquipment": true,
       "row": 46,
       "column": 32
     },
@@ -3244,6 +3457,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난한 쫄팟 성능",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 34
     },
@@ -3259,6 +3473,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난한 쫄팟 성능",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 35
     },
@@ -3274,6 +3489,7 @@
       "tier": "A",
       "sheetGroup": "잠수 SS",
       "roleNote": "대체 잠수함\nU-552는 생존이슈로\n메인해역에선 낮게 위치",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 36
     },
@@ -3289,6 +3505,7 @@
       "tier": "A",
       "sheetGroup": "잠수 SS",
       "roleNote": "대체 잠수함\nU-552는 생존이슈로\n메인해역에선 낮게 위치",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 37
     },
@@ -3304,6 +3521,7 @@
       "tier": "B+",
       "sheetGroup": "메인 힐러",
       "roleNote": "힐하는 전함\n13지 전열작",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 2
     },
@@ -3319,6 +3537,7 @@
       "tier": "B+",
       "sheetGroup": "서브 힐러",
       "roleNote": "소량힐",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 4
     },
@@ -3334,6 +3553,7 @@
       "tier": "B+",
       "sheetGroup": "서브 힐러",
       "roleNote": "소량힐",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 5
     },
@@ -3349,6 +3569,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화 항모",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 6
     },
@@ -3364,6 +3585,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화 항모",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 7
     },
@@ -3379,6 +3601,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "보호막, 영국 시너지\n4 폭격기",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 8
     },
@@ -3394,6 +3617,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전열 보조 / 다중 폭격",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 10
     },
@@ -3409,6 +3633,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전, 쫄팟 특화",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 12
     },
@@ -3424,6 +3649,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전, 쫄팟 특화",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 13
     },
@@ -3439,6 +3665,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "무난한 미항모",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 14
     },
@@ -3454,6 +3681,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "무난하게 강한 딜\n2 전투기",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 16
     },
@@ -3469,6 +3697,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전 항모",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 18
     },
@@ -3484,6 +3713,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전 항모",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 19
     },
@@ -3499,6 +3729,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "상위권 전함",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 20
     },
@@ -3514,6 +3745,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "상위권 전함",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 21
     },
@@ -3529,6 +3761,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄막 전함",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 22
     },
@@ -3544,6 +3777,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄막 전함",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 23
     },
@@ -3559,6 +3793,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "탄막 전함",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 23
     },
@@ -3574,6 +3809,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "균형잡힌\n상위권 전함",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 24
     },
@@ -3589,6 +3825,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "상위권 전함",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 26
     },
@@ -3604,6 +3841,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "상위권 전함",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 27
     },
@@ -3619,6 +3857,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "보스팟 특화",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 28
     },
@@ -3634,6 +3873,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "보스팟 특화",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 28
     },
@@ -3649,6 +3889,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "보스팟 특화",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 29
     },
@@ -3664,6 +3905,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "포격, 명중 버퍼\n딜 보조 버프",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 30
     },
@@ -3679,6 +3921,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "포격, 명중 버퍼\n딜 보조 버프",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 31
     },
@@ -3694,6 +3937,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "빅 세븐 탄막",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 32
     },
@@ -3709,6 +3953,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "빅 세븐 탄막",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 33
     },
@@ -3716,14 +3961,15 @@
       "source": "main",
       "sourceLabel": "메인해역",
       "audience": "벽청년 이상",
-      "id": 418,
-      "name": "가스코뉴(µ장비)",
+      "id": "P012",
+      "name": "가스코뉴",
       "rarity": "SSR",
       "faction": "비시아",
       "shipType": "전함",
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "수동 시 A+",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 34
     },
@@ -3739,6 +3985,7 @@
       "tier": "B",
       "sheetGroup": "메인 힐러",
       "roleNote": "힐 전함 대체",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 2
     },
@@ -3754,6 +4001,7 @@
       "tier": "B",
       "sheetGroup": "서브 힐러",
       "roleNote": "후열 힐 항공 버퍼",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 4
     },
@@ -3769,6 +4017,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 범위딜",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 6
     },
@@ -3784,6 +4033,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형/중갑 특화",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 8
     },
@@ -3799,6 +4049,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형/중갑 특화",
+      "requiresUniqueEquipment": true,
       "row": 54,
       "column": 9
     },
@@ -3814,6 +4065,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "각종 유틸",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 10
     },
@@ -3829,6 +4081,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "그럭저럭 강한 항모",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 12
     },
@@ -3844,6 +4097,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "그럭저럭 강한 항모",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 13
     },
@@ -3859,6 +4113,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "밸런스 잡힌 항모",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 14
     },
@@ -3874,6 +4129,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "그럭저럭 강한\n금딱 콜라보 항모",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 16
     },
@@ -3889,6 +4145,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "불안정 딜러\n약한 몸",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 18
     },
@@ -3904,6 +4161,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 전함",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 20
     },
@@ -3919,6 +4177,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 전함",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 21
     },
@@ -3934,6 +4193,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장갑 특화",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 22
     },
@@ -3949,6 +4209,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장갑 특화",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 23
     },
@@ -3964,6 +4225,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "부포 약함",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 24
     },
@@ -3979,6 +4241,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "부포 약함",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 25
     },
@@ -3994,6 +4257,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "보스 팟 특화",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 26
     },
@@ -4009,6 +4273,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "보스 팟 특화",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 27
     },
@@ -4024,6 +4289,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "15-2 발사대",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 28
     },
@@ -4039,6 +4305,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "안정적인 탱킹력\n중형만 잘팸",
+      "requiresUniqueEquipment": true,
       "row": 54,
       "column": 30
     },
@@ -4054,6 +4321,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "확정 발동 탄막",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 32
     },
@@ -4069,6 +4337,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "확정 발동 탄막",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 33
     },
@@ -4084,6 +4353,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "수동시 A",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 34
     },
@@ -4099,6 +4369,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "수동시 A",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 35
     },
@@ -4114,6 +4385,7 @@
       "tier": "SS",
       "sheetGroup": "구축 DD",
       "roleNote": "범용적으로 쓰기 좋은\n공격/포격 보조",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 4
     },
@@ -4129,6 +4401,7 @@
       "tier": "SS",
       "sheetGroup": "구축 DD",
       "roleNote": "전열 탱 보조 1황\n구축 탱커 1황",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 6
     },
@@ -4144,6 +4417,7 @@
       "tier": "SS",
       "sheetGroup": "구축 DD",
       "roleNote": "만능 육각형",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 8
     },
@@ -4159,6 +4433,7 @@
       "tier": "SS",
       "sheetGroup": "구축 DD",
       "roleNote": "만능 육각형\n미항팟 지원",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 10
     },
@@ -4174,6 +4449,7 @@
       "tier": "SS",
       "sheetGroup": "경순 CL",
       "roleNote": "레이더 탐지",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 20
     },
@@ -4189,6 +4465,7 @@
       "tier": "SS",
       "sheetGroup": "경순 CL",
       "roleNote": "경순 딜러 1황\n기함 전함 딜버프",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 22
     },
@@ -4204,6 +4481,7 @@
       "tier": "SS",
       "sheetGroup": "경순 CL",
       "roleNote": "대 경장갑 필살기",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 24
     },
@@ -4219,6 +4497,7 @@
       "tier": "SS",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "딜/탱/지원탄막\n꽉찬 육각형",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 36
     },
@@ -4234,6 +4513,7 @@
       "tier": "S+",
       "sheetGroup": "구축 DD",
       "roleNote": "알자스덱\n3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 2
     },
@@ -4249,6 +4529,7 @@
       "tier": "S+",
       "sheetGroup": "구축 DD",
       "roleNote": "생존 보장시\n공습선도 1황",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 4
     },
@@ -4264,6 +4545,7 @@
       "tier": "S+",
       "sheetGroup": "경순 CL",
       "roleNote": "구축함 상대",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 18
     },
@@ -4279,6 +4561,7 @@
       "tier": "S+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "전열 딜러 2황",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 36
     },
@@ -4294,6 +4577,7 @@
       "tier": "S+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "대경장 보스전 딜러\n쫄팟에도 쓰기 좋음",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 38
     },
@@ -4309,6 +4593,7 @@
       "tier": "S",
       "sheetGroup": "구축 DD",
       "roleNote": "미항팟\n탱 / 딜 / 유틸",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 2
     },
@@ -4324,6 +4609,7 @@
       "tier": "S",
       "sheetGroup": "구축 DD",
       "roleNote": "경장 특화\n쫄팟 특화",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 4
     },
@@ -4339,6 +4625,7 @@
       "tier": "S",
       "sheetGroup": "구축 DD",
       "roleNote": "15초 주기\n포격 버프",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 6
     },
@@ -4354,6 +4641,7 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "항모 버퍼\n죽어도 버프유지",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 18
     },
@@ -4369,6 +4657,7 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "높은 공격력\n조명탄",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 20
     },
@@ -4384,6 +4673,7 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "20초 주기\n소환물 + 피해량버프",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 22
     },
@@ -4399,6 +4689,7 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "전열 화력 버프",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 24
     },
@@ -4414,6 +4705,7 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "최강 쫄팟 요원",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 34
     },
@@ -4429,6 +4721,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "보스 전용 탱커",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 36
     },
@@ -4444,6 +4737,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "전열 딜러 1황",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 38
     },
@@ -4459,6 +4753,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "파갑, 대공, 탱킹",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 40
     },
@@ -4474,6 +4769,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "유리대포 1황",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 42
     },
@@ -4489,6 +4785,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "알자스 덱\n경장 딜러용",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 44
     },
@@ -4504,6 +4801,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "쫄팟/단기전의 신",
+      "requiresUniqueEquipment": true,
       "row": 15,
       "column": 50
     },
@@ -4519,6 +4817,7 @@
       "tier": "A+",
       "sheetGroup": "구축 DD",
       "roleNote": "높은 공격력 / 미구",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 2
     },
@@ -4534,6 +4833,7 @@
       "tier": "A+",
       "sheetGroup": "구축 DD",
       "roleNote": "높은 공격력 / 미구",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 4
     },
@@ -4549,6 +4849,7 @@
       "tier": "A+",
       "sheetGroup": "구축 DD",
       "roleNote": "탱커 2황",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 6
     },
@@ -4564,6 +4865,7 @@
       "tier": "A+",
       "sheetGroup": "구축 DD",
       "roleNote": "탱커 / 전열버프",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 8
     },
@@ -4579,6 +4881,7 @@
       "tier": "A+",
       "sheetGroup": "구축 DD",
       "roleNote": "북련팟 (나히모프)\n감속셔틀",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 10
     },
@@ -4594,6 +4897,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "5초 무적\n준최상급 딜링",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 18
     },
@@ -4609,6 +4913,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "쫄팟 딜러\n연막탄",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 20
     },
@@ -4624,6 +4929,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "개전 공격 및 지원",
+      "requiresUniqueEquipment": true,
       "row": 19,
       "column": 22
     },
@@ -4639,6 +4945,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "개전 공격 및 지원",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 23
     },
@@ -4654,6 +4961,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "딜 버프",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 24
     },
@@ -4669,6 +4977,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "후열 보조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 26
     },
@@ -4684,6 +4993,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "후열 보조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 27
     },
@@ -4699,6 +5009,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "철갑탄 공증 지원",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 28
     },
@@ -4714,6 +5025,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "확률적 명중 지원",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 30
     },
@@ -4729,6 +5041,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 딜러\n뇌격 버프",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 32
     },
@@ -4744,6 +5057,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "불안정한 보조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 34
     },
@@ -4759,6 +5073,7 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "불안정한 보조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 35
     },
@@ -4774,6 +5089,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "쫄팟용 탱커\n알자스 팟 S+",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 36
     },
@@ -4789,6 +5105,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "존나 튼튼함",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 38
     },
@@ -4804,6 +5121,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "연막탄 탱킹 보조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 40
     },
@@ -4819,6 +5137,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "딜탱 다 잘함 + 파갑",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 42
     },
@@ -4834,6 +5153,7 @@
       "tier": "A+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "기함보호\n3번자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 44
     },
@@ -4849,6 +5169,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "미구 / 북련 보조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 2
     },
@@ -4864,6 +5185,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 4
     },
@@ -4879,6 +5201,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 뇌장딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 6
     },
@@ -4894,6 +5217,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 뇌장딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 8
     },
@@ -4909,6 +5233,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "20초 주기\n명중 버퍼",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 10
     },
@@ -4924,6 +5249,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "알자스팟\n3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 12
     },
@@ -4939,6 +5265,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "구축 버프\n쓴다면 14지",
+      "requiresUniqueEquipment": true,
       "row": 23,
       "column": 14
     },
@@ -4954,6 +5281,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "공습 선도\n기타 유틸",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 16
     },
@@ -4969,6 +5297,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "공습 선도\n기타 유틸",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 16
     },
@@ -4984,6 +5313,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "공습 선도\n기타 유틸",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 17
     },
@@ -4999,6 +5329,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 18
     },
@@ -5014,6 +5345,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "준최상급 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 20
     },
@@ -5029,6 +5361,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "준최상급 딜러",
+      "requiresUniqueEquipment": true,
       "row": 23,
       "column": 21
     },
@@ -5044,6 +5377,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "경순 딜러 2황",
+      "requiresUniqueEquipment": true,
       "row": 23,
       "column": 22
     },
@@ -5059,6 +5393,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "대공 + 항공뎀증",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 24
     },
@@ -5074,6 +5409,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "무난하게 좋은\n프랑스 함순이들",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 26
     },
@@ -5089,6 +5425,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "무난하게 좋은\n프랑스 함순이들",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 27
     },
@@ -5104,6 +5441,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "2,3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 28
     },
@@ -5119,6 +5457,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "2,3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 29
     },
@@ -5134,6 +5473,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "확률적 아군 전체\n데미지 증가",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 30
     },
@@ -5149,6 +5489,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "대경장 딜탱",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 32
     },
@@ -5164,6 +5505,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "대경장 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 34
     },
@@ -5179,6 +5521,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "약간의 보조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 35
     },
@@ -5194,6 +5537,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "무난하게 좋음\n타함대 지원탄막",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 36
     },
@@ -5209,6 +5553,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "튼튼한 서포터형\n드레이크",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 38
     },
@@ -5224,6 +5569,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "미항팟 항공 버퍼\n무난한 탱킹",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 40
     },
@@ -5239,6 +5585,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "미국 전열/항공 버퍼",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 42
     },
@@ -5254,6 +5601,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번자리 딜러\n스택형 보조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 44
     },
@@ -5269,6 +5617,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "준수한 탱커 겸 딜러",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 46
     },
@@ -5284,6 +5633,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번 자리 딜러\n약간의 유틸",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 48
     },
@@ -5299,6 +5649,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번자리 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 2
     },
@@ -5314,6 +5665,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번자리 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 4
     },
@@ -5329,6 +5681,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번자리 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 6
     },
@@ -5344,6 +5697,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번자리 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 8
     },
@@ -5359,6 +5713,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번자리 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 9
     },
@@ -5374,6 +5729,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "3번자리 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 10
     },
@@ -5389,6 +5745,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "50초 지속\n항공 딜 버프",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 12
     },
@@ -5404,6 +5761,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "전열 보조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 14
     },
@@ -5419,6 +5777,7 @@
       "tier": "B+",
       "sheetGroup": "구축 DD",
       "roleNote": "보급형 공습 선도",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 16
     },
@@ -5434,6 +5793,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "독일 포격 버프",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 18
     },
@@ -5449,6 +5809,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "개전 공격 및 지원",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 20
     },
@@ -5464,6 +5825,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "로열 시너지 필요함",
+      "requiresUniqueEquipment": true,
       "row": 27,
       "column": 22
     },
@@ -5479,6 +5841,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "공습선도 + 대공",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 24
     },
@@ -5494,6 +5857,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "공습선도 + 대공",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 25
     },
@@ -5509,6 +5873,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 26
     },
@@ -5524,6 +5889,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "탱커 보조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 28
     },
@@ -5539,6 +5905,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "무난한 공격력\n방뢰요원",
+      "requiresUniqueEquipment": true,
       "row": 27,
       "column": 30
     },
@@ -5554,6 +5921,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "확고한 탱킹능력\n낮은 딜 기여도",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 32
     },
@@ -5569,6 +5937,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "확고한 탱킹능력\n낮은 딜 기여도",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 34
     },
@@ -5584,6 +5953,7 @@
       "tier": "B+",
       "sheetGroup": "경순 CL",
       "roleNote": "확고한 탱킹능력\n낮은 딜 기여도",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 35
     },
@@ -5599,6 +5969,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "탱커",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 36
     },
@@ -5614,6 +5985,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "고출력 중순 표준",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 38
     },
@@ -5629,6 +6001,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "동황 드레이크",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 40
     },
@@ -5644,6 +6017,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "유사\n드레이크",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 42
     },
@@ -5651,14 +6025,15 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": 479,
-      "name": "론(µ장비)",
+      "id": "P005",
+      "name": "론",
       "rarity": "SSR",
       "faction": "철혈",
       "shipType": "중순",
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "딜탱\n실드",
+      "requiresUniqueEquipment": true,
       "row": 27,
       "column": 44
     },
@@ -5674,6 +6049,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "강력한\n딜탱",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 46
     },
@@ -5689,6 +6065,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "전열 보조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 48
     },
@@ -5704,6 +6081,7 @@
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번자리 딜러\n약간의 유틸/실드",
+      "requiresUniqueEquipment": true,
       "row": 27,
       "column": 50
     },
@@ -5719,6 +6097,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "구축 탱커",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 2
     },
@@ -5734,6 +6113,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "구축 탱커",
+      "requiresUniqueEquipment": true,
       "row": 31,
       "column": 4
     },
@@ -5749,6 +6129,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "전열 선봉\n아이리스 요구",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 6
     },
@@ -5764,6 +6145,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "전열 짤힐",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 8
     },
@@ -5779,6 +6161,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "공습 선도 (쩌리)",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 10
     },
@@ -5794,6 +6177,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "공습 선도 (쩌리)",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 11
     },
@@ -5809,6 +6193,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "공습 선도 (쩌리)",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 12
     },
@@ -5824,6 +6209,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "공습 선도 (쩌리)",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 13
     },
@@ -5839,6 +6225,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 14
     },
@@ -5854,6 +6241,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 15
     },
@@ -5869,6 +6257,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 15
     },
@@ -5884,6 +6273,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 16
     },
@@ -5899,6 +6289,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 16
     },
@@ -5914,6 +6305,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 17
     },
@@ -5929,6 +6321,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 17
     },
@@ -5944,6 +6337,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "프랑스 보조",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 18
     },
@@ -5959,6 +6353,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "딜에 더 치중된 경순 딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 20
     },
@@ -5974,6 +6369,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "딜에 더 치중된 경순 딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 22
     },
@@ -5989,6 +6385,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "딜에 더 치중된 경순 딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 24
     },
@@ -6004,6 +6401,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "딜에 더 치중된 경순 딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 26
     },
@@ -6019,6 +6417,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "딜에 더 치중된 경순 딜러",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 28
     },
@@ -6034,6 +6433,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "탱 경순",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 30
     },
@@ -6049,6 +6449,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "조명탄 지원",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 32
     },
@@ -6064,6 +6465,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "아즈마급\n탱킹",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 36
     },
@@ -6079,6 +6481,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "유리 대포",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 38
     },
@@ -6094,6 +6497,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "포지션 유연함\n딜 / 탱 모두 소화가능",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 40
     },
@@ -6109,6 +6513,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "조명탄 보조",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 42
     },
@@ -6124,6 +6529,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "약간씩 유틸을 얹은 탱커라인",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 44
     },
@@ -6139,6 +6545,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "약간씩 유틸을 얹은 탱커라인",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 45
     },
@@ -6154,6 +6561,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "약간씩 유틸을 얹은 탱커라인",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 46
     },
@@ -6169,6 +6577,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "약간씩 유틸을 얹은 탱커라인",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 47
     },
@@ -6184,6 +6593,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "약간씩 유틸을 얹은 탱커라인",
+      "requiresUniqueEquipment": true,
       "row": 31,
       "column": 48
     },
@@ -6199,6 +6609,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "쫄팟 후보",
+      "requiresUniqueEquipment": true,
       "row": 31,
       "column": 50
     },
@@ -6214,6 +6625,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "속사 / 뇌장 딜러",
+      "requiresUniqueEquipment": true,
       "row": 35,
       "column": 2
     },
@@ -6229,6 +6641,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러 대체제",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 4
     },
@@ -6244,6 +6657,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러 대체제",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 5
     },
@@ -6259,6 +6673,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러 대체제",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 6
     },
@@ -6274,6 +6689,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "딜에 더 집중한 구축딜러 대체제",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 7
     },
@@ -6289,6 +6705,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "소량의 탱킹 지원",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 8
     },
@@ -6304,6 +6721,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "소량의 탱킹 지원",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 9
     },
@@ -6319,6 +6737,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "소량의 탱킹 지원",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 10
     },
@@ -6334,6 +6753,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "항모 보조로 \n사용가능",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 12
     },
@@ -6349,6 +6769,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "10% 항공지원",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 14
     },
@@ -6364,6 +6785,7 @@
       "tier": "C+",
       "sheetGroup": "구축 DD",
       "roleNote": "탱 / 항공지원",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 16
     },
@@ -6379,6 +6801,7 @@
       "tier": "C+",
       "sheetGroup": "경순 CL",
       "roleNote": "특수 장갑관통",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 18
     },
@@ -6394,6 +6817,7 @@
       "tier": "C+",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 20
     },
@@ -6409,6 +6833,7 @@
       "tier": "C+",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 22
     },
@@ -6424,6 +6849,7 @@
       "tier": "C+",
       "sheetGroup": "경순 CL",
       "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 24
     },
@@ -6439,6 +6865,7 @@
       "tier": "C+",
       "sheetGroup": "경순 CL",
       "roleNote": "적당한 탱 경순",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 26
     },
@@ -6454,6 +6881,7 @@
       "tier": "C+",
       "sheetGroup": "경순 CL",
       "roleNote": "적당한 탱 경순",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 28
     },
@@ -6469,6 +6897,7 @@
       "tier": "C+",
       "sheetGroup": "경순 CL",
       "roleNote": "뇌장 보조",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 30
     },
@@ -6484,6 +6913,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "연막탄 보조",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 36
     },
@@ -6499,6 +6929,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "딜링 보조",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 38
     },
@@ -6514,6 +6945,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "개전 어뢰",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 40
     },
@@ -6529,6 +6961,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "개전 어뢰",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 41
     },
@@ -6544,6 +6977,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "적당한 탱커 중순",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 42
     },
@@ -6559,6 +6993,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "적당한 탱커 중순",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 43
     },
@@ -6574,6 +7009,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "적당한 탱커 중순",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 44
     },
@@ -6589,6 +7025,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "적당한 탱커 중순",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 45
     },
@@ -6604,6 +7041,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 46
     },
@@ -6619,6 +7057,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "적당한 딜러 중순",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 48
     },
@@ -6634,6 +7073,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "적당한 딜러 중순",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 49
     },
@@ -6649,6 +7089,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "적당한 딜러 중순",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 50
     },
@@ -6664,6 +7105,7 @@
       "tier": "C+",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "적당한 딜러 중순",
+      "requiresUniqueEquipment": false,
       "row": 35,
       "column": 51
     },
@@ -6679,6 +7121,7 @@
       "tier": "SS+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "모든 장갑 코어픽",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 24
     },
@@ -6694,6 +7137,7 @@
       "tier": "SS+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "모든 장갑 깡패픽",
+      "requiresUniqueEquipment": false,
       "row": 42,
       "column": 26
     },
@@ -6709,6 +7153,7 @@
       "tier": "SS",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "미항팟, 경장갑 필살기\n욬2 + 렉2 조합시 바인드 보유",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 16
     },
@@ -6724,6 +7169,7 @@
       "tier": "SS",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "미항팟, 경장갑 필살기\n욬2 + 렉2 조합시 바인드 보유",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 18
     },
@@ -6739,6 +7185,7 @@
       "tier": "SS",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "미항팟, 경장갑 필살기\n욬2 + 렉2 조합시 바인드 보유",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 20
     },
@@ -6754,6 +7201,7 @@
       "tier": "SS",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형 - 우선픽\n경장 - 대체픽",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 22
     },
@@ -6769,6 +7217,7 @@
       "tier": "SS",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대중장 깡패",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 24
     },
@@ -6784,6 +7233,7 @@
       "tier": "SS",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대중형/중장\n대체 선택지",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 26
     },
@@ -6799,6 +7249,7 @@
       "tier": "SS",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대경장/중장\n대체 선택지",
+      "requiresUniqueEquipment": false,
       "row": 46,
       "column": 28
     },
@@ -6814,6 +7265,7 @@
       "tier": "S+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄팟의 떠오르는 코어픽\n여기는 순수 쫄팟티어",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 2
     },
@@ -6829,6 +7281,7 @@
       "tier": "S+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "일항팟 시너지 + 대중장\n만쥬가 안움직이는 중장 META 내주면 SS",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 12
     },
@@ -6844,6 +7297,7 @@
       "tier": "S+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "일항팟 시너지 + 대중장\n만쥬가 안움직이는 중장 META 내주면 SS",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 14
     },
@@ -6859,6 +7313,7 @@
       "tier": "S+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "일항팟 시너지 + 대중장\n만쥬가 안움직이는 중장 META 내주면 SS",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 16
     },
@@ -6874,6 +7329,7 @@
       "tier": "S+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "바인드\n북련 조합 요구",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 18
     },
@@ -6889,6 +7345,7 @@
       "tier": "S+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "블랙홀 바인드",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 24
     },
@@ -6904,6 +7361,7 @@
       "tier": "S+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전함 인데 시너지\n일본 버퍼",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 26
     },
@@ -6919,6 +7377,7 @@
       "tier": "S+",
       "sheetGroup": "잠수 SS",
       "roleNote": "잠수함 1황",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 48
     },
@@ -6934,6 +7393,7 @@
       "tier": "S+",
       "sheetGroup": "잠수 SS",
       "roleNote": "잠수함 2황 + 보조",
+      "requiresUniqueEquipment": false,
       "row": 50,
       "column": 50
     },
@@ -6949,6 +7409,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "이중 선장전\n타함대 힐",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 2
     },
@@ -6964,6 +7425,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "라이온팟\n선장전",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 4
     },
@@ -6979,6 +7441,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "대중형/중장\n딜 보조/영국 시너지",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 6
     },
@@ -6994,6 +7457,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "보스팟 딜러",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 8
     },
@@ -7009,6 +7473,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "바인더 1황\n영국 항모",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 10
     },
@@ -7024,6 +7489,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "Lucky E",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 12
     },
@@ -7039,6 +7505,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중장갑 특화",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 14
     },
@@ -7054,6 +7521,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경/중형 바인더\n항모뎀증 '파갑' 보유",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 16
     },
@@ -7069,6 +7537,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형/중갑 바인더\n딜 로또",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 18
     },
@@ -7084,6 +7553,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경/중형 바인더\n항모뎀증 '파갑' 보유",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 20
     },
@@ -7099,6 +7569,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "단기전의 신",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 22
     },
@@ -7114,6 +7585,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전함 최강 버퍼",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 26
     },
@@ -7129,6 +7601,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "포격 버퍼\n경, 중형 특화",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 28
     },
@@ -7144,6 +7617,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형/중장 특화",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 30
     },
@@ -7159,6 +7633,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "단일 적 특화",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 32
     },
@@ -7174,6 +7649,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "철혈 범용 무딱",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 34
     },
@@ -7189,6 +7665,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "철혈 범용 무딱",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 35
     },
@@ -7204,6 +7681,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "딜 보조\n전열 보호",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 36
     },
@@ -7219,6 +7697,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전장요구\n무딱전함라인 입성",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 38
     },
@@ -7234,6 +7713,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "최강 금딱라인",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 40
     },
@@ -7249,6 +7729,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "최강 금딱라인",
+      "requiresUniqueEquipment": true,
       "row": 54,
       "column": 41
     },
@@ -7264,6 +7745,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "용골 무난하게 받음\n탈금딱 1황",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 42
     },
@@ -7279,6 +7761,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 전함 2황",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 44
     },
@@ -7294,6 +7777,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속, 받피증 버퍼",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 46
     },
@@ -7309,6 +7793,7 @@
       "tier": "S",
       "sheetGroup": "잠수 SS",
       "roleNote": "U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 48
     },
@@ -7324,6 +7809,7 @@
       "tier": "S",
       "sheetGroup": "잠수 SS",
       "roleNote": "U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 50
     },
@@ -7339,6 +7825,7 @@
       "tier": "S",
       "sheetGroup": "잠수 SS",
       "roleNote": "U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음",
+      "requiresUniqueEquipment": false,
       "row": 54,
       "column": 52
     },
@@ -7354,6 +7841,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전, 단기전 특화\n루나 상위호환",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 2
     },
@@ -7369,6 +7857,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄 보스 딜러\n서브 힐러",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 4
     },
@@ -7384,6 +7873,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "제공권 + 반장전\n타함대 항공버프",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 6
     },
@@ -7399,6 +7889,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "안정성 높은\n엔터프라이즈 +",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 8
     },
@@ -7414,6 +7905,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "안정성 높은\n엔터프라이즈 +",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 9
     },
@@ -7429,6 +7921,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "높은 공격력\n딜 보조 유틸",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 10
     },
@@ -7444,6 +7937,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "높은 공격력\n딜 보조 유틸",
+      "requiresUniqueEquipment": true,
       "row": 58,
       "column": 11
     },
@@ -7459,6 +7953,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전 항모",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 12
     },
@@ -7474,6 +7969,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "특정 장갑 특화",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 14
     },
@@ -7489,6 +7985,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "특정 장갑 특화",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 15
     },
@@ -7504,6 +8001,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "4공습 / \n중형,중장 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 16
     },
@@ -7519,6 +8017,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 18
     },
@@ -7534,6 +8033,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 19
     },
@@ -7549,6 +8049,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "데어라 콜라보 항모",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 20
     },
@@ -7564,6 +8065,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "데어라 콜라보 항모",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 21
     },
@@ -7579,6 +8081,7 @@
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "3 장갑 다 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 22
     },
@@ -7594,6 +8097,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난하게 강한 \n탈금딱 전함",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 24
     },
@@ -7609,6 +8113,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "명중, 장전 버퍼",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 26
     },
@@ -7624,6 +8129,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "포격, 명중 버퍼\n딜 보조 버프",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 28
     },
@@ -7639,6 +8145,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 코어",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 30
     },
@@ -7654,6 +8161,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 버퍼\n선장전",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 32
     },
@@ -7669,6 +8177,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 특화",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 34
     },
@@ -7684,6 +8193,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 특화",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 36
     },
@@ -7699,6 +8209,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 특화",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 38
     },
@@ -7714,6 +8225,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "단기전 강함\n대중장 특화",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 40
     },
@@ -7729,6 +8241,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "전열 보호",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 42
     },
@@ -7744,6 +8257,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속\n중형/중장 특화",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 44
     },
@@ -7759,6 +8273,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로 좋음\n높은 탱킹력",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 46
     },
@@ -7774,6 +8289,7 @@
       "tier": "A+",
       "sheetGroup": "잠수 SS",
       "roleNote": "U-2501 + 이404를 일단 넣고 남은 자리에 위에가 없으면\n 얘네 중에 있는걸로 대체하셈\n여기도 없으면 있는거 그냥 넣어도 됨",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 48
     },
@@ -7789,6 +8305,7 @@
       "tier": "A+",
       "sheetGroup": "잠수 SS",
       "roleNote": "U-2501 + 이404를 일단 넣고 남은 자리에 위에가 없으면\n 얘네 중에 있는걸로 대체하셈\n여기도 없으면 있는거 그냥 넣어도 됨",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 50
     },
@@ -7804,6 +8321,7 @@
       "tier": "A+",
       "sheetGroup": "잠수 SS",
       "roleNote": "U-2501 + 이404를 일단 넣고 남은 자리에 위에가 없으면\n 얘네 중에 있는걸로 대체하셈\n여기도 없으면 있는거 그냥 넣어도 됨",
+      "requiresUniqueEquipment": false,
       "row": 58,
       "column": 52
     },
@@ -7819,6 +8337,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전, 단기전 특화",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 2
     },
@@ -7834,6 +8353,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쫄팟, 광역힐\n선장전",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 4
     },
@@ -7849,6 +8369,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "대경장/중형 특화",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 6
     },
@@ -7864,6 +8385,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "4공습 /\n미묘한 바인드",
+      "requiresUniqueEquipment": true,
       "row": 62,
       "column": 8
     },
@@ -7879,6 +8401,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화\n쫄팟 후보군",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 10
     },
@@ -7894,6 +8417,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "고점 조금 낮은\n샹그릴라",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 12
     },
@@ -7909,6 +8433,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 14
     },
@@ -7924,6 +8449,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전열 보조 / 다중 폭격",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 16
     },
@@ -7939,6 +8465,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "불안정 딜러\n경장 특화",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 18
     },
@@ -7954,6 +8481,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전장에 바인드 있음\n독일 항모 버프",
+      "requiresUniqueEquipment": true,
       "row": 62,
       "column": 20
     },
@@ -7969,6 +8497,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "최상위 경항모\n항공 지원",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 22
     },
@@ -7984,6 +8513,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "선장전, 밸런스형",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 24
     },
@@ -7999,6 +8529,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 특화\n사르데냐 핵심 전함",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 26
     },
@@ -8014,6 +8545,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장용\n로열/META 보조",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 28
     },
@@ -8029,6 +8561,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장만 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 30
     },
@@ -8044,6 +8577,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장만 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 32
     },
@@ -8059,6 +8593,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "3장갑 다 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 34
     },
@@ -8074,6 +8609,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "3장갑 다 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 35
     },
@@ -8089,6 +8625,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "고성능 콜라보 전함",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 36
     },
@@ -8104,6 +8641,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "고성능 콜라보 전함",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 37
     },
@@ -8119,6 +8657,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "특수 부포",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 38
     },
@@ -8134,6 +8673,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장만 잘팸",
+      "requiresUniqueEquipment": true,
       "row": 62,
       "column": 40
     },
@@ -8149,6 +8689,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 특화\n무난한 콜라보 전함",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 42
     },
@@ -8164,6 +8705,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "20초 주기\n적 회피 감소",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 44
     },
@@ -8179,6 +8721,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "20초 파갑",
+      "requiresUniqueEquipment": false,
       "row": 62,
       "column": 46
     },
@@ -8194,6 +8737,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전 항모",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 2
     },
@@ -8209,6 +8753,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "퍼시와 시너지\n대작전 3/5 뺑이 \n스피드런용",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 4
     },
@@ -8224,6 +8769,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "경장, 단일적 특화",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 16
     },
@@ -8239,6 +8785,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "후열 딜 버프",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 18
     },
@@ -8254,6 +8801,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "2전투기 항모",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 20
     },
@@ -8269,6 +8817,7 @@
       "tier": "B+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "2 폭격기\n독일 탱보조",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 22
     },
@@ -8284,6 +8833,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대체 전함\n보조 능력있음",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 24
     },
@@ -8299,6 +8849,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "대체 전함\n보조 능력있음",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 25
     },
@@ -8314,6 +8865,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "스택형 딜러",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 26
     },
@@ -8329,6 +8881,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "약속의 빅 세븐 개장",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 28
     },
@@ -8344,6 +8897,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "약속의 빅 세븐 개장",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 29
     },
@@ -8359,6 +8913,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "약속의 빅 세븐 개장",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 30
     },
@@ -8374,6 +8929,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "약속의 빅 세븐 개장",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 31
     },
@@ -8389,6 +8945,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 32
     },
@@ -8404,6 +8961,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 33
     },
@@ -8419,6 +8977,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 34
     },
@@ -8434,6 +8993,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "경장 상대로만 쓸것",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 35
     },
@@ -8449,6 +9009,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장만 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 36
     },
@@ -8464,6 +9025,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장만 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 37
     },
@@ -8479,6 +9041,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장만 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 38
     },
@@ -8494,6 +9057,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장만 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 39
     },
@@ -8509,6 +9073,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "3장갑 다 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 40
     },
@@ -8524,6 +9089,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "3장갑 다 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 41
     },
@@ -8539,6 +9105,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "차상위 전함\n진영 시너지 요구",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 42
     },
@@ -8554,6 +9121,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "차상위 전함\n진영 시너지 요구",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 43
     },
@@ -8569,6 +9137,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "차상위 전함\n근접적 상대 탱",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 44
     },
@@ -8584,6 +9153,7 @@
       "tier": "B+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "평범한 2군 전함\n약간의 딜/힐 유틸",
+      "requiresUniqueEquipment": false,
       "row": 66,
       "column": 46
     },
@@ -8599,6 +9169,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전 / 서로 시너지",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 2
     },
@@ -8614,6 +9185,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전 / 서로 시너지",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 4
     },
@@ -8629,6 +9201,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "항모 버프",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 10
     },
@@ -8644,6 +9217,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "3일본 방어 버프",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 12
     },
@@ -8659,6 +9233,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "단독성능은 쇼카쿠 아래\n쇼카쿠와 시너지",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 14
     },
@@ -8674,6 +9249,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "뇌격 특화",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 16
     },
@@ -8689,6 +9265,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "그럭저럭 강힘\n약한 바인더",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 18
     },
@@ -8704,6 +9281,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "바인더 대체",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 20
     },
@@ -8719,6 +9297,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "바인더 대체",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 22
     },
@@ -8734,6 +9313,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "소량 힐",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 24
     },
@@ -8749,6 +9329,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "소량 힐",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 25
     },
@@ -8764,6 +9345,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "각종 유틸",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 26
     },
@@ -8779,6 +9361,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 조합 필요",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 28
     },
@@ -8794,6 +9377,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "이글 유니온 시너지",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 30
     },
@@ -8809,6 +9393,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "독일 버퍼",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 32
     },
@@ -8824,6 +9409,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "3장갑 다 잘팸",
+      "requiresUniqueEquipment": true,
       "row": 70,
       "column": 34
     },
@@ -8839,6 +9425,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "소환수로 인한\n안정성 증가",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 36
     },
@@ -8854,6 +9441,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "힐 기능 있는 전함",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 38
     },
@@ -8869,6 +9457,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중장만 잘팸",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 40
     },
@@ -8884,6 +9473,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중형 / 중장 상대 미국 전함",
+      "requiresUniqueEquipment": true,
       "row": 70,
       "column": 42
     },
@@ -8899,6 +9489,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "평범한 딜링\n별도의 유틸 없음",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 44
     },
@@ -8906,14 +9497,15 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": 418,
-      "name": "가스코뉴(µ장비)",
+      "id": "P012",
+      "name": "가스코뉴",
       "rarity": "SSR",
       "faction": "비시아",
       "shipType": "전함",
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "평범한 2군 전함",
+      "requiresUniqueEquipment": true,
       "row": 70,
       "column": 46
     },
@@ -8929,6 +9521,7 @@
       "tier": "B",
       "sheetGroup": "잠수 SS",
       "roleNote": "아군버프 /\n초살팟",
+      "requiresUniqueEquipment": false,
       "row": 70,
       "column": 48
     },
@@ -8944,6 +9537,7 @@
       "tier": "C+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 8
     },
@@ -8959,6 +9553,7 @@
       "tier": "C+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "대체 항모\n마지노선",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 10
     },
@@ -8974,6 +9569,7 @@
       "tier": "C+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "최대 4 μ 시너지\n항마기 시너지\n반장전",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 12
     },
@@ -8989,6 +9585,7 @@
       "tier": "C+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "소량 힐",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 14
     },
@@ -9004,6 +9601,7 @@
       "tier": "C+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전열 보호",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 16
     },
@@ -9019,6 +9617,7 @@
       "tier": "C+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "하위해역\n많은 적 상대",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 18
     },
@@ -9034,6 +9633,7 @@
       "tier": "C+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "적 전함 상대 보조",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 20
     },
@@ -9049,6 +9649,7 @@
       "tier": "C+",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "6전투기\n대체 항모",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 22
     },
@@ -9064,6 +9665,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 함대 파츠\n선장전, 딜 버프",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 24
     },
@@ -9079,6 +9681,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속 제공",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 26
     },
@@ -9094,6 +9697,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "장전 버프",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 28
     },
@@ -9109,6 +9713,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "세이렌 특화",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 30
     },
@@ -9124,6 +9729,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 대체제",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 32
     },
@@ -9139,6 +9745,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 대체제",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 34
     },
@@ -9154,6 +9761,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 함대 파츠\n대체 전함들",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 36
     },
@@ -9169,6 +9777,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 함대 파츠\n대체 전함들",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 38
     },
@@ -9184,6 +9793,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무사시 독점",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 40
     },
@@ -9199,6 +9809,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "비스마르크와\n같이 쓰기",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 42
     },
@@ -9214,6 +9825,7 @@
       "tier": "C+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "작은 육각형 딜러",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 44
     },
@@ -9229,6 +9841,7 @@
       "tier": "C+",
       "sheetGroup": "잠수 SS",
       "roleNote": "글쎄요..?",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 48
     },
@@ -9244,6 +9857,7 @@
       "tier": "C+",
       "sheetGroup": "잠수 SS",
       "roleNote": "글쎄요..?",
+      "requiresUniqueEquipment": false,
       "row": 74,
       "column": 49
     },
@@ -9259,6 +9873,7 @@
       "tier": "S",
       "sheetGroup": "구축 DD",
       "roleNote": "앵커리지 점수\n절약팟 전열\n메인해역 다수 드랍",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 10
     },
@@ -9274,6 +9889,7 @@
       "tier": "S",
       "sheetGroup": "구축 DD",
       "roleNote": "앵커리지 점수\n절약팟 전열\n메인해역 다수 드랍",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 11
     },
@@ -9289,6 +9905,7 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "최상위 대공 성능\n훈장교환",
+      "requiresUniqueEquipment": true,
       "row": 7,
       "column": 12
     },
@@ -9304,6 +9921,7 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "탱커 보조\n작전문서 획득 가능",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 16
     },
@@ -9319,6 +9937,7 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "레이더 탐지\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 18
     },
@@ -9334,6 +9953,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "철혈 점수작 좋음\n무난한 탱커들\n론 : 1기 pr함",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 26
     },
@@ -9341,14 +9961,15 @@
       "source": "newbie",
       "sourceLabel": "맨땅뉴비",
       "audience": "벽뉴비 권장",
-      "id": 479,
-      "name": "론(µ장비)",
+      "id": "P005",
+      "name": "론",
       "rarity": "SSR",
       "faction": "철혈",
       "shipType": "중순",
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "철혈 점수작 좋음\n무난한 탱커들\n론 : 1기 pr함",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 27
     },
@@ -9364,6 +9985,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "Lucky E\n훈장교환",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 28
     },
@@ -9379,6 +10001,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "철혈 점수 필요하면 육성할만함\n아니면 쓸이유없음\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 42
     },
@@ -9394,6 +10017,7 @@
       "tier": "S",
       "sheetGroup": "상시 무딱",
       "roleNote": "상시 전함 중 가장 강한 화력\n현재 대세인 라이온+ 트라팔가 조합과 잘 어울림",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 44
     },
@@ -9409,6 +10033,7 @@
       "tier": "S",
       "sheetGroup": "힐러",
       "roleNote": "쫄팟, 광역힐, 선장전\n개장 1순위, 신 GOD\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 46
     },
@@ -9424,6 +10049,7 @@
       "tier": "S",
       "sheetGroup": "힐러",
       "roleNote": "쫄 보스 딜러\n서브 힐러\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 48
     },
@@ -9439,6 +10065,7 @@
       "tier": "S",
       "sheetGroup": "연구함",
       "roleNote": "철혈 연구함 선택지들",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 58
     },
@@ -9446,14 +10073,15 @@
       "source": "newbie",
       "sourceLabel": "맨땅뉴비",
       "audience": "벽뉴비 권장",
-      "id": 479,
-      "name": "론(µ장비)",
+      "id": "P005",
+      "name": "론",
       "rarity": "SSR",
       "faction": "철혈",
       "shipType": "중순",
       "tier": "S",
       "sheetGroup": "연구함",
       "roleNote": "철혈 연구함 선택지들",
+      "requiresUniqueEquipment": true,
       "row": 7,
       "column": 58
     },
@@ -9469,6 +10097,7 @@
       "tier": "S",
       "sheetGroup": "연구함",
       "roleNote": "철혈 연구함 선택지들",
+      "requiresUniqueEquipment": false,
       "row": 7,
       "column": 59
     },
@@ -9484,6 +10113,7 @@
       "tier": "S",
       "sheetGroup": "구축 DD",
       "roleNote": "공습선도 1황\n훈장교환 1순위",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 6
     },
@@ -9499,6 +10129,7 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "항모 버퍼\n훈장교환",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 12
     },
@@ -9514,6 +10145,7 @@
       "tier": "S",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "전장주면 실드/파갑\n신규출첵 8일차 보상",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 20
     },
@@ -9529,6 +10161,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "전열보호\n신입임무\n훈장교환",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 28
     },
@@ -9544,6 +10177,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형/중갑 바인더\n6-3 드랍\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 30
     },
@@ -9559,6 +10193,7 @@
       "tier": "S",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "제공권 + 반장전\n타함대 항공버프\n코어데이터 샵",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 32
     },
@@ -9574,6 +10209,7 @@
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "감속, 받피증 버퍼\n연습전 상점",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 40
     },
@@ -9589,6 +10225,7 @@
       "tier": "S",
       "sheetGroup": "상시 무딱",
       "roleNote": "유니온 점수\n보스전 특화 / 강한 대공\n범용적으로 쓰기 좋은 성능",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 44
     },
@@ -9604,6 +10241,7 @@
       "tier": "S",
       "sheetGroup": "힐러",
       "roleNote": "힐러 대체제\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 46
     },
@@ -9619,6 +10257,7 @@
       "tier": "S",
       "sheetGroup": "힐러",
       "roleNote": "높은 공격력\n1+2 힐\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 48
     },
@@ -9634,6 +10273,7 @@
       "tier": "S",
       "sheetGroup": "연구함",
       "roleNote": "유틸갖춘 성능 탱커\n4기 DR 연구함",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 54
     },
@@ -9649,6 +10289,7 @@
       "tier": "S",
       "sheetGroup": "연구함",
       "roleNote": "연막탄 탱킹 보조\n4기 PR 연구함",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 56
     },
@@ -9664,6 +10305,7 @@
       "tier": "S",
       "sheetGroup": "연구함",
       "roleNote": "대경장 특화\n상시 획득 전함 1황\n2기 DR 연구함",
+      "requiresUniqueEquipment": false,
       "row": 11,
       "column": 58
     },
@@ -9679,6 +10321,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러\n6-4 보스 드랍",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 2
     },
@@ -9694,6 +10337,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "어느정도의 탱\n+ 생존 보조\n작전 문서\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 4
     },
@@ -9709,6 +10353,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "보급형 공습 선도\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 6
     },
@@ -9724,6 +10369,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "보급형 공습 선도\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 7
     },
@@ -9739,6 +10385,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "3번 자리 딜러\n나히모프 시너지\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 8
     },
@@ -9754,6 +10401,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "철혈 점수 특공대",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 10
     },
@@ -9769,6 +10417,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "철혈 점수 특공대",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 10
     },
@@ -9784,6 +10433,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "철혈 점수 특공대",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 11
     },
@@ -9799,6 +10449,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "태생 보딱 중\n탱킹 1황\n상시 소형건조\n간혹 연하장",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 12
     },
@@ -9814,6 +10465,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "경장 방뢰요원\n작전문서\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 14
     },
@@ -9829,6 +10481,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "버프 겸\n포격 특화경순\n상시 META 비콘",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 16
     },
@@ -9844,6 +10497,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "포격특화 경순\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 18
     },
@@ -9859,6 +10513,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "초반 국밥탱\n신입임무 육성픽\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 20
     },
@@ -9874,6 +10529,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "무난한 만능탱커\n상시 중형건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 22
     },
@@ -9889,6 +10545,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "전부 쉽게 얻을만한 철혈 전열 / 무난한 성능\n도이칠란드는 상시 중형건조\n나머진 대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 24
     },
@@ -9904,6 +10561,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "전부 쉽게 얻을만한 철혈 전열 / 무난한 성능\n도이칠란드는 상시 중형건조\n나머진 대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 25
     },
@@ -9919,6 +10577,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "전부 쉽게 얻을만한 철혈 전열 / 무난한 성능\n도이칠란드는 상시 중형건조\n나머진 대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 26
     },
@@ -9934,6 +10593,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "안정성 높은\n엔터프라이즈\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 28
     },
@@ -9949,6 +10609,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "즈이카쿠와 시너지\n전장 성능 좋음\n전장 주면 차상위 금딱\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 30
     },
@@ -9964,6 +10625,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화\n쫄팟 후보군\n4-2 등 드랍\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 32
     },
@@ -9979,6 +10641,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형/중갑 특화\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 34
     },
@@ -9994,6 +10657,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형/중갑 특화\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 34
     },
@@ -10009,6 +10673,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "중형/중갑 특화\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 35
     },
@@ -10024,6 +10689,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난한 성능 전함\n근데 철혈 아님\n상시 META",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 36
     },
@@ -10039,6 +10705,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "무난한 성능 전함\n근데 철혈 아님\n상시 META",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 37
     },
@@ -10054,6 +10721,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "명중, 장전 버퍼\n중형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 38
     },
@@ -10069,6 +10737,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 코어\n중형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 40
     },
@@ -10084,6 +10753,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "독일 버퍼\n진영점수작으론\n티르피츠 먼저\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 42
     },
@@ -10099,6 +10769,7 @@
       "tier": "A",
       "sheetGroup": "상시 무딱",
       "roleNote": "보스팟 광역딜러\n일항팟 코어",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 44
     },
@@ -10114,6 +10785,7 @@
       "tier": "A",
       "sheetGroup": "힐러",
       "roleNote": "이중 선장전\n타함대 힐 \n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 46
     },
@@ -10129,6 +10801,7 @@
       "tier": "A",
       "sheetGroup": "잠수 SS",
       "roleNote": "독잠\n상위 U 보트들",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 50
     },
@@ -10144,6 +10817,7 @@
       "tier": "A",
       "sheetGroup": "잠수 SS",
       "roleNote": "독잠\n상위 U 보트들",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 50
     },
@@ -10159,6 +10833,7 @@
       "tier": "A",
       "sheetGroup": "잠수 SS",
       "roleNote": "독잠\n상위 U 보트들",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 51
     },
@@ -10174,6 +10849,7 @@
       "tier": "A",
       "sheetGroup": "잠수 SS",
       "roleNote": "독잠\n상위 U 보트들",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 51
     },
@@ -10189,6 +10865,7 @@
       "tier": "A",
       "sheetGroup": "잠수 SS",
       "roleNote": "미잠\n높은 산소량",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 52
     },
@@ -10204,6 +10881,7 @@
       "tier": "A",
       "sheetGroup": "잠수 SS",
       "roleNote": "미잠\n높은 산소량",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 53
     },
@@ -10219,6 +10897,7 @@
       "tier": "A",
       "sheetGroup": "연구함",
       "roleNote": "대공요원 + 무난한탱\n11지 이후로 활약\n3기 PR 연구함",
+      "requiresUniqueEquipment": false,
       "row": 15,
       "column": 54
     },
@@ -10234,6 +10913,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "탱커/탱 보조 1황\n개장템없으면 후순위\n연습전 상점",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 2
     },
@@ -10249,6 +10929,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "무난한 탱커\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 4
     },
@@ -10264,6 +10945,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "무난한 탱커\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 5
     },
@@ -10279,6 +10961,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "잉그레이엄\n대공 / 기타보조유틸\n재너스\n높은 공격력\n\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 6
     },
@@ -10294,6 +10977,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "잉그레이엄\n대공 / 기타보조유틸\n재너스\n높은 공격력\n\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 7
     },
@@ -10309,6 +10993,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "전용장비 요구됨\n좋은 화력보조\n소형 상시건조",
+      "requiresUniqueEquipment": true,
       "row": 19,
       "column": 8
     },
@@ -10324,6 +11009,7 @@
       "tier": "A",
       "sheetGroup": "구축 DD",
       "roleNote": "공습선도 대체제\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 10
     },
@@ -10339,6 +11025,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "무난한 3번 딜러\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 12
     },
@@ -10354,6 +11041,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "무난한 3번 딜러\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 13
     },
@@ -10369,6 +11057,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "뇌격특화 3번딜러\n작전문서\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 14
     },
@@ -10384,6 +11073,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "포격 딜링 특화\n작전문서\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 16
     },
@@ -10399,6 +11089,7 @@
       "tier": "A",
       "sheetGroup": "경순 CL",
       "roleNote": "적당한 탱커\n북련 점수용\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 18
     },
@@ -10414,6 +11105,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "평균이상 탱+딜\n흡혈\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 20
     },
@@ -10429,6 +11121,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "딜을 좀 더 가진 탱커\n철혈 점수작\n상시 중형건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 22
     },
@@ -10444,6 +11137,7 @@
       "tier": "A",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "무난한 탱커\n철혈 점수작\n상시 중형건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 24
     },
@@ -10459,6 +11153,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "바인더 대체제\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 28
     },
@@ -10474,6 +11169,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "바인더 대체제\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 29
     },
@@ -10489,6 +11185,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "무난한 미항모\n둘다 특형 상시건조\n타이콘 -> 작전문서",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 30
     },
@@ -10504,6 +11201,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "무난한 미항모\n둘다 특형 상시건조\n타이콘 -> 작전문서",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 31
     },
@@ -10519,6 +11217,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화 / 뇌격 특화\n상시 META",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 32
     },
@@ -10534,6 +11233,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "폭격 특화 / 뇌격 특화\n상시 META",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 33
     },
@@ -10549,6 +11249,7 @@
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "불안정 딜러\n경장 특화\n해역 드랍\n상시 특형 건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 34
     },
@@ -10564,6 +11265,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "중앵버퍼\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 36
     },
@@ -10579,6 +11281,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "개장시 강한 무딱딜러\n훈장교환",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 37
     },
@@ -10594,6 +11297,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "빅 세븐 개장\n넬슨 : 해역 2-3\n콜로/메릴 : 대함대\n웨스트 : 코어샵",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 38
     },
@@ -10609,6 +11313,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "빅 세븐 개장\n넬슨 : 해역 2-3\n콜로/메릴 : 대함대\n웨스트 : 코어샵",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 38
     },
@@ -10624,6 +11329,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "빅 세븐 개장\n넬슨 : 해역 2-3\n콜로/메릴 : 대함대\n웨스트 : 코어샵",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 39
     },
@@ -10639,6 +11345,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "빅 세븐 개장\n넬슨 : 해역 2-3\n콜로/메릴 : 대함대\n웨스트 : 코어샵",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 39
     },
@@ -10654,6 +11361,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 버퍼\n선장전\n중형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 40
     },
@@ -10669,6 +11377,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "철혈 점수셔틀\n초반 확정획득 후열\n작전 문서",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 42
     },
@@ -10684,6 +11393,7 @@
       "tier": "A",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "철혈 점수셔틀\n초반 확정획득 후열\n작전 문서",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 43
     },
@@ -10699,6 +11409,7 @@
       "tier": "A",
       "sheetGroup": "상시 무딱",
       "roleNote": "뉴비에겐 권장되진 않음",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 44
     },
@@ -10714,6 +11425,7 @@
       "tier": "A",
       "sheetGroup": "상시 무딱",
       "roleNote": "뉴비에겐 권장되진 않음",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 45
     },
@@ -10729,6 +11441,7 @@
       "tier": "A",
       "sheetGroup": "상시 무딱",
       "roleNote": "뉴비에겐 권장되진 않음",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 45
     },
@@ -10744,6 +11457,7 @@
       "tier": "A",
       "sheetGroup": "힐러",
       "roleNote": "힐/항모버퍼\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 46
     },
@@ -10759,6 +11473,7 @@
       "tier": "A",
       "sheetGroup": "잠수 SS",
       "roleNote": "보급형 원거리지원\n독잠",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 50
     },
@@ -10774,6 +11489,7 @@
       "tier": "A",
       "sheetGroup": "연구함",
       "roleNote": "실드 무시 딜러\n탱커\n7기 DR 연구함",
+      "requiresUniqueEquipment": false,
       "row": 19,
       "column": 54
     },
@@ -10789,6 +11505,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "후열 생존버퍼\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 2
     },
@@ -10804,6 +11521,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "대공\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 4
     },
@@ -10819,6 +11537,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "50초 지속\n항공 딜 버프\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 6
     },
@@ -10834,6 +11553,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "절약팟\n미사일 구축함(미구)\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 8
     },
@@ -10849,6 +11569,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "메인해역 대체 탱커\n높은 보스 딜링\n작전 문서",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 10
     },
@@ -10864,6 +11585,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "경장 상대버퍼\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 12
     },
@@ -10879,6 +11601,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "무난한 대공맨들\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 14
     },
@@ -10894,6 +11617,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "무난한 대공맨들\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 14
     },
@@ -10909,6 +11633,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "무난한 대공맨들\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 15
     },
@@ -10924,6 +11649,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "무난한 대공맨들\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 15
     },
@@ -10939,6 +11665,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "전열 화력 버프\n뉴비용은 아님\n북련 점수\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 16
     },
@@ -10954,6 +11681,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "철혈 점수 특공대\n풀돌까지만 해주면됨\n라이프치히는 나머지 3명 도감작보상",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 18
     },
@@ -10969,6 +11697,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "철혈 점수 특공대\n풀돌까지만 해주면됨\n라이프치히는 나머지 3명 도감작보상",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 18
     },
@@ -10984,6 +11713,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "철혈 점수 특공대\n풀돌까지만 해주면됨\n라이프치히는 나머지 3명 도감작보상",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 19
     },
@@ -10999,6 +11729,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "철혈 점수 특공대\n풀돌까지만 해주면됨\n라이프치히는 나머지 3명 도감작보상",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 19
     },
@@ -11014,6 +11745,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번자리 딜러\n브레머튼 : 작전문서\n볼티모어 : 훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 20
     },
@@ -11029,6 +11761,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번자리 딜러\n브레머튼 : 작전문서\n볼티모어 : 훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 21
     },
@@ -11044,6 +11777,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "국밥탱 + 사르데냐\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 22
     },
@@ -11059,6 +11793,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "대체제 탱커\n작전문서\n중형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 24
     },
@@ -11074,6 +11809,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "쇼카쿠와 시너지\n훈장교환",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 28
     },
@@ -11089,6 +11825,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "반장전\n훈장교환",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 30
     },
@@ -11104,6 +11841,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "강한 반장전 항모\n상시 특형건조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 32
     },
@@ -11119,6 +11857,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "철혈 점수 / 독일 항모\n가끔 초대장\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 34
     },
@@ -11134,6 +11873,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "세이렌 특화\n작전문서\n연습전 상점",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 36
     },
@@ -11149,6 +11889,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "미국 버퍼 / 선장전\n작전 문서",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 38
     },
@@ -11164,6 +11905,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "순전 쿼터제용\n둘다 훈장 교환 가능",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 40
     },
@@ -11179,6 +11921,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "순전 쿼터제용\n둘다 훈장 교환 가능",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 42
     },
@@ -11194,6 +11937,7 @@
       "tier": "B",
       "sheetGroup": "잠수 SS",
       "roleNote": "U보트 대체제",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 50
     },
@@ -11209,6 +11953,7 @@
       "tier": "B",
       "sheetGroup": "잠수 SS",
       "roleNote": "미잠 대체제",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 52
     },
@@ -11224,6 +11969,7 @@
       "tier": "B",
       "sheetGroup": "잠수 SS",
       "roleNote": "미잠 대체제",
+      "requiresUniqueEquipment": false,
       "row": 23,
       "column": 53
     },
@@ -11239,6 +11985,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "절혈 점수용\nZ1은 Z급 버퍼\n\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 2
     },
@@ -11254,6 +12001,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "절혈 점수용\nZ1은 Z급 버퍼\n\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 3
     },
@@ -11269,6 +12017,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "전열 딜러\n뮤 함순이는 진영점수X\n아이리스 점수\n르 말랭 : 훈장교환\n뮤 : 코어데이터샵",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 4
     },
@@ -11284,6 +12033,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "전열 딜러\n뮤 함순이는 진영점수X\n아이리스 점수\n르 말랭 : 훈장교환\n뮤 : 코어데이터샵",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 5
     },
@@ -11299,6 +12049,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "딜 특화 유리대포\n작전 문서\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 6
     },
@@ -11314,6 +12065,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "딜 특화 유리대포\n작전 문서\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 7
     },
@@ -11329,6 +12081,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "적당한 딜탱\n아이리스\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 8
     },
@@ -11344,6 +12097,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "전열 탱 대체제\n해역 드랍\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 12
     },
@@ -11359,6 +12113,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "보급형 공습선도\n차라리 아리아케 ㄱㄱ\n상시 소형건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 14
     },
@@ -11374,6 +12129,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "작전문서\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 16
     },
@@ -11389,6 +12145,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "대공 보조\n잠수함 경치버프\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 18
     },
@@ -11404,6 +12161,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "적당한 딜\n뮤함순이는 진영점수X\n적당한 딜/약한 몸\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 20
     },
@@ -11419,6 +12177,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "3번자리 딜러\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 22
     },
@@ -11434,6 +12193,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "차라 있으면 교환고려\n3번 자리 딜러\n사르데냐 진영점수\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 24
     },
@@ -11449,6 +12209,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "파갑\n유니온 점수작\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 28
     },
@@ -11464,6 +12225,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "저렴한 개장값\n초반에 무난하게 쓰기좋음\n3지역 드랍",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 30
     },
@@ -11479,6 +12241,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "저렴한 개장값\n초반에 무난하게 쓰기좋음\n3지역 드랍",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 31
     },
@@ -11494,6 +12257,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "서로 시너지\n3-4 보스 파밍",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 32
     },
@@ -11509,6 +12273,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "서로 시너지\n3-4 보스 파밍",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 33
     },
@@ -11524,6 +12289,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "3일본 방어 버프\n특형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 34
     },
@@ -11539,6 +12305,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사르데냐 파츠\n사르데냐 점수\n작전문서",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 36
     },
@@ -11554,6 +12321,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "사거리 짧은 탄막\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 38
     },
@@ -11569,6 +12337,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "유니온 점수쌀먹\n메인으로 쓰긴 아쉬움\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 40
     },
@@ -11584,6 +12353,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 함대 파츠\n선장전, 딜 버프\n중형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 27,
       "column": 42
     },
@@ -11599,6 +12369,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "시작함 3인방, 초반 해역 여기저기서 드랍",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 2
     },
@@ -11614,6 +12385,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "시작함 3인방, 초반 해역 여기저기서 드랍",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 3
     },
@@ -11629,6 +12401,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "시작함 3인방, 초반 해역 여기저기서 드랍",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 3
     },
@@ -11644,6 +12417,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "딜탱 밸런스\n철혈 점수작\n시작함 3인방 \n도감 달성 보상",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 4
     },
@@ -11659,6 +12433,7 @@
       "tier": "B",
       "sheetGroup": "구축 DD",
       "roleNote": "중앵 점수작용\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 8
     },
@@ -11674,6 +12449,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "로열 점수작용\n소형 상시건조",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 12
     },
@@ -11689,6 +12465,7 @@
       "tier": "B",
       "sheetGroup": "경순 CL",
       "roleNote": "뮤함순이는 진영점수X\n적당한 딜/약한 몸\n대함대 상점",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 14
     },
@@ -11704,6 +12481,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "작은 육각형",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 20
     },
@@ -11719,6 +12497,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "뮤함순이는 진영점수X\n코어데이터 교환",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 22
     },
@@ -11734,6 +12513,7 @@
       "tier": "B",
       "sheetGroup": "중순 / 대순 CA",
       "roleNote": "감속요원",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 24
     },
@@ -11749,6 +12529,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "도파민 발사대\n절약팟 멤버\n신경안써도 구해짐",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 28
     },
@@ -11764,6 +12545,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "4 뮤 시너지\n근데 뮤는 진영점수X\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 30
     },
@@ -11779,6 +12561,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "여기 있긴한데 뉴비땐 비추\n코어데이터샵 교환",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 32
     },
@@ -11794,6 +12577,7 @@
       "tier": "B",
       "sheetGroup": "항모 CV, 경항모 CVL",
       "roleNote": "바인더 대체\n상시 META",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 34
     },
@@ -11809,6 +12593,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "철혈 점수 필요하면 육성할만함\n아니면 쓸이유없음\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 36
     },
@@ -11824,6 +12609,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "노스 유니온 조합 필요",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 38
     },
@@ -11839,6 +12625,7 @@
       "tier": "B",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "프랑스 함대 파츠\n선장전, 대경장용\n훈장 교환",
+      "requiresUniqueEquipment": false,
       "row": 31,
       "column": 42
     }

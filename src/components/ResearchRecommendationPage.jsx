@@ -19,6 +19,7 @@ import {
   groupResearchShipsByGeneration,
 } from '../utils/researchRecommendations.js'
 import { buildOperationTierByName } from '../utils/recommendationRanking.js'
+import { formatGrowthRecommendationReason } from '../utils/growthRecommendations.js'
 
 const RESEARCH_SHIP_BY_NAME = new Map(researchRecommendationData.ships.map(ship => [ship.name, ship]))
 
@@ -504,10 +505,14 @@ function ResearchCandidatePopup({ candidate, onClose }) {
   const rarity = getEffectiveRarity(candidate)
   const status = normalizeAcquisitionStatus(candidate.status ?? candidate.acquired)
   const sourceSections = getObtainabilitySourceSections(candidate.obtainability)
+  const recommendationReason = getFactionDisplayText(candidate.recommendation?.roleNote || '').trim()
+    || '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.'
   const reason = candidate.isSubmarine
     ? '잠수함 계열은 일반 해금 후보와 분리해 맨 마지막에 배치한 후보입니다.'
-    : getFactionDisplayText(candidate.recommendation?.roleNote || '').trim()
-      || '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.'
+    : formatGrowthRecommendationReason(
+      recommendationReason,
+      candidate.recommendation?.requiresUniqueEquipment,
+    )
   return (
     <RecommendationDialog name={candidate.name} onClose={onClose}>
         <div className="flex items-start gap-4 pr-6">

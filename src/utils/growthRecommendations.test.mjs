@@ -225,6 +225,31 @@ assert.deepEqual(
   '구역별 함종 버튼에는 해당 구역에 실제 존재하는 함종만 표시해야 합니다.',
 )
 
+const uniqueEquipmentCharacter = {
+  id: 'unique-equipment',
+  name: '전장 기준 후보',
+  rarity: 'SSR',
+  shipType: '구축',
+  faction: '중앵',
+  acquired: '획득',
+}
+const uniqueEquipmentSections = buildGrowthRecommendationSections('main', [uniqueEquipmentCharacter], {
+  recommendations: [{
+    source: 'main',
+    name: uniqueEquipmentCharacter.name,
+    tier: 'A',
+    row: 1,
+    column: 1,
+    roleNote: '안정적인 탱킹',
+    requiresUniqueEquipment: true,
+  }],
+}, new Map())
+assert.equal(
+  uniqueEquipmentSections.find(section => section.id === 'top').cards[0].summary,
+  '전용장비 장착 시 기준 · 안정적인 탱킹',
+  '(전장) 추천 후보의 카드 사유는 전용장비 기준임을 맨 앞에 알려야 합니다.',
+)
+
 const mixedRankSections = [{
   id: 'mixed-ranks',
   cards: [

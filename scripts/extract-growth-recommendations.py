@@ -10,7 +10,7 @@ sys.dont_write_bytecode = True
 
 import openpyxl
 from lib.growth_sheet_selection import find_sheet
-from lib.growth_name_matching import normalize_growth_source_name
+from lib.growth_name_matching import normalize_growth_source_name, uses_unique_equipment
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -87,6 +87,7 @@ NAME_ALIASES = {
     "꼬마 오이겐": "꼬마 프린츠 오이겐",
     "오이겐 μ": "프린츠 오이겐(μ장비)",
     "니나 (콜)": "니나 프리드",
+    "니나 (콜라보)": "니나 프리드",
     "유미아 (콜라보)": "유미아 리스펠트",
     "파르제팔": "아우구스트 폰 파르제팔",
     "브론슨": "클래런스 K 브론슨",
@@ -176,7 +177,10 @@ def load_characters():
     with (ROOT / "src" / "data" / "characters.json").open(encoding="utf-8") as file:
         characters = json.load(file)
 
-    by_name = {}
+    by_name = {
+        normalize_name(character["name"]): character
+        for character in characters
+    }
     for character in characters:
         for key in build_name_keys(character["name"]):
             by_name.setdefault(key, character)
@@ -414,6 +418,7 @@ def extract_source(wb, source, by_name):
                     "tier": find_tier(values, row),
                     "sheetGroup": find_column_group(row, column, group_rows),
                     "roleNote": find_role_note(values, row, column, by_name),
+                    "requiresUniqueEquipment": uses_unique_equipment(name),
                     "row": row,
                     "column": column,
                 })
@@ -463,7 +468,16 @@ def dedupe_recommendations(recommendations):
     seen = set()
     output = []
     for item in recommendations:
-        key = "|".join(str(item.get(part, "")) for part in ["source", "id", "tier", "sheetGroup", "roleNote", "row", "column"])
+        key = "|".join(str(item.get(part, "")) for part in [
+            "source",
+            "id",
+            "tier",
+            "sheetGroup",
+            "roleNote",
+            "requiresUniqueEquipment",
+            "row",
+            "column",
+        ])
         if key in seen:
             continue
         seen.add(key)
@@ -647,7 +661,7 @@ def main():
     write_csv(
         REPORT_DIR / "review.csv",
         [
-            ["source", "sourceLabel", "audience", "tier", "sheetGroup", "name", "id", "rarity", "faction", "shipType", "roleNote", "row", "column"],
+            ["source", "sourceLabel", "audience", "tier", "sheetGroup", "name", "id", "rarity", "faction", "shipType", "roleNote", "requiresUniqueEquipment", "row", "column"],
             *[
                 [
                     item["source"],
@@ -661,6 +675,7 @@ def main():
                     item["faction"],
                     item["shipType"],
                     item["roleNote"],
+                    item["requiresUniqueEquipment"],
                     item["row"],
                     item["column"],
                 ]
