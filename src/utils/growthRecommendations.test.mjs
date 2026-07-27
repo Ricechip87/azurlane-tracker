@@ -68,8 +68,9 @@ function buildQuotaFixture(typeCounts, roleNote = '함종별 추천') {
 const vanguardQuotaFixture = buildQuotaFixture({
   구축: 10,
   경순: 1,
-  중순: 3,
-  대형순: 2,
+  중순: 5,
+  초순: 3,
+  대순: 2,
 })
 const vanguardQuotaSections = buildGrowthRecommendationSections(
   'main',
@@ -81,8 +82,8 @@ assert.deepEqual(
   countGrowthRecommendationShipTypes([
     vanguardQuotaSections.find(section => section.id === 'vanguard'),
   ]),
-  { 구축: 8, 경순: 1, 중순: 3, 대형순: 2 },
-  '전열 기준 추천은 함종별 최대 8명만 표시하고 부족한 함종의 자리를 다른 함종으로 채우지 않아야 합니다.',
+  { 구축: 8, 경순: 1, 중순: 8 },
+  '전열 기준 추천은 중순·초순·대순을 중순 그룹 하나로 묶어 최대 8명만 표시해야 합니다.',
 )
 
 const mainForceQuotaFixture = buildQuotaFixture({
@@ -186,7 +187,7 @@ const filterSections = [
     id: 'priority',
     cards: [
       { name: '경순 후보', shipType: '경순' },
-      { name: '대형순 후보', shipType: '대순' },
+      { name: '대형순 후보', shipType: '초순' },
     ],
   },
   {
@@ -204,7 +205,7 @@ assert.deepEqual(
   [['경순 후보'], ['경순 후보']],
 )
 assert.deepEqual(
-  filterGrowthRecommendationSections(filterSections, '대형순').map(section => (
+  filterGrowthRecommendationSections(filterSections, '중순').map(section => (
     section.cards.map(card => card.name)
   )),
   [['대형순 후보'], []],
@@ -215,12 +216,12 @@ assert.deepEqual(
 )
 assert.deepEqual(
   countGrowthRecommendationShipTypes(filterSections),
-  { 경순: 1, 대형순: 1, 항모: 1 },
+  { 경순: 1, 중순: 1, 항모: 1 },
   '여러 추천 구역에 중복 등장하는 같은 함선은 함종별 후보 수에서 한 번만 세야 합니다.',
 )
 assert.deepEqual(
   countGrowthRecommendationShipTypes([filterSections[0]]),
-  { 경순: 1, 대형순: 1 },
+  { 경순: 1, 중순: 1 },
   '구역별 함종 버튼에는 해당 구역에 실제 존재하는 함종만 표시해야 합니다.',
 )
 

@@ -16,6 +16,17 @@ assert.deepEqual(filterCharacters(characters, { ...DEFAULT_CHARACTER_FILTERS, re
 assert.deepEqual(filterCharacters(characters, { ...DEFAULT_CHARACTER_FILTERS, favoritesOnly: true }).map(c => c.id), ['001'])
 assert.deepEqual(filterCharacters(characters, { ...DEFAULT_CHARACTER_FILTERS, researchOnly: true }).map(c => c.id), ['P001'])
 
+const cruiserCharacters = [
+  { id: 'CA', name: '중순양함', shipType: '중순' },
+  { id: 'CB', name: '대형순양함', shipType: '대순' },
+  { id: 'CL-HEAVY', name: '초순양함', shipType: '초순' },
+]
+assert.deepEqual(
+  filterCharacters(cruiserCharacters, { ...DEFAULT_CHARACTER_FILTERS, shipType: '중순' }).map(c => c.id),
+  ['CA', 'CB', 'CL-HEAVY'],
+  '내 함순이 정보의 중순 필터는 중순·대순·초순을 모두 포함해야 합니다.',
+)
+
 const codedFactionCharacters = [
   { id: 'MOT001', name: '템페스타 코드 함선', faction: 'MOT', shipType: '범선' },
   { id: 'LDP001', name: '페드레리아 코드 함선', faction: 'LDP', shipType: '전함' },

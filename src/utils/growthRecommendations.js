@@ -31,8 +31,8 @@ export const GROWTH_SHIP_TYPE_FILTER_ORDER = [
 
 const MAIN_FORCE_TYPES = new Set(['전함', '순전', '항전', '항모', '경항모', '모니터'])
 const SUBMARINE_TYPES = new Set(['잠수', '잠수항모', '잠항모'])
-const POSITION_TYPES = ['구축', '경순', '중순', '대순', '전함', '순전', '항모', '경항모']
-const VANGUARD_RECOMMENDATION_TYPES = ['구축', '경순', '중순', '대형순']
+const POSITION_TYPES = ['구축', '경순', '중순', '전함', '순전', '항모', '경항모']
+const VANGUARD_RECOMMENDATION_TYPES = ['구축', '경순', '중순']
 const MAIN_FORCE_RECOMMENDATION_TYPES = ['순전', '전함', '경항모', '항모']
 const TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B']
 export function buildGrowthRecommendationSections(mode, characters, growthRecommendationData, obtainabilityByName) {
@@ -63,7 +63,7 @@ export function buildGrowthRecommendationSections(mode, characters, growthRecomm
     {
       id: 'vanguard',
       title: '전열 기준 추천',
-      description: '구축, 경순, 중순, 대형순을 함종별 최대 8명씩 추천합니다.',
+      description: '구축, 경순, 중순류를 함종별 최대 8명씩 추천합니다. 중순류에는 대형순(초순·대순)이 포함됩니다.',
       cards: cardsForShipTypeQuotas(
         regularCandidates.filter(candidate => candidate.lane === '전열'),
         8,
@@ -110,7 +110,7 @@ export function filterGrowthRecommendationSections(sections, shipType) {
 
   return sections.map(section => ({
     ...section,
-    cards: section.cards.filter(card => getGrowthCardShipType(card) === normalizedFilter),
+    cards: section.cards.filter(card => getGrowthCardShipTypeGroup(card) === normalizedFilter),
   }))
 }
 
@@ -120,7 +120,7 @@ export function countGrowthRecommendationShipTypes(sections) {
 
   for (const section of sections || []) {
     for (const card of section.cards || []) {
-      const shipType = getGrowthCardShipType(card)
+      const shipType = getGrowthCardShipTypeGroup(card)
       if (!shipType || shipType === '-') continue
       const identity = `${card.character?.id || card.name}::${shipType}`
       if (seen.has(identity)) continue
@@ -138,6 +138,15 @@ function getGrowthCardShipType(card) {
     || card?.shipType
     || card?.tags?.[0],
   )
+}
+
+function getGrowthCardShipTypeGroup(card) {
+  return getGrowthShipTypeGroup(getGrowthCardShipType(card))
+}
+
+function getGrowthShipTypeGroup(shipType) {
+  const normalized = normalizeGrowthShipType(shipType)
+  return normalized === '대형순' ? '중순' : normalized
 }
 
 function normalizeGrowthShipType(shipType) {
@@ -207,7 +216,7 @@ function cardsForSection(cards, limit) {
 }
 
 function cardsForShipTypeQuotas(cards, limitPerType, shipTypes) {
-  const availableTypes = [...new Set(cards.map(getGrowthCardShipType).filter(Boolean))]
+  const availableTypes = [...new Set(cards.map(getGrowthCardShipTypeGroup).filter(Boolean))]
   const orderedTypes = shipTypes || [
     ...GROWTH_SHIP_TYPE_FILTER_ORDER.filter(shipType => availableTypes.includes(shipType)),
     ...availableTypes
@@ -217,7 +226,7 @@ function cardsForShipTypeQuotas(cards, limitPerType, shipTypes) {
 
   return orderedTypes.flatMap(shipType => (
     cards
-      .filter(card => getGrowthCardShipType(card) === shipType)
+      .filter(card => getGrowthCardShipTypeGroup(card) === shipType)
       .slice(0, limitPerType)
   ))
 }
@@ -275,8 +284,9 @@ function getPositionFillCandidates(candidates, characters) {
   for (const character of characters) {
     if (!['UR', 'SSR'].includes(getEffectiveRarity(character))) continue
     if (!isLevel120Status(character.acquired)) continue
-    if (!ownedHighLevelCounts.has(character.shipType)) continue
-    ownedHighLevelCounts.set(character.shipType, ownedHighLevelCounts.get(character.shipType) + 1)
+    const shipTypeGroup = getGrowthShipTypeGroup(character.shipType)
+    if (!ownedHighLevelCounts.has(shipTypeGroup)) continue
+    ownedHighLevelCounts.set(shipTypeGroup, ownedHighLevelCounts.get(shipTypeGroup) + 1)
   }
 
   const weakestTypes = [...ownedHighLevelCounts.entries()]
@@ -285,6 +295,10 @@ function getPositionFillCandidates(candidates, characters) {
     .map(([type]) => type)
 
   return candidates
-    .filter(candidate => weakestTypes.includes(candidate.character?.shipType || candidate.shipType))
-    .sort((a, b) => weakestTypes.indexOf(a.character?.shipType || a.shipType) - weakestTypes.indexOf(b.character?.shipType || b.shipType) || compareCandidates(a, b))
+    .filter(candidate => weakestTypes.includes(getGrowthShipTypeGroup(candidate.character?.shipType || candidate.shipType)))
+    .sort((a, b) => (
+      weakestTypes.indexOf(getGrowthShipTypeGroup(a.character?.shipType || a.shipType))
+      - weakestTypes.indexOf(getGrowthShipTypeGroup(b.character?.shipType || b.shipType))
+      || compareCandidates(a, b)
+    ))
 }

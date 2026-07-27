@@ -10,6 +10,7 @@
 - Clarify the additional-stat artwork audit output as candidate coverage rather than total roster image coverage.
 - Rename the additional-stat summary label from `기술 LV` to `진영 기술 보너스`, stack the ship/faction breakdown into full-width rows, and list multi-type summaries as separate full-width cards.
 - Balance growth-recommendation sections with independent per-type quotas: 8 each for vanguard, main-fleet, and position-fill types, and 4 each for special-role and submarine types, without reallocating unused slots.
+- Treat `대형순`, `대순`, and `초순` as regional names for the same ship type and include all of them in the `중순` filter group across growth recommendations and the roster, while preserving the source label on each ship.
 
 ### Verified
 - Cross-check the four non-fleet recommendation tabs against the current 875-ship app, ALtoy, and KR roster data.
