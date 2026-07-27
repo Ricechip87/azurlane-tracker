@@ -98,7 +98,7 @@ export default function ResearchRecommendationPage({ characters }) {
         <ResearchFactionProgress items={factionProgress} />
       </details>
 
-      <CompletedResearchSection items={state.completed} />
+      <CompletedResearchSection items={state.completed} candidateRankingData={candidateRankingData} />
     </section>
   )
 }
@@ -457,23 +457,81 @@ function ResearchCard({ item, tone, onSelect }) {
   )
 }
 
-function CompletedResearchSection({ items }) {
+function CompletedResearchSection({ items, candidateRankingData }) {
+  const [openCandidate, setOpenCandidate] = useState(null)
+  const generationGroups = groupResearchShipsByGeneration(items)
+
+  const openCompletedShip = item => {
+    const character = item.character || {}
+    setOpenCandidate({
+      ...item,
+      ...character,
+      status: normalizeAcquisitionStatus(character.acquired),
+      obtainability: getShipObtainability(candidateRankingData?.obtainabilityByName, character),
+      operationTier: candidateRankingData?.operationTierByName?.get(item.name) || null,
+      recommendation: candidateRankingData?.operationRecommendationByName?.get(item.name) || null,
+      researchCompleted: true,
+    })
+  }
+
   return (
-    <details className="rounded border border-neutral-700 bg-[#1a1a1a]">
-      <summary className="cursor-pointer bg-[#242424] px-4 py-3 text-sm font-bold text-gray-300">
-        개발 완료 · {items.length}명
-      </summary>
-      <div className="flex flex-wrap gap-2 p-3">
-        {items.map(item => (
-          <span
-            key={item.id}
-            className="rounded border border-neutral-700 bg-[#242424] px-3 py-2 text-xs text-gray-500"
-          >
-            {item.generation}기 · {item.name}
-          </span>
-        ))}
+    <>
+      <details className="rounded border border-neutral-700 bg-[#1a1a1a]">
+        <summary className="cursor-pointer bg-[#242424] px-4 py-3 text-sm font-bold text-gray-300">
+          개발 완료 · {items.length}명
+        </summary>
+        <div className="space-y-4 p-3">
+          {generationGroups.map(group => (
+            <section key={group.generation} className="overflow-hidden rounded border border-neutral-700 bg-[#202020]">
+              <header className="flex items-center justify-between border-b border-neutral-700 px-3 py-2">
+                <h3 className="text-sm font-black text-cyan-200">{group.generation}기</h3>
+                <span className="text-[11px] text-gray-500">{group.items.length}명</span>
+              </header>
+              <div className="flex flex-wrap gap-2 p-3">
+                {group.items.map(item => (
+                  <CompletedResearchCard key={item.id} item={item} onOpen={openCompletedShip} />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </details>
+      {openCandidate && (
+        <ResearchCandidatePopup candidate={openCandidate} onClose={() => setOpenCandidate(null)} />
+      )}
+    </>
+  )
+}
+
+function CompletedResearchCard({ item, onOpen }) {
+  const status = normalizeAcquisitionStatus(item.character?.acquired)
+  return (
+    <button
+      type="button"
+      onClick={() => onOpen(item)}
+      className="group relative h-[232px] w-[172px] max-w-full flex-none overflow-hidden rounded-md border-2 border-sky-700 bg-[#272727] text-left shadow-lg outline-none transition-transform hover:-translate-y-0.5 hover:border-sky-400 focus-visible:ring-2 focus-visible:ring-sky-300"
+    >
+      <RecommendationShipArtwork
+        character={item}
+        className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/15 to-black/95" />
+      <div className="absolute left-2 top-2 flex gap-1 text-[10px] font-black">
+        <CardBadge>{item.generation}기</CardBadge>
+        <CardBadge tone={item.planRarity === 'DR' ? 'gold' : 'purple'}>{getResearchRarityLabel(item.planRarity)}</CardBadge>
       </div>
-    </details>
+      <div className="absolute right-2 top-2 flex flex-col items-end gap-1 text-[10px] font-black">
+        <CardBadge>{getFactionBadgeName(item.faction)}</CardBadge>
+        <CardBadge>{item.shipType}</CardBadge>
+      </div>
+      <div className="absolute inset-x-0 bottom-0 p-3 text-white">
+        <h4 className="truncate text-sm font-black drop-shadow">{item.name}</h4>
+        <div className="mt-2 truncate rounded bg-black/55 px-2 py-1 text-[11px] font-semibold text-sky-100 backdrop-blur-sm">
+          개발 완료 · {status}
+        </div>
+      </div>
+    </button>
   )
 }
 
@@ -539,9 +597,11 @@ function ResearchCandidatePopup({ candidate, onClose }) {
   const status = normalizeAcquisitionStatus(candidate.status ?? candidate.acquired)
   const sourceSections = getObtainabilitySourceSections(candidate.obtainability)
   const recommendationReason = getFactionDisplayText(candidate.recommendation?.roleNote || '').trim()
-    || (candidate.researchXpCandidate
-      ? '선택한 개발함의 경험치작 진영·포지션 조건에 맞는 보유 함선입니다.'
-      : '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.')
+    || (candidate.researchCompleted
+      ? '이미 획득하여 개발 완료로 처리된 연구함입니다.'
+      : candidate.researchXpCandidate
+        ? '선택한 개발함의 경험치작 진영·포지션 조건에 맞는 보유 함선입니다.'
+        : '개발함 해금 조건을 채우면서 대작전 추천 가치와 기술점수를 함께 고려한 육성 후보입니다.')
   const reason = candidate.isSubmarine
     ? '잠수함 계열은 일반 해금 후보와 분리해 맨 마지막에 배치한 후보입니다.'
     : formatGrowthRecommendationReason(
