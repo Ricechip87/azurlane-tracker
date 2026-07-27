@@ -160,7 +160,7 @@ export function getResearchGoalItems(state) {
     .sort((a, b) => b.generation - a.generation || a.name.localeCompare(b.name, 'ko'))
 }
 
-export function getEligibleResearchXpShips(phase, characters) {
+export function getEligibleResearchXpShips(phase, characters, operationTierByName = new Map()) {
   const factions = new Set((phase.factions || []).map(normalizeFactionValue))
 
   return characters
@@ -168,7 +168,11 @@ export function getEligibleResearchXpShips(phase, characters) {
     .filter(character => !isLevel125Status(character.acquired))
     .filter(character => factions.has(normalizeFactionValue(character.faction)))
     .filter(character => getShipPosition(character.shipType) === phase.lane)
-    .sort((a, b) => a.name.localeCompare(b.name, 'ko'))
+    .sort((a, b) => (
+      operationTierRank(operationTierByName.get(a.name))
+      - operationTierRank(operationTierByName.get(b.name))
+      || a.name.localeCompare(b.name, 'ko')
+    ))
 }
 
 export function buildResearchFactionProgress(researchShips, factionTechPoints) {

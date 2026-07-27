@@ -245,7 +245,11 @@ function ResearchGoalPanel({ item, characters, candidateRankingData }) {
           <h4 className="mt-5 text-sm font-black text-gray-200">2. 해금 후 경험치작 편성</h4>
           <div className="mt-2 grid gap-2 xl:grid-cols-2">
             {item.xpPhases.map(phase => {
-              const eligible = getEligibleResearchXpShips(phase, characters)
+              const eligible = getEligibleResearchXpShips(
+                phase,
+                characters,
+                candidateRankingData?.operationTierByName,
+              )
               const visibleCandidates = eligible.slice(0, 5).map(character => ({
                 ...character,
                 status: normalizeAcquisitionStatus(character.acquired),

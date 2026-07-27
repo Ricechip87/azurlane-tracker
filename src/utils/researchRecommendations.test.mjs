@@ -212,6 +212,23 @@ assert.deepEqual(
 )
 
 assert.deepEqual(
+  getEligibleResearchXpShips(
+    { factions: ['로열'], lane: '전열' },
+    [
+      character({ id: 111, name: '대작전 미평가', faction: '로열', shipType: '구축', acquired: '100' }),
+      character({ id: 112, name: '대작전 A', faction: '로열', shipType: '경순', acquired: '100' }),
+      character({ id: 113, name: '대작전 SS', faction: '로열', shipType: '중순', acquired: '100' }),
+    ],
+    new Map([
+      ['대작전 A', 'A'],
+      ['대작전 SS', 'SS'],
+    ]),
+  ).map(item => item.name),
+  ['대작전 SS', '대작전 A', '대작전 미평가'],
+  '경험치작 후보는 대작전 추천 티어가 높은 순서로 정렬한다',
+)
+
+assert.deepEqual(
   getResearchUnlockCandidates(
     { type: 'roster-count', faction: '로열', lane: '후열' },
     [
