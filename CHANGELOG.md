@@ -11,7 +11,7 @@
 
 ### Verified
 - Add migration, affection, roster-stat, filter, Ship Database, event-expiry, collaboration-faction, and fleet-recommendation regression coverage.
-- Run lint, the complete test suite, production build, and semantic generation-idempotency audit.
+- Run lint, the complete test suite, production build, and the local semantic generation-idempotency audit.
 - Verify all 877 ships have public recommendation artwork and all 634 additional-stat candidates have card artwork.
 
 ## 2026-07-31 - Standardize Affection Stages

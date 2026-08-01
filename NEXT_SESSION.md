@@ -59,7 +59,7 @@ npm.cmd run audit:idempotency
 git diff --check
 ```
 
-원격 데이터 자체를 갱신한 작업이면 추가로 `npm run audit:data-sources`를 실행한다. GitHub Pages 배포 워크플로도 lint, test, build, idempotency 검사를 통과해야 배포한다.
+원격 데이터 자체를 갱신한 작업이면 추가로 `npm run audit:data-sources`를 실행한다. GitHub Pages 배포 워크플로는 Git에 포함된 자료만으로 lint, test, build를 실행한다. `audit:idempotency`는 Git에 포함하지 않는 `참고용/` 원천 사본이 필요하므로 로컬 릴리스 검사로만 실행한다.
 
 ## 작업 원칙
 

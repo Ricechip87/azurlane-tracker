@@ -49,9 +49,6 @@ jobs:
       - name: Test
         run: npm run test
 
-      - name: Verify generated data is committed
-        run: npm run audit:idempotency
-
       - name: Build
         run: npm run build
 
