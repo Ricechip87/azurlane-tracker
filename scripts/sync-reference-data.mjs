@@ -43,6 +43,18 @@ const downloads = [
     type: 'json',
   },
   {
+    id: 'altoy-map-data',
+    url: 'https://jforplay.github.io/altoy/data/maps/map_data_full.json',
+    relativePath: 'ALtoy/data/maps/map_data_full.json',
+    type: 'json',
+  },
+  {
+    id: 'altoy-kr-event-timeline',
+    url: 'https://raw.githubusercontent.com/JforPlay/altoy/main/src/data/kr_event_timeline.json',
+    relativePath: 'ALtoy/data/kr_event_timeline.json',
+    type: 'json',
+  },
+  {
     id: 'fernando-ships',
     url: 'https://raw.githubusercontent.com/Fernando2603/AzurLane/main/ship.json',
     relativePath: 'AzurLane/ship.json',

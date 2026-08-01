@@ -53,4 +53,20 @@ assert.equal(collab.availability.key, 'collab-unknown')
 assert.equal(collab.availability.label, '콜라보 복각 미정')
 assert.ok(!JSON.stringify(collab).includes('CN'), 'KR 앱 데이터에 CN 전용 상태를 노출하지 않는다')
 
+const activeCollab = classifyObtainability({
+  name: '2B',
+  faction: '니어',
+  obtain: ['현재 이벤트: 자동 보병 인형의 여행'],
+  activeEvent: { name: '자동 보병 인형의 여행', endsAt: '2026-08-13' },
+})
+assert.equal(activeCollab.availability.key, 'active-event')
+assert.equal(activeCollab.difficulty.key, 'event')
+
+const endedCollab = classifyObtainability({
+  name: '2B',
+  faction: '니어',
+  obtain: ['이벤트: 자동 보병 인형의 여행'],
+})
+assert.equal(endedCollab.availability.key, 'collab-unknown')
+
 console.log('obtainability-classifier tests passed')

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T23:43:44.597Z",
+  "generatedAt": "2026-07-30T13:50:56.276Z",
   "policy": {
     "displayScope": "ALtoy/KR service roster only; name fallback handles six Utawarerumono skin-ID identities",
     "fleetTechPriority": [
@@ -14,27 +14,27 @@
   "sources": {
     "characters": {
       "path": "src/data/characters.json",
-      "sha256": "7b9560bb82017f26c4f5ce819ddc2e9be37784874bd9a4faea639e8e4648c711"
+      "sha256": "ac9bf4c5e95e6f4e9aff257e63c46cbff02449001c4780de2ccbf40417624f30"
     },
     "altoy": {
       "path": "참고용/ALtoy/data/ship_info_data.json",
-      "sha256": "d431849de8c8cd7a167430be476f59fda2e858bfd8cd2f274ef028dc1f20bb9b"
+      "sha256": "87a59b2aee6f96e1cd1cda679ce6d2848a10132ca1894ba830c3fccef17e7d61"
     },
     "krShips": {
       "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
-      "sha256": "138d6c082029152caec0c00e9b1465a7514a10c0d8a2791fe804f320ee33a224"
+      "sha256": "13ac4fb4091180a561c949c5d257b3a0c60275cf1ac9c4a56dac2de927c70c38"
     },
     "cnTech": {
       "path": "참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
-      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+      "sha256": "e0d7ce3d5014ef9e7eed1efb4d35c5124468c3a99aa4f276ec80fdfa0d264c54"
     },
     "enTech": {
       "path": "참고용/AzurLaneLuaScripts/EN/sharecfg/fleet_tech_ship_template.lua",
-      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+      "sha256": "e0d7ce3d5014ef9e7eed1efb4d35c5124468c3a99aa4f276ec80fdfa0d264c54"
     },
     "jpTech": {
       "path": "참고용/AzurLaneLuaScripts/JP/sharecfg/fleet_tech_ship_template.lua",
-      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+      "sha256": "e0d7ce3d5014ef9e7eed1efb4d35c5124468c3a99aa4f276ec80fdfa0d264c54"
     },
     "krTech": {
       "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/fleet_tech_ship_template.lua",
@@ -42,35 +42,36 @@
     },
     "twTech": {
       "path": "참고용/AzurLaneLuaScripts/TW/sharecfg/fleet_tech_ship_template.lua",
-      "sha256": "9cf0d0da8aa587e0767e558c67cae4b7fd96b4024791866674fa6e4271d36dbe"
+      "sha256": "28913bde330cdbf98b3e07cae9de79000077d21f9b2c2d47d9b5345d13dd2b61"
     }
   },
   "display": {
-    "appCount": 875,
-    "altoyCount": 875,
-    "krCount": 875,
+    "appCount": 877,
+    "altoyCount": 877,
+    "krCount": 877,
     "outOfScope": [],
     "altoyMissingInApp": [],
     "identityFallbacks": []
   },
   "fleetTech": {
-    "cnCount": 745,
+    "cnCount": 746,
     "krCount": 742,
     "displayedWithCn": 742,
-    "displayedWithoutCn": 133,
+    "displayedWithoutCn": 135,
     "cnOnlyExcludedGids": [
       20115,
       20237,
-      20314
+      20314,
+      970213
     ],
     "cnKrMismatchCount": 0,
     "cnKrMismatches": [],
     "regionalLuaCounts": {
-      "cnTech": 745,
-      "enTech": 745,
-      "jpTech": 745,
+      "cnTech": 746,
+      "enTech": 746,
+      "jpTech": 746,
       "krTech": 742,
-      "twTech": 737
+      "twTech": 738
     },
     "regionalLuaVsCnMismatchCounts": {
       "cnTech": 0,

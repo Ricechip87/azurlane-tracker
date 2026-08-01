@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-07-19",
+  "updatedAt": "2026-07-30",
   "events": [
+    {
+      "name": "자동 보병 인형의 여행",
+      "startsAt": "2026-07-30",
+      "endsAt": "2026-08-13",
+      "ships": ["A2", "2B"],
+      "source": "KR in-game update and ALtoy KR data"
+    },
     {
       "name": "META전 - 브리스톨",
       "startsAt": "2026-06-18",

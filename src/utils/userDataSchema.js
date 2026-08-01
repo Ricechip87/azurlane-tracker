@@ -1,8 +1,9 @@
 import { normalizeAcquisitionStatus } from './acquisitionStatus.js'
+import { normalizeAffectionStatus } from './affection.js'
 
 export const USER_DATA_APP = 'azurlane-tracker'
 export const LEGACY_USER_DATA_APP = 'azurlane-growth-optimizer'
-export const USER_DATA_SCHEMA_VERSION = 2
+export const USER_DATA_SCHEMA_VERSION = 3
 
 const REMODEL_STATUS_MAP = {
   O: '개장',
@@ -73,11 +74,16 @@ function migrateUserData(userData, fromVersion) {
   let current = sanitizeUserData(userData)
   for (let version = fromVersion; version < USER_DATA_SCHEMA_VERSION; version++) {
     if (version === 1) current = migrateV1ToV2(current)
+    if (version === 2) current = migrateV2ToV3(current)
   }
   return current
 }
 
 function migrateV1ToV2(userData) {
+  return sanitizeUserData(userData)
+}
+
+function migrateV2ToV3(userData) {
   return sanitizeUserData(userData)
 }
 
@@ -92,6 +98,7 @@ function createMigratedEnvelope(userData) {
 function sanitizeUserRecord(record) {
   const sanitized = { ...record }
   if ('acquired' in sanitized) sanitized.acquired = normalizeAcquisitionStatus(sanitized.acquired)
+  if ('affection' in sanitized) sanitized.affection = normalizeAffectionStatus(sanitized.affection)
   if ('remodeled' in sanitized) sanitized.remodeled = REMODEL_STATUS_MAP[sanitized.remodeled] || sanitized.remodeled
   return sanitized
 }

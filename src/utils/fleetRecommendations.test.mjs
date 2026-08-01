@@ -17,7 +17,10 @@ const source = {
 }
 
 assert.equal(getAffinityMultiplier('호감작 안함'), 1)
-assert.equal(getAffinityMultiplier('서약 완료'), 1.06)
+assert.equal(getAffinityMultiplier('호감작 중'), 1.01)
+assert.equal(getAffinityMultiplier('기쁨 81+'), 1.03)
+assert.equal(getAffinityMultiplier('사랑 100'), 1.06)
+assert.equal(getAffinityMultiplier('서약 완료'), 1.09)
 assert.equal(getAffinityMultiplier('호감도 Max'), 1.12)
 assert.deepEqual(getShipProgress({ acquired: '풀돌' }), {
   level: 70,
@@ -32,21 +35,21 @@ assert.equal(withSafetyMargin(172), 190)
 
 const level70 = calculateShipStats(source, {
   acquired: '풀돌',
-  affection: '서약 완료',
+  affection: '서약 100+',
   remodeled: '개장',
 })
-assert.equal(level70.health, Math.floor((400 + (1000 * 69 / 1000) + 50) * 1.06))
-assert.equal(level70.firepower, Math.floor((40 + (1000 * 69 / 1000) + 20 + 5) * 1.06))
+assert.equal(level70.health, Math.floor((400 + (1000 * 69 / 1000) + 50) * 1.09))
+assert.equal(level70.firepower, Math.floor((40 + (1000 * 69 / 1000) + 20 + 5) * 1.09))
 
 const researchSource = { ...source, research: true }
 const researchBelow100 = calculateShipStats(researchSource, {
   acquired: '풀돌',
-  affection: '호감도 Max',
+  affection: '서약 200',
 })
 assert.equal(researchBelow100.firepower, Math.floor((40 + (1000 * 69 / 1000)) * 1.12))
 const researchAt100 = calculateShipStats(researchSource, {
   acquired: '100',
-  affection: '호감도 Max',
+  affection: '서약 200',
 })
 assert.equal(researchAt100.firepower, Math.floor((40 + (1000 * 99 / 1000) + 20) * 1.12))
 
@@ -62,7 +65,7 @@ const characters = Object.entries(shipData).map(([gid, data]) => ({
   shipType: data.shipType,
   rarity: 'SSR',
   acquired: '125',
-  affection: '호감도 Max',
+  affection: '서약 200',
 }))
 const result = buildFleetRecommendation({
   characters,

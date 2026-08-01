@@ -96,6 +96,11 @@ const characters = dataRows.map(cols => {
       gid: altoy.gid,
       iconUrl: getLocalIconUrl(altoy.skin_id) || existing.iconUrl,
     } : {}),
+    techPoints: existing.techPoints || {
+      acquired: 0,
+      maxLB: 0,
+      lv120: 0,
+    },
     // Fleet tech detail fields are refreshed separately from CN/KR/sheet sources.
     // Preserve their established app labels and ordering when this roster CSV is regenerated.
     statAcquired: existing.statAcquired || base.statAcquired,

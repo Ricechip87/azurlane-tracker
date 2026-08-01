@@ -1,5 +1,11 @@
 import assert from 'node:assert/strict'
 import { getAvailability, getObtainabilitySourceSections, getPrimaryAcquisitionRoute, isCurrentlyObtainable, isGrowthRecommendationEligible, isResearchCandidateActionable, obtainabilityLabel, obtainabilityRank } from './obtainability.js'
+import { isKstDateAfter, toKstDateKey } from './kstDate.js'
+
+assert.equal(toKstDateKey(new Date('2026-08-13T14:59:59Z')), '2026-08-13')
+assert.equal(toKstDateKey(new Date('2026-08-13T15:00:00Z')), '2026-08-14')
+assert.equal(isKstDateAfter('2026-08-13', new Date('2026-08-13T14:59:59Z')), false)
+assert.equal(isKstDateAfter('2026-08-13', new Date('2026-08-13T15:00:00Z')), true)
 
 const permanentEasy = { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'easy', label: '쉬움' } }
 const permanentNormal = { availability: { key: 'permanent', label: '상시 획득' }, difficulty: { key: 'normal', label: '보통' } }
@@ -54,5 +60,44 @@ assert.deepEqual(getObtainabilitySourceSections({
   { label: '과거 이벤트 입수처', sources: ['이벤트：특별훈련'] },
 ])
 assert.equal(getAvailability({ difficulty: { key: 'limited' } }).key, 'rerun-wait', '기존 JSON도 안전하게 해석한다')
+
+const activeNierEvent = {
+  faction: '니어',
+  availability: {
+    key: 'active-event',
+    label: '현재 이벤트',
+    eventName: '자동 보병 인형의 여행',
+    endsAt: '2026-08-13',
+  },
+  obtain: ['현재 이벤트: 자동 보병 인형의 여행 (2026-08-13까지)'],
+  historicalObtain: ['이벤트: 자동 보병 인형의 여행'],
+}
+assert.equal(
+  getAvailability(activeNierEvent, new Date('2026-08-13T12:00:00+09:00')).key,
+  'active-event',
+  '종료 당일까지는 현재 이벤트로 본다',
+)
+assert.deepEqual(
+  getAvailability(activeNierEvent, new Date('2026-08-14T00:00:00+09:00')),
+  { key: 'collab-unknown', label: '콜라보 복각 미정' },
+  '종료 다음 날부터 콜라보 함선은 자동으로 복각 미정 처리한다',
+)
+assert.deepEqual(
+  getObtainabilitySourceSections({
+    ...activeNierEvent,
+    availability: { ...activeNierEvent.availability, endsAt: '2020-01-01' },
+  }),
+  [{ label: '과거 이벤트 입수처', sources: ['이벤트: 자동 보병 인형의 여행'] }],
+  '종료된 이벤트는 현재 이벤트 문구 대신 과거 입수처를 표시한다',
+)
+assert.equal(
+  getPrimaryAcquisitionRoute({
+    ...activeNierEvent,
+    availability: { ...activeNierEvent.availability, endsAt: '2020-01-01' },
+    primaryRoute: { key: 'active-event', label: '현재 이벤트', rank: 1 },
+  }),
+  null,
+  '종료된 이벤트의 대표 입수처를 현재 이벤트로 남기지 않는다',
+)
 
 console.log('obtainability tests passed')

@@ -4,6 +4,7 @@ import {
   calculateShipDatabaseStats,
   filterShipDatabaseCharacters,
   getVisibleRetrofitBonuses,
+  hasUnresolvedSkillValues,
   sortShipDatabaseCharacters,
 } from './shipDatabase.js'
 
@@ -18,6 +19,9 @@ assert.deepEqual(
   [1, 2, 3],
   '기본 필터는 원본 도감순을 보존해야 합니다.',
 )
+
+assert.equal(hasUnresolvedSkillValues('자신의 내구 X%만큼 회복하고 X초 동안 유지한다.'), true)
+assert.equal(hasUnresolvedSkillValues('자신의 포격이 10.0%/20.0% 상승한다.'), false)
 assert.deepEqual(
   sortShipDatabaseCharacters(characters, {
     1: { id: 20 },
@@ -76,6 +80,9 @@ const level100 = calculateShipDatabaseStats(combatSource, '100')
 assert.equal(level100.health, Math.floor(400 + (1000 * 99 / 1000) + 50 + 165))
 assert.equal(level100.firepower, Math.floor(40 + (1000 * 99 / 1000) + 20 + 25))
 assert.equal(level100.speed, 20, '속력에는 성장이나 호감도 보정을 임의로 적용하지 않습니다.')
+const level100Oath = calculateShipDatabaseStats(combatSource, '100', '서약 100+')
+assert.equal(level100Oath.health, Math.floor((400 + (1000 * 99 / 1000) + 50 + 165) * 1.09))
+assert.equal(level100Oath.speed, 20, '속력은 서약 보정을 받지 않습니다.')
 
 const researchSource = { ...combatSource, research: true }
 assert.equal(
@@ -93,5 +100,59 @@ assert.deepEqual(getVisibleRetrofitBonuses(combatSource), {
   health: 165,
   firepower: 25,
 }, '장비 효율 변화는 개장 보너스에서 제외해야 합니다.')
+
+const deweySource = {
+  research: false,
+  base: {},
+  maxBase: {
+    health: 654,
+    firepower: 34,
+    torpedo: 129,
+    antiair: 85,
+    aviation: 0,
+    reload: 69,
+    accuracy: 63,
+    evasion: 60,
+    speed: 44.4,
+    luck: 72,
+    asw: 112,
+  },
+  growth: {
+    health: 7564,
+    firepower: 191,
+    torpedo: 702,
+    antiair: 753,
+    aviation: 0,
+    reload: 482,
+    accuracy: 975,
+    evasion: 1115,
+    speed: 0,
+    luck: 0,
+    asw: 520,
+  },
+  enhance: {
+    firepower: 14,
+    torpedo: 51,
+    reload: 52,
+  },
+}
+
+assert.deepEqual(
+  calculateShipDatabaseStats(deweySource, '125'),
+  {
+    health: 1591,
+    firepower: 71,
+    torpedo: 267,
+    antiair: 178,
+    aviation: 0,
+    reload: 180,
+    accuracy: 183,
+    evasion: 198,
+    speed: 44,
+    luck: 72,
+    asw: 176,
+  },
+  '듀이는 미서약 호감도 50 기준이며 ALtoy 사랑 100(6%) 화면과 조건을 혼동하지 않아야 합니다.',
+)
 
 console.log('shipDatabase tests passed')

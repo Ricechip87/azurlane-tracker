@@ -1,4 +1,5 @@
 import { isAcquiredStatus, isLevel120Status, normalizeAcquisitionStatus } from './acquisitionStatus.js'
+import { isOathAffection } from './affection.js'
 import { normalizeStatShipTypeValue } from './shipClassifications.js'
 import { normalizeStatName } from './statLabels.js'
 
@@ -7,7 +8,7 @@ export function summarizeRoster(characters) {
   const acquired = characters.filter(c => isAcquiredStatus(c.acquired)).length
   const level120 = characters.filter(c => isLevel120Status(c.acquired)).length
   const level125 = characters.filter(c => normalizeAcquisitionStatus(c.acquired) === '125').length
-  const oath = characters.filter(c => isAcquiredStatus(c.acquired) && c.affection === '서약 완료').length
+  const oath = characters.filter(c => isAcquiredStatus(c.acquired) && isOathAffection(c.affection)).length
 
   return {
     total,

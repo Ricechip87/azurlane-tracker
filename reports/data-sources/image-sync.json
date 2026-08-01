@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-25T23:37:15.904Z",
-  "checked": 875,
-  "changedShips": 0,
+  "generatedAt": "2026-07-30T13:27:07.230Z",
+  "checked": 877,
+  "changedShips": 2,
   "unavailableShips": 6,
   "results": [
     {
-      "gid": 1030004,
-      "name": "우루루",
-      "skinId": 10300040,
+      "gid": 1030002,
+      "name": "네코네",
+      "skinId": 10300020,
       "downloaded": [],
       "unavailable": [
         {
           "label": "Fernando painting.png",
           "error": "HTTP 404",
-          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300040/painting.png"
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300020/painting.png"
         }
       ]
     },
@@ -31,19 +31,6 @@
       ]
     },
     {
-      "gid": 1030002,
-      "name": "네코네",
-      "skinId": 10300020,
-      "downloaded": [],
-      "unavailable": [
-        {
-          "label": "Fernando painting.png",
-          "error": "HTTP 404",
-          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300020/painting.png"
-        }
-      ]
-    },
-    {
       "gid": 1030003,
       "name": "루루티에",
       "skinId": 10300030,
@@ -53,6 +40,19 @@
           "label": "Fernando painting.png",
           "error": "HTTP 404",
           "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300030/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030004,
+      "name": "우루루",
+      "skinId": 10300040,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300040/painting.png"
         }
       ]
     },
@@ -81,6 +81,46 @@
           "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300060/painting.png"
         }
       ]
+    },
+    {
+      "gid": 1170001,
+      "name": "A2",
+      "skinId": 11700010,
+      "downloaded": [
+        {
+          "label": "Fernando painting.png",
+          "bytes": 3158731
+        },
+        {
+          "label": "Fernando icon.png",
+          "bytes": 26931
+        },
+        {
+          "label": "Fernando shipyard.png",
+          "bytes": 105328
+        }
+      ],
+      "unavailable": []
+    },
+    {
+      "gid": 1170002,
+      "name": "2B",
+      "skinId": 11700020,
+      "downloaded": [
+        {
+          "label": "Fernando painting.png",
+          "bytes": 3852060
+        },
+        {
+          "label": "Fernando icon.png",
+          "bytes": 28320
+        },
+        {
+          "label": "Fernando shipyard.png",
+          "bytes": 109161
+        }
+      ],
+      "unavailable": []
     }
   ]
 }

@@ -4,7 +4,6 @@ import RecommendationPage from './components/RecommendationPage.jsx'
 import BackToTopButton from './components/layout/BackToTopButton.jsx'
 import TopMenu from './components/layout/TopMenu.jsx'
 import {
-  DataLoadStatePage,
   HomePage,
   MyRosterPage,
   UnderConstructionPage,
@@ -18,8 +17,6 @@ const ShipDatabasePage = lazy(() => import('./components/ShipDatabasePage.jsx'))
 export default function App() {
   const [activePage, setActivePage] = useState('home')
   const characters = characterData
-  const charactersLoaded = true
-  const charactersError = ''
   const [userData, setUserData, storageMessage] = useUserDataStorage('azurlane-userdata')
   const [filters, setFilters] = useState(DEFAULT_CHARACTER_FILTERS)
 
@@ -35,13 +32,12 @@ export default function App() {
     [characters, userData]
   )
   const filtered = useMemo(() => filterCharacters(enriched, filters), [enriched, filters])
-  const dataStatePage = <DataLoadStatePage error={charactersError} />
 
   return (
     <div className="min-h-screen bg-[#171717] text-gray-100">
       <TopMenu activePage={activePage} onSelect={setActivePage} />
       {activePage === 'home' && <HomePage />}
-      {activePage === 'my-roster' && (charactersLoaded ? (
+      {activePage === 'my-roster' && (
         <MyRosterPage
           characters={enriched}
           filteredCharacters={filtered}
@@ -52,15 +48,13 @@ export default function App() {
           setUserData={setUserData}
           storageMessage={storageMessage}
         />
-      ) : dataStatePage)}
-      {activePage === 'growth-recommend' && (charactersLoaded
-        ? <RecommendationPage characters={enriched} />
-        : dataStatePage)}
-      {activePage === 'ship-db' && (charactersLoaded ? (
+      )}
+      {activePage === 'growth-recommend' && <RecommendationPage characters={enriched} />}
+      {activePage === 'ship-db' && (
         <Suspense fallback={<ShipDatabaseLoading />}>
           <ShipDatabasePage characters={characters} />
         </Suspense>
-      ) : dataStatePage)}
+      )}
       {!['home', 'my-roster', 'growth-recommend', 'ship-db'].includes(activePage) && (
         <UnderConstructionPage title={PAGE_TITLES[activePage] || '공사중'} />
       )}

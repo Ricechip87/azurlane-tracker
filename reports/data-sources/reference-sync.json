@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T23:37:15.286Z",
+  "generatedAt": "2026-07-30T13:24:31.914Z",
   "policy": {
     "data": "원격 원천을 임시 경로에서 전부 검증한 뒤 자동 관리 경로만 교체",
     "images": "별도 이미지 동기화에서 기존 파일을 보존하고 누락 파일만 추가",
@@ -30,15 +30,22 @@
       "id": "altoy-full",
       "url": "https://jforplay.github.io/altoy/data/ship_info_data.json",
       "relativePath": "ALtoy/data/ship_info_data.json",
-      "bytes": 5531480,
-      "sha256": "d431849de8c8cd7a167430be476f59fda2e858bfd8cd2f274ef028dc1f20bb9b"
+      "bytes": 5543707,
+      "sha256": "87a59b2aee6f96e1cd1cda679ce6d2848a10132ca1894ba830c3fccef17e7d61"
     },
     {
       "id": "altoy-lite",
       "url": "https://jforplay.github.io/altoy/data/ship_info_lite.json",
       "relativePath": "ALtoy/data/ship_info_lite.json",
-      "bytes": 273062,
-      "sha256": "d3f9a4bd84b3a0413f330de6f70002a8d28b483e1be75ccd50f3ba6ed3c82cbb"
+      "bytes": 273594,
+      "sha256": "b6c5a2bc36ecf2ab5440a5e7f6f5212bdef1d2f3706dbbcdcdbba03971a1dd74"
+    },
+    {
+      "id": "altoy-skill-template",
+      "url": "https://jforplay.github.io/altoy/data/sim/skill_data_template.json",
+      "relativePath": "ALtoy/data/sim/skill_data_template.json",
+      "bytes": 1935308,
+      "sha256": "8a7b389f696004a174d66d30cf6da42acb14216b8b13c1876e43a883df51b4b5"
     },
     {
       "id": "azurlane-data",
@@ -50,15 +57,15 @@
       "id": "cn-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/CN/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 242876,
-      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+      "bytes": 243187,
+      "sha256": "e0d7ce3d5014ef9e7eed1efb4d35c5124468c3a99aa4f276ec80fdfa0d264c54"
     },
     {
       "id": "en-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/EN/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/EN/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 242876,
-      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+      "bytes": 243187,
+      "sha256": "e0d7ce3d5014ef9e7eed1efb4d35c5124468c3a99aa4f276ec80fdfa0d264c54"
     },
     {
       "id": "fernando-ships",
@@ -78,15 +85,15 @@
       "id": "fleet-tech-workbook",
       "url": "https://docs.google.com/spreadsheets/d/1R5u6fgr3e6XvfqQ3_GMuroeNfe2ShiY65akzzwDnwTs/export?format=xlsx",
       "relativePath": "벽람항로(일) - アズールレーン.xlsx",
-      "bytes": 717009,
-      "sha256": "87e1efa77f36fdbe8f4861f293e816b5957ac3bbc6cd2d92ebdca61b1c8ba8a6"
+      "bytes": 716574,
+      "sha256": "8aca8279111b6b75987589ac83c6af2e8694ba620b23dfb4fcc5144f9754aafe"
     },
     {
       "id": "growth-guide-workbook",
       "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=xlsx",
       "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본.xlsx",
-      "bytes": 8047660,
-      "sha256": "f8639bb3e9ec5d4ae25753bfed02305d1e6656ea3f33eb3734ae19435044fb17"
+      "bytes": 8079462,
+      "sha256": "3db94b2e7d64d851303c4856efb09cfda396f5accc4a375154afec2a3aad7c77"
     },
     {
       "id": "growth-main-sea",
@@ -99,8 +106,8 @@
       "id": "growth-main-sheet",
       "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=csv&gid=438662354",
       "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - [ 메인시트.csv",
-      "bytes": 130050,
-      "sha256": "9979f030f0d707cb439340414e5ada9b1c0fa193a3e9c012206b47348bdc4e07"
+      "bytes": 130124,
+      "sha256": "77b598827a4e23c9de3b1dc58b82a64f9d36d4031eb38c1515408491aae12d24"
     },
     {
       "id": "growth-new-player",
@@ -120,8 +127,8 @@
       "id": "jp-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/JP/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/JP/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 242876,
-      "sha256": "eeacb57985a46874da0a1abd7edc491ff0250d63ec23cf2761ba0e7e037cacc8"
+      "bytes": 243187,
+      "sha256": "e0d7ce3d5014ef9e7eed1efb4d35c5124468c3a99aa4f276ec80fdfa0d264c54"
     },
     {
       "id": "kr-blueprint-lua",
@@ -141,15 +148,15 @@
       "id": "kr-research-task-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/task_data_template.lua",
       "relativePath": "AzurLaneLuaScripts/KR/sharecfgdata/task_data_template.lua",
-      "bytes": 7233883,
-      "sha256": "8455a604b4fb01cad6c06fdeb79b6119dc3f2a042b685390f6a1fcfc7d0543b9"
+      "bytes": 7287413,
+      "sha256": "91733df02aba3a74506db1893af375923e670a36c3e2ff1def85e03b0e3b2cd7"
     },
     {
       "id": "kr-ship-data-group-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/ship_data_group.lua",
       "relativePath": "AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
-      "bytes": 523885,
-      "sha256": "138d6c082029152caec0c00e9b1465a7514a10c0d8a2791fe804f320ee33a224"
+      "bytes": 524921,
+      "sha256": "13ac4fb4091180a561c949c5d257b3a0c60275cf1ac9c4a56dac2de927c70c38"
     },
     {
       "id": "research-exp",
@@ -169,8 +176,8 @@
       "id": "tw-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/TW/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/TW/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 240306,
-      "sha256": "9cf0d0da8aa587e0767e558c67cae4b7fd96b4024791866674fa6e4271d36dbe"
+      "bytes": 240617,
+      "sha256": "28913bde330cdbf98b3e07cae9de79000077d21f9b2c2d47d9b5345d13dd2b61"
     }
   ]
 }

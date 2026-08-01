@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { calcTechPoints } from '../utils/techPoints.js'
 import { ACQUISITION_STATUSES, normalizeAcquisitionStatus } from '../utils/acquisitionStatus.js'
+import { AFFECTION_SELECT_OPTIONS, getAffectionOptionLabel, normalizeAffectionStatus } from '../utils/affection.js'
 import { getDropdownMenuPosition } from '../utils/dropdownPosition.js'
 import { getEffectiveRarity } from '../utils/rarity.js'
 import { getFactionDisplayName } from '../utils/factions.js'
@@ -17,7 +18,6 @@ const RARITY_COLOR = {
 const REMODEL_OPTS = ['없음', '미개장', '개장']
 const KEEL_OPTS = ['없음', '가능', '완료']
 const SKILLED_OPTS = ['스작 안함', '스작 중', '스작 완료']
-const AFFECTION_OPTS = ['호감작 안함', '호감작 중', '서약 완료', '호감도 Max']
 const EQUIP_OPTS = ['없음', '미제작', '제작']
 const TH_CENTER = 'px-3 py-2 text-center align-middle whitespace-nowrap'
 const TD_CENTER = 'px-3 py-2 text-center align-middle'
@@ -54,7 +54,7 @@ export default function CharacterTable({ characters, updateUser }) {
               <th className={TH_CENTER}>용골편찬</th>
               <th className={TH_CENTER}>획득/육성</th>
               <th className={TH_CENTER}>스킬작</th>
-              <th className={TH_CENTER}>호감작</th>
+              <th className={TH_CENTER}>호감도</th>
               <th className={TH_CENTER}>전용 장비</th>
               <th className={TH_CENTER}>기술점수</th>
               <th className={TH_CENTER}>입수 스탯</th>
@@ -79,7 +79,7 @@ function CharacterRow({ char: c, updateUser, even }) {
   const bg = even ? 'bg-[#1f1f1f]' : 'bg-[#181818]'
   const acquired = normalizeAcquisitionStatus(c.acquired)
   const skilled = c.skilled || '스작 안함'
-  const affection = c.affection || '호감작 안함'
+  const affection = normalizeAffectionStatus(c.affection)
   const equip = c.equip || '없음'
   const remodel = c.remodeled === 'O' ? '개장' : c.remodeled === 'X' ? '미개장' : (c.remodeled || '없음')
   const isSP = String(c.id).startsWith('P')
@@ -136,8 +136,9 @@ function CharacterRow({ char: c, updateUser, even }) {
           colorMap={{ '스작 완료': 'bg-green-700 text-green-200', '스작 중': 'bg-yellow-700 text-yellow-200', '스작 안함': 'bg-gray-700 text-gray-400' }} />
       </td>
       <td className={TD_CENTER}>
-        <StatusSelect value={affection} options={AFFECTION_OPTS} onChange={v => updateUser(c.id, 'affection', v)}
-          colorMap={{ '호감작 안함': 'bg-gray-700 text-gray-400', '호감작 중': 'bg-yellow-700 text-yellow-200', '서약 완료': 'bg-red-700 text-red-200', '호감도 Max': 'bg-pink-700 text-pink-200' }} />
+        <StatusSelect value={affection} options={AFFECTION_SELECT_OPTIONS} onChange={v => updateUser(c.id, 'affection', v)}
+          valueLabel={getAffectionOptionLabel(affection)}
+          colorMap={{ '기타': 'bg-gray-700 text-gray-300', '호감 61+': 'bg-blue-800 text-blue-200', '기쁨 81+': 'bg-emerald-800 text-emerald-200', '사랑 100': 'bg-yellow-700 text-yellow-100', '서약 100+': 'bg-red-700 text-red-100', '서약 200': 'bg-pink-700 text-pink-100' }} />
       </td>
       <td className={TD_CENTER}>
         <StatusSelect value={equip} options={EQUIP_OPTS} onChange={v => updateUser(c.id, 'equip', v)}
@@ -219,7 +220,7 @@ function StatCell({ data }) {
   )
 }
 
-function StatusSelect({ value, options, onChange, colorMap }) {
+function StatusSelect({ value, options, onChange, colorMap, valueLabel = value }) {
   const [open, setOpen] = useState(false)
   const [menuStyle, setMenuStyle] = useState({})
   const buttonRef = useRef(null)
@@ -286,7 +287,7 @@ function StatusSelect({ value, options, onChange, colorMap }) {
         onClick={() => setOpen(current => !current)}
         className={`inline-flex min-w-20 items-center justify-between gap-2 whitespace-nowrap rounded border px-2 py-0.5 text-xs outline-none transition-colors hover:border-gray-500 focus:border-neutral-400 ${open ? 'border-neutral-400' : 'border-transparent'} ${color}`}
       >
-        <span>{value}</span>
+        <span>{valueLabel}</span>
         <span className="text-[10px] opacity-70">▼</span>
       </button>
       {open && (
@@ -297,20 +298,22 @@ function StatusSelect({ value, options, onChange, colorMap }) {
           style={menuStyle}
         >
           {options.map(option => {
-            const selected = option === value
+            const optionValue = typeof option === 'string' ? option : option.value
+            const optionLabel = typeof option === 'string' ? option : option.label
+            const selected = optionValue === value
             return (
               <button
-                key={option}
+                key={optionValue}
                 type="button"
                 role="option"
                 aria-selected={selected}
                 onClick={() => {
-                  onChange(option)
+                  onChange(optionValue)
                   setOpen(false)
                 }}
                 className={`block w-full whitespace-nowrap rounded px-2 py-1 text-left transition-colors ${selected ? 'bg-neutral-700 text-white' : 'text-gray-200 hover:bg-[#2a2a2a] hover:text-gray-100'}`}
               >
-                {option}
+                {optionLabel}
               </button>
             )
           })}

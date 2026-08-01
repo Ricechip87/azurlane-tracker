@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import shipCombatData from '../data/shipCombatData.json'
 import shipDatabaseDetails from '../data/shipDatabaseDetails.json'
 import shipObtainabilityData from '../data/shipObtainability.json'
+import { AFFECTION_SELECT_OPTIONS, getAffectionOptionLabel } from '../utils/affection.js'
 import { getFactionBadgeName, getFactionOptions } from '../utils/factions.js'
 import {
   getAvailability,
@@ -19,6 +20,7 @@ import {
   filterShipDatabaseCharacters,
   getArmorLabel,
   getVisibleRetrofitBonuses,
+  hasUnresolvedSkillValues,
   sortShipDatabaseCharacters,
 } from '../utils/shipDatabase.js'
 import { getStatDisplayName } from '../utils/statLabels.js'
@@ -261,11 +263,12 @@ function ShipDatabaseCard({ character, onOpen, buttonRef }) {
 
 function ShipDatabaseDetail({ character, onBack, headingRef }) {
   const [stageId, setStageId] = useState('125')
+  const [affection, setAffection] = useState('기타')
   const combat = shipCombatData.ships[String(character.gid)]
   const detail = shipDatabaseDetails.ships[String(character.gid)] || {}
   const obtainability = getShipObtainability(obtainabilityLookup, character)
   const sourceSections = getObtainabilitySourceSections(obtainability)
-  const stats = calculateShipDatabaseStats(combat, stageId)
+  const stats = calculateShipDatabaseStats(combat, stageId, affection)
   const retrofitBonuses = getVisibleRetrofitBonuses(combat)
   const rarity = getDatabaseRarityLabel(character, combat)
 
@@ -316,7 +319,7 @@ function ShipDatabaseDetail({ character, onBack, headingRef }) {
               <div className="text-xs font-bold text-gray-500">대표 입수처</div>
               <div className="mt-1 text-sm text-gray-100">
                 {getPrimaryAcquisitionRoute(obtainability)?.sources?.join(', ')
-                  || obtainability?.obtain?.join(', ')
+                  || sourceSections[0]?.sources?.join(', ')
                   || '확인된 입수처 정보가 없습니다.'}
               </div>
             </div>
@@ -327,21 +330,35 @@ function ShipDatabaseDetail({ character, onBack, headingRef }) {
       <section className="border border-neutral-700 bg-[#242424]">
         <SectionHeader
           title="능력치"
-          description="호감도 50, 일반함 강화 완료 기준입니다. 연구함과 개장 가능 함선은 100부터 완성 상태를 적용합니다."
+          description={`${getAffectionOptionLabel(affection)} 기준입니다. 연구함과 개장 가능 함선은 100부터 완성 상태를 적용합니다.`}
         />
         <div className="p-4">
-          <div className="mb-4 flex flex-wrap gap-2" role="group" aria-label="능력치 단계">
-            {SHIP_DATABASE_STAGES.map(stage => (
-              <button
-                key={stage.id}
-                type="button"
-                onClick={() => setStageId(stage.id)}
-                className={`rounded border px-3 py-1.5 text-xs font-bold ${stageId === stage.id ? 'border-cyan-500 bg-cyan-950/60 text-cyan-200' : 'border-neutral-600 bg-[#191919] text-gray-400 hover:text-white'}`}
-                aria-pressed={stageId === stage.id}
+          <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+            <div className="flex flex-wrap gap-2" role="group" aria-label="능력치 단계">
+              {SHIP_DATABASE_STAGES.map(stage => (
+                <button
+                  key={stage.id}
+                  type="button"
+                  onClick={() => setStageId(stage.id)}
+                  className={`rounded border px-3 py-1.5 text-xs font-bold ${stageId === stage.id ? 'border-cyan-500 bg-cyan-950/60 text-cyan-200' : 'border-neutral-600 bg-[#191919] text-gray-400 hover:text-white'}`}
+                  aria-pressed={stageId === stage.id}
+                >
+                  {stage.label}
+                </button>
+              ))}
+            </div>
+            <label className="flex min-w-44 flex-col gap-1 text-xs text-gray-400">
+              호감도
+              <select
+                value={affection}
+                onChange={event => setAffection(event.target.value)}
+                className="rounded border border-neutral-600 bg-[#191919] px-3 py-1.5 text-sm font-bold text-gray-100 outline-none focus:border-cyan-500"
               >
-                {stage.label}
-              </button>
-            ))}
+                {AFFECTION_SELECT_OPTIONS.map(option => (
+                  <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+              </select>
+            </label>
           </div>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
             {SHIP_DATABASE_STAT_KEYS.map(key => (
@@ -373,8 +390,14 @@ function ShipDatabaseDetail({ character, onBack, headingRef }) {
               <div className="flex flex-wrap items-center gap-2">
                 <h3 className="text-sm font-black text-gray-100">{skill.name}</h3>
                 {skill.retrofit && <Badge tone="green">개장</Badge>}
+                {hasUnresolvedSkillValues(skill.effect) && <Badge tone="gold">원천 수치 확인 중</Badge>}
               </div>
               <p className="mt-2 text-sm leading-6 text-gray-300">{skill.effect}</p>
+              {hasUnresolvedSkillValues(skill.effect) && (
+                <p className="mt-2 text-xs text-amber-300">
+                  공개 원천에 아직 확정 수치가 없어 X로 표시된 값입니다. 확인 전까지 수치를 추정하지 않습니다.
+                </p>
+              )}
             </article>
           )) : (
             <div className="rounded border border-dashed border-neutral-700 px-4 py-6 text-center text-sm text-gray-500">

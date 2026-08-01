@@ -16,6 +16,17 @@ assert.deepEqual(filterCharacters(characters, { ...DEFAULT_CHARACTER_FILTERS, re
 assert.deepEqual(filterCharacters(characters, { ...DEFAULT_CHARACTER_FILTERS, favoritesOnly: true }).map(c => c.id), ['001'])
 assert.deepEqual(filterCharacters(characters, { ...DEFAULT_CHARACTER_FILTERS, researchOnly: true }).map(c => c.id), ['P001'])
 
+const affectionCharacters = [
+  { id: 'OLD', name: '구 저장값', shipType: '구축', affection: '호감작 중' },
+  { id: 'NEW', name: '새 저장값', shipType: '구축', affection: '호감 61+' },
+  { id: 'OATH', name: '서약함', shipType: '구축', affection: '서약 200' },
+]
+assert.deepEqual(
+  filterCharacters(affectionCharacters, { ...DEFAULT_CHARACTER_FILTERS, affection: '호감 61+' }).map(c => c.id),
+  ['OLD', 'NEW'],
+  '구 호감작 중 값도 새 호감 61+ 필터에 포함해야 합니다.',
+)
+
 const cruiserCharacters = [
   { id: 'CA', name: '중순양함', shipType: '중순' },
   { id: 'CB', name: '대형순양함', shipType: '대순' },

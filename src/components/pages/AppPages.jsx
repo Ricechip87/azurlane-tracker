@@ -9,16 +9,6 @@ const publicAssetUrl = path => `${import.meta.env.BASE_URL}${path}`
 const LOADING_ILLUSTRATIONS = [publicAssetUrl('images/loading-illustrations/100021-painting.png')]
 const LOADING_ILLUSTRATION_INTERVAL_MS = 8000
 
-export function DataLoadStatePage({ error }) {
-  return (
-    <main className="mx-auto max-w-[1500px] p-6">
-      <section className="border border-neutral-700 bg-[#242424] px-6 py-10 text-sm text-gray-400">
-        {error ? `함선 데이터를 불러오지 못했습니다. (${error})` : '함선 데이터를 불러오는 중입니다.'}
-      </section>
-    </main>
-  )
-}
-
 export function HomePage() {
   return (
     <main className="mx-auto max-w-[1500px] p-6">

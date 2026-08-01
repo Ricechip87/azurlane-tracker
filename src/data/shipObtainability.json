@@ -1,25 +1,25 @@
 {
   "meta": {
     "note": "KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.",
-    "generatedAt": "2026-07-25T23:45:54.911Z",
-    "total": 875,
-    "withObtain": 875,
+    "generatedAt": "2026-08-01T08:10:42.232Z",
+    "total": 877,
+    "withObtain": 877,
     "withoutObtain": 0,
     "availability": {
-      "active-event": 2,
+      "active-event": 3,
       "collab-unknown": 89,
       "permanent": 609,
-      "rerun-wait": 175
+      "rerun-wait": 176
     },
     "difficulty": {
       "easy": 327,
-      "event": 2,
+      "event": 3,
       "hard": 64,
-      "limited": 264,
+      "limited": 265,
       "normal": 218
     },
     "acquisitionRoutes": {
-      "active-event": 2,
+      "active-event": 3,
       "archive-drop": 63,
       "construction": 323,
       "core-monthly": 25,
@@ -70272,7 +70272,7 @@
       "faction": "META",
       "shipType": "경순",
       "obtain": [
-        "현재 이벤트: 월드 투어 (2026-07-31까지)"
+        "META 연구실·정보 동기화"
       ],
       "historicalObtain": [
         "META 연구실·정보 동기화"
@@ -70299,36 +70299,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "월드 투어",
-        "endsAt": "2026-07-31"
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 월드 투어"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 월드 투어"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -77335,6 +77315,150 @@
         "localResource": true,
         "altoy": true,
         "status": "matched"
+      }
+    },
+    {
+      "id": "Z161",
+      "gid": 1170001,
+      "name": "A2",
+      "rarity": "SSR",
+      "faction": "니어",
+      "shipType": "중순",
+      "obtain": [
+        "현재 이벤트: 자동 보병 인형의 여행 (2026-08-13까지)"
+      ],
+      "historicalObtain": [
+        "이벤트: 자동 보병 인형의 여행"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "자동 보병 인형의 여행",
+        "endsAt": "2026-08-13"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 자동 보병 인형의 여행"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 자동 보병 인형의 여행"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
+      "id": "Z162",
+      "gid": 1170002,
+      "name": "2B",
+      "rarity": "SSR",
+      "faction": "니어",
+      "shipType": "경순",
+      "obtain": [
+        "현재 이벤트: 자동 보병 인형의 여행 (2026-08-13까지)"
+      ],
+      "historicalObtain": [
+        "이벤트: 자동 보병 인형의 여행"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "자동 보병 인형의 여행",
+        "endsAt": "2026-08-13"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 자동 보병 인형의 여행"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 자동 보병 인형의 여행"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
       }
     }
   ]

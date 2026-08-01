@@ -16,7 +16,23 @@ assert.equal(loaded.migrated, true)
 assert.equal(loaded.fromVersion, 0)
 assert.deepEqual(loaded.userData['1'], { acquired: '100', favorite: true })
 assert.ok(storage.getItem(`${key}-recovery`), 'migration must preserve the previous raw value')
-assert.equal(JSON.parse(storage.getItem(key)).schemaVersion, 2)
+assert.equal(JSON.parse(storage.getItem(key)).schemaVersion, 3)
+
+const v2Storage = new MemoryStorage({
+  [key]: JSON.stringify({
+    app: 'azurlane-tracker',
+    schemaVersion: 2,
+    userData: { 3: { affection: '호감작 중' }, 4: { affection: '호감도 Max' } },
+  }),
+})
+const loadedV2 = loadUserDataFromStorage(v2Storage, key, new Date('2026-07-31T01:00:00.000Z'))
+assert.equal(loadedV2.migrated, true)
+assert.deepEqual(loadedV2.userData, {
+  3: { affection: '호감 61+' },
+  4: { affection: '서약 200' },
+})
+assert.equal(JSON.parse(v2Storage.getItem(key)).schemaVersion, 3)
+assert.ok(v2Storage.getItem(`${key}-recovery`), 'v2 원본은 복구용으로 보존해야 합니다.')
 
 saveUserDataToStorage(storage, key, { 2: { acquired: '125' } }, new Date('2026-07-18T02:00:00.000Z'))
 assert.deepEqual(JSON.parse(storage.getItem(key)).userData, { 2: { acquired: '125' } })

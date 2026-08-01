@@ -1,12 +1,6 @@
 import { isAcquiredStatus, normalizeAcquisitionStatus } from './acquisitionStatus.js'
+import { getAffectionMultiplier } from './affection.js'
 import { getShipPosition } from './shipClassifications.js'
-
-const AFFINITY_MULTIPLIER = {
-  '호감작 안함': 1,
-  '호감작 중': 1,
-  '서약 완료': 1.06,
-  '호감도 Max': 1.12,
-}
 
 const LEVEL_BY_STATUS = {
   미획득: 1,
@@ -46,7 +40,7 @@ const OPERATION_TIER_SCORE = {
 }
 
 export function getAffinityMultiplier(status, strongest = false) {
-  return strongest ? 1.12 : AFFINITY_MULTIPLIER[status] || 1
+  return strongest ? 1.12 : getAffectionMultiplier(status)
 }
 
 export function getShipProgress(character, research = false, strongest = false) {

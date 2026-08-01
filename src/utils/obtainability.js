@@ -1,3 +1,6 @@
+import { COLLAB_FACTIONS } from './collabFactions.js'
+import { isKstDateAfter } from './kstDate.js'
+
 export const OBTAINABILITY_RANK = {
   permanent: 0,
   'active-event': 1,
@@ -8,8 +11,16 @@ export const OBTAINABILITY_RANK = {
 
 export const DIFFICULTY_RANK = { easy: 0, event: 1, normal: 2, hard: 3, limited: 8, unknown: 9, excluded: 10 }
 
-export function getAvailability(obtainability) {
-  if (obtainability?.availability) return obtainability.availability
+export function getAvailability(obtainability, now = new Date()) {
+  if (obtainability?.availability) {
+    const availability = obtainability.availability
+    if (availability.key === 'active-event' && isPastEndDate(availability.endsAt, now)) {
+      return COLLAB_FACTIONS.has(obtainability?.faction)
+        ? { key: 'collab-unknown', label: '콜라보 복각 미정' }
+        : { key: 'rerun-wait', label: '복각 대기' }
+    }
+    return availability
+  }
   const key = obtainability?.difficulty?.key
   if (['easy', 'normal', 'hard'].includes(key)) return { key: 'permanent', label: '상시 획득' }
   if (key === 'event') return { key: 'active-event', label: '현재 이벤트' }
@@ -55,6 +66,9 @@ export function obtainabilityLabel(obtainability) {
 }
 
 export function getPrimaryAcquisitionRoute(obtainability) {
+  const expiredEvent = obtainability?.availability?.key === 'active-event'
+    && getAvailability(obtainability).key !== 'active-event'
+  if (expiredEvent) return null
   if (obtainability?.primaryRoute) return obtainability.primaryRoute
   if (obtainability?.acquisitionRoutes?.length) {
     return [...obtainability.acquisitionRoutes].sort((a, b) => (a.rank ?? 9) - (b.rank ?? 9))[0]
@@ -65,7 +79,12 @@ export function getPrimaryAcquisitionRoute(obtainability) {
 export function getObtainabilitySourceSections(obtainability) {
   const current = [...new Set(obtainability?.obtain || [])]
   const availability = getAvailability(obtainability)
-  if (availability.key !== 'permanent') return current.length ? [{ label: '입수처', sources: current }] : []
+  if (availability.key !== 'permanent') {
+    const expiredEvent = obtainability?.availability?.key === 'active-event' && availability.key !== 'active-event'
+    const historical = [...new Set(obtainability?.historicalObtain || [])]
+    if (expiredEvent && historical.length) return [{ label: '과거 이벤트 입수처', sources: historical }]
+    return current.length ? [{ label: '입수처', sources: current }] : []
+  }
 
   const routeSections = (obtainability?.acquisitionRoutes || []).map(route => ({
     label: `${route.label} · ${certaintyLabel(route.certainty)}`,
@@ -92,4 +111,8 @@ function certaintyLabel(certainty) {
   if (certainty === 'rotation') return '랜덤 갱신'
   if (certainty === 'limited-time') return '기간 한정'
   return '조건부'
+}
+
+function isPastEndDate(endsAt, now) {
+  return isKstDateAfter(endsAt, now)
 }

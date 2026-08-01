@@ -26766,5 +26766,57 @@
     },
     "gid": 1060015,
     "iconUrl": "/azurlane-tracker/ship-icons/10600150.png"
+  },
+  {
+    "id": "Z161",
+    "name": "A2",
+    "rarity": "SSR",
+    "shipType": "중순",
+    "faction": "니어",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [],
+      "stat": "",
+      "value": 0
+    },
+    "stat120": {
+      "shipTypes": [],
+      "stat": "",
+      "value": 0
+    },
+    "gid": 1170001,
+    "iconUrl": "/azurlane-tracker/ship-icons/11700010.png",
+    "techPoints": {
+      "acquired": 0,
+      "maxLB": 0,
+      "lv120": 0
+    }
+  },
+  {
+    "id": "Z162",
+    "name": "2B",
+    "rarity": "SSR",
+    "shipType": "경순",
+    "faction": "니어",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [],
+      "stat": "",
+      "value": 0
+    },
+    "stat120": {
+      "shipTypes": [],
+      "stat": "",
+      "value": 0
+    },
+    "gid": 1170002,
+    "iconUrl": "/azurlane-tracker/ship-icons/11700020.png",
+    "techPoints": {
+      "acquired": 0,
+      "maxLB": 0,
+      "lv120": 0
+    }
   }
 ]

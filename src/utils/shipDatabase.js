@@ -1,4 +1,5 @@
 import { normalizeFactionValue } from './factions.js'
+import { getAffectionMultiplier } from './affection.js'
 import { matchesShipClassification } from './shipClassifications.js'
 
 export const SHIP_DATABASE_STAT_KEYS = [
@@ -27,6 +28,10 @@ export const SHIP_DATABASE_STAT_LABELS = {
   speed: '속력',
   luck: '행운',
   asw: '대잠',
+}
+
+export function hasUnresolvedSkillValues(effect) {
+  return /X(?:%|초)|최대치의\s+만큼/.test(effect || '')
 }
 
 export const SHIP_DATABASE_STAGES = [
@@ -73,7 +78,7 @@ export function sortShipDatabaseCharacters(characters = [], detailsByGid = {}) {
   ))
 }
 
-export function calculateShipDatabaseStats(source, stageId = '125') {
+export function calculateShipDatabaseStats(source, stageId = '125', affection = '기타') {
   const stage = STAGE_BY_ID.get(String(stageId)) || STAGE_BY_ID.get('125')
   const level = stage.level
   const completedDevelopment = !source?.research || level >= 100
@@ -81,15 +86,15 @@ export function calculateShipDatabaseStats(source, stageId = '125') {
   const fullEnhance = stage.id !== 'base' && completedDevelopment
   const retrofit = level >= 100 ? source?.retrofit : null
   const base = maxLimitBreak ? source?.maxBase : source?.base
+  const affinity = getAffectionMultiplier(affection)
   const result = {}
 
   for (const key of SHIP_DATABASE_STAT_KEYS) {
-    result[key] = Math.floor(
-      number(base?.[key])
+    const raw = number(base?.[key])
       + number(source?.growth?.[key]) * (level - 1) / 1000
       + (fullEnhance ? number(source?.enhance?.[key]) : 0)
-      + number(retrofit?.[key]),
-    )
+      + number(retrofit?.[key])
+    result[key] = Math.floor(key === 'speed' || key === 'luck' ? raw : raw * affinity)
   }
 
   return result

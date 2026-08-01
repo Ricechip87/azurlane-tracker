@@ -6,6 +6,7 @@ import { classifyObtainability } from './lib/obtainability-classifier.mjs'
 import { normalizeConstructionSources } from './lib/construction-sources.mjs'
 import { selectObtainSources } from './lib/obtainability-sources.mjs'
 import { buildArenaShopGids, timelineFallbackSource } from './lib/permanent-shop-sources.mjs'
+import { toKstDateKey } from '../src/utils/kstDate.js'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const OUTPUT_PATH = path.join(ROOT, 'src/data/shipObtainability.json')
@@ -46,8 +47,8 @@ async function loadAltoyData(referenceDir) {
   const [lite, full, maps, timeline] = await Promise.all([
     fetchJson(`${ALTOY_BASE_URL}/data/ship_info_lite.json`, path.join(cachedRoot, 'data/ship_info_lite.json')),
     fetchJson(`${ALTOY_BASE_URL}/data/ship_info_data.json`, path.join(cachedRoot, 'data/ship_info_data.json')),
-    fetchJson(`${ALTOY_BASE_URL}/data/maps/map_data_full.json`, null),
-    fetchJson('https://raw.githubusercontent.com/JforPlay/altoy/main/src/data/kr_event_timeline.json', null),
+    fetchJson(`${ALTOY_BASE_URL}/data/maps/map_data_full.json`, path.join(cachedRoot, 'data/maps/map_data_full.json')),
+    fetchJson('https://raw.githubusercontent.com/JforPlay/altoy/main/src/data/kr_event_timeline.json', path.join(cachedRoot, 'data/kr_event_timeline.json')),
   ])
   return { lite, full, maps, timeline, source: ALTOY_BASE_URL }
 }
@@ -110,7 +111,7 @@ function buildCoreMonthlyGids(monthShop, activityShop) {
   return gids
 }
 
-function currentEventFor(name, today = new Date().toISOString().slice(0, 10)) {
+function currentEventFor(name, today = toKstDateKey()) {
   return (activeEvents.events || []).find(event => event.ships.includes(name) && event.startsAt <= today && today <= event.endsAt) || null
 }
 

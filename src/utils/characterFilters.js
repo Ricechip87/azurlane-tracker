@@ -1,4 +1,5 @@
 import { normalizeAcquisitionStatus } from './acquisitionStatus.js'
+import { normalizeAffectionStatus } from './affection.js'
 import { normalizeFactionValue } from './factions.js'
 import { getEffectiveRarity } from './rarity.js'
 import { matchesShipClassification } from './shipClassifications.js'
@@ -41,7 +42,7 @@ export function matchesCharacterFilters(character, filters) {
 
   if (filters.acquired !== '전체' && normalizeAcquisitionStatus(character.acquired) !== filters.acquired) return false
   if (filters.skilled !== '전체' && (character.skilled || '스작 안함') !== filters.skilled) return false
-  if (filters.affection !== '전체' && (character.affection || '호감작 안함') !== filters.affection) return false
+  if (filters.affection !== '전체' && normalizeAffectionStatus(character.affection) !== filters.affection) return false
   if (filters.remodel !== '전체' && normalizeRemodelStatus(character) !== filters.remodel) return false
   if (filters.favoritesOnly && !character.favorite) return false
   if (filters.researchOnly && !isResearchCharacter(character)) return false

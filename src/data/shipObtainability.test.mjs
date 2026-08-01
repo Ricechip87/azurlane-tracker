@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict'
 import data from './shipObtainability.json' with { type: 'json' }
+import activeEvents from '../../scripts/data/kr-active-events.json' with { type: 'json' }
+import { toKstDateKey } from '../utils/kstDate.js'
 
 const allowedAvailability = new Set(['permanent', 'active-event', 'rerun-wait', 'collab-unknown', 'unknown'])
 assert.equal(data.ships.length, data.meta.total)
@@ -18,7 +20,20 @@ for (const name of ['셰르부르', '아로망슈', '랑트레피드']) {
   assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, 'rerun-wait', `${name} KR 이벤트 종료 후 복각 대기`)
 }
 for (const name of ['브리스톨(META)', '쾨니히스베르크(META)']) {
-  assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, 'active-event', `${name} KR 현재 획득 가능`)
+  const event = activeEvents.events.find(item => item.ships.includes(name))
+  const expected = event?.startsAt <= toKstDateKey() && toKstDateKey() <= event?.endsAt ? 'active-event' : 'rerun-wait'
+  assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, expected, `${name} KR 이벤트 기간 상태`)
+}
+for (const name of ['A2', '2B']) {
+  const ship = data.ships.find(item => item.name === name)
+  assert.ok(['active-event', 'collab-unknown'].includes(ship?.availability.key), `${name} 콜라보 기간 상태`)
+  if (ship?.availability.key === 'active-event') {
+    assert.equal(ship?.difficulty.key, 'event', `${name} 현재 이벤트 후보`)
+    assert.equal(ship?.primaryRoute?.key, 'active-event', `${name} 현재 이벤트 입수 경로`)
+  } else {
+    assert.equal(ship?.difficulty.key, 'limited', `${name} 종료 후 획득 불가`)
+    assert.equal(ship?.primaryRoute, null, `${name} 종료 후 현재 입수 경로 없음`)
+  }
 }
 for (const name of ['던컨', '타카하시', '막스 임멜만', '오라주', '발파라이소']) {
   const ship = data.ships.find(item => item.name === name)

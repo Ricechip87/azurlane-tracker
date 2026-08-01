@@ -37,6 +37,25 @@ assert.deepEqual(migratedV1.envelope.userData['2'], {
   remodeled: '미개장',
 })
 
+const backupV2 = {
+  app: USER_DATA_APP,
+  schemaVersion: 2,
+  userData: {
+    1: { affection: '호감작 안함' },
+    2: { affection: '호감작 중' },
+    3: { affection: '서약 완료' },
+    4: { affection: '호감도 Max' },
+  },
+}
+const migratedV2 = migrateUserDataEnvelope(backupV2)
+assert.equal(migratedV2.migrated, true)
+assert.deepEqual(migratedV2.envelope.userData, {
+  1: { affection: '기타' },
+  2: { affection: '호감 61+' },
+  3: { affection: '서약 100+' },
+  4: { affection: '서약 200' },
+})
+
 const current = createUserDataEnvelope({ 3: { acquired: '풀돌' } }, new Date('2026-07-18T00:00:00.000Z'))
 const currentResult = migrateUserDataEnvelope(current)
 assert.equal(currentResult.fromVersion, USER_DATA_SCHEMA_VERSION)

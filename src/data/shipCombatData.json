@@ -2,7 +2,7 @@
   "meta": {
     "source": "ALtoy ship_info_data.json",
     "formula": "floor((base + growth * (level - 1) / 1000 + enhance + retrofit) * affinity) + direct equipment stats",
-    "shipCount": 875
+    "shipCount": 877
   },
   "ships": {
     "10000": {
@@ -56904,6 +56904,125 @@
         ],
         [
           5
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
+    "1170001": {
+      "name": "A2",
+      "shipType": "중순",
+      "type": 3,
+      "research": false,
+      "base": {
+        "health": 787,
+        "firepower": 52,
+        "antiair": 40,
+        "reload": 74,
+        "accuracy": 46,
+        "evasion": 18,
+        "speed": 28,
+        "luck": 73
+      },
+      "maxBase": {
+        "health": 1939,
+        "firepower": 130,
+        "antiair": 99,
+        "reload": 74,
+        "accuracy": 46,
+        "evasion": 18,
+        "speed": 28,
+        "luck": 73
+      },
+      "growth": {
+        "health": 22426,
+        "firepower": 709,
+        "antiair": 879,
+        "reload": 513,
+        "accuracy": 660,
+        "evasion": 299
+      },
+      "enhance": {
+        "firepower": 52,
+        "reload": 55
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          3
+        ],
+        [
+          1
+        ],
+        [
+          6
+        ],
+        [
+          10
+        ],
+        [
+          10
+        ]
+      ]
+    },
+    "1170002": {
+      "name": "2B",
+      "shipType": "경순",
+      "type": 2,
+      "research": false,
+      "base": {
+        "health": 642,
+        "firepower": 29,
+        "antiair": 71,
+        "reload": 68,
+        "accuracy": 55,
+        "evasion": 31,
+        "speed": 40,
+        "luck": 84,
+        "asw": 24
+      },
+      "maxBase": {
+        "health": 1581,
+        "firepower": 73,
+        "antiair": 175,
+        "reload": 68,
+        "accuracy": 55,
+        "evasion": 31,
+        "speed": 40,
+        "luck": 84,
+        "asw": 59
+      },
+      "growth": {
+        "health": 18281,
+        "firepower": 407,
+        "antiair": 1478,
+        "reload": 470,
+        "accuracy": 788,
+        "evasion": 600,
+        "asw": 268
+      },
+      "enhance": {
+        "firepower": 29,
+        "reload": 50
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          2
+        ],
+        [
+          1
         ],
         [
           6

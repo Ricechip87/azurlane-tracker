@@ -1,5 +1,44 @@
 # Change Log
 
+## 2026-08-01 - Audit the Ship Database and Event Data Pipeline
+
+### Changed
+- Share the six-stage affection model across roster storage, filters, statistics, Ship Database calculations, and fleet recommendation inputs.
+- Add the two KR-visible NieR:Automata collaboration ships and their local artwork, stats, skills, and obtainability records.
+- Remove obsolete static-loading branches and the unused local-storage hook after confirming all character data is bundled at build time.
+- Use one KST calendar-date helper for both generated event data and browser-side expiry handling.
+- Manage ALtoy map and KR event-timeline snapshots alongside the other refreshed reference sources, while retaining them as offline fallbacks.
+
+### Verified
+- Add migration, affection, roster-stat, filter, Ship Database, event-expiry, collaboration-faction, and fleet-recommendation regression coverage.
+- Run lint, the complete test suite, production build, and semantic generation-idempotency audit.
+- Verify all 877 ships have public recommendation artwork and all 634 additional-stat candidates have card artwork.
+
+## 2026-07-31 - Standardize Affection Stages
+
+### Changed
+- Replace the roster's four broad affection states with six in-game thresholds: other, friendly 61+, happy 81+, love 100, oath 100+, and oath 200.
+- Use one shared affinity multiplier table in the roster, Ship Database, roster filters, roster summary, and fleet recommendation calculations.
+- Add an affection selector to Ship Database stat details while keeping it independent from saved roster data.
+
+### Compatibility
+- Upgrade user-data backups to schema v3 and migrate legacy values automatically: `호감작 안함` → `기타`, `호감작 중` → `호감 61+`, `서약 완료` → `서약 100+`, and `호감도 Max` → `서약 200`.
+
+## 2026-07-30 - Add the NieR:Automata Collaboration
+
+### Added
+- Add KR-visible collaboration ships `A2` (SSR heavy cruiser, gid 1170001) and `2B` (SSR light cruiser, gid 1170002).
+- Add their local icons, card artwork, combat stats, skills, current-event obtainability, and ship-database details.
+
+### Fixed
+- Treat the ongoing `자동 보병 인형의 여행` event as currently obtainable through 2026-08-13 and fall back to `콜라보 복각 미정` after it ends.
+- Initialize fleet-tech fields for newly generated non-fleet-tech ships so new collaboration rows cannot omit the expected zero-value structure.
+- Add a Dewey regression fixture confirming that the app's Lv.125 values use affinity 50 with no bonus; the compared ALtoy screenshot uses affinity 100 and a 6% combat-stat bonus.
+
+### Verified
+- Cross-check the app, current ALtoy data, and KR roster at 877 ships with zero identifier or fleet-tech mismatches.
+- Confirm public icon coverage for all 877 ships and local card artwork for both new collaboration ships.
+
 ## 2026-07-28 - Mark Unique-Equipment Recommendations
 
 ### Changed
