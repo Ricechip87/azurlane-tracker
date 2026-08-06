@@ -69,4 +69,15 @@ const endedCollab = classifyObtainability({
 })
 assert.equal(endedCollab.availability.key, 'collab-unknown')
 
+for (const name of ['슈퍼브', '서리', '그리핀']) {
+  const currentKrEvent = classifyObtainability({
+    name,
+    faction: '로열',
+    obtain: ['이벤트: 괴담 실록: 백야 빌라에서 탈출하라!'],
+    activeEvent: { name: '괴담 실록: 백야 빌라에서 탈출하라!', endsAt: '2026-08-20' },
+  })
+  assert.equal(currentKrEvent.availability.key, 'active-event')
+  assert.equal(currentKrEvent.availability.endsAt, '2026-08-20')
+}
+
 console.log('obtainability-classifier tests passed')

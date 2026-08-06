@@ -35,6 +35,19 @@ for (const name of ['A2', '2B']) {
     assert.equal(ship?.primaryRoute, null, `${name} 종료 후 현재 입수 경로 없음`)
   }
 }
+for (const name of ['슈퍼브', '서리', '그리핀']) {
+  const ship = data.ships.find(item => item.name === name)
+  assert.equal(ship?.availability.key, 'active-event', `${name} 현재 KR 이벤트 입수 가능`)
+  assert.equal(ship?.availability.endsAt, '2026-08-20', `${name} KR 이벤트 종료일`)
+  assert.equal(ship?.primaryRoute?.key, 'active-event', `${name} 현재 이벤트 입수 경로`)
+}
+assert.deepEqual(data.ships.find(ship => ship.name === '슈퍼브')?.build, {
+  light: false, heavy: false, special: false, limited: true, timer: '01:25:00', rate: '2.0%',
+})
+assert.deepEqual(data.ships.find(ship => ship.name === '서리')?.build, {
+  light: false, heavy: false, special: false, limited: true, timer: '01:45:00', rate: '2.0%',
+})
+assert.equal(data.ships.find(ship => ship.name === '뉘른베르크(META)')?.availability.key, 'active-event', '8월 월드 투어 META 함선 입수 가능')
 for (const name of ['던컨', '타카하시', '막스 임멜만', '오라주', '발파라이소']) {
   const ship = data.ships.find(item => item.name === name)
   assert.equal(ship?.availability.key, 'permanent', `${name} KR 연구 도크 상시 획득`)

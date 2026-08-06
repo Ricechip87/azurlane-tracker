@@ -8,7 +8,7 @@ import { getEffectiveRarity, getResearchRarityLabel } from '../utils/rarity.js'
 import { getAvailability, getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
 import { RecommendationShipArtwork } from './recommendations/RecommendationShipArtwork.jsx'
-import { createShipObtainabilityLookup, getShipObtainability } from '../utils/shipObtainabilityLookup.js'
+import { getShipObtainability } from '../utils/shipObtainabilityLookup.js'
 import {
   buildResearchFactionProgress,
   buildResearchRecommendationState,
@@ -18,7 +18,7 @@ import {
   getResearchUnlockCandidates,
   groupResearchShipsByGeneration,
 } from '../utils/researchRecommendations.js'
-import { buildOperationTierByName } from '../utils/recommendationRanking.js'
+import { buildOperationTierByName, buildRecommendationRankingData } from '../utils/recommendationRanking.js'
 import { formatGrowthRecommendationReason } from '../utils/growthRecommendations.js'
 
 const RESEARCH_SHIP_BY_NAME = new Map(researchRecommendationData.ships.map(ship => [ship.name, ship]))
@@ -28,10 +28,9 @@ export default function ResearchRecommendationPage({ characters }) {
   const candidateRankingData = useMemo(() => {
     const operationSource = (growthRecommendationData.sources || []).find(source => source.key === 'operation-siren')
     return {
-      operationTierByName: buildOperationTierByName(growthRecommendationData),
+      ...buildRecommendationRankingData(growthRecommendationData, shipObtainabilityData.ships),
       operationRecommendationByName: buildOperationRecommendationByName(growthRecommendationData),
       operationUpdatedAt: operationSource?.updatedAt || null,
-      obtainabilityByName: createShipObtainabilityLookup(shipObtainabilityData.ships),
     }
   }, [])
   const goalRef = useRef(null)

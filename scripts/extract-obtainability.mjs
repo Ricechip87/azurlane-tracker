@@ -135,7 +135,11 @@ function compareLists(local, altoy) {
 }
 
 function currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent }) {
-  if (activeEvent) return [`현재 이벤트: ${activeEvent.name} (${activeEvent.endsAt}까지)`]
+  if (activeEvent) {
+    const construction = activeEvent.construction?.[activeEvent.shipName]
+    const suffix = construction ? ` · 한정 건조 ${construction.rate} (${construction.timer})` : ''
+    return [`현재 이벤트: ${activeEvent.name} (${activeEvent.endsAt}까지)${suffix}`]
+  }
   if (!Object.values(permanentSignals).some(Boolean)) return rawObtain
 
   const sources = []
@@ -194,7 +198,8 @@ const ships = characters.map(character => {
     other: altoyObtain.some(source => OTHER_PERMANENT_PATTERN.test(source)),
     timeline: Boolean(timelineInfo),
   }
-  const activeEvent = currentEventFor(character.name)
+  const matchedEvent = currentEventFor(character.name)
+  const activeEvent = matchedEvent ? { ...matchedEvent, shipName: character.name } : null
   const obtain = currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent })
   const classification = classifyObtainability({
     name: character.name,
@@ -210,7 +215,16 @@ const ships = characters.map(character => {
     id: character.id, gid, name: character.name, rarity: character.rarity,
     faction: character.faction, shipType: character.shipType,
     obtain, historicalObtain: normalizeConstructionSources(rawObtain), obtainEn: normalizeList(local?.obtain),
-    build: { light: Boolean(lite?.light), heavy: Boolean(lite?.heavy), special: Boolean(lite?.special), limited: Boolean(lite?.limited), timer: lite?.timer || null },
+    build: {
+      light: Boolean(lite?.light),
+      heavy: Boolean(lite?.heavy),
+      special: Boolean(lite?.special),
+      limited: Boolean(activeEvent?.construction?.[character.name] || lite?.limited),
+      timer: activeEvent?.construction?.[character.name]?.timer || lite?.timer || null,
+      ...(activeEvent?.construction?.[character.name]?.rate
+        ? { rate: activeEvent.construction[character.name].rate }
+        : {}),
+    },
     mapDrops: drops, permanentSignals, ...classification,
     verification: { localKr: localKrObtain.length > 0, localResource: Boolean(local), altoy: Boolean(full), status: compareLists(localKrObtain, altoyObtain) },
   }

@@ -27,6 +27,16 @@ const VERIFIED_SKILL_OVERRIDES = {
     },
   ],
 }
+const VERIFIED_DETAIL_OVERRIDES = {
+  970213: {
+    className: '뉘른베르크(META)',
+    skills: [
+      { name: '난국을 베는 검', effect: '전투 시작 시 및 이후 20초마다 특수 탄막 Lv.1/Lv.10을 발동한다(위력은 스킬 레벨에 비례). 발동 후 10초 동안 자신이 주는 피해가 4.5%/12.0% 상승한다.', retrofit: false },
+      { name: '보물 수호', effect: '전투 시작 시 자신의 화력과 뇌격이 5.0%/15.0% 상승한다. 전투 중 대공포 발사 시 10초 동안 자신의 회피율이 1.0%/5.0%, 아군 전체의 대공이 10.0%/30.0% 상승한다. 이 효과는 발동 후 12초의 재사용 대기시간이 있다.', retrofit: false },
+      { name: '빛을 좇는 불꽃·뉘른베르크II', effect: '주포 공격을 8회 실시할 때마다 특수 탄막 II를 발동한다.', retrofit: false },
+    ],
+  },
+}
 const VISIBLE_STAT_KEYS = new Set([
   'health',
   'firepower',
@@ -64,14 +74,15 @@ const SHIP_TYPE_BY_ID = {
 
 const ships = Object.fromEntries(altoyShips.map(ship => {
   const skillData = extractSkills(ship)
+  const detailOverride = VERIFIED_DETAIL_OVERRIDES[ship.gid] || {}
   return [
     String(ship.gid),
     {
     id: ship.id,
     sid: ship.sid,
-    className: ship.class_name || '',
+    className: detailOverride.className || ship.class_name || '',
     armor: ship.armor || 0,
-    skills: skillData.skills,
+    skills: detailOverride.skills || skillData.skills,
     missingSkillCount: skillData.missingSkillCount,
     retrofit: extractRetrofit(ship),
     },

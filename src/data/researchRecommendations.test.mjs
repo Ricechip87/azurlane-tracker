@@ -42,7 +42,7 @@ assert.deepEqual(data.ships.find(ship => ship.name === '나폴리').unlockRequir
   { type: 'tech-points', faction: '사르데냐', value: 300 },
   { type: 'tech-points', faction: '노스유니온', value: 200 },
 ])
-assert.deepEqual(data.ships.find(ship => ship.name === '어드미럴 나히모프').unlockRequirements, [
+assert.deepEqual(data.ships.find(ship => ship.name === '아드미랄 나히모프').unlockRequirements, [
   { type: 'tech-points', faction: '노스유니온', value: 300 },
   { type: 'tech-points', faction: '사르데냐', value: 200 },
 ])

@@ -1,22 +1,9 @@
 {
-  "generatedAt": "2026-07-30T13:27:07.230Z",
-  "checked": 877,
-  "changedShips": 2,
+  "generatedAt": "2026-08-06T13:24:14.569Z",
+  "checked": 881,
+  "changedShips": 4,
   "unavailableShips": 6,
   "results": [
-    {
-      "gid": 1030002,
-      "name": "네코네",
-      "skinId": 10300020,
-      "downloaded": [],
-      "unavailable": [
-        {
-          "label": "Fernando painting.png",
-          "error": "HTTP 404",
-          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300020/painting.png"
-        }
-      ]
-    },
     {
       "gid": 1030001,
       "name": "쿠온",
@@ -27,6 +14,19 @@
           "label": "Fernando painting.png",
           "error": "HTTP 404",
           "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300010/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030002,
+      "name": "네코네",
+      "skinId": 10300020,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300020/painting.png"
         }
       ]
     },
@@ -57,6 +57,46 @@
       ]
     },
     {
+      "gid": 20314,
+      "name": "서리",
+      "skinId": 203140,
+      "downloaded": [
+        {
+          "label": "Fernando painting.png",
+          "bytes": 3827494
+        },
+        {
+          "label": "Fernando icon.png",
+          "bytes": 29292
+        },
+        {
+          "label": "Fernando shipyard.png",
+          "bytes": 117952
+        }
+      ],
+      "unavailable": []
+    },
+    {
+      "gid": 970213,
+      "name": "纽伦堡·META",
+      "skinId": 9702130,
+      "downloaded": [
+        {
+          "label": "Fernando painting.png",
+          "bytes": 3085402
+        },
+        {
+          "label": "Fernando icon.png",
+          "bytes": 28891
+        },
+        {
+          "label": "Fernando shipyard.png",
+          "bytes": 130281
+        }
+      ],
+      "unavailable": []
+    },
+    {
       "gid": 1030005,
       "name": "사라나",
       "skinId": 10300050,
@@ -70,6 +110,46 @@
       ]
     },
     {
+      "gid": 20115,
+      "name": "그리핀",
+      "skinId": 201150,
+      "downloaded": [
+        {
+          "label": "Fernando painting.png",
+          "bytes": 2349197
+        },
+        {
+          "label": "Fernando icon.png",
+          "bytes": 27962
+        },
+        {
+          "label": "Fernando shipyard.png",
+          "bytes": 103471
+        }
+      ],
+      "unavailable": []
+    },
+    {
+      "gid": 20237,
+      "name": "슈퍼브",
+      "skinId": 202370,
+      "downloaded": [
+        {
+          "label": "Fernando painting.png",
+          "bytes": 2833877
+        },
+        {
+          "label": "Fernando icon.png",
+          "bytes": 29086
+        },
+        {
+          "label": "Fernando shipyard.png",
+          "bytes": 111169
+        }
+      ],
+      "unavailable": []
+    },
+    {
       "gid": 1030006,
       "name": "후미뤼르",
       "skinId": 10300060,
@@ -81,46 +161,6 @@
           "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300060/painting.png"
         }
       ]
-    },
-    {
-      "gid": 1170001,
-      "name": "A2",
-      "skinId": 11700010,
-      "downloaded": [
-        {
-          "label": "Fernando painting.png",
-          "bytes": 3158731
-        },
-        {
-          "label": "Fernando icon.png",
-          "bytes": 26931
-        },
-        {
-          "label": "Fernando shipyard.png",
-          "bytes": 105328
-        }
-      ],
-      "unavailable": []
-    },
-    {
-      "gid": 1170002,
-      "name": "2B",
-      "skinId": 11700020,
-      "downloaded": [
-        {
-          "label": "Fernando painting.png",
-          "bytes": 3852060
-        },
-        {
-          "label": "Fernando icon.png",
-          "bytes": 28320
-        },
-        {
-          "label": "Fernando shipyard.png",
-          "bytes": 109161
-        }
-      ],
-      "unavailable": []
     }
   ]
 }

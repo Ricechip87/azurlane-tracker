@@ -2,7 +2,7 @@
   "meta": {
     "source": "ALtoy ship_info_data.json",
     "formula": "floor((base + growth * (level - 1) / 1000 + enhance + retrofit) * affinity) + direct equipment stats",
-    "shipCount": 877
+    "shipCount": 881
   },
   "ships": {
     "10000": {
@@ -11236,6 +11236,72 @@
         ]
       ]
     },
+    "20115": {
+      "name": "그리핀",
+      "shipType": "구축",
+      "type": 1,
+      "research": false,
+      "base": {
+        "health": 279,
+        "firepower": 16,
+        "torpedo": 70,
+        "antiair": 32,
+        "reload": 77,
+        "accuracy": 71,
+        "evasion": 78,
+        "speed": 43.2,
+        "luck": 46,
+        "asw": 53
+      },
+      "maxBase": {
+        "health": 687,
+        "firepower": 39,
+        "torpedo": 174,
+        "antiair": 79,
+        "reload": 77,
+        "accuracy": 71,
+        "evasion": 78,
+        "speed": 43.2,
+        "luck": 46,
+        "asw": 132
+      },
+      "growth": {
+        "health": 7943,
+        "firepower": 219,
+        "torpedo": 896,
+        "antiair": 696,
+        "reload": 534,
+        "accuracy": 1093,
+        "evasion": 1445,
+        "asw": 601
+      },
+      "enhance": {
+        "firepower": 16,
+        "torpedo": 69,
+        "reload": 57
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          1
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
     "20116": {
       "name": "하디",
       "shipType": "구축",
@@ -14778,6 +14844,72 @@
         ]
       ]
     },
+    "20237": {
+      "name": "슈퍼브",
+      "shipType": "경순",
+      "type": 2,
+      "research": false,
+      "base": {
+        "health": 669,
+        "firepower": 31,
+        "torpedo": 69,
+        "antiair": 63,
+        "reload": 71,
+        "accuracy": 59,
+        "evasion": 29,
+        "speed": 32,
+        "luck": 60,
+        "asw": 36
+      },
+      "maxBase": {
+        "health": 1648,
+        "firepower": 77,
+        "torpedo": 171,
+        "antiair": 156,
+        "reload": 71,
+        "accuracy": 59,
+        "evasion": 29,
+        "speed": 32,
+        "luck": 60,
+        "asw": 89
+      },
+      "growth": {
+        "health": 17138,
+        "firepower": 426,
+        "torpedo": 886,
+        "antiair": 1337,
+        "reload": 492,
+        "accuracy": 869,
+        "evasion": 672,
+        "asw": 427
+      },
+      "enhance": {
+        "firepower": 30,
+        "torpedo": 68,
+        "reload": 53
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          2
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
     "20301": {
       "name": "런던",
       "shipType": "중순",
@@ -15475,6 +15607,67 @@
         "firepower": 42,
         "torpedo": 40,
         "reload": 46
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          3
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          10
+        ],
+        [
+          10
+        ]
+      ]
+    },
+    "20314": {
+      "name": "서리",
+      "shipType": "중순",
+      "type": 3,
+      "research": false,
+      "base": {
+        "health": 642,
+        "firepower": 47,
+        "torpedo": 30,
+        "antiair": 71,
+        "reload": 57,
+        "accuracy": 43,
+        "evasion": 9,
+        "speed": 24,
+        "luck": 70
+      },
+      "maxBase": {
+        "health": 1582,
+        "firepower": 116,
+        "torpedo": 75,
+        "antiair": 175,
+        "reload": 57,
+        "accuracy": 43,
+        "evasion": 9,
+        "speed": 24,
+        "luck": 70
+      },
+      "growth": {
+        "health": 18292,
+        "firepower": 643,
+        "torpedo": 417,
+        "antiair": 1472,
+        "reload": 400,
+        "accuracy": 672,
+        "evasion": 493
+      },
+      "enhance": {
+        "firepower": 46,
+        "torpedo": 30,
+        "reload": 43
       },
       "retrofit": {},
       "augment": null,
@@ -42109,7 +42302,7 @@
       ]
     },
     "79902": {
-      "name": "어드미럴 나히모프",
+      "name": "아드미랄 나히모프",
       "shipType": "항모",
       "type": 7,
       "research": false,
@@ -48665,6 +48858,76 @@
         "reload": 50,
         "accuracy": 42,
         "evasion": 33
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          2
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
+    "970213": {
+      "name": "뉘른베르크(META)",
+      "shipType": "경순",
+      "type": 2,
+      "research": false,
+      "base": {
+        "health": 696,
+        "firepower": 33,
+        "torpedo": 61,
+        "antiair": 79,
+        "reload": 72,
+        "accuracy": 43,
+        "evasion": 21,
+        "speed": 32,
+        "luck": 80,
+        "asw": 29
+      },
+      "maxBase": {
+        "health": 1715,
+        "firepower": 81,
+        "torpedo": 152,
+        "antiair": 195,
+        "reload": 72,
+        "accuracy": 43,
+        "evasion": 21,
+        "speed": 32,
+        "luck": 80,
+        "asw": 72
+      },
+      "growth": {
+        "health": 11988,
+        "firepower": 450,
+        "torpedo": 805,
+        "antiair": 967,
+        "reload": 502,
+        "accuracy": 631,
+        "evasion": 433,
+        "asw": 406
+      },
+      "enhance": {
+        "health": 679,
+        "firepower": 32,
+        "torpedo": 61,
+        "antiair": 77,
+        "reload": 54,
+        "accuracy": 42,
+        "evasion": 20
       },
       "retrofit": {},
       "augment": null,

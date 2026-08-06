@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-08-06 - Refresh the KR Roster and Refactor Recommendation Sources
+
+### Changed
+- Expand the KR-visible roster from 877 to 881 ships with Superb, Surrey, Griffin, and Nürnberg META, including local icons, card artwork, combat data, fleet-tech values, skills, and obtainability.
+- Mark Superb and Surrey as 2.0% limited construction through the current KR event, with build times of 01:25:00 and 01:45:00, while moving A2 and 2B back to collaboration rerun-unknown status.
+- Preserve Admiral Nakhimov's main-area A+ and Operation Siren S+ recommendations after the synchronized Korean name changed.
+- Share recommendation ranking-source construction and control-panel section markup across recommendation pages.
+
+### Verified
+- Cross-check the app, ALtoy, and KR rosters at 881 ships with zero identifier, public-icon, or fleet-tech mismatches.
+- Add regression coverage for the four new identities, current-event construction metadata, expired NieR availability, Nürnberg META Korean details, and shared recommendation ranking lookup.
+- Run lint, the complete test suite, production build, semantic generation-idempotency audit, and `git diff --check`.
+
 ## 2026-08-01 - Audit the Ship Database and Event Data Pipeline
 
 ### Changed

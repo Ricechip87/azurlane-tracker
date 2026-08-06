@@ -9,6 +9,7 @@ import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
 import { buildOperationTierByName } from '../utils/recommendationRanking.js'
 import { calcStatsByShipType, mergeStatsByShipType } from '../utils/rosterStats.js'
 import { RecommendationShipArtwork } from './recommendations/RecommendationShipArtwork.jsx'
+import { RecommendationControlSection as ControlSection } from './recommendations/RecommendationControlSection.jsx'
 
 const RARITY_BADGE = {
   UR: 'bg-red-950 text-red-100',
@@ -183,15 +184,6 @@ function FleetControlPanel({
         보스·도중·지원·잠수함대 전체에서 동일 함선을 중복 사용하지 않습니다.
       </div>
     </aside>
-  )
-}
-
-function ControlSection({ title, children }) {
-  return (
-    <section className="border-b border-neutral-700 p-3">
-      <h3 className="mb-2 text-xs font-bold text-gray-300">{title}</h3>
-      {children}
-    </section>
   )
 }
 

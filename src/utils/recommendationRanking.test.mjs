@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { buildOperationTierByName, operationTierRank } from './recommendationRanking.js'
+import { buildOperationTierByName, buildRecommendationRankingData, operationTierRank } from './recommendationRanking.js'
 
 assert.equal(operationTierRank('SS+'), 0)
 assert.equal(operationTierRank('SS'), 1)
@@ -18,3 +18,10 @@ assert.deepEqual(
   })],
   [['테스트 함선', 'A'], ['중복 함선', 'S']],
 )
+
+const rankingData = buildRecommendationRankingData(
+  { recommendations: [{ source: 'operation-siren', name: '테스트 함선', tier: 'S' }] },
+  [{ id: 1, gid: 1001, name: '테스트 함선' }],
+)
+assert.equal(rankingData.operationTierByName.get('테스트 함선'), 'S')
+assert.equal(rankingData.obtainabilityByName.get({ gid: 1001 })?.name, '테스트 함선')

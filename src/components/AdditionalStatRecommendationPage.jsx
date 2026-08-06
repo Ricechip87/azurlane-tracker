@@ -11,12 +11,12 @@ import {
 import { calcMajorFactionTechPoints } from '../utils/fleetTech.js'
 import { calcFleetTechLevelStats } from '../utils/fleetTechLevelStats.js'
 import { getObtainabilitySourceSections, obtainabilityLabel } from '../utils/obtainability.js'
-import { buildOperationTierByName } from '../utils/recommendationRanking.js'
+import { buildRecommendationRankingData } from '../utils/recommendationRanking.js'
 import { getStatDisplayName } from '../utils/statLabels.js'
 import { calcStatsByShipType, mergeStatsByShipType } from '../utils/rosterStats.js'
-import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
 import { RecommendationDetails, RecommendationDialog } from './recommendations/RecommendationDialog.jsx'
 import { RecommendationShipArtwork } from './recommendations/RecommendationShipArtwork.jsx'
+import { RecommendationControlSection as ControlSection } from './recommendations/RecommendationControlSection.jsx'
 
 const RARITY_BADGE_CLASS = {
   UR: 'bg-red-950 text-red-200',
@@ -31,10 +31,10 @@ export default function AdditionalStatRecommendationPage({ characters }) {
   const [shipType, setShipType] = useState('')
   const [stat, setStat] = useState('뇌격')
   const [openCandidate, setOpenCandidate] = useState(null)
-  const rankingData = useMemo(() => ({
-    operationTierByName: buildOperationTierByName(growthRecommendationData),
-    obtainabilityByName: createShipObtainabilityLookup(shipObtainabilityData.ships),
-  }), [])
+  const rankingData = useMemo(
+    () => buildRecommendationRankingData(growthRecommendationData, shipObtainabilityData.ships),
+    [],
+  )
   const selection = useMemo(
     () => resolveAdditionalStatCategorySelection(categoryId, stat, shipType),
     [categoryId, shipType, stat],
@@ -205,15 +205,6 @@ function AdditionalStatControlPanel({
         공용 적용 → 보유 → 남은 단계 → 입수 난이도 → 대작전 등급 → 증가량
       </div>
     </aside>
-  )
-}
-
-function ControlSection({ title, children }) {
-  return (
-    <section className="border-b border-neutral-700 p-3">
-      <h3 className="mb-2 text-xs font-bold text-gray-300">{title}</h3>
-      {children}
-    </section>
   )
 }
 

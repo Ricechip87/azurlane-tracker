@@ -1,15 +1,14 @@
 import { useMemo } from 'react'
 import growthRecommendationData from '../data/growthRecommendations.json'
 import shipObtainabilityData from '../data/shipObtainability.json'
-import { buildOperationTierByName } from '../utils/recommendationRanking.js'
-import { createShipObtainabilityLookup } from '../utils/shipObtainabilityLookup.js'
+import { buildRecommendationRankingData } from '../utils/recommendationRanking.js'
 import FleetTechPanel from './fleet-tech/FleetTechPanel.jsx'
 
 export default function TechPointRecommendationPage({ characters }) {
-  const candidateRankingData = useMemo(() => ({
-    operationTierByName: buildOperationTierByName(growthRecommendationData),
-    obtainabilityByName: createShipObtainabilityLookup(shipObtainabilityData.ships),
-  }), [])
+  const candidateRankingData = useMemo(
+    () => buildRecommendationRankingData(growthRecommendationData, shipObtainabilityData.ships),
+    [],
+  )
 
   return (
     <section className="space-y-3">

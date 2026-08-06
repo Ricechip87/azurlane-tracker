@@ -1,10 +1,28 @@
 {
-  "updatedAt": "2026-07-30",
+  "updatedAt": "2026-08-06",
   "events": [
+    {
+      "name": "괴담 실록: 백야 빌라에서 탈출하라!",
+      "startsAt": "2026-08-06",
+      "endsAt": "2026-08-20",
+      "ships": ["슈퍼브", "서리", "그리핀"],
+      "construction": {
+        "슈퍼브": { "rate": "2.0%", "timer": "01:25:00" },
+        "서리": { "rate": "2.0%", "timer": "01:45:00" }
+      },
+      "source": "ALtoy KR event timeline and KR in-game construction"
+    },
+    {
+      "name": "월드 투어",
+      "startsAt": "2026-08-06",
+      "endsAt": "2026-09-30",
+      "ships": ["뉘른베르크(META)"],
+      "source": "ALtoy KR event timeline"
+    },
     {
       "name": "자동 보병 인형의 여행",
       "startsAt": "2026-07-30",
-      "endsAt": "2026-08-13",
+      "endsAt": "2026-08-05",
       "ships": ["A2", "2B"],
       "source": "KR in-game update and ALtoy KR data"
     },

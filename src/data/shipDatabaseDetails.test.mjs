@@ -5,6 +5,14 @@ import details from './shipDatabaseDetails.json' with { type: 'json' }
 assert.equal(details.meta.shipCount, characters.length)
 assert.equal(Object.keys(details.ships).length, characters.length)
 
+assert.equal(details.ships['970213']?.className, '뉘른베르크(META)')
+assert.deepEqual(details.ships['970213']?.skills.map(skill => skill.name), [
+  '난국을 베는 검',
+  '보물 수호',
+  '빛을 좇는 불꽃·뉘른베르크II',
+])
+assert.ok(details.ships['970213']?.skills.every(skill => !/[\u4e00-\u9fff]/.test(`${skill.name}${skill.effect}`)), '뉘른베르크(META) 상세에 중국어를 노출하지 않는다')
+
 for (const character of characters) {
   const detail = details.ships[String(character.gid)]
   assert.ok(detail, `${character.name} (${character.gid}) 상세 정보가 필요합니다.`)

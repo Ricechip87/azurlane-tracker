@@ -1,25 +1,25 @@
 {
   "meta": {
     "note": "KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.",
-    "generatedAt": "2026-08-01T08:10:42.232Z",
-    "total": 877,
-    "withObtain": 877,
+    "generatedAt": "2026-08-06T13:34:16.551Z",
+    "total": 881,
+    "withObtain": 881,
     "withoutObtain": 0,
     "availability": {
-      "active-event": 3,
-      "collab-unknown": 89,
+      "active-event": 5,
+      "collab-unknown": 91,
       "permanent": 609,
       "rerun-wait": 176
     },
     "difficulty": {
       "easy": 327,
-      "event": 3,
+      "event": 5,
       "hard": 64,
-      "limited": 265,
+      "limited": 267,
       "normal": 218
     },
     "acquisitionRoutes": {
-      "active-event": 3,
+      "active-event": 5,
       "archive-drop": 63,
       "construction": 323,
       "core-monthly": 25,
@@ -22852,6 +22852,78 @@
       }
     },
     {
+      "id": 748,
+      "gid": 20115,
+      "name": "그리핀",
+      "rarity": "SR",
+      "faction": "로열",
+      "shipType": "구축",
+      "obtain": [
+        "현재 이벤트: 괴담 실록: 백야 빌라에서 탈출하라! (2026-08-20까지)"
+      ],
+      "historicalObtain": [
+        "이벤트: 괴담 실록: 백야 빌라에서 탈출하라!"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "괴담 실록: 백야 빌라에서 탈출하라!",
+        "endsAt": "2026-08-20"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
       "id": 96,
       "gid": 20116,
       "name": "하디",
@@ -28107,6 +28179,79 @@
       }
     },
     {
+      "id": 746,
+      "gid": 20237,
+      "name": "슈퍼브",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "경순",
+      "obtain": [
+        "현재 이벤트: 괴담 실록: 백야 빌라에서 탈출하라! (2026-08-20까지) · 한정 건조 2.0% (01:25:00)"
+      ],
+      "historicalObtain": [
+        "이벤트: 괴담 실록: 백야 빌라에서 탈출하라!"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": "01:25:00",
+        "rate": "2.0%"
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "괴담 실록: 백야 빌라에서 탈출하라!",
+        "endsAt": "2026-08-20"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
       "id": 119,
       "gid": 20301,
       "name": "런던",
@@ -29438,6 +29583,79 @@
         "localResource": true,
         "altoy": true,
         "status": "matched"
+      }
+    },
+    {
+      "id": 747,
+      "gid": 20314,
+      "name": "서리",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "중순",
+      "obtain": [
+        "현재 이벤트: 괴담 실록: 백야 빌라에서 탈출하라! (2026-08-20까지) · 한정 건조 2.0% (01:45:00)"
+      ],
+      "historicalObtain": [
+        "이벤트: 괴담 실록: 백야 빌라에서 탈출하라!"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": "01:45:00",
+        "rate": "2.0%"
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "괴담 실록: 백야 빌라에서 탈출하라!",
+        "endsAt": "2026-08-20"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {
@@ -63638,7 +63856,7 @@
     {
       "id": "P036",
       "gid": 79902,
-      "name": "어드미럴 나히모프",
+      "name": "아드미랄 나히모프",
       "rarity": "UR",
       "faction": "노스유니온",
       "shipType": "항모",
@@ -70314,6 +70532,78 @@
       "verification": {
         "localKr": false,
         "localResource": true,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
+      "id": "M063",
+      "gid": 970213,
+      "name": "뉘른베르크(META)",
+      "rarity": "SR",
+      "faction": "META",
+      "shipType": "경순",
+      "obtain": [
+        "현재 이벤트: 월드 투어 (2026-09-30까지)"
+      ],
+      "historicalObtain": [
+        "限时活动：世界巡游"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "월드 투어",
+        "endsAt": "2026-09-30"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 월드 투어"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 월드 투어"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
         "altoy": true,
         "status": "altoy-only"
       }
@@ -77325,10 +77615,10 @@
       "faction": "니어",
       "shipType": "중순",
       "obtain": [
-        "현재 이벤트: 자동 보병 인형의 여행 (2026-08-13까지)"
+        "이벤트: 자동 보병 인형의 여정"
       ],
       "historicalObtain": [
-        "이벤트: 자동 보병 인형의 여행"
+        "이벤트: 자동 보병 인형의 여정"
       ],
       "obtainEn": [],
       "build": {
@@ -77350,36 +77640,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "자동 보병 인형의 여행",
-        "endsAt": "2026-08-13"
+        "key": "collab-unknown",
+        "label": "콜라보 복각 미정"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 자동 보병 인형의 여행"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 자동 보병 인형의 여행"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "콜라보 복각 미정"
         ]
       },
       "verification": {
@@ -77397,10 +77667,10 @@
       "faction": "니어",
       "shipType": "경순",
       "obtain": [
-        "현재 이벤트: 자동 보병 인형의 여행 (2026-08-13까지)"
+        "이벤트: 자동 보병 인형의 여정"
       ],
       "historicalObtain": [
-        "이벤트: 자동 보병 인형의 여행"
+        "이벤트: 자동 보병 인형의 여정"
       ],
       "obtainEn": [],
       "build": {
@@ -77422,36 +77692,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "자동 보병 인형의 여행",
-        "endsAt": "2026-08-13"
+        "key": "collab-unknown",
+        "label": "콜라보 복각 미정"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 자동 보병 인형의 여행"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 자동 보병 인형의 여행"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "콜라보 복각 미정"
         ]
       },
       "verification": {

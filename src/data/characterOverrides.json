@@ -290,6 +290,32 @@
       },
       "gid": 970112,
       "iconUrl": "/azurlane-tracker/ship-icons/9701120.png"
+    },
+    {
+      "id": "M063",
+      "name": "뉘른베르크(META)",
+      "rarity": "SR",
+      "shipType": "경순",
+      "faction": "META",
+      "canRemodel": false,
+      "skillPoints": 0,
+      "statAcquired": {
+        "shipTypes": ["경순"],
+        "stat": "내구",
+        "value": 1
+      },
+      "stat120": {
+        "shipTypes": ["경순"],
+        "stat": "대공",
+        "value": 1
+      },
+      "techPoints": {
+        "acquired": 10,
+        "maxLB": 21,
+        "lv120": 16
+      },
+      "gid": 970213,
+      "iconUrl": "/azurlane-tracker/ship-icons/9702130.png"
     }
   ]
 }

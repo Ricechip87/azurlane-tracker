@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-07-30T13:50:56.395Z",
+  "generatedAt": "2026-08-06T13:25:54.835Z",
   "summary": {
     "identityExceptions": 0,
     "obtainabilityAltoyOnly": 0,
     "obtainabilityDifferent": 24,
     "missingReferenceImages": 6,
-    "cnOnlyExcluded": 4,
+    "cnOnlyExcluded": 0,
     "availability": {
-      "active-event": 4,
+      "active-event": 7,
       "collab-unknown": 89,
       "permanent": 609,
-      "rerun-wait": 175
+      "rerun-wait": 176
     },
     "acquisitionRoutes": {
-      "active-event": 4,
+      "active-event": 7,
       "archive-drop": 63,
       "construction": 323,
       "core-monthly": 25,
@@ -516,26 +516,5 @@
       "iconFile": "10300060.webp"
     }
   ],
-  "cnOnlyExcluded": [
-    {
-      "gid": 20115,
-      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
-      "iconFile": null
-    },
-    {
-      "gid": 20237,
-      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
-      "iconFile": null
-    },
-    {
-      "gid": 20314,
-      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
-      "iconFile": null
-    },
-    {
-      "gid": 970213,
-      "reason": "CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨",
-      "iconFile": null
-    }
-  ]
+  "cnOnlyExcluded": []
 }

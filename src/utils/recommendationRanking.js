@@ -1,3 +1,5 @@
+import { createShipObtainabilityLookup } from './shipObtainabilityLookup.js'
+
 export const OPERATION_TIER_ORDER = ['SS+', 'SS', 'S+', 'S', 'A+', 'A', 'B+', 'B', 'C+']
 
 export function operationTierRank(tier) {
@@ -17,4 +19,11 @@ export function buildOperationTierByName(growthRecommendationData) {
   }
 
   return result
+}
+
+export function buildRecommendationRankingData(growthRecommendationData, obtainabilityShips) {
+  return {
+    operationTierByName: buildOperationTierByName(growthRecommendationData),
+    obtainabilityByName: createShipObtainabilityLookup(obtainabilityShips),
+  }
 }

@@ -24071,7 +24071,7 @@
   },
   {
     "id": "P036",
-    "name": "어드미럴 나히모프",
+    "name": "아드미랄 나히모프",
     "rarity": "UR",
     "shipType": "항모",
     "faction": "노스유니온",
@@ -24093,13 +24093,13 @@
       "stat": "항공",
       "value": 2
     },
+    "gid": 79902,
+    "iconUrl": "/azurlane-tracker/ship-icons/799020.png",
     "techPoints": {
       "acquired": 62,
       "maxLB": 124,
       "lv120": 92
-    },
-    "gid": 79902,
-    "iconUrl": "/azurlane-tracker/ship-icons/799020.png"
+    }
   },
   {
     "id": "P037",
@@ -26818,5 +26818,129 @@
       "maxLB": 0,
       "lv120": 0
     }
+  },
+  {
+    "id": 746,
+    "name": "슈퍼브",
+    "rarity": "SSR",
+    "shipType": "경순",
+    "faction": "로열",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "대공",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "명중",
+      "value": 1
+    },
+    "gid": 20237,
+    "techPoints": {
+      "acquired": 12,
+      "maxLB": 24,
+      "lv120": 18
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/202370.png"
+  },
+  {
+    "id": 747,
+    "name": "서리",
+    "rarity": "SSR",
+    "shipType": "중순",
+    "faction": "로열",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "중순",
+        "모니터",
+        "초순"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "중순",
+        "모니터",
+        "초순"
+      ],
+      "stat": "장전",
+      "value": 1
+    },
+    "gid": 20314,
+    "techPoints": {
+      "acquired": 14,
+      "maxLB": 28,
+      "lv120": 21
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/203140.png"
+  },
+  {
+    "id": 748,
+    "name": "그리핀",
+    "rarity": "SR",
+    "shipType": "구축",
+    "faction": "로열",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "회피",
+      "value": 1
+    },
+    "gid": 20115,
+    "techPoints": {
+      "acquired": 5,
+      "maxLB": 11,
+      "lv120": 8
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/201150.png"
+  },
+  {
+    "id": "M063",
+    "name": "뉘른베르크(META)",
+    "rarity": "SR",
+    "shipType": "경순",
+    "faction": "META",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "대공",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 10,
+      "maxLB": 21,
+      "lv120": 16
+    },
+    "gid": 970213,
+    "iconUrl": "/azurlane-tracker/ship-icons/9702130.png"
   }
 ]
