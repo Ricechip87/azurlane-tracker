@@ -119,7 +119,7 @@ export default function ShipDatabasePage({ characters }) {
       <section className="border border-neutral-700 bg-[#1c1c1c] p-3 sm:p-4">
         {filteredCharacters.length ? (
           <>
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(154px,172px))] justify-center gap-2.5 sm:justify-start">
+            <div className="flex flex-wrap justify-center gap-2 sm:justify-start">
               {filteredCharacters.slice(0, visibleCount).map(character => (
                 <ShipDatabaseCard
                   key={character.gid}
@@ -229,7 +229,7 @@ function ShipDatabaseCard({ character, onOpen, buttonRef }) {
       ref={buttonRef}
       type="button"
       onClick={() => onOpen(character)}
-      className={`group relative h-[214px] w-full max-w-[172px] overflow-hidden rounded-md border-2 bg-[#272727] text-left shadow-lg outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-neutral-200 ${style}`}
+      className={`group relative h-[214px] w-[172px] max-w-full flex-none overflow-hidden rounded-md border-2 bg-[#272727] text-left shadow-lg outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-neutral-200 ${style}`}
       aria-label={`${character.name} 상세 정보`}
       title={character.name}
     >
