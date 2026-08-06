@@ -109,7 +109,7 @@ for (const [name, id] of [['론', 'P005'], ['가스코뉴', 'P012']]) {
 
 for (const characterId of new Set(data.recommendations.map(recommendation => String(recommendation.id)))) {
   const character = characterById.get(characterId)
-  const fileName = path.basename(character.iconUrl).replace(/\.(png|webp)$/i, '.png')
+  const fileName = path.basename(character.iconUrl).replace(/\.(png|webp)$/i, '.webp')
   await assert.doesNotReject(
     access(new URL(`../../public/ship-card-art/${fileName}`, import.meta.url)),
     `missing growth card art: ${character.name} (${fileName})`,

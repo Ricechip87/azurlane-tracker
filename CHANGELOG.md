@@ -1,5 +1,16 @@
 # Change Log
 
+## 2026-08-07 - Reduce Recommendation Artwork Payload
+
+### Changed
+- Convert all 881 recommendation card images from PNG to quality-88 WebP while preserving their pixel dimensions and transparency.
+- Prefer WebP recommendation artwork with PNG and roster-icon fallbacks, and keep future artwork synchronization WebP-native.
+
+### Verified
+- Confirm 881 WebP files, zero remaining card PNG files, and complete recommendation artwork coverage.
+- Run the complete test suite, lint, production build, and a second no-op artwork synchronization.
+- Reduce the production artifact from 127.78 MiB to 61.08 MiB.
+
 ## 2026-08-06 - Refresh the KR Roster and Refactor Recommendation Sources
 
 ### Changed
