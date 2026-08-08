@@ -15,7 +15,9 @@ export function getRecommendationCardArtFileName(character) {
 
 export function getRecommendationCardArtUrl(character, baseUrl) {
   const pngFileName = getRecommendationCardArtFileName(character)
-  const fileName = pngFileName.replace(/\.png$/i, '.webp')
+  const fileName = /\.webp$/i.test(character?.iconUrl || '')
+    ? pngFileName.replace(/\.png$/i, '.webp')
+    : pngFileName
   if (!fileName) return ''
   const normalizedBase = String(baseUrl || '/').replace(/\/?$/, '/')
   return `${normalizedBase}ship-card-art/${fileName}`

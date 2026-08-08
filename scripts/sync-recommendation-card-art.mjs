@@ -1,6 +1,5 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { spawnSync } from 'node:child_process'
 import {
   getRecommendationCardArtFileName,
 } from '../src/utils/recommendationCardArt.js'
@@ -28,16 +27,6 @@ const missing = []
 const desiredFiles = new Set()
 let copied = 0
 let preserved = 0
-let ffmpegChecked = false
-
-function assertFfmpegAvailable() {
-  if (ffmpegChecked) return
-  const result = spawnSync('ffmpeg', ['-hide_banner', '-version'], { encoding: 'utf8' })
-  if (result.status !== 0) {
-    throw new Error('ffmpeg with libwebp support is required to generate recommendation card art')
-  }
-  ffmpegChecked = true
-}
 
 fs.mkdirSync(OUT_DIR, { recursive: true })
 
@@ -65,7 +54,7 @@ for (const character of characters) {
     missing.push({ name, skinId, reason: 'shipyard-and-public-fallback-not-found' })
     continue
   }
-  const fileName = `${skinId}.webp`
+  const fileName = `${skinId}.${sourceExtension}`
   const source = path.join(sourceSkinDir, skinId, `shipyard.${sourceExtension}`)
   const target = path.join(OUT_DIR, fileName)
   desiredFiles.add(fileName)
@@ -75,22 +64,9 @@ for (const character of characters) {
     continue
   }
 
-  const temporary = `${target}.tmp-${process.pid}.webp`
+  const temporary = `${target}.tmp-${process.pid}`
   try {
-    if (sourceExtension === 'webp') {
-      fs.copyFileSync(source, temporary)
-    } else {
-      assertFfmpegAvailable()
-      const result = spawnSync('ffmpeg', [
-        '-hide_banner', '-loglevel', 'error', '-y',
-        '-i', source,
-        '-c:v', 'libwebp', '-quality', '88', '-compression_level', '6',
-        temporary,
-      ], { encoding: 'utf8' })
-      if (result.status !== 0) {
-        throw new Error(`ffmpeg failed for ${name}: ${result.stderr || result.error?.message || 'unknown error'}`)
-      }
-    }
+    fs.copyFileSync(source, temporary)
     fs.renameSync(temporary, target)
   } finally {
     if (fs.existsSync(temporary)) fs.rmSync(temporary)

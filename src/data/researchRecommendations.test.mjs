@@ -27,7 +27,7 @@ for (const ship of data.ships) {
     assert.ok(phase.factions.length > 0, `${ship.name}: XP factions`)
     assert.ok(['전열', '후열'].includes(phase.lane), `${ship.name}: XP lane`)
   }
-  const fileName = path.basename(ship.iconUrl).replace(/\.(png|webp)$/i, '.webp')
+  const fileName = path.basename(ship.iconUrl).replace(/\.(png|webp)$/i, '.png')
   await assert.doesNotReject(
     access(new URL(`../../public/ship-card-art/${fileName}`, import.meta.url)),
     `missing research card art: ${ship.name} (${fileName})`,

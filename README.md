@@ -48,6 +48,6 @@ npm.cmd run build
 - `npm.cmd run audit:data-sources`: 위 데이터·이미지 동기화를 먼저 실행한 뒤 앱 데이터와 교차 검증 보고서를 만듭니다.
 - `npm.cmd run audit:data-sources:local`: 네트워크 갱신 없이 마지막으로 동기화한 참고 자료만 다시 검사합니다.
 - `npm.cmd run refresh:data`: 원천과 이미지를 갱신한 뒤 캐릭터·기술점수·육성·개발함·입수처 JSON 및 필요한 카드 아트를 다시 만들고 최종 감사를 실행합니다.
-- `npm.cmd run sync:recommendation-art`: 육성·개발함·추가 스탯 추천에 필요한 세로형 카드 이미지를 참고용 원천에서 동기화합니다. 이 명령은 `PATH`에서 `libwebp` 지원 `ffmpeg`를 사용해 원본 해상도를 유지한 품질 88 WebP를 생성합니다.
+- `npm.cmd run sync:recommendation-art`: 육성·개발함·추가 스탯 추천에 필요한 세로형 카드 이미지를 참고용 원천에서 동기화합니다.
 
 동기화는 `검산용.json`, 이미지 폴더, 자동 관리 목록 밖의 사용자 자료를 보존합니다. 원격 파일을 전부 검증하기 전에는 기존 자료를 교체하지 않습니다. 정상 롤백이 확인된 임시 파일과 교체용 백업은 정리하며, 복원 자체가 실패하면 수동 복구를 위해 백업을 보존합니다.
