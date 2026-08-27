@@ -40,11 +40,14 @@
 ## 데이터 갱신 구조
 
 - `npm run refresh:data`: 원격 참고 자료와 누락 이미지를 동기화한 뒤 앱 JSON을 재생성하고 로컬 감사를 수행한다.
+- `npm run sync:skins`: 최신 Fernando 함선별 스킨 메타데이터에 선언된 플레이어 함선 스킨 렌더와 공용 `background`/`background2` 이미지를 전수 비교하고, 누락분을 각각 `참고용/AzurLane/images/skin/<skinId>/`, `참고용/AzurLane/images/background/`에 추가하며 손상·포맷 불일치 파일은 원본으로 교체한다. 공용 배경은 URL 경로 기준으로 중복 제거하고 `bgm`은 오디오이므로 이미지 동기화에서 제외해 보고서에 집계한다. 정상 파일과 미선언 수동 자산은 보존한다. 신규 업데이트의 최초 확인은 `audit:data-sources`로 원본·이미지만 먼저 수집하고, ALtoy·전투 데이터가 준비된 뒤 `refresh:data`로 앱 JSON을 갱신한다. 두 명령 모두 스킨 동기화를 자동 실행한다.
 - `npm run audit:data-sources`: 최신 원격 원천을 임시 작업공간에서 검증하고 관리 대상 참고 자료를 교체한 뒤 전체 원천 감사를 수행한다.
 - `npm run audit:data-sources:local`: 네트워크 없이 현재 참고 자료와 앱 데이터를 비교한다.
 - `npm run audit:idempotency`: 동일 원천으로 재생성했을 때 의미 있는 데이터가 바뀌지 않는지 검사한다.
 
-주요 원천은 AzurLaneTools/AzurLaneData, AzurLane Lua, Fernando2603/AzurLane, ALtoy, 육성 추천 Google Sheet, 기술점수 Google Sheet다. `참고용/`은 일반 작업에서 읽기 전용이며 동기화 스크립트만 관리 대상 경로를 교체한다. 이미지는 기존 파일을 보존하고 누락분만 채운다.
+주요 원천은 AzurLaneTools/AzurLaneData, AzurLane Lua, Fernando2603/AzurLane, ALtoy, 육성 추천 Google Sheet, 기술점수 Google Sheet다. `참고용/`은 일반 작업에서 읽기 전용이며 동기화 스크립트만 관리 대상 경로를 교체한다. 이미지는 정상 파일을 보존하고 누락분을 채우며, 선언된 자산이 손상됐거나 실제 포맷과 확장자가 다를 때만 원본으로 교체한다.
+
+Fernando의 `skin.json`, `skin_list.json`, `ship_skin.json`, `ship_skin_list.json`, `version.json`도 관리 원천이다. 전체 NPC·스토리 내부 이미지 트리를 복제하지 않고 `ship_skin_list.json`의 플레이어 함선 렌더와 그 레코드가 참조하는 공용 배경만 수집한다. `bgm`은 이미지 수집 대상이 아니다. 우타와레루모노 6척처럼 Fernando 메타데이터에 없는 함선은 `reports/data-sources/skin-image-sync.json`의 예외 목록으로 유지한다. 원본 스킨·배경은 대용량이므로 `public/`이나 GitHub Pages에 직접 넣지 않는다.
 
 이벤트 종료일은 KST 날짜 기준이다. 생성기와 브라우저 모두 `src/utils/kstDate.js`를 사용한다. 현재 이벤트를 특정 날짜 이후에도 고정 기대하는 테스트를 다시 만들지 않는다.
 

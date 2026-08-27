@@ -1,19 +1,21 @@
 {
-  "generatedAt": "2026-08-06T13:25:54.835Z",
+  "generatedAt": "2026-08-27T14:31:12.702Z",
   "summary": {
     "identityExceptions": 0,
     "obtainabilityAltoyOnly": 0,
-    "obtainabilityDifferent": 24,
+    "obtainabilityDifferent": 25,
     "missingReferenceImages": 6,
-    "cnOnlyExcluded": 0,
+    "appMissingFleetTech": 6,
+    "krAppPending": 5,
+    "cnOnlyExcluded": 1,
     "availability": {
-      "active-event": 7,
-      "collab-unknown": 89,
-      "permanent": 609,
-      "rerun-wait": 176
+      "active-event": 2,
+      "collab-unknown": 91,
+      "permanent": 610,
+      "rerun-wait": 178
     },
     "acquisitionRoutes": {
-      "active-event": 7,
+      "active-event": 2,
       "archive-drop": 63,
       "construction": 323,
       "core-monthly": 25,
@@ -23,7 +25,7 @@
       "later-map-drop": 114,
       "map-drop": 81,
       "rotating-exchange": 216,
-      "special-exchange": 68
+      "special-exchange": 69
     }
   },
   "identityExceptions": [],
@@ -452,6 +454,23 @@
         "META상점 교환"
       ],
       "iconFile": "9712010.png"
+    },
+    {
+      "gid": 971301,
+      "name": "에레버스(META)",
+      "status": "different",
+      "reason": "최신 동기화 KR 원천과 ALtoy의 입수처 문구가 서로 다름",
+      "resolution": "review",
+      "krObtain": [
+        "한정 이벤트: 월드 투어"
+      ],
+      "altoyObtain": [
+        "META 상점 교환"
+      ],
+      "appliedObtain": [
+        "META 상점 교환"
+      ],
+      "iconFile": "9713010.png"
     }
   ],
   "missingReferenceImages": [
@@ -516,5 +535,57 @@
       "iconFile": "10300060.webp"
     }
   ],
-  "cnOnlyExcluded": []
+  "appMissingFleetTech": [
+    {
+      "gid": 10156,
+      "status": "kr-app-pending",
+      "label": "KR 반영 · 앱 미반영",
+      "reason": "최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음",
+      "iconFile": null
+    },
+    {
+      "gid": 10157,
+      "status": "kr-app-pending",
+      "label": "KR 반영 · 앱 미반영",
+      "reason": "최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음",
+      "iconFile": null
+    },
+    {
+      "gid": 10158,
+      "status": "kr-app-pending",
+      "label": "KR 반영 · 앱 미반영",
+      "reason": "최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음",
+      "iconFile": null
+    },
+    {
+      "gid": 10236,
+      "status": "kr-app-pending",
+      "label": "KR 반영 · 앱 미반영",
+      "reason": "최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음",
+      "iconFile": null
+    },
+    {
+      "gid": 10720,
+      "status": "kr-app-pending",
+      "label": "KR 반영 · 앱 미반영",
+      "reason": "최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음",
+      "iconFile": null
+    },
+    {
+      "gid": 30119,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    }
+  ],
+  "cnOnlyExcluded": [
+    {
+      "gid": 30119,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    }
+  ]
 }

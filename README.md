@@ -45,9 +45,12 @@ npm.cmd run build
 
 - `npm.cmd run sync:data-sources`: AzurLaneData, ALtoy, Fernando, 최신 KR roster·연구함 Lua, 5개 서버 기술 Lua와 두 공개 Google Sheets를 임시 폴더에 내려받아 검증한 뒤 자동 관리 원천만 교체합니다.
 - `npm.cmd run sync:reference-images`: ALtoy 함선 목록과 Fernando 이미지 원천을 비교해 없는 이미지와 하위 폴더만 추가합니다. 기존 이미지는 덮어쓰거나 삭제하지 않습니다.
+- `npm.cmd run sync:skins`: Fernando의 최신 함선별 스킨 메타데이터를 기준으로 플레이어 함선의 기본·전체 스킨 렌더와 공용 `background`/`background2` 이미지 누락분을 각각 `참고용/AzurLane/images/skin/<skinId>/`, `참고용/AzurLane/images/background/`에 원자적으로 추가합니다. 공용 배경은 메타데이터 URL 경로로 중복을 제거하고, 오디오인 `bgm` 필드는 이미지 동기화에서 제외해 보고서에만 집계합니다. 정상인 기존 파일과 메타데이터에 없는 수동 자산은 보존하고, 손상되었거나 확장자와 실제 포맷이 일치하지 않는 선언 자산은 원본으로 자동 교체하며, `public/`에는 복사하지 않습니다.
 - `npm.cmd run audit:data-sources`: 위 데이터·이미지 동기화를 먼저 실행한 뒤 앱 데이터와 교차 검증 보고서를 만듭니다.
 - `npm.cmd run audit:data-sources:local`: 네트워크 갱신 없이 마지막으로 동기화한 참고 자료만 다시 검사합니다.
 - `npm.cmd run refresh:data`: 원천과 이미지를 갱신한 뒤 캐릭터·기술점수·육성·개발함·입수처 JSON 및 필요한 카드 아트를 다시 만들고 최종 감사를 실행합니다.
 - `npm.cmd run sync:recommendation-art`: 육성·개발함·추가 스탯 추천에 필요한 세로형 카드 이미지를 참고용 원천에서 동기화합니다.
 
 동기화는 `검산용.json`, 이미지 폴더, 자동 관리 목록 밖의 사용자 자료를 보존합니다. 원격 파일을 전부 검증하기 전에는 기존 자료를 교체하지 않습니다. 정상 롤백이 확인된 임시 파일과 교체용 백업은 정리하며, 복원 자체가 실패하면 수동 복구를 위해 백업을 보존합니다.
+
+신규 업데이트를 처음 확인할 때는 `npm.cmd run audit:data-sources`를 사용합니다. 이 명령은 앱 데이터를 섣불리 재생성하지 않고 원격 함선·스킨 메타데이터와 선언된 플레이어 함선 스킨 렌더·공용 배경을 먼저 수집해 차이를 보고합니다. ALtoy와 전투 데이터까지 준비된 것이 확인되면 `npm.cmd run refresh:data`로 앱 JSON을 갱신합니다. 대용량 원본은 Git에서 제외된 `참고용/`에만 보관하고 GitHub Pages에는 현재 화면에서 사용하는 아이콘과 카드 아트만 포함합니다.

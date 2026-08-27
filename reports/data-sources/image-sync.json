@@ -1,9 +1,35 @@
 {
-  "generatedAt": "2026-08-06T13:24:14.569Z",
+  "generatedAt": "2026-08-19T12:13:09.724Z",
   "checked": 881,
-  "changedShips": 4,
+  "changedShips": 0,
   "unavailableShips": 6,
   "results": [
+    {
+      "gid": 1030004,
+      "name": "우루루",
+      "skinId": 10300040,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300040/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030003,
+      "name": "루루티에",
+      "skinId": 10300030,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300030/painting.png"
+        }
+      ]
+    },
     {
       "gid": 1030001,
       "name": "쿠온",
@@ -31,72 +57,6 @@
       ]
     },
     {
-      "gid": 1030003,
-      "name": "루루티에",
-      "skinId": 10300030,
-      "downloaded": [],
-      "unavailable": [
-        {
-          "label": "Fernando painting.png",
-          "error": "HTTP 404",
-          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300030/painting.png"
-        }
-      ]
-    },
-    {
-      "gid": 1030004,
-      "name": "우루루",
-      "skinId": 10300040,
-      "downloaded": [],
-      "unavailable": [
-        {
-          "label": "Fernando painting.png",
-          "error": "HTTP 404",
-          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300040/painting.png"
-        }
-      ]
-    },
-    {
-      "gid": 20314,
-      "name": "서리",
-      "skinId": 203140,
-      "downloaded": [
-        {
-          "label": "Fernando painting.png",
-          "bytes": 3827494
-        },
-        {
-          "label": "Fernando icon.png",
-          "bytes": 29292
-        },
-        {
-          "label": "Fernando shipyard.png",
-          "bytes": 117952
-        }
-      ],
-      "unavailable": []
-    },
-    {
-      "gid": 970213,
-      "name": "纽伦堡·META",
-      "skinId": 9702130,
-      "downloaded": [
-        {
-          "label": "Fernando painting.png",
-          "bytes": 3085402
-        },
-        {
-          "label": "Fernando icon.png",
-          "bytes": 28891
-        },
-        {
-          "label": "Fernando shipyard.png",
-          "bytes": 130281
-        }
-      ],
-      "unavailable": []
-    },
-    {
       "gid": 1030005,
       "name": "사라나",
       "skinId": 10300050,
@@ -108,46 +68,6 @@
           "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300050/painting.png"
         }
       ]
-    },
-    {
-      "gid": 20115,
-      "name": "그리핀",
-      "skinId": 201150,
-      "downloaded": [
-        {
-          "label": "Fernando painting.png",
-          "bytes": 2349197
-        },
-        {
-          "label": "Fernando icon.png",
-          "bytes": 27962
-        },
-        {
-          "label": "Fernando shipyard.png",
-          "bytes": 103471
-        }
-      ],
-      "unavailable": []
-    },
-    {
-      "gid": 20237,
-      "name": "슈퍼브",
-      "skinId": 202370,
-      "downloaded": [
-        {
-          "label": "Fernando painting.png",
-          "bytes": 2833877
-        },
-        {
-          "label": "Fernando icon.png",
-          "bytes": 29086
-        },
-        {
-          "label": "Fernando shipyard.png",
-          "bytes": 111169
-        }
-      ],
-      "unavailable": []
     },
     {
       "gid": 1030006,

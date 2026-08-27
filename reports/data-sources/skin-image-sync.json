@@ -1,0 +1,64 @@
+{
+  "generatedAt": "2026-08-27T14:36:12.546Z",
+  "policy": {
+    "scope": "Fernando player-ship skin renders and shared background/background2 images declared by ship_skin_list.json",
+    "optionalAssets": "null metadata fields are intentionally absent",
+    "sharedBackgrounds": "background/background2 URLs are deduplicated and stored by metadata URL path under images/background",
+    "excludedAssets": "bgm is audio metadata and is intentionally excluded from image synchronization",
+    "preservation": "existing and undeclared local assets are preserved",
+    "deployment": "reference-only; images remain under gitignored 참고용 and are not copied to public"
+  },
+  "checkedShips": 880,
+  "checkedSkins": 2431,
+  "declaredSkinAssets": 15819,
+  "declaredBackgroundAssets": 136,
+  "declaredBackgroundReferences": 1675,
+  "checkedBackgrounds": 136,
+  "excludedBgmReferences": 75,
+  "excludedUniqueBgm": 19,
+  "declaredAssets": 15955,
+  "existingAssets": 15955,
+  "downloadedAssets": 0,
+  "invalidAssets": 0,
+  "fetchedAssets": 0,
+  "downloaded": [],
+  "replacedInvalid": [],
+  "rosterMetadataMissing": [
+    {
+      "gid": 1030001,
+      "name": "쿠온",
+      "skinId": "10300010",
+      "reason": "Fernando player-ship skin metadata unavailable"
+    },
+    {
+      "gid": 1030002,
+      "name": "네코네",
+      "skinId": "10300020",
+      "reason": "Fernando player-ship skin metadata unavailable"
+    },
+    {
+      "gid": 1030003,
+      "name": "루루티에",
+      "skinId": "10300030",
+      "reason": "Fernando player-ship skin metadata unavailable"
+    },
+    {
+      "gid": 1030004,
+      "name": "우루루",
+      "skinId": "10300040",
+      "reason": "Fernando player-ship skin metadata unavailable"
+    },
+    {
+      "gid": 1030005,
+      "name": "사라나",
+      "skinId": "10300050",
+      "reason": "Fernando player-ship skin metadata unavailable"
+    },
+    {
+      "gid": 1030006,
+      "name": "후미뤼르",
+      "skinId": "10300060",
+      "reason": "Fernando player-ship skin metadata unavailable"
+    }
+  ]
+}

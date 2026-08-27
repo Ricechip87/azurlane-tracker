@@ -16,6 +16,11 @@ assert.deepEqual(MANAGED_REFERENCE_PATHS, [
   'ALtoy/data',
   'AzurLaneLuaScripts',
   'AzurLane/ship.json',
+  'AzurLane/skin.json',
+  'AzurLane/skin_list.json',
+  'AzurLane/ship_skin.json',
+  'AzurLane/ship_skin_list.json',
+  'AzurLane/version.json',
   '벽람 함순이도감 v2.1.8_배포용의 사본.xlsx',
   '벽람 함순이도감 v2.1.8_배포용의 사본 - [ 메인시트.csv',
   '벽람 함순이도감 v2.1.8_배포용의 사본 - [ 인식각성 추천표(메인해역).csv',
@@ -36,6 +41,11 @@ try {
   write(path.join(referenceRoot, 'ALtoy/data/old.json'), 'old')
   write(path.join(referenceRoot, 'AzurLaneLuaScripts/old.lua'), 'old')
   write(path.join(referenceRoot, 'AzurLane/ship.json'), 'old')
+  write(path.join(referenceRoot, 'AzurLane/skin.json'), 'old')
+  write(path.join(referenceRoot, 'AzurLane/skin_list.json'), 'old')
+  write(path.join(referenceRoot, 'AzurLane/ship_skin.json'), 'old')
+  write(path.join(referenceRoot, 'AzurLane/ship_skin_list.json'), 'old')
+  write(path.join(referenceRoot, 'AzurLane/version.json'), 'old')
   write(path.join(referenceRoot, 'AzurLane/images/keep.png'), 'keep')
   write(path.join(referenceRoot, '수동자료.xlsx'), 'keep')
   write(path.join(referenceRoot, '검산용.json'), 'keep')

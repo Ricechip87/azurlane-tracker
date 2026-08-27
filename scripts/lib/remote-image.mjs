@@ -13,9 +13,13 @@ export async function fetchRemoteImage(url, {
 }
 
 export function validateImageBytes(bytes) {
-  const png = isCompletePng(bytes)
-  const webp = isCompleteWebp(bytes)
-  if (!png && !webp) throw new Error('이미지 형식 검증 실패')
+  if (!detectImageFormat(bytes)) throw new Error('이미지 형식 검증 실패')
+}
+
+export function detectImageFormat(bytes) {
+  if (isCompletePng(bytes)) return 'png'
+  if (isCompleteWebp(bytes)) return 'webp'
+  return null
 }
 
 function isCompletePng(bytes) {

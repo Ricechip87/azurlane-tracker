@@ -15,6 +15,7 @@ dist-ssr
 /.reference-sync.lock
 /.reference-sync-stage-*
 /.reference-sync-backup-*
+/.skin-asset-stage-*
 
 # Editor directories and files
 .vscode/*

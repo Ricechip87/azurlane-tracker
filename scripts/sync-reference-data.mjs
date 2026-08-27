@@ -9,6 +9,7 @@ import {
   installStagedReferenceData,
 } from './lib/reference-data-sync.mjs'
 import { acquireReferenceSyncWorkspace } from './lib/reference-sync-workspace.mjs'
+import { buildShipSkinAssetPlan } from './lib/ship-skin-assets.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const referenceRoot = path.join(root, '참고용')
@@ -60,6 +61,18 @@ const downloads = [
     relativePath: 'AzurLane/ship.json',
     type: 'json',
   },
+  ...[
+    ['fernando-skins', 'skin.json'],
+    ['fernando-skin-list', 'skin_list.json'],
+    ['fernando-ship-skins', 'ship_skin.json'],
+    ['fernando-ship-skin-list', 'ship_skin_list.json'],
+    ['fernando-version', 'version.json'],
+  ].map(([id, filename]) => ({
+    id,
+    url: `https://raw.githubusercontent.com/Fernando2603/AzurLane/main/${filename}`,
+    relativePath: `AzurLane/${filename}`,
+    type: 'json',
+  })),
   ...['CN', 'EN', 'JP', 'KR', 'TW'].map(region => ({
     id: `${region.toLowerCase()}-fleet-tech-lua`,
     url: `https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/${region}/sharecfg/fleet_tech_ship_template.lua`,
@@ -196,7 +209,7 @@ async function downloadSource(source) {
   const destination = path.join(stagedRoot, source.relativePath)
   const response = await fetch(source.url, {
     cache: 'no-store',
-    signal: AbortSignal.timeout(60_000),
+    signal: AbortSignal.timeout(180_000),
     headers: {
       'cache-control': 'no-cache',
       'user-agent': 'azurlane-tracker-reference-sync',
@@ -261,6 +274,47 @@ function validateStagedData() {
   if (!Array.isArray(fernando) || fernando.length < 700) {
     throw new Error(`Fernando 함선 목록 검증 실패: ${fernando.length}`)
   }
+  const fernandoSkins = readJson('AzurLane/skin.json')
+  const fernandoSkinList = readJson('AzurLane/skin_list.json')
+  const fernandoShipSkins = readJson('AzurLane/ship_skin.json')
+  const fernandoShipSkinList = readJson('AzurLane/ship_skin_list.json')
+  readJson('AzurLane/version.json')
+  if (!fernandoSkins || Array.isArray(fernandoSkins) || Object.keys(fernandoSkins).length < 2000) {
+    throw new Error(`Fernando 스킨 목록 검증 실패: ${Object.keys(fernandoSkins || {}).length}`)
+  }
+  if (!Array.isArray(fernandoSkinList) || fernandoSkinList.length !== Object.keys(fernandoSkins).length) {
+    throw new Error(`Fernando 스킨 배열 검증 실패: ${fernandoSkinList.length}`)
+  }
+  if (!fernandoShipSkins || Array.isArray(fernandoShipSkins) || Object.keys(fernandoShipSkins).length < 700) {
+    throw new Error(`Fernando 함선별 스킨 목록 검증 실패: ${Object.keys(fernandoShipSkins || {}).length}`)
+  }
+  if (!Array.isArray(fernandoShipSkinList) || fernandoShipSkinList.length !== Object.keys(fernandoShipSkins).length) {
+    throw new Error(`Fernando 함선별 스킨 배열 검증 실패: ${fernandoShipSkinList.length}`)
+  }
+  const skinPlan = buildShipSkinAssetPlan({ shipSkinList: fernandoShipSkinList })
+  if (skinPlan.checkedShips !== fernandoShipSkinList.length
+    || skinPlan.checkedSkins < 2000
+    || skinPlan.assets.length < 10000) {
+    throw new Error(`Fernando 함선별 스킨 매니페스트 검증 실패: ${skinPlan.checkedShips}/${skinPlan.checkedSkins}/${skinPlan.assets.length}`)
+  }
+  assertSameIds(
+    Object.keys(fernandoShipSkins),
+    fernandoShipSkinList.map(ship => ship.gid),
+    'Fernando 함선별 스킨 object/list',
+  )
+  assertSameIds(
+    Object.keys(fernandoSkins),
+    fernandoSkinList.map(skin => skin.id),
+    'Fernando 스킨 object/list',
+  )
+  const fernandoSkinIds = new Set(Object.keys(fernandoSkins).map(String))
+  for (const ship of fernandoShipSkinList) {
+    for (const skin of ship.skins) {
+      if (!fernandoSkinIds.has(String(skin.id))) {
+        throw new Error(`Fernando 함선별 스킨이 전체 스킨 목록에 없습니다: ${skin.id}`)
+      }
+    }
+  }
 
   for (const region of ['CN', 'EN', 'JP', 'KR', 'TW']) {
     for (const filename of [
@@ -279,6 +333,16 @@ function validateStagedData() {
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(stagedRoot, relativePath), 'utf8'))
+}
+
+function assertSameIds(left, right, label) {
+  const leftIds = [...new Set(left.map(String))].sort((a, b) => a.localeCompare(b, 'en'))
+  const rightIds = [...new Set(right.map(String))].sort((a, b) => a.localeCompare(b, 'en'))
+  if (leftIds.length !== left.length || rightIds.length !== right.length
+    || leftIds.length !== rightIds.length
+    || leftIds.some((id, index) => id !== rightIds[index])) {
+    throw new Error(`${label} 식별자 검증 실패: ${leftIds.length}/${rightIds.length}`)
+  }
 }
 
 function findNestedGitDirectories(directory) {

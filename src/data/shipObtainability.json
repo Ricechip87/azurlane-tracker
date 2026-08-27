@@ -1,25 +1,25 @@
 {
   "meta": {
     "note": "KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.",
-    "generatedAt": "2026-08-06T13:34:16.551Z",
+    "generatedAt": "2026-08-27T13:40:11.037Z",
     "total": 881,
     "withObtain": 881,
     "withoutObtain": 0,
     "availability": {
-      "active-event": 5,
+      "active-event": 2,
       "collab-unknown": 91,
-      "permanent": 609,
-      "rerun-wait": 176
+      "permanent": 610,
+      "rerun-wait": 178
     },
     "difficulty": {
       "easy": 327,
-      "event": 5,
-      "hard": 64,
-      "limited": 267,
+      "event": 2,
+      "hard": 65,
+      "limited": 269,
       "normal": 218
     },
     "acquisitionRoutes": {
-      "active-event": 5,
+      "active-event": 2,
       "archive-drop": 63,
       "construction": 323,
       "core-monthly": 25,
@@ -29,7 +29,7 @@
       "later-map-drop": 114,
       "map-drop": 81,
       "rotating-exchange": 216,
-      "special-exchange": 68
+      "special-exchange": 69
     },
     "source": "https://jforplay.github.io/altoy"
   },
@@ -22859,7 +22859,7 @@
       "faction": "로열",
       "shipType": "구축",
       "obtain": [
-        "현재 이벤트: 괴담 실록: 백야 빌라에서 탈출하라! (2026-08-20까지)"
+        "이벤트: 괴담 실록: 백야 빌라에서 탈출하라!"
       ],
       "historicalObtain": [
         "이벤트: 괴담 실록: 백야 빌라에서 탈출하라!"
@@ -22884,36 +22884,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "괴담 실록: 백야 빌라에서 탈출하라!",
-        "endsAt": "2026-08-20"
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -28186,7 +28166,7 @@
       "faction": "로열",
       "shipType": "경순",
       "obtain": [
-        "현재 이벤트: 괴담 실록: 백야 빌라에서 탈출하라! (2026-08-20까지) · 한정 건조 2.0% (01:25:00)"
+        "이벤트: 괴담 실록: 백야 빌라에서 탈출하라!"
       ],
       "historicalObtain": [
         "이벤트: 괴담 실록: 백야 빌라에서 탈출하라!"
@@ -28196,9 +28176,8 @@
         "light": false,
         "heavy": false,
         "special": false,
-        "limited": true,
-        "timer": "01:25:00",
-        "rate": "2.0%"
+        "limited": false,
+        "timer": null
       },
       "mapDrops": [],
       "permanentSignals": {
@@ -28212,36 +28191,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "괴담 실록: 백야 빌라에서 탈출하라!",
-        "endsAt": "2026-08-20"
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -29593,7 +29552,7 @@
       "faction": "로열",
       "shipType": "중순",
       "obtain": [
-        "현재 이벤트: 괴담 실록: 백야 빌라에서 탈출하라! (2026-08-20까지) · 한정 건조 2.0% (01:45:00)"
+        "이벤트: 괴담 실록: 백야 빌라에서 탈출하라!"
       ],
       "historicalObtain": [
         "이벤트: 괴담 실록: 백야 빌라에서 탈출하라!"
@@ -29603,9 +29562,8 @@
         "light": false,
         "heavy": false,
         "special": false,
-        "limited": true,
-        "timer": "01:45:00",
-        "rate": "2.0%"
+        "limited": false,
+        "timer": null
       },
       "mapDrops": [],
       "permanentSignals": {
@@ -29619,36 +29577,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "괴담 실록: 백야 빌라에서 탈출하라!",
-        "endsAt": "2026-08-20"
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 괴담 실록: 백야 빌라에서 탈출하라!"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -70547,7 +70485,7 @@
         "현재 이벤트: 월드 투어 (2026-09-30까지)"
       ],
       "historicalObtain": [
-        "限时活动：世界巡游"
+        "META 연구실·월드 투어"
       ],
       "obtainEn": [],
       "build": {
@@ -72767,7 +72705,7 @@
       "faction": "META",
       "shipType": "모니터",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META 상점 교환"
       ],
       "historicalObtain": [
         "한정 이벤트: 월드 투어"
@@ -72789,28 +72727,48 @@
         "coreMonthly": false,
         "arenaShop": false,
         "build": false,
-        "shop": false,
-        "other": false,
+        "shop": true,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 상점 교환"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 상점 교환"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상점 교환",
+          "상시 획득처",
+          "META 상점 교환"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "different"
       }
     },
     {

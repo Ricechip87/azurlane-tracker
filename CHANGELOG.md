@@ -1,5 +1,17 @@
 # Change Log
 
+## 2026-08-27 - Mirror Player Ship Skin Assets
+
+### Changed
+- Manage Fernando ship and skin metadata together so future source refreshes discover newly released ships and their optional skins even when ALtoy is delayed.
+- Add an atomic, incremental player-ship image synchronizer that validates numeric skin IDs, trusted source URLs, declared filenames, image structure, shared-skin aliases, shared `background`/`background2` targets, and deterministic output before installing missing files under the ignored reference directory. BGM references are reported but excluded because they are audio.
+- Run the skin synchronizer automatically from both full data refresh and remote source audit workflows without copying the multi-gigabyte reference library into Git or GitHub Pages.
+
+### Verified
+- Collect 265 missing skin-render assets and 7 missing shared backgrounds for 2,431 player-ship skins, including six optional skins for the five 2026-08-27 Eagle Union ships. The completed mirror contains all 15,955 unique declared image targets: 15,819 skin renders and 136 shared backgrounds.
+- Preserve six Utawarerumono ships as explicit source-unavailable metadata exceptions instead of fabricating missing artwork.
+- Cover optional null assets, invalid IDs and URLs, shared-skin/background deduplication, BGM exclusion, conflicting paths, failed staging rollback, and repeat-run idempotency with fixture-based tests.
+
 ## 2026-08-06 - Refresh the KR Roster and Refactor Recommendation Sources
 
 ### Changed

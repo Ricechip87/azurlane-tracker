@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { classifyAppMissingFleetTech } from './lib/data-issues-report.mjs'
 import { PREFER_ALTOY_GIDS } from './lib/obtainability-sources.mjs'
 import { parseShipDataGroupGidsLua } from './lib/research-lua-sources.mjs'
 
@@ -25,6 +26,7 @@ const charactersByGid = new Map(characters.map(ship => [String(ship.gid), ship])
 const charactersByName = new Map(characters.map(ship => [normalizeName(ship.name), ship]))
 const altoyByGid = new Map(altoy.map(ship => [String(ship.gid), ship]))
 const altoyByName = new Map(altoy.map(ship => [normalizeName(ship.name), ship]))
+const altoyGids = new Set(altoy.map(ship => Number(ship.gid)))
 const krGroupsByGid = new Map(Object.values(krGroups).map(group => [String(group.group_type), group]))
 
 const identityExceptions = audit.display.identityFallbacks.map(issue => ({
@@ -66,11 +68,16 @@ const missingReferenceImages = audit.images.referenceMissing.map(issue => {
   }
 })
 
-const cnOnlyExcluded = audit.fleetTech.cnOnlyExcludedGids.map(gid => ({
-  gid,
-  reason: 'CN 기술 원본에는 있으나 ALtoy/KR 표시 범위에는 없어 앱에서 제외됨',
-  iconFile: null,
+const appMissingFleetTech = classifyAppMissingFleetTech({
+  gids: audit.fleetTech.appMissingFleetTechGids,
+  krRosterGids,
+  altoyGids,
+}).map(issue => ({
+  ...issue,
+  ...fleetTechIssueCopy(issue.status),
+  iconFile: iconFile(null, altoyByGid.get(String(issue.gid))?.skin_id),
 }))
+const cnOnlyExcluded = appMissingFleetTech.filter(issue => issue.status === 'cn-only')
 
 const report = {
   generatedAt: new Date().toISOString(),
@@ -79,6 +86,8 @@ const report = {
     obtainabilityAltoyOnly: obtainabilityReview.filter(item => item.status === 'altoy-only').length,
     obtainabilityDifferent: obtainabilityReview.filter(item => item.status === 'different').length,
     missingReferenceImages: missingReferenceImages.length,
+    appMissingFleetTech: appMissingFleetTech.length,
+    krAppPending: appMissingFleetTech.filter(item => item.status.startsWith('kr-')).length,
     cnOnlyExcluded: cnOnlyExcluded.length,
     availability: obtainability.meta.availability || {},
     acquisitionRoutes: obtainability.meta.acquisitionRoutes || {},
@@ -86,6 +95,7 @@ const report = {
   identityExceptions,
   obtainabilityReview,
   missingReferenceImages,
+  appMissingFleetTech,
   cnOnlyExcluded,
 }
 
@@ -93,7 +103,7 @@ const outputDir = path.join(root, 'reports/data-sources')
 fs.mkdirSync(outputDir, { recursive: true })
 fs.writeFileSync(path.join(outputDir, 'issues.json'), `${JSON.stringify(report, null, 2)}\n`, 'utf8')
 fs.writeFileSync(path.join(outputDir, 'issues.html'), renderHtml(report), 'utf8')
-console.log(`검토 보고서 생성: 식별자 ${report.summary.identityExceptions}, 입수처 ${obtainabilityReview.length}, 이미지 ${report.summary.missingReferenceImages}, CN 선행 ${report.summary.cnOnlyExcluded}`)
+console.log(`검토 보고서 생성: 식별자 ${report.summary.identityExceptions}, 입수처 ${obtainabilityReview.length}, 이미지 ${report.summary.missingReferenceImages}, 앱 미반영 기술 ${report.summary.appMissingFleetTech} (KR 반영 ${report.summary.krAppPending}, CN 전용 ${report.summary.cnOnlyExcluded})`)
 
 function renderHtml(data) {
   return `<!doctype html>
@@ -123,7 +133,7 @@ function renderHtml(data) {
   ${section('식별자 보조 매칭', `${data.identityExceptions.length}명 · 앱 gid와 ALtoy gid가 달라 이름으로 연결`, data.identityExceptions.map(identityCard))}
   ${section('입수처 교차검증', `${data.obtainabilityReview.length}명 · ALtoy 단독 ${data.summary.obtainabilityAltoyOnly}, ALtoy 최신값 적용 ${data.summary.obtainabilityDifferent}`, data.obtainabilityReview.map(obtainCard))}
   ${section('원격 미제공 참고 이미지', `${data.missingReferenceImages.length}명 · 최신 원격 원천에도 없어 자동 보충하지 못한 파일`, data.missingReferenceImages.map(imageCard))}
-  ${section('CN 선행 함선 제외', `${data.cnOnlyExcluded.length}건 · KR/ALtoy 범위에 들어오기 전까지 표시하지 않음`, data.cnOnlyExcluded.map(cnCard))}
+  ${section('앱 미반영 함선 기술 데이터', `${data.appMissingFleetTech.length}건 · KR 반영 ${data.summary.krAppPending}, CN 전용 ${data.summary.cnOnlyExcluded}`, data.appMissingFleetTech.map(fleetTechCard))}
 </body>
 </html>\n`
 }
@@ -147,8 +157,27 @@ function imageCard(item) {
     `<code>${escapeHtml(item.missing.join(', '))}</code>`)
 }
 
-function cnCard(item) {
-  return card(`gid ${item.gid}`, 'CN only', item.reason, null, '')
+function fleetTechCard(item) {
+  return card(`gid ${item.gid}`, item.label, item.reason, item.iconFile, '')
+}
+
+function fleetTechIssueCopy(status) {
+  if (status === 'kr-altoy-app-pending') return {
+    label: 'KR/ALtoy 반영 · 앱 미반영',
+    reason: '최신 KR 및 ALtoy 함선 목록에는 있으나 현재 앱 함선 DB에는 아직 반영되지 않음',
+  }
+  if (status === 'kr-app-pending') return {
+    label: 'KR 반영 · 앱 미반영',
+    reason: '최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음',
+  }
+  if (status === 'altoy-app-pending') return {
+    label: 'ALtoy 반영 · 앱 미반영',
+    reason: 'ALtoy 함선 목록에는 있으나 최신 KR 목록과 현재 앱 함선 DB에는 반영되지 않음',
+  }
+  return {
+    label: 'CN only',
+    reason: 'CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음',
+  }
 }
 
 function card(name, meta, reason, icon, extra) {

@@ -115,7 +115,7 @@ const report = {
     krCount: Object.keys(krTech).length,
     displayedWithCn: characters.filter(ship => cnTech[String(ship.gid)]).length,
     displayedWithoutCn: characters.filter(ship => !cnTech[String(ship.gid)]).length,
-    cnOnlyExcludedGids: Object.keys(cnTech).filter(gid => !appGids.has(gid)).map(Number),
+    appMissingFleetTechGids: Object.keys(cnTech).filter(gid => !appGids.has(gid)).map(Number),
     cnKrMismatchCount: cnKrMismatches.length,
     cnKrMismatches,
     regionalLuaCounts: Object.fromEntries(Object.entries(regionalTech).map(([name, records]) => [name, Object.keys(records).length])),
@@ -138,7 +138,7 @@ fs.mkdirSync(path.dirname(output), { recursive: true })
 fs.writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`, 'utf8')
 
 console.log(`데이터 감사 완료: 앱 ${characters.length}척 / ALtoy ${altoy.length}척 / KR ${krShipGids.size}척`)
-console.log(`CN 기술 ${report.fleetTech.displayedWithCn}척 반영, CN 미수록 ${report.fleetTech.displayedWithoutCn}척, CN 전용 ${report.fleetTech.cnOnlyExcludedGids.length}척 제외`)
+console.log(`CN 기술 ${report.fleetTech.displayedWithCn}척 반영, CN 미수록 ${report.fleetTech.displayedWithoutCn}척, 앱 미반영 기술 데이터 ${report.fleetTech.appMissingFleetTechGids.length}척`)
 console.log(`참고 이미지 누락 ${imageMissing.length}척, 공개 아이콘 누락 ${publicIconMissing.length}척`)
 
 if (displayOutOfScope.length || altoyMissingInApp.length || cnCurrentMismatches.length || publicIconMissing.length) {
