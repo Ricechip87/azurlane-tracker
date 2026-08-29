@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import data from './shipObtainability.json' with { type: 'json' }
 import activeEvents from '../../scripts/data/kr-active-events.json' with { type: 'json' }
 import { toKstDateKey } from '../utils/kstDate.js'
+import { resolveEventAcquisition } from '../utils/eventAcquisition.js'
 
 const allowedAvailability = new Set(['permanent', 'active-event', 'rerun-wait', 'collab-unknown', 'unknown'])
 assert.equal(data.ships.length, data.meta.total)
@@ -56,6 +57,72 @@ for (const name of ['슈퍼브', '서리', '그리핀']) {
     assert.equal(ship?.difficulty.key, 'limited', `${name} 종료 후 획득 불가`)
     assert.equal(ship?.build.limited, false, `${name} 종료 후 한정 건조 비활성`)
   }
+}
+
+{
+  const event = activeEvents.events.find(item => item.name === '몽광의 아스트라리움')
+  assert.ok(event, '몽광의 아스트라리움 KR 이벤트 설정 존재')
+  assert.equal(event.startsAt, '2026-08-27')
+  assert.equal(event.endsAt, '2026-09-10')
+  assert.equal(event.endsAtLabel, '2026-09-10 점검까지')
+  assert.equal(event.claimEndsAt, '2026-09-16 23:59')
+  assert.deepEqual(event.sources.map(source => source.kind), ['official-kr', 'official-kr-full-notice-archive', 'bwiki-cross-check'])
+  const officialSource = event.sources.find(source => source.kind === 'official-kr')
+  const officialArchive = event.sources.find(source => source.kind === 'official-kr-full-notice-archive')
+  const crossCheckSource = event.sources.find(source => source.kind === 'bwiki-cross-check')
+  assert.equal(officialSource.scope, 'KR 등장 및 기본 입수 분류')
+  assert.equal(officialSource.urls.length, 5, '신규 5척별 KR 공식 공지 URL 보존')
+  assert.ok(officialSource.urls.every(url => /^https:\/\/x\.com\/azurlanekorea\/status\/\d+$/.test(url)))
+  assert.equal(officialArchive.scope, 'KR 공식 공지 전문 보존본 · 이벤트 기간·수령 기한·건조 확률')
+  assert.deepEqual(officialArchive.urls, ['https://gall.dcinside.com/mgallery/board/view/?id=blhx&no=889749&page=1'])
+  assert.equal(crossCheckSource.scope, '건조 시간 및 PT 교환량·해역 드롭·누적 PT 세부 교차검증')
+  assert.equal(crossCheckSource.urls.length, 2, '건조 시간과 이벤트 획득 세부 교차검증 URL 보존')
+  assert.ok(crossCheckSource.urls.every(url => url.startsWith('https://wiki.biligame.com/blhx/')))
+
+  const expected = {
+    베닝턴: { construction: { rate: '2.0%', timer: '04:25:00' }, obtain: [{ kind: 'limited-construction', label: '한정 건조 2.0% (04:25:00)', endsAt: '2026-09-10' }] },
+    빅스버그: { construction: { rate: '2.0%', timer: '01:25:00' }, obtain: [{ kind: 'limited-construction', label: '한정 건조 2.0% (01:25:00)', endsAt: '2026-09-10' }] },
+    해리슨: { construction: { rate: '2.5%', timer: '00:28:00' }, obtain: [{ kind: 'limited-construction', label: '한정 건조 2.5% (00:28:00)', endsAt: '2026-09-10' }] },
+    콜렛: {
+      construction: { rate: '0.5%', timer: '00:29:00' },
+      obtain: [
+        { kind: 'limited-construction', label: '한정 건조 0.5% (00:29:00)', endsAt: '2026-09-10' },
+        { kind: 'event-exchange', label: '이벤트 상점 8,000 PT 교환 (최대 5회 · 09-16 23:59까지)', endsAt: '2026-09-16 23:59' },
+        { kind: 'event-drop', label: '이벤트 해역 B3/D3/SP 드롭', endsAt: '2026-09-10' },
+      ],
+    },
+    '존 로저스': { construction: null, obtain: [{ kind: 'milestone-reward', label: '누적 10,000 PT 첫 획득 (추가 20,000/40,000/60,000 PT · 건조 불가 · 09-16 23:59까지)', endsAt: '2026-09-16 23:59' }] },
+  }
+  const isActive = event.startsAt <= toKstDateKey() && toKstDateKey() <= event.endsAt
+  for (const [name, expectation] of Object.entries(expected)) {
+    const ship = data.ships.find(item => item.name === name)
+    assert.ok(ship, `${name} 입수 데이터 존재`)
+    assert.deepEqual(event.acquisition?.[name], expectation.obtain, `${name} 공식 획득 설정 보존`)
+    assert.deepEqual(event.construction?.[name] || null, expectation.construction, `${name} 공식 건조 설정 보존`)
+    assert.equal(ship.availability.key, isActive ? 'active-event' : 'rerun-wait', `${name} KR 이벤트 기간 상태`)
+    if (!isActive) continue
+
+    assert.equal(ship.availability.endsAt, event.endsAt, `${name} 이벤트 종료일`)
+    assert.deepEqual(ship.obtain, [`현재 이벤트: ${event.name} (${event.endsAtLabel})`, ...expectation.obtain.map(route => route.label)], `${name} 현재 상세 입수처`)
+    assert.equal(ship.build.limited, Boolean(expectation.construction), `${name} 한정 건조 여부`)
+    if (expectation.construction) {
+      assert.equal(ship.build.rate, expectation.construction.rate, `${name} 건조 확률`)
+      assert.equal(ship.build.timer, expectation.construction.timer, `${name} 건조 시간`)
+    } else {
+      assert.equal(ship.build.rate, undefined, `${name} 건조 확률 없음`)
+      assert.equal(ship.build.timer, null, `${name} 건조 시간 없음`)
+    }
+  }
+
+  for (const name of ['베닝턴', '빅스버그', '해리슨']) {
+    assert.equal(resolveEventAcquisition(event, name, '2026-09-11').phase, 'ended', `${name} 본 이벤트 종료 후 복각 대기`)
+  }
+  for (const name of ['콜렛', '존 로저스']) {
+    const claim = resolveEventAcquisition(event, name, '2026-09-11')
+    assert.equal(claim.phase, 'claim-only', `${name} 수령 기간 유지`)
+    assert.equal(claim.availability.label, '이벤트 수령 기간', `${name} 수령 기간 UI 라벨`)
+  }
+  assert.equal(resolveEventAcquisition(event, '콜렛', '2026-09-11').buildLimited, false, '수령 기간에 콜렛 한정 건조 비활성')
 }
 {
   const name = '뉘른베르크(META)'

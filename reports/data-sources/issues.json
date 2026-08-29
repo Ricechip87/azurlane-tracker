@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-08-27T14:31:12.702Z",
+  "generatedAt": "2026-08-29T11:28:21.915Z",
   "summary": {
     "identityExceptions": 0,
     "obtainabilityAltoyOnly": 0,
     "obtainabilityDifferent": 25,
     "missingReferenceImages": 6,
-    "appMissingFleetTech": 6,
-    "krAppPending": 5,
+    "appMissingFleetTech": 1,
+    "krAppPending": 0,
     "cnOnlyExcluded": 1,
     "availability": {
-      "active-event": 2,
+      "active-event": 7,
       "collab-unknown": 91,
       "permanent": 610,
       "rerun-wait": 178
     },
     "acquisitionRoutes": {
-      "active-event": 2,
+      "active-event": 7,
       "archive-drop": 63,
       "construction": 323,
       "core-monthly": 25,
@@ -536,41 +536,6 @@
     }
   ],
   "appMissingFleetTech": [
-    {
-      "gid": 10156,
-      "status": "kr-app-pending",
-      "label": "KR 반영 · 앱 미반영",
-      "reason": "최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음",
-      "iconFile": null
-    },
-    {
-      "gid": 10157,
-      "status": "kr-app-pending",
-      "label": "KR 반영 · 앱 미반영",
-      "reason": "최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음",
-      "iconFile": null
-    },
-    {
-      "gid": 10158,
-      "status": "kr-app-pending",
-      "label": "KR 반영 · 앱 미반영",
-      "reason": "최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음",
-      "iconFile": null
-    },
-    {
-      "gid": 10236,
-      "status": "kr-app-pending",
-      "label": "KR 반영 · 앱 미반영",
-      "reason": "최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음",
-      "iconFile": null
-    },
-    {
-      "gid": 10720,
-      "status": "kr-app-pending",
-      "label": "KR 반영 · 앱 미반영",
-      "reason": "최신 KR 함선 목록에는 있으나 ALtoy와 현재 앱 함선 DB에는 아직 반영되지 않음",
-      "iconFile": null
-    },
     {
       "gid": 30119,
       "status": "cn-only",

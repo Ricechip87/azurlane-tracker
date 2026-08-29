@@ -2,7 +2,7 @@
   "meta": {
     "source": "ALtoy ship_info_data.json",
     "formula": "floor((base + growth * (level - 1) / 1000 + enhance + retrofit) * affinity) + direct equipment stats",
-    "shipCount": 881
+    "shipCount": 886
   },
   "ships": {
     "10000": {
@@ -3271,6 +3271,204 @@
         ]
       ]
     },
+    "10156": {
+      "name": "콜렛",
+      "shipType": "구축",
+      "type": 1,
+      "research": false,
+      "base": {
+        "health": 387,
+        "firepower": 27,
+        "torpedo": 70,
+        "antiair": 45,
+        "reload": 84,
+        "accuracy": 76,
+        "evasion": 59,
+        "speed": 40.8,
+        "luck": 85,
+        "asw": 55
+      },
+      "maxBase": {
+        "health": 953,
+        "firepower": 67,
+        "torpedo": 174,
+        "antiair": 111,
+        "reload": 84,
+        "accuracy": 76,
+        "evasion": 59,
+        "speed": 40.8,
+        "luck": 85,
+        "asw": 136
+      },
+      "growth": {
+        "health": 11021,
+        "firepower": 370,
+        "torpedo": 894,
+        "antiair": 978,
+        "reload": 585,
+        "accuracy": 1175,
+        "evasion": 1095,
+        "asw": 614
+      },
+      "enhance": {
+        "firepower": 26,
+        "torpedo": 69,
+        "reload": 63
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          1
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
+    "10157": {
+      "name": "해리슨",
+      "shipType": "구축",
+      "type": 1,
+      "research": false,
+      "base": {
+        "health": 343,
+        "firepower": 18,
+        "torpedo": 70,
+        "antiair": 43,
+        "reload": 81,
+        "accuracy": 73,
+        "evasion": 59,
+        "speed": 42,
+        "luck": 75,
+        "asw": 56
+      },
+      "maxBase": {
+        "health": 845,
+        "firepower": 45,
+        "torpedo": 174,
+        "antiair": 106,
+        "reload": 81,
+        "accuracy": 73,
+        "evasion": 59,
+        "speed": 42,
+        "luck": 75,
+        "asw": 139
+      },
+      "growth": {
+        "health": 9771,
+        "firepower": 249,
+        "torpedo": 894,
+        "antiair": 941,
+        "reload": 562,
+        "accuracy": 1125,
+        "evasion": 1095,
+        "asw": 626
+      },
+      "enhance": {
+        "firepower": 18,
+        "torpedo": 69,
+        "reload": 60
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          1
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
+    "10158": {
+      "name": "존 로저스",
+      "shipType": "구축",
+      "type": 1,
+      "research": false,
+      "base": {
+        "health": 361,
+        "firepower": 19,
+        "torpedo": 69,
+        "antiair": 45,
+        "reload": 81,
+        "accuracy": 73,
+        "evasion": 59,
+        "speed": 42,
+        "luck": 86,
+        "asw": 56
+      },
+      "maxBase": {
+        "health": 890,
+        "firepower": 47,
+        "torpedo": 171,
+        "antiair": 112,
+        "reload": 81,
+        "accuracy": 73,
+        "evasion": 59,
+        "speed": 42,
+        "luck": 86,
+        "asw": 139
+      },
+      "growth": {
+        "health": 10295,
+        "firepower": 258,
+        "torpedo": 886,
+        "antiair": 990,
+        "reload": 562,
+        "accuracy": 1125,
+        "evasion": 1095,
+        "asw": 629
+      },
+      "enhance": {
+        "firepower": 18,
+        "torpedo": 68,
+        "reload": 60
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          1
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
     "10201": {
       "name": "오마하",
       "shipType": "경순",
@@ -5338,6 +5536,68 @@
       "enhance": {
         "firepower": 30,
         "reload": 52
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          2
+        ],
+        [
+          1
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
+    "10236": {
+      "name": "빅스버그",
+      "shipType": "경순",
+      "type": 2,
+      "research": false,
+      "base": {
+        "health": 751,
+        "firepower": 31,
+        "antiair": 88,
+        "reload": 71,
+        "accuracy": 56,
+        "evasion": 28,
+        "speed": 32.5,
+        "luck": 72,
+        "asw": 25
+      },
+      "maxBase": {
+        "health": 1850,
+        "firepower": 77,
+        "antiair": 217,
+        "reload": 71,
+        "accuracy": 56,
+        "evasion": 28,
+        "speed": 32.5,
+        "luck": 72,
+        "asw": 62
+      },
+      "growth": {
+        "health": 18618,
+        "firepower": 431,
+        "antiair": 1771,
+        "reload": 492,
+        "accuracy": 828,
+        "evasion": 562,
+        "asw": 305
+      },
+      "enhance": {
+        "firepower": 31,
+        "reload": 53
       },
       "retrofit": {},
       "augment": null,
@@ -8833,6 +9093,63 @@
         ]
       ]
     },
+    "10720": {
+      "name": "베닝턴",
+      "shipType": "항모",
+      "type": 7,
+      "research": false,
+      "base": {
+        "health": 1106,
+        "antiair": 63,
+        "aviation": 83,
+        "reload": 48,
+        "accuracy": 30,
+        "evasion": 13,
+        "speed": 33,
+        "luck": 85
+      },
+      "maxBase": {
+        "health": 2725,
+        "antiair": 155,
+        "aviation": 207,
+        "reload": 48,
+        "accuracy": 30,
+        "evasion": 13,
+        "speed": 33,
+        "luck": 85
+      },
+      "growth": {
+        "health": 29701,
+        "antiair": 1329,
+        "aviation": 1022,
+        "reload": 333,
+        "accuracy": 437,
+        "evasion": 175
+      },
+      "enhance": {
+        "aviation": 83,
+        "reload": 36
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          7
+        ],
+        [
+          9
+        ],
+        [
+          8
+        ],
+        [
+          10
+        ],
+        [
+          10
+        ]
+      ]
+    },
     "10722": {
       "name": "인디펜던스",
       "shipType": "경항모",
@@ -10344,7 +10661,8 @@
         "health": 2099,
         "firepower": 125,
         "antiair": 112,
-        "reload": 40
+        "reload": 40,
+        "luck": 15
       },
       "retrofit": {},
       "augment": null,
@@ -13199,7 +13517,12 @@
         "torpedo": 63,
         "reload": 50
       },
-      "retrofit": {},
+      "retrofit": {
+        "health": 165,
+        "firepower": 60,
+        "antiair": 60,
+        "evasion": 20
+      },
       "augment": {
         "id": 10020,
         "name": "파도와 우아한 오후",
@@ -39949,7 +40272,8 @@
         "firepower": 36,
         "torpedo": 128,
         "antiair": 52,
-        "reload": 59
+        "reload": 59,
+        "luck": 15
       },
       "retrofit": {},
       "augment": null,
@@ -42402,7 +42726,8 @@
         "firepower": 48,
         "torpedo": 86,
         "antiair": 106,
-        "reload": 53
+        "reload": 53,
+        "luck": 15
       },
       "retrofit": {},
       "augment": null,
@@ -52296,7 +52621,7 @@
       ]
     },
     "1040002": {
-      "name": "키즈아 아이 - 엘레강트",
+      "name": "키즈나 아이 - 엘레강트",
       "shipType": "중순",
       "type": 3,
       "research": false,

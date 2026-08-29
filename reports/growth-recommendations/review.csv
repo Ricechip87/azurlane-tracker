@@ -386,11 +386,14 @@ operation-siren,대작전,벽청년 이상,SS,경순 CL,플리머스,P023,UR,로
 operation-siren,대작전,벽청년 이상,SS,경순 CL,오로라,118,SR,로열,경순,대 경장갑 필살기,False,7,24
 operation-siren,대작전,벽청년 이상,SS,중순 / 대순 CA,모스크바,727,UR,노스유니온,중순,"딜/탱/지원탄막
 꽉찬 육각형",False,7,36
+operation-siren,대작전,벽청년 이상,SS,중순 / 대순 CA,드레이크,P014,UR,로열,중순,고출력 중순 표준,False,7,38
 operation-siren,대작전,벽청년 이상,S+,구축 DD,모가도르,642,UR,비시아,구축,"알자스덱
 3번 자리 딜러",False,11,2
 operation-siren,대작전,벽청년 이상,S+,구축 DD,카자구모,517,SSR,중앵,구축,"생존 보장시
 공습선도 1황",False,11,4
 operation-siren,대작전,벽청년 이상,S+,경순 CL,차파예프,436,SSR,노스유니온,경순,구축함 상대,False,11,18
+operation-siren,대작전,벽청년 이상,S+,경순 CL,벨파스트,115,SSR,로열,경순,"공방 지원 + 높은 딜
+경장 특화",False,11,20
 operation-siren,대작전,벽청년 이상,S+,중순 / 대순 CA,운젠,605,UR,중앵,중순,전열 딜러 2황,False,11,36
 operation-siren,대작전,벽청년 이상,S+,중순 / 대순 CA,하우덴 리우,P042,UR,튤리퍼,중순,"대경장 보스전 딜러
 쫄팟에도 쓰기 좋음",False,11,38
@@ -402,36 +405,39 @@ operation-siren,대작전,벽청년 이상,S,구축 DD,할포드,P033,SSR,유니
 포격 버프",False,15,6
 operation-siren,대작전,벽청년 이상,S,경순 CL,시리우스,371,SSR,로열,경순,"항모 버퍼
 죽어도 버프유지",False,15,18
-operation-siren,대작전,벽청년 이상,S,경순 CL,산타페,683,SSR,유니온,경순,"높은 공격력
-조명탄",False,15,20
 operation-siren,대작전,벽청년 이상,S,경순 CL,모모 베리아 데빌룩,Z113,SSR,투러브,경순,"20초 주기
-소환물 + 피해량버프",False,15,22
-operation-siren,대작전,벽청년 이상,S,경순 CL,아브로라,262,SSR,노스유니온,경순,전열 화력 버프,False,15,24
-operation-siren,대작전,벽청년 이상,S,경순 CL,와타라세,661,SSR,중앵,경순,최강 쫄팟 요원,False,15,34
+소환물 + 피해량버프",False,15,20
+operation-siren,대작전,벽청년 이상,S,경순 CL,아브로라,262,SSR,노스유니온,경순,전열 화력 버프,False,15,22
+operation-siren,대작전,벽청년 이상,S,경순 CL,와타라세,661,SSR,중앵,경순,최강 쫄팟 요원,False,15,32
+operation-siren,대작전,벽청년 이상,S,경순 CL,슈퍼브,746,SSR,로열,경순,최강 쫄팟 요원2,False,15,34
 operation-siren,대작전,벽청년 이상,S,중순 / 대순 CA,에기르,P020,UR,철혈,초순,보스 전용 탱커,False,15,36
 operation-siren,대작전,벽청년 이상,S,중순 / 대순 CA,힌덴부르크,P031,UR,철혈,중순,전열 딜러 1황,False,15,38
 operation-siren,대작전,벽청년 이상,S,중순 / 대순 CA,괌,616,UR,유니온,초순,"파갑, 대공, 탱킹",False,15,40
 operation-siren,대작전,벽청년 이상,S,중순 / 대순 CA,위치타(META),M035,SSR,META,중순,유리대포 1황,False,15,42
 operation-siren,대작전,벽청년 이상,S,중순 / 대순 CA,생 루이,P006,SSR,아이리스,중순,"알자스 덱
 경장 딜러용",False,15,44
-operation-siren,대작전,벽청년 이상,S,중순 / 대순 CA,이부키,P003,SSR,중앵,중순,쫄팟/단기전의 신,True,15,50
+operation-siren,대작전,벽청년 이상,S,중순 / 대순 CA,이부키,P003,SSR,중앵,중순,쫄팟/단기전의 신,True,15,52
 operation-siren,대작전,벽청년 이상,A+,구축 DD,타이위안,256,SR,동황,구축,높은 공격력 / 미구,False,19,2
 operation-siren,대작전,벽청년 이상,A+,구축 DD,푸슌,254,SR,동황,구축,높은 공격력 / 미구,False,19,4
 operation-siren,대작전,벽청년 이상,A+,구축 DD,펠릭스 슐츠,P030,SSR,철혈,구축,탱커 2황,False,19,6
 operation-siren,대작전,벽청년 이상,A+,구축 DD,저비스,550,SSR,로열,구축,탱커 / 전열버프,False,19,8
 operation-siren,대작전,벽청년 이상,A+,구축 DD,타슈켄트,433,SSR,노스유니온,구축,"북련팟 (나히모프)
 감속셔틀",False,19,10
+operation-siren,대작전,벽청년 이상,A+,구축 DD,브리스톨(META),M062,SSR,META,구축,"20초 주기 회피깍
+--> 3공습팟에선 S급",False,19,12
+operation-siren,대작전,벽청년 이상,A+,경순 CL,산타페,683,SSR,유니온,경순,"높은 공격력
+조명탄",False,19,18
 operation-siren,대작전,벽청년 이상,A+,경순 CL,바야르,P037,SSR,아이리스,경순,"5초 무적
-준최상급 딜링",False,19,18
+준최상급 딜링",False,19,20
 operation-siren,대작전,벽청년 이상,A+,경순 CL,하얼빈,P025,SSR,동황,경순,"쫄팟 딜러
-연막탄",False,19,20
-operation-siren,대작전,벽청년 이상,A+,경순 CL,키로프,435,SSR,노스유니온,경순,개전 공격 및 지원,True,19,22
-operation-siren,대작전,벽청년 이상,A+,경순 CL,키로프(META),M028,SSR,META,경순,개전 공격 및 지원,False,19,23
-operation-siren,대작전,벽청년 이상,A+,경순 CL,헬레나(META),M003,SSR,META,경순,딜 버프,False,19,24
-operation-siren,대작전,벽청년 이상,A+,경순 CL,보로실로프,588,SSR,노스유니온,경순,후열 보조,False,19,26
-operation-siren,대작전,벽청년 이상,A+,경순 CL,유키노,Z995,SSR,DOAX VV,경순,후열 보조,False,19,27
-operation-siren,대작전,벽청년 이상,A+,경순 CL,드미트리 돈스코이,P041,SSR,노스유니온,경순,철갑탄 공증 지원,False,19,28
-operation-siren,대작전,벽청년 이상,A+,경순 CL,스위프트슈어,393,SSR,로열,경순,확률적 명중 지원,False,19,30
+연막탄",False,19,22
+operation-siren,대작전,벽청년 이상,A+,경순 CL,키로프,435,SSR,노스유니온,경순,개전 공격 및 지원,True,19,24
+operation-siren,대작전,벽청년 이상,A+,경순 CL,키로프(META),M028,SSR,META,경순,개전 공격 및 지원,False,19,25
+operation-siren,대작전,벽청년 이상,A+,경순 CL,헬레나(META),M003,SSR,META,경순,15초 주기 보조,False,19,26
+operation-siren,대작전,벽청년 이상,A+,경순 CL,타카하시,P044,SSR,중앵,경순,15초 주기 보조,False,19,27
+operation-siren,대작전,벽청년 이상,A+,경순 CL,보로실로프,588,SSR,노스유니온,경순,후열 보조,False,19,28
+operation-siren,대작전,벽청년 이상,A+,경순 CL,유키노,Z995,SSR,DOAX VV,경순,후열 보조,False,19,29
+operation-siren,대작전,벽청년 이상,A+,경순 CL,드미트리 돈스코이,P041,SSR,노스유니온,경순,철갑탄 공증 지원,False,19,30
 operation-siren,대작전,벽청년 이상,A+,경순 CL,노시로(µ장비),635,SSR,중앵,경순,"3번 자리 딜러
 뇌격 버프",False,19,32
 operation-siren,대작전,벽청년 이상,A+,경순 CL,토키사키 쿠루미,Z155,SSR,데어라,경순,불안정한 보조,False,19,34
@@ -443,9 +449,11 @@ operation-siren,대작전,벽청년 이상,A+,중순 / 대순 CA,앵커리지,P0
 operation-siren,대작전,벽청년 이상,A+,중순 / 대순 CA,피츠버그,655,SSR,유니온,중순,딜탱 다 잘함 + 파갑,False,19,42
 operation-siren,대작전,벽청년 이상,A+,중순 / 대순 CA,야토가미 토카,Z151,SSR,데어라,중순,"기함보호
 3번자리 딜러",False,19,44
+operation-siren,대작전,벽청년 이상,A+,중순 / 대순 CA,A2,Z161,SSR,니어,중순,파갑 지원,False,19,46
 operation-siren,대작전,벽청년 이상,A,구축 DD,창춘,255,SR,동황,구축,미구 / 북련 보조,False,23,2
 operation-siren,대작전,벽청년 이상,A,구축 DD,유다치(META),M051,SSR,META,구축,3번 자리 딜러,False,23,4
-operation-siren,대작전,벽청년 이상,A,구축 DD,유다치,164,SSR,중앵,구축,3번 자리 뇌장딜러,False,23,6
+operation-siren,대작전,벽청년 이상,A,구축 DD,유다치,164,SSR,중앵,구축,3번 자리 딜러,False,23,5
+operation-siren,대작전,벽청년 이상,A,구축 DD,오라주,P046,SSR,아이리스,구축,3번 자리 뇌장딜러,False,23,6
 operation-siren,대작전,벽청년 이상,A,구축 DD,비토리오 쿠니베르티,P040,SSR,사르데냐,구축,3번 자리 뇌장딜러,False,23,8
 operation-siren,대작전,벽청년 이상,A,구축 DD,브리스톨,533,SSR,유니온,구축,"20초 주기
 명중 버퍼",False,23,10
@@ -463,7 +471,8 @@ operation-siren,대작전,벽청년 이상,A,경순 CL,시만토,P029,SSR,중앵
 operation-siren,대작전,벽청년 이상,A,경순 CL,류 리온,Z142,SSR,던만추,경순,준최상급 딜러,False,23,20
 operation-siren,대작전,벽청년 이상,A,경순 CL,리노,445,SSR,유니온,경순,준최상급 딜러,True,23,21
 operation-siren,대작전,벽청년 이상,A,경순 CL,샌디에이고,36,SSR,유니온,경순,경순 딜러 2황,True,23,22
-operation-siren,대작전,벽청년 이상,A,경순 CL,스킬라,584,SSR,로열,경순,대공 + 항공뎀증,False,23,24
+operation-siren,대작전,벽청년 이상,A,경순 CL,스킬라,584,SSR,로열,경순,전열 보조 대체제,False,23,24
+operation-siren,대작전,벽청년 이상,A,경순 CL,스위프트슈어,393,SSR,로열,경순,전열 보조 대체제,False,23,25
 operation-siren,대작전,벽청년 이상,A,경순 CL,파고,657,SSR,유니온,경순,"무난하게 좋은
 프랑스 함순이들",False,23,26
 operation-siren,대작전,벽청년 이상,A,경순 CL,기샹,603,SSR,아이리스,경순,"무난하게 좋은
@@ -472,7 +481,8 @@ operation-siren,대작전,벽청년 이상,A,경순 CL,잉 루이,493,SR,동황,
 operation-siren,대작전,벽청년 이상,A,경순 CL,차오 호,494,SR,동황,경순,"2,3번 자리 딜러",False,23,29
 operation-siren,대작전,벽청년 이상,A,경순 CL,클리블랜드,37,SR,유니온,경순,"확률적 아군 전체
 데미지 증가",False,23,30
-operation-siren,대작전,벽청년 이상,A,경순 CL,라임,710,SSR,템페스타,범선,대경장 딜탱,False,23,32
+operation-siren,대작전,벽청년 이상,A,경순 CL,2B,Z162,SSR,니어,경순,"순수 딜러
+약간의 딜 보조",False,23,32
 operation-siren,대작전,벽청년 이상,A,경순 CL,클리블랜드(META),M055,SSR,META,경순,대경장 딜러,False,23,34
 operation-siren,대작전,벽청년 이상,A,경순 CL,레겐스부르크(META),M058,SSR,META,경순,약간의 보조,False,23,35
 operation-siren,대작전,벽청년 이상,A,중순 / 대순 CA,크론시타트,539,UR,노스유니온,초순,"무난하게 좋음
@@ -487,6 +497,7 @@ operation-siren,대작전,벽청년 이상,A,중순 / 대순 CA,장우,725,SSR,�
 operation-siren,대작전,벽청년 이상,A,중순 / 대순 CA,프린츠 모리츠,737,SSR,철혈,중순,준수한 탱커 겸 딜러,False,23,46
 operation-siren,대작전,벽청년 이상,A,중순 / 대순 CA,샌디,Z992,SSR,DOAX VV,중순,"3번 자리 딜러
 약간의 유틸",False,23,48
+operation-siren,대작전,벽청년 이상,A,중순 / 대순 CA,라임,710,SSR,템페스타,범선,대경장 딜탱,False,23,50
 operation-siren,대작전,벽청년 이상,B+,구축 DD,시마카제,268,UR,중앵,구축,3번자리 구축딜러,False,27,2
 operation-siren,대작전,벽청년 이상,B+,구축 DD,나나 아스타 데빌룩,Z112,SSR,투러브,구축,3번자리 구축딜러,False,27,4
 operation-siren,대작전,벽청년 이상,B+,구축 DD,글로우웜,94,SR,로열,구축,3번자리 구축딜러,False,27,6
@@ -496,6 +507,7 @@ operation-siren,대작전,벽청년 이상,B+,구축 DD,오조르노이,728,SSR,
 operation-siren,대작전,벽청년 이상,B+,구축 DD,타슈켄트(µ장비),475,SSR,노스유니온,구축,"50초 지속
 항공 딜 버프",False,27,12
 operation-siren,대작전,벽청년 이상,B+,구축 DD,르 말랭,394,SSR,비시아,구축,전열 보조,False,27,14
+operation-siren,대작전,벽청년 이상,B+,구축 DD,콜렛,749,SSR,유니온,구축,전열 보조,False,27,15
 operation-siren,대작전,벽청년 이상,B+,구축 DD,아리아케,175,R,중앵,구축,보급형 공습 선도,False,27,16
 operation-siren,대작전,벽청년 이상,B+,경순 CL,엠덴,547,SSR,철혈,경순,독일 포격 버프,False,27,18
 operation-siren,대작전,벽청년 이상,B+,경순 CL,아마미 하루카,Z071,SSR,아이마스,경순,개전 공격 및 지원,False,27,20
@@ -512,18 +524,17 @@ operation-siren,대작전,벽청년 이상,B+,경순 CL,닝하이,258,SR,동황,
 낮은 딜 기여도",False,27,34
 operation-siren,대작전,벽청년 이상,B+,경순 CL,핑하이,259,SR,동황,경순,"확고한 탱킹능력
 낮은 딜 기여도",False,27,35
-operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,아즈마,P010,UR,중앵,초순,탱커,False,27,36
-operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,드레이크,P014,UR,로열,중순,고출력 중순 표준,False,27,38
-operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,지엔우,674,SSR,동황,중순,동황 드레이크,False,27,40
-operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,프리드리히 카를,640,SSR,철혈,중순,"유사
-드레이크",False,27,42
-operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,론,P005,SSR,철혈,중순,"딜탱
-실드",True,27,44
+operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,아즈마,P010,UR,중앵,초순,강력한 딜탱 중순 + 대순들,False,27,36
+operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,지엔우,674,SSR,동황,중순,강력한 딜탱 중순 + 대순들,False,27,38
+operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,프리드리히 카를,640,SSR,철혈,중순,강력한 딜탱 중순 + 대순들,False,27,40
+operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,셰르부르,743,SSR,아이리스,대순,강력한 딜탱 중순 + 대순들,False,27,42
+operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,론,P005,SSR,철혈,중순,강력한 딜탱 중순 + 대순들,True,27,44
+operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,폴라,489,SSR,사르데냐,중순,강력한 딜탱 중순 + 대순들,True,27,46
 operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,브렌누스,643,SSR,아이리스,중순,"강력한
-딜탱",False,27,46
-operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,런던,119,SR,로열,중순,전열 보조,False,27,48
+딜탱",False,27,48
+operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,런던,119,SR,로열,중순,전열 보조,False,27,50
 operation-siren,대작전,벽청년 이상,B+,중순 / 대순 CA,아드미랄 히퍼,242,SR,철혈,중순,"3번자리 딜러
-약간의 유틸/실드",True,27,50
+약간의 유틸/실드",True,27,52
 operation-siren,대작전,벽청년 이상,B,구축 DD,오토 폰 알벤슬레벤,590,SSR,철혈,구축,구축 탱커,False,31,2
 operation-siren,대작전,벽청년 이상,B,구축 DD,유키카제,166,SSR,중앵,구축,구축 탱커,True,31,4
 operation-siren,대작전,벽청년 이상,B,구축 DD,르 아르디,701,SSR,아이리스,구축,"전열 선봉
@@ -541,7 +552,6 @@ operation-siren,대작전,벽청년 이상,B,구축 DD,후지나미,723,SSR,중�
 operation-siren,대작전,벽청년 이상,B,구축 DD,모리,10,SR,유니온,구축,딜에 더 집중한 구축딜러,False,31,17
 operation-siren,대작전,벽청년 이상,B,구축 DD,와카츠키,567,SSR,중앵,구축,딜에 더 집중한 구축딜러,False,31,17
 operation-siren,대작전,벽청년 이상,B,경순 CL,마르세예즈,598,SSR,비시아,경순,프랑스 보조,False,31,18
-operation-siren,대작전,벽청년 이상,B,경순 CL,팬시,665,SSR,템페스타,범선,딜에 더 치중된 경순 딜러,False,31,20
 operation-siren,대작전,벽청년 이상,B,경순 CL,라이잘린 스타우트,Z091,SSR,라이자,경순,딜에 더 치중된 경순 딜러,False,31,22
 operation-siren,대작전,벽청년 이상,B,경순 CL,쿠이비셰프,577,SSR,노스유니온,경순,딜에 더 치중된 경순 딜러,False,31,24
 operation-siren,대작전,벽청년 이상,B,경순 CL,파먀티 메르쿠리야(META),M030,SSR,META,경순,딜에 더 치중된 경순 딜러,False,31,26
@@ -554,12 +564,14 @@ operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,쿠르스크,586
 operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,샌프란시스코,512,SSR,유니온,중순,"포지션 유연함
 딜 / 탱 모두 소화가능",False,31,40
 operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,트리에스테,542,SR,사르데냐,중순,조명탄 보조,False,31,42
-operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,미나미 유메,Z085,SSR,그리드맨,중순,약간씩 유틸을 얹은 탱커라인,False,31,44
-operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,차라,413,SSR,사르데냐,중순,약간씩 유틸을 얹은 탱커라인,False,31,45
-operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,칼라 이데아스,Z096,SSR,라이자,초순,약간씩 유틸을 얹은 탱커라인,False,31,46
-operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,아드미랄 히퍼(META),M042,SSR,META,중순,약간씩 유틸을 얹은 탱커라인,False,31,47
-operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,프린츠 하인리히,483,SSR,철혈,중순,약간씩 유틸을 얹은 탱커라인,True,31,48
-operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,아타고,201,SSR,중앵,중순,쫄팟 후보,True,31,50
+operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,팬시,665,SSR,템페스타,범선,"순수 딜러
+경장 특화",False,31,44
+operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,미나미 유메,Z085,SSR,그리드맨,중순,약간씩 유틸을 얹은 탱커라인,False,31,46
+operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,차라,413,SSR,사르데냐,중순,약간씩 유틸을 얹은 탱커라인,False,31,47
+operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,칼라 이데아스,Z096,SSR,라이자,초순,약간씩 유틸을 얹은 탱커라인,False,31,48
+operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,아드미랄 히퍼(META),M042,SSR,META,중순,약간씩 유틸을 얹은 탱커라인,False,31,49
+operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,프린츠 하인리히,483,SSR,철혈,중순,약간씩 유틸을 얹은 탱커라인,True,31,50
+operation-siren,대작전,벽청년 이상,B,중순 / 대순 CA,아타고,201,SSR,중앵,중순,쫄팟 후보,True,31,52
 operation-siren,대작전,벽청년 이상,C+,구축 DD,카와카제,288,SSR,중앵,구축,속사 / 뇌장 딜러,True,35,2
 operation-siren,대작전,벽청년 이상,C+,구축 DD,키타카제,P009,SSR,중앵,구축,딜에 더 집중한 구축딜러 대체제,False,35,4
 operation-siren,대작전,벽청년 이상,C+,구축 DD,키예프,535,SSR,노스유니온,구축,딜에 더 집중한 구축딜러 대체제,False,35,5
@@ -595,13 +607,15 @@ operation-siren,대작전,벽청년 이상,C+,중순 / 대순 CA,미니애폴리
 operation-siren,대작전,벽청년 이상,SS+,"전함 BB, 순전 BC",라이온,138,UR,로열,전함,모든 장갑 코어픽,False,42,24
 operation-siren,대작전,벽청년 이상,SS+,"전함 BB, 순전 BC",괴츠 폰 베를리힝겐,735,UR,철혈,전함,모든 장갑 깡패픽,False,42,26
 operation-siren,대작전,벽청년 이상,SS,"항모 CV, 경항모 CVL",렉싱턴Ⅱ,715,UR,유니온,항모,"미항팟, 경장갑 필살기
-욬2 + 렉2 조합시 바인드 보유",False,46,16
+욬2 + 렉2 조합시 바인드 보유",False,46,6
 operation-siren,대작전,벽청년 이상,SS,"항모 CV, 경항모 CVL",요크타운Ⅱ,574,UR,유니온,항모,"미항팟, 경장갑 필살기
-욬2 + 렉2 조합시 바인드 보유",False,46,18
+욬2 + 렉2 조합시 바인드 보유",False,46,8
 operation-siren,대작전,벽청년 이상,SS,"항모 CV, 경항모 CVL",키어사지,P028,UR,유니온,항전,"미항팟, 경장갑 필살기
-욬2 + 렉2 조합시 바인드 보유",False,46,20
+욬2 + 렉2 조합시 바인드 보유",False,46,10
 operation-siren,대작전,벽청년 이상,SS,"항모 CV, 경항모 CVL",프리츠 루메이,669,UR,철혈,항모,"중형 - 우선픽
-경장 - 대체픽",False,46,22
+경장 - 대체픽",False,46,12
+operation-siren,대작전,벽청년 이상,SS,"항모 CV, 경항모 CVL",막스 임멜만,P045,UR,철혈,항모,"모든 장갑 잘침
+그중에 중형 특화",False,46,14
 operation-siren,대작전,벽청년 이상,SS,"전함 BB, 순전 BC",메클렌부르크,P039,UR,철혈,전함,대중장 깡패,False,46,24
 operation-siren,대작전,벽청년 이상,SS,"전함 BB, 순전 BC",소비에츠키 소유즈,438,UR,노스유니온,전함,"대중형/중장
 대체 선택지",False,46,26
@@ -620,8 +634,10 @@ operation-siren,대작전,벽청년 이상,S+,"항모 CV, 경항모 CVL",아드�
 operation-siren,대작전,벽청년 이상,S+,"전함 BB, 순전 BC",비스마르크 Zwei,593,UR,철혈,전함,블랙홀 바인드,False,50,24
 operation-siren,대작전,벽청년 이상,S+,"전함 BB, 순전 BC",나가토,212,SSR,중앵,전함,"전함 인데 시너지
 일본 버퍼",False,50,26
-operation-siren,대작전,벽청년 이상,S+,잠수 SS,U-2501,736,UR,철혈,잠수,잠수함 1황,False,50,48
-operation-siren,대작전,벽청년 이상,S+,잠수 SS,이404,705,UR,중앵,잠항모,잠수함 2황 + 보조,False,50,50
+operation-siren,대작전,벽청년 이상,S+,"전함 BB, 순전 BC",발파라이소,P047,UR,페드레리아,전함,"부포 딜러 /
+접대 환경 필요",False,50,28
+operation-siren,대작전,벽청년 이상,S+,잠수 SS,U-2501,736,UR,철혈,잠수,잠수함 1황,False,50,50
+operation-siren,대작전,벽청년 이상,S+,잠수 SS,이404,705,UR,중앵,잠항모,잠수함 2황 + 보조,False,50,52
 operation-siren,대작전,벽청년 이상,S,"항모 CV, 경항모 CVL",퍼시어스,462,SSR,로열,경항모,"이중 선장전
 타함대 힐",False,54,2
 operation-siren,대작전,벽청년 이상,S,"항모 CV, 경항모 CVL",아스카가와 치세,Z086,SSR,그리드맨,항모,"라이온팟
@@ -633,13 +649,7 @@ operation-siren,대작전,벽청년 이상,S,"항모 CV, 경항모 CVL",임플�
 영국 항모",False,54,10
 operation-siren,대작전,벽청년 이상,S,"항모 CV, 경항모 CVL",엔터프라이즈,77,SSR,유니온,항모,Lucky E,False,54,12
 operation-siren,대작전,벽청년 이상,S,"항모 CV, 경항모 CVL",에식스,357,SSR,유니온,항모,중장갑 특화,False,54,14
-operation-siren,대작전,벽청년 이상,S,"항모 CV, 경항모 CVL",알비온,570,SSR,로열,경항모,"경/중형 바인더
-항모뎀증 '파갑' 보유",False,54,16
-operation-siren,대작전,벽청년 이상,S,"항모 CV, 경항모 CVL",아크 로열,144,SR,로열,항모,"중형/중갑 바인더
-딜 로또",False,54,18
-operation-siren,대작전,벽청년 이상,S,"항모 CV, 경항모 CVL",아우구스트 폰 파르제팔,P021,SSR,철혈,항모,"경/중형 바인더
-항모뎀증 '파갑' 보유",False,54,20
-operation-siren,대작전,벽청년 이상,S,"항모 CV, 경항모 CVL",글로리어스(META),M048,SSR,META,항모,단기전의 신,False,54,22
+operation-siren,대작전,벽청년 이상,S,"항모 CV, 경항모 CVL",글로리어스(META),M048,SSR,META,항모,단기전의 신,False,54,16
 operation-siren,대작전,벽청년 이상,S,"전함 BB, 순전 BC",뱅가드,137,UR,로열,전함,전함 최강 버퍼,False,54,26
 operation-siren,대작전,벽청년 이상,S,"전함 BB, 순전 BC",키어사지,P028,UR,유니온,항전,"포격 버퍼
 경, 중형 특화",False,54,28
@@ -655,11 +665,11 @@ operation-siren,대작전,벽청년 이상,S,"전함 BB, 순전 BC",오미,706,S
 operation-siren,대작전,벽청년 이상,S,"전함 BB, 순전 BC",조지아,P008,SSR,유니온,전함,최강 금딱라인,True,54,41
 operation-siren,대작전,벽청년 이상,S,"전함 BB, 순전 BC",다이센,P034,SSR,중앵,전함,"용골 무난하게 받음
 탈금딱 1황",False,54,42
-operation-siren,대작전,벽청년 이상,S,"전함 BB, 순전 BC",플랑드르,P032,SSR,비시아,전함,프랑스 전함 2황,False,54,44
-operation-siren,대작전,벽청년 이상,S,"전함 BB, 순전 BC",듀크 오브 요크,136,SSR,로열,전함,"감속, 받피증 버퍼",False,54,46
-operation-siren,대작전,벽청년 이상,S,잠수 SS,플래셔,620,SSR,유니온,잠수,U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음,False,54,48
-operation-siren,대작전,벽청년 이상,S,잠수 SS,호무라,Z103,SSR,섬란 카구라,잠수,U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음,False,54,50
-operation-siren,대작전,벽청년 이상,S,잠수 SS,U-96,467,SSR,철혈,잠수,U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음,False,54,52
+operation-siren,대작전,벽청년 이상,S,"전함 BB, 순전 BC",던컨,P043,SSR,로열,순전,"경순/중순 킬러
+고폭탄 보조",False,54,44
+operation-siren,대작전,벽청년 이상,S,잠수 SS,플래셔,620,SSR,유니온,잠수,U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음,False,54,50
+operation-siren,대작전,벽청년 이상,S,잠수 SS,호무라,Z103,SSR,섬란 카구라,잠수,U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음,False,54,52
+operation-siren,대작전,벽청년 이상,S,잠수 SS,U-96,467,SSR,철혈,잠수,U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음,False,54,54
 operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",부아 벨루,699,SSR,아이리스,경항모,"반장전, 단기전 특화
 루나 상위호환",False,58,2
 operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",아퀼라,502,SSR,사르데냐,항모,"쫄 보스 딜러
@@ -674,61 +684,68 @@ operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",엘리�
 딜 보조 유틸",False,58,10
 operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",쇼카쿠,228,SSR,중앵,항모,"높은 공격력
 딜 보조 유틸",True,58,11
-operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",운류,731,SSR,중앵,항모,반장전 항모,False,58,12
-operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",인도미터블,553,SSR,로열,항모,특정 장갑 특화,False,58,14
-operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",요크타운(META),M054,SSR,META,항모,특정 장갑 특화,False,58,15
-operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",카우펜스,716,SSR,유니온,경항모,"4공습 /
-중형,중장 잘팸",False,58,16
-operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",테세우스,578,SSR,로열,경항모,중형 잘팸,False,58,18
-operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",치칼로프,P026,SSR,노스유니온,항모,중형 잘팸,False,58,19
-operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",토비이치 오리가미,Z152,SSR,데어라,항모,데어라 콜라보 항모,False,58,20
-operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",요시노,Z154,SSR,데어라,경항모,데어라 콜라보 항모,False,58,21
-operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",DEAD MASTER,Z122,SSR,블랙 록 슈터,항모,3 장갑 다 잘팸,False,58,22
+operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",인도미터블,553,SSR,로열,항모,특정 장갑 특화,False,58,12
+operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",요크타운(META),M054,SSR,META,항모,특정 장갑 특화,False,58,13
+operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",테세우스,578,SSR,로열,경항모,중형 잘팸,False,58,14
+operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",치칼로프,P026,SSR,노스유니온,항모,중형 잘팸,False,58,15
+operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",토비이치 오리가미,Z152,SSR,데어라,항모,데어라 콜라보 항모,False,58,16
+operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",요시노,Z154,SSR,데어라,경항모,데어라 콜라보 항모,False,58,17
+operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",알비온,570,SSR,로열,경항모,"경/중형 바인더
+항모뎀증 '파갑' 보유",False,58,18
+operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",아크 로열,144,SR,로열,항모,"중형/중갑 바인더
+딜 로또",False,58,20
+operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",아우구스트 폰 파르제팔,P021,SSR,철혈,항모,대체 바인더,False,58,22
+operation-siren,대작전,벽청년 이상,A+,"항모 CV, 경항모 CVL",베닝턴,752,SSR,유니온,항모,대체 바인더,False,58,23
 operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",오와리,606,SSR,중앵,전함,"무난하게 강한
 탈금딱 전함",False,58,24
-operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",하우,461,SSR,로열,전함,"명중, 장전 버퍼",False,58,26
+operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",하우,461,SSR,로열,전함,"명중, 장전 버퍼",True,58,26
 operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",아드미랄 젠커,694,SSR,철혈,순전,"포격, 명중 버퍼
 딜 보조 버프",False,58,28
 operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",비토리오 베네토,500,SSR,사르데냐,전함,사르데냐 코어,False,58,30
-operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",리슐리외,453,SSR,아이리스,전함,"프랑스 버퍼
-선장전",False,58,32
+operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",리슐리외,453,SSR,아이리스,전함,"아이리스
+선장전 전함",False,58,32
+operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",플랑드르,P032,SSR,비시아,전함,"아이리스
+선장전 전함",False,58,33
 operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",BLACK★ROCK SHOOTER,Z121,SSR,블랙 록 슈터,순전,중형 특화,False,58,34
 operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",안드레아 도리아(META),M044,SSR,META,전함,경장 특화,False,58,36
-operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",니나 프리드,Z133,SSR,라이자,전함,경장 특화,False,58,38
+operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",니나 프리드,Z133,SSR,라이자,전함,경장 특화,False,58,37
+operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",듀크 오브 요크,136,SSR,로열,전함,"감속, 받피증 버퍼",False,58,38
 operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",후부키 (콜라보),Z105,SSR,섬란 카구라,전함,"단기전 강함
 대중장 특화",False,58,40
 operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",인디애나,66,SSR,유니온,전함,전열 보호,False,58,42
+operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",캔자스,P038,SSR,유니온,전함,4포좌,False,58,44
 operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",모나크,P002,SSR,로열,전함,"감속
-중형/중장 특화",False,58,44
+중형/중장 특화",False,58,46
 operation-siren,대작전,벽청년 이상,A+,"전함 BB, 순전 BC",이츠카 코토리,Z153,SSR,데어라,전함,"경장 상대로 좋음
-높은 탱킹력",False,58,46
-operation-siren,대작전,벽청년 이상,A+,잠수 SS,U-556(META),M021,SSR,META,잠수,"U-2501 + 이404를 일단 넣고 남은 자리에 위에가 없으면
- 얘네 중에 있는걸로 대체하셈
-여기도 없으면 있는거 그냥 넣어도 됨",False,58,48
-operation-siren,대작전,벽청년 이상,A+,잠수 SS,U-101,399,SSR,철혈,잠수,"U-2501 + 이404를 일단 넣고 남은 자리에 위에가 없으면
- 얘네 중에 있는걸로 대체하셈
-여기도 없으면 있는거 그냥 넣어도 됨",False,58,50
-operation-siren,대작전,벽청년 이상,A+,잠수 SS,U-81,341,SSR,철혈,잠수,"U-2501 + 이404를 일단 넣고 남은 자리에 위에가 없으면
- 얘네 중에 있는걸로 대체하셈
-여기도 없으면 있는거 그냥 넣어도 됨",False,58,52
+높은 탱킹력",False,58,48
+operation-siren,대작전,벽청년 이상,A+,잠수 SS,U-556(META),M021,SSR,META,잠수,U-2501 + 이404 조합 대체잠수함,False,58,50
+operation-siren,대작전,벽청년 이상,A+,잠수 SS,U-101,399,SSR,철혈,잠수,U-2501 + 이404 조합 대체잠수함,False,58,52
+operation-siren,대작전,벽청년 이상,A+,잠수 SS,U-81,341,SSR,철혈,잠수,U-2501 + 이404 조합 대체잠수함,False,58,54
 operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",루나,Z068,SSR,DOAX VV,경항모,"반장전, 단기전 특화",False,62,2
 operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",유니콘,142,SR,로열,경항모,"쫄팟, 광역힐
 선장전",False,62,4
-operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",엘베(META),M060,SSR,META,경항모,대경장/중형 특화,False,62,6
+operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",엘베(META),M060,SSR,META,경항모,"경장/중장 특화
+무난한 금딱항모",False,62,6
+operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",호넷Ⅱ,572,SSR,유니온,항모,"경장/중장 특화
+무난한 금딱항모",False,62,7
 operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",포미더블,147,SSR,로열,항모,"4공습 /
 미묘한 바인드",True,62,8
 operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",새러토가,74,SR,유니온,항모,"폭격 특화
 쫄팟 후보군",False,62,10
-operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",호넷Ⅱ,572,SSR,유니온,항모,"고점 조금 낮은
-샹그릴라",False,62,12
-operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",소류(META),M004,SSR,META,항모,폭격 특화,False,62,14
-operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",호넷(META),M045,SSR,META,항모,전열 보조 / 다중 폭격,False,62,16
-operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",롱 아일랜드,70,R,유니온,경항모,"불안정 딜러
-경장 특화",False,62,18
-operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",페터 슈트라서,482,SSR,철혈,항모,"전장에 바인드 있음
-독일 항모 버프",True,62,20
-operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",유미아 리스펠트,Z131,SSR,라이자,경항모,"최상위 경항모
-항공 지원",False,62,22
+operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",소류(META),M004,SSR,META,항모,"폭격 특화
+쫄팟 후보군",False,62,11
+operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",아로망슈,744,SSR,아이리스,경항모,"높은 딜링
+소량의 딜 보조",False,62,12
+operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",호넷(META),M045,SSR,META,항모,"준수한 딜러
+항공 지원",False,62,14
+operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",유미아 리스펠트,Z131,SSR,라이자,경항모,"준수한 딜러
+항공 지원",False,62,15
+operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",DEAD MASTER,Z122,SSR,블랙 록 슈터,항모,3 장갑 다 잘팸,False,62,16
+operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",카우펜스,716,SSR,유니온,경항모,"4공습 /
+중형,중장 잘팸",False,62,18
+operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",운류,731,SSR,중앵,항모,반장전 항모,False,62,20
+operation-siren,대작전,벽청년 이상,A,"항모 CV, 경항모 CVL",즈이카쿠,229,SSR,중앵,항모,"쇼카쿠와 시너지
+3중앵 요구",True,62,22
 operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",자이틀리츠,543,SSR,철혈,순전,"선장전, 밸런스형",False,62,24
 operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",마르코 폴로,P022,SSR,사르데냐,전함,"중형 특화
 사르데냐 핵심 전함",False,62,26
@@ -736,8 +753,7 @@ operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",퀸 엘리�
 로열/META 보조",False,62,28
 operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",알비트,648,SSR,철혈,순전,경장만 잘팸,False,62,30
 operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",리펄스(META),M012,SSR,META,순전,경장만 잘팸,False,62,32
-operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",캔자스,P038,SSR,유니온,전함,3장갑 다 잘팸,False,62,34
-operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",컨스텔레이션,617,SSR,유니온,순전,3장갑 다 잘팸,False,62,35
+operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",컨스텔레이션,617,SSR,유니온,순전,3장갑 다 잘팸,False,62,34
 operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",금빛 어둠,Z114,SSR,투러브,전함,고성능 콜라보 전함,False,62,36
 operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",타마키,Z069,SSR,DOAX VV,순전,고성능 콜라보 전함,False,62,37
 operation-siren,대작전,벽청년 이상,A,"전함 BB, 순전 BC",프린츠 루프레히트,P024,SSR,철혈,순전,특수 부포,False,62,38
@@ -751,11 +767,15 @@ operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",베아�
 operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",애리조나(META),M017,SSR,META,전함,"퍼시와 시너지
 대작전 3/5 뺑이
 스피드런용",False,66,4
-operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",타이콘데로가,511,SSR,유니온,항모,"경장, 단일적 특화",False,66,16
-operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",다이호,230,SSR,중앵,항모,후열 딜 버프,False,66,18
-operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",아퀼라,502,SSR,사르데냐,항모,2전투기 항모,False,66,20
+operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",타이콘데로가,511,SSR,유니온,항모,"경장, 단일적 특화",False,66,6
+operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",다이호,230,SSR,중앵,항모,후열 딜 버프,False,66,8
+operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",아퀼라,502,SSR,사르데냐,항모,2전투기 항모,False,66,10
 operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",그라프 체펠린,252,SSR,철혈,항모,"2 폭격기
-독일 탱보조",False,66,22
+독일 탱보조",False,66,12
+operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",롱 아일랜드,70,R,유니온,경항모,"불안정 딜러
+경장 특화",False,66,14
+operation-siren,대작전,벽청년 이상,B+,"항모 CV, 경항모 CVL",페터 슈트라서,482,SSR,철혈,항모,"전장에 바인드 있음
+독일 항모 버프",True,66,16
 operation-siren,대작전,벽청년 이상,B+,"전함 BB, 순전 BC",브륀힐드,566,SSR,철혈,순전,"대체 전함
 보조 능력있음",False,66,24
 operation-siren,대작전,벽청년 이상,B+,"전함 BB, 순전 BC",샤른호르스트(META),M009,SSR,META,순전,"대체 전함
@@ -785,15 +805,13 @@ operation-siren,대작전,벽청년 이상,B+,"전함 BB, 순전 BC",시즈쿠,Z
 약간의 딜/힐 유틸",False,66,46
 operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",아카기,224,SSR,중앵,항모,반장전 / 서로 시너지,False,70,2
 operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",카가,225,SSR,중앵,항모,반장전 / 서로 시너지,False,70,4
-operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",랭글리Ⅱ,573,SR,유니온,경항모,항모 버프,False,70,10
-operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",카츠라기,520,SSR,중앵,항모,3일본 방어 버프,False,70,12
-operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",즈이카쿠,229,SSR,중앵,항모,"단독성능은 쇼카쿠 아래
-쇼카쿠와 시너지",False,70,14
-operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",히류(META),M001,SSR,META,항모,뇌격 특화,False,70,16
+operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",랭글리Ⅱ,573,SR,유니온,경항모,항모 버프,False,70,6
+operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",카츠라기,520,SSR,중앵,항모,3일본 방어 버프,False,70,8
+operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",히류(META),M001,SSR,META,항모,뇌격 특화,False,70,10
 operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",유미,Z104,SSR,섬란 카구라,항모,"그럭저럭 강힘
-약한 바인더",False,70,18
-operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",일러스트리어스(µ장비),480,SSR,로열,항모,바인더 대체,False,70,20
-operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",아크 로열(META),M002,SSR,META,항모,바인더 대체,False,70,22
+약한 바인더",False,70,12
+operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",일러스트리어스(µ장비),480,SSR,로열,항모,바인더 대체,False,70,14
+operation-siren,대작전,벽청년 이상,B,"항모 CV, 경항모 CVL",아크 로열(META),M002,SSR,META,항모,바인더 대체,False,70,16
 operation-siren,대작전,벽청년 이상,B,"전함 BB, 순전 BC",카잔,685,SSR,노스유니온,전함,소량 힐,False,70,24
 operation-siren,대작전,벽청년 이상,B,"전함 BB, 순전 BC",호노카,Z062,SSR,DOAX VV,전함,소량 힐,False,70,25
 operation-siren,대작전,벽청년 이상,B,"전함 BB, 순전 BC",오딘,P016,SSR,철혈,순전,각종 유틸,False,70,26
@@ -810,20 +828,20 @@ operation-siren,대작전,벽청년 이상,B,"전함 BB, 순전 BC",강구트(ME
 별도의 유틸 없음",False,70,44
 operation-siren,대작전,벽청년 이상,B,"전함 BB, 순전 BC",가스코뉴,P012,SSR,비시아,전함,평범한 2군 전함,True,70,46
 operation-siren,대작전,벽청년 이상,B,잠수 SS,아미티,666,SSR,템페스타,범선,"아군버프 /
-초살팟",False,70,48
-operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",인트레피드,442,SSR,유니온,항모,폭격 특화,False,74,8
+초살팟",False,70,50
+operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",인트레피드,442,SSR,유니온,항모,폭격 특화,False,74,6
 operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",꼬마 엔터프라이즈,516,SR,유니온,항모,"대체 항모
-마지노선",False,74,10
+마지노선",False,74,8
 operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",아카기(µ장비),419,SSR,중앵,항모,"최대 4 μ 시너지
 항마기 시너지
-반장전",False,74,12
-operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",쇼호,222,R,중앵,경항모,소량 힐,False,74,14
-operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",일러스트리어스,145,SSR,로열,항모,전열 보호,False,74,16
+반장전",False,74,10
+operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",쇼호,222,R,중앵,경항모,소량 힐,False,74,12
+operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",일러스트리어스,145,SSR,로열,항모,전열 보호,False,74,14
 operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",조프르,555,SSR,비시아,항모,"하위해역
-많은 적 상대",False,74,18
-operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",빅토리어스,146,SSR,로열,항모,적 전함 상대 보조,False,74,20
+많은 적 상대",False,74,16
+operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",빅토리어스,146,SSR,로열,항모,적 전함 상대 보조,False,74,18
 operation-siren,대작전,벽청년 이상,C+,"항모 CV, 경항모 CVL",화지아,579,SR,동황,경항모,"6전투기
-대체 항모",False,74,22
+대체 항모",False,74,20
 operation-siren,대작전,벽청년 이상,C+,"전함 BB, 순전 BC",됭케르크,352,SR,비시아,순전,"프랑스 함대 파츠
 선장전, 딜 버프",False,74,24
 operation-siren,대작전,벽청년 이상,C+,"전함 BB, 순전 BC",나기사,Z065,SR,DOAX VV,전함,감속 제공,False,74,26
@@ -839,8 +857,8 @@ operation-siren,대작전,벽청년 이상,C+,"전함 BB, 순전 BC",미카사,3
 operation-siren,대작전,벽청년 이상,C+,"전함 BB, 순전 BC",티르피츠,251,SSR,철혈,전함,"비스마르크와
 같이 쓰기",False,74,42
 operation-siren,대작전,벽청년 이상,C+,"전함 BB, 순전 BC",사우스다코타,65,SSR,유니온,전함,작은 육각형 딜러,False,74,44
-operation-siren,대작전,벽청년 이상,C+,잠수 SS,로열 포춘,571,SSR,템페스타,범선,글쎄요..?,False,74,48
-operation-siren,대작전,벽청년 이상,C+,잠수 SS,메리 셀러스트,611,SSR,템페스타,범선,글쎄요..?,False,74,49
+operation-siren,대작전,벽청년 이상,C+,잠수 SS,로열 포춘,571,SSR,템페스타,범선,글쎄요..?,False,74,50
+operation-siren,대작전,벽청년 이상,C+,잠수 SS,메리 셀러스트,611,SSR,템페스타,범선,글쎄요..?,False,74,51
 newbie,맨땅뉴비,벽뉴비 권장,S,구축 DD,캐신,5,N,유니온,구축,"앵커리지 점수
 절약팟 전열
 메인해역 다수 드랍",False,7,10

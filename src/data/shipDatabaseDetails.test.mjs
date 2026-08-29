@@ -68,4 +68,14 @@ assert.deepEqual(
   '강구트(META)는 인게임에서 육성하는 본 스킬 두 개만 표시해야 합니다.',
 )
 
+for (const [gid, expectedSkills] of Object.entries({
+  10156: ['특수 탄막 - 콜렛Ⅱ', '데이터 스트림 스매시', '스카이돔 시큐리티'],
+  10157: ['전탄 발사 - 플레처급II', '얌전히 움직이지 마', '있는 힘껏 지키기'],
+  10158: ['전탄 발사 - 플레처급II', '어디서든 참견쟁이', '최고의 랜덤 요리'],
+  10236: ['특수 탄막 - 빅스버그Ⅱ', '아이돌 레슨·배틀 트레이닝', '~Lucky Power~♪'],
+  10720: ['프리스타일 윙', 'Vlogger`s time'],
+})) {
+  assert.deepEqual(details.ships[gid]?.skills.map(skill => skill.name), expectedSkills, `${gid} 신규 함선 스킬`)
+}
+
 console.log('shipDatabaseDetails data tests passed')

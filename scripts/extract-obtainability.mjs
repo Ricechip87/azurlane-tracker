@@ -7,6 +7,7 @@ import { normalizeConstructionSources } from './lib/construction-sources.mjs'
 import { selectObtainSources } from './lib/obtainability-sources.mjs'
 import { buildArenaShopGids, timelineFallbackSource } from './lib/permanent-shop-sources.mjs'
 import { toKstDateKey } from '../src/utils/kstDate.js'
+import { resolveEventAcquisition } from '../src/utils/eventAcquisition.js'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const OUTPUT_PATH = path.join(ROOT, 'src/data/shipObtainability.json')
@@ -111,8 +112,13 @@ function buildCoreMonthlyGids(monthShop, activityShop) {
   return gids
 }
 
-function currentEventFor(name, today = toKstDateKey()) {
-  return (activeEvents.events || []).find(event => event.ships.includes(name) && event.startsAt <= today && today <= event.endsAt) || null
+function currentEventFor(name, today = process.env.OBTAINABILITY_TODAY || toKstDateKey()) {
+  for (const event of activeEvents.events || []) {
+    if (!event.ships.includes(name)) continue
+    const resolved = resolveEventAcquisition(event, name, today)
+    if (resolved.availability) return { ...event, shipName: name, ...resolved }
+  }
+  return null
 }
 
 function mapDrops(lite) {
@@ -136,9 +142,15 @@ function compareLists(local, altoy) {
 
 function currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent }) {
   if (activeEvent) {
+    const eventHeading = activeEvent.phase === 'claim-only'
+      ? `이벤트 수령 기간: ${activeEvent.name} (${activeEvent.availability.endsAtLabel})`
+      : `현재 이벤트: ${activeEvent.name} (${activeEvent.availability.endsAtLabel})`
+    const declaredAcquisition = normalizeList(activeEvent.activeRoutes.map(route => route.label))
+    if (declaredAcquisition.length) return [eventHeading, ...declaredAcquisition]
+
     const construction = activeEvent.construction?.[activeEvent.shipName]
     const suffix = construction ? ` · 한정 건조 ${construction.rate} (${construction.timer})` : ''
-    return [`현재 이벤트: ${activeEvent.name} (${activeEvent.endsAt}까지)${suffix}`]
+    return [`${eventHeading}${suffix}`]
   }
   if (!Object.values(permanentSignals).some(Boolean)) return rawObtain
 
@@ -198,8 +210,7 @@ const ships = characters.map(character => {
     other: altoyObtain.some(source => OTHER_PERMANENT_PATTERN.test(source)),
     timeline: Boolean(timelineInfo),
   }
-  const matchedEvent = currentEventFor(character.name)
-  const activeEvent = matchedEvent ? { ...matchedEvent, shipName: character.name } : null
+  const activeEvent = currentEventFor(character.name)
   const obtain = currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent })
   const classification = classifyObtainability({
     name: character.name,
@@ -219,9 +230,11 @@ const ships = characters.map(character => {
       light: Boolean(lite?.light),
       heavy: Boolean(lite?.heavy),
       special: Boolean(lite?.special),
-      limited: Boolean(activeEvent?.construction?.[character.name] || lite?.limited),
-      timer: activeEvent?.construction?.[character.name]?.timer || lite?.timer || null,
-      ...(activeEvent?.construction?.[character.name]?.rate
+      limited: activeEvent ? activeEvent.buildLimited : Boolean(lite?.limited),
+      timer: activeEvent
+        ? (activeEvent.buildLimited ? activeEvent.construction?.[character.name]?.timer || null : null)
+        : lite?.timer || null,
+      ...(activeEvent?.buildLimited && activeEvent?.construction?.[character.name]?.rate
         ? { rate: activeEvent.construction[character.name].rate }
         : {}),
     },

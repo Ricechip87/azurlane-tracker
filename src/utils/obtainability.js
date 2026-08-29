@@ -1,5 +1,6 @@
 import { COLLAB_FACTIONS } from './collabFactions.js'
 import { isKstDateAfter } from './kstDate.js'
+import { resolveStoredEventAvailability } from './eventAcquisition.js'
 
 export const OBTAINABILITY_RANK = {
   permanent: 0,
@@ -14,6 +15,13 @@ export const DIFFICULTY_RANK = { easy: 0, event: 1, normal: 2, hard: 3, limited:
 export function getAvailability(obtainability, now = new Date()) {
   if (obtainability?.availability) {
     const availability = obtainability.availability
+    const resolvedEvent = resolveStoredEventAvailability(availability, now)
+    if (availability.key === 'active-event' && Array.isArray(availability.eventRoutes)) {
+      if (resolvedEvent) return resolvedEvent
+      return COLLAB_FACTIONS.has(obtainability?.faction)
+        ? { key: 'collab-unknown', label: '콜라보 복각 미정' }
+        : { key: 'rerun-wait', label: '복각 대기' }
+    }
     if (availability.key === 'active-event' && isPastEndDate(availability.endsAt, now)) {
       return COLLAB_FACTIONS.has(obtainability?.faction)
         ? { key: 'collab-unknown', label: '콜라보 복각 미정' }
@@ -65,20 +73,40 @@ export function obtainabilityLabel(obtainability) {
   return availability.label
 }
 
-export function getPrimaryAcquisitionRoute(obtainability) {
+export function getPrimaryAcquisitionRoute(obtainability, now = new Date()) {
+  const availability = getAvailability(obtainability, now)
   const expiredEvent = obtainability?.availability?.key === 'active-event'
-    && getAvailability(obtainability).key !== 'active-event'
+    && availability.key !== 'active-event'
   if (expiredEvent) return null
-  if (obtainability?.primaryRoute) return obtainability.primaryRoute
+  if (obtainability?.primaryRoute) {
+    if (obtainability.primaryRoute.key === 'active-event' && availability.key === 'active-event') {
+      const claimSources = availability.phase === 'claim-only'
+        ? availability.activeEventRoutes?.map(route => route.label).filter(Boolean)
+        : null
+      return {
+        ...obtainability.primaryRoute,
+        label: availability.label,
+        ...(claimSources?.length ? { sources: claimSources } : {}),
+      }
+    }
+    return obtainability.primaryRoute
+  }
   if (obtainability?.acquisitionRoutes?.length) {
     return [...obtainability.acquisitionRoutes].sort((a, b) => (a.rank ?? 9) - (b.rank ?? 9))[0]
   }
   return null
 }
 
-export function getObtainabilitySourceSections(obtainability) {
+export function getObtainabilitySourceSections(obtainability, now = new Date()) {
   const current = [...new Set(obtainability?.obtain || [])]
-  const availability = getAvailability(obtainability)
+  const availability = getAvailability(obtainability, now)
+  if (availability.key === 'active-event' && Array.isArray(availability.activeEventRoutes)) {
+    const heading = `${availability.label}: ${availability.eventName} (${availability.endsAtLabel})`
+    return [{
+      label: availability.label === '이벤트 수령 기간' ? '이벤트 수령 입수처' : '입수처',
+      sources: [heading, ...availability.activeEventRoutes.map(route => route.label)],
+    }]
+  }
   if (availability.key !== 'permanent') {
     const expiredEvent = obtainability?.availability?.key === 'active-event' && availability.key !== 'active-event'
     const historical = [...new Set(obtainability?.historicalObtain || [])]

@@ -11,7 +11,7 @@ assert.deepEqual(
   Object.fromEntries(data.sources.map(source => [source.key, source.updatedAt])),
   {
     main: '2026-01-02',
-    'operation-siren': '2026-06-03',
+    'operation-siren': '2026-08-27',
     newbie: '2025-08-09',
   },
 )
@@ -120,6 +120,10 @@ const recommendationKey = (source, name) => data.recommendations.some(item => it
 assert.equal(recommendationKey('main', '토키사키 쿠루미'), true)
 assert.equal(recommendationKey('operation-siren', '클래런스 K 브론슨'), true)
 assert.equal(recommendationKey('newbie', '프린츠 오이겐'), true)
+assert.equal(recommendationKey('operation-siren', '콜렛'), true, '콜렛 대작전 B+ 추천 반영')
+assert.equal(recommendationKey('operation-siren', '베닝턴'), true, '베닝턴 대작전 A+ 추천 반영')
+assert.equal(data.recommendations.find(item => item.source === 'operation-siren' && item.name === '콜렛')?.tier, 'B+')
+assert.equal(data.recommendations.find(item => item.source === 'operation-siren' && item.name === '베닝턴')?.tier, 'A+')
 assert.equal(data.recommendations.some(item => item.source === 'operation-siren' && item.name === '엔터프라이즈' && item.row === 102), false)
 assert.equal(data.recommendations.some(item => item.source === 'operation-siren' && item.row >= 80), false)
 assert.equal(data.sources.find(source => source.key === 'operation-siren').excludedFromRow, 80)
@@ -127,5 +131,5 @@ assert.equal(data.sources.find(source => source.key === 'operation-siren').exclu
 
 assert.deepEqual(
   data.review.unratedRecentShips.map(ship => ship.name),
-  ['브리스톨(META)', '셰르부르', '아로망슈', '랑트레피드'],
+  ['랑트레피드', '해리슨', '빅스버그', '존 로저스'],
 )

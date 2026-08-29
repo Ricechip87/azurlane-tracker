@@ -18,7 +18,8 @@ export function classifyObtainability({ faction, obtain = [], permanentSources =
   const permanent = Object.values(permanentSignals).some(Boolean)
   let availability
   if (permanent) availability = AVAILABILITY.PERMANENT
-  else if (activeEvent) availability = { ...AVAILABILITY.ACTIVE_EVENT, eventName: activeEvent.name, endsAt: activeEvent.endsAt }
+  else if (activeEvent) availability = activeEvent.availability
+    || { ...AVAILABILITY.ACTIVE_EVENT, eventName: activeEvent.name, endsAt: activeEvent.endsAt }
   else if (COLLAB_FACTIONS.has(faction)) availability = AVAILABILITY.COLLAB_UNKNOWN
   else if (faction === 'META' && obtain.length > 0) availability = AVAILABILITY.RERUN_WAIT
   else if (obtain.some(source => /이벤트|기간 한정|한정 건조/.test(source))) availability = AVAILABILITY.RERUN_WAIT
@@ -45,8 +46,9 @@ function classifyDifficulty({ obtain, permanentSources, mapDrops, permanentSigna
 
 function classifyAcquisitionRoutes({ obtain, mapDrops, permanentSignals, availability, activeEvent }) {
   if (availability.key === 'active-event') {
-    const source = activeEvent?.name ? `현재 이벤트 ${activeEvent.name}` : '현재 이벤트'
-    return [route('active-event', '현재 이벤트', 'limited-time', 1, [source])]
+    const label = activeEvent?.phase === 'claim-only' ? '이벤트 수령 기간' : '현재 이벤트'
+    const source = activeEvent?.name ? `${label} ${activeEvent.name}` : label
+    return [route('active-event', label, 'limited-time', 1, [source])]
   }
   if (availability.key !== 'permanent') return []
 

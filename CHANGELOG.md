@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-08-29 - Expand the KR Roster to 886 Ships
+
+### Changed
+- Add Collett, Harrison, Vicksburg, Bennington, and John Rodgers to the KR-visible roster with local icons, recommendation card artwork, fleet-tech values, combat data, Korean skills, and Ship Database details.
+- Record `몽광의 아스트라리움` as the active KR event through the 2026-09-10 maintenance, including the four construction rates and timers, Collett's 8,000 PT exchange and B3/D3/SP drops, and John Rodgers's first 10,000 PT milestone plus additional copies at 20,000/40,000/60,000 PT.
+- Model event acquisition as typed routes with independent expiry. After event construction and drops end, only Collett's exchange and John Rodgers's milestone claims remain active under the `이벤트 수령 기간` label through 2026-09-16 23:59; the maintenance-day boundary remains date-level because no exact maintenance time was published.
+- Limit the five official KR ship-card links to KR appearance and basic acquisition classification, preserve the full official notice separately for event dates, claim deadlines, and construction rates, and use BWiki only to cross-check timers, PT amounts, and drop routes.
+- Refresh the Operation Siren growth guide to its 2026-08-27 source, adding Collett at B+ and Bennington at A+ and retaining Harrison, Vicksburg, John Rodgers, and L'Intrépide as recent unrated review items.
+
+### Verified
+- Cross-check the app, ALtoy, and KR rosters at 886 ships with zero identifier, public-icon, or fleet-tech mismatches.
+- Add regression coverage for all five identities and fleet-tech values, main-event/claim-only/expired acquisition phases, construction exclusions, growth recommendations, and Korean skill lists.
+- Regenerate combat, Ship Database, obtainability, recommendation, icon, and card-art outputs from the synchronized sources.
+
 ## 2026-08-27 - Mirror Player Ship Skin Assets
 
 ### Changed

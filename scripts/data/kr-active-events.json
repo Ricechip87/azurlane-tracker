@@ -1,6 +1,67 @@
 {
-  "updatedAt": "2026-08-06",
+  "updatedAt": "2026-08-29",
   "events": [
+    {
+      "name": "몽광의 아스트라리움",
+      "startsAt": "2026-08-27",
+      "endsAt": "2026-09-10",
+      "endsAtLabel": "2026-09-10 점검까지",
+      "claimEndsAt": "2026-09-16 23:59",
+      "ships": ["베닝턴", "빅스버그", "해리슨", "콜렛", "존 로저스"],
+      "construction": {
+        "베닝턴": { "rate": "2.0%", "timer": "04:25:00" },
+        "빅스버그": { "rate": "2.0%", "timer": "01:25:00" },
+        "해리슨": { "rate": "2.5%", "timer": "00:28:00" },
+        "콜렛": { "rate": "0.5%", "timer": "00:29:00" }
+      },
+      "acquisition": {
+        "베닝턴": [
+          { "kind": "limited-construction", "label": "한정 건조 2.0% (04:25:00)", "endsAt": "2026-09-10" }
+        ],
+        "빅스버그": [
+          { "kind": "limited-construction", "label": "한정 건조 2.0% (01:25:00)", "endsAt": "2026-09-10" }
+        ],
+        "해리슨": [
+          { "kind": "limited-construction", "label": "한정 건조 2.5% (00:28:00)", "endsAt": "2026-09-10" }
+        ],
+        "콜렛": [
+          { "kind": "limited-construction", "label": "한정 건조 0.5% (00:29:00)", "endsAt": "2026-09-10" },
+          { "kind": "event-exchange", "label": "이벤트 상점 8,000 PT 교환 (최대 5회 · 09-16 23:59까지)", "endsAt": "2026-09-16 23:59" },
+          { "kind": "event-drop", "label": "이벤트 해역 B3/D3/SP 드롭", "endsAt": "2026-09-10" }
+        ],
+        "존 로저스": [
+          { "kind": "milestone-reward", "label": "누적 10,000 PT 첫 획득 (추가 20,000/40,000/60,000 PT · 건조 불가 · 09-16 23:59까지)", "endsAt": "2026-09-16 23:59" }
+        ]
+      },
+      "sources": [
+        {
+          "kind": "official-kr",
+          "scope": "KR 등장 및 기본 입수 분류",
+          "urls": [
+            "https://x.com/azurlanekorea/status/2090612470880862345",
+            "https://x.com/azurlanekorea/status/2090614979707941092",
+            "https://x.com/azurlanekorea/status/2090618690790375593",
+            "https://x.com/azurlanekorea/status/2090622496752152962",
+            "https://x.com/azurlanekorea/status/2090625336283464033"
+          ]
+        },
+        {
+          "kind": "official-kr-full-notice-archive",
+          "scope": "KR 공식 공지 전문 보존본 · 이벤트 기간·수령 기한·건조 확률",
+          "urls": [
+            "https://gall.dcinside.com/mgallery/board/view/?id=blhx&no=889749&page=1"
+          ]
+        },
+        {
+          "kind": "bwiki-cross-check",
+          "scope": "건조 시간 및 PT 교환량·해역 드롭·누적 PT 세부 교차검증",
+          "urls": [
+            "https://wiki.biligame.com/blhx/%E5%BB%BA%E9%80%A0%E6%97%B6%E9%97%B4",
+            "https://wiki.biligame.com/blhx/%E7%A2%A7%E8%93%9D%E6%B5%B7%E4%BA%8B%E5%B1%80%E6%B2%89%E6%BA%BA%E4%BA%8E%E6%98%9F%E5%85%89%E4%B9%8B%E5%9F%8E%E6%B4%BB%E5%8A%A8%E4%B8%93%E9%A2%98"
+          ]
+        }
+      ]
+    },
     {
       "name": "괴담 실록: 백야 빌라에서 탈출하라!",
       "startsAt": "2026-08-06",

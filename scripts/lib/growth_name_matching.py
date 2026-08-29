@@ -4,6 +4,7 @@ import unicodedata
 
 SOURCE_NAME_ALIASES = {
     "아마기(항공모함)": "아마기(항모)",
+    "쿠니베르티 (용골)": "비토리오 쿠니베르티 (용골)",
 }
 
 IDENTITY_QUALIFIER_ALIASES = {

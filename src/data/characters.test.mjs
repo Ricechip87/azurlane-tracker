@@ -2,6 +2,8 @@ import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
 import characters from './characters.json' with { type: 'json' }
 
+assert.equal(characters.length, 886, '2026-08-29 KR 노출 함선 886척 반영')
+
 const expectedCharacters = [
   {
     id: 'P043',
@@ -112,6 +114,61 @@ const expectedCharacters = [
     statAcquired: { shipTypes: ['구축'], stat: '내구', value: 1 },
     stat120: { shipTypes: ['구축'], stat: '회피', value: 1 },
     iconFile: '201150.png',
+  },
+  {
+    id: 749,
+    name: '콜렛',
+    gid: 10156,
+    shipType: '구축',
+    faction: '유니온',
+    techPoints: { acquired: 12, maxLB: 24, lv120: 18 },
+    statAcquired: { shipTypes: ['구축'], stat: '화력', value: 1 },
+    stat120: { shipTypes: ['구축'], stat: '내구', value: 2 },
+    iconFile: '101560.png',
+  },
+  {
+    id: 750,
+    name: '해리슨',
+    gid: 10157,
+    shipType: '구축',
+    faction: '유니온',
+    techPoints: { acquired: 8, maxLB: 17, lv120: 13 },
+    statAcquired: { shipTypes: ['구축'], stat: '내구', value: 1 },
+    stat120: { shipTypes: ['구축'], stat: '대공', value: 1 },
+    iconFile: '101570.png',
+  },
+  {
+    id: 751,
+    name: '빅스버그',
+    gid: 10236,
+    shipType: '경순',
+    faction: '유니온',
+    techPoints: { acquired: 12, maxLB: 24, lv120: 18 },
+    statAcquired: { shipTypes: ['경순'], stat: '대공', value: 1 },
+    stat120: { shipTypes: ['경순'], stat: '화력', value: 1 },
+    iconFile: '102360.png',
+  },
+  {
+    id: 752,
+    name: '베닝턴',
+    gid: 10720,
+    shipType: '항모',
+    faction: '유니온',
+    techPoints: { acquired: 17, maxLB: 35, lv120: 26 },
+    statAcquired: { shipTypes: ['경항모', '항모'], stat: '내구', value: 1 },
+    stat120: { shipTypes: ['경항모', '항모'], stat: '항공', value: 2 },
+    iconFile: '107200.png',
+  },
+  {
+    id: 753,
+    name: '존 로저스',
+    gid: 10158,
+    shipType: '구축',
+    faction: '유니온',
+    techPoints: { acquired: 8, maxLB: 17, lv120: 13 },
+    statAcquired: { shipTypes: ['구축'], stat: '내구', value: 1 },
+    stat120: { shipTypes: ['구축'], stat: '대잠', value: 1 },
+    iconFile: '101580.png',
   },
   {
     id: 'Z161',

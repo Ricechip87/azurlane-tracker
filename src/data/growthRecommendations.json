@@ -21,7 +21,7 @@
       "audience": "벽청년 이상",
       "file": "벽람 함순이도감 v2.1.8_배포용의 사본.xlsx",
       "sheet": "인식각성 추천표(대작전)",
-      "updatedAt": "2026-06-03",
+      "updatedAt": "2026-08-27",
       "exclusionMarker": "업데이트 안됨",
       "excludedFromRow": 80
     },
@@ -4505,6 +4505,22 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
+      "id": "P014",
+      "name": "드레이크",
+      "rarity": "UR",
+      "faction": "로열",
+      "shipType": "중순",
+      "tier": "SS",
+      "sheetGroup": "중순 / 대순 CA",
+      "roleNote": "고출력 중순 표준",
+      "requiresUniqueEquipment": false,
+      "row": 7,
+      "column": 38
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
       "id": 642,
       "name": "모가도르",
       "rarity": "UR",
@@ -4548,6 +4564,22 @@
       "requiresUniqueEquipment": false,
       "row": 11,
       "column": 18
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 115,
+      "name": "벨파스트",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "경순",
+      "tier": "S+",
+      "sheetGroup": "경순 CL",
+      "roleNote": "공방 지원 + 높은 딜\n경장 특화",
+      "requiresUniqueEquipment": false,
+      "row": 11,
+      "column": 20
     },
     {
       "source": "operation-siren",
@@ -4649,22 +4681,6 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": 683,
-      "name": "산타페",
-      "rarity": "SSR",
-      "faction": "유니온",
-      "shipType": "경순",
-      "tier": "S",
-      "sheetGroup": "경순 CL",
-      "roleNote": "높은 공격력\n조명탄",
-      "requiresUniqueEquipment": false,
-      "row": 15,
-      "column": 20
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
       "id": "Z113",
       "name": "모모 베리아 데빌룩",
       "rarity": "SSR",
@@ -4675,7 +4691,7 @@
       "roleNote": "20초 주기\n소환물 + 피해량버프",
       "requiresUniqueEquipment": false,
       "row": 15,
-      "column": 22
+      "column": 20
     },
     {
       "source": "operation-siren",
@@ -4691,7 +4707,7 @@
       "roleNote": "전열 화력 버프",
       "requiresUniqueEquipment": false,
       "row": 15,
-      "column": 24
+      "column": 22
     },
     {
       "source": "operation-siren",
@@ -4705,6 +4721,22 @@
       "tier": "S",
       "sheetGroup": "경순 CL",
       "roleNote": "최강 쫄팟 요원",
+      "requiresUniqueEquipment": false,
+      "row": 15,
+      "column": 32
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 746,
+      "name": "슈퍼브",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "경순",
+      "tier": "S",
+      "sheetGroup": "경순 CL",
+      "roleNote": "최강 쫄팟 요원2",
       "requiresUniqueEquipment": false,
       "row": 15,
       "column": 34
@@ -4803,7 +4835,7 @@
       "roleNote": "쫄팟/단기전의 신",
       "requiresUniqueEquipment": true,
       "row": 15,
-      "column": 50
+      "column": 52
     },
     {
       "source": "operation-siren",
@@ -4889,6 +4921,38 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
+      "id": "M062",
+      "name": "브리스톨(META)",
+      "rarity": "SSR",
+      "faction": "META",
+      "shipType": "구축",
+      "tier": "A+",
+      "sheetGroup": "구축 DD",
+      "roleNote": "20초 주기 회피깍\n--> 3공습팟에선 S급",
+      "requiresUniqueEquipment": false,
+      "row": 19,
+      "column": 12
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 683,
+      "name": "산타페",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "경순",
+      "tier": "A+",
+      "sheetGroup": "경순 CL",
+      "roleNote": "높은 공격력\n조명탄",
+      "requiresUniqueEquipment": false,
+      "row": 19,
+      "column": 18
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
       "id": "P037",
       "name": "바야르",
       "rarity": "SSR",
@@ -4899,7 +4963,7 @@
       "roleNote": "5초 무적\n준최상급 딜링",
       "requiresUniqueEquipment": false,
       "row": 19,
-      "column": 18
+      "column": 20
     },
     {
       "source": "operation-siren",
@@ -4915,7 +4979,7 @@
       "roleNote": "쫄팟 딜러\n연막탄",
       "requiresUniqueEquipment": false,
       "row": 19,
-      "column": 20
+      "column": 22
     },
     {
       "source": "operation-siren",
@@ -4931,7 +4995,7 @@
       "roleNote": "개전 공격 및 지원",
       "requiresUniqueEquipment": true,
       "row": 19,
-      "column": 22
+      "column": 24
     },
     {
       "source": "operation-siren",
@@ -4947,7 +5011,7 @@
       "roleNote": "개전 공격 및 지원",
       "requiresUniqueEquipment": false,
       "row": 19,
-      "column": 23
+      "column": 25
     },
     {
       "source": "operation-siren",
@@ -4960,10 +5024,26 @@
       "shipType": "경순",
       "tier": "A+",
       "sheetGroup": "경순 CL",
-      "roleNote": "딜 버프",
+      "roleNote": "15초 주기 보조",
       "requiresUniqueEquipment": false,
       "row": 19,
-      "column": 24
+      "column": 26
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": "P044",
+      "name": "타카하시",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "경순",
+      "tier": "A+",
+      "sheetGroup": "경순 CL",
+      "roleNote": "15초 주기 보조",
+      "requiresUniqueEquipment": false,
+      "row": 19,
+      "column": 27
     },
     {
       "source": "operation-siren",
@@ -4979,7 +5059,7 @@
       "roleNote": "후열 보조",
       "requiresUniqueEquipment": false,
       "row": 19,
-      "column": 26
+      "column": 28
     },
     {
       "source": "operation-siren",
@@ -4995,7 +5075,7 @@
       "roleNote": "후열 보조",
       "requiresUniqueEquipment": false,
       "row": 19,
-      "column": 27
+      "column": 29
     },
     {
       "source": "operation-siren",
@@ -5009,22 +5089,6 @@
       "tier": "A+",
       "sheetGroup": "경순 CL",
       "roleNote": "철갑탄 공증 지원",
-      "requiresUniqueEquipment": false,
-      "row": 19,
-      "column": 28
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
-      "id": 393,
-      "name": "스위프트슈어",
-      "rarity": "SSR",
-      "faction": "로열",
-      "shipType": "경순",
-      "tier": "A+",
-      "sheetGroup": "경순 CL",
-      "roleNote": "확률적 명중 지원",
       "requiresUniqueEquipment": false,
       "row": 19,
       "column": 30
@@ -5161,6 +5225,22 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
+      "id": "Z161",
+      "name": "A2",
+      "rarity": "SSR",
+      "faction": "니어",
+      "shipType": "중순",
+      "tier": "A+",
+      "sheetGroup": "중순 / 대순 CA",
+      "roleNote": "파갑 지원",
+      "requiresUniqueEquipment": false,
+      "row": 19,
+      "column": 46
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
       "id": 255,
       "name": "창춘",
       "rarity": "SR",
@@ -5197,6 +5277,22 @@
       "name": "유다치",
       "rarity": "SSR",
       "faction": "중앵",
+      "shipType": "구축",
+      "tier": "A",
+      "sheetGroup": "구축 DD",
+      "roleNote": "3번 자리 딜러",
+      "requiresUniqueEquipment": false,
+      "row": 23,
+      "column": 5
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": "P046",
+      "name": "오라주",
+      "rarity": "SSR",
+      "faction": "아이리스",
       "shipType": "구축",
       "tier": "A",
       "sheetGroup": "구축 DD",
@@ -5392,10 +5488,26 @@
       "shipType": "경순",
       "tier": "A",
       "sheetGroup": "경순 CL",
-      "roleNote": "대공 + 항공뎀증",
+      "roleNote": "전열 보조 대체제",
       "requiresUniqueEquipment": false,
       "row": 23,
       "column": 24
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 393,
+      "name": "스위프트슈어",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "경순",
+      "tier": "A",
+      "sheetGroup": "경순 CL",
+      "roleNote": "전열 보조 대체제",
+      "requiresUniqueEquipment": false,
+      "row": 23,
+      "column": 25
     },
     {
       "source": "operation-siren",
@@ -5481,14 +5593,14 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": 710,
-      "name": "라임",
+      "id": "Z162",
+      "name": "2B",
       "rarity": "SSR",
-      "faction": "템페스타",
-      "shipType": "범선",
+      "faction": "니어",
+      "shipType": "경순",
       "tier": "A",
       "sheetGroup": "경순 CL",
-      "roleNote": "대경장 딜탱",
+      "roleNote": "순수 딜러\n약간의 딜 보조",
       "requiresUniqueEquipment": false,
       "row": 23,
       "column": 32
@@ -5641,6 +5753,22 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
+      "id": 710,
+      "name": "라임",
+      "rarity": "SSR",
+      "faction": "템페스타",
+      "shipType": "범선",
+      "tier": "A",
+      "sheetGroup": "중순 / 대순 CA",
+      "roleNote": "대경장 딜탱",
+      "requiresUniqueEquipment": false,
+      "row": 23,
+      "column": 50
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
       "id": 268,
       "name": "시마카제",
       "rarity": "UR",
@@ -5764,6 +5892,22 @@
       "requiresUniqueEquipment": false,
       "row": 27,
       "column": 14
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 749,
+      "name": "콜렛",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "구축",
+      "tier": "B+",
+      "sheetGroup": "구축 DD",
+      "roleNote": "전열 보조",
+      "requiresUniqueEquipment": false,
+      "row": 27,
+      "column": 15
     },
     {
       "source": "operation-siren",
@@ -5968,26 +6112,10 @@
       "shipType": "초순",
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
-      "roleNote": "탱커",
+      "roleNote": "강력한 딜탱 중순 + 대순들",
       "requiresUniqueEquipment": false,
       "row": 27,
       "column": 36
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
-      "id": "P014",
-      "name": "드레이크",
-      "rarity": "UR",
-      "faction": "로열",
-      "shipType": "중순",
-      "tier": "B+",
-      "sheetGroup": "중순 / 대순 CA",
-      "roleNote": "고출력 중순 표준",
-      "requiresUniqueEquipment": false,
-      "row": 27,
-      "column": 38
     },
     {
       "source": "operation-siren",
@@ -6000,10 +6128,10 @@
       "shipType": "중순",
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
-      "roleNote": "동황 드레이크",
+      "roleNote": "강력한 딜탱 중순 + 대순들",
       "requiresUniqueEquipment": false,
       "row": 27,
-      "column": 40
+      "column": 38
     },
     {
       "source": "operation-siren",
@@ -6016,7 +6144,23 @@
       "shipType": "중순",
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
-      "roleNote": "유사\n드레이크",
+      "roleNote": "강력한 딜탱 중순 + 대순들",
+      "requiresUniqueEquipment": false,
+      "row": 27,
+      "column": 40
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 743,
+      "name": "셰르부르",
+      "rarity": "SSR",
+      "faction": "아이리스",
+      "shipType": "대순",
+      "tier": "B+",
+      "sheetGroup": "중순 / 대순 CA",
+      "roleNote": "강력한 딜탱 중순 + 대순들",
       "requiresUniqueEquipment": false,
       "row": 27,
       "column": 42
@@ -6032,10 +6176,26 @@
       "shipType": "중순",
       "tier": "B+",
       "sheetGroup": "중순 / 대순 CA",
-      "roleNote": "딜탱\n실드",
+      "roleNote": "강력한 딜탱 중순 + 대순들",
       "requiresUniqueEquipment": true,
       "row": 27,
       "column": 44
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 489,
+      "name": "폴라",
+      "rarity": "SSR",
+      "faction": "사르데냐",
+      "shipType": "중순",
+      "tier": "B+",
+      "sheetGroup": "중순 / 대순 CA",
+      "roleNote": "강력한 딜탱 중순 + 대순들",
+      "requiresUniqueEquipment": true,
+      "row": 27,
+      "column": 46
     },
     {
       "source": "operation-siren",
@@ -6051,7 +6211,7 @@
       "roleNote": "강력한\n딜탱",
       "requiresUniqueEquipment": false,
       "row": 27,
-      "column": 46
+      "column": 48
     },
     {
       "source": "operation-siren",
@@ -6067,7 +6227,7 @@
       "roleNote": "전열 보조",
       "requiresUniqueEquipment": false,
       "row": 27,
-      "column": 48
+      "column": 50
     },
     {
       "source": "operation-siren",
@@ -6083,7 +6243,7 @@
       "roleNote": "3번자리 딜러\n약간의 유틸/실드",
       "requiresUniqueEquipment": true,
       "row": 27,
-      "column": 50
+      "column": 52
     },
     {
       "source": "operation-siren",
@@ -6345,22 +6505,6 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": 665,
-      "name": "팬시",
-      "rarity": "SSR",
-      "faction": "템페스타",
-      "shipType": "범선",
-      "tier": "B",
-      "sheetGroup": "경순 CL",
-      "roleNote": "딜에 더 치중된 경순 딜러",
-      "requiresUniqueEquipment": false,
-      "row": 31,
-      "column": 20
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
       "id": "Z091",
       "name": "라이잘린 스타우트",
       "rarity": "SSR",
@@ -6521,6 +6665,22 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
+      "id": 665,
+      "name": "팬시",
+      "rarity": "SSR",
+      "faction": "템페스타",
+      "shipType": "범선",
+      "tier": "B",
+      "sheetGroup": "중순 / 대순 CA",
+      "roleNote": "순수 딜러\n경장 특화",
+      "requiresUniqueEquipment": false,
+      "row": 31,
+      "column": 44
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
       "id": "Z085",
       "name": "미나미 유메",
       "rarity": "SSR",
@@ -6531,7 +6691,7 @@
       "roleNote": "약간씩 유틸을 얹은 탱커라인",
       "requiresUniqueEquipment": false,
       "row": 31,
-      "column": 44
+      "column": 46
     },
     {
       "source": "operation-siren",
@@ -6547,7 +6707,7 @@
       "roleNote": "약간씩 유틸을 얹은 탱커라인",
       "requiresUniqueEquipment": false,
       "row": 31,
-      "column": 45
+      "column": 47
     },
     {
       "source": "operation-siren",
@@ -6563,7 +6723,7 @@
       "roleNote": "약간씩 유틸을 얹은 탱커라인",
       "requiresUniqueEquipment": false,
       "row": 31,
-      "column": 46
+      "column": 48
     },
     {
       "source": "operation-siren",
@@ -6579,7 +6739,7 @@
       "roleNote": "약간씩 유틸을 얹은 탱커라인",
       "requiresUniqueEquipment": false,
       "row": 31,
-      "column": 47
+      "column": 49
     },
     {
       "source": "operation-siren",
@@ -6595,7 +6755,7 @@
       "roleNote": "약간씩 유틸을 얹은 탱커라인",
       "requiresUniqueEquipment": true,
       "row": 31,
-      "column": 48
+      "column": 50
     },
     {
       "source": "operation-siren",
@@ -6611,7 +6771,7 @@
       "roleNote": "쫄팟 후보",
       "requiresUniqueEquipment": true,
       "row": 31,
-      "column": 50
+      "column": 52
     },
     {
       "source": "operation-siren",
@@ -7155,7 +7315,7 @@
       "roleNote": "미항팟, 경장갑 필살기\n욬2 + 렉2 조합시 바인드 보유",
       "requiresUniqueEquipment": false,
       "row": 46,
-      "column": 16
+      "column": 6
     },
     {
       "source": "operation-siren",
@@ -7171,7 +7331,7 @@
       "roleNote": "미항팟, 경장갑 필살기\n욬2 + 렉2 조합시 바인드 보유",
       "requiresUniqueEquipment": false,
       "row": 46,
-      "column": 18
+      "column": 8
     },
     {
       "source": "operation-siren",
@@ -7187,7 +7347,7 @@
       "roleNote": "미항팟, 경장갑 필살기\n욬2 + 렉2 조합시 바인드 보유",
       "requiresUniqueEquipment": false,
       "row": 46,
-      "column": 20
+      "column": 10
     },
     {
       "source": "operation-siren",
@@ -7203,7 +7363,23 @@
       "roleNote": "중형 - 우선픽\n경장 - 대체픽",
       "requiresUniqueEquipment": false,
       "row": 46,
-      "column": 22
+      "column": 12
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": "P045",
+      "name": "막스 임멜만",
+      "rarity": "UR",
+      "faction": "철혈",
+      "shipType": "항모",
+      "tier": "SS",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "모든 장갑 잘침\n그중에 중형 특화",
+      "requiresUniqueEquipment": false,
+      "row": 46,
+      "column": 14
     },
     {
       "source": "operation-siren",
@@ -7369,6 +7545,22 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
+      "id": "P047",
+      "name": "발파라이소",
+      "rarity": "UR",
+      "faction": "페드레리아",
+      "shipType": "전함",
+      "tier": "S+",
+      "sheetGroup": "전함 BB, 순전 BC",
+      "roleNote": "부포 딜러 / \n접대 환경 필요",
+      "requiresUniqueEquipment": false,
+      "row": 50,
+      "column": 28
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
       "id": 736,
       "name": "U-2501",
       "rarity": "UR",
@@ -7379,7 +7571,7 @@
       "roleNote": "잠수함 1황",
       "requiresUniqueEquipment": false,
       "row": 50,
-      "column": 48
+      "column": 50
     },
     {
       "source": "operation-siren",
@@ -7395,7 +7587,7 @@
       "roleNote": "잠수함 2황 + 보조",
       "requiresUniqueEquipment": false,
       "row": 50,
-      "column": 50
+      "column": 52
     },
     {
       "source": "operation-siren",
@@ -7513,54 +7705,6 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": 570,
-      "name": "알비온",
-      "rarity": "SSR",
-      "faction": "로열",
-      "shipType": "경항모",
-      "tier": "S",
-      "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "경/중형 바인더\n항모뎀증 '파갑' 보유",
-      "requiresUniqueEquipment": false,
-      "row": 54,
-      "column": 16
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
-      "id": 144,
-      "name": "아크 로열",
-      "rarity": "SR",
-      "faction": "로열",
-      "shipType": "항모",
-      "tier": "S",
-      "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "중형/중갑 바인더\n딜 로또",
-      "requiresUniqueEquipment": false,
-      "row": 54,
-      "column": 18
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
-      "id": "P021",
-      "name": "아우구스트 폰 파르제팔",
-      "rarity": "SSR",
-      "faction": "철혈",
-      "shipType": "항모",
-      "tier": "S",
-      "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "경/중형 바인더\n항모뎀증 '파갑' 보유",
-      "requiresUniqueEquipment": false,
-      "row": 54,
-      "column": 20
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
       "id": "M048",
       "name": "글로리어스(META)",
       "rarity": "SSR",
@@ -7571,7 +7715,7 @@
       "roleNote": "단기전의 신",
       "requiresUniqueEquipment": false,
       "row": 54,
-      "column": 22
+      "column": 16
     },
     {
       "source": "operation-siren",
@@ -7753,33 +7897,17 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": "P032",
-      "name": "플랑드르",
+      "id": "P043",
+      "name": "던컨",
       "rarity": "SSR",
-      "faction": "비시아",
-      "shipType": "전함",
+      "faction": "로열",
+      "shipType": "순전",
       "tier": "S",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "프랑스 전함 2황",
+      "roleNote": "경순/중순 킬러\n고폭탄 보조",
       "requiresUniqueEquipment": false,
       "row": 54,
       "column": 44
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
-      "id": 136,
-      "name": "듀크 오브 요크",
-      "rarity": "SSR",
-      "faction": "로열",
-      "shipType": "전함",
-      "tier": "S",
-      "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "감속, 받피증 버퍼",
-      "requiresUniqueEquipment": false,
-      "row": 54,
-      "column": 46
     },
     {
       "source": "operation-siren",
@@ -7795,7 +7923,7 @@
       "roleNote": "U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음",
       "requiresUniqueEquipment": false,
       "row": 54,
-      "column": 48
+      "column": 50
     },
     {
       "source": "operation-siren",
@@ -7811,7 +7939,7 @@
       "roleNote": "U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음",
       "requiresUniqueEquipment": false,
       "row": 54,
-      "column": 50
+      "column": 52
     },
     {
       "source": "operation-siren",
@@ -7827,7 +7955,7 @@
       "roleNote": "U-2501 + 이404를 일단 넣고 남는자리에 넣으면 좋음",
       "requiresUniqueEquipment": false,
       "row": 54,
-      "column": 52
+      "column": 54
     },
     {
       "source": "operation-siren",
@@ -7945,22 +8073,6 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": 731,
-      "name": "운류",
-      "rarity": "SSR",
-      "faction": "중앵",
-      "shipType": "항모",
-      "tier": "A+",
-      "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "반장전 항모",
-      "requiresUniqueEquipment": false,
-      "row": 58,
-      "column": 12
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
       "id": 553,
       "name": "인도미터블",
       "rarity": "SSR",
@@ -7971,7 +8083,7 @@
       "roleNote": "특정 장갑 특화",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 14
+      "column": 12
     },
     {
       "source": "operation-siren",
@@ -7987,23 +8099,7 @@
       "roleNote": "특정 장갑 특화",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 15
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
-      "id": 716,
-      "name": "카우펜스",
-      "rarity": "SSR",
-      "faction": "유니온",
-      "shipType": "경항모",
-      "tier": "A+",
-      "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "4공습 / \n중형,중장 잘팸",
-      "requiresUniqueEquipment": false,
-      "row": 58,
-      "column": 16
+      "column": 13
     },
     {
       "source": "operation-siren",
@@ -8019,7 +8115,7 @@
       "roleNote": "중형 잘팸",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 18
+      "column": 14
     },
     {
       "source": "operation-siren",
@@ -8035,7 +8131,7 @@
       "roleNote": "중형 잘팸",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 19
+      "column": 15
     },
     {
       "source": "operation-siren",
@@ -8051,7 +8147,7 @@
       "roleNote": "데어라 콜라보 항모",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 20
+      "column": 16
     },
     {
       "source": "operation-siren",
@@ -8067,23 +8163,71 @@
       "roleNote": "데어라 콜라보 항모",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 21
+      "column": 17
     },
     {
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": "Z122",
-      "name": "DEAD MASTER",
+      "id": 570,
+      "name": "알비온",
       "rarity": "SSR",
-      "faction": "블랙 록 슈터",
+      "faction": "로열",
+      "shipType": "경항모",
+      "tier": "A+",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "경/중형 바인더\n항모뎀증 '파갑' 보유",
+      "requiresUniqueEquipment": false,
+      "row": 58,
+      "column": 18
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 144,
+      "name": "아크 로열",
+      "rarity": "SR",
+      "faction": "로열",
       "shipType": "항모",
       "tier": "A+",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "3 장갑 다 잘팸",
+      "roleNote": "중형/중갑 바인더\n딜 로또",
+      "requiresUniqueEquipment": false,
+      "row": 58,
+      "column": 20
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": "P021",
+      "name": "아우구스트 폰 파르제팔",
+      "rarity": "SSR",
+      "faction": "철혈",
+      "shipType": "항모",
+      "tier": "A+",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "대체 바인더",
       "requiresUniqueEquipment": false,
       "row": 58,
       "column": 22
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 752,
+      "name": "베닝턴",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "항모",
+      "tier": "A+",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "대체 바인더",
+      "requiresUniqueEquipment": false,
+      "row": 58,
+      "column": 23
     },
     {
       "source": "operation-siren",
@@ -8113,7 +8257,7 @@
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
       "roleNote": "명중, 장전 버퍼",
-      "requiresUniqueEquipment": false,
+      "requiresUniqueEquipment": true,
       "row": 58,
       "column": 26
     },
@@ -8160,10 +8304,26 @@
       "shipType": "전함",
       "tier": "A+",
       "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "프랑스 버퍼\n선장전",
+      "roleNote": "아이리스\n선장전 전함",
       "requiresUniqueEquipment": false,
       "row": 58,
       "column": 32
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": "P032",
+      "name": "플랑드르",
+      "rarity": "SSR",
+      "faction": "비시아",
+      "shipType": "전함",
+      "tier": "A+",
+      "sheetGroup": "전함 BB, 순전 BC",
+      "roleNote": "아이리스\n선장전 전함",
+      "requiresUniqueEquipment": false,
+      "row": 58,
+      "column": 33
     },
     {
       "source": "operation-siren",
@@ -8211,6 +8371,22 @@
       "roleNote": "경장 특화",
       "requiresUniqueEquipment": false,
       "row": 58,
+      "column": 37
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 136,
+      "name": "듀크 오브 요크",
+      "rarity": "SSR",
+      "faction": "로열",
+      "shipType": "전함",
+      "tier": "A+",
+      "sheetGroup": "전함 BB, 순전 BC",
+      "roleNote": "감속, 받피증 버퍼",
+      "requiresUniqueEquipment": false,
+      "row": 58,
       "column": 38
     },
     {
@@ -8249,6 +8425,22 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
+      "id": "P038",
+      "name": "캔자스",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "전함",
+      "tier": "A+",
+      "sheetGroup": "전함 BB, 순전 BC",
+      "roleNote": "4포좌",
+      "requiresUniqueEquipment": false,
+      "row": 58,
+      "column": 44
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
       "id": "P002",
       "name": "모나크",
       "rarity": "SSR",
@@ -8259,7 +8451,7 @@
       "roleNote": "감속\n중형/중장 특화",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 44
+      "column": 46
     },
     {
       "source": "operation-siren",
@@ -8275,7 +8467,7 @@
       "roleNote": "경장 상대로 좋음\n높은 탱킹력",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 46
+      "column": 48
     },
     {
       "source": "operation-siren",
@@ -8288,10 +8480,10 @@
       "shipType": "잠수",
       "tier": "A+",
       "sheetGroup": "잠수 SS",
-      "roleNote": "U-2501 + 이404를 일단 넣고 남은 자리에 위에가 없으면\n 얘네 중에 있는걸로 대체하셈\n여기도 없으면 있는거 그냥 넣어도 됨",
+      "roleNote": "U-2501 + 이404 조합 대체잠수함",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 48
+      "column": 50
     },
     {
       "source": "operation-siren",
@@ -8304,10 +8496,10 @@
       "shipType": "잠수",
       "tier": "A+",
       "sheetGroup": "잠수 SS",
-      "roleNote": "U-2501 + 이404를 일단 넣고 남은 자리에 위에가 없으면\n 얘네 중에 있는걸로 대체하셈\n여기도 없으면 있는거 그냥 넣어도 됨",
+      "roleNote": "U-2501 + 이404 조합 대체잠수함",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 50
+      "column": 52
     },
     {
       "source": "operation-siren",
@@ -8320,10 +8512,10 @@
       "shipType": "잠수",
       "tier": "A+",
       "sheetGroup": "잠수 SS",
-      "roleNote": "U-2501 + 이404를 일단 넣고 남은 자리에 위에가 없으면\n 얘네 중에 있는걸로 대체하셈\n여기도 없으면 있는거 그냥 넣어도 됨",
+      "roleNote": "U-2501 + 이404 조합 대체잠수함",
       "requiresUniqueEquipment": false,
       "row": 58,
-      "column": 52
+      "column": 54
     },
     {
       "source": "operation-siren",
@@ -8368,10 +8560,26 @@
       "shipType": "경항모",
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "대경장/중형 특화",
+      "roleNote": "경장/중장 특화\n무난한 금딱항모",
       "requiresUniqueEquipment": false,
       "row": 62,
       "column": 6
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 572,
+      "name": "호넷Ⅱ",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "항모",
+      "tier": "A",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "경장/중장 특화\n무난한 금딱항모",
+      "requiresUniqueEquipment": false,
+      "row": 62,
+      "column": 7
     },
     {
       "source": "operation-siren",
@@ -8409,22 +8617,6 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": 572,
-      "name": "호넷Ⅱ",
-      "rarity": "SSR",
-      "faction": "유니온",
-      "shipType": "항모",
-      "tier": "A",
-      "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "고점 조금 낮은\n샹그릴라",
-      "requiresUniqueEquipment": false,
-      "row": 62,
-      "column": 12
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
       "id": "M004",
       "name": "소류(META)",
       "rarity": "SSR",
@@ -8432,10 +8624,26 @@
       "shipType": "항모",
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "폭격 특화",
+      "roleNote": "폭격 특화\n쫄팟 후보군",
       "requiresUniqueEquipment": false,
       "row": 62,
-      "column": 14
+      "column": 11
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 744,
+      "name": "아로망슈",
+      "rarity": "SSR",
+      "faction": "아이리스",
+      "shipType": "경항모",
+      "tier": "A",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "높은 딜링\n소량의 딜 보조",
+      "requiresUniqueEquipment": false,
+      "row": 62,
+      "column": 12
     },
     {
       "source": "operation-siren",
@@ -8448,42 +8656,10 @@
       "shipType": "항모",
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "전열 보조 / 다중 폭격",
+      "roleNote": "준수한 딜러\n항공 지원",
       "requiresUniqueEquipment": false,
       "row": 62,
-      "column": 16
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
-      "id": 70,
-      "name": "롱 아일랜드",
-      "rarity": "R",
-      "faction": "유니온",
-      "shipType": "경항모",
-      "tier": "A",
-      "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "불안정 딜러\n경장 특화",
-      "requiresUniqueEquipment": false,
-      "row": 62,
-      "column": 18
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
-      "id": 482,
-      "name": "페터 슈트라서",
-      "rarity": "SSR",
-      "faction": "철혈",
-      "shipType": "항모",
-      "tier": "A",
-      "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "전장에 바인드 있음\n독일 항모 버프",
-      "requiresUniqueEquipment": true,
-      "row": 62,
-      "column": 20
+      "column": 14
     },
     {
       "source": "operation-siren",
@@ -8496,8 +8672,72 @@
       "shipType": "경항모",
       "tier": "A",
       "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "최상위 경항모\n항공 지원",
+      "roleNote": "준수한 딜러\n항공 지원",
       "requiresUniqueEquipment": false,
+      "row": 62,
+      "column": 15
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": "Z122",
+      "name": "DEAD MASTER",
+      "rarity": "SSR",
+      "faction": "블랙 록 슈터",
+      "shipType": "항모",
+      "tier": "A",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "3 장갑 다 잘팸",
+      "requiresUniqueEquipment": false,
+      "row": 62,
+      "column": 16
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 716,
+      "name": "카우펜스",
+      "rarity": "SSR",
+      "faction": "유니온",
+      "shipType": "경항모",
+      "tier": "A",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "4공습 / \n중형,중장 잘팸",
+      "requiresUniqueEquipment": false,
+      "row": 62,
+      "column": 18
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 731,
+      "name": "운류",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "항모",
+      "tier": "A",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "반장전 항모",
+      "requiresUniqueEquipment": false,
+      "row": 62,
+      "column": 20
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 229,
+      "name": "즈이카쿠",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "항모",
+      "tier": "A",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "쇼카쿠와 시너지\n3중앵 요구",
+      "requiresUniqueEquipment": true,
       "row": 62,
       "column": 22
     },
@@ -8585,22 +8825,6 @@
       "source": "operation-siren",
       "sourceLabel": "대작전",
       "audience": "벽청년 이상",
-      "id": "P038",
-      "name": "캔자스",
-      "rarity": "SSR",
-      "faction": "유니온",
-      "shipType": "전함",
-      "tier": "A",
-      "sheetGroup": "전함 BB, 순전 BC",
-      "roleNote": "3장갑 다 잘팸",
-      "requiresUniqueEquipment": false,
-      "row": 62,
-      "column": 34
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
       "id": 617,
       "name": "컨스텔레이션",
       "rarity": "SSR",
@@ -8611,7 +8835,7 @@
       "roleNote": "3장갑 다 잘팸",
       "requiresUniqueEquipment": false,
       "row": 62,
-      "column": 35
+      "column": 34
     },
     {
       "source": "operation-siren",
@@ -8771,7 +8995,7 @@
       "roleNote": "경장, 단일적 특화",
       "requiresUniqueEquipment": false,
       "row": 66,
-      "column": 16
+      "column": 6
     },
     {
       "source": "operation-siren",
@@ -8787,7 +9011,7 @@
       "roleNote": "후열 딜 버프",
       "requiresUniqueEquipment": false,
       "row": 66,
-      "column": 18
+      "column": 8
     },
     {
       "source": "operation-siren",
@@ -8803,7 +9027,7 @@
       "roleNote": "2전투기 항모",
       "requiresUniqueEquipment": false,
       "row": 66,
-      "column": 20
+      "column": 10
     },
     {
       "source": "operation-siren",
@@ -8819,7 +9043,39 @@
       "roleNote": "2 폭격기\n독일 탱보조",
       "requiresUniqueEquipment": false,
       "row": 66,
-      "column": 22
+      "column": 12
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 70,
+      "name": "롱 아일랜드",
+      "rarity": "R",
+      "faction": "유니온",
+      "shipType": "경항모",
+      "tier": "B+",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "불안정 딜러\n경장 특화",
+      "requiresUniqueEquipment": false,
+      "row": 66,
+      "column": 14
+    },
+    {
+      "source": "operation-siren",
+      "sourceLabel": "대작전",
+      "audience": "벽청년 이상",
+      "id": 482,
+      "name": "페터 슈트라서",
+      "rarity": "SSR",
+      "faction": "철혈",
+      "shipType": "항모",
+      "tier": "B+",
+      "sheetGroup": "항모 CV, 경항모 CVL",
+      "roleNote": "전장에 바인드 있음\n독일 항모 버프",
+      "requiresUniqueEquipment": true,
+      "row": 66,
+      "column": 16
     },
     {
       "source": "operation-siren",
@@ -9203,7 +9459,7 @@
       "roleNote": "항모 버프",
       "requiresUniqueEquipment": false,
       "row": 70,
-      "column": 10
+      "column": 6
     },
     {
       "source": "operation-siren",
@@ -9219,23 +9475,7 @@
       "roleNote": "3일본 방어 버프",
       "requiresUniqueEquipment": false,
       "row": 70,
-      "column": 12
-    },
-    {
-      "source": "operation-siren",
-      "sourceLabel": "대작전",
-      "audience": "벽청년 이상",
-      "id": 229,
-      "name": "즈이카쿠",
-      "rarity": "SSR",
-      "faction": "중앵",
-      "shipType": "항모",
-      "tier": "B",
-      "sheetGroup": "항모 CV, 경항모 CVL",
-      "roleNote": "단독성능은 쇼카쿠 아래\n쇼카쿠와 시너지",
-      "requiresUniqueEquipment": false,
-      "row": 70,
-      "column": 14
+      "column": 8
     },
     {
       "source": "operation-siren",
@@ -9251,7 +9491,7 @@
       "roleNote": "뇌격 특화",
       "requiresUniqueEquipment": false,
       "row": 70,
-      "column": 16
+      "column": 10
     },
     {
       "source": "operation-siren",
@@ -9267,7 +9507,7 @@
       "roleNote": "그럭저럭 강힘\n약한 바인더",
       "requiresUniqueEquipment": false,
       "row": 70,
-      "column": 18
+      "column": 12
     },
     {
       "source": "operation-siren",
@@ -9283,7 +9523,7 @@
       "roleNote": "바인더 대체",
       "requiresUniqueEquipment": false,
       "row": 70,
-      "column": 20
+      "column": 14
     },
     {
       "source": "operation-siren",
@@ -9299,7 +9539,7 @@
       "roleNote": "바인더 대체",
       "requiresUniqueEquipment": false,
       "row": 70,
-      "column": 22
+      "column": 16
     },
     {
       "source": "operation-siren",
@@ -9523,7 +9763,7 @@
       "roleNote": "아군버프 /\n초살팟",
       "requiresUniqueEquipment": false,
       "row": 70,
-      "column": 48
+      "column": 50
     },
     {
       "source": "operation-siren",
@@ -9539,7 +9779,7 @@
       "roleNote": "폭격 특화",
       "requiresUniqueEquipment": false,
       "row": 74,
-      "column": 8
+      "column": 6
     },
     {
       "source": "operation-siren",
@@ -9555,7 +9795,7 @@
       "roleNote": "대체 항모\n마지노선",
       "requiresUniqueEquipment": false,
       "row": 74,
-      "column": 10
+      "column": 8
     },
     {
       "source": "operation-siren",
@@ -9571,7 +9811,7 @@
       "roleNote": "최대 4 μ 시너지\n항마기 시너지\n반장전",
       "requiresUniqueEquipment": false,
       "row": 74,
-      "column": 12
+      "column": 10
     },
     {
       "source": "operation-siren",
@@ -9587,7 +9827,7 @@
       "roleNote": "소량 힐",
       "requiresUniqueEquipment": false,
       "row": 74,
-      "column": 14
+      "column": 12
     },
     {
       "source": "operation-siren",
@@ -9603,7 +9843,7 @@
       "roleNote": "전열 보호",
       "requiresUniqueEquipment": false,
       "row": 74,
-      "column": 16
+      "column": 14
     },
     {
       "source": "operation-siren",
@@ -9619,7 +9859,7 @@
       "roleNote": "하위해역\n많은 적 상대",
       "requiresUniqueEquipment": false,
       "row": 74,
-      "column": 18
+      "column": 16
     },
     {
       "source": "operation-siren",
@@ -9635,7 +9875,7 @@
       "roleNote": "적 전함 상대 보조",
       "requiresUniqueEquipment": false,
       "row": 74,
-      "column": 20
+      "column": 18
     },
     {
       "source": "operation-siren",
@@ -9651,7 +9891,7 @@
       "roleNote": "6전투기\n대체 항모",
       "requiresUniqueEquipment": false,
       "row": 74,
-      "column": 22
+      "column": 20
     },
     {
       "source": "operation-siren",
@@ -9843,7 +10083,7 @@
       "roleNote": "글쎄요..?",
       "requiresUniqueEquipment": false,
       "row": 74,
-      "column": 48
+      "column": 50
     },
     {
       "source": "operation-siren",
@@ -9859,7 +10099,7 @@
       "roleNote": "글쎄요..?",
       "requiresUniqueEquipment": false,
       "row": 74,
-      "column": 49
+      "column": 51
     },
     {
       "source": "newbie",
@@ -14433,26 +14673,26 @@
         "column": 6
       }
     ],
-    "unmatchedTotal": 1087,
+    "unmatchedTotal": 1097,
     "unratedRecentShips": [
-      {
-        "id": "M062",
-        "name": "브리스톨(META)",
-        "reason": "원본 최신화 이후 미평가"
-      },
-      {
-        "id": 743,
-        "name": "셰르부르",
-        "reason": "원본 최신화 이후 미평가"
-      },
-      {
-        "id": 744,
-        "name": "아로망슈",
-        "reason": "원본 최신화 이후 미평가"
-      },
       {
         "id": 745,
         "name": "랑트레피드",
+        "reason": "원본 최신화 이후 미평가"
+      },
+      {
+        "id": 750,
+        "name": "해리슨",
+        "reason": "원본 최신화 이후 미평가"
+      },
+      {
+        "id": 751,
+        "name": "빅스버그",
+        "reason": "원본 최신화 이후 미평가"
+      },
+      {
+        "id": 753,
+        "name": "존 로저스",
         "reason": "원본 최신화 이후 미평가"
       }
     ]

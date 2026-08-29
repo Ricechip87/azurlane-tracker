@@ -51,6 +51,7 @@ assert normalize_growth_source_name("가스코뉴 (µ장비)") == "가스코뉴(
 assert normalize_growth_source_name("카스미 (콜)") == "카스미 (콜라보)"
 assert normalize_growth_source_name("호무라(콜)") == "호무라(콜라보)"
 assert normalize_growth_source_name("유미아 (콜라보)") == "유미아 (콜라보)"
+assert normalize_growth_source_name("쿠니베르티 (용골)") == "비토리오 쿠니베르티 (용골)"
 assert uses_unique_equipment("유키카제 (전장)") is True
 assert uses_unique_equipment("포미더블（전장）") is True
 assert uses_unique_equipment("유키카제") is False

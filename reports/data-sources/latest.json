@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T14:31:12.550Z",
+  "generatedAt": "2026-08-29T11:28:21.789Z",
   "policy": {
     "displayScope": "ALtoy/KR service roster only; name fallback handles six Utawarerumono skin-ID identities",
     "fleetTechPriority": [
@@ -14,11 +14,11 @@
   "sources": {
     "characters": {
       "path": "src/data/characters.json",
-      "sha256": "9117fee7f756769f8f144b0e3c516d20fc4d72b01aee4d091cdbdc1571aaa3e2"
+      "sha256": "d0d551526360fe8dc61a1084e8e3d97b63f12ca2af01cefb88cf0a0b86cb2fe7"
     },
     "altoy": {
       "path": "참고용/ALtoy/data/ship_info_data.json",
-      "sha256": "07963b42e54492d34f2307e76dacf87416f983acd08ee19c06c7dbb3aac593af"
+      "sha256": "d6991f3705d67a9021f867dfdcbb37242d7e1f72c8761efa96d7e87b435412a5"
     },
     "krShips": {
       "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
@@ -46,8 +46,8 @@
     }
   },
   "display": {
-    "appCount": 881,
-    "altoyCount": 881,
+    "appCount": 886,
+    "altoyCount": 886,
     "krCount": 886,
     "outOfScope": [],
     "altoyMissingInApp": [],
@@ -56,14 +56,9 @@
   "fleetTech": {
     "cnCount": 752,
     "krCount": 751,
-    "displayedWithCn": 746,
+    "displayedWithCn": 751,
     "displayedWithoutCn": 135,
     "appMissingFleetTechGids": [
-      10156,
-      10157,
-      10158,
-      10236,
-      10720,
       30119
     ],
     "cnKrMismatchCount": 0,

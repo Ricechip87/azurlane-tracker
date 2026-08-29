@@ -19,10 +19,10 @@ OUTPUT_PATH = ROOT / "src" / "data" / "growthRecommendations.json"
 REPORT_DIR = ROOT / "reports" / "growth-recommendations"
 
 KNOWN_RECENT_UNRATED_SHIPS = [
-    "브리스톨(META)",
-    "셰르부르",
-    "아로망슈",
     "랑트레피드",
+    "해리슨",
+    "빅스버그",
+    "존 로저스",
 ]
 
 SOURCES = [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T14:36:12.546Z",
+  "generatedAt": "2026-08-29T11:28:07.719Z",
   "policy": {
     "scope": "Fernando player-ship skin renders and shared background/background2 images declared by ship_skin_list.json",
     "optionalAssets": "null metadata fields are intentionally absent",
@@ -8,20 +8,106 @@
     "preservation": "existing and undeclared local assets are preserved",
     "deployment": "reference-only; images remain under gitignored 참고용 and are not copied to public"
   },
-  "checkedShips": 880,
-  "checkedSkins": 2431,
-  "declaredSkinAssets": 15819,
+  "checkedShips": 881,
+  "checkedSkins": 2434,
+  "declaredSkinAssets": 15836,
   "declaredBackgroundAssets": 136,
-  "declaredBackgroundReferences": 1675,
+  "declaredBackgroundReferences": 1677,
   "checkedBackgrounds": 136,
   "excludedBgmReferences": 75,
   "excludedUniqueBgm": 19,
-  "declaredAssets": 15955,
+  "declaredAssets": 15972,
   "existingAssets": 15955,
-  "downloadedAssets": 0,
+  "downloadedAssets": 17,
   "invalidAssets": 0,
-  "fetchedAssets": 0,
-  "downloaded": [],
+  "fetchedAssets": 17,
+  "downloaded": [
+    {
+      "skinId": "301190",
+      "field": "banner",
+      "relativePath": "301190/banner.png"
+    },
+    {
+      "skinId": "301190",
+      "field": "chibi",
+      "relativePath": "301190/chibi.png"
+    },
+    {
+      "skinId": "301190",
+      "field": "icon",
+      "relativePath": "301190/icon.png"
+    },
+    {
+      "skinId": "301190",
+      "field": "painting",
+      "relativePath": "301190/painting.png"
+    },
+    {
+      "skinId": "301190",
+      "field": "qicon",
+      "relativePath": "301190/qicon.png"
+    },
+    {
+      "skinId": "301190",
+      "field": "shipyard",
+      "relativePath": "301190/shipyard.png"
+    },
+    {
+      "skinId": "301191",
+      "field": "banner",
+      "relativePath": "301191/banner.png"
+    },
+    {
+      "skinId": "301191",
+      "field": "chibi",
+      "relativePath": "301191/chibi.png"
+    },
+    {
+      "skinId": "301191",
+      "field": "icon",
+      "relativePath": "301191/icon.png"
+    },
+    {
+      "skinId": "301191",
+      "field": "painting",
+      "relativePath": "301191/painting.png"
+    },
+    {
+      "skinId": "301191",
+      "field": "qicon",
+      "relativePath": "301191/qicon.png"
+    },
+    {
+      "skinId": "301191",
+      "field": "shipyard",
+      "relativePath": "301191/shipyard.png"
+    },
+    {
+      "skinId": "301192",
+      "field": "banner",
+      "relativePath": "301192/banner.png"
+    },
+    {
+      "skinId": "301192",
+      "field": "icon",
+      "relativePath": "301192/icon.png"
+    },
+    {
+      "skinId": "301192",
+      "field": "painting",
+      "relativePath": "301192/painting.png"
+    },
+    {
+      "skinId": "301192",
+      "field": "qicon",
+      "relativePath": "301192/qicon.png"
+    },
+    {
+      "skinId": "301192",
+      "field": "shipyard",
+      "relativePath": "301192/shipyard.png"
+    }
+  ],
   "replacedInvalid": [],
   "rosterMetadataMissing": [
     {

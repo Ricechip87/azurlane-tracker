@@ -72,6 +72,59 @@ const activeNierEvent = {
   obtain: ['현재 이벤트: 자동 보병 인형의 여행 (2026-08-13까지)'],
   historicalObtain: ['이벤트: 자동 보병 인형의 여행'],
 }
+
+const typedCollettEvent = {
+  faction: '유니온',
+  availability: {
+    key: 'active-event',
+    label: '현재 이벤트',
+    eventName: '몽광의 아스트라리움',
+    startsAt: '2026-08-27',
+    endsAt: '2026-09-10',
+    endsAtLabel: '2026-09-10 점검까지',
+    mainEndsAt: '2026-09-10',
+    mainEndsAtLabel: '2026-09-10 점검까지',
+    claimEndsAt: '2026-09-16 23:59',
+    eventRoutes: [
+      { kind: 'limited-construction', label: '한정 건조 0.5% (00:29:00)', endsAt: '2026-09-10' },
+      { kind: 'event-exchange', label: '이벤트 상점 8,000 PT 교환 (최대 5회 · 09-16 23:59까지)', endsAt: '2026-09-16 23:59' },
+    ],
+  },
+  primaryRoute: { key: 'active-event', label: '현재 이벤트', certainty: 'limited-time', rank: 1, sources: ['현재 이벤트 몽광의 아스트라리움'] },
+}
+const claimNow = new Date('2026-09-11T12:00:00+09:00')
+assert.equal(getAvailability(typedCollettEvent, claimNow).label, '이벤트 수령 기간')
+const claimCollettRoute = getPrimaryAcquisitionRoute(typedCollettEvent, claimNow)
+assert.equal(claimCollettRoute.label, '이벤트 수령 기간')
+assert.deepEqual(claimCollettRoute.sources, ['이벤트 상점 8,000 PT 교환 (최대 5회 · 09-16 23:59까지)'])
+assert.ok(!claimCollettRoute.sources.some(source => /한정 건조|드롭|현재 이벤트/.test(source)), '콜렛 수령 기간 대표 입수처에 종료된 경로나 일반 이벤트 문구가 없어야 한다')
+assert.deepEqual(getObtainabilitySourceSections(typedCollettEvent, claimNow), [{
+  label: '이벤트 수령 입수처',
+  sources: [
+    '이벤트 수령 기간: 몽광의 아스트라리움 (2026-09-16 23:59까지)',
+    '이벤트 상점 8,000 PT 교환 (최대 5회 · 09-16 23:59까지)',
+  ],
+}])
+assert.equal(getAvailability(typedCollettEvent, new Date('2026-09-17T00:00:00+09:00')).key, 'rerun-wait')
+assert.deepEqual(
+  getPrimaryAcquisitionRoute(typedCollettEvent, new Date('2026-09-10T12:00:00+09:00')).sources,
+  ['현재 이벤트 몽광의 아스트라리움'],
+  '메인 이벤트 단계의 기존 대표 출처는 유지한다',
+)
+
+const typedJohnEvent = {
+  ...typedCollettEvent,
+  availability: {
+    ...typedCollettEvent.availability,
+    eventRoutes: [
+      { kind: 'milestone-reward', label: '누적 10,000 PT 첫 획득 (추가 20,000/40,000/60,000 PT · 건조 불가 · 09-16 23:59까지)', endsAt: '2026-09-16 23:59' },
+    ],
+  },
+}
+const claimJohnRoute = getPrimaryAcquisitionRoute(typedJohnEvent, claimNow)
+assert.deepEqual(claimJohnRoute.sources, ['누적 10,000 PT 첫 획득 (추가 20,000/40,000/60,000 PT · 건조 불가 · 09-16 23:59까지)'])
+assert.ok(!claimJohnRoute.sources.some(source => /한정 건조|드롭|현재 이벤트/.test(source)), '존 로저스 수령 기간 대표 입수처에 종료된 경로나 일반 이벤트 문구가 없어야 한다')
+
 assert.equal(
   getAvailability(activeNierEvent, new Date('2026-08-13T12:00:00+09:00')).key,
   'active-event',

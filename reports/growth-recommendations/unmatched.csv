@@ -376,9 +376,9 @@ operation-siren,최우선,5,1,not matched
 operation-siren,SS+,5,2,not matched
 operation-siren,뇌빼고,5,2,not matched
 operation-siren,넣어도 됨,5,2,not matched
-operation-siren,빨간 테두리 표시,5,46,not matched
-operation-siren,항모버프 표시,5,48,not matched
-operation-siren,하늘색 : 배가 침몰해도 버프 남음,6,48,not matched
+operation-siren,빨간 테두리 표시,5,48,not matched
+operation-siren,항모버프 표시,5,50,not matched
+operation-siren,하늘색 : 배가 침몰해도 버프 남음,6,50,not matched
 operation-siren,범용적으로 쓰기 좋은,8,4,not matched
 operation-siren,공격,8,4,not matched
 operation-siren,포격 보조,8,4,not matched
@@ -393,6 +393,7 @@ operation-siren,기함 전함 딜버프,8,22,not matched
 operation-siren,대 경장갑 필살기,8,24,not matched
 operation-siren,지원탄막,8,36,not matched
 operation-siren,꽉찬 육각형,8,36,not matched
+operation-siren,고출력 중순 표준,8,38,not matched
 operation-siren,S+ 급,9,1,not matched
 operation-siren,S급 이상,9,1,not matched
 operation-siren,SS대용,9,1,not matched
@@ -401,10 +402,12 @@ operation-siren,3번 자리 딜러,12,2,not matched
 operation-siren,생존 보장시,12,4,not matched
 operation-siren,공습선도 1황,12,4,not matched
 operation-siren,구축함 상대,12,18,not matched
+operation-siren,공방 지원 + 높은 딜,12,20,not matched
+operation-siren,경장 특화,12,20,not matched
 operation-siren,전열 딜러 2황,12,36,not matched
 operation-siren,S 급,13,1,not matched
 operation-siren,최고 성능,13,1,not matched
-operation-siren,"(콜라보, 경순)",15,22,not matched
+operation-siren,"(콜라보, 경순)",15,20,not matched
 operation-siren,미항팟,16,2,not matched
 operation-siren,유틸,16,2,not matched
 operation-siren,경장 특화,16,4,not matched
@@ -413,23 +416,24 @@ operation-siren,15초 주기,16,6,not matched
 operation-siren,포격 버프,16,6,not matched
 operation-siren,항모 버퍼,16,18,not matched
 operation-siren,죽어도 버프유지,16,18,not matched
-operation-siren,높은 공격력,16,20,not matched
-operation-siren,조명탄,16,20,not matched
-operation-siren,20초 주기,16,22,not matched
-operation-siren,소환물 + 피해량버프,16,22,not matched
-operation-siren,전열 화력 버프,16,24,not matched
-operation-siren,최강 쫄팟 요원,16,34,not matched
+operation-siren,20초 주기,16,20,not matched
+operation-siren,소환물 + 피해량버프,16,20,not matched
+operation-siren,전열 화력 버프,16,22,not matched
+operation-siren,최강 쫄팟 요원,16,32,not matched
+operation-siren,최강 쫄팟 요원2,16,34,not matched
 operation-siren,보스 전용 탱커,16,36,not matched
 operation-siren,전열 딜러 1황,16,38,not matched
 operation-siren,"파갑, 대공, 탱킹",16,40,not matched
 operation-siren,유리대포 1황,16,42,not matched
 operation-siren,알자스 덱,16,44,not matched
 operation-siren,경장 딜러용,16,44,not matched
-operation-siren,쫄팟,16,50,not matched
-operation-siren,단기전의 신,16,50,not matched
+operation-siren,쫄팟,16,52,not matched
+operation-siren,단기전의 신,16,52,not matched
 operation-siren,A+ 급,17,1,not matched
-operation-siren,포격 보조,18,26,not matched
-operation-siren,힐 보조,18,27,not matched
+operation-siren,받뎀증,18,26,not matched
+operation-siren,감속,18,27,not matched
+operation-siren,포격 보조,18,28,not matched
+operation-siren,힐 보조,18,29,not matched
 operation-siren,분신,18,34,not matched
 operation-siren,감속,18,34,not matched
 operation-siren,블랙홀,18,35,not matched
@@ -440,15 +444,18 @@ operation-siren,탱커,20,8,not matched
 operation-siren,전열버프,20,8,not matched
 operation-siren,북련팟 (나히모프),20,10,not matched
 operation-siren,감속셔틀,20,10,not matched
-operation-siren,5초 무적,20,18,not matched
-operation-siren,준최상급 딜링,20,18,not matched
-operation-siren,쫄팟 딜러,20,20,not matched
-operation-siren,연막탄,20,20,not matched
-operation-siren,개전 공격 및 지원,20,22,not matched
-operation-siren,딜 버프,20,24,not matched
-operation-siren,후열 보조,20,26,not matched
-operation-siren,철갑탄 공증 지원,20,28,not matched
-operation-siren,확률적 명중 지원,20,30,not matched
+operation-siren,20초 주기 회피깍,20,12,not matched
+operation-siren,--> 3공습팟에선 S급,20,12,not matched
+operation-siren,높은 공격력,20,18,not matched
+operation-siren,조명탄,20,18,not matched
+operation-siren,5초 무적,20,20,not matched
+operation-siren,준최상급 딜링,20,20,not matched
+operation-siren,쫄팟 딜러,20,22,not matched
+operation-siren,연막탄,20,22,not matched
+operation-siren,개전 공격 및 지원,20,24,not matched
+operation-siren,15초 주기 보조,20,26,not matched
+operation-siren,후열 보조,20,28,not matched
+operation-siren,철갑탄 공증 지원,20,30,not matched
 operation-siren,3번 자리 딜러,20,32,not matched
 operation-siren,뇌격 버프,20,32,not matched
 operation-siren,불안정한 보조,20,34,not matched
@@ -459,7 +466,10 @@ operation-siren,연막탄 탱킹 보조,20,40,not matched
 operation-siren,딜탱 다 잘함 + 파갑,20,42,not matched
 operation-siren,기함보호,20,44,not matched
 operation-siren,3번자리 딜러,20,44,not matched
+operation-siren,파갑 지원,20,46,not matched
 operation-siren,A 급,21,1,not matched
+operation-siren,항공 보조,22,24,not matched
+operation-siren,명중 보조,22,25,not matched
 operation-siren,기함,22,26,not matched
 operation-siren,보조,22,26,not matched
 operation-siren,2초 바인드,22,27,not matched
@@ -478,13 +488,13 @@ operation-siren,기타 유틸,24,16,not matched
 operation-siren,3번 자리 딜러,24,18,not matched
 operation-siren,준최상급 딜러,24,20,not matched
 operation-siren,경순 딜러 2황,24,22,not matched
-operation-siren,대공 + 항공뎀증,24,24,not matched
 operation-siren,무난하게 좋은,24,26,not matched
 operation-siren,프랑스 함순이들,24,26,not matched
 operation-siren,"2,3번 자리 딜러",24,28,not matched
 operation-siren,확률적 아군 전체,24,30,not matched
 operation-siren,데미지 증가,24,30,not matched
-operation-siren,대경장 딜탱,24,32,not matched
+operation-siren,순수 딜러,24,32,not matched
+operation-siren,약간의 딜 보조,24,32,not matched
 operation-siren,대경장 딜러,24,34,not matched
 operation-siren,약간의 보조,24,35,not matched
 operation-siren,무난하게 좋음,24,36,not matched
@@ -499,6 +509,7 @@ operation-siren,스택형 보조,24,44,not matched
 operation-siren,준수한 탱커 겸 딜러,24,46,not matched
 operation-siren,3번 자리 딜러,24,48,not matched
 operation-siren,약간의 유틸,24,48,not matched
+operation-siren,대경장 딜탱,24,50,not matched
 operation-siren,B+ 급,25,1,not matched
 operation-siren,3번자리 구축딜러,28,2,not matched
 operation-siren,50초 지속,28,12,not matched
@@ -514,24 +525,19 @@ operation-siren,무난한 공격력,28,30,not matched
 operation-siren,방뢰요원,28,30,not matched
 operation-siren,확고한 탱킹능력,28,32,not matched
 operation-siren,낮은 딜 기여도,28,32,not matched
-operation-siren,탱커,28,36,not matched
-operation-siren,고출력 중순 표준,28,38,not matched
-operation-siren,동황 드레이크,28,40,not matched
-operation-siren,유사,28,42,not matched
-operation-siren,딜탱,28,44,not matched
-operation-siren,실드,28,44,not matched
-operation-siren,강력한,28,46,not matched
-operation-siren,딜탱,28,46,not matched
-operation-siren,전열 보조,28,48,not matched
-operation-siren,3번자리 딜러,28,50,not matched
-operation-siren,약간의 유틸,28,50,not matched
-operation-siren,실드,28,50,not matched
+operation-siren,강력한 딜탱 중순 + 대순들,28,36,not matched
+operation-siren,강력한,28,48,not matched
+operation-siren,딜탱,28,48,not matched
+operation-siren,전열 보조,28,50,not matched
+operation-siren,3번자리 딜러,28,52,not matched
+operation-siren,약간의 유틸,28,52,not matched
+operation-siren,실드,28,52,not matched
 operation-siren,B 급,29,1,not matched
-operation-siren,딜탱,30,44,not matched
-operation-siren,무난함,30,44,not matched
-operation-siren,실드,30,45,not matched
-operation-siren,딜 없는,30,46,not matched
-operation-siren,딜 특화,30,47,not matched
+operation-siren,딜탱,30,46,not matched
+operation-siren,무난함,30,46,not matched
+operation-siren,실드,30,47,not matched
+operation-siren,딜 없는,30,48,not matched
+operation-siren,딜 특화,30,49,not matched
 operation-siren,구축 탱커,32,2,not matched
 operation-siren,전열 선봉,32,6,not matched
 operation-siren,아이리스 요구,32,6,not matched
@@ -548,8 +554,10 @@ operation-siren,유리 대포,32,38,not matched
 operation-siren,포지션 유연함,32,40,not matched
 operation-siren,탱 모두 소화가능,32,40,not matched
 operation-siren,조명탄 보조,32,42,not matched
-operation-siren,약간씩 유틸을 얹은 탱커라인,32,44,not matched
-operation-siren,쫄팟 후보,32,50,not matched
+operation-siren,순수 딜러,32,44,not matched
+operation-siren,경장 특화,32,44,not matched
+operation-siren,약간씩 유틸을 얹은 탱커라인,32,46,not matched
+operation-siren,쫄팟 후보,32,52,not matched
 operation-siren,C+ 급,33,1,not matched
 operation-siren,기동,34,8,not matched
 operation-siren,항속,34,8,not matched
@@ -579,20 +587,21 @@ operation-siren,(주력),38,1,not matched
 operation-siren,핫산 원본,38,2,not matched
 operation-siren,"항모 CV, 경항모 CVL",38,6,not matched
 operation-siren,"전함 BB, 순전 BC",38,24,not matched
-operation-siren,잠수 SS,38,48,not matched
+operation-siren,잠수 SS,38,50,not matched
 operation-siren,SS+ 급,40,1,not matched
 operation-siren,씹성능,40,1,not matched
 operation-siren,모든 장갑 코어픽,43,24,not matched
 operation-siren,모든 장갑 깡패픽,43,26,not matched
 operation-siren,SS 급,44,1,not matched
 operation-siren,최우선,44,1,not matched
-operation-siren,"미항팟, 경장갑 필살기",47,16,not matched
-operation-siren,욬2 + 렉2 조합시 바인드 보유,47,16,not matched
+operation-siren,"미항팟, 경장갑 필살기",47,6,not matched
+operation-siren,욬2 + 렉2 조합시 바인드 보유,47,6,not matched
+operation-siren,모든 장갑 잘침,47,14,not matched
+operation-siren,그중에 중형 특화,47,14,not matched
 operation-siren,대중장 깡패,47,24,not matched
 operation-siren,S+ 급,48,1,not matched
 operation-siren,S급 이상,48,1,not matched
 operation-siren,SS대용,48,1,not matched
-operation-siren,일단 이 2명을 넣어,48,52,not matched
 operation-siren,쫄팟의 떠오르는 코어픽,51,2,not matched
 operation-siren,여기는 순수 쫄팟티어,51,2,not matched
 operation-siren,일항팟 시너지 + 대중장,51,12,not matched
@@ -601,8 +610,10 @@ operation-siren,북련 조합 요구,51,18,not matched
 operation-siren,블랙홀 바인드,51,24,not matched
 operation-siren,전함 인데 시너지,51,26,not matched
 operation-siren,일본 버퍼,51,26,not matched
-operation-siren,잠수함 1황,51,48,not matched
-operation-siren,잠수함 2황 + 보조,51,50,not matched
+operation-siren,부포 딜러 /,51,28,not matched
+operation-siren,접대 환경 필요,51,28,not matched
+operation-siren,잠수함 1황,51,50,not matched
+operation-siren,잠수함 2황 + 보조,51,52,not matched
 operation-siren,S 급,52,1,not matched
 operation-siren,최고 성능,52,1,not matched
 operation-siren,근거리 방어,53,34,not matched
@@ -623,14 +634,7 @@ operation-siren,바인더 1황,55,10,not matched
 operation-siren,영국 항모,55,10,not matched
 operation-siren,Lucky E,55,12,not matched
 operation-siren,중장갑 특화,55,14,not matched
-operation-siren,중형 바인더,55,16,not matched
-operation-siren,항모뎀증 '파갑' 보유,55,16,not matched
-operation-siren,중형,55,18,not matched
-operation-siren,중갑 바인더,55,18,not matched
-operation-siren,딜 로또,55,18,not matched
-operation-siren,중형 바인더,55,20,not matched
-operation-siren,항모뎀증 '파갑' 보유,55,20,not matched
-operation-siren,단기전의 신,55,22,not matched
+operation-siren,단기전의 신,55,16,not matched
 operation-siren,전함 최강 버퍼,55,26,not matched
 operation-siren,포격 버퍼,55,28,not matched
 operation-siren,"경, 중형 특화",55,28,not matched
@@ -645,13 +649,15 @@ operation-siren,무딱전함라인 입성,55,38,not matched
 operation-siren,최강 금딱라인,55,40,not matched
 operation-siren,용골 무난하게 받음,55,42,not matched
 operation-siren,탈금딱 1황,55,42,not matched
-operation-siren,프랑스 전함 2황,55,44,not matched
-operation-siren,"감속, 받피증 버퍼",55,46,not matched
+operation-siren,경순,55,44,not matched
+operation-siren,중순 킬러,55,44,not matched
+operation-siren,고폭탄 보조,55,44,not matched
 operation-siren,A+ 급,56,1,not matched
-operation-siren,중형,57,14,not matched
-operation-siren,경장,57,15,not matched
-operation-siren,올라운더,57,20,not matched
-operation-siren,4공습,57,21,not matched
+operation-siren,중형,57,12,not matched
+operation-siren,경장,57,13,not matched
+operation-siren,올라운더,57,16,not matched
+operation-siren,4공습,57,17,not matched
+operation-siren,3 이글,57,23,not matched
 operation-siren,"반장전, 단기전 특화",59,2,not matched
 operation-siren,루나 상위호환,59,2,not matched
 operation-siren,쫄 보스 딜러,59,4,not matched
@@ -661,53 +667,57 @@ operation-siren,타함대 항공버프,59,6,not matched
 operation-siren,안정성 높은,59,8,not matched
 operation-siren,높은 공격력,59,10,not matched
 operation-siren,딜 보조 유틸,59,10,not matched
-operation-siren,반장전 항모,59,12,not matched
-operation-siren,특정 장갑 특화,59,14,not matched
-operation-siren,4공습 /,59,16,not matched
-operation-siren,"중형,중장 잘팸",59,16,not matched
-operation-siren,중형 잘팸,59,18,not matched
-operation-siren,데어라 콜라보 항모,59,20,not matched
-operation-siren,3 장갑 다 잘팸,59,22,not matched
+operation-siren,특정 장갑 특화,59,12,not matched
+operation-siren,중형 잘팸,59,14,not matched
+operation-siren,데어라 콜라보 항모,59,16,not matched
+operation-siren,중형 바인더,59,18,not matched
+operation-siren,항모뎀증 '파갑' 보유,59,18,not matched
+operation-siren,중형,59,20,not matched
+operation-siren,중갑 바인더,59,20,not matched
+operation-siren,딜 로또,59,20,not matched
 operation-siren,무난하게 강한,59,24,not matched
 operation-siren,탈금딱 전함,59,24,not matched
 operation-siren,"명중, 장전 버퍼",59,26,not matched
 operation-siren,"포격, 명중 버퍼",59,28,not matched
 operation-siren,딜 보조 버프,59,28,not matched
 operation-siren,사르데냐 코어,59,30,not matched
-operation-siren,프랑스 버퍼,59,32,not matched
-operation-siren,선장전,59,32,not matched
+operation-siren,아이리스,59,32,not matched
+operation-siren,선장전 전함,59,32,not matched
 operation-siren,중형 특화,59,34,not matched
 operation-siren,경장 특화,59,36,not matched
+operation-siren,"감속, 받피증 버퍼",59,38,not matched
 operation-siren,단기전 강함,59,40,not matched
 operation-siren,대중장 특화,59,40,not matched
 operation-siren,전열 보호,59,42,not matched
-operation-siren,감속,59,44,not matched
-operation-siren,중형,59,44,not matched
-operation-siren,중장 특화,59,44,not matched
-operation-siren,경장 상대로 좋음,59,46,not matched
-operation-siren,높은 탱킹력,59,46,not matched
+operation-siren,4포좌,59,44,not matched
+operation-siren,감속,59,46,not matched
+operation-siren,중형,59,46,not matched
+operation-siren,중장 특화,59,46,not matched
+operation-siren,경장 상대로 좋음,59,48,not matched
+operation-siren,높은 탱킹력,59,48,not matched
 operation-siren,A 급,60,1,not matched
-operation-siren,얘네 중 하나만 있다면 유보트,62,52,not matched
-operation-siren,미잠팟 적당히 섞어 넣으셈,62,52,not matched
+operation-siren,얘네 중 하나만 있다면 유보트,62,54,not matched
+operation-siren,미잠팟 적당히 섞어 넣으셈,62,54,not matched
 operation-siren,"반장전, 단기전 특화",63,2,not matched
 operation-siren,"쫄팟, 광역힐",63,4,not matched
 operation-siren,선장전,63,4,not matched
-operation-siren,대경장,63,6,not matched
-operation-siren,중형 특화,63,6,not matched
+operation-siren,경장,63,6,not matched
+operation-siren,중장 특화,63,6,not matched
+operation-siren,무난한 금딱항모,63,6,not matched
 operation-siren,4공습 /,63,8,not matched
 operation-siren,미묘한 바인드,63,8,not matched
 operation-siren,폭격 특화,63,10,not matched
 operation-siren,쫄팟 후보군,63,10,not matched
-operation-siren,고점 조금 낮은,63,12,not matched
-operation-siren,폭격 특화,63,14,not matched
-operation-siren,전열 보조,63,16,not matched
-operation-siren,다중 폭격,63,16,not matched
-operation-siren,불안정 딜러,63,18,not matched
-operation-siren,경장 특화,63,18,not matched
-operation-siren,전장에 바인드 있음,63,20,not matched
-operation-siren,독일 항모 버프,63,20,not matched
-operation-siren,최상위 경항모,63,22,not matched
-operation-siren,항공 지원,63,22,not matched
+operation-siren,높은 딜링,63,12,not matched
+operation-siren,소량의 딜 보조,63,12,not matched
+operation-siren,준수한 딜러,63,14,not matched
+operation-siren,항공 지원,63,14,not matched
+operation-siren,3 장갑 다 잘팸,63,16,not matched
+operation-siren,4공습 /,63,18,not matched
+operation-siren,"중형,중장 잘팸",63,18,not matched
+operation-siren,반장전 항모,63,20,not matched
+operation-siren,쇼카쿠와 시너지,63,22,not matched
+operation-siren,3중앵 요구,63,22,not matched
 operation-siren,"선장전, 밸런스형",63,24,not matched
 operation-siren,중형 특화,63,26,not matched
 operation-siren,사르데냐 핵심 전함,63,26,not matched
@@ -735,11 +745,15 @@ operation-siren,퍼시와 시너지,67,4,not matched
 operation-siren,대작전 3,67,4,not matched
 operation-siren,5 뺑이,67,4,not matched
 operation-siren,스피드런용,67,4,not matched
-operation-siren,"경장, 단일적 특화",67,16,not matched
-operation-siren,후열 딜 버프,67,18,not matched
-operation-siren,2전투기 항모,67,20,not matched
-operation-siren,2 폭격기,67,22,not matched
-operation-siren,독일 탱보조,67,22,not matched
+operation-siren,"경장, 단일적 특화",67,6,not matched
+operation-siren,후열 딜 버프,67,8,not matched
+operation-siren,2전투기 항모,67,10,not matched
+operation-siren,2 폭격기,67,12,not matched
+operation-siren,독일 탱보조,67,12,not matched
+operation-siren,불안정 딜러,67,14,not matched
+operation-siren,경장 특화,67,14,not matched
+operation-siren,전장에 바인드 있음,67,16,not matched
+operation-siren,독일 항모 버프,67,16,not matched
 operation-siren,스택형 딜러,67,26,not matched
 operation-siren,약속의 빅 세븐 개장,67,28,not matched
 operation-siren,경장 상대로만 쓸것,67,32,not matched
@@ -755,18 +769,16 @@ operation-siren,평범한 2군 전함,67,46,not matched
 operation-siren,약간의 딜,67,46,not matched
 operation-siren,힐 유틸,67,46,not matched
 operation-siren,B 급,68,1,not matched
-operation-siren,그 외,68,50,not matched
-operation-siren,범선,68,50,not matched
-operation-siren,잠수함들,68,50,not matched
+operation-siren,그 외,68,52,not matched
+operation-siren,범선,68,52,not matched
+operation-siren,잠수함들,68,52,not matched
 operation-siren,반장전,71,2,not matched
 operation-siren,서로 시너지,71,2,not matched
-operation-siren,항모 버프,71,10,not matched
-operation-siren,3일본 방어 버프,71,12,not matched
-operation-siren,단독성능은 쇼카쿠 아래,71,14,not matched
-operation-siren,쇼카쿠와 시너지,71,14,not matched
-operation-siren,뇌격 특화,71,16,not matched
-operation-siren,그럭저럭 강힘,71,18,not matched
-operation-siren,약한 바인더,71,18,not matched
+operation-siren,항모 버프,71,6,not matched
+operation-siren,3일본 방어 버프,71,8,not matched
+operation-siren,뇌격 특화,71,10,not matched
+operation-siren,그럭저럭 강힘,71,12,not matched
+operation-siren,약한 바인더,71,12,not matched
 operation-siren,소량 힐,71,24,not matched
 operation-siren,각종 유틸,71,26,not matched
 operation-siren,프랑스 조합 필요,71,28,not matched
@@ -782,18 +794,18 @@ operation-siren,중장 상대 미국 전함,71,42,not matched
 operation-siren,평범한 딜링,71,44,not matched
 operation-siren,별도의 유틸 없음,71,44,not matched
 operation-siren,평범한 2군 전함,71,46,not matched
-operation-siren,아군버프 /,71,48,not matched
-operation-siren,초살팟,71,48,not matched
+operation-siren,아군버프 /,71,50,not matched
+operation-siren,초살팟,71,50,not matched
 operation-siren,C+ 급,72,1,not matched
-operation-siren,폭격 특화,75,8,not matched
-operation-siren,최대 4 μ 시너지,75,12,not matched
-operation-siren,항마기 시너지,75,12,not matched
-operation-siren,반장전,75,12,not matched
-operation-siren,소량 힐,75,14,not matched
-operation-siren,전열 보호,75,16,not matched
-operation-siren,하위해역,75,18,not matched
-operation-siren,많은 적 상대,75,18,not matched
-operation-siren,적 전함 상대 보조,75,20,not matched
+operation-siren,폭격 특화,75,6,not matched
+operation-siren,최대 4 μ 시너지,75,10,not matched
+operation-siren,항마기 시너지,75,10,not matched
+operation-siren,반장전,75,10,not matched
+operation-siren,소량 힐,75,12,not matched
+operation-siren,전열 보호,75,14,not matched
+operation-siren,하위해역,75,16,not matched
+operation-siren,많은 적 상대,75,16,not matched
+operation-siren,적 전함 상대 보조,75,18,not matched
 operation-siren,프랑스 함대 파츠,75,24,not matched
 operation-siren,"선장전, 딜 버프",75,24,not matched
 operation-siren,감속 제공,75,26,not matched
@@ -803,13 +815,11 @@ operation-siren,무사시 독점,75,40,not matched
 operation-siren,비스마르크와,75,42,not matched
 operation-siren,같이 쓰기,75,42,not matched
 operation-siren,작은 육각형 딜러,75,44,not matched
-operation-siren,글쎄요..?,75,48,not matched
+operation-siren,글쎄요..?,75,50,not matched
 operation-siren,드레이크,24,38,single matched name row
-operation-siren,드레이크,28,42,single matched name row
-operation-siren,아즈마,30,46,single matched name row
-operation-siren,아즈마,30,47,single matched name row
+operation-siren,아즈마,30,48,single matched name row
+operation-siren,아즈마,30,49,single matched name row
 operation-siren,엔터프라이즈,59,8,single matched name row
-operation-siren,샹그릴라,63,12,single matched name row
 newbie,구축 DD,3,2,not matched
 newbie,경순 CL,3,12,not matched
 newbie,중순,3,20,not matched
