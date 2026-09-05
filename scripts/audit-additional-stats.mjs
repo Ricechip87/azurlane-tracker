@@ -13,9 +13,11 @@ import {
 } from '../src/utils/additionalStatRecommendations.js'
 import { normalizeStatShipTypeValue } from '../src/utils/shipClassifications.js'
 import { normalizeStatName } from '../src/utils/statLabels.js'
+import { formatKstTimestamp } from './lib/current-data-audit-reports.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const characters = JSON.parse(fs.readFileSync(path.join(root, 'src/data/characters.json'), 'utf8'))
+const obtainabilityMeta = JSON.parse(fs.readFileSync(path.join(root, 'src/data/shipObtainability.json'), 'utf8')).meta
 const ignoredShipTypes = new Set(['공작', '운송', '범선'])
 const configuredShipTypes = new Set(ADDITIONAL_STAT_SHIP_TYPES)
 const configuredStats = new Set(ADDITIONAL_STATS)
@@ -114,7 +116,8 @@ const broadCoverage = {
   경항모항모공용: countBroadCoverage('경항모', '항모'),
 }
 const report = {
-  generatedAt: `${new Date().toLocaleString('sv-SE', { timeZone: 'Asia/Seoul' })} KST`,
+  generatedAt: formatKstTimestamp(obtainabilityMeta.generatedAt),
+  appShipCount: characters.length,
   policy: {
     configuredShipTypes: ADDITIONAL_STAT_SHIP_TYPES,
     configuredStats: ADDITIONAL_STATS,
@@ -178,7 +181,8 @@ function buildMarkdown(value) {
     return `| ${category.label} | ${category.shipTypes.join(', ')} | ${category.stats.join(' > ')} | ${candidateSummary} |`
   }).join('\n')
   return `# 추가 스탯작 추천 데이터 감사\n\n` +
-    `- 생성 시각: ${value.generatedAt}\n` +
+    `- 기준 데이터 생성 시각: ${value.generatedAt}\n` +
+    `- 앱 함선: ${value.appShipCount}척\n` +
     `- 추천 함종: ${value.policy.configuredShipTypes.length}종\n` +
     `- 노출 스탯: ${value.policy.configuredStats.join(', ')}\n` +
     `- 제외 함종: ${value.policy.ignoredShipTypes.join(', ')}\n` +

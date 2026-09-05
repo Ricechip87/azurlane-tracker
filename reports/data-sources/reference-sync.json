@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T11:27:29.106Z",
+  "generatedAt": "2026-09-05T06:10:10.798Z",
   "policy": {
     "data": "원격 원천을 임시 경로에서 전부 검증한 뒤 자동 관리 경로만 교체",
     "images": "별도 이미지 동기화에서 기존 파일을 보존하고 누락 파일만 추가",
@@ -35,8 +35,8 @@
       "id": "altoy-full",
       "url": "https://jforplay.github.io/altoy/data/ship_info_data.json",
       "relativePath": "ALtoy/data/ship_info_data.json",
-      "bytes": 5683914,
-      "sha256": "d6991f3705d67a9021f867dfdcbb37242d7e1f72c8761efa96d7e87b435412a5"
+      "bytes": 6113092,
+      "sha256": "f90dbb3f898522a06283edbbba797308ad52a3cfea9a6c1e7e224642611a9edb"
     },
     {
       "id": "altoy-kr-event-timeline",
@@ -76,15 +76,15 @@
       "id": "cn-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/CN/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 245151,
-      "sha256": "4ecb4c928e9830e6f0c90364dc1e80b20d0fedeb64eb7aad71a379e44acc06f4"
+      "bytes": 245474,
+      "sha256": "f261782fe80e485e0ed65b97afb4a83d75566638ad0d09bcc88b20445e2de64e"
     },
     {
       "id": "en-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/EN/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/EN/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 245151,
-      "sha256": "4ecb4c928e9830e6f0c90364dc1e80b20d0fedeb64eb7aad71a379e44acc06f4"
+      "bytes": 245474,
+      "sha256": "f261782fe80e485e0ed65b97afb4a83d75566638ad0d09bcc88b20445e2de64e"
     },
     {
       "id": "fernando-ship-skin-list",
@@ -132,22 +132,22 @@
       "id": "fleet-tech-ship-score",
       "url": "https://docs.google.com/spreadsheets/d/1R5u6fgr3e6XvfqQ3_GMuroeNfe2ShiY65akzzwDnwTs/export?format=csv&gid=1194876348",
       "relativePath": "벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv",
-      "bytes": 87473,
-      "sha256": "3771adb7e2b752a2b6a44530297ad6a303b3df752f925760fdffd8f90de4b9b1"
+      "bytes": 87610,
+      "sha256": "1ca0bc8b84a8e8be1eec7bd450ba0287d8890f895bc939cb584085033936f743"
     },
     {
       "id": "fleet-tech-workbook",
       "url": "https://docs.google.com/spreadsheets/d/1R5u6fgr3e6XvfqQ3_GMuroeNfe2ShiY65akzzwDnwTs/export?format=xlsx",
       "relativePath": "벽람항로(일) - アズールレーン.xlsx",
-      "bytes": 722322,
-      "sha256": "1558bf9f8da1cb387f73e6e945749c2f68890178ce93dbf9a03a0d0e9be2a169"
+      "bytes": 722594,
+      "sha256": "9f9efe94590cbd1b5e7a93e4b19894f2d022a172f6b43d25010d1b73817a7706"
     },
     {
       "id": "growth-guide-workbook",
       "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=xlsx",
       "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본.xlsx",
-      "bytes": 8463395,
-      "sha256": "9416bbb6ca0f13f159c8acba895fb7071dfab061550cad48edc303a5c624e53d"
+      "bytes": 8465607,
+      "sha256": "564ed2d8939c2989eca7f7c87b29a1b599cc8d65d760eece919adfc7298aad8f"
     },
     {
       "id": "growth-main-sea",
@@ -181,8 +181,8 @@
       "id": "jp-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/JP/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/JP/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 245151,
-      "sha256": "4ecb4c928e9830e6f0c90364dc1e80b20d0fedeb64eb7aad71a379e44acc06f4"
+      "bytes": 245474,
+      "sha256": "f261782fe80e485e0ed65b97afb4a83d75566638ad0d09bcc88b20445e2de64e"
     },
     {
       "id": "kr-blueprint-lua",
@@ -209,8 +209,8 @@
       "id": "kr-ship-data-group-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/ship_data_group.lua",
       "relativePath": "AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
-      "bytes": 529494,
-      "sha256": "b47ffd65cbea0e6ea5f4ecdfd3c617a8497c7fe3965e22ab7434a21177caa9d0"
+      "bytes": 529562,
+      "sha256": "fe0f77179a40617bc4c6053bc76a55c8f073c725672fe5559aeb16cd38d8524f"
     },
     {
       "id": "research-exp",

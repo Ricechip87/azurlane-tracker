@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29 20:28:22 KST",
+  "generatedAt": "2026-09-05 15:16:21 KST",
   "policy": {
     "displayedRoster": "KR/ALtoy 교차 검증 범위",
     "shipTechPriority": [
@@ -23,7 +23,7 @@
   },
   "ships": {
     "appCount": 886,
-    "cnOfficialCount": 752,
+    "cnOfficialCount": 753,
     "sourceCounts": {
       "cn-lua": 751,
       "kr-lua": 0,

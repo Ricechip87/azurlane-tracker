@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T11:28:21.789Z",
+  "generatedAt": "2026-09-05T06:16:20.730Z",
   "policy": {
     "displayScope": "ALtoy/KR service roster only; name fallback handles six Utawarerumono skin-ID identities",
     "fleetTechPriority": [
@@ -14,27 +14,27 @@
   "sources": {
     "characters": {
       "path": "src/data/characters.json",
-      "sha256": "d0d551526360fe8dc61a1084e8e3d97b63f12ca2af01cefb88cf0a0b86cb2fe7"
+      "sha256": "7d19b4e3f477ca9a7a8904efdb337fb77d8cee16421f33062b501dc4688550fd"
     },
     "altoy": {
       "path": "참고용/ALtoy/data/ship_info_data.json",
-      "sha256": "d6991f3705d67a9021f867dfdcbb37242d7e1f72c8761efa96d7e87b435412a5"
+      "sha256": "f90dbb3f898522a06283edbbba797308ad52a3cfea9a6c1e7e224642611a9edb"
     },
     "krShips": {
       "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
-      "sha256": "b47ffd65cbea0e6ea5f4ecdfd3c617a8497c7fe3965e22ab7434a21177caa9d0"
+      "sha256": "fe0f77179a40617bc4c6053bc76a55c8f073c725672fe5559aeb16cd38d8524f"
     },
     "cnTech": {
       "path": "참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
-      "sha256": "4ecb4c928e9830e6f0c90364dc1e80b20d0fedeb64eb7aad71a379e44acc06f4"
+      "sha256": "f261782fe80e485e0ed65b97afb4a83d75566638ad0d09bcc88b20445e2de64e"
     },
     "enTech": {
       "path": "참고용/AzurLaneLuaScripts/EN/sharecfg/fleet_tech_ship_template.lua",
-      "sha256": "4ecb4c928e9830e6f0c90364dc1e80b20d0fedeb64eb7aad71a379e44acc06f4"
+      "sha256": "f261782fe80e485e0ed65b97afb4a83d75566638ad0d09bcc88b20445e2de64e"
     },
     "jpTech": {
       "path": "참고용/AzurLaneLuaScripts/JP/sharecfg/fleet_tech_ship_template.lua",
-      "sha256": "4ecb4c928e9830e6f0c90364dc1e80b20d0fedeb64eb7aad71a379e44acc06f4"
+      "sha256": "f261782fe80e485e0ed65b97afb4a83d75566638ad0d09bcc88b20445e2de64e"
     },
     "krTech": {
       "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/fleet_tech_ship_template.lua",
@@ -54,19 +54,20 @@
     "identityFallbacks": []
   },
   "fleetTech": {
-    "cnCount": 752,
+    "cnCount": 753,
     "krCount": 751,
     "displayedWithCn": 751,
     "displayedWithoutCn": 135,
     "appMissingFleetTechGids": [
-      30119
+      30119,
+      970710
     ],
     "cnKrMismatchCount": 0,
     "cnKrMismatches": [],
     "regionalLuaCounts": {
-      "cnTech": 752,
-      "enTech": 752,
-      "jpTech": 752,
+      "cnTech": 753,
+      "enTech": 753,
+      "jpTech": 753,
       "krTech": 751,
       "twTech": 747
     },

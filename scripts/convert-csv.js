@@ -12,6 +12,7 @@ import {
   normalizeCharacterSourceName,
   selectExistingCharacter,
 } from './lib/character-source-identity.mjs'
+import { resolveCanRemodel } from './lib/character-remodel-status.mjs'
 import { parseCsvRecords } from './lib/csv-records.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -75,7 +76,7 @@ const characters = dataRows.map(cols => {
     rarity: cols[4].trim(),
     shipType: normalizeShipTypeValue(SHIP_TYPE_BY_ID[altoy?.type] || cols[5]),
     faction: normalizeFactionValue(cols[6]),
-    canRemodel: cols[7].trim() === 'O',
+    canRemodel: resolveCanRemodel(cols[7], altoy),
     skillPoints: parseInt(cols[14]) || 0,
     statAcquired: {
       shipTypes: [cols[15], cols[16], cols[17]].map(s => s.trim()).filter(Boolean),

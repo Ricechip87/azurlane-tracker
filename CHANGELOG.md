@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-09-05 - Refresh Sources and Fix Belfast Retrofit Status
+
+### Changed
+- Treat a ship as retrofit-capable when either the maintained roster marks it for retrofit or the matched ALtoy record exposes retrofit data, fixing Belfast's KR retrofit status while preserving non-retrofit ships.
+- Promote the official KR August 27 completion notice to the primary source for the current event schedule, claim deadline, and construction rates; retain the archived notice only as a fallback and record the September 2 Belfast hotfix separately.
+- Regenerate obtainability, Eagle Union/Northern Parliament, fleet-tech, image, skin, and additional-stat audit reports from the September 5 source snapshot, and make the previously manual reports part of the local audit pipeline.
+- Synchronize the latest ALtoy schema and regional fleet-tech sources while keeping CN-only Saratoga META outside the 886-ship KR-visible roster.
+
+### Verified
+- Cross-check the app, ALtoy, and KR rosters at 886 ships with zero identifier, public-icon, fleet-tech, faction-source, derived-faction, or additional-stat mismatches.
+- Add tracked-only regression coverage for retrofit-source precedence, official KR source priority, current-data report calculations, gid-safe matching, and bidirectional faction validation.
+- Run the full source refresh, local data audit, lint, complete test suite, production build, semantic generation-idempotency audit, and `git diff --check`.
+
 ## 2026-08-29 - Expand the KR Roster to 886 Ships
 
 ### Changed

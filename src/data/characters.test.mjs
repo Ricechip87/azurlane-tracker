@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
+import { resolveCanRemodel } from '../../scripts/lib/character-remodel-status.mjs'
 import characters from './characters.json' with { type: 'json' }
 
 assert.equal(characters.length, 886, '2026-08-29 KR 노출 함선 886척 반영')
@@ -303,3 +304,10 @@ for (const character of characters) {
     `${character.name} iconUrl must point to an existing public asset`,
   )
 }
+
+assert.equal(resolveCanRemodel('O', null), true, '추천표 O는 ALtoy 개장 데이터가 없어도 true')
+assert.equal(resolveCanRemodel('X', { retrofit: { id: 202124 } }), true, 'ALtoy retrofit이 있으면 추천표 X여도 true')
+assert.equal(resolveCanRemodel('X', {}), false, '두 출처 모두 개장 정보가 없으면 false')
+assert.equal(resolveCanRemodel(' O ', {}), true, '추천표 값의 앞뒤 공백을 무시')
+assert.equal(characters.find(character => character.name === '벨파스트')?.canRemodel, true, '벨파스트 ALtoy 개장 반영')
+assert.equal(characters.find(character => character.name === '콜렛')?.canRemodel, false, '개장 정보가 없는 함선은 기존 false 유지')

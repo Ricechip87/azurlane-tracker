@@ -1,5 +1,33 @@
 {
-  "updatedAt": "2026-08-29",
+  "updatedAt": "2026-09-02",
+  "dataCorrections": [
+    {
+      "ship": "벨파스트",
+      "field": "canRemodel",
+      "value": true,
+      "effectiveAt": "2026-09-02",
+      "retrofitItem": "메이드장의 견벽",
+      "reason": "KR에서 전용 개조 아이템 획득이 개시됐고, 개조 화면·도감 표시 문제가 무점검 업데이트로 수정됨",
+      "sources": [
+        {
+          "kind": "official-kr-full-notice",
+          "priority": "primary",
+          "scope": "벨파스트 전용 개조 아이템 「메이드장의 견벽」 9월 2일 획득 개시",
+          "urls": [
+            "https://cafe.naver.com/azurlanekorea/574051"
+          ]
+        },
+        {
+          "kind": "official-kr-hotfix",
+          "priority": "primary",
+          "scope": "벨파스트 개조 화면 표시 및 벨파스트·改 도감 진입 오류 수정",
+          "urls": [
+            "https://cafe.naver.com/azurlanekorea/574131"
+          ]
+        }
+      ]
+    }
+  ],
   "events": [
     {
       "name": "몽광의 아스트라리움",
@@ -46,8 +74,17 @@
           ]
         },
         {
+          "kind": "official-kr-full-notice",
+          "priority": "primary",
+          "scope": "KR 공식 업데이트 완료 공지 · 이벤트 명칭·기간·수령 기한·건조 확률",
+          "urls": [
+            "https://cafe.naver.com/azurlanekorea/574051"
+          ]
+        },
+        {
           "kind": "official-kr-full-notice-archive",
-          "scope": "KR 공식 공지 전문 보존본 · 이벤트 기간·수령 기한·건조 확률",
+          "priority": "fallback",
+          "scope": "네이버 카페 접근 불가 시 확인하는 KR 공식 공지 전문 보존본",
           "urls": [
             "https://gall.dcinside.com/mgallery/board/view/?id=blhx&no=889749&page=1"
           ]

@@ -2963,7 +2963,7 @@
     "rarity": "SSR",
     "shipType": "경순",
     "faction": "로열",
-    "canRemodel": false,
+    "canRemodel": true,
     "skillPoints": 0,
     "statAcquired": {
       "shipTypes": [

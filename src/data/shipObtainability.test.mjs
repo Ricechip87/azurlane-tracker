@@ -66,14 +66,19 @@ for (const name of ['슈퍼브', '서리', '그리핀']) {
   assert.equal(event.endsAt, '2026-09-10')
   assert.equal(event.endsAtLabel, '2026-09-10 점검까지')
   assert.equal(event.claimEndsAt, '2026-09-16 23:59')
-  assert.deepEqual(event.sources.map(source => source.kind), ['official-kr', 'official-kr-full-notice-archive', 'bwiki-cross-check'])
+  assert.deepEqual(event.sources.map(source => source.kind), ['official-kr', 'official-kr-full-notice', 'official-kr-full-notice-archive', 'bwiki-cross-check'])
   const officialSource = event.sources.find(source => source.kind === 'official-kr')
+  const officialNotice = event.sources.find(source => source.kind === 'official-kr-full-notice')
   const officialArchive = event.sources.find(source => source.kind === 'official-kr-full-notice-archive')
   const crossCheckSource = event.sources.find(source => source.kind === 'bwiki-cross-check')
   assert.equal(officialSource.scope, 'KR 등장 및 기본 입수 분류')
   assert.equal(officialSource.urls.length, 5, '신규 5척별 KR 공식 공지 URL 보존')
   assert.ok(officialSource.urls.every(url => /^https:\/\/x\.com\/azurlanekorea\/status\/\d+$/.test(url)))
-  assert.equal(officialArchive.scope, 'KR 공식 공지 전문 보존본 · 이벤트 기간·수령 기한·건조 확률')
+  assert.equal(officialNotice.priority, 'primary')
+  assert.equal(officialNotice.scope, 'KR 공식 업데이트 완료 공지 · 이벤트 명칭·기간·수령 기한·건조 확률')
+  assert.deepEqual(officialNotice.urls, ['https://cafe.naver.com/azurlanekorea/574051'])
+  assert.equal(officialArchive.priority, 'fallback')
+  assert.equal(officialArchive.scope, '네이버 카페 접근 불가 시 확인하는 KR 공식 공지 전문 보존본')
   assert.deepEqual(officialArchive.urls, ['https://gall.dcinside.com/mgallery/board/view/?id=blhx&no=889749&page=1'])
   assert.equal(crossCheckSource.scope, '건조 시간 및 PT 교환량·해역 드롭·누적 PT 세부 교차검증')
   assert.equal(crossCheckSource.urls.length, 2, '건조 시간과 이벤트 획득 세부 교차검증 URL 보존')
@@ -123,6 +128,19 @@ for (const name of ['슈퍼브', '서리', '그리핀']) {
     assert.equal(claim.availability.label, '이벤트 수령 기간', `${name} 수령 기간 UI 라벨`)
   }
   assert.equal(resolveEventAcquisition(event, '콜렛', '2026-09-11').buildLimited, false, '수령 기간에 콜렛 한정 건조 비활성')
+}
+{
+  const correction = activeEvents.dataCorrections?.find(item => item.ship === '벨파스트' && item.field === 'canRemodel')
+  assert.ok(correction, '벨파스트 개장 판정의 KR 공식 정정 근거 보존')
+  assert.equal(correction.effectiveAt, '2026-09-02')
+  assert.equal(correction.value, true)
+  assert.equal(correction.retrofitItem, '메이드장의 견벽')
+  assert.deepEqual(correction.sources.map(source => source.kind), ['official-kr-full-notice', 'official-kr-hotfix'])
+  assert.deepEqual(correction.sources.flatMap(source => source.urls), [
+    'https://cafe.naver.com/azurlanekorea/574051',
+    'https://cafe.naver.com/azurlanekorea/574131',
+  ])
+  assert.ok(correction.sources.every(source => source.priority === 'primary'), '공식 완료·수정 공지를 모두 1차 근거로 사용')
 }
 {
   const name = '뉘른베르크(META)'

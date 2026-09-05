@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-29T11:27:29.815Z",
+  "generatedAt": "2026-09-05T06:10:11.490Z",
   "checked": 886,
   "changedShips": 0,
   "unavailableShips": 6,
   "results": [
     {
-      "gid": 1030002,
-      "name": "네코네",
-      "skinId": 10300020,
+      "gid": 1030004,
+      "name": "우루루",
+      "skinId": 10300040,
       "downloaded": [],
       "unavailable": [
         {
           "label": "Fernando painting.png",
           "error": "HTTP 404",
-          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300020/painting.png"
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300040/painting.png"
         }
       ]
     },
@@ -31,19 +31,6 @@
       ]
     },
     {
-      "gid": 1030005,
-      "name": "사라나",
-      "skinId": 10300050,
-      "downloaded": [],
-      "unavailable": [
-        {
-          "label": "Fernando painting.png",
-          "error": "HTTP 404",
-          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300050/painting.png"
-        }
-      ]
-    },
-    {
       "gid": 1030003,
       "name": "루루티에",
       "skinId": 10300030,
@@ -57,15 +44,28 @@
       ]
     },
     {
-      "gid": 1030004,
-      "name": "우루루",
-      "skinId": 10300040,
+      "gid": 1030005,
+      "name": "사라나",
+      "skinId": 10300050,
       "downloaded": [],
       "unavailable": [
         {
           "label": "Fernando painting.png",
           "error": "HTTP 404",
-          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300040/painting.png"
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300050/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030002,
+      "name": "네코네",
+      "skinId": 10300020,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300020/painting.png"
         }
       ]
     },
