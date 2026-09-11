@@ -2,9 +2,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import characters from '../src/data/characters.json' with { type: 'json' }
 import activeEvents from './data/kr-active-events.json' with { type: 'json' }
+import officialConstruction from './data/kr-permanent-construction.json' with { type: 'json' }
 import { classifyObtainability } from './lib/obtainability-classifier.mjs'
 import { normalizeConstructionSources } from './lib/construction-sources.mjs'
-import { selectObtainSources } from './lib/obtainability-sources.mjs'
+import { selectObtainSources, resolveOfficialConstruction } from './lib/obtainability-sources.mjs'
 import { buildArenaShopGids, timelineFallbackSource } from './lib/permanent-shop-sources.mjs'
 import { toKstDateKey } from '../src/utils/kstDate.js'
 import { resolveEventAcquisition } from '../src/utils/eventAcquisition.js'
@@ -12,6 +13,7 @@ import { resolveEventAcquisition } from '../src/utils/eventAcquisition.js'
 const ROOT = path.resolve(import.meta.dirname, '..')
 const OUTPUT_PATH = path.join(ROOT, 'src/data/shipObtainability.json')
 const ALTOY_BASE_URL = 'https://jforplay.github.io/altoy'
+const asOfDate = process.env.OBTAINABILITY_TODAY || toKstDateKey()
 const SHOP_PATTERN = /^(META ?상점|원형 상점|군수 상점|상점의 대함대|코어 상점|코어 교환|특별 ?보급|함대 상점|훈장 상점|훈장 교환)/
 const OTHER_PERMANENT_PATTERN = /^(META ?상점|소형함 건조|중형함 건조|대형함 건조|특형함 건조|훈장|코어|군수 상점|원형 상점|함대 상점|연습 상점|지원 신청|특별 ?보급|상설 UR|UR Exchange|상점의 대함대|주간 임무|도감 업적|출석 스탬프|히든 임무|연구 ?도크)/
 
@@ -112,7 +114,7 @@ function buildCoreMonthlyGids(monthShop, activityShop) {
   return gids
 }
 
-function currentEventFor(name, today = process.env.OBTAINABILITY_TODAY || toKstDateKey()) {
+function currentEventFor(name, today = asOfDate) {
   for (const event of activeEvents.events || []) {
     if (!event.ships.includes(name)) continue
     const resolved = resolveEventAcquisition(event, name, today)
@@ -193,7 +195,12 @@ const ships = characters.map(character => {
   const gid = Number(character.gid)
   const nameKey = normalizeName(character.name)
   const local = localByGid.get(gid) || localByName.get(nameKey)
-  const lite = liteByGid.get(gid) || liteByName.get(nameKey)
+  const { lite, override: officialKrOverride } = resolveOfficialConstruction({
+    gid,
+    lite: liteByGid.get(gid) || liteByName.get(nameKey),
+    overrides: officialConstruction.ships,
+    today: asOfDate,
+  })
   const full = fullByGid.get(gid) || fullByName.get(nameKey)
   const localKrObtain = descriptionList(krByGid.get(gid)?.description)
   const altoyObtain = normalizeList(full?.description)
@@ -239,7 +246,11 @@ const ships = characters.map(character => {
         : {}),
     },
     mapDrops: drops, permanentSignals, ...classification,
-    verification: { localKr: localKrObtain.length > 0, localResource: Boolean(local), altoy: Boolean(full), status: compareLists(localKrObtain, altoyObtain) },
+    verification: {
+      localKr: localKrObtain.length > 0, localResource: Boolean(local), altoy: Boolean(full),
+      status: compareLists(localKrObtain, altoyObtain),
+      ...(officialKrOverride ? { officialKrOverride } : {}),
+    },
   }
 }).sort((a, b) => a.gid - b.gid)
 
@@ -247,7 +258,7 @@ const countBy = (items, selector) => Object.fromEntries([...new Set(items.map(se
 const output = {
   meta: {
     note: 'KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.',
-    generatedAt: new Date().toISOString(), total: ships.length,
+    generatedAt: new Date().toISOString(), asOfDate, total: ships.length,
     withObtain: ships.filter(ship => ship.obtain.length).length,
     withoutObtain: ships.filter(ship => !ship.obtain.length).length,
     availability: countBy(ships, ship => ship.availability.key),

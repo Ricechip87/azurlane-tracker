@@ -11,6 +11,9 @@ import {
   normalizeCharacterSourceId,
   normalizeCharacterSourceName,
   selectExistingCharacter,
+  assertKrRosterSourceReady,
+  isKrConfirmedCharacter,
+  assertExistingCharacterIdentitiesPreserved,
 } from './lib/character-source-identity.mjs'
 import { resolveCanRemodel } from './lib/character-remodel-status.mjs'
 import { parseCsvRecords } from './lib/csv-records.mjs'
@@ -38,6 +41,7 @@ const existingIndexes = buildExistingCharacterIndexes(existingCharacters)
 const altoyCharacters = fs.existsSync(ALTOY_PATH)
   ? JSON.parse(fs.readFileSync(ALTOY_PATH, 'utf-8'))
   : []
+assertKrRosterSourceReady(altoyCharacters)
 const altoyByGid = new Map(altoyCharacters.map(character => [String(character.gid), character]))
 const altoyNameGroups = new Map()
 for (const character of altoyCharacters) {
@@ -52,6 +56,7 @@ const dataRows = parseCsvRecords(raw).filter(cols =>
   /^\d+$/.test(String(cols[0] || '').trim())
   && /^[A-Za-z0-9]+$/.test(String(cols[1] || '').trim()))
 
+const unconfirmedNames = []
 const characters = dataRows.map(cols => {
   // cols 인덱스 (헤더 기준):
   // 0: 계산용, 1: ID, 2: 사진, 3: 이름, 4: 레어도, 5: 함종, 6: 진영
@@ -68,6 +73,12 @@ const characters = dataRows.map(cols => {
   const existing = selectExistingCharacter(existingIndexes, { id, name })
   const nameMatches = altoyNameGroups.get(normalizeCharacterSourceName(name)) || []
   const altoy = altoyByGid.get(String(existing.gid)) || (nameMatches.length === 1 ? nameMatches[0] : null)
+  // The shared spreadsheet can list ships before their KR release. Existing valid identities
+  // survive a temporary source mismatch; new rows require a confirmed ALtoy identity.
+  if (!isKrConfirmedCharacter({ existing, altoy })) {
+    unconfirmedNames.push(name)
+    return null
+  }
 
   const base = {
     // Spreadsheet row IDs can be reordered; keep the app's stable identity when the name matches.
@@ -137,9 +148,11 @@ for (const override of overrides.appendCharacters || []) {
   else characters[index] = { ...characters[index], ...override }
 }
 
+assertExistingCharacterIdentitiesPreserved(existingCharacters, characters)
 fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true })
 writeJsonAtomic(OUT_PATH, characters)
 console.log(`변환 완료: ${characters.length}명 → ${OUT_PATH}`)
+if (unconfirmedNames.length) console.log(`KR 확인 대기 CSV 행 제외: ${unconfirmedNames.join(', ')}`)
 
 function writeJsonAtomic(destination, value) {
   const temporary = `${destination}.tmp-${process.pid}`

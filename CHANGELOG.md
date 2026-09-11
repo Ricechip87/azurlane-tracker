@@ -1,5 +1,20 @@
 # Change Log
 
+## 2026-09-11 - Apply the September 10 KR Update
+
+### Changed
+- Add Amatsukaze to the 887-ship KR roster with her stable CSV/ALtoy identity, fleet-tech values, Korean skills, combat data, local icon, and card artwork; record the September 10–24 limited light-construction event at 2.0% and 00:27:00.
+- Apply official permanent-construction corrections for Alvitr (heavy), Z47 (light), and U-31 (special) without overwriting raw acquisition history or source-comparison status. Reflect Z43's random arena-shop route from the current KR/ALtoy sources, preserving the notice's timing ambiguity rather than inventing a future unlock date.
+- Regenerate the previous event's claim-only stage for Collett and John Rodgers through September 16 at 23:59, and Belfast's updated retrofit hexagon data.
+- Guard roster conversion against spreadsheet rows published before KR availability. Exclude six unconfirmed new rows, retain established identities during temporary source mismatches, and stop before writing when source validation or existing identity preservation fails.
+- Validate generated obtainability against its recorded snapshot date instead of the test machine's current day; keep runtime event-boundary tests explicit.
+- Synchronize 150 newly declared skin/background images to the ignored local reference library, bringing coverage to 16,122 declared assets. Publish only the new icon/card needed by the app, preserving the six pre-existing source-unavailable metadata exceptions.
+
+### Verified
+- Independently review the implementation and source evidence with separate agents, including a future-date test run, unchanged identities for all 886 existing ships, and exact exclusion of the six unconfirmed spreadsheet rows.
+- Cross-check the app, ALtoy, and KR rosters at 887 ships with zero identifier, public-icon, card-art, fleet-tech, faction, or additional-stat mismatches.
+- Run lint, the full test suite, production build, semantic generation-idempotency audit, final local data audit, and `git diff --check`. Existing large-bundle warnings remain non-blocking; raw-source discrepancies remain visible in audit reports instead of being silently overwritten.
+
 ## 2026-09-05 - Refresh Sources and Fix Belfast Retrofit Status
 
 ### Changed

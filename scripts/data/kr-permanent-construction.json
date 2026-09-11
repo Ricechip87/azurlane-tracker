@@ -1,0 +1,27 @@
+{
+  "updatedAt": "2026-09-10",
+  "note": "KR 공식 완료 공지에서 상시 건조 편입이 확인됐으나 ALtoy 건조 플래그가 아직 반영하지 않은 항목. 원본 입수 이력과 원본 간 비교 상태는 보존한다.",
+  "ships": [
+    {
+      "gid": 40406,
+      "name": "알비트",
+      "effectiveAt": "2026-09-10",
+      "pool": "heavy",
+      "source": "https://cafe.naver.com/azurlanekorea/574296"
+    },
+    {
+      "gid": 40147,
+      "name": "Z47",
+      "effectiveAt": "2026-09-10",
+      "pool": "light",
+      "source": "https://cafe.naver.com/azurlanekorea/574296"
+    },
+    {
+      "gid": 40813,
+      "name": "U-31",
+      "effectiveAt": "2026-09-10",
+      "pool": "special",
+      "source": "https://cafe.naver.com/azurlanekorea/574296"
+    }
+  ]
+}

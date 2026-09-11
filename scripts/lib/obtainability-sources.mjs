@@ -28,3 +28,10 @@ export function selectObtainSources({ gid, localKrObtain = [], altoyObtain = [] 
   if (altoyObtain.length > 0) return altoyObtain
   return []
 }
+
+export function resolveOfficialConstruction({ gid, lite, overrides = [], today }) {
+  const override = overrides.find(row => Number(row.gid) === Number(gid) && row.effectiveAt <= today) || null
+  if (!override) return { lite, override: null }
+  if (!['light', 'heavy', 'special'].includes(override.pool)) throw new Error(`지원하지 않는 공식 건조 풀: ${override.pool}`)
+  return { lite: { ...lite, [override.pool]: true, limited: false }, override }
+}

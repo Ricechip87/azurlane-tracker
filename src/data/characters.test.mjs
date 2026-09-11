@@ -3,7 +3,10 @@ import { existsSync } from 'node:fs'
 import { resolveCanRemodel } from '../../scripts/lib/character-remodel-status.mjs'
 import characters from './characters.json' with { type: 'json' }
 
-assert.equal(characters.length, 886, '2026-08-29 KR 노출 함선 886척 반영')
+assert.equal(characters.length, 887, '2026-09-10 KR 노출 함선 887척 반영')
+assert.equal(new Set(characters.map(character => String(character.id))).size, characters.length, '앱 함선 ID는 중복되지 않아야 합니다.')
+assert.equal(new Set(characters.map(character => character.gid)).size, characters.length, '함선 gid는 중복되지 않아야 합니다.')
+assert.equal(characters.some(character => character.gid === 970710), false, 'KR에 등장하지 않은 새러토가(META)는 제외합니다.')
 
 const expectedCharacters = [
   {
@@ -172,6 +175,17 @@ const expectedCharacters = [
     iconFile: '101580.png',
   },
   {
+    id: 169,
+    name: '아마츠카제',
+    gid: 30119,
+    shipType: '구축',
+    faction: '중앵',
+    techPoints: { acquired: 9, maxLB: 18, lv120: 13 },
+    statAcquired: { shipTypes: ['구축'], stat: '회피', value: 1 },
+    stat120: { shipTypes: ['구축'], stat: '뇌격', value: 1 },
+    iconFile: '301190.png',
+  },
+  {
     id: 'Z161',
     name: 'A2',
     gid: 1170001,
@@ -311,3 +325,5 @@ assert.equal(resolveCanRemodel('X', {}), false, '두 출처 모두 개장 정보
 assert.equal(resolveCanRemodel(' O ', {}), true, '추천표 값의 앞뒤 공백을 무시')
 assert.equal(characters.find(character => character.name === '벨파스트')?.canRemodel, true, '벨파스트 ALtoy 개장 반영')
 assert.equal(characters.find(character => character.name === '콜렛')?.canRemodel, false, '개장 정보가 없는 함선은 기존 false 유지')
+assert.equal(characters.find(character => character.gid === 30119)?.rarity, 'SSR', '아마츠카제 KR 희귀도 반영')
+assert.equal(characters.find(character => character.gid === 30119)?.canRemodel, false, '아마츠카제는 개장 함선이 아닙니다.')

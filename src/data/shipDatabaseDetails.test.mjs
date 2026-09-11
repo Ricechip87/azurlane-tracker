@@ -74,8 +74,13 @@ for (const [gid, expectedSkills] of Object.entries({
   10158: ['전탄 발사 - 플레처급II', '어디서든 참견쟁이', '최고의 랜덤 요리'],
   10236: ['특수 탄막 - 빅스버그Ⅱ', '아이돌 레슨·배틀 트레이닝', '~Lucky Power~♪'],
   10720: ['프리스타일 윙', 'Vlogger`s time'],
+  30119: ['특수 탄막 - 아마츠카제Ⅱ', '구름을 꿰뚫는 바람', '거물의 위엄'],
 })) {
   assert.deepEqual(details.ships[gid]?.skills.map(skill => skill.name), expectedSkills, `${gid} 신규 함선 스킬`)
 }
+
+assert.equal(details.ships['30119']?.id, 169, '아마츠카제는 기존 빈 도감 번호 169를 사용합니다.')
+assert.equal(details.ships['30119']?.className, '카게로급')
+assert.equal(details.ships['30119']?.armor, 1)
 
 console.log('shipDatabaseDetails data tests passed')

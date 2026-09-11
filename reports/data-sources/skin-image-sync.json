@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T06:10:48.875Z",
+  "generatedAt": "2026-09-11T13:37:56.403Z",
   "policy": {
     "scope": "Fernando player-ship skin renders and shared background/background2 images declared by ship_skin_list.json",
     "optionalAssets": "null metadata fields are intentionally absent",
@@ -8,20 +8,771 @@
     "preservation": "existing and undeclared local assets are preserved",
     "deployment": "reference-only; images remain under gitignored 참고용 and are not copied to public"
   },
-  "checkedShips": 881,
-  "checkedSkins": 2434,
-  "declaredSkinAssets": 15836,
-  "declaredBackgroundAssets": 136,
-  "declaredBackgroundReferences": 1677,
-  "checkedBackgrounds": 136,
+  "checkedShips": 888,
+  "checkedSkins": 2460,
+  "declaredSkinAssets": 15984,
+  "declaredBackgroundAssets": 138,
+  "declaredBackgroundReferences": 1688,
+  "checkedBackgrounds": 138,
   "excludedBgmReferences": 75,
   "excludedUniqueBgm": 19,
-  "declaredAssets": 15972,
+  "declaredAssets": 16122,
   "existingAssets": 15972,
-  "downloadedAssets": 0,
+  "downloadedAssets": 150,
   "invalidAssets": 0,
-  "fetchedAssets": 0,
-  "downloaded": [],
+  "fetchedAssets": 150,
+  "downloaded": [
+    {
+      "skinId": "201169",
+      "field": "banner",
+      "relativePath": "201169/banner.png"
+    },
+    {
+      "skinId": "201169",
+      "field": "chibi",
+      "relativePath": "201169/chibi.png"
+    },
+    {
+      "skinId": "201169",
+      "field": "icon",
+      "relativePath": "201169/icon.png"
+    },
+    {
+      "skinId": "201169",
+      "field": "painting",
+      "relativePath": "201169/painting.png"
+    },
+    {
+      "skinId": "201169",
+      "field": "qicon",
+      "relativePath": "201169/qicon.png"
+    },
+    {
+      "skinId": "201169",
+      "field": "shipyard",
+      "relativePath": "201169/shipyard.png"
+    },
+    {
+      "skinId": "201190",
+      "field": "banner",
+      "relativePath": "201190/banner.png"
+    },
+    {
+      "skinId": "201190",
+      "field": "chibi",
+      "relativePath": "201190/chibi.png"
+    },
+    {
+      "skinId": "201190",
+      "field": "icon",
+      "relativePath": "201190/icon.png"
+    },
+    {
+      "skinId": "201190",
+      "field": "painting",
+      "relativePath": "201190/painting.png"
+    },
+    {
+      "skinId": "201190",
+      "field": "qicon",
+      "relativePath": "201190/qicon.png"
+    },
+    {
+      "skinId": "201190",
+      "field": "shipyard",
+      "relativePath": "201190/shipyard.png"
+    },
+    {
+      "skinId": "201191",
+      "field": "banner",
+      "relativePath": "201191/banner.png"
+    },
+    {
+      "skinId": "201191",
+      "field": "chibi",
+      "relativePath": "201191/chibi.png"
+    },
+    {
+      "skinId": "201191",
+      "field": "icon",
+      "relativePath": "201191/icon.png"
+    },
+    {
+      "skinId": "201191",
+      "field": "painting",
+      "relativePath": "201191/painting.png"
+    },
+    {
+      "skinId": "201191",
+      "field": "qicon",
+      "relativePath": "201191/qicon.png"
+    },
+    {
+      "skinId": "201191",
+      "field": "shipyard",
+      "relativePath": "201191/shipyard.png"
+    },
+    {
+      "skinId": "201400",
+      "field": "banner",
+      "relativePath": "201400/banner.png"
+    },
+    {
+      "skinId": "201400",
+      "field": "chibi",
+      "relativePath": "201400/chibi.png"
+    },
+    {
+      "skinId": "201400",
+      "field": "icon",
+      "relativePath": "201400/icon.png"
+    },
+    {
+      "skinId": "201400",
+      "field": "painting_n",
+      "relativePath": "201400/painting_n.png"
+    },
+    {
+      "skinId": "201400",
+      "field": "painting",
+      "relativePath": "201400/painting.png"
+    },
+    {
+      "skinId": "201400",
+      "field": "qicon",
+      "relativePath": "201400/qicon.png"
+    },
+    {
+      "skinId": "201400",
+      "field": "shipyard",
+      "relativePath": "201400/shipyard.png"
+    },
+    {
+      "skinId": "201401",
+      "field": "banner",
+      "relativePath": "201401/banner.png"
+    },
+    {
+      "skinId": "201401",
+      "field": "chibi",
+      "relativePath": "201401/chibi.png"
+    },
+    {
+      "skinId": "201401",
+      "field": "icon",
+      "relativePath": "201401/icon.png"
+    },
+    {
+      "skinId": "201401",
+      "field": "painting_n",
+      "relativePath": "201401/painting_n.png"
+    },
+    {
+      "skinId": "201401",
+      "field": "painting",
+      "relativePath": "201401/painting.png"
+    },
+    {
+      "skinId": "201401",
+      "field": "qicon",
+      "relativePath": "201401/qicon.png"
+    },
+    {
+      "skinId": "201401",
+      "field": "shipyard",
+      "relativePath": "201401/shipyard.png"
+    },
+    {
+      "skinId": "202380",
+      "field": "banner",
+      "relativePath": "202380/banner.png"
+    },
+    {
+      "skinId": "202380",
+      "field": "chibi",
+      "relativePath": "202380/chibi.png"
+    },
+    {
+      "skinId": "202380",
+      "field": "icon",
+      "relativePath": "202380/icon.png"
+    },
+    {
+      "skinId": "202380",
+      "field": "painting_n",
+      "relativePath": "202380/painting_n.png"
+    },
+    {
+      "skinId": "202380",
+      "field": "painting",
+      "relativePath": "202380/painting.png"
+    },
+    {
+      "skinId": "202380",
+      "field": "qicon",
+      "relativePath": "202380/qicon.png"
+    },
+    {
+      "skinId": "202380",
+      "field": "shipyard",
+      "relativePath": "202380/shipyard.png"
+    },
+    {
+      "skinId": "202381",
+      "field": "banner",
+      "relativePath": "202381/banner.png"
+    },
+    {
+      "skinId": "202381",
+      "field": "chibi",
+      "relativePath": "202381/chibi.png"
+    },
+    {
+      "skinId": "202381",
+      "field": "icon",
+      "relativePath": "202381/icon.png"
+    },
+    {
+      "skinId": "202381",
+      "field": "painting",
+      "relativePath": "202381/painting.png"
+    },
+    {
+      "skinId": "202381",
+      "field": "qicon",
+      "relativePath": "202381/qicon.png"
+    },
+    {
+      "skinId": "202381",
+      "field": "shipyard",
+      "relativePath": "202381/shipyard.png"
+    },
+    {
+      "skinId": "202382",
+      "field": "painting",
+      "relativePath": "202382/painting.png"
+    },
+    {
+      "skinId": "205162",
+      "field": "banner",
+      "relativePath": "205162/banner.png"
+    },
+    {
+      "skinId": "205162",
+      "field": "chibi",
+      "relativePath": "205162/chibi.png"
+    },
+    {
+      "skinId": "205162",
+      "field": "icon",
+      "relativePath": "205162/icon.png"
+    },
+    {
+      "skinId": "205162",
+      "field": "painting",
+      "relativePath": "205162/painting.png"
+    },
+    {
+      "skinId": "205162",
+      "field": "qicon",
+      "relativePath": "205162/qicon.png"
+    },
+    {
+      "skinId": "205162",
+      "field": "shipyard",
+      "relativePath": "205162/shipyard.png"
+    },
+    {
+      "skinId": "231211",
+      "field": "banner",
+      "relativePath": "231211/banner.png"
+    },
+    {
+      "skinId": "231211",
+      "field": "icon",
+      "relativePath": "231211/icon.png"
+    },
+    {
+      "skinId": "231211",
+      "field": "painting_n",
+      "relativePath": "231211/painting_n.png"
+    },
+    {
+      "skinId": "231211",
+      "field": "painting",
+      "relativePath": "231211/painting.png"
+    },
+    {
+      "skinId": "231211",
+      "field": "qicon",
+      "relativePath": "231211/qicon.png"
+    },
+    {
+      "skinId": "231211",
+      "field": "shipyard",
+      "relativePath": "231211/shipyard.png"
+    },
+    {
+      "skinId": "237031",
+      "field": "banner",
+      "relativePath": "237031/banner.png"
+    },
+    {
+      "skinId": "237031",
+      "field": "chibi",
+      "relativePath": "237031/chibi.png"
+    },
+    {
+      "skinId": "237031",
+      "field": "icon",
+      "relativePath": "237031/icon.png"
+    },
+    {
+      "skinId": "237031",
+      "field": "painting",
+      "relativePath": "237031/painting.png"
+    },
+    {
+      "skinId": "237031",
+      "field": "qicon",
+      "relativePath": "237031/qicon.png"
+    },
+    {
+      "skinId": "237031",
+      "field": "shipyard",
+      "relativePath": "237031/shipyard.png"
+    },
+    {
+      "skinId": "299035",
+      "field": "banner",
+      "relativePath": "299035/banner.png"
+    },
+    {
+      "skinId": "299035",
+      "field": "icon",
+      "relativePath": "299035/icon.png"
+    },
+    {
+      "skinId": "299035",
+      "field": "painting",
+      "relativePath": "299035/painting.png"
+    },
+    {
+      "skinId": "299035",
+      "field": "qicon",
+      "relativePath": "299035/qicon.png"
+    },
+    {
+      "skinId": "299035",
+      "field": "shipyard",
+      "relativePath": "299035/shipyard.png"
+    },
+    {
+      "skinId": "304090",
+      "field": "banner",
+      "relativePath": "304090/banner.png"
+    },
+    {
+      "skinId": "304090",
+      "field": "chibi",
+      "relativePath": "304090/chibi.png"
+    },
+    {
+      "skinId": "304090",
+      "field": "icon",
+      "relativePath": "304090/icon.png"
+    },
+    {
+      "skinId": "304090",
+      "field": "painting",
+      "relativePath": "304090/painting.png"
+    },
+    {
+      "skinId": "304090",
+      "field": "qicon",
+      "relativePath": "304090/qicon.png"
+    },
+    {
+      "skinId": "304090",
+      "field": "shipyard",
+      "relativePath": "304090/shipyard.png"
+    },
+    {
+      "skinId": "304091",
+      "field": "banner",
+      "relativePath": "304091/banner.png"
+    },
+    {
+      "skinId": "304091",
+      "field": "chibi",
+      "relativePath": "304091/chibi.png"
+    },
+    {
+      "skinId": "304091",
+      "field": "icon",
+      "relativePath": "304091/icon.png"
+    },
+    {
+      "skinId": "304091",
+      "field": "painting",
+      "relativePath": "304091/painting.png"
+    },
+    {
+      "skinId": "304091",
+      "field": "qicon",
+      "relativePath": "304091/qicon.png"
+    },
+    {
+      "skinId": "304091",
+      "field": "shipyard",
+      "relativePath": "304091/shipyard.png"
+    },
+    {
+      "skinId": "304092",
+      "field": "banner",
+      "relativePath": "304092/banner.png"
+    },
+    {
+      "skinId": "304092",
+      "field": "icon",
+      "relativePath": "304092/icon.png"
+    },
+    {
+      "skinId": "304092",
+      "field": "painting",
+      "relativePath": "304092/painting.png"
+    },
+    {
+      "skinId": "304092",
+      "field": "qicon",
+      "relativePath": "304092/qicon.png"
+    },
+    {
+      "skinId": "304092",
+      "field": "shipyard",
+      "relativePath": "304092/shipyard.png"
+    },
+    {
+      "skinId": "307053",
+      "field": "banner",
+      "relativePath": "307053/banner.png"
+    },
+    {
+      "skinId": "307053",
+      "field": "icon",
+      "relativePath": "307053/icon.png"
+    },
+    {
+      "skinId": "307053",
+      "field": "painting",
+      "relativePath": "307053/painting.png"
+    },
+    {
+      "skinId": "307053",
+      "field": "qicon",
+      "relativePath": "307053/qicon.png"
+    },
+    {
+      "skinId": "307053",
+      "field": "shipyard",
+      "relativePath": "307053/shipyard.png"
+    },
+    {
+      "skinId": "307162",
+      "field": "banner",
+      "relativePath": "307162/banner.png"
+    },
+    {
+      "skinId": "307162",
+      "field": "icon",
+      "relativePath": "307162/icon.png"
+    },
+    {
+      "skinId": "307162",
+      "field": "painting",
+      "relativePath": "307162/painting.png"
+    },
+    {
+      "skinId": "307162",
+      "field": "qicon",
+      "relativePath": "307162/qicon.png"
+    },
+    {
+      "skinId": "307162",
+      "field": "shipyard",
+      "relativePath": "307162/shipyard.png"
+    },
+    {
+      "skinId": "317030",
+      "field": "banner",
+      "relativePath": "317030/banner.png"
+    },
+    {
+      "skinId": "317030",
+      "field": "chibi",
+      "relativePath": "317030/chibi.png"
+    },
+    {
+      "skinId": "317030",
+      "field": "icon",
+      "relativePath": "317030/icon.png"
+    },
+    {
+      "skinId": "317030",
+      "field": "painting",
+      "relativePath": "317030/painting.png"
+    },
+    {
+      "skinId": "317030",
+      "field": "qicon",
+      "relativePath": "317030/qicon.png"
+    },
+    {
+      "skinId": "317030",
+      "field": "shipyard",
+      "relativePath": "317030/shipyard.png"
+    },
+    {
+      "skinId": "317031",
+      "field": "banner",
+      "relativePath": "317031/banner.png"
+    },
+    {
+      "skinId": "317031",
+      "field": "chibi",
+      "relativePath": "317031/chibi.png"
+    },
+    {
+      "skinId": "317031",
+      "field": "icon",
+      "relativePath": "317031/icon.png"
+    },
+    {
+      "skinId": "317031",
+      "field": "painting",
+      "relativePath": "317031/painting.png"
+    },
+    {
+      "skinId": "317031",
+      "field": "qicon",
+      "relativePath": "317031/qicon.png"
+    },
+    {
+      "skinId": "317031",
+      "field": "shipyard",
+      "relativePath": "317031/shipyard.png"
+    },
+    {
+      "skinId": "403113",
+      "field": "banner",
+      "relativePath": "403113/banner.png"
+    },
+    {
+      "skinId": "403113",
+      "field": "icon",
+      "relativePath": "403113/icon.png"
+    },
+    {
+      "skinId": "403113",
+      "field": "painting",
+      "relativePath": "403113/painting.png"
+    },
+    {
+      "skinId": "403113",
+      "field": "qicon",
+      "relativePath": "403113/qicon.png"
+    },
+    {
+      "skinId": "403113",
+      "field": "shipyard",
+      "relativePath": "403113/shipyard.png"
+    },
+    {
+      "skinId": "403143",
+      "field": "banner",
+      "relativePath": "403143/banner.png"
+    },
+    {
+      "skinId": "403143",
+      "field": "chibi",
+      "relativePath": "403143/chibi.png"
+    },
+    {
+      "skinId": "403143",
+      "field": "icon",
+      "relativePath": "403143/icon.png"
+    },
+    {
+      "skinId": "403143",
+      "field": "painting_n",
+      "relativePath": "403143/painting_n.png"
+    },
+    {
+      "skinId": "403143",
+      "field": "painting",
+      "relativePath": "403143/painting.png"
+    },
+    {
+      "skinId": "403143",
+      "field": "qicon",
+      "relativePath": "403143/qicon.png"
+    },
+    {
+      "skinId": "403143",
+      "field": "shipyard",
+      "relativePath": "403143/shipyard.png"
+    },
+    {
+      "skinId": "802014",
+      "field": "banner",
+      "relativePath": "802014/banner.png"
+    },
+    {
+      "skinId": "802014",
+      "field": "chibi",
+      "relativePath": "802014/chibi.png"
+    },
+    {
+      "skinId": "802014",
+      "field": "icon",
+      "relativePath": "802014/icon.png"
+    },
+    {
+      "skinId": "802014",
+      "field": "painting",
+      "relativePath": "802014/painting.png"
+    },
+    {
+      "skinId": "802014",
+      "field": "qicon",
+      "relativePath": "802014/qicon.png"
+    },
+    {
+      "skinId": "802014",
+      "field": "shipyard",
+      "relativePath": "802014/shipyard.png"
+    },
+    {
+      "skinId": "9600032",
+      "field": "banner",
+      "relativePath": "9600032/banner.png"
+    },
+    {
+      "skinId": "9600032",
+      "field": "icon",
+      "relativePath": "9600032/icon.png"
+    },
+    {
+      "skinId": "9600032",
+      "field": "painting",
+      "relativePath": "9600032/painting.png"
+    },
+    {
+      "skinId": "9600032",
+      "field": "qicon",
+      "relativePath": "9600032/qicon.png"
+    },
+    {
+      "skinId": "9600032",
+      "field": "shipyard",
+      "relativePath": "9600032/shipyard.png"
+    },
+    {
+      "skinId": "9600033",
+      "field": "banner",
+      "relativePath": "9600033/banner.png"
+    },
+    {
+      "skinId": "9600033",
+      "field": "icon",
+      "relativePath": "9600033/icon.png"
+    },
+    {
+      "skinId": "9600033",
+      "field": "painting",
+      "relativePath": "9600033/painting.png"
+    },
+    {
+      "skinId": "9600033",
+      "field": "qicon",
+      "relativePath": "9600033/qicon.png"
+    },
+    {
+      "skinId": "9600033",
+      "field": "shipyard",
+      "relativePath": "9600033/shipyard.png"
+    },
+    {
+      "skinId": "9707090",
+      "field": "banner",
+      "relativePath": "9707090/banner.png"
+    },
+    {
+      "skinId": "9707090",
+      "field": "chibi",
+      "relativePath": "9707090/chibi.png"
+    },
+    {
+      "skinId": "9707090",
+      "field": "icon",
+      "relativePath": "9707090/icon.png"
+    },
+    {
+      "skinId": "9707090",
+      "field": "painting",
+      "relativePath": "9707090/painting.png"
+    },
+    {
+      "skinId": "9707090",
+      "field": "qicon",
+      "relativePath": "9707090/qicon.png"
+    },
+    {
+      "skinId": "9707090",
+      "field": "shipyard",
+      "relativePath": "9707090/shipyard.png"
+    },
+    {
+      "skinId": "9707100",
+      "field": "banner",
+      "relativePath": "9707100/banner.png"
+    },
+    {
+      "skinId": "9707100",
+      "field": "chibi",
+      "relativePath": "9707100/chibi.png"
+    },
+    {
+      "skinId": "9707100",
+      "field": "icon",
+      "relativePath": "9707100/icon.png"
+    },
+    {
+      "skinId": "9707100",
+      "field": "painting",
+      "relativePath": "9707100/painting.png"
+    },
+    {
+      "skinId": "9707100",
+      "field": "qicon",
+      "relativePath": "9707100/qicon.png"
+    },
+    {
+      "skinId": "9707100",
+      "field": "shipyard",
+      "relativePath": "9707100/shipyard.png"
+    },
+    {
+      "skinId": "403143",
+      "field": "background",
+      "relativePath": "background/310.png"
+    },
+    {
+      "skinId": "205162",
+      "field": "background",
+      "relativePath": "background/497.png"
+    }
+  ],
   "replacedInvalid": [],
   "rosterMetadataMissing": [
     {

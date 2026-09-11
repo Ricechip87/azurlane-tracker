@@ -27066,6 +27066,36 @@
     "iconUrl": "/azurlane-tracker/ship-icons/101580.png"
   },
   {
+    "id": 169,
+    "name": "아마츠카제",
+    "rarity": "SSR",
+    "shipType": "구축",
+    "faction": "중앵",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "회피",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "뇌격",
+      "value": 1
+    },
+    "gid": 30119,
+    "techPoints": {
+      "acquired": 9,
+      "maxLB": 18,
+      "lv120": 13
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/301190.png"
+  },
+  {
     "id": "M063",
     "name": "뉘른베르크(META)",
     "rarity": "SR",

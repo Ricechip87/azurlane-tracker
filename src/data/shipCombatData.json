@@ -2,7 +2,7 @@
   "meta": {
     "source": "ALtoy ship_info_data.json",
     "formula": "floor((base + growth * (level - 1) / 1000 + enhance + retrofit) * affinity) + direct equipment stats",
-    "shipCount": 886
+    "shipCount": 887
   },
   "ships": {
     "10000": {
@@ -19874,6 +19874,72 @@
           "accuracy": 13
         }
       },
+      "equipSlots": [
+        [
+          1
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
+    "30119": {
+      "name": "아마츠카제",
+      "shipType": "구축",
+      "type": 1,
+      "research": false,
+      "base": {
+        "health": 359,
+        "firepower": 13,
+        "torpedo": 105,
+        "antiair": 30,
+        "reload": 82,
+        "accuracy": 71,
+        "evasion": 71,
+        "speed": 42.6,
+        "luck": 70,
+        "asw": 52
+      },
+      "maxBase": {
+        "health": 884,
+        "firepower": 32,
+        "torpedo": 261,
+        "antiair": 74,
+        "reload": 82,
+        "accuracy": 71,
+        "evasion": 71,
+        "speed": 42.6,
+        "luck": 70,
+        "asw": 129
+      },
+      "growth": {
+        "health": 10221,
+        "firepower": 177,
+        "torpedo": 1261,
+        "antiair": 656,
+        "reload": 571,
+        "accuracy": 1100,
+        "evasion": 1320,
+        "asw": 586
+      },
+      "enhance": {
+        "firepower": 13,
+        "torpedo": 104,
+        "reload": 61
+      },
+      "retrofit": {},
+      "augment": null,
       "equipSlots": [
         [
           1

@@ -1,35 +1,53 @@
 {
-  "generatedAt": "2026-09-05T06:16:20.870Z",
+  "generatedAt": "2026-09-11T13:44:52.971Z",
   "summary": {
     "identityExceptions": 0,
     "obtainabilityAltoyOnly": 0,
-    "obtainabilityDifferent": 25,
+    "obtainabilityDifferent": 26,
     "missingReferenceImages": 6,
-    "appMissingFleetTech": 2,
+    "appMissingFleetTech": 7,
     "krAppPending": 0,
-    "cnOnlyExcluded": 2,
+    "cnOnlyExcluded": 7,
     "availability": {
-      "active-event": 7,
+      "active-event": 5,
       "collab-unknown": 91,
-      "permanent": 610,
-      "rerun-wait": 178
+      "permanent": 614,
+      "rerun-wait": 177
     },
     "acquisitionRoutes": {
-      "active-event": 7,
+      "active-event": 5,
       "archive-drop": 63,
-      "construction": 323,
+      "construction": 326,
       "core-monthly": 25,
       "fixed-exchange": 112,
       "guaranteed-reward": 21,
       "high-map-drop": 90,
       "later-map-drop": 114,
       "map-drop": 81,
-      "rotating-exchange": 216,
+      "rotating-exchange": 217,
       "special-exchange": 69
     }
   },
   "identityExceptions": [],
   "obtainabilityReview": [
+    {
+      "gid": 40143,
+      "name": "Z43",
+      "status": "different",
+      "reason": "최신 동기화 KR 원천과 ALtoy의 입수처 문구가 서로 다름",
+      "resolution": "review",
+      "krObtain": [
+        "이벤트: 웰컴 투 동심 학원"
+      ],
+      "altoyObtain": [
+        "이벤트: 웰컴 투 동심 학원",
+        "연습 상점(랜덤 출현)"
+      ],
+      "appliedObtain": [
+        "연습 상점(랜덤 출현)"
+      ],
+      "iconFile": "401430.png"
+    },
     {
       "gid": 40199,
       "name": "오토 폰 알벤슬레벤",
@@ -537,7 +555,42 @@
   ],
   "appMissingFleetTech": [
     {
-      "gid": 30119,
+      "gid": 20119,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    },
+    {
+      "gid": 20140,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    },
+    {
+      "gid": 20238,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    },
+    {
+      "gid": 30409,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    },
+    {
+      "gid": 31703,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    },
+    {
+      "gid": 970709,
       "status": "cn-only",
       "label": "CN only",
       "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
@@ -553,7 +606,42 @@
   ],
   "cnOnlyExcluded": [
     {
-      "gid": 30119,
+      "gid": 20119,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    },
+    {
+      "gid": 20140,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    },
+    {
+      "gid": 20238,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    },
+    {
+      "gid": 30409,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    },
+    {
+      "gid": 31703,
+      "status": "cn-only",
+      "label": "CN only",
+      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
+      "iconFile": null
+    },
+    {
+      "gid": 970709,
       "status": "cn-only",
       "label": "CN only",
       "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",

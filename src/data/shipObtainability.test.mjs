@@ -1,9 +1,13 @@
 import assert from 'node:assert/strict'
 import data from './shipObtainability.json' with { type: 'json' }
 import activeEvents from '../../scripts/data/kr-active-events.json' with { type: 'json' }
+import officialConstruction from '../../scripts/data/kr-permanent-construction.json' with { type: 'json' }
 import { toKstDateKey } from '../utils/kstDate.js'
 import { resolveEventAcquisition } from '../utils/eventAcquisition.js'
 
+// A committed data snapshot is verified at its generation date, not the CI machine's current date.
+const snapshotDate = data.meta.asOfDate || toKstDateKey(data.meta.generatedAt)
+assert.match(snapshotDate, /^\d{4}-\d{2}-\d{2}$/, '입수 데이터 생성 기준일 존재')
 const allowedAvailability = new Set(['permanent', 'active-event', 'rerun-wait', 'collab-unknown', 'unknown'])
 assert.equal(data.ships.length, data.meta.total)
 assert.ok(data.ships.every(ship => allowedAvailability.has(ship.availability?.key)))
@@ -22,7 +26,7 @@ for (const name of ['셰르부르', '아로망슈', '랑트레피드']) {
 }
 for (const name of ['브리스톨(META)', '쾨니히스베르크(META)']) {
   const event = activeEvents.events.find(item => item.ships.includes(name))
-  const expected = event?.startsAt <= toKstDateKey() && toKstDateKey() <= event?.endsAt ? 'active-event' : 'rerun-wait'
+  const expected = event?.startsAt <= snapshotDate && snapshotDate <= event?.endsAt ? 'active-event' : 'rerun-wait'
   assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, expected, `${name} KR 이벤트 기간 상태`)
 }
 for (const name of ['A2', '2B']) {
@@ -40,7 +44,7 @@ for (const name of ['슈퍼브', '서리', '그리핀']) {
   const ship = data.ships.find(item => item.name === name)
   const event = activeEvents.events.find(item => item.ships.includes(name))
   assert.ok(event, `${name} KR 이벤트 설정 존재`)
-  const isActive = event.startsAt <= toKstDateKey() && toKstDateKey() <= event.endsAt
+  const isActive = event.startsAt <= snapshotDate && snapshotDate <= event.endsAt
   assert.equal(ship?.availability.key, isActive ? 'active-event' : 'rerun-wait', `${name} KR 이벤트 기간 상태`)
 
   if (isActive) {
@@ -98,19 +102,25 @@ for (const name of ['슈퍼브', '서리', '그리핀']) {
     },
     '존 로저스': { construction: null, obtain: [{ kind: 'milestone-reward', label: '누적 10,000 PT 첫 획득 (추가 20,000/40,000/60,000 PT · 건조 불가 · 09-16 23:59까지)', endsAt: '2026-09-16 23:59' }] },
   }
-  const isActive = event.startsAt <= toKstDateKey() && toKstDateKey() <= event.endsAt
   for (const [name, expectation] of Object.entries(expected)) {
     const ship = data.ships.find(item => item.name === name)
     assert.ok(ship, `${name} 입수 데이터 존재`)
     assert.deepEqual(event.acquisition?.[name], expectation.obtain, `${name} 공식 획득 설정 보존`)
     assert.deepEqual(event.construction?.[name] || null, expectation.construction, `${name} 공식 건조 설정 보존`)
-    assert.equal(ship.availability.key, isActive ? 'active-event' : 'rerun-wait', `${name} KR 이벤트 기간 상태`)
-    if (!isActive) continue
+    const resolved = resolveEventAcquisition(event, name, snapshotDate)
+    assert.equal(ship.availability.key, resolved.availability ? 'active-event' : 'rerun-wait', `${name} 생성 기준일의 KR 이벤트 기간 상태`)
+    if (!resolved.availability) {
+      assert.equal(ship.primaryRoute, null, `${name} 수령 기간까지 종료 후 현재 입수 경로 없음`)
+      assert.equal(ship.build.limited, false, `${name} 종료된 한정 건조 비활성`)
+      continue
+    }
 
-    assert.equal(ship.availability.endsAt, event.endsAt, `${name} 이벤트 종료일`)
-    assert.deepEqual(ship.obtain, [`현재 이벤트: ${event.name} (${event.endsAtLabel})`, ...expectation.obtain.map(route => route.label)], `${name} 현재 상세 입수처`)
-    assert.equal(ship.build.limited, Boolean(expectation.construction), `${name} 한정 건조 여부`)
-    if (expectation.construction) {
+    const heading = resolved.phase === 'claim-only' ? '이벤트 수령 기간' : '현재 이벤트'
+    assert.equal(ship.availability.phase, resolved.phase, `${name} 본 이벤트와 보상 수령 단계 구분`)
+    assert.equal(ship.availability.endsAt, resolved.availability.endsAt, `${name} 현재 가능한 입수처 종료일`)
+    assert.deepEqual(ship.obtain, [`${heading}: ${event.name} (${resolved.availability.endsAtLabel})`, ...resolved.activeRoutes.map(route => route.label)], `${name} 현재 상세 입수처`)
+    assert.equal(ship.build.limited, resolved.buildLimited, `${name} 한정 건조 여부`)
+    if (resolved.buildLimited) {
       assert.equal(ship.build.rate, expectation.construction.rate, `${name} 건조 확률`)
       assert.equal(ship.build.timer, expectation.construction.timer, `${name} 건조 시간`)
     } else {
@@ -126,6 +136,8 @@ for (const name of ['슈퍼브', '서리', '그리핀']) {
     const claim = resolveEventAcquisition(event, name, '2026-09-11')
     assert.equal(claim.phase, 'claim-only', `${name} 수령 기간 유지`)
     assert.equal(claim.availability.label, '이벤트 수령 기간', `${name} 수령 기간 UI 라벨`)
+    assert.equal(resolveEventAcquisition(event, name, '2026-09-16 23:59').phase, 'claim-only', `${name} 마지막 수령 시각까지 유지`)
+    assert.equal(resolveEventAcquisition(event, name, '2026-09-17 00:00').phase, 'ended', `${name} 수령 기한 종료 후 비활성`)
   }
   assert.equal(resolveEventAcquisition(event, '콜렛', '2026-09-11').buildLimited, false, '수령 기간에 콜렛 한정 건조 비활성')
 }
@@ -146,8 +158,47 @@ for (const name of ['슈퍼브', '서리', '그리핀']) {
   const name = '뉘른베르크(META)'
   const event = activeEvents.events.find(item => item.ships.includes(name))
   assert.ok(event, `${name} KR 이벤트 설정 존재`)
-  const isActive = event.startsAt <= toKstDateKey() && toKstDateKey() <= event.endsAt
+  const isActive = event.startsAt <= snapshotDate && snapshotDate <= event.endsAt
   assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, isActive ? 'active-event' : 'rerun-wait', `${name} KR 이벤트 기간 상태`)
+}
+for (const override of officialConstruction.ships) {
+  if (snapshotDate < override.effectiveAt) continue
+  const ship = data.ships.find(item => item.gid === override.gid)
+  assert.ok(ship, `${override.name} 공식 상시화 대상 존재`)
+  assert.equal(ship.availability.key, 'permanent', `${override.name} KR 상시 건조 편입`)
+  assert.equal(ship.build[override.pool], true, `${override.name} 공지에 명시된 건조 풀`)
+  assert.equal(ship.build.limited, false, `${override.name} 과거 한정 건조 플래그 해제`)
+  assert.equal(ship.primaryRoute.key, 'construction', `${override.name} 상시 건조 추천 분류`)
+  assert.deepEqual(ship.verification.officialKrOverride, override, `${override.name} 공식 보정 근거 보존`)
+  assert.ok(ship.historicalObtain.length > 0, `${override.name} 원본 입수 이력 유지`)
+}
+{
+  const name = '아마츠카제'
+  const event = activeEvents.events.find(item => item.ships.includes(name))
+  assert.ok(event, `${name} KR 한정 건조 설정 존재`)
+  assert.equal(event.startsAt, '2026-09-10')
+  assert.equal(event.endsAt, '2026-09-24')
+  assert.equal(event.endsAtLabel, '2026-09-24 점검까지')
+  assert.deepEqual(event.construction[name], { rate: '2.0%', timer: '00:27:00' })
+  assert.deepEqual(event.acquisition[name], [{ kind: 'limited-construction', label: '소형함 한정 건조 2.0% (00:27:00)', endsAt: '2026-09-24' }])
+  assert.ok(event.sources.some(source => source.priority === 'primary' && source.urls.includes('https://cafe.naver.com/azurlanekorea/574296')))
+  assert.ok(event.sources.some(source => source.kind === 'bwiki-cross-check' && source.scope === '건조 시간 교차검증'))
+  assert.equal(resolveEventAcquisition(event, name, '2026-09-09').availability, null, 'KR 등장 이전에는 입수 가능으로 표시하지 않음')
+  assert.equal(resolveEventAcquisition(event, name, '2026-09-11').buildLimited, true)
+  assert.equal(resolveEventAcquisition(event, name, '2026-09-25').availability, null, '한정 건조 종료 다음날에는 비활성')
+  if (snapshotDate >= event.startsAt) {
+    const ship = data.ships.find(item => item.name === name)
+    const resolved = resolveEventAcquisition(event, name, snapshotDate)
+    assert.ok(ship, `${name} 입수 데이터 존재`)
+    assert.equal(ship.availability.key, resolved.availability ? 'active-event' : 'rerun-wait')
+    if (resolved.availability) {
+      assert.equal(ship.build.limited, true)
+      assert.equal(ship.build.light, false, '소형함 기간 한정 추가를 소형함 상시 건조로 오인하지 않음')
+      assert.equal(ship.build.rate, '2.0%')
+      assert.equal(ship.build.timer, '00:27:00')
+      assert.ok(ship.obtain.includes('소형함 한정 건조 2.0% (00:27:00)'))
+    }
+  }
 }
 for (const name of ['던컨', '타카하시', '막스 임멜만', '오라주', '발파라이소']) {
   const ship = data.ships.find(item => item.name === name)
@@ -179,9 +230,20 @@ for (const name of ['이카로스', 'Z24', '어드벤처 갤리']) {
 }
 
 const arenaShopShips = data.ships.filter(ship => ship.permanentSignals?.arenaShop)
-assert.equal(arenaShopShips.length, 59, '현재 KR 연습 상점 함선 전체 집계')
+assert.ok(arenaShopShips.length >= 59, '기존 KR JSON에서 확인된 연습 상점 함선을 누락하지 않음')
 assert.ok(arenaShopShips.every(ship => ship.acquisitionRoutes.some(route => route.key === 'rotating-exchange')), '연습 상점 함선의 추천 난이도와 필터 분류를 모두 연결')
 assert.equal(data.ships.find(ship => ship.name === '에마누엘레 페사노')?.availability.key, 'permanent', 'KR 연습 상점 편입 함선을 복각 대기로 남기지 않음')
+
+if (snapshotDate >= '2026-09-10') {
+  const z43 = data.ships.find(ship => ship.gid === 40143)
+  assert.equal(z43?.availability.key, 'permanent', 'KR 현재 상품 목록과 ALtoy에 일치하는 Z43 연습 상점 편입 반영')
+  assert.ok(z43.obtain.includes('연습 상점(랜덤 출현)'))
+  assert.equal(z43.primaryRoute.key, 'rotating-exchange', 'Z43을 확정 교환·상시 건조로 오인하지 않음')
+  assert.equal(z43.permanentSignals.build, false)
+  const sourceNote = activeEvents.dataCorrections.find(item => item.ship === 'Z43' && item.field === 'obtain')
+  assert.ok(sourceNote.reason.includes('다음 점검 후'), 'KR 공지의 시점 불확실성도 근거에 보존')
+  assert.equal(sourceNote.effectiveAt, undefined, 'Z43 적용일을 임의로 단정하지 않음')
+}
 
 assert.ok(data.ships.every(ship => !ship.obtain.some(source => /상시 건조 \([^)]*상시편입\)/.test(source))), '상세 입수처가 없는 상시편입 기록을 건조로 추정하지 않음')
 
