@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T13:44:52.792Z",
+  "generatedAt": "2026-09-17T16:15:35.169Z",
   "policy": {
     "displayScope": "ALtoy/KR service roster only; name fallback handles six Utawarerumono skin-ID identities",
     "fleetTechPriority": [
@@ -14,15 +14,15 @@
   "sources": {
     "characters": {
       "path": "src/data/characters.json",
-      "sha256": "6e27db8b64440bf3efdeeb8df09635fe342d5cc73a2dbdeae885a927c074d1a6"
+      "sha256": "d22fce6104b792d0c1c03db19fec3b82e1ca6b4f50521ec2546d139c56a1ccb6"
     },
     "altoy": {
       "path": "참고용/ALtoy/data/ship_info_data.json",
-      "sha256": "7970870fec121acdbaaa0f5d6218e473e77ac59845769a14b55d065bdc666ce3"
+      "sha256": "17d7a8a0de8d9018d1df7b286a92ec4fe6e8ca8738b7ba71df448236ba43c8a4"
     },
     "krShips": {
       "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
-      "sha256": "ea08723ea66473f42b6a10601db4e6c37aeea3b35ed059dc830e0be48bab5044"
+      "sha256": "860f251751a573a7afd7b6cf21e94049efcd3715a225e425ed6146134faf897e"
     },
     "cnTech": {
       "path": "참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
@@ -38,7 +38,7 @@
     },
     "krTech": {
       "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/fleet_tech_ship_template.lua",
-      "sha256": "4ecb4c928e9830e6f0c90364dc1e80b20d0fedeb64eb7aad71a379e44acc06f4"
+      "sha256": "f261782fe80e485e0ed65b97afb4a83d75566638ad0d09bcc88b20445e2de64e"
     },
     "twTech": {
       "path": "참고용/AzurLaneLuaScripts/TW/sharecfg/fleet_tech_ship_template.lua",
@@ -46,17 +46,17 @@
     }
   },
   "display": {
-    "appCount": 887,
-    "altoyCount": 887,
-    "krCount": 887,
+    "appCount": 888,
+    "altoyCount": 888,
+    "krCount": 888,
     "outOfScope": [],
     "altoyMissingInApp": [],
     "identityFallbacks": []
   },
   "fleetTech": {
     "cnCount": 759,
-    "krCount": 752,
-    "displayedWithCn": 752,
+    "krCount": 753,
+    "displayedWithCn": 753,
     "displayedWithoutCn": 135,
     "appMissingFleetTechGids": [
       20119,
@@ -64,8 +64,7 @@
       20238,
       30409,
       31703,
-      970709,
-      970710
+      970709
     ],
     "cnKrMismatchCount": 0,
     "cnKrMismatches": [],
@@ -73,7 +72,7 @@
       "cnTech": 759,
       "enTech": 759,
       "jpTech": 759,
-      "krTech": 752,
+      "krTech": 753,
       "twTech": 748
     },
     "regionalLuaVsCnMismatchCounts": {

@@ -3,10 +3,12 @@ import { existsSync } from 'node:fs'
 import { resolveCanRemodel } from '../../scripts/lib/character-remodel-status.mjs'
 import characters from './characters.json' with { type: 'json' }
 
-assert.equal(characters.length, 887, '2026-09-10 KR 노출 함선 887척 반영')
+assert.equal(characters.length, 888, '2026-09-17 KR 노출 함선 888척 반영')
 assert.equal(new Set(characters.map(character => String(character.id))).size, characters.length, '앱 함선 ID는 중복되지 않아야 합니다.')
 assert.equal(new Set(characters.map(character => character.gid)).size, characters.length, '함선 gid는 중복되지 않아야 합니다.')
-assert.equal(characters.some(character => character.gid === 970710), false, 'KR에 등장하지 않은 새러토가(META)는 제외합니다.')
+for (const name of ['타이거', '아즈치', '이14', '헤이스티', '빅토리어스(META)']) {
+  assert.equal(characters.some(character => character.name === name), false, `${name}은 KR 미출시이므로 제외합니다.`)
+}
 
 const expectedCharacters = [
   {
@@ -85,6 +87,17 @@ const expectedCharacters = [
     statAcquired: { shipTypes: ['경순'], stat: '내구', value: 1 },
     stat120: { shipTypes: ['경순'], stat: '대공', value: 1 },
     iconFile: '9702130.png',
+  },
+  {
+    id: 'M064',
+    name: '새러토가(META)',
+    gid: 970710,
+    shipType: '항모',
+    faction: 'META',
+    techPoints: { acquired: 19, maxLB: 39, lv120: 29 },
+    statAcquired: { shipTypes: ['경항모', '항모'], stat: '내구', value: 2 },
+    stat120: { shipTypes: ['경항모', '항모'], stat: '항공', value: 1 },
+    iconFile: '9707100.png',
   },
   {
     id: 746,
@@ -327,3 +340,5 @@ assert.equal(characters.find(character => character.name === '벨파스트')?.ca
 assert.equal(characters.find(character => character.name === '콜렛')?.canRemodel, false, '개장 정보가 없는 함선은 기존 false 유지')
 assert.equal(characters.find(character => character.gid === 30119)?.rarity, 'SSR', '아마츠카제 KR 희귀도 반영')
 assert.equal(characters.find(character => character.gid === 30119)?.canRemodel, false, '아마츠카제는 개장 함선이 아닙니다.')
+assert.equal(characters.find(character => character.gid === 970710)?.rarity, 'SSR', '새러토가(META) KR 희귀도 반영')
+assert.equal(characters.find(character => character.gid === 970710)?.canRemodel, false, '새러토가(META)는 개장 함선이 아닙니다.')

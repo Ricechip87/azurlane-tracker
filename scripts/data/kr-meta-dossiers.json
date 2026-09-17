@@ -1,0 +1,205 @@
+{
+  "updatedAt": "2026-09-17",
+  "note": "KR 공식 완료 공지의 비콘 파일 현행 목록 18척. 호넷만 이번 신규 편입이며 기존 17척은 해당 공지로 상시 입수를 재확인했다. 기존 함선의 최초 편입일은 추정하지 않으며 확인일 전의 생성에는 보정을 적용하지 않는다. 원문 '리나온·META'와 '리벌스·META'는 도감의 리나운·리펄스와 gid로 대응한다. 원본 입수 이력과 원본 간 비교 상태는 보존한다.",
+  "ships": [
+    {
+      "gid": 970706,
+      "name": "호넷(META)",
+      "noticeName": "호넷·META",
+      "effectiveAt": "2026-09-17",
+      "verifiedAt": "2026-09-17",
+      "change": "new-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970705,
+      "name": "다이호(META)",
+      "noticeName": "다이호·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970506,
+      "name": "나가토(META)",
+      "noticeName": "나가토·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970304,
+      "name": "위치타(META)",
+      "noticeName": "위치타·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970505,
+      "name": "로드니(META)",
+      "noticeName": "로드니·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970206,
+      "name": "키로프(META)",
+      "noticeName": "키로프·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970205,
+      "name": "진츠(META)",
+      "noticeName": "진츠·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970302,
+      "name": "알제리(META)",
+      "noticeName": "알제리·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970504,
+      "name": "퀸 엘리자베스(META)",
+      "noticeName": "퀸 엘리자베스·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970503,
+      "name": "애리조나(META)",
+      "noticeName": "애리조나·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970404,
+      "name": "리나운(META)",
+      "noticeName": "리나온·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970403,
+      "name": "리펄스(META)",
+      "noticeName": "리벌스·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970402,
+      "name": "샤른호르스트(META)",
+      "noticeName": "샤른호르스트·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970401,
+      "name": "그나이제나우(META)",
+      "noticeName": "그나이제나우·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970703,
+      "name": "소류(META)",
+      "noticeName": "소류·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970201,
+      "name": "헬레나(META)",
+      "noticeName": "헬레나·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970702,
+      "name": "아크 로열(META)",
+      "noticeName": "아크 로열·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    },
+    {
+      "gid": 970701,
+      "name": "히류(META)",
+      "noticeName": "히류·META",
+      "verifiedAt": "2026-09-17",
+      "change": "verified-existing-dossier",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "source": "https://cafe.naver.com/azurlanekorea/574395"
+    }
+  ]
+}

@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-09-18 - Apply the September 17 KR META Update
+
+### Changed
+- Add Saratoga META to the 888-ship KR roster with stable app ID `M064`, Korean training skills, combat and fleet-tech data, local icon, and card artwork. Record her September 17–December 24 META beacon event and expire Bristol META's event and the previous Eagle Union reward-claim period.
+- Correct exactly 18 officially listed META dossier ships to permanent special acquisition. Distinguish Hornet META's new September 17 inclusion from verification of the 17 existing entries, retaining raw acquisition history and source-comparison status.
+- Add the five newly released augments for Intrepid, Tallinn, U-73, Gloucester, and Kitakaze, and recover 13 older missing augments from current KR Lua. Preserve the existing +10 direct-stat policy; conditional augment effects and enhanced-skill substitution are not implemented.
+- Synchronize KR augment and META-training Lua alongside the JSON mirror, using it only for missing records. Parse required literal fields without executing Lua and reject malformed values or incomplete new augment chains. The same training-skill filter also removes Bristol/Koenigsberg META's non-training barrages and Elbe META's Operation Siren passive from their displayed training-skill lists.
+- Refresh documentation and source audit reports. Preserve the ignored local library of 16,122 declared skin/background assets and its six existing metadata exceptions; publish only the new runtime icon and card image, not bulk reference artwork.
+
+### Verified
+- Split implementation and independent verification across agents. Preserve all 887 existing roster objects including identifier values and types; add only Saratoga META and continue excluding the five unconfirmed CSV rows.
+- Cross-check the app, ALtoy, and KR rosters at 888 ships with zero identifier, public-icon, card-art, fleet-tech, faction, or additional-stat mismatches. Retain raw-source discrepancies in reports rather than hide them.
+- Add regression tests for literal parsing, incomplete augment chains, the new ship and five new augment values, official dossier scope, and event dates. Run lint, the full test suite, production build, semantic generation-idempotency audit, final local data audit, and `git diff --check`; existing large-bundle warnings remain non-blocking.
+
 ## 2026-09-11 - Apply the September 10 KR Update
 
 ### Changed

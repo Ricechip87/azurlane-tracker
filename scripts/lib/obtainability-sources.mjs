@@ -35,3 +35,12 @@ export function resolveOfficialConstruction({ gid, lite, overrides = [], today }
   if (!['light', 'heavy', 'special'].includes(override.pool)) throw new Error(`지원하지 않는 공식 건조 풀: ${override.pool}`)
   return { lite: { ...lite, [override.pool]: true, limited: false }, override }
 }
+
+export function resolveOfficialMetaDossier({ gid, dossiers = [], today }) {
+  // An existing entry's verification date is not its historical release date.
+  // Do not infer earlier availability when the official notice only lists current entries.
+  return dossiers.find(row => {
+    const confirmedFrom = row.effectiveAt || row.verifiedAt
+    return Number(row.gid) === Number(gid) && confirmedFrom && confirmedFrom <= today
+  }) || null
+}

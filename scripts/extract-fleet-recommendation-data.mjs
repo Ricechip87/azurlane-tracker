@@ -6,6 +6,7 @@ import {
   buildShipCombatData,
   buildStageRequirements,
 } from './lib/fleet-recommendation-sources.mjs'
+import { mergeMissingSourceRecords, parseKrAugmentStatsLua, validateKrAugmentFallbacks } from './lib/kr-combat-lua-sources.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const referenceRoot = path.join(root, '참고용')
@@ -27,6 +28,14 @@ const spWeaponStatistics = readJson(path.join(
   'sharecfgdata',
   'spweapon_data_statistics.json',
 ))
+const spWeaponLuaPath = path.join(referenceRoot, 'AzurLaneLuaScripts', 'KR', 'sharecfgdata', 'spweapon_data_statistics.lua')
+const augmentSources = mergeMissingSourceRecords(
+  spWeaponStatistics,
+  fs.existsSync(spWeaponLuaPath) ? parseKrAugmentStatsLua(fs.readFileSync(spWeaponLuaPath, 'utf8')) : {},
+)
+if (fs.existsSync(spWeaponLuaPath)) {
+  validateKrAugmentFallbacks(altoyShips, augmentSources.records, augmentSources.addedIds)
+}
 const chapters = readJson(path.join(
   referenceRoot,
   'AzurLaneData',
@@ -35,7 +44,7 @@ const chapters = readJson(path.join(
   'chapter_template.json',
 ))
 
-const combat = buildShipCombatData(characters, altoyShips, spWeaponStatistics)
+const combat = buildShipCombatData(characters, altoyShips, augmentSources.records)
 if (combat.missing.length) {
   throw new Error(`편성 추천 함선 원천 누락: ${combat.missing.map(item => `${item.name}(${item.gid})`).join(', ')}`)
 }
@@ -43,6 +52,10 @@ if (combat.missing.length) {
 writeJson('shipCombatData.json', {
   meta: {
     source: 'ALtoy ship_info_data.json',
+    augmentSources: [
+      'AzurLaneData KR spweapon_data_statistics.json',
+      ...(augmentSources.addedIds.length ? ['KR Lua spweapon_data_statistics.lua (missing JSON records only)'] : []),
+    ],
     formula: 'floor((base + growth * (level - 1) / 1000 + enhance + retrofit) * affinity) + direct equipment stats',
     shipCount: Object.keys(combat.ships).length,
   },

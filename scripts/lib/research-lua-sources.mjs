@@ -39,7 +39,7 @@ export function parseShipDataGroupGidsLua(text) {
   return gids
 }
 
-function extractAssignments(text, tableName) {
+export function extractAssignments(text, tableName) {
   const pattern = new RegExp(`(?:_G\\.)?pg\\.base\\.${tableName}\\[(\\d+)\\]\\s*=\\s*\\{`, 'g')
   const result = []
   for (const match of text.matchAll(pattern)) {

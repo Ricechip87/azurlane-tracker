@@ -4,6 +4,18 @@ import details from './shipDatabaseDetails.json' with { type: 'json' }
 
 assert.equal(details.meta.shipCount, characters.length)
 assert.equal(Object.keys(details.ships).length, characters.length)
+assert.equal(details.meta.equipmentExcluded, true, '특수장비 강화 효과로 기본 스킬 설명을 대체하지 않습니다.')
+
+assert.equal(details.ships['970710']?.id, 30064, '상세 정보는 ALtoy 도감 ID를 유지합니다.')
+assert.equal(details.ships['970710']?.sid, 9707101)
+assert.equal(details.ships['970710']?.armor, 2)
+assert.equal(details.ships['970710']?.retrofit, null)
+assert.deepEqual(details.ships['970710']?.skills.map(skill => skill.name), [
+  '빛나라★아이돌 엔트리!',
+  '반짝여라★퍼펙트 퍼포먼스!',
+  '물들여라★컬러풀 스테이지!',
+], '새러토가(META)는 KR 육성 대상인 본 스킬 세 개를 표시합니다.')
+assert.equal(details.ships['970710']?.missingSkillCount, 0)
 
 assert.equal(details.ships['970213']?.className, '뉘른베르크(META)')
 assert.deepEqual(details.ships['970213']?.skills.map(skill => skill.name), [

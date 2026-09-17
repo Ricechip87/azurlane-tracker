@@ -88,6 +88,20 @@ const downloads = [
     expectedText: 'ship_data_group',
   },
   {
+    id: 'kr-spweapon-statistics-lua',
+    url: 'https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/spweapon_data_statistics.lua',
+    relativePath: 'AzurLaneLuaScripts/KR/sharecfgdata/spweapon_data_statistics.lua',
+    type: 'lua',
+    expectedText: 'spweapon_data_statistics',
+  },
+  {
+    id: 'kr-meta-strengthen-lua',
+    url: 'https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/ship_strengthen_meta.lua',
+    relativePath: 'AzurLaneLuaScripts/KR/sharecfg/ship_strengthen_meta.lua',
+    type: 'lua',
+    expectedText: 'ship_strengthen_meta',
+  },
+  {
     id: 'kr-blueprint-lua',
     url: 'https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/ship_data_blueprint.lua',
     relativePath: 'AzurLaneLuaScripts/KR/sharecfg/ship_data_blueprint.lua',

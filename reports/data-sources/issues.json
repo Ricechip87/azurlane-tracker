@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-09-11T13:44:52.971Z",
+  "generatedAt": "2026-09-17T16:15:35.299Z",
   "summary": {
     "identityExceptions": 0,
     "obtainabilityAltoyOnly": 0,
     "obtainabilityDifferent": 26,
     "missingReferenceImages": 6,
-    "appMissingFleetTech": 7,
+    "appMissingFleetTech": 6,
     "krAppPending": 0,
-    "cnOnlyExcluded": 7,
+    "cnOnlyExcluded": 6,
     "availability": {
-      "active-event": 5,
+      "active-event": 3,
       "collab-unknown": 91,
-      "permanent": 614,
-      "rerun-wait": 177
+      "permanent": 632,
+      "rerun-wait": 162
     },
     "acquisitionRoutes": {
-      "active-event": 5,
+      "active-event": 3,
       "archive-drop": 63,
       "construction": 326,
       "core-monthly": 25,
@@ -25,7 +25,7 @@
       "later-map-drop": 114,
       "map-drop": 81,
       "rotating-exchange": 217,
-      "special-exchange": 69
+      "special-exchange": 87
     }
   },
   "identityExceptions": [],
@@ -595,13 +595,6 @@
       "label": "CN only",
       "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
       "iconFile": null
-    },
-    {
-      "gid": 970710,
-      "status": "cn-only",
-      "label": "CN only",
-      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
-      "iconFile": null
     }
   ],
   "cnOnlyExcluded": [
@@ -642,13 +635,6 @@
     },
     {
       "gid": 970709,
-      "status": "cn-only",
-      "label": "CN only",
-      "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",
-      "iconFile": null
-    },
-    {
-      "gid": 970710,
       "status": "cn-only",
       "label": "CN only",
       "reason": "CN 기술 원본에는 있으나 최신 KR·ALtoy 함선 목록과 현재 앱 함선 DB에는 없음",

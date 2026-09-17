@@ -1,26 +1,26 @@
 {
   "meta": {
     "note": "KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.",
-    "generatedAt": "2026-09-11T13:44:50.690Z",
-    "asOfDate": "2026-09-11",
-    "total": 887,
-    "withObtain": 887,
+    "generatedAt": "2026-09-17T16:15:33.420Z",
+    "asOfDate": "2026-09-18",
+    "total": 888,
+    "withObtain": 888,
     "withoutObtain": 0,
     "availability": {
-      "active-event": 5,
+      "active-event": 3,
       "collab-unknown": 91,
-      "permanent": 614,
-      "rerun-wait": 177
+      "permanent": 632,
+      "rerun-wait": 162
     },
     "difficulty": {
       "easy": 328,
-      "event": 5,
-      "hard": 65,
-      "limited": 268,
+      "event": 3,
+      "hard": 83,
+      "limited": 253,
       "normal": 221
     },
     "acquisitionRoutes": {
-      "active-event": 5,
+      "active-event": 3,
       "archive-drop": 63,
       "construction": 326,
       "core-monthly": 25,
@@ -30,7 +30,7 @@
       "later-map-drop": 114,
       "map-drop": 81,
       "rotating-exchange": 217,
-      "special-exchange": 69
+      "special-exchange": 87
     },
     "source": "https://jforplay.github.io/altoy"
   },
@@ -6563,8 +6563,7 @@
       "faction": "유니온",
       "shipType": "구축",
       "obtain": [
-        "이벤트 수령 기간: 몽광의 아스트라리움 (2026-09-16 23:59까지)",
-        "이벤트 상점 8,000 PT 교환 (최대 5회 · 09-16 23:59까지)"
+        "이벤트: 몽광의 아스트라리움"
       ],
       "historicalObtain": [
         "이벤트: 몽광의 아스트라리움"
@@ -6589,66 +6588,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "이벤트 수령 기간",
-        "eventName": "몽광의 아스트라리움",
-        "endsAt": "2026-09-16 23:59",
-        "endsAtLabel": "2026-09-16 23:59까지",
-        "phase": "claim-only",
-        "startsAt": "2026-08-27",
-        "mainEndsAt": "2026-09-10",
-        "mainEndsAtLabel": "2026-09-10 점검까지",
-        "claimEndsAt": "2026-09-16 23:59",
-        "eventRoutes": [
-          {
-            "kind": "limited-construction",
-            "label": "한정 건조 0.5% (00:29:00)",
-            "endsAt": "2026-09-10"
-          },
-          {
-            "kind": "event-exchange",
-            "label": "이벤트 상점 8,000 PT 교환 (최대 5회 · 09-16 23:59까지)",
-            "endsAt": "2026-09-16 23:59"
-          },
-          {
-            "kind": "event-drop",
-            "label": "이벤트 해역 B3/D3/SP 드롭",
-            "endsAt": "2026-09-10"
-          }
-        ],
-        "activeEventRoutes": [
-          {
-            "kind": "event-exchange",
-            "label": "이벤트 상점 8,000 PT 교환 (최대 5회 · 09-16 23:59까지)",
-            "endsAt": "2026-09-16 23:59"
-          }
-        ]
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "이벤트 수령 기간",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "이벤트 수령 기간 몽광의 아스트라리움"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "이벤트 수령 기간",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "이벤트 수령 기간 몽광의 아스트라리움"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -6718,8 +6667,7 @@
       "faction": "유니온",
       "shipType": "구축",
       "obtain": [
-        "이벤트 수령 기간: 몽광의 아스트라리움 (2026-09-16 23:59까지)",
-        "누적 10,000 PT 첫 획득 (추가 20,000/40,000/60,000 PT · 건조 불가 · 09-16 23:59까지)"
+        "이벤트: 몽광의 아스트라리움"
       ],
       "historicalObtain": [
         "이벤트: 몽광의 아스트라리움"
@@ -6744,56 +6692,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "이벤트 수령 기간",
-        "eventName": "몽광의 아스트라리움",
-        "endsAt": "2026-09-16 23:59",
-        "endsAtLabel": "2026-09-16 23:59까지",
-        "phase": "claim-only",
-        "startsAt": "2026-08-27",
-        "mainEndsAt": "2026-09-10",
-        "mainEndsAtLabel": "2026-09-10 점검까지",
-        "claimEndsAt": "2026-09-16 23:59",
-        "eventRoutes": [
-          {
-            "kind": "milestone-reward",
-            "label": "누적 10,000 PT 첫 획득 (추가 20,000/40,000/60,000 PT · 건조 불가 · 09-16 23:59까지)",
-            "endsAt": "2026-09-16 23:59"
-          }
-        ],
-        "activeEventRoutes": [
-          {
-            "kind": "milestone-reward",
-            "label": "누적 10,000 PT 첫 획득 (추가 20,000/40,000/60,000 PT · 건조 불가 · 09-16 23:59까지)",
-            "endsAt": "2026-09-16 23:59"
-          }
-        ]
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "이벤트 수령 기간",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "이벤트 수령 기간 몽광의 아스트라리움"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "이벤트 수령 기간",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "이벤트 수령 기간 몽광의 아스트라리움"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -70250,105 +70158,10 @@
       "faction": "META",
       "shipType": "구축",
       "obtain": [
-        "현재 이벤트: META전 - 브리스톨 (2026-09-17까지)",
-        "이벤트: META전 - 브리스톨"
+        "META 연구실·정보 동기화"
       ],
       "historicalObtain": [
         "META 연구실·정보 동기화"
-      ],
-      "obtainEn": [
-        "META Lab - Coordinate Analysis"
-      ],
-      "build": {
-        "light": false,
-        "heavy": false,
-        "special": false,
-        "limited": false,
-        "timer": null
-      },
-      "mapDrops": [],
-      "permanentSignals": {
-        "map": false,
-        "archive": false,
-        "coreMonthly": false,
-        "arenaShop": false,
-        "build": false,
-        "shop": false,
-        "other": false,
-        "timeline": false
-      },
-      "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "META전 - 브리스톨",
-        "endsAt": "2026-09-17",
-        "endsAtLabel": "2026-09-17까지",
-        "phase": "main",
-        "startsAt": "2026-06-18",
-        "mainEndsAt": "2026-09-17",
-        "mainEndsAtLabel": "2026-09-17까지",
-        "claimEndsAt": null,
-        "eventRoutes": [
-          {
-            "kind": "event",
-            "label": "이벤트: META전 - 브리스톨",
-            "endsAt": "2026-09-17"
-          }
-        ],
-        "activeEventRoutes": [
-          {
-            "kind": "event",
-            "label": "이벤트: META전 - 브리스톨",
-            "endsAt": "2026-09-17"
-          }
-        ]
-      },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 META전 - 브리스톨"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 META전 - 브리스톨"
-        ]
-      },
-      "difficulty": {
-        "key": "event",
-        "label": "이벤트",
-        "reasons": [
-          "현재 진행 중인 KR 이벤트"
-        ]
-      },
-      "verification": {
-        "localKr": false,
-        "localResource": true,
-        "altoy": true,
-        "status": "altoy-only"
-      }
-    },
-    {
-      "id": "M003",
-      "gid": 970201,
-      "name": "헬레나(META)",
-      "rarity": "SSR",
-      "faction": "META",
-      "shipType": "경순",
-      "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
-      ],
-      "historicalObtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
       ],
       "obtainEn": [
         "META Lab - Coordinate Analysis"
@@ -70385,10 +70198,94 @@
         ]
       },
       "verification": {
+        "localKr": false,
+        "localResource": true,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
+      "id": "M003",
+      "gid": 970201,
+      "name": "헬레나(META)",
+      "rarity": "SSR",
+      "faction": "META",
+      "shipType": "경순",
+      "obtain": [
+        "META 연구실·비콘 파일"
+      ],
+      "historicalObtain": [
+        "한정 이벤트: META 연구실-정보 동기화"
+      ],
+      "obtainEn": [
+        "META Lab - Coordinate Analysis"
+      ],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": true,
+        "timeline": false
+      },
+      "availability": {
+        "key": "permanent",
+        "label": "상시 획득"
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
+      "difficulty": {
+        "key": "hard",
+        "label": "어려움",
+        "reasons": [
+          "상시 획득처",
+          "META 연구실·비콘 파일"
+        ]
+      },
+      "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970201,
+          "name": "헬레나(META)",
+          "noticeName": "헬레나·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -70621,7 +70518,7 @@
       "faction": "META",
       "shipType": "경순",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -70644,27 +70541,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970205,
+          "name": "진츠(META)",
+          "noticeName": "진츠·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -70675,7 +70602,7 @@
       "faction": "META",
       "shipType": "경순",
       "obtain": [
-        "한정 이벤트:META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트:META 연구실-정보 동기화"
@@ -70698,27 +70625,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970206,
+          "name": "키로프(META)",
+          "noticeName": "키로프·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -71220,7 +71177,7 @@
       "faction": "META",
       "shipType": "중순",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -71243,27 +71200,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970302,
+          "name": "알제리(META)",
+          "noticeName": "알제리·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -71328,7 +71315,7 @@
       "faction": "META",
       "shipType": "중순",
       "obtain": [
-        "META 연구실·정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "META 연구실·정보 동기화"
@@ -71351,27 +71338,58 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일",
+          "META 연구실·정보 동기화"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970304,
+          "name": "위치타(META)",
+          "noticeName": "위치타·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -71490,7 +71508,7 @@
       "faction": "META",
       "shipType": "순전",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -71513,27 +71531,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970401,
+          "name": "그나이제나우(META)",
+          "noticeName": "그나이제나우·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -71544,7 +71592,7 @@
       "faction": "META",
       "shipType": "순전",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -71567,27 +71615,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970402,
+          "name": "샤른호르스트(META)",
+          "noticeName": "샤른호르스트·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -71598,7 +71676,7 @@
       "faction": "META",
       "shipType": "순전",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -71621,27 +71699,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970403,
+          "name": "리펄스(META)",
+          "noticeName": "리벌스·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -71652,7 +71760,7 @@
       "faction": "META",
       "shipType": "순전",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -71675,27 +71783,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970404,
+          "name": "리나운(META)",
+          "noticeName": "리나온·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -71962,7 +72100,7 @@
       "faction": "META",
       "shipType": "전함",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -71985,27 +72123,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970503,
+          "name": "애리조나(META)",
+          "noticeName": "애리조나·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -72016,7 +72184,7 @@
       "faction": "META",
       "shipType": "전함",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -72039,27 +72207,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970504,
+          "name": "퀸 엘리자베스(META)",
+          "noticeName": "퀸 엘리자베스·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -72070,7 +72268,7 @@
       "faction": "META",
       "shipType": "전함",
       "obtain": [
-        "META 연구실·정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "META 연구실·정보 동기화"
@@ -72093,27 +72291,58 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일",
+          "META 연구실·정보 동기화"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970505,
+          "name": "로드니(META)",
+          "noticeName": "로드니·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -72124,7 +72353,7 @@
       "faction": "META",
       "shipType": "전함",
       "obtain": [
-        "META 연구실·정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "META 연구실·정보 동기화"
@@ -72147,27 +72376,58 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일",
+          "META 연구실·정보 동기화"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970506,
+          "name": "나가토(META)",
+          "noticeName": "나가토·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -72704,7 +72964,7 @@
       "faction": "META",
       "shipType": "항모",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -72727,27 +72987,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970701,
+          "name": "히류(META)",
+          "noticeName": "히류·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -72758,7 +73048,7 @@
       "faction": "META",
       "shipType": "항모",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -72781,27 +73071,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970702,
+          "name": "아크 로열(META)",
+          "noticeName": "아크 로열·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -72812,7 +73132,7 @@
       "faction": "META",
       "shipType": "항모",
       "obtain": [
-        "한정 이벤트: META 연구실-정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "한정 이벤트: META 연구실-정보 동기화"
@@ -72835,27 +73155,57 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970703,
+          "name": "소류(META)",
+          "noticeName": "소류·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -72920,7 +73270,7 @@
       "faction": "META",
       "shipType": "항모",
       "obtain": [
-        "META 연구실·정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "META 연구실·정보 동기화"
@@ -72943,27 +73293,58 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일",
+          "META 연구실·정보 동기화"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970705,
+          "name": "다이호(META)",
+          "noticeName": "다이호·META",
+          "verifiedAt": "2026-09-17",
+          "change": "verified-existing-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -72974,7 +73355,7 @@
       "faction": "META",
       "shipType": "항모",
       "obtain": [
-        "META 연구실·정보 동기화"
+        "META 연구실·비콘 파일"
       ],
       "historicalObtain": [
         "META 연구실·정보 동기화"
@@ -72997,27 +73378,59 @@
         "arenaShop": false,
         "build": false,
         "shop": false,
-        "other": false,
+        "other": true,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 연구실·비콘 파일"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 연구실·비콘 파일"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상시 획득처",
+          "META 연구실·비콘 파일",
+          "META 연구실·정보 동기화"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialMetaDossier": {
+          "gid": 970706,
+          "name": "호넷(META)",
+          "noticeName": "호넷·META",
+          "effectiveAt": "2026-09-17",
+          "verifiedAt": "2026-09-17",
+          "change": "new-dossier",
+          "obtain": [
+            "META 연구실·비콘 파일"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574395"
+        }
       }
     },
     {
@@ -73126,6 +73539,99 @@
         "localResource": true,
         "altoy": true,
         "status": "matched"
+      }
+    },
+    {
+      "id": "M064",
+      "gid": 970710,
+      "name": "새러토가(META)",
+      "rarity": "SSR",
+      "faction": "META",
+      "shipType": "항모",
+      "obtain": [
+        "현재 이벤트: META전 - 새러토가 (2026-12-24 점검까지)",
+        "비콘·META 도전 및 정보 동기화"
+      ],
+      "historicalObtain": [
+        "META 연구실·정보 동기화"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "META전 - 새러토가",
+        "endsAt": "2026-12-24",
+        "endsAtLabel": "2026-12-24 점검까지",
+        "phase": "main",
+        "startsAt": "2026-09-17",
+        "mainEndsAt": "2026-12-24",
+        "mainEndsAtLabel": "2026-12-24 점검까지",
+        "claimEndsAt": null,
+        "eventRoutes": [
+          {
+            "kind": "meta-beacon",
+            "label": "비콘·META 도전 및 정보 동기화",
+            "endsAt": "2026-12-24"
+          }
+        ],
+        "activeEventRoutes": [
+          {
+            "kind": "meta-beacon",
+            "label": "비콘·META 도전 및 정보 동기화",
+            "endsAt": "2026-12-24"
+          }
+        ]
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 META전 - 새러토가"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 META전 - 새러토가"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {

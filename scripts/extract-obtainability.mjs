@@ -3,9 +3,10 @@ import path from 'node:path'
 import characters from '../src/data/characters.json' with { type: 'json' }
 import activeEvents from './data/kr-active-events.json' with { type: 'json' }
 import officialConstruction from './data/kr-permanent-construction.json' with { type: 'json' }
+import officialMetaDossiers from './data/kr-meta-dossiers.json' with { type: 'json' }
 import { classifyObtainability } from './lib/obtainability-classifier.mjs'
 import { normalizeConstructionSources } from './lib/construction-sources.mjs'
-import { selectObtainSources, resolveOfficialConstruction } from './lib/obtainability-sources.mjs'
+import { selectObtainSources, resolveOfficialConstruction, resolveOfficialMetaDossier } from './lib/obtainability-sources.mjs'
 import { buildArenaShopGids, timelineFallbackSource } from './lib/permanent-shop-sources.mjs'
 import { toKstDateKey } from '../src/utils/kstDate.js'
 import { resolveEventAcquisition } from '../src/utils/eventAcquisition.js'
@@ -205,6 +206,7 @@ const ships = characters.map(character => {
   const localKrObtain = descriptionList(krByGid.get(gid)?.description)
   const altoyObtain = normalizeList(full?.description)
   const rawObtain = selectObtainSources({ gid, localKrObtain, altoyObtain })
+  const officialMetaDossier = resolveOfficialMetaDossier({ gid, dossiers: officialMetaDossiers.ships, today: asOfDate })
   const drops = mapDrops(lite)
   const timelineInfo = permanentTimelineInfo.get(nameKey)
   const permanentSignals = {
@@ -214,11 +216,11 @@ const ships = characters.map(character => {
     arenaShop: arenaShopGids.has(Number(lite?.gid ?? full?.gid ?? gid)),
     build: Boolean(lite?.light || lite?.heavy || lite?.special),
     shop: altoyObtain.some(source => SHOP_PATTERN.test(source)),
-    other: altoyObtain.some(source => OTHER_PERMANENT_PATTERN.test(source)),
+    other: Boolean(officialMetaDossier) || altoyObtain.some(source => OTHER_PERMANENT_PATTERN.test(source)),
     timeline: Boolean(timelineInfo),
   }
   const activeEvent = currentEventFor(character.name)
-  const obtain = currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent })
+  const obtain = officialMetaDossier?.obtain || currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent })
   const classification = classifyObtainability({
     name: character.name,
     faction: character.faction,
@@ -250,6 +252,7 @@ const ships = characters.map(character => {
       localKr: localKrObtain.length > 0, localResource: Boolean(local), altoy: Boolean(full),
       status: compareLists(localKrObtain, altoyObtain),
       ...(officialKrOverride ? { officialKrOverride } : {}),
+      ...(officialMetaDossier ? { officialMetaDossier } : {}),
     },
   }
 }).sort((a, b) => a.gid - b.gid)

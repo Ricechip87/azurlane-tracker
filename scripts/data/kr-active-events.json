@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10",
+  "updatedAt": "2026-09-17",
   "dataCorrections": [
     {
       "ship": "Z43",
@@ -57,6 +57,26 @@
     }
   ],
   "events": [
+    {
+      "name": "META전 - 새러토가",
+      "startsAt": "2026-09-17",
+      "endsAt": "2026-12-24",
+      "endsAtLabel": "2026-12-24 점검까지",
+      "ships": ["새러토가(META)"],
+      "acquisition": {
+        "새러토가(META)": [
+          { "kind": "meta-beacon", "label": "비콘·META 도전 및 정보 동기화", "endsAt": "2026-12-24" }
+        ]
+      },
+      "sources": [
+        {
+          "kind": "official-kr-full-notice",
+          "priority": "primary",
+          "scope": "KR 공식 업데이트 완료 공지 · 새러토가·META 비콘 도전 기간 및 브리스톨·META 종료",
+          "urls": ["https://cafe.naver.com/azurlanekorea/574395"]
+        }
+      ]
+    },
     {
       "name": "'거물'의 예고장",
       "startsAt": "2026-09-10",
@@ -184,8 +204,17 @@
       "name": "META전 - 브리스톨",
       "startsAt": "2026-06-18",
       "endsAt": "2026-09-17",
+      "endsAtLabel": "2026-09-17 점검까지",
       "ships": ["브리스톨(META)"],
-      "source": "ALtoy KR event timeline"
+      "source": "ALtoy KR event timeline",
+      "sources": [
+        {
+          "kind": "official-kr-full-notice",
+          "priority": "primary",
+          "scope": "브리스톨·META 도전 및 정보 동기화 누적 종료일 확인",
+          "urls": ["https://cafe.naver.com/azurlanekorea/574395"]
+        }
+      ]
     },
     {
       "name": "월드 투어",

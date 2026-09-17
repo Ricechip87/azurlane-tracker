@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import data from './shipObtainability.json' with { type: 'json' }
 import activeEvents from '../../scripts/data/kr-active-events.json' with { type: 'json' }
 import officialConstruction from '../../scripts/data/kr-permanent-construction.json' with { type: 'json' }
+import officialMetaDossiers from '../../scripts/data/kr-meta-dossiers.json' with { type: 'json' }
 import { toKstDateKey } from '../utils/kstDate.js'
 import { resolveEventAcquisition } from '../utils/eventAcquisition.js'
 
@@ -28,6 +29,57 @@ for (const name of ['브리스톨(META)', '쾨니히스베르크(META)']) {
   const event = activeEvents.events.find(item => item.ships.includes(name))
   const expected = event?.startsAt <= snapshotDate && snapshotDate <= event?.endsAt ? 'active-event' : 'rerun-wait'
   assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, expected, `${name} KR 이벤트 기간 상태`)
+}
+{
+  const name = '새러토가(META)'
+  const event = activeEvents.events.find(item => item.ships.includes(name))
+  assert.ok(event, '새러토가 META KR 비콘 도전 설정 존재')
+  if (snapshotDate >= event.startsAt) {
+    const ship = data.ships.find(item => item.gid === 970710)
+    const resolved = resolveEventAcquisition(event, name, snapshotDate)
+    assert.ok(ship, 'KR 출시 후 새러토가 META 입수 데이터 존재')
+    assert.equal(ship.name, name)
+    assert.equal(ship.availability.key, resolved.availability ? 'active-event' : 'rerun-wait')
+    assert.deepEqual(ship.build, { light: false, heavy: false, special: false, limited: false, timer: null }, '비콘 동기화 함선을 건조 후보로 표시하지 않는다')
+    if (resolved.availability) {
+      assert.equal(ship.availability.endsAtLabel, '2026-12-24 점검까지')
+      assert.deepEqual(ship.obtain, [
+        '현재 이벤트: META전 - 새러토가 (2026-12-24 점검까지)',
+        '비콘·META 도전 및 정보 동기화',
+      ])
+      assert.equal(ship.primaryRoute.key, 'active-event')
+      assert.equal(ship.difficulty.key, 'event')
+    } else {
+      assert.equal(ship.primaryRoute, null)
+    }
+  }
+}
+for (const dossier of officialMetaDossiers.ships) {
+  if (snapshotDate < (dossier.effectiveAt || dossier.verifiedAt)) continue
+  const ship = data.ships.find(item => item.gid === dossier.gid)
+  assert.ok(ship, `${dossier.name} 공식 비콘 파일 대상 존재`)
+  assert.equal(ship.name, dossier.name)
+  assert.equal(ship.availability.key, 'permanent', `${dossier.name} 상시 비콘 파일 입수`)
+  assert.deepEqual(ship.obtain, ['META 연구실·비콘 파일'])
+  assert.equal(ship.primaryRoute.key, 'special-exchange', '건조·상점 교환이 아닌 특수 연구 경로')
+  assert.equal(ship.permanentSignals.other, true)
+  assert.equal(ship.permanentSignals.build, false)
+  assert.deepEqual(ship.verification.officialMetaDossier, dossier, '공식 현행 목록 및 신규/기존 구분 보존')
+  assert.ok(ship.historicalObtain.length > 0, '원본 META 동기화 입수 이력 보존')
+  assert.ok(['matched', 'different', 'local-only', 'altoy-only'].includes(ship.verification.status), '원본 간 비교 상태를 보정 여부로 덮어쓰지 않는다')
+}
+if (snapshotDate >= '2026-09-18') {
+  for (const name of ['브리스톨(META)', '콜렛', '존 로저스']) {
+    const ship = data.ships.find(item => item.name === name)
+    assert.equal(ship.availability.key, 'rerun-wait', `${name} 전투 및 보상 수령 기간 모두 종료`)
+    assert.equal(ship.primaryRoute, null)
+    assert.equal(ship.build.limited, false)
+  }
+  for (const gid of [970710, 970112, 970213, 970212, 970708]) {
+    const ship = data.ships.find(item => item.gid === gid)
+    assert.notEqual(ship.availability.key, 'permanent', `${ship.name}은 공식 비콘 파일 명단에 없음`)
+    assert.equal(ship.verification.officialMetaDossier, undefined)
+  }
 }
 for (const name of ['A2', '2B']) {
   const ship = data.ships.find(item => item.name === name)

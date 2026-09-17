@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-11 22:44:50 KST",
-  "appShipCount": 887,
+  "generatedAt": "2026-09-18 01:15:33 KST",
+  "appShipCount": 888,
   "policy": {
     "configuredShipTypes": [
       "순전",
@@ -225,16 +225,16 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 98,
-        "stat120": 98
+        "statAcquired": 99,
+        "stat120": 99
       },
       "candidateCounts": {
-        "내구": 64,
+        "내구": 65,
         "대공": 7,
         "대잠": 28,
         "명중": 15,
         "장전": 32,
-        "항공": 47
+        "항공": 48
       }
     },
     "항모": {
@@ -253,16 +253,16 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 66,
-        "stat120": 88
+        "statAcquired": 67,
+        "stat120": 89
       },
       "candidateCounts": {
-        "내구": 59,
+        "내구": 60,
         "대공": 7,
         "대잠": 4,
         "명중": 15,
         "장전": 28,
-        "항공": 41
+        "항공": 42
       }
     },
     "구축": {
@@ -453,7 +453,7 @@
   },
   "broadCoverage": {
     "모니터중순대형순공용": 194,
-    "경항모항모공용": 154
+    "경항모항모공용": 156
   },
   "invalidBonusCount": 0,
   "invalidBonuses": [],
@@ -613,7 +613,7 @@
         "명중"
       ],
       "candidateCounts": {
-        "항공": 47,
+        "항공": 48,
         "장전": 32,
         "명중": 15
       }

@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { mergeMissingSourceRecords, parseKrMetaSkillsLua } from './lib/kr-combat-lua-sources.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const altoyShips = readJson('참고용/ALtoy/data/ship_info_data.json')
@@ -11,7 +12,12 @@ const skillTemplates = readJson(
     : '참고용/AzurLaneData/KR/ShareCfg/skill_data_template.json',
 )
 const nameCodes = readJson('참고용/AzurLaneData/KR/ShareCfg/name_code.json')
-const metaStrengthen = readJson('참고용/AzurLaneData/KR/ShareCfg/ship_strengthen_meta.json')
+const metaStrengthenLuaPath = path.join(root, '참고용/AzurLaneLuaScripts/KR/sharecfg/ship_strengthen_meta.lua')
+const metaStrengthenSources = mergeMissingSourceRecords(
+  readJson('참고용/AzurLaneData/KR/ShareCfg/ship_strengthen_meta.json'),
+  fs.existsSync(metaStrengthenLuaPath) ? parseKrMetaSkillsLua(fs.readFileSync(metaStrengthenLuaPath, 'utf8')) : {},
+)
+const metaStrengthen = metaStrengthenSources.records
 const outputPath = path.join(root, 'src/data/shipDatabaseDetails.json')
 const KNOWN_EMPTY_SKILL_REFERENCES = new Set([
   6550, // 리슐리외 한계돌파 내부 트리거
@@ -99,6 +105,7 @@ fs.writeFileSync(outputPath, `${JSON.stringify({
         : 'AzurLaneData KR skill_data_template.json',
       'AzurLaneData KR name_code.json',
       'AzurLaneData KR ship_strengthen_meta.json',
+      ...(metaStrengthenSources.addedIds.length ? ['KR Lua ship_strengthen_meta.lua (missing JSON records only)'] : []),
       'KR in-game verified skill overrides',
     ],
     equipmentExcluded: true,

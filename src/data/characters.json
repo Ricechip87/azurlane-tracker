@@ -27124,5 +27124,37 @@
     },
     "gid": 970213,
     "iconUrl": "/azurlane-tracker/ship-icons/9702130.png"
+  },
+  {
+    "id": "M064",
+    "name": "새러토가(META)",
+    "rarity": "SSR",
+    "shipType": "항모",
+    "faction": "META",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경항모",
+        "항모"
+      ],
+      "stat": "내구",
+      "value": 2
+    },
+    "stat120": {
+      "shipTypes": [
+        "경항모",
+        "항모"
+      ],
+      "stat": "항공",
+      "value": 1
+    },
+    "gid": 970710,
+    "techPoints": {
+      "acquired": 19,
+      "maxLB": 39,
+      "lv120": 29
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/9707100.png"
   }
 ]
