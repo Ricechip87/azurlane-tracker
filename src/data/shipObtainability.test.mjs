@@ -299,4 +299,57 @@ if (snapshotDate >= '2026-09-10') {
 
 assert.ok(data.ships.every(ship => !ship.obtain.some(source => /상시 건조 \([^)]*상시편입\)/.test(source))), '상세 입수처가 없는 상시편입 기록을 건조로 추정하지 않음')
 
+{
+  const event = activeEvents.events.find(item => item.name === '유영 미성')
+  assert.ok(event, '유영 미성 KR 이벤트 설정')
+  assert.equal(event.startsAt, '2026-09-24')
+  assert.equal(event.endsAt, '2026-10-16 23:59')
+  assert.equal(event.claimEndsAt, '2026-10-23 23:59')
+  assert.ok(event.sources.some(source => source.priority === 'primary' && source.urls.includes('https://cafe.naver.com/azurlanekorea/574487')))
+  const rates = { 아즈치: '1.2%', 이14: '2.0%', 헤이스티: '2.5%', '빅토리어스(META)': '0.5%' }
+  for (const name of ['호스타일', '헤이스티', '타이거', '아즈치', '이14', '빅토리어스(META)']) {
+    assert.ok(event.ships.includes(name))
+    const ship = data.ships.find(item => item.name === name)
+    const resolved = resolveEventAcquisition(event, name, snapshotDate)
+    assert.equal(ship?.availability.key, resolved.availability ? 'active-event' : 'rerun-wait', `${name} 이벤트 입수 상태`)
+    assert.equal(ship.build.limited, resolved.buildLimited, `${name} 이벤트 건조 여부`)
+    if (resolved.buildLimited) assert.equal(ship.build.rate, rates[name], `${name} 공식 건조 확률`)
+    assert.equal(resolveEventAcquisition(event, name, '2026-09-23').phase, 'ended', `${name} 이벤트 개시 전 비활성`)
+    assert.equal(resolveEventAcquisition(event, name, '2026-10-24').phase, 'ended', `${name} 보상 수령 종료 후 비활성`)
+  }
+  for (const name of ['아즈치', '이14', '헤이스티']) {
+    assert.equal(resolveEventAcquisition(event, name, '2026-10-17').phase, 'ended')
+  }
+  for (const name of ['타이거', '호스타일', '빅토리어스(META)']) {
+    const claim = resolveEventAcquisition(event, name, '2026-10-17')
+    assert.equal(claim.phase, 'claim-only', `${name} 교환·보상 수령 기간 유지`)
+    assert.equal(claim.buildLimited, false, `${name} 수령 기간 건조 종료`)
+  }
+  assert.ok(event.acquisition.아즈치[0].label.includes('200회'))
+  assert.ok(event.acquisition.타이거[0].label.includes('200/300'))
+  assert.ok(event.acquisition['빅토리어스(META)'].some(route => route.kind === 'event-exchange' && route.label.includes('8,000')))
+}
+
+{
+  const event = activeEvents.informationalEvents.find(item => item.name === '유영 수용 협의')
+  assert.ok(event)
+  assert.equal(event.startsAt, '2026-09-24')
+  assert.equal(event.rewardStartsAt, '2026-09-30', '임무 시작과 7일차 보상 개방 날짜를 구분한다')
+  assert.equal(event.endsAt, '2026-10-16 23:59')
+  assert.equal(event.claimEndsAt, undefined, '별도 공지 없는 보상 수령 연장 금지')
+  const ship = data.ships.find(item => item.name === '골든 하인드')
+  assert.equal(ship.availability.key, 'permanent', '골든 하인드 기존 상시 경로 유지')
+  assert.equal(ship.build.light, true)
+  assert.ok(ship.obtain.includes('소형함 상시 건조'))
+}
+
+{
+  const invitation = activeEvents.informationalEvents.find(event => event.name === '특별 축제 리턴')
+  assert.equal(invitation.selectionCount, 1)
+  assert.equal(invitation.ships.length, 8)
+  for (const name of invitation.ships) {
+    assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, 'permanent', `${name} 초대장 추가로 상시 입수처를 숨기지 않는다`)
+  }
+}
+
 console.log('shipObtainability data tests passed')

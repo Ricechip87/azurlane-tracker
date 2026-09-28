@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-18 01:15:33 KST",
-  "appShipCount": 888,
+  "generatedAt": "2026-09-29 04:56:40 KST",
+  "appShipCount": 894,
   "policy": {
     "configuredShipTypes": [
       "순전",
@@ -108,15 +108,15 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 122,
-        "stat120": 122
+        "statAcquired": 123,
+        "stat120": 123
       },
       "candidateCounts": {
-        "내구": 117,
+        "내구": 118,
         "대공": 5,
         "명중": 15,
         "장전": 16,
-        "화력": 68,
+        "화력": 69,
         "회피": 21
       }
     },
@@ -136,15 +136,15 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 122,
-        "stat120": 100
+        "statAcquired": 123,
+        "stat120": 101
       },
       "candidateCounts": {
-        "내구": 117,
+        "내구": 118,
         "대공": 5,
         "명중": 15,
         "장전": 16,
-        "화력": 66,
+        "화력": 67,
         "회피": 1
       }
     },
@@ -167,15 +167,15 @@
         "항공"
       ],
       "sourceCounts": {
-        "statAcquired": 122,
-        "stat120": 100
+        "statAcquired": 123,
+        "stat120": 101
       },
       "candidateCounts": {
-        "내구": 117,
+        "내구": 118,
         "대공": 5,
         "명중": 15,
         "장전": 16,
-        "화력": 66,
+        "화력": 67,
         "회피": 1
       }
     },
@@ -225,12 +225,12 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 99,
-        "stat120": 99
+        "statAcquired": 100,
+        "stat120": 100
       },
       "candidateCounts": {
-        "내구": 65,
-        "대공": 7,
+        "내구": 66,
+        "대공": 8,
         "대잠": 28,
         "명중": 15,
         "장전": 32,
@@ -253,12 +253,12 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 67,
-        "stat120": 89
+        "statAcquired": 68,
+        "stat120": 90
       },
       "candidateCounts": {
-        "내구": 60,
-        "대공": 7,
+        "내구": 61,
+        "대공": 8,
         "대잠": 4,
         "명중": 15,
         "장전": 28,
@@ -285,15 +285,15 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 233,
-        "stat120": 233
+        "statAcquired": 235,
+        "stat120": 235
       },
       "candidateCounts": {
-        "내구": 217,
-        "뇌격": 30,
+        "내구": 219,
+        "뇌격": 31,
         "대공": 31,
         "대잠": 26,
-        "명중": 16,
+        "명중": 17,
         "장전": 20,
         "화력": 62,
         "회피": 36
@@ -319,17 +319,17 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 143,
-        "stat120": 143
+        "statAcquired": 144,
+        "stat120": 144
       },
       "candidateCounts": {
         "내구": 90,
         "뇌격": 27,
-        "대공": 39,
+        "대공": 40,
         "대잠": 12,
         "명중": 32,
         "장전": 17,
-        "화력": 47,
+        "화력": 48,
         "회피": 5
       }
     },
@@ -410,12 +410,12 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 36,
+        "statAcquired": 37,
         "stat120": 34
       },
       "candidateCounts": {
         "내구": 12,
-        "뇌격": 33,
+        "뇌격": 34,
         "명중": 14,
         "화력": 2,
         "회피": 9
@@ -438,14 +438,14 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 36,
-        "stat120": 36
+        "statAcquired": 37,
+        "stat120": 37
       },
       "candidateCounts": {
         "내구": 12,
-        "뇌격": 33,
+        "뇌격": 34,
         "명중": 14,
-        "항공": 2,
+        "항공": 3,
         "화력": 2,
         "회피": 9
       }
@@ -453,7 +453,7 @@
   },
   "broadCoverage": {
     "모니터중순대형순공용": 194,
-    "경항모항모공용": 156
+    "경항모항모공용": 158
   },
   "invalidBonusCount": 0,
   "invalidBonuses": [],
@@ -534,11 +534,11 @@
         "명중"
       ],
       "candidateCounts": {
-        "뇌격": 30,
+        "뇌격": 31,
         "회피": 36,
         "화력": 62,
         "장전": 20,
-        "명중": 16
+        "명중": 17
       }
     },
     "light-cruiser": {
@@ -554,8 +554,8 @@
         "뇌격"
       ],
       "candidateCounts": {
-        "대공": 39,
-        "화력": 47,
+        "대공": 40,
+        "화력": 48,
         "장전": 17,
         "명중": 32,
         "뇌격": 27
@@ -595,7 +595,7 @@
         "명중"
       ],
       "candidateCounts": {
-        "화력": 109,
+        "화력": 110,
         "항공": 0,
         "장전": 26,
         "명중": 23
@@ -631,9 +631,9 @@
         "회피"
       ],
       "candidateCounts": {
-        "뇌격": 33,
+        "뇌격": 34,
         "명중": 14,
-        "항공": 2,
+        "항공": 3,
         "회피": 9
       }
     }

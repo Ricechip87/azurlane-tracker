@@ -95,6 +95,13 @@ const downloads = [
     expectedText: 'spweapon_data_statistics',
   },
   {
+    id: 'kr-equipment-statistics-lua',
+    url: 'https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/equip_data_statistics.lua',
+    relativePath: 'AzurLaneLuaScripts/KR/sharecfgdata/equip_data_statistics.lua',
+    type: 'lua',
+    expectedText: 'equip_data_statistics',
+  },
+  {
     id: 'kr-meta-strengthen-lua',
     url: 'https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/ship_strengthen_meta.lua',
     relativePath: 'AzurLaneLuaScripts/KR/sharecfg/ship_strengthen_meta.lua',

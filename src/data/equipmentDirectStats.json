@@ -1,6 +1,26 @@
 {
   "meta": {
     "source": "AzurLaneData KR equip_data_statistics.json",
+    "fallbackSource": "KR Lua equip_data_statistics.lua (officially verified missing JSON records only)",
+    "fallbackRecordIds": [
+      22300,
+      22310,
+      22320,
+      22330
+    ],
+    "fallbackVerification": {
+      "verifiedAt": "2026-09-29",
+      "effectiveAt": "2026-09-24",
+      "baseIds": [
+        22300,
+        22320
+      ],
+      "note": "공식 KR 업데이트로 확인된 152mm 연장포 MK.XXVI T3(SSR)·T0(UR)만 JSON 누락 시 KR Lua 기본형과 +10 레코드로 보완한다. 다른 미러 누락 장비나 기존 JSON 레코드는 변경하지 않는다.",
+      "sources": [
+        "https://cafe.naver.com/azurlanekorea/574487",
+        "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/equip_data_statistics.lua"
+      ]
+    },
     "enhancement": 10,
     "policy": "직접 능력치만 포함. 확률·조건부·공격·회복·보호막 효과 제외.",
     "availability": "첫 버전은 장비 수량 및 복각 상태를 자동 판정하지 않음."
@@ -632,6 +652,20 @@
       }
     },
     {
+      "id": 22320,
+      "name": "152mm 연장포 MK.XXVI",
+      "icon": "22300",
+      "type": 2,
+      "rarity": 6,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 55,
+        "antiair": 10
+      }
+    },
+    {
       "id": 12160,
       "name": "3연장 152mm 주포 Mk16",
       "icon": "12160",
@@ -669,6 +703,20 @@
       ],
       "stats": {
         "firepower": 45
+      }
+    },
+    {
+      "id": 22300,
+      "name": "152mm 연장포 MK.XXVI",
+      "icon": "22300",
+      "type": 2,
+      "rarity": 5,
+      "shipTypes": [
+        2
+      ],
+      "stats": {
+        "firepower": 35,
+        "antiair": 10
       }
     },
     {

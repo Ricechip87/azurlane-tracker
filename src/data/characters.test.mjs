@@ -3,12 +3,26 @@ import { existsSync } from 'node:fs'
 import { resolveCanRemodel } from '../../scripts/lib/character-remodel-status.mjs'
 import characters from './characters.json' with { type: 'json' }
 
-assert.equal(characters.length, 888, '2026-09-17 KR 노출 함선 888척 반영')
+assert.equal(characters.length, 894, '2026-09-24 KR 노출 함선 894척 반영')
 assert.equal(new Set(characters.map(character => String(character.id))).size, characters.length, '앱 함선 ID는 중복되지 않아야 합니다.')
 assert.equal(new Set(characters.map(character => character.gid)).size, characters.length, '함선 gid는 중복되지 않아야 합니다.')
-for (const name of ['타이거', '아즈치', '이14', '헤이스티', '빅토리어스(META)']) {
-  assert.equal(characters.some(character => character.name === name), false, `${name}은 KR 미출시이므로 제외합니다.`)
+for (const [gid, name, shipType, rarity] of [
+  [20119, '호스타일', '구축', 'SR'],
+  [20140, '헤이스티', '구축', 'SR'],
+  [20238, '타이거', '경순', 'UR'],
+  [30409, '아즈치', '순전', 'UR'],
+  [31703, '이14', '잠항모', 'SSR'],
+  [970709, '빅토리어스(META)', '항모', 'SSR'],
+]) {
+  const ship = characters.find(character => character.gid === gid)
+  assert.ok(ship, `${name}은 KR 정식 출시 함선입니다.`)
+  assert.equal(ship.name, name)
+  assert.equal(ship.shipType, shipType)
+  assert.equal(ship.rarity, rarity)
+  assert.ok(ship.techPoints.acquired > 0, `${name} 기술점수가 있어야 합니다.`)
+  assert.ok(ship.iconUrl.endsWith(`/${gid}0.png`), `${name} 기본 아이콘이 있어야 합니다.`)
 }
+assert.equal(characters.find(character => character.gid === 20116)?.canRemodel, true, '하디 KR 개장 추가')
 
 const expectedCharacters = [
   {

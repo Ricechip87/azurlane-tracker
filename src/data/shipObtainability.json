@@ -1,28 +1,28 @@
 {
   "meta": {
     "note": "KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.",
-    "generatedAt": "2026-09-17T16:15:33.420Z",
-    "asOfDate": "2026-09-18",
-    "total": 888,
-    "withObtain": 888,
+    "generatedAt": "2026-09-28T19:56:40.727Z",
+    "asOfDate": "2026-09-29",
+    "total": 894,
+    "withObtain": 894,
     "withoutObtain": 0,
     "availability": {
-      "active-event": 3,
+      "active-event": 8,
       "collab-unknown": 91,
-      "permanent": 632,
-      "rerun-wait": 162
+      "permanent": 629,
+      "rerun-wait": 166
     },
     "difficulty": {
       "easy": 328,
-      "event": 3,
+      "event": 8,
       "hard": 83,
-      "limited": 253,
-      "normal": 221
+      "limited": 257,
+      "normal": 218
     },
     "acquisitionRoutes": {
-      "active-event": 3,
+      "active-event": 8,
       "archive-drop": 63,
-      "construction": 326,
+      "construction": 323,
       "core-monthly": 25,
       "fixed-exchange": 112,
       "guaranteed-reward": 21,
@@ -23242,6 +23242,99 @@
       }
     },
     {
+      "id": 99,
+      "gid": 20119,
+      "name": "호스타일",
+      "rarity": "SR",
+      "faction": "로열",
+      "shipType": "구축",
+      "obtain": [
+        "현재 이벤트: 유영 미성 (2026-10-16 23:59까지)",
+        "파트너볼 누적 획득 보상 (10-23 23:59까지)"
+      ],
+      "historicalObtain": [
+        "이벤트: 유영 미성"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "유영 미성",
+        "endsAt": "2026-10-16 23:59",
+        "endsAtLabel": "2026-10-16 23:59까지",
+        "phase": "main",
+        "startsAt": "2026-09-24",
+        "mainEndsAt": "2026-10-16 23:59",
+        "mainEndsAtLabel": "2026-10-16 23:59까지",
+        "claimEndsAt": "2026-10-23 23:59",
+        "eventRoutes": [
+          {
+            "kind": "milestone-reward",
+            "label": "파트너볼 누적 획득 보상 (10-23 23:59까지)",
+            "endsAt": "2026-10-23 23:59"
+          }
+        ],
+        "activeEventRoutes": [
+          {
+            "kind": "milestone-reward",
+            "label": "파트너볼 누적 획득 보상 (10-23 23:59까지)",
+            "endsAt": "2026-10-23 23:59"
+          }
+        ]
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 유영 미성"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 유영 미성"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
       "id": 100,
       "gid": 20120,
       "name": "헌터",
@@ -25119,6 +25212,100 @@
         "localResource": true,
         "altoy": true,
         "status": "matched"
+      }
+    },
+    {
+      "id": 757,
+      "gid": 20140,
+      "name": "헤이스티",
+      "rarity": "SR",
+      "faction": "로열",
+      "shipType": "구축",
+      "obtain": [
+        "현재 이벤트: 유영 미성 (2026-10-16 23:59까지)",
+        "한정 건조 2.5%"
+      ],
+      "historicalObtain": [
+        "이벤트: 유영 미성"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": null,
+        "rate": "2.5%"
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "유영 미성",
+        "endsAt": "2026-10-16 23:59",
+        "endsAtLabel": "2026-10-16 23:59까지",
+        "phase": "main",
+        "startsAt": "2026-09-24",
+        "mainEndsAt": "2026-10-16 23:59",
+        "mainEndsAtLabel": "2026-10-16 23:59까지",
+        "claimEndsAt": "2026-10-23 23:59",
+        "eventRoutes": [
+          {
+            "kind": "limited-construction",
+            "label": "한정 건조 2.5%",
+            "endsAt": "2026-10-16 23:59"
+          }
+        ],
+        "activeEventRoutes": [
+          {
+            "kind": "limited-construction",
+            "label": "한정 건조 2.5%",
+            "endsAt": "2026-10-16 23:59"
+          }
+        ]
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 유영 미성"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 유영 미성"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {
@@ -28463,6 +28650,99 @@
         "label": "현재 획득 불가",
         "reasons": [
           "복각 대기"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
+      "id": 754,
+      "gid": 20238,
+      "name": "타이거",
+      "rarity": "UR",
+      "faction": "로열",
+      "shipType": "경순",
+      "obtain": [
+        "현재 이벤트: 유영 미성 (2026-10-16 23:59까지)",
+        "진휘의 장식 200/300개로 1·2번째 교환 (최대 2회 · 10-23 23:59까지)"
+      ],
+      "historicalObtain": [
+        "이벤트: 유영 미성"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "유영 미성",
+        "endsAt": "2026-10-16 23:59",
+        "endsAtLabel": "2026-10-16 23:59까지",
+        "phase": "main",
+        "startsAt": "2026-09-24",
+        "mainEndsAt": "2026-10-16 23:59",
+        "mainEndsAtLabel": "2026-10-16 23:59까지",
+        "claimEndsAt": "2026-10-23 23:59",
+        "eventRoutes": [
+          {
+            "kind": "event-exchange",
+            "label": "진휘의 장식 200/300개로 1·2번째 교환 (최대 2회 · 10-23 23:59까지)",
+            "endsAt": "2026-10-23 23:59"
+          }
+        ],
+        "activeEventRoutes": [
+          {
+            "kind": "event-exchange",
+            "label": "진휘의 장식 200/300개로 1·2번째 교환 (최대 2회 · 10-23 23:59까지)",
+            "endsAt": "2026-10-23 23:59"
+          }
+        ]
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 유영 미성"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 유영 미성"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
         ]
       },
       "verification": {
@@ -36222,8 +36502,7 @@
       "faction": "중앵",
       "shipType": "구축",
       "obtain": [
-        "현재 이벤트: '거물'의 예고장 (2026-09-24 점검까지)",
-        "소형함 한정 건조 2.0% (00:27:00)"
+        "이벤트: 거물의 예고장"
       ],
       "historicalObtain": [
         "이벤트: 거물의 예고장"
@@ -36233,9 +36512,8 @@
         "light": false,
         "heavy": false,
         "special": false,
-        "limited": true,
-        "timer": "00:27:00",
-        "rate": "2.0%"
+        "limited": false,
+        "timer": null
       },
       "mapDrops": [],
       "permanentSignals": {
@@ -36249,56 +36527,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "'거물'의 예고장",
-        "endsAt": "2026-09-24",
-        "endsAtLabel": "2026-09-24 점검까지",
-        "phase": "main",
-        "startsAt": "2026-09-10",
-        "mainEndsAt": "2026-09-24",
-        "mainEndsAtLabel": "2026-09-24 점검까지",
-        "claimEndsAt": null,
-        "eventRoutes": [
-          {
-            "kind": "limited-construction",
-            "label": "소형함 한정 건조 2.0% (00:27:00)",
-            "endsAt": "2026-09-24"
-          }
-        ],
-        "activeEventRoutes": [
-          {
-            "kind": "limited-construction",
-            "label": "소형함 한정 건조 2.0% (00:27:00)",
-            "endsAt": "2026-09-24"
-          }
-        ]
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 '거물'의 예고장"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 '거물'의 예고장"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -44233,6 +44471,100 @@
       }
     },
     {
+      "id": 755,
+      "gid": 30409,
+      "name": "아즈치",
+      "rarity": "UR",
+      "faction": "중앵",
+      "shipType": "순전",
+      "obtain": [
+        "현재 이벤트: 유영 미성 (2026-10-16 23:59까지)",
+        "한정 건조 1.2% (200회마다 확정 획득 · 최대 4회)"
+      ],
+      "historicalObtain": [
+        "이벤트: 유영 미성"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": null,
+        "rate": "1.2%"
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "유영 미성",
+        "endsAt": "2026-10-16 23:59",
+        "endsAtLabel": "2026-10-16 23:59까지",
+        "phase": "main",
+        "startsAt": "2026-09-24",
+        "mainEndsAt": "2026-10-16 23:59",
+        "mainEndsAtLabel": "2026-10-16 23:59까지",
+        "claimEndsAt": "2026-10-23 23:59",
+        "eventRoutes": [
+          {
+            "kind": "limited-construction",
+            "label": "한정 건조 1.2% (200회마다 확정 획득 · 최대 4회)",
+            "endsAt": "2026-10-16 23:59"
+          }
+        ],
+        "activeEventRoutes": [
+          {
+            "kind": "limited-construction",
+            "label": "한정 건조 1.2% (200회마다 확정 획득 · 최대 4회)",
+            "endsAt": "2026-10-16 23:59"
+          }
+        ]
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 유영 미성"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 유영 미성"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
       "id": 208,
       "gid": 30501,
       "name": "후소",
@@ -45790,7 +46122,7 @@
       "faction": "중앵",
       "shipType": "경항모",
       "obtain": [
-        "특형함 상시 건조"
+        "이벤트: 저편에 묻혀진 꽃"
       ],
       "historicalObtain": [
         "이벤트: 저편에 묻혀진 꽃"
@@ -45801,8 +46133,8 @@
       "build": {
         "light": false,
         "heavy": false,
-        "special": true,
-        "limited": false,
+        "special": false,
+        "limited": true,
         "timer": "02:22:00"
       },
       "mapDrops": [],
@@ -45811,41 +46143,22 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": true,
+        "build": false,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "permanent",
-        "label": "상시 획득"
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "construction",
-          "label": "상시 건조",
-          "certainty": "random",
-          "rank": 2,
-          "sources": [
-            "특형함 상시 건조"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "construction",
-        "label": "상시 건조",
-        "certainty": "random",
-        "rank": 2,
-        "sources": [
-          "특형함 상시 건조"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "normal",
-        "label": "보통",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "상시 건조",
-          "특형함 상시 건조"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -48299,6 +48612,100 @@
         "localResource": true,
         "altoy": true,
         "status": "matched"
+      }
+    },
+    {
+      "id": 756,
+      "gid": 31703,
+      "name": "이14",
+      "rarity": "SSR",
+      "faction": "중앵",
+      "shipType": "잠항모",
+      "obtain": [
+        "현재 이벤트: 유영 미성 (2026-10-16 23:59까지)",
+        "한정 건조 2.0%"
+      ],
+      "historicalObtain": [
+        "이벤트: 유영 미성"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": null,
+        "rate": "2.0%"
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "유영 미성",
+        "endsAt": "2026-10-16 23:59",
+        "endsAtLabel": "2026-10-16 23:59까지",
+        "phase": "main",
+        "startsAt": "2026-09-24",
+        "mainEndsAt": "2026-10-16 23:59",
+        "mainEndsAtLabel": "2026-10-16 23:59까지",
+        "claimEndsAt": "2026-10-23 23:59",
+        "eventRoutes": [
+          {
+            "kind": "limited-construction",
+            "label": "한정 건조 2.0%",
+            "endsAt": "2026-10-16 23:59"
+          }
+        ],
+        "activeEventRoutes": [
+          {
+            "kind": "limited-construction",
+            "label": "한정 건조 2.0%",
+            "endsAt": "2026-10-16 23:59"
+          }
+        ]
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 유영 미성"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 유영 미성"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {
@@ -58239,7 +58646,7 @@
       "faction": "동황",
       "shipType": "경순",
       "obtain": [
-        "소형함 상시 건조"
+        "이벤트: 신촌 주옥 명품회"
       ],
       "historicalObtain": [
         "이벤트: 신촌 주옥 명품회"
@@ -58248,10 +58655,10 @@
         "Event: Spring Auction Adventure"
       ],
       "build": {
-        "light": true,
+        "light": false,
         "heavy": false,
         "special": false,
-        "limited": false,
+        "limited": true,
         "timer": "00:40:00"
       },
       "mapDrops": [],
@@ -58260,41 +58667,22 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": true,
+        "build": false,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "permanent",
-        "label": "상시 획득"
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "construction",
-          "label": "상시 건조",
-          "certainty": "random",
-          "rank": 2,
-          "sources": [
-            "소형함 상시 건조"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "construction",
-        "label": "상시 건조",
-        "certainty": "random",
-        "rank": 2,
-        "sources": [
-          "소형함 상시 건조"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "normal",
-        "label": "보통",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "상시 건조",
-          "소형함 상시 건조"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -58386,7 +58774,7 @@
       "faction": "동황",
       "shipType": "중순",
       "obtain": [
-        "소형함 상시 건조"
+        "이벤트: 신촌 주옥 명품회"
       ],
       "historicalObtain": [
         "이벤트: 신촌 주옥 명품회"
@@ -58395,10 +58783,10 @@
         "Event: Spring Auction Adventure"
       ],
       "build": {
-        "light": true,
+        "light": false,
         "heavy": false,
         "special": false,
-        "limited": false,
+        "limited": true,
         "timer": "01:30:00"
       },
       "mapDrops": [],
@@ -58407,41 +58795,22 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": true,
+        "build": false,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "permanent",
-        "label": "상시 획득"
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "construction",
-          "label": "상시 건조",
-          "certainty": "random",
-          "rank": 2,
-          "sources": [
-            "소형함 상시 건조"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "construction",
-        "label": "상시 건조",
-        "certainty": "random",
-        "rank": 2,
-        "sources": [
-          "소형함 상시 건조"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "normal",
-        "label": "보통",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "상시 건조",
-          "소형함 상시 건조"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -73539,6 +73908,122 @@
         "localResource": true,
         "altoy": true,
         "status": "matched"
+      }
+    },
+    {
+      "id": "M065",
+      "gid": 970709,
+      "name": "빅토리어스(META)",
+      "rarity": "SSR",
+      "faction": "META",
+      "shipType": "항모",
+      "obtain": [
+        "현재 이벤트: 유영 미성 (2026-10-16 23:59까지)",
+        "한정 건조 0.5%",
+        "이벤트 상점 파트너볼 8,000개 교환 (최대 5회 · 10-23 23:59까지)",
+        "이벤트 해역 드롭"
+      ],
+      "historicalObtain": [
+        "이벤트: 유영 미성"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": true,
+        "timer": null,
+        "rate": "0.5%"
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "eventName": "유영 미성",
+        "endsAt": "2026-10-16 23:59",
+        "endsAtLabel": "2026-10-16 23:59까지",
+        "phase": "main",
+        "startsAt": "2026-09-24",
+        "mainEndsAt": "2026-10-16 23:59",
+        "mainEndsAtLabel": "2026-10-16 23:59까지",
+        "claimEndsAt": "2026-10-23 23:59",
+        "eventRoutes": [
+          {
+            "kind": "limited-construction",
+            "label": "한정 건조 0.5%",
+            "endsAt": "2026-10-16 23:59"
+          },
+          {
+            "kind": "event-exchange",
+            "label": "이벤트 상점 파트너볼 8,000개 교환 (최대 5회 · 10-23 23:59까지)",
+            "endsAt": "2026-10-23 23:59"
+          },
+          {
+            "kind": "event-drop",
+            "label": "이벤트 해역 드롭",
+            "endsAt": "2026-10-16 23:59"
+          }
+        ],
+        "activeEventRoutes": [
+          {
+            "kind": "limited-construction",
+            "label": "한정 건조 0.5%",
+            "endsAt": "2026-10-16 23:59"
+          },
+          {
+            "kind": "event-exchange",
+            "label": "이벤트 상점 파트너볼 8,000개 교환 (최대 5회 · 10-23 23:59까지)",
+            "endsAt": "2026-10-23 23:59"
+          },
+          {
+            "kind": "event-drop",
+            "label": "이벤트 해역 드롭",
+            "endsAt": "2026-10-16 23:59"
+          }
+        ]
+      },
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 유영 미성"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 유영 미성"
+        ]
+      },
+      "difficulty": {
+        "key": "event",
+        "label": "이벤트",
+        "reasons": [
+          "현재 진행 중인 KR 이벤트"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
+        "altoy": true,
+        "status": "altoy-only"
       }
     },
     {

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-17",
+  "updatedAt": "2026-09-29",
   "dataCorrections": [
     {
       "ship": "Z43",
@@ -56,7 +56,76 @@
       ]
     }
   ],
+  "informationalEvents": [
+    {
+      "name": "유영 수용 협의",
+      "startsAt": "2026-09-24",
+      "rewardStartsAt": "2026-09-30",
+      "endsAt": "2026-10-16 23:59",
+      "kind": "seven-day-mission",
+      "ships": ["골든 하인드"],
+      "note": "7일 임무 보상은 가장 빨라도 9월 30일 획득 가능. 기존 소형함 상시 건조를 유지하며 임무 보조 입수처 UI는 추가하지 않음. 별도 수령 연장은 공지되지 않음",
+      "sources": [
+        { "kind": "official-kr-full-notice", "priority": "primary", "urls": ["https://cafe.naver.com/azurlanekorea/574487"] }
+      ]
+    },
+    {
+      "name": "특별 축제 리턴",
+      "startsAt": "2026-09-24",
+      "endsAt": "2026-10-16 23:59",
+      "kind": "selection-invitation",
+      "selectionCount": 1,
+      "ships": ["일러스트리어스", "다이도", "쇼카쿠", "스즈츠키", "리노", "키로프", "프린츠 하인리히", "조프르"],
+      "note": "축제 초대장으로 8척 중 1척 선택. 기존 상시 입수처를 유지하며 보조 선택권 UI가 없으므로 주 입수처 분류를 대체하지 않음",
+      "sources": [
+        { "kind": "official-kr-full-notice", "priority": "primary", "urls": ["https://cafe.naver.com/azurlanekorea/574487"] }
+      ]
+    }
+  ],
   "events": [
+    {
+      "name": "유영 미성",
+      "startsAt": "2026-09-24",
+      "endsAt": "2026-10-16 23:59",
+      "claimEndsAt": "2026-10-23 23:59",
+      "ships": ["아즈치", "이14", "빅토리어스(META)", "헤이스티", "타이거", "호스타일"],
+      "construction": {
+        "아즈치": { "rate": "1.2%", "timer": null },
+        "이14": { "rate": "2.0%", "timer": null },
+        "빅토리어스(META)": { "rate": "0.5%", "timer": null },
+        "헤이스티": { "rate": "2.5%", "timer": null }
+      },
+      "acquisition": {
+        "아즈치": [
+          { "kind": "limited-construction", "label": "한정 건조 1.2% (200회마다 확정 획득 · 최대 4회)", "endsAt": "2026-10-16 23:59" }
+        ],
+        "이14": [
+          { "kind": "limited-construction", "label": "한정 건조 2.0%", "endsAt": "2026-10-16 23:59" }
+        ],
+        "빅토리어스(META)": [
+          { "kind": "limited-construction", "label": "한정 건조 0.5%", "endsAt": "2026-10-16 23:59" },
+          { "kind": "event-exchange", "label": "이벤트 상점 파트너볼 8,000개 교환 (최대 5회 · 10-23 23:59까지)", "endsAt": "2026-10-23 23:59" },
+          { "kind": "event-drop", "label": "이벤트 해역 드롭", "endsAt": "2026-10-16 23:59" }
+        ],
+        "헤이스티": [
+          { "kind": "limited-construction", "label": "한정 건조 2.5%", "endsAt": "2026-10-16 23:59" }
+        ],
+        "타이거": [
+          { "kind": "event-exchange", "label": "진휘의 장식 200/300개로 1·2번째 교환 (최대 2회 · 10-23 23:59까지)", "endsAt": "2026-10-23 23:59" }
+        ],
+        "호스타일": [
+          { "kind": "milestone-reward", "label": "파트너볼 누적 획득 보상 (10-23 23:59까지)", "endsAt": "2026-10-23 23:59" }
+        ]
+      },
+      "sources": [
+        {
+          "kind": "official-kr-full-notice",
+          "priority": "primary",
+          "scope": "KR 공식 완료 공지 · 신규 6척·건조 확률·보장·이벤트 종료·교환 및 보상 수령 기한. 건조 시간과 세부 드롭 해역·누적 PT 수치는 미명시이므로 추정하지 않음",
+          "urls": ["https://cafe.naver.com/azurlanekorea/574487"]
+        }
+      ]
+    },
     {
       "name": "META전 - 새러토가",
       "startsAt": "2026-09-17",

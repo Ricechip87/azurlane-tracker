@@ -39,6 +39,83 @@ export function parseKrMetaSkillsLua(text) {
   }))
 }
 
+// General equipment uses the base record plus the explicit +10 base reference.
+// Only officially allowlisted pairs are read; unrelated mirror lag stays out.
+export function parseKrEquipmentStatsLua(text, baseIds) {
+  const wantedIds = new Set(baseIds.flatMap(id => [Number(id), Number(id) + 10]))
+  const numericFields = ['id', 'base', 'type', 'rarity', 'value_1', 'value_2', 'value_3']
+  const stringFields = ['name', 'icon', 'attribute_1', 'attribute_2', 'attribute_3']
+  const wantedFields = new Set([...numericFields, ...stringFields, 'part_main'])
+  return Object.fromEntries(extractAssignments(text, 'equip_data_statistics')
+    .filter(({ id }) => wantedIds.has(id))
+    .map(({ id, body }) => {
+      const fields = readTopLevelFields(body, wantedFields)
+      const record = { id }
+      for (const key of numericFields) {
+        if (!fields.has(key)) continue
+        const literal = fields.get(key)
+        if (!/^-?\d+(?:\.\d+)?$/.test(literal) || !Number.isFinite(Number(literal))) {
+          throw new Error(`Invalid equipment ${key} for ${id}`)
+        }
+        record[key] = Number(literal)
+      }
+      if (record.id !== id) throw new Error(`Invalid equipment id for ${id}`)
+      for (const key of stringFields) {
+        if (!fields.has(key)) continue
+        const literal = fields.get(key)
+        if (!/^"(?:\\.|[^"\\])*"$/.test(literal)) throw new Error(`Invalid equipment ${key} for ${id}`)
+        try {
+          record[key] = JSON.parse(literal)
+        } catch {
+          throw new Error(`Invalid equipment ${key} for ${id}`)
+        }
+      }
+      if (fields.has('part_main')) {
+        const literal = fields.get('part_main')
+        if (!/^\{\s*(?:\d+\s*(?:,\s*\d+\s*)*,?\s*)?\}$/.test(literal)) {
+          throw new Error(`Invalid equipment part_main for ${id}`)
+        }
+        record.part_main = [...literal.matchAll(/\d+/g)].map(value => Number(value[0]))
+      }
+      return [String(id), record]
+    }))
+}
+
+export function validateKrEquipmentFallbacks(records, fallbackIds, baseIds) {
+  const added = new Set(fallbackIds.map(String))
+  const supportedAttributes = new Set([
+    'durability', 'cannon', 'torpedo', 'antiaircraft', 'air', 'reload',
+    'hit', 'dodge', 'speed', 'luck', 'antisub',
+  ])
+  for (const baseId of baseIds) {
+    const base = records[String(baseId)]
+    const level10 = records[String(Number(baseId) + 10)]
+    if (!base) throw new Error(`KR equipment missing: ${baseId}`)
+    if (!level10 || Number(level10.base) !== Number(baseId)) {
+      throw new Error(`Incomplete KR equipment level 10: ${baseId}`)
+    }
+    if (!added.has(String(baseId)) && !added.has(String(Number(baseId) + 10))) continue
+    if (base.base || !base.name || base.name === '0' || !base.icon
+      || !Number.isInteger(base.type) || base.type <= 0
+      || !Number.isInteger(base.rarity) || base.rarity < 4
+      || !Array.isArray(base.part_main) || !base.part_main.length
+      || !base.part_main.every(type => Number.isSafeInteger(type) && type > 0)) {
+      throw new Error(`Invalid KR equipment base fields: ${baseId}`)
+    }
+    let directStatCount = 0
+    for (const index of [1, 2, 3]) {
+      const attribute = base[`attribute_${index}`]
+      const valueKey = `value_${index}`
+      if (!attribute) continue
+      if (!supportedAttributes.has(attribute)) throw new Error(`Invalid KR equipment attribute_${index}: ${baseId}`)
+      const value = level10[valueKey] ?? base[valueKey]
+      if (!Number.isFinite(value)) throw new Error(`Invalid KR equipment ${valueKey}: ${baseId}`)
+      if (value !== 0) directStatCount += 1
+    }
+    if (!directStatCount) throw new Error(`Missing KR equipment direct stats: ${baseId}`)
+  }
+}
+
 // Split only at top-level commas. A field-looking string or nested table is not
 // an assignment on this record. Unknown fields are skipped, not interpreted.
 function readTopLevelFields(body, wanted) {

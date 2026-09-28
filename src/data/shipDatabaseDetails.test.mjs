@@ -6,6 +6,14 @@ assert.equal(details.meta.shipCount, characters.length)
 assert.equal(Object.keys(details.ships).length, characters.length)
 assert.equal(details.meta.equipmentExcluded, true, '특수장비 강화 효과로 기본 스킬 설명을 대체하지 않습니다.')
 
+assert.deepEqual(details.ships['970709']?.skills.map(skill => skill.name), ['빅토리어스의 횃불', '뜻은 멸하지 않으리'], '빅토리어스(META)는 육성 대상 두 스킬만 표시합니다.')
+assert.deepEqual(details.ships['20116']?.retrofit?.bonus, { health: 165, evasion: 40, firepower: 10, torpedo: 55, speed: 3 }, '하디 개장 상세 능력치')
+assert.ok(details.ships['20116']?.skills.some(skill => skill.name === '용맹한 칼날이여 빛나라' && skill.retrofit), '하디 개장 스킬 추가')
+for (const gid of [20119, 20140, 20238, 30409, 31703, 970709]) {
+  assert.ok(details.ships[gid]?.skills.length > 0, `${gid} 신규 함선 상세 스킬`)
+  assert.equal(details.ships[gid]?.missingSkillCount, 0, `${gid} 신규 함선 스킬 누락 없음`)
+}
+
 assert.equal(details.ships['970710']?.id, 30064, '상세 정보는 ALtoy 도감 ID를 유지합니다.')
 assert.equal(details.ships['970710']?.sid, 9707101)
 assert.equal(details.ships['970710']?.armor, 2)

@@ -1,0 +1,10 @@
+{
+  "verifiedAt": "2026-09-29",
+  "effectiveAt": "2026-09-24",
+  "baseIds": [22300, 22320],
+  "note": "공식 KR 업데이트로 확인된 152mm 연장포 MK.XXVI T3(SSR)·T0(UR)만 JSON 누락 시 KR Lua 기본형과 +10 레코드로 보완한다. 다른 미러 누락 장비나 기존 JSON 레코드는 변경하지 않는다.",
+  "sources": [
+    "https://cafe.naver.com/azurlanekorea/574487",
+    "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/equip_data_statistics.lua"
+  ]
+}

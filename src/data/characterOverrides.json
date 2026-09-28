@@ -132,6 +132,20 @@
   ],
   "appendCharacters": [
     {
+      "id": 99,
+      "name": "호스타일",
+      "rarity": "SR",
+      "shipType": "구축",
+      "faction": "로열",
+      "canRemodel": false,
+      "skillPoints": 0,
+      "statAcquired": { "shipTypes": ["구축"], "stat": "내구", "value": 1 },
+      "stat120": { "shipTypes": ["구축"], "stat": "뇌격", "value": 1 },
+      "techPoints": { "acquired": 5, "maxLB": 11, "lv120": 8 },
+      "gid": 20119,
+      "iconUrl": "/azurlane-tracker/ship-icons/201190.png"
+    },
+    {
       "id": "P043",
       "name": "던컨",
       "rarity": "SSR",

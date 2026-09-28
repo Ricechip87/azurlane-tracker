@@ -3,9 +3,11 @@ import {
   mergeMissingSourceRecords,
   parseKrAugmentStatsLua,
   parseKrMetaSkillsLua,
+  parseKrEquipmentStatsLua,
+  validateKrEquipmentFallbacks,
   validateKrAugmentFallbacks,
 } from './kr-combat-lua-sources.mjs'
-import { buildShipCombatData } from './fleet-recommendation-sources.mjs'
+import { buildEquipmentDirectStats, buildShipCombatData } from './fleet-recommendation-sources.mjs'
 
 const augmentLua = `
 _G.pg.base.spweapon_data_statistics[15580] = {
@@ -88,3 +90,34 @@ assert.throws(() => validateKrAugmentFallbacks(augmentShips, {}, []), /missing/,
 assert.doesNotThrow(() => validateKrAugmentFallbacks(augmentShips, { 15580: { id: 15580 } }, []), '이번 Lua fallback을 쓰지 않는 기존 JSON 정책은 변경하지 않습니다.')
 
 console.log('KR combat Lua fallback tests passed')
+
+const equipmentLua = `
+pg.base.equip_data_statistics[22320] = {
+  id = 22320, name = "152mm 연장포 MK.XXVI", icon = "22300", type = 2, rarity = 6,
+  part_main = {2}, attribute_2 = "cannon", value_2 = 55,
+  attribute_3 = "antiaircraft", value_3 = 10,
+  nested = { value_1 = 999 }, descrip = "name = not a field",
+}
+pg.base.equip_data_statistics[22330] = { id = 22330, base = 22320, damage = "34 x 2" }
+pg.base.equip_data_statistics[99900] = { id = 99900, name = "미확인 장비", rarity = 6 }
+`
+const equipmentFallback = parseKrEquipmentStatsLua(equipmentLua, [22320])
+assert.deepEqual(Object.keys(equipmentFallback), ['22320', '22330'], '공식 확인한 장비 기본형과 +10만 읽는다')
+assert.doesNotThrow(() => validateKrEquipmentFallbacks(equipmentFallback, ['22320', '22330'], [22320]))
+assert.deepEqual(buildEquipmentDirectStats(equipmentFallback), [{
+  id: 22320, name: '152mm 연장포 MK.XXVI', icon: '22300', type: 2,
+  rarity: 6, shipTypes: [2], stats: { firepower: 55, antiair: 10 },
+}], '신규 UR 주포의 +10 직접 수치는 기본형을 상속한다')
+const existingEquipment = { id: 22320, name: '기존 JSON', value_2: 99 }
+assert.equal(mergeMissingSourceRecords({ 22320: existingEquipment }, equipmentFallback).records[22320], existingEquipment)
+assert.throws(() => parseKrEquipmentStatsLua(equipmentLua.replace('value_2 = 55', 'value_2 = 55 + 1'), [22320]), /value_2/)
+assert.throws(() => parseKrEquipmentStatsLua(equipmentLua.replace('part_main = {2}', 'part_main = {2 5}'), [22320]), /part_main/)
+assert.throws(() => parseKrEquipmentStatsLua(equipmentLua.replace('id = 22320,', 'id = 99999,'), [22320]), /id/)
+assert.throws(() => parseKrEquipmentStatsLua(equipmentLua.replace('icon = "22300"', 'icon = "22300" .. "suffix"'), [22320]), /icon/)
+assert.throws(() => parseKrEquipmentStatsLua(equipmentLua.replace('value_2 = 55', 'value_2 = 55, value_2 = 99'), [22320]), /Duplicate/)
+assert.equal(equipmentFallback[22320].value_1, undefined, '중첩 테이블의 능력치를 읽지 않는다')
+assert.throws(() => validateKrEquipmentFallbacks({ 22320: equipmentFallback[22320] }, ['22320'], [22320]), /level 10/)
+assert.throws(() => validateKrEquipmentFallbacks({ ...equipmentFallback, 22330: { id: 22330, base: 22300 } }, ['22330'], [22320]), /level 10/)
+assert.throws(() => validateKrEquipmentFallbacks({ ...equipmentFallback, 22320: { ...equipmentFallback[22320], value_2: undefined } }, ['22320'], [22320]), /value_2/)
+assert.throws(() => validateKrEquipmentFallbacks({}, [], [22320]), /missing/)
+console.log('KR equipment Lua fallback tests passed')

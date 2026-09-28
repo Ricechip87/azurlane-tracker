@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-09-29 - Apply the September 24 KR Event Update
+
+### Changed
+- Expand the KR roster from 888 to 894 ships with Azuchi, Tiger, I-14, Victorious META, Hasty, and Hostile; include Hardy's retrofit. Refresh combat, Korean skills, fleet-tech, acquisition data, and runtime artwork while preserving existing app identifiers.
+- Record the official September 24–October 16 `유영 미성` event with the four construction rates and distinct construction, drop, exchange, and cumulative-reward routes. Preserve the October 23 exchange/reward-claim deadline separately from the main event and expire Amatsukaze's September construction event.
+- Record Golden Hind's September 30 mission-reward unlock and the eight invitation-selector ships as supplementary event information. Preserve their existing permanent acquisition routes; the mission unlock is not Golden Hind's first possible acquisition date. Do not introduce a new supplementary-event display feature in this data update.
+- Reconcile Zuihou, Hai Chou, and Chang Wu with the refreshed ALtoy limited-event acquisition flags/history. This corrects the app's previous permanent-construction classification; it is not evidence that the September 24 patch removed them from permanent construction.
+- Recover the September 24 SSR/UR `152mm 연장포 MK.XXVI` direct +10 stats from current KR Lua when the equipment JSON mirror lacks them. Limit this fallback to the two officially released variants, preserve existing JSON records, and retain the established direct-stat-only fleet recommendation policy.
+- Preserve the ignored local image library and collect 49 newly declared PNG assets without resizing or re-encoding. Coverage now includes 2,467 unique skins and 16,171 declared images, including 138 shared backgrounds. Keep future-release assets separate from the KR-visible roster and publish only the runtime icons/cards used by the app.
+- Update the user-facing project notes and next-session handoff so future update checks follow the same source, image-collection, release-gating, and public/private boundaries.
+
+### Verified
+- Separate data implementation, image collection, and independent release review. Preserve all 888 existing ship identifiers and their types, add exactly six KR-confirmed ships, and keep future-release ships outside the app roster.
+- Independently validate all 16,171 declared image files for path, format, dimensions, and PNG integrity; fully decode all 49 new images. Verify the 12 new public icons/cards match their source bytes and preserve every existing public image. Retain the six documented source-unavailable ship-art exceptions.
+- Independently detect and fix the missing MK.XXVI equipment before release. Increase equipment candidates from 537 to 539 without changing existing records; cover the actual high-end Tiger recommendation in Chapters 13 and 15, malformed literals, and missing or incorrect +10 links.
+- Re-run local source audits, semantic generation-idempotency, lint, the complete test suite, production build, and `git diff --check` after the equipment fix. All pass; the pre-existing large-bundle warning remains non-blocking. Confirm that bulk reference images and source mirrors remain outside Git and the Pages artifact.
+
 ## 2026-09-18 - Apply the September 17 KR META Update
 
 ### Changed

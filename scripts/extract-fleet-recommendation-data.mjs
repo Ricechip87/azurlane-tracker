@@ -6,7 +6,8 @@ import {
   buildShipCombatData,
   buildStageRequirements,
 } from './lib/fleet-recommendation-sources.mjs'
-import { mergeMissingSourceRecords, parseKrAugmentStatsLua, validateKrAugmentFallbacks } from './lib/kr-combat-lua-sources.mjs'
+import { mergeMissingSourceRecords, parseKrAugmentStatsLua, parseKrEquipmentStatsLua, validateKrAugmentFallbacks, validateKrEquipmentFallbacks } from './lib/kr-combat-lua-sources.mjs'
+import officialEquipmentFallbacks from './data/kr-equipment-fallbacks.json' with { type: 'json' }
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const referenceRoot = path.join(root, '참고용')
@@ -21,6 +22,14 @@ const equipmentStatistics = readJson(path.join(
   'sharecfgdata',
   'equip_data_statistics.json',
 ))
+const equipmentLuaPath = path.join(referenceRoot, 'AzurLaneLuaScripts', 'KR', 'sharecfgdata', 'equip_data_statistics.lua')
+const equipmentSources = mergeMissingSourceRecords(
+  equipmentStatistics,
+  fs.existsSync(equipmentLuaPath)
+    ? parseKrEquipmentStatsLua(fs.readFileSync(equipmentLuaPath, 'utf8'), officialEquipmentFallbacks.baseIds)
+    : {},
+)
+validateKrEquipmentFallbacks(equipmentSources.records, equipmentSources.addedIds, officialEquipmentFallbacks.baseIds)
 const spWeaponStatistics = readJson(path.join(
   referenceRoot,
   'AzurLaneData',
@@ -64,11 +73,16 @@ writeJson('shipCombatData.json', {
 writeJson('equipmentDirectStats.json', {
   meta: {
     source: 'AzurLaneData KR equip_data_statistics.json',
+    ...(equipmentSources.addedIds.length ? {
+      fallbackSource: 'KR Lua equip_data_statistics.lua (officially verified missing JSON records only)',
+      fallbackRecordIds: equipmentSources.addedIds.map(Number),
+      fallbackVerification: officialEquipmentFallbacks,
+    } : {}),
     enhancement: 10,
     policy: '직접 능력치만 포함. 확률·조건부·공격·회복·보호막 효과 제외.',
     availability: '첫 버전은 장비 수량 및 복각 상태를 자동 판정하지 않음.',
   },
-  equipment: buildEquipmentDirectStats(equipmentStatistics),
+  equipment: buildEquipmentDirectStats(equipmentSources.records),
 })
 writeJson('stageRequirements.json', {
   meta: {

@@ -3,9 +3,14 @@ import characters from './characters.json' with { type: 'json' }
 import equipment from './equipmentDirectStats.json' with { type: 'json' }
 import combat from './shipCombatData.json' with { type: 'json' }
 import stages from './stageRequirements.json' with { type: 'json' }
+import { buildFleetRecommendation } from '../utils/fleetRecommendations.js'
 
 assert.equal(Object.keys(combat.ships).length, characters.length)
-assert.equal(combat.meta.shipCount, 888, '2026-09-17 KR 함선 전투 데이터 888척 반영')
+assert.equal(combat.meta.shipCount, 894, '2026-09-24 KR 함선 전투 데이터 894척 반영')
+
+for (const gid of [20119, 20140, 20238, 30409, 31703, 970709]) {
+  assert.ok(combat.ships[gid]?.base.health > 0, `${gid} 신규 함선 전투 스탯`)
+}
 
 const saratogaMeta = combat.ships['970710']
 assert.ok(saratogaMeta, '새러토가(META) 전투 데이터가 필요합니다.')
@@ -38,6 +43,22 @@ for (const character of characters) {
 assert.ok(equipment.equipment.length >= 500)
 assert.ok(equipment.equipment.every(item => item.rarity >= 4))
 assert.ok(equipment.equipment.every(item => Object.keys(item.stats).length > 0))
+for (const [id, rarity, firepower] of [[22300, 5, 35], [22320, 6, 55]]) {
+  assert.deepEqual(equipment.equipment.find(item => item.id === id), {
+    id, name: '152mm 연장포 MK.XXVI', icon: '22300', type: 2,
+    rarity, shipTypes: [2], stats: { firepower, antiair: 10 },
+  }, '9월 24일 SSR·UR 주포의 정확한 +10 직접 능력치')
+}
+for (const chapter of [13, 15]) {
+  const result = buildFleetRecommendation({
+    characters: [{ ...characters.find(ship => ship.gid === 20238), acquired: '125' }],
+    shipData: combat.ships,
+    equipment: equipment.equipment,
+    stage: { chapter },
+    equipmentProfile: 'high-end',
+  })
+  assert.deepEqual(result.fleets.boss.front[0].equipment.slice(0, 2).map(item => item.id), [22320, 22320], `${chapter}지 하이엔드 타이거 두 주포 슬롯에 신규 UR 직접 능력치를 반영한다`)
+}
 
 const stage1504 = stages.stages.find(stage => stage.id === 1504)
 assert.ok(stage1504)
