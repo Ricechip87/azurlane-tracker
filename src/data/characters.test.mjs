@@ -3,7 +3,7 @@ import { existsSync } from 'node:fs'
 import { resolveCanRemodel } from '../../scripts/lib/character-remodel-status.mjs'
 import characters from './characters.json' with { type: 'json' }
 
-assert.equal(characters.length, 894, '2026-09-24 KR 노출 함선 894척 반영')
+assert.equal(characters.length, 895, '2026-09-30 KR 공개 함선 895척 반영 (신규 META 획득은 10월 8일)')
 assert.equal(new Set(characters.map(character => String(character.id))).size, characters.length, '앱 함선 ID는 중복되지 않아야 합니다.')
 assert.equal(new Set(characters.map(character => character.gid)).size, characters.length, '함선 gid는 중복되지 않아야 합니다.')
 for (const [gid, name, shipType, rarity] of [
@@ -13,6 +13,7 @@ for (const [gid, name, shipType, rarity] of [
   [30409, '아즈치', '순전', 'UR'],
   [31703, '이14', '잠항모', 'SSR'],
   [970709, '빅토리어스(META)', '항모', 'SSR'],
+  [970113, '소브라지텔니(META)', '구축', 'SR'],
 ]) {
   const ship = characters.find(character => character.gid === gid)
   assert.ok(ship, `${name}은 KR 정식 출시 함선입니다.`)

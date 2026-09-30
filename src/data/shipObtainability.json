@@ -1,22 +1,23 @@
 {
   "meta": {
     "note": "KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.",
-    "generatedAt": "2026-09-28T19:56:40.727Z",
-    "asOfDate": "2026-09-29",
-    "total": 894,
-    "withObtain": 894,
+    "generatedAt": "2026-09-30T14:49:59.734Z",
+    "asOfDate": "2026-09-30",
+    "total": 895,
+    "withObtain": 895,
     "withoutObtain": 0,
     "availability": {
       "active-event": 8,
       "collab-unknown": 91,
       "permanent": 629,
-      "rerun-wait": 166
+      "rerun-wait": 166,
+      "upcoming-event": 1
     },
     "difficulty": {
       "easy": 328,
       "event": 8,
       "hard": 83,
-      "limited": 257,
+      "limited": 258,
       "normal": 218
     },
     "acquisitionRoutes": {
@@ -70569,6 +70570,76 @@
       "verification": {
         "localKr": false,
         "localResource": true,
+        "altoy": true,
+        "status": "altoy-only"
+      }
+    },
+    {
+      "id": "M066",
+      "gid": 970113,
+      "name": "소브라지텔니(META)",
+      "rarity": "SR",
+      "faction": "META",
+      "shipType": "구축",
+      "obtain": [
+        "획득 예정: 월드 투어 - 소브라지텔니 (2026-10-08 00:00부터 · 2026-12-07 23:59까지)",
+        "월드 투어 무료 보상"
+      ],
+      "historicalObtain": [
+        "META 연구실·월드 투어"
+      ],
+      "obtainEn": [],
+      "build": {
+        "light": false,
+        "heavy": false,
+        "special": false,
+        "limited": false,
+        "timer": null
+      },
+      "mapDrops": [],
+      "permanentSignals": {
+        "map": false,
+        "archive": false,
+        "coreMonthly": false,
+        "arenaShop": false,
+        "build": false,
+        "shop": false,
+        "other": false,
+        "timeline": false
+      },
+      "availability": {
+        "key": "upcoming-event",
+        "label": "획득 예정",
+        "eventName": "월드 투어 - 소브라지텔니",
+        "endsAt": "2026-12-07 23:59",
+        "endsAtLabel": "2026-12-07 23:59까지",
+        "phase": "upcoming",
+        "startsAt": "2026-10-08 00:00",
+        "previewBeforeStart": true,
+        "mainEndsAt": "2026-12-07 23:59",
+        "mainEndsAtLabel": "2026-12-07 23:59까지",
+        "claimEndsAt": null,
+        "eventRoutes": [
+          {
+            "kind": "world-tour",
+            "label": "월드 투어 무료 보상",
+            "endsAt": "2026-12-07 23:59"
+          }
+        ],
+        "activeEventRoutes": []
+      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
+      "difficulty": {
+        "key": "limited",
+        "label": "현재 획득 불가",
+        "reasons": [
+          "획득 예정"
+        ]
+      },
+      "verification": {
+        "localKr": false,
+        "localResource": false,
         "altoy": true,
         "status": "altoy-only"
       }

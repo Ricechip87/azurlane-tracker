@@ -1,6 +1,25 @@
 import assert from 'node:assert/strict'
 import { getAvailability, getObtainabilitySourceSections, getPrimaryAcquisitionRoute, isCurrentlyObtainable, isGrowthRecommendationEligible, isResearchCandidateActionable, obtainabilityLabel, obtainabilityRank } from './obtainability.js'
 import { isKstDateAfter, toKstDateKey } from './kstDate.js'
+import { resolveEventAcquisition } from './eventAcquisition.js'
+
+const scheduled = {
+  faction: 'META',
+  availability: resolveEventAcquisition({ name: '월드 투어', previewBeforeStart: true, startsAt: '2026-10-08 00:00', endsAt: '2026-12-07 23:59', ships: ['예고 함선'], acquisition: { '예고 함선': [{ kind: 'world-tour', label: '월드 투어 무료 보상' }] } }, '예고 함선', '2026-09-30').availability,
+  historicalObtain: ['월드 투어 무료 보상'],
+}
+assert.equal(getAvailability(scheduled, '2026-10-07 23:59').key, 'upcoming-event')
+assert.equal(getPrimaryAcquisitionRoute(scheduled, '2026-10-07 23:59'), null)
+assert.match(getObtainabilitySourceSections(scheduled, '2026-10-07 23:59')[0].sources[0], /획득 예정.*2026-10-08 00:00/)
+assert.equal(getAvailability(scheduled, '2026-10-08 00:00').key, 'active-event')
+assert.equal(getPrimaryAcquisitionRoute(scheduled, '2026-10-08 00:00').key, 'active-event')
+assert.equal(getObtainabilitySourceSections(scheduled, '2026-10-08 00:00')[0].sources[1], '월드 투어 무료 보상')
+assert.equal(getAvailability(scheduled, '2026-12-08 00:00').key, 'rerun-wait')
+assert.equal(getPrimaryAcquisitionRoute(scheduled, '2026-12-08 00:00'), null)
+const upcoming = { availability: { key: 'upcoming-event', label: '획득 예정' } }
+assert.equal(isCurrentlyObtainable(upcoming), false)
+assert.equal(isGrowthRecommendationEligible({ acquired: false, level125: false, obtainability: upcoming }), false)
+assert.equal(isResearchCandidateActionable({ acquired: false, obtainability: upcoming }), false)
 
 assert.equal(toKstDateKey(new Date('2026-08-13T14:59:59Z')), '2026-08-13')
 assert.equal(toKstDateKey(new Date('2026-08-13T15:00:00Z')), '2026-08-14')

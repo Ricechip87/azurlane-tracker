@@ -9,7 +9,7 @@ import { resolveEventAcquisition } from '../utils/eventAcquisition.js'
 // A committed data snapshot is verified at its generation date, not the CI machine's current date.
 const snapshotDate = data.meta.asOfDate || toKstDateKey(data.meta.generatedAt)
 assert.match(snapshotDate, /^\d{4}-\d{2}-\d{2}$/, '입수 데이터 생성 기준일 존재')
-const allowedAvailability = new Set(['permanent', 'active-event', 'rerun-wait', 'collab-unknown', 'unknown'])
+const allowedAvailability = new Set(['permanent', 'active-event', 'upcoming-event', 'rerun-wait', 'collab-unknown', 'unknown'])
 assert.equal(data.ships.length, data.meta.total)
 assert.ok(data.ships.every(ship => allowedAvailability.has(ship.availability?.key)))
 assert.ok(data.ships.every(ship => ship.difficulty?.key !== 'excluded'))
@@ -18,6 +18,19 @@ assert.ok(data.ships.every(ship => !/대형함.*건조/.test(JSON.stringify(ship
 assert.ok(data.ships.every(ship => Array.isArray(ship.acquisitionRoutes)), '모든 함선에 구조화된 복수 입수처가 있어야 한다')
 assert.ok(data.ships.every(ship => ship.acquisitionRoutes.length === 0 || ship.primaryRoute?.key), '입수처가 있으면 대표 입수처가 있어야 한다')
 assert.equal(data.meta.acquisitionRoutes['core-monthly'], 25, 'KR 코어 월간 교환 인원 집계')
+
+{
+  const ship = data.ships.find(item => item.gid === 970113)
+  const event = activeEvents.events.find(item => item.ships.includes('소브라지텔니(META)'))
+  assert.ok(ship, '공식 공개된 소브라지텔니 META 입수 데이터')
+  assert.equal(event.startsAt, '2026-10-08 00:00')
+  assert.equal(event.endsAt, '2026-12-07 23:59')
+  assert.equal(ship.availability.key, resolveEventAcquisition(event, ship.name, snapshotDate).availability?.key || 'rerun-wait')
+  assert.equal(ship.build.limited, false, '월드 투어 보상을 한정 건조로 표시하지 않는다')
+  assert.equal(resolveEventAcquisition(event, ship.name, '2026-09-30').availability.key, 'upcoming-event')
+  assert.equal(resolveEventAcquisition(event, ship.name, '2026-10-08 00:00').availability.key, 'active-event')
+  assert.equal(resolveEventAcquisition(event, ship.name, '2026-12-08 00:00').availability, null)
+}
 
 for (const name of ['쿠온', '네코네', '루루티에', '우루루', '사라나', '후미뤼르']) {
   assert.equal(data.ships.find(ship => ship.name === name)?.availability.key, 'collab-unknown', `${name}도 다른 콜라보와 동일하게 분류`)

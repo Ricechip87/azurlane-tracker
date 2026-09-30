@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-09-30",
   "dataCorrections": [
     {
       "ship": "Z43",
@@ -58,6 +58,33 @@
   ],
   "informationalEvents": [
     {
+      "name": "9월 30일 신규 스킨",
+      "kind": "skin-sale",
+      "startsAt": "2026-09-30",
+      "endsAt": "2026-10-16 23:59",
+      "skins": [
+        { "ship": "골든 하인드", "name": "미소 짓는 괴담의 금사슴", "type": "이중 형태" },
+        { "ship": "하쿠호", "name": "여우비 속의 여우 신부", "type": "Live2D+" },
+        { "ship": "체셔", "name": "체셔 고양이의 메르헨 메이즈", "type": "Live2D+" },
+        { "ship": "요르크", "name": "환야의 무도가", "type": "특수 모션" },
+        { "ship": "쇼카쿠", "name": "비상하는 학의 보은", "type": "모션" },
+        { "ship": "재블린", "name": "PINKLOVE★Heart Lancer", "type": "일반" },
+        { "ship": "엘드릿지", "name": "찌릿찌릿 달맞이 타임", "type": "일반" },
+        { "ship": "밀러", "name": "밀러 님의 통행 금지 다리", "type": "일반" }
+      ],
+      "sources": [{ "kind": "official-kr-full-notice", "priority": "primary", "urls": ["https://cafe.naver.com/azurlanekorea/574581"] }]
+    },
+    {
+      "name": "월드 투어 유료 보상 및 이전 상점",
+      "kind": "world-tour-rewards",
+      "startsAt": "2026-10-08 00:00",
+      "endsAt": "2026-12-07 23:59",
+      "paidSkin": { "ship": "잉그레이엄", "name": "미니어처라이즈 월드" },
+      "previousShopAdditions": ["킴벌리(META)", "미유키 스킨"],
+      "note": "이전 상점 편입은 10월 8일부터. 미래 상점 경로를 현재 상시 획득으로 앞당기지 않음",
+      "sources": [{ "kind": "official-kr-full-notice", "priority": "primary", "urls": ["https://cafe.naver.com/azurlanekorea/574581"] }]
+    },
+    {
       "name": "유영 수용 협의",
       "startsAt": "2026-09-24",
       "rewardStartsAt": "2026-09-30",
@@ -83,6 +110,17 @@
     }
   ],
   "events": [
+    {
+      "name": "월드 투어 - 소브라지텔니",
+      "startsAt": "2026-10-08 00:00",
+      "endsAt": "2026-12-07 23:59",
+      "previewBeforeStart": true,
+      "ships": ["소브라지텔니(META)"],
+      "acquisition": {
+        "소브라지텔니(META)": [{ "kind": "world-tour", "label": "월드 투어 무료 보상", "endsAt": "2026-12-07 23:59" }]
+      },
+      "sources": [{ "kind": "official-kr-full-notice", "priority": "primary", "scope": "9월 30일 공개, 실제 획득 기간은 10월 8일부터 12월 7일까지", "urls": ["https://cafe.naver.com/azurlanekorea/574581"] }]
+    },
     {
       "name": "유영 미성",
       "startsAt": "2026-09-24",

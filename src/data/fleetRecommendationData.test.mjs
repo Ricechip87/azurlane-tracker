@@ -6,7 +6,7 @@ import stages from './stageRequirements.json' with { type: 'json' }
 import { buildFleetRecommendation } from '../utils/fleetRecommendations.js'
 
 assert.equal(Object.keys(combat.ships).length, characters.length)
-assert.equal(combat.meta.shipCount, 894, '2026-09-24 KR 함선 전투 데이터 894척 반영')
+assert.equal(combat.meta.shipCount, 895, '2026-09-30 KR 공개 함선 전투 데이터 895척 반영')
 
 for (const gid of [20119, 20140, 20238, 30409, 31703, 970709]) {
   assert.ok(combat.ships[gid]?.base.health > 0, `${gid} 신규 함선 전투 스탯`)

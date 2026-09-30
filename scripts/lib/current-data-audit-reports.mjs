@@ -5,6 +5,7 @@ const FACTION_DEFINITIONS = [
 
 const AVAILABILITY_LABELS = {
   'active-event': '현재 이벤트',
+  'upcoming-event': '획득 예정',
   'collab-unknown': '콜라보 복각 미정',
   permanent: '상시 획득',
   'rerun-wait': '복각 대기',

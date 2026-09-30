@@ -1,5 +1,16 @@
 import assert from 'node:assert/strict'
-import { resolveEventAcquisition } from './eventAcquisition.js'
+import { resolveEventAcquisition, resolveStoredEventAvailability } from './eventAcquisition.js'
+
+const announced = { name: '월드 투어', previewBeforeStart: true, startsAt: '2026-10-08 00:00', endsAt: '2026-12-07 23:59', ships: ['소브라지텔니(META)'], acquisition: { '소브라지텔니(META)': [{ kind: 'world-tour', label: '월드 투어 무료 보상' }] } }
+const future = resolveEventAcquisition(announced, '소브라지텔니(META)', '2026-09-30')
+assert.equal(future.phase, 'upcoming')
+assert.equal(future.availability.key, 'upcoming-event')
+assert.equal(future.availability.label, '획득 예정')
+assert.deepEqual(future.activeRoutes, [])
+assert.equal(future.buildLimited, false)
+for (const [date, key] of [['2026-10-07 23:59', 'upcoming-event'], ['2026-10-08 00:00', 'active-event'], ['2026-12-07 23:59', 'active-event'], ['2026-12-08 00:00', undefined]]) {
+  assert.equal(resolveStoredEventAvailability(future.availability, date)?.key, key)
+}
 
 const event = {
   name: '몽광의 아스트라리움',

@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-09-30 - Apply the September 30 KR Update
+
+### Changed
+- Add Soobrazitelny META to the 895-ship roster with Korean training skills, combat/fleet-tech data, and the existing source icon/card artwork. Preserve every existing ship identifier and distinguish roster registration from acquisition availability.
+- Record the official October 8–December 7 World Tour free reward and preserve its future start date. Show upcoming acquisition before October 8, activate it at the KST start boundary, and expire it after the end boundary without requiring another data deployment.
+- Record the September 30 skin sale and upcoming World Tour supplementary information without adding an unrelated shop or ASMR feature. Keep raw skin/background assets in the ignored local reference library and publish only runtime artwork.
+
+### Verified
+- Independently run lint, the complete test suite, production build, semantic generation-idempotency, and local source audits; all pass. Retain the existing non-blocking large-bundle warning.
+- Confirm 895 app/ALtoy/KR records, preserve all 894 existing identifier values and types, and cover upcoming/start/end transitions plus recommendation exclusion before acquisition begins.
+- Independently verify all 16,171 declared images and fully decode the new-skin and META assets. No new downloads are necessary; exactly two new public PNGs match their source bytes, with no existing public images modified.
+- Keep Kimberly META's October 8 previous-shop announcement as supplementary information; its runtime permanent-shop classification awaits an October 8 source check. Do not imply that the World Tour end date closes that shop.
+
 ## 2026-09-29 - Apply the September 24 KR Event Update
 
 ### Changed

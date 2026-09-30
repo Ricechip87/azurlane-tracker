@@ -2,6 +2,17 @@
   "insertAfterId": 740,
   "characters": [
     {
+      "id": "M066",
+      "gid": 970113,
+      "name": "소브라지텔니(META)",
+      "rarity": "SR",
+      "shipType": "구축",
+      "faction": "META",
+      "canRemodel": false,
+      "skillPoints": 0,
+      "iconUrl": "/azurlane-tracker/ship-icons/9701130.png"
+    },
+    {
       "id": 481,
       "faction": "비시아"
     },

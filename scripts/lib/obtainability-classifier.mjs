@@ -36,7 +36,7 @@ export function classifyObtainability({ faction, obtain = [], permanentSources =
 
 function classifyDifficulty({ obtain, permanentSources, mapDrops, permanentSignals, availability, primaryRoute }) {
   if (availability.key === 'active-event') return { ...DIFFICULTY.EVENT, reasons: ['현재 진행 중인 KR 이벤트'] }
-  if (availability.key === 'rerun-wait' || availability.key === 'collab-unknown') return { ...DIFFICULTY.LIMITED, reasons: [availability.label] }
+  if (['upcoming-event', 'rerun-wait', 'collab-unknown'].includes(availability.key)) return { ...DIFFICULTY.LIMITED, reasons: [availability.label] }
   if (availability.key !== 'permanent') return { ...DIFFICULTY.UNKNOWN, reasons: [] }
   const sources = [...new Set([...obtain, ...permanentSources])]
   const rank = primaryRoute?.rank ?? 2

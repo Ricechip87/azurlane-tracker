@@ -5,6 +5,7 @@ import { resolveStoredEventAvailability } from './eventAcquisition.js'
 export const OBTAINABILITY_RANK = {
   permanent: 0,
   'active-event': 1,
+  'upcoming-event': 7,
   'rerun-wait': 8,
   'collab-unknown': 9,
   unknown: 10,
@@ -16,7 +17,7 @@ export function getAvailability(obtainability, now = new Date()) {
   if (obtainability?.availability) {
     const availability = obtainability.availability
     const resolvedEvent = resolveStoredEventAvailability(availability, now)
-    if (availability.key === 'active-event' && Array.isArray(availability.eventRoutes)) {
+    if (['active-event', 'upcoming-event'].includes(availability.key) && Array.isArray(availability.eventRoutes)) {
       if (resolvedEvent) return resolvedEvent
       return COLLAB_FACTIONS.has(obtainability?.faction)
         ? { key: 'collab-unknown', label: '콜라보 복각 미정' }
@@ -75,9 +76,12 @@ export function obtainabilityLabel(obtainability) {
 
 export function getPrimaryAcquisitionRoute(obtainability, now = new Date()) {
   const availability = getAvailability(obtainability, now)
-  const expiredEvent = obtainability?.availability?.key === 'active-event'
+  const expiredEvent = ['active-event', 'upcoming-event'].includes(obtainability?.availability?.key)
     && availability.key !== 'active-event'
   if (expiredEvent) return null
+  if (availability.key === 'active-event' && obtainability?.availability?.key === 'upcoming-event') {
+    return { key: 'active-event', label: availability.label, certainty: 'limited-time', rank: 1, sources: availability.activeEventRoutes.map(route => route.label) }
+  }
   if (obtainability?.primaryRoute) {
     if (obtainability.primaryRoute.key === 'active-event' && availability.key === 'active-event') {
       const claimSources = availability.phase === 'claim-only'
@@ -100,6 +104,9 @@ export function getPrimaryAcquisitionRoute(obtainability, now = new Date()) {
 export function getObtainabilitySourceSections(obtainability, now = new Date()) {
   const current = [...new Set(obtainability?.obtain || [])]
   const availability = getAvailability(obtainability, now)
+  if (availability.key === 'upcoming-event') {
+    return [{ label: '예정 입수처', sources: [`획득 예정: ${availability.eventName} (${availability.startsAt}부터 · ${availability.endsAtLabel})`, ...availability.eventRoutes.map(route => route.label)] }]
+  }
   if (availability.key === 'active-event' && Array.isArray(availability.activeEventRoutes)) {
     const heading = `${availability.label}: ${availability.eventName} (${availability.endsAtLabel})`
     return [{
@@ -108,7 +115,7 @@ export function getObtainabilitySourceSections(obtainability, now = new Date()) 
     }]
   }
   if (availability.key !== 'permanent') {
-    const expiredEvent = obtainability?.availability?.key === 'active-event' && availability.key !== 'active-event'
+    const expiredEvent = ['active-event', 'upcoming-event'].includes(obtainability?.availability?.key) && availability.key !== 'active-event'
     const historical = [...new Set(obtainability?.historicalObtain || [])]
     if (expiredEvent && historical.length) return [{ label: '과거 이벤트 입수처', sources: historical }]
     return current.length ? [{ label: '입수처', sources: current }] : []

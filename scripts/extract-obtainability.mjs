@@ -145,6 +145,10 @@ function compareLists(local, altoy) {
 
 function currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent }) {
   if (activeEvent) {
+    if (activeEvent.phase === 'upcoming') return [
+      `획득 예정: ${activeEvent.name} (${activeEvent.startsAt}부터 · ${activeEvent.availability.endsAtLabel})`,
+      ...normalizeList(activeEvent.routes.map(route => route.label)),
+    ]
     const eventHeading = activeEvent.phase === 'claim-only'
       ? `이벤트 수령 기간: ${activeEvent.name} (${activeEvent.availability.endsAtLabel})`
       : `현재 이벤트: ${activeEvent.name} (${activeEvent.availability.endsAtLabel})`

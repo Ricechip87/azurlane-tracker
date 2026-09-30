@@ -5,7 +5,8 @@ export function resolveEventAcquisition(event, shipName, today = new Date()) {
   const eventStarted = !isBefore(today, event?.startsAt)
   const mainActive = eventStarted && !isAfter(today, event?.endsAt)
   const activeRoutes = eventStarted ? routes.filter(route => !isAfter(today, route.endsAt)) : []
-  const phase = mainActive ? 'main' : activeRoutes.length ? 'claim-only' : 'ended'
+  const phase = !eventStarted && event?.previewBeforeStart && routes.length
+    ? 'upcoming' : mainActive ? 'main' : activeRoutes.length ? 'claim-only' : 'ended'
   const activeEnd = latestEnd(activeRoutes.map(route => route.endsAt))
 
   return {
@@ -14,15 +15,16 @@ export function resolveEventAcquisition(event, shipName, today = new Date()) {
     activeRoutes,
     buildLimited: activeRoutes.some(route => route.kind === CONSTRUCTION_KIND),
     availability: phase === 'ended' ? null : {
-      key: 'active-event',
-      label: phase === 'main' ? '현재 이벤트' : '이벤트 수령 기간',
+      key: phase === 'upcoming' ? 'upcoming-event' : 'active-event',
+      label: phase === 'upcoming' ? '획득 예정' : phase === 'main' ? '현재 이벤트' : '이벤트 수령 기간',
       eventName: event.name,
-      endsAt: phase === 'main' ? event.endsAt : activeEnd,
-      endsAtLabel: phase === 'main'
+      endsAt: phase === 'main' || phase === 'upcoming' ? event.endsAt : activeEnd,
+      endsAtLabel: phase === 'main' || phase === 'upcoming'
         ? (event.endsAtLabel || `${event.endsAt}까지`)
         : `${activeEnd}까지`,
       phase,
       startsAt: event.startsAt,
+      ...(event.previewBeforeStart ? { previewBeforeStart: true } : {}),
       mainEndsAt: event.endsAt,
       mainEndsAtLabel: event.endsAtLabel || `${event.endsAt}까지`,
       claimEndsAt: event.claimEndsAt || null,
@@ -33,10 +35,11 @@ export function resolveEventAcquisition(event, shipName, today = new Date()) {
 }
 
 export function resolveStoredEventAvailability(availability, today = new Date()) {
-  if (availability?.key !== 'active-event' || !Array.isArray(availability.eventRoutes)) return availability
+  if (!['active-event', 'upcoming-event'].includes(availability?.key) || !Array.isArray(availability.eventRoutes)) return availability
   const event = {
     name: availability.eventName,
     startsAt: availability.startsAt,
+    previewBeforeStart: availability.previewBeforeStart,
     endsAt: availability.mainEndsAt || availability.endsAt,
     endsAtLabel: availability.mainEndsAtLabel,
     claimEndsAt: availability.claimEndsAt,

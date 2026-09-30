@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-29 04:56:40 KST",
-  "appShipCount": 894,
+  "generatedAt": "2026-09-30 23:49:59 KST",
+  "appShipCount": 895,
   "policy": {
     "configuredShipTypes": [
       "순전",
@@ -285,18 +285,18 @@
       ],
       "configuredWithoutCurrentSource": [],
       "sourceCounts": {
-        "statAcquired": 235,
-        "stat120": 235
+        "statAcquired": 236,
+        "stat120": 236
       },
       "candidateCounts": {
-        "내구": 219,
+        "내구": 220,
         "뇌격": 31,
         "대공": 31,
         "대잠": 26,
         "명중": 17,
         "장전": 20,
         "화력": 62,
-        "회피": 36
+        "회피": 37
       }
     },
     "경순": {
@@ -535,7 +535,7 @@
       ],
       "candidateCounts": {
         "뇌격": 31,
-        "회피": 36,
+        "회피": 37,
         "화력": 62,
         "장전": 20,
         "명중": 17

@@ -6,7 +6,7 @@
       "KR Lua spweapon_data_statistics.lua (missing JSON records only)"
     ],
     "formula": "floor((base + growth * (level - 1) / 1000 + enhance + retrofit) * affinity) + direct equipment stats",
-    "shipCount": 894
+    "shipCount": 895
   },
   "ships": {
     "10000": {
@@ -48861,6 +48861,75 @@
         "reload": 71,
         "accuracy": 68,
         "evasion": 55
+      },
+      "retrofit": {},
+      "augment": null,
+      "equipSlots": [
+        [
+          1
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          14
+        ]
+      ]
+    },
+    "970113": {
+      "name": "소브라지텔니(META)",
+      "shipType": "구축",
+      "type": 1,
+      "research": false,
+      "base": {
+        "health": 390,
+        "firepower": 31,
+        "torpedo": 43,
+        "antiair": 30,
+        "reload": 77,
+        "accuracy": 55,
+        "evasion": 55,
+        "speed": 48,
+        "luck": 84,
+        "asw": 47
+      },
+      "maxBase": {
+        "health": 960,
+        "firepower": 78,
+        "torpedo": 107,
+        "antiair": 74,
+        "reload": 77,
+        "accuracy": 55,
+        "evasion": 55,
+        "speed": 48,
+        "luck": 84,
+        "asw": 117
+      },
+      "growth": {
+        "health": 7903,
+        "firepower": 394,
+        "torpedo": 594,
+        "antiair": 411,
+        "reload": 534,
+        "accuracy": 746,
+        "evasion": 863,
+        "asw": 632
+      },
+      "enhance": {
+        "health": 380,
+        "torpedo": 42,
+        "antiair": 30,
+        "reload": 57,
+        "accuracy": 54,
+        "evasion": 54
       },
       "retrofit": {},
       "augment": null,
