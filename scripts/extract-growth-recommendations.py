@@ -592,7 +592,7 @@ def write_audit_report(path, extracted, recommendations, unmatched, unrated_rece
         f"대작전 원본에서 `{exclusion_marker}` 표식이 시작되는 구간은 "
         "사용자 검토에 따라 앱 JSON과 추천 순위에서 제외합니다. 행 번호는 원본 구조에 따라 자동으로 다시 찾습니다.",
         "",
-        "## 원본 미평가 신규 함선",
+        "## 원본 추천 등급 미등록 함선 (별도 확인 대상)",
         "",
     ])
     if unrated_recent_ships:
@@ -633,7 +633,7 @@ def main():
             unrated_recent_ships.append({
                 "id": character["id"],
                 "name": character["name"],
-                "reason": "원본 최신화 이후 미평가",
+                "reason": "별도 확인 대상 중 원본 추천 등급 미등록",
             })
 
     output = {

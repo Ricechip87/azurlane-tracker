@@ -1,0 +1,717 @@
+{
+  "source": {
+    "title": "인식각성 추천표(메인해역) · 추천편성 예시",
+    "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/edit?gid=452228887#gid=452228887",
+    "sheetUpdatedAt": "2026-10-11",
+    "referenceImageDate": "2026-10-12",
+    "verifiedAt": "2026-10-14",
+    "sourceRows": [
+      35,
+      52
+    ],
+    "notes": [
+      "로컬 원본 CSV 35~52행과 사용자 첨부 표를 대조한 수동 전사입니다. 표 갱신일(10월 11일)과 하단 참고 이미지 표기일(10월 12일)을 구분합니다.",
+      "원본의 최상위팀 예시이며 개별 함선 티어 또는 무조건 클리어 보장이 아닙니다. 레벨·장비·스킬·개장·적 편성에 따라 결과가 달라집니다.",
+      "택1 후보는 동시에 배치하는 함선이 아니며, 육성 대상 자리는 특정 캐릭터로 자동 채우지 않습니다."
+    ]
+  },
+  "examples": [
+    {
+      "id": "chapter16-mob",
+      "title": "16지 첫 도전 · 1파티 쫄팟",
+      "stage": "16지",
+      "purpose": "첫 도전 · 쫄팟",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/edit?gid=452228887#gid=452228887",
+      "sourceRows": [
+        37,
+        40
+      ],
+      "main": [
+        {
+          "position": "기함",
+          "role": "기함",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 678,
+              "gid": 60508,
+              "name": "라파엘로"
+            }
+          ]
+        },
+        {
+          "position": "후열 2",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 142,
+              "gid": 20603,
+              "name": "유니콘",
+              "retrofitRequired": true
+            }
+          ]
+        },
+        {
+          "position": "후열 3",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 716,
+              "gid": 10725,
+              "name": "카우펜스"
+            }
+          ]
+        }
+      ],
+      "vanguard": [
+        {
+          "position": "선봉",
+          "role": "전열 선봉",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 615,
+              "gid": 10151,
+              "name": "라피Ⅱ"
+            }
+          ]
+        },
+        {
+          "position": "가운데",
+          "role": "전열 가운데",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": "P044",
+              "gid": 39908,
+              "name": "타카하시"
+            }
+          ]
+        },
+        {
+          "position": "맨뒤",
+          "role": "전열 맨뒤",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": "P029",
+              "gid": 39906,
+              "name": "시만토"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chapter16-boss",
+      "title": "16지 첫 도전 · 2파티 보스팟",
+      "stage": "16지",
+      "purpose": "첫 도전 · 보스팟",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/edit?gid=452228887#gid=452228887",
+      "sourceRows": [
+        41,
+        44
+      ],
+      "main": [
+        {
+          "position": "기함",
+          "role": "기함",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 217,
+              "gid": 30510,
+              "name": "무사시"
+            }
+          ]
+        },
+        {
+          "position": "후열 2",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 221,
+              "gid": 30604,
+              "name": "즈이호"
+            }
+          ]
+        },
+        {
+          "position": "후열 3",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 502,
+              "gid": 60701,
+              "name": "아퀼라"
+            }
+          ]
+        }
+      ],
+      "vanguard": [
+        {
+          "position": "선봉",
+          "role": "전열 선봉",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 616,
+              "gid": 11802,
+              "name": "괌"
+            }
+          ]
+        },
+        {
+          "position": "가운데",
+          "role": "전열 가운데",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 12,
+              "gid": 10110,
+              "name": "윌리엄 D 포터"
+            }
+          ]
+        },
+        {
+          "position": "맨뒤",
+          "role": "전열 맨뒤",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 670,
+              "gid": 40152,
+              "name": "Z52"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "chapter15-mob",
+      "title": "15지 첫 도전 · 쫄팟",
+      "stage": "15지",
+      "purpose": "첫 도전 · 쫄팟",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/edit?gid=452228887#gid=452228887",
+      "sourceRows": [
+        45,
+        48
+      ],
+      "main": [
+        {
+          "position": "기함",
+          "role": "기함",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 217,
+              "gid": 30510,
+              "name": "무사시"
+            }
+          ]
+        },
+        {
+          "position": "후열 2",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 221,
+              "gid": 30604,
+              "name": "즈이호"
+            }
+          ]
+        },
+        {
+          "position": "후열 3",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 502,
+              "gid": 60701,
+              "name": "아퀼라"
+            }
+          ]
+        }
+      ],
+      "vanguard": [
+        {
+          "position": "선봉",
+          "role": "전열 선봉",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 615,
+              "gid": 10151,
+              "name": "라피Ⅱ"
+            }
+          ]
+        },
+        {
+          "position": "가운데",
+          "role": "전열 가운데",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 12,
+              "gid": 10110,
+              "name": "윌리엄 D 포터"
+            }
+          ]
+        },
+        {
+          "position": "맨뒤",
+          "role": "전열 맨뒤",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 670,
+              "gid": 40152,
+              "name": "Z52"
+            }
+          ]
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "stage16-4-training",
+      "title": "16-4 · 전열 2명 육성",
+      "stage": "16-4",
+      "purpose": "쫄작",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/edit?gid=452228887#gid=452228887",
+      "sourceRows": [
+        37,
+        40
+      ],
+      "main": [
+        {
+          "position": "기함",
+          "role": "기함",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 678,
+              "gid": 60508,
+              "name": "라파엘로"
+            }
+          ]
+        },
+        {
+          "position": "후열 2",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 142,
+              "gid": 20603,
+              "name": "유니콘",
+              "retrofitRequired": true
+            }
+          ]
+        },
+        {
+          "position": "후열 3",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 716,
+              "gid": 10725,
+              "name": "카우펜스"
+            }
+          ]
+        }
+      ],
+      "vanguard": [
+        {
+          "position": "선봉",
+          "role": "전열 선봉",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 115,
+              "gid": 20212,
+              "name": "벨파스트",
+              "retrofitRequired": true
+            }
+          ]
+        },
+        {
+          "position": "가운데",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        },
+        {
+          "position": "맨뒤",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "stage15-1-training-mixed",
+      "title": "15-1 · 후열 1명 + 전열 2명 육성",
+      "stage": "15-1",
+      "purpose": "쫄작",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/edit?gid=452228887#gid=452228887",
+      "sourceRows": [
+        41,
+        44
+      ],
+      "main": [
+        {
+          "position": "기함",
+          "role": "기함",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 678,
+              "gid": 60508,
+              "name": "라파엘로"
+            }
+          ]
+        },
+        {
+          "position": "후열 2",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 221,
+              "gid": 30604,
+              "name": "즈이호"
+            }
+          ]
+        },
+        {
+          "position": "후열 3",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        }
+      ],
+      "vanguard": [
+        {
+          "position": "선봉",
+          "role": "전열 선봉 · 택1",
+          "type": "choice",
+          "candidates": [
+            {
+              "id": 115,
+              "gid": 20212,
+              "name": "벨파스트",
+              "retrofitRequired": true
+            },
+            {
+              "id": "P023",
+              "gid": 29905,
+              "name": "플리머스"
+            }
+          ]
+        },
+        {
+          "position": "가운데",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        },
+        {
+          "position": "맨뒤",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        }
+      ],
+      "notes": [
+        "원문 A안: 라파엘로와 즈이호를 후열에 배치하고, 전열 선봉은 벨파스트(개장)·플리머스 중 1명을 선택합니다."
+      ]
+    },
+    {
+      "id": "stage15-1-training-vanguard",
+      "title": "15-1 · 전열 3명 육성",
+      "stage": "15-1",
+      "purpose": "쫄작",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/edit?gid=452228887#gid=452228887",
+      "sourceRows": [
+        41,
+        44
+      ],
+      "main": [
+        {
+          "position": "기함",
+          "role": "기함",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 678,
+              "gid": 60508,
+              "name": "라파엘로"
+            }
+          ]
+        },
+        {
+          "position": "후열 2",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 221,
+              "gid": 30604,
+              "name": "즈이호"
+            }
+          ]
+        },
+        {
+          "position": "후열 3",
+          "role": "추가 힐러 · 택1",
+          "type": "choice",
+          "candidates": [
+            {
+              "id": 142,
+              "gid": 20603,
+              "name": "유니콘",
+              "retrofitRequired": true
+            },
+            {
+              "id": 716,
+              "gid": 10725,
+              "name": "카우펜스"
+            }
+          ]
+        }
+      ],
+      "vanguard": [
+        {
+          "position": "선봉",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        },
+        {
+          "position": "가운데",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        },
+        {
+          "position": "맨뒤",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        }
+      ],
+      "notes": [
+        "원문 B안: 후열 전투원 3명을 배치하는 변형입니다. 세 번째 후열은 유니콘(개장)·카우펜스 중 1명을 선택하며, 전열은 3명 모두 육성 대상입니다."
+      ]
+    },
+    {
+      "id": "stage13-4-training-four",
+      "title": "13-4 · 후열 2명 + 전열 2명 육성",
+      "stage": "13-4",
+      "purpose": "쫄작",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/edit?gid=452228887#gid=452228887",
+      "sourceRows": [
+        45,
+        48
+      ],
+      "main": [
+        {
+          "position": "후열 1",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        },
+        {
+          "position": "후열 2",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 142,
+              "gid": 20603,
+              "name": "유니콘",
+              "retrofitRequired": true
+            }
+          ]
+        },
+        {
+          "position": "후열 3",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        }
+      ],
+      "vanguard": [
+        {
+          "position": "선봉",
+          "role": "전열 선봉 · 택1",
+          "type": "choice",
+          "candidates": [
+            {
+              "id": 115,
+              "gid": 20212,
+              "name": "벨파스트",
+              "retrofitRequired": true
+            },
+            {
+              "id": "P023",
+              "gid": 29905,
+              "name": "플리머스"
+            },
+            {
+              "id": 754,
+              "gid": 20238,
+              "name": "타이거"
+            }
+          ]
+        },
+        {
+          "position": "가운데",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        },
+        {
+          "position": "맨뒤",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        }
+      ],
+      "notes": [
+        "원문 B안: 일반적으로 유니콘(개장)과 전열 전투원 1명을 배치해 4명을 육성하는 구성입니다.",
+        "원본은 유니콘의 기함 여부를 지정하지 않으므로 후열 좌우 그림 순서를 실제 기함 배치로 단정하지 않습니다."
+      ]
+    },
+    {
+      "id": "stage13-4-training-five",
+      "title": "13-4 · 조건부 5명 육성",
+      "stage": "13-4",
+      "purpose": "쫄작",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/edit?gid=452228887#gid=452228887",
+      "sourceRows": [
+        45,
+        48
+      ],
+      "main": [
+        {
+          "position": "후열 1",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        },
+        {
+          "position": "후열 2",
+          "role": "힐러",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 142,
+              "gid": 20603,
+              "name": "유니콘",
+              "retrofitRequired": true
+            }
+          ]
+        },
+        {
+          "position": "후열 3",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        }
+      ],
+      "vanguard": [
+        {
+          "position": "선봉",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        },
+        {
+          "position": "가운데",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        },
+        {
+          "position": "맨뒤",
+          "role": "육성 대상",
+          "type": "training",
+          "candidates": []
+        }
+      ],
+      "notes": [
+        "원문 A안: 육성 대상의 레벨과 성능이 충분한 경우에만 유니콘(개장)과 육성 대상 5명으로 구성할 수 있습니다. 모든 보유 상태에서 가능한 편성은 아닙니다.",
+        "원본은 유니콘의 기함 여부를 지정하지 않습니다."
+      ]
+    },
+    {
+      "id": "chapter15-16-support",
+      "title": "15·16지 지원항모 예시",
+      "stage": "15·16지",
+      "purpose": "지원항모",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/edit?gid=452228887#gid=452228887",
+      "sourceRows": [
+        49,
+        52
+      ],
+      "main": [
+        {
+          "position": "지원항모 1",
+          "role": "지원항모",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 669,
+              "gid": 40704,
+              "name": "프리츠 루메이"
+            }
+          ]
+        },
+        {
+          "position": "지원항모 2",
+          "role": "지원항모",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": "P045",
+              "gid": 49911,
+              "name": "막스 임멜만"
+            }
+          ]
+        },
+        {
+          "position": "지원항모 3",
+          "role": "지원항모",
+          "type": "fixed",
+          "candidates": [
+            {
+              "id": 579,
+              "gid": 50602,
+              "name": "화지아",
+              "retrofitRequired": true
+            }
+          ]
+        }
+      ],
+      "vanguard": [],
+      "notes": [
+        "지원항모는 전투기 위주 장비 세팅이 중요합니다. 원문은 신규 금포케 또는 팬케이크를 추천합니다(원문 별칭).",
+        "다른 함재기 슬롯은 항공 수치가 높은 장비를 사용하고, 설비는 금유압 2개를 지정합니다(원문 별칭).",
+        "예시 함선이 없다면 항공 수치가 높거나 전투기 슬롯이 많은 다른 함선으로 대체할 수 있다는 원문의 조건입니다. 이 화면은 장비·항공 수치를 검증하거나 대체 성능을 보장하지 않습니다."
+      ],
+      "supportOnly": true
+    }
+  ]
+}

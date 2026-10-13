@@ -10,6 +10,7 @@ import { buildOperationTierByName } from '../utils/recommendationRanking.js'
 import { calcStatsByShipType, mergeStatsByShipType } from '../utils/rosterStats.js'
 import { RecommendationShipArtwork } from './recommendations/RecommendationShipArtwork.jsx'
 import { RecommendationControlSection as ControlSection } from './recommendations/RecommendationControlSection.jsx'
+import FleetFormationExamples from './FleetFormationExamples.jsx'
 
 const RARITY_BADGE = {
   UR: 'bg-red-950 text-red-100',
@@ -62,6 +63,8 @@ export default function FleetRecommendationPage({ characters }) {
 
   return (
     <section className="space-y-3">
+      <FleetFormationExamples characters={characters} />
+      <h2 className="pt-3 text-base font-bold text-gray-100">자동 계산 편성 · 1~15지</h2>
       <div className="grid gap-3 xl:grid-cols-[310px_minmax(0,1fr)]">
         <FleetControlPanel
           stages={stages}

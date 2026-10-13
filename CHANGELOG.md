@@ -1,5 +1,24 @@
 # Change Log
 
+## 2026-10-14 - Clarify Unrated Ship Notice
+
+- Replace the misleading "new ships" label with "source recommendation rating not registered" and explain that the notice covers a maintained watchlist, not every unrated ship. Preserve ship names, ratings, and selection behavior.
+- Align the generated review reason and audit heading with the user-facing notice.
+
+## 2026-10-14 - Add Source Formation Examples
+
+### Changed
+- Add nine source-backed formation examples for first clears, leveling, and support carriers, preserving named positions, alternative candidates, training slots, retrofit requirements, and conditional configurations.
+- Compare source candidates with the user's recorded ownership and progression without mutating saved data or automatically treating substitutes as equally effective.
+- Keep reference examples separate from the existing experimental fleet calculator; do not invent Chapter 16 stage requirements or claim clear readiness from ownership alone.
+- Record source provenance and a manual recheck requirement for future recommendation-sheet updates.
+
+### Verified
+- Independently cross-check all nine examples against source rows 35–52, including candidate identities, positions, alternatives, training slots, and retrofit conditions. Confirm all 38 candidate artwork references exist.
+- Pass lint, the complete test suite, production build, and diff checks. Add regression coverage for empty/full ownership, non-mutating comparison, choice-slot counting, and the actual source dataset.
+- Preserve the existing fleet calculation, stage requirements, and user-data storage. The existing non-blocking large-bundle warning remains.
+- Resolve the earlier preview connection interruption and verify the production preview in the browser: updated notice, all nine example options, stage filtering, alternative candidates, retrofit warnings, and four/five training-slot configurations. No browser console errors were observed.
+
 ## 2026-10-14 - Refresh KR Acquisition and Content Tracking
 
 ### Changed

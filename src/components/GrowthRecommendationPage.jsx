@@ -100,9 +100,9 @@ export default function GrowthRecommendationPage({ characters }) {
 
       {unratedRecentShips.length > 0 && (
         <div className="rounded border border-amber-800/70 bg-amber-950/25 px-4 py-3 text-sm text-amber-100">
-          <span className="font-bold">원본 미평가 신규 함선:</span>{' '}
+          <span className="font-bold">원본 추천 등급 미등록 함선:</span>{' '}
           {unratedRecentShips.map(ship => ship.name).join(', ')}
-          <span className="ml-2 text-xs text-amber-300/80">원본에 등급이 없어 임의로 추천 등급을 부여하지 않았습니다.</span>
+          <span className="ml-2 text-xs text-amber-300/80">별도 확인 대상으로 관리하는 함선 중 원본 추천 등급이 없는 항목입니다. 전체 미등록 함선 목록은 아니며, 임의로 등급을 부여하지 않았습니다.</span>
         </div>
       )}
 
