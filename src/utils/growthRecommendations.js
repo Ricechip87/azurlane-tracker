@@ -7,6 +7,7 @@ import { getShipObtainability } from './shipObtainabilityLookup.js'
 
 export const GROWTH_MODE_SOURCE = {
   main: 'main',
+  'main-farm': 'main',
   operation: 'operation-siren',
   newbie: 'newbie',
 }
@@ -162,6 +163,10 @@ function getCandidatesForMode(mode, characterByName, growthRecommendationData, o
 
   for (const recommendation of growthRecommendationData.recommendations || []) {
     if (recommendation.source !== source) continue
+    if (source === 'main' && recommendation.sheetSection) {
+      const section = mode === 'main-farm' ? '메인 쫄작용' : '메인 밀기용'
+      if (recommendation.sheetSection !== section) continue
+    }
     const character = characterByName.get(recommendation.name)
     const obtainability = character
       ? getShipObtainability(obtainabilityByName, character)
@@ -194,7 +199,7 @@ function buildCandidate(recommendation, character, obtainability) {
     lane: getLane(shipType),
     tags: [shipType, getGroupTag(recommendation.sheetGroup)].filter(Boolean),
     summary: formatGrowthRecommendationReason(
-      roleSummary || '원본 추천표 등급 기준 후보',
+      [recommendation.sheetSection && `${recommendation.sheetSection} · ${recommendation.sheetGroup}`, roleSummary || '원본 추천표 등급 기준 후보'].filter(Boolean).join(' · '),
       recommendation.requiresUniqueEquipment,
     ),
   }

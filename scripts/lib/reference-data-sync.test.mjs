@@ -33,6 +33,8 @@ assert.deepEqual(MANAGED_REFERENCE_PATHS, [
 ])
 
 const testRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'azurlane-reference-sync-test-'))
+const syncSource = fs.readFileSync(new URL('../sync-reference-data.mjs', import.meta.url), 'utf8')
+assert.match(syncSource, /relativePath: 'AzurLaneLuaScripts\/KR\/sharecfg\/soundstory_template\.lua',\s*type: 'lua',\s*expectedText: 'soundstory_template'/, '시크릿즈 파일 KR 원본을 관리 경로에 수집하고 Lua 원본 표식을 검증한다')
 const referenceRoot = path.join(testRoot, '참고용')
 const stagedRoot = path.join(testRoot, 'staged')
 

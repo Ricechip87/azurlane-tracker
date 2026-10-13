@@ -1,5 +1,22 @@
 # Change Log
 
+## 2026-10-14 - Refresh KR Acquisition and Content Tracking
+
+### Changed
+- Refresh the existing 895-ship dataset and Soobrazitelny META's source-backed anti-air enhancement value (30 to 31).
+- Reconcile Kimberly META's World Tour previous-shop acquisition against the official October 8 KR opening and the current KR shop source, preserving stale ALtoy history as evidence rather than treating it as authoritative current availability.
+- Require future update reports to identify each new skin and in-game SecretMessages file by character and exact title, distinguishing release notices from pre-collected assets and external ASMR products.
+- Add the KR SecretMessages metadata to managed source synchronization and preserve a 30-entry comparison baseline with an immutable source commit. Do not collect paid voice files or add this maintenance data to the deployed runtime.
+- Follow the source workbook's October 11 main-sea sheet replacement and preserve its separate progression/farming sections rather than silently dropping role-based categories or merging their tiers.
+- Explicitly install pinned Python test dependencies in the deployment workflow so recommendation-parser tests also run on clean CI workers.
+
+### Verified
+- Independently pass lint, the complete test suite, production build, semantic generation-idempotency, local source audits, and diff whitespace checks. The existing non-blocking large-bundle warning remains.
+- Reproduce the missing Python dependency in an empty virtual environment, then pass all Python fixtures after installing the pinned test requirements.
+- Preserve all 895 ship identities and records; verify the single combat-value correction and Kimberly META's permanent exchange against KR sources, including the official October 8 opening and 60-crystal, one-exchange limit.
+- Verify 29 main-progression and 21 main-farming recommendations, unchanged operation/newbie entries, and separate tier selection before name deduplication. Confirm the rendered progression/farming tabs and Belfast's A+/SS distinction, plus Kimberly META's current and historical acquisition sections.
+- Preserve all 19,619 local image files byte-for-byte; the 16,171 declared images remain covered, with existing documented source exceptions unchanged. No new image downloads are necessary. Keep bulk references, source mirrors, and maintenance-only metadata outside the Pages runtime artifact.
+
 ## 2026-09-30 - Apply the September 30 KR Update
 
 ### Changed

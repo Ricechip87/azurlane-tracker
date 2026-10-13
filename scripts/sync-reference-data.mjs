@@ -116,6 +116,13 @@ const downloads = [
     expectedText: 'ship_data_blueprint',
   },
   {
+    id: 'kr-soundstory-lua',
+    url: 'https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/soundstory_template.lua',
+    relativePath: 'AzurLaneLuaScripts/KR/sharecfg/soundstory_template.lua',
+    type: 'lua',
+    expectedText: 'soundstory_template',
+  },
+  {
     id: 'kr-research-task-lua',
     url: 'https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/task_data_template.lua',
     relativePath: 'AzurLaneLuaScripts/KR/sharecfgdata/task_data_template.lua',
@@ -136,7 +143,7 @@ const downloads = [
   },
   {
     id: 'growth-main-sea',
-    url: googleExport(guideSheetId, 'format=csv&gid=1100559522'),
+    url: googleExport(guideSheetId, 'format=csv&gid=452228887'),
     relativePath: '벽람 함순이도감 v2.1.8_배포용의 사본 - [ 인식각성 추천표(메인해역).csv',
     type: 'csv',
   },

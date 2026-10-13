@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T14:50:12.412Z",
+  "generatedAt": "2026-10-13T18:23:44.158Z",
   "policy": {
     "displayScope": "ALtoy/KR service roster only; name fallback handles six Utawarerumono skin-ID identities",
     "fleetTechPriority": [
@@ -14,11 +14,11 @@
   "sources": {
     "characters": {
       "path": "src/data/characters.json",
-      "sha256": "e78c140f83f499224c6438b65b0276099410296c74f7354a55e9b31bb919d2f2"
+      "sha256": "6e672c7b079e667e96cd3fba968f7e6e5971e26ac0818e85cada7407a35d15bb"
     },
     "altoy": {
       "path": "참고용/ALtoy/data/ship_info_data.json",
-      "sha256": "6d2015c22a1a736b58866581981a78db4a2b55f4501743231c92f235f8c3e16c"
+      "sha256": "871d6f28855bf44cf903c5940cb5a0dd1a3c15c50bf10394a85ead318da07132"
     },
     "krShips": {
       "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",

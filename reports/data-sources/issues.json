@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T14:50:12.556Z",
+  "generatedAt": "2026-10-13T18:23:44.286Z",
   "summary": {
     "identityExceptions": 0,
     "obtainabilityAltoyOnly": 0,
@@ -11,9 +11,8 @@
     "availability": {
       "active-event": 8,
       "collab-unknown": 91,
-      "permanent": 629,
-      "rerun-wait": 166,
-      "upcoming-event": 1
+      "permanent": 630,
+      "rerun-wait": 166
     },
     "acquisitionRoutes": {
       "active-event": 8,
@@ -26,7 +25,7 @@
       "later-map-drop": 114,
       "map-drop": 81,
       "rotating-exchange": 217,
-      "special-exchange": 87
+      "special-exchange": 88
     }
   },
   "identityExceptions": [],

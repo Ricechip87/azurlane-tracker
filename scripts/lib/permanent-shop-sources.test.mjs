@@ -1,5 +1,20 @@
 import assert from 'node:assert/strict'
 import { buildArenaShopGids, timelineFallbackSource } from './permanent-shop-sources.mjs'
+import { resolveOfficialPermanentShop } from './permanent-shop-sources.mjs'
+import officialShops from '../data/kr-permanent-shops.json' with { type: 'json' }
+import { classifyObtainability } from './obtainability-classifier.mjs'
+
+const kimberly = officialShops.ships.find(row => row.gid === 970104)
+assert.equal(kimberly.effectiveAt, '2026-10-08')
+assert.equal(resolveOfficialPermanentShop({ gid: 970104, shops: officialShops.ships, today: '2026-10-07' }), null)
+for (const today of ['2026-10-08', '2026-10-14', '2026-12-08']) {
+  const resolved = resolveOfficialPermanentShop({ gid: 970104, shops: officialShops.ships, today })
+  assert.equal(resolved, kimberly, '월드 투어 종료일은 상시 이전 상점의 종료일이 아니다')
+  const classified = classifyObtainability({ faction: 'META', obtain: resolved.obtain, permanentSources: ['이벤트: 월드 투어'], permanentSignals: { shop: true } })
+  assert.equal(classified.availability.key, 'permanent', '오래된 월드 투어 원본보다 공식 상점 입수가 우선')
+  assert.equal(classified.primaryRoute.key, 'special-exchange')
+}
+assert.equal(resolveOfficialPermanentShop({ gid: 970113, shops: officialShops.ships, today: '2026-10-14' }), null, '다른 월드 투어 META를 상시화하지 않는다')
 
 const arenaData = {
   1: { commodity_list_1: [[43037, 300]], commodity_list_2: [[43042, 300]] },

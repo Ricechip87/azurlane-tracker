@@ -10,7 +10,7 @@ const characterById = new Map(characters.map(character => [String(character.id),
 assert.deepEqual(
   Object.fromEntries(data.sources.map(source => [source.key, source.updatedAt])),
   {
-    main: '2026-01-02',
+    main: '2026-10-11',
     'operation-siren': '2026-08-27',
     newbie: '2025-08-09',
   },
@@ -22,7 +22,7 @@ for (const recommendation of data.recommendations) {
   assert.ok(recommendation.sheetGroup, `missing group: ${recommendation.name}`)
 }
 
-for (const source of ['main', 'operation-siren']) {
+for (const source of ['operation-siren']) {
   const carrierAmagi = data.recommendations.find(item => (
     item.source === source
     && item.sheetGroup === '항모 CV, 경항모 CVL'
@@ -57,16 +57,6 @@ assert.notEqual(
   characters.find(character => character.name === '론(µ장비)')?.id,
   '론과 론(μ장비)은 서로 다른 함선 ID를 유지해야 합니다.',
 )
-const collabKasumi = data.recommendations.find(item => (
-  item.source === 'main' && item.row === 27 && item.column === 30
-))
-assert.equal(
-  collabKasumi?.id,
-  'Z063',
-  '원본의 카스미(콜)은 일반 구축함이 아니라 카스미 (콜라보)와 매칭되어야 합니다.',
-)
-assert.equal(collabKasumi?.name, '카스미 (콜라보)')
-assert.equal(collabKasumi?.shipType, '중순')
 assert.deepEqual(
   ['카스미', '카스미(META)', '카스미 (콜라보)'].map(name => {
     const character = characters.find(item => item.name === name)
@@ -81,7 +71,7 @@ assert.deepEqual(
 )
 
 for (const [source, name] of [
-  ['main', '유키카제'],
+  ['main', '샌디에이고'],
   ['operation-siren', '유키카제'],
   ['operation-siren', '포미더블'],
 ]) {
@@ -117,7 +107,24 @@ for (const characterId of new Set(data.recommendations.map(recommendation => Str
 }
 
 const recommendationKey = (source, name) => data.recommendations.some(item => item.source === source && item.name === name)
-assert.equal(recommendationKey('main', '토키사키 쿠루미'), true)
+assert.equal(recommendationKey('main', '아즈치'), true)
+assert.equal(recommendationKey('main', '레오나르도 다 빈치'), true)
+const mainRecommendations = data.recommendations.filter(item => item.source === 'main')
+assert.deepEqual([...new Set(mainRecommendations.map(item => item.sheetSection))], ['메인 밀기용', '메인 쫄작용'])
+assert.ok(mainRecommendations.every(item => item.row < 35), '등급 없는 편성 예시는 추천 순위에 넣지 않습니다.')
+assert.equal(data.sources.find(source => source.key === 'main').excludedFromRow, 35)
+for (const [section, name, tier, group] of [
+  ['메인 밀기용', '무사시', 'SS', '후열 기함'],
+  ['메인 밀기용', '라피Ⅱ', 'SS', '전열 선봉'],
+  ['메인 밀기용', '벨파스트', 'A+', '전열 나머지 2자리'],
+  ['메인 쫄작용', '벨파스트', 'SS', '전열 선봉'],
+  ['메인 쫄작용', '이14', 'S', '잠수함'],
+]) {
+  const entry = mainRecommendations.find(item => item.sheetSection === section && item.name === name)
+  assert.equal(entry?.tier, tier, `${section}: ${name}`)
+  assert.ok(entry?.sheetGroup.startsWith(group), `${section}: ${name} 역할`)
+}
+assert.ok(data.sources.find(source => source.key === 'main').sourceGuidance.some(item => item.text.includes('지원항모 편성 예시')))
 assert.equal(recommendationKey('operation-siren', '클래런스 K 브론슨'), true)
 assert.equal(recommendationKey('newbie', '프린츠 오이겐'), true)
 assert.equal(recommendationKey('operation-siren', '콜렛'), true, '콜렛 대작전 B+ 추천 반영')

@@ -1,23 +1,22 @@
 {
   "meta": {
     "note": "KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.",
-    "generatedAt": "2026-09-30T14:49:59.734Z",
-    "asOfDate": "2026-09-30",
+    "generatedAt": "2026-10-13T18:23:42.377Z",
+    "asOfDate": "2026-10-14",
     "total": 895,
     "withObtain": 895,
     "withoutObtain": 0,
     "availability": {
       "active-event": 8,
       "collab-unknown": 91,
-      "permanent": 629,
-      "rerun-wait": 166,
-      "upcoming-event": 1
+      "permanent": 630,
+      "rerun-wait": 166
     },
     "difficulty": {
       "easy": 328,
       "event": 8,
-      "hard": 83,
-      "limited": 258,
+      "hard": 84,
+      "limited": 257,
       "normal": 218
     },
     "acquisitionRoutes": {
@@ -31,7 +30,7 @@
       "later-map-drop": 114,
       "map-drop": 81,
       "rotating-exchange": 217,
-      "special-exchange": 87
+      "special-exchange": 88
     },
     "source": "https://jforplay.github.io/altoy"
   },
@@ -70096,7 +70095,7 @@
       "faction": "META",
       "shipType": "구축",
       "obtain": [
-        "한정 이벤트: 월드 투어"
+        "META 상점·월드 투어 이전 상점 (부서진 결정 60, 1회 교환)"
       ],
       "historicalObtain": [
         "한정 이벤트: 월드 투어"
@@ -70118,28 +70117,69 @@
         "coreMonthly": false,
         "arenaShop": false,
         "build": false,
-        "shop": false,
+        "shop": true,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "special-exchange",
+          "label": "특수 교환·연구",
+          "certainty": "conditional",
+          "rank": 3,
+          "sources": [
+            "META 상점·월드 투어 이전 상점 (부서진 결정 60, 1회 교환)"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "special-exchange",
+        "label": "특수 교환·연구",
+        "certainty": "conditional",
+        "rank": 3,
+        "sources": [
+          "META 상점·월드 투어 이전 상점 (부서진 결정 60, 1회 교환)"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "hard",
+        "label": "어려움",
         "reasons": [
-          "복각 대기"
+          "상점 교환",
+          "META 상점·월드 투어 이전 상점 (부서진 결정 60, 1회 교환)"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialPermanentShop": {
+          "gid": 970104,
+          "name": "킴벌리(META)",
+          "effectiveAt": "2026-10-08",
+          "verifiedAt": "2026-10-14",
+          "obtain": [
+            "META 상점·월드 투어 이전 상점 (부서진 결정 60, 1회 교환)"
+          ],
+          "source": "https://cafe.naver.com/azurlanekorea/574581",
+          "evidence": {
+            "activityId": 7104,
+            "activityTime": "always",
+            "shopItemId": 12051,
+            "commodityId": 9701041,
+            "resourceType": 21000,
+            "resourceNum": 60,
+            "numLimit": 1,
+            "rawStartsAt": "2026-10-01",
+            "activitySource": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/activity_template.lua",
+            "shopSource": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/activity_shop_template.lua"
+          }
+        }
       }
     },
     {
@@ -70582,7 +70622,7 @@
       "faction": "META",
       "shipType": "구축",
       "obtain": [
-        "획득 예정: 월드 투어 - 소브라지텔니 (2026-10-08 00:00부터 · 2026-12-07 23:59까지)",
+        "현재 이벤트: 월드 투어 - 소브라지텔니 (2026-12-07 23:59까지)",
         "월드 투어 무료 보상"
       ],
       "historicalObtain": [
@@ -70608,12 +70648,12 @@
         "timeline": false
       },
       "availability": {
-        "key": "upcoming-event",
-        "label": "획득 예정",
+        "key": "active-event",
+        "label": "현재 이벤트",
         "eventName": "월드 투어 - 소브라지텔니",
         "endsAt": "2026-12-07 23:59",
         "endsAtLabel": "2026-12-07 23:59까지",
-        "phase": "upcoming",
+        "phase": "main",
         "startsAt": "2026-10-08 00:00",
         "previewBeforeStart": true,
         "mainEndsAt": "2026-12-07 23:59",
@@ -70626,15 +70666,39 @@
             "endsAt": "2026-12-07 23:59"
           }
         ],
-        "activeEventRoutes": []
+        "activeEventRoutes": [
+          {
+            "kind": "world-tour",
+            "label": "월드 투어 무료 보상",
+            "endsAt": "2026-12-07 23:59"
+          }
+        ]
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "active-event",
+          "label": "현재 이벤트",
+          "certainty": "limited-time",
+          "rank": 1,
+          "sources": [
+            "현재 이벤트 월드 투어 - 소브라지텔니"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "active-event",
+        "label": "현재 이벤트",
+        "certainty": "limited-time",
+        "rank": 1,
+        "sources": [
+          "현재 이벤트 월드 투어 - 소브라지텔니"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "event",
+        "label": "이벤트",
         "reasons": [
-          "획득 예정"
+          "현재 진행 중인 KR 이벤트"
         ]
       },
       "verification": {
@@ -71450,8 +71514,7 @@
       "faction": "META",
       "shipType": "경순",
       "obtain": [
-        "현재 이벤트: 월드 투어 (2026-09-30까지)",
-        "이벤트: 월드 투어"
+        "META 연구실·월드 투어"
       ],
       "historicalObtain": [
         "META 연구실·월드 투어"
@@ -71476,56 +71539,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "eventName": "월드 투어",
-        "endsAt": "2026-09-30",
-        "endsAtLabel": "2026-09-30까지",
-        "phase": "main",
-        "startsAt": "2026-08-06",
-        "mainEndsAt": "2026-09-30",
-        "mainEndsAtLabel": "2026-09-30까지",
-        "claimEndsAt": null,
-        "eventRoutes": [
-          {
-            "kind": "event",
-            "label": "이벤트: 월드 투어",
-            "endsAt": "2026-09-30"
-          }
-        ],
-        "activeEventRoutes": [
-          {
-            "kind": "event",
-            "label": "이벤트: 월드 투어",
-            "endsAt": "2026-09-30"
-          }
-        ]
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "현재 이벤트",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "현재 이벤트 월드 투어"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "현재 이벤트",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "현재 이벤트 월드 투어"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {

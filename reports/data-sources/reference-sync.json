@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T14:46:48.633Z",
+  "generatedAt": "2026-10-13T18:18:21.964Z",
   "policy": {
     "data": "원격 원천을 임시 경로에서 전부 검증한 뒤 자동 관리 경로만 교체",
     "images": "별도 이미지 동기화에서 기존 파일을 보존하고 누락 파일만 추가",
@@ -35,15 +35,15 @@
       "id": "altoy-full",
       "url": "https://jforplay.github.io/altoy/data/ship_info_data.json",
       "relativePath": "ALtoy/data/ship_info_data.json",
-      "bytes": 6177357,
-      "sha256": "6d2015c22a1a736b58866581981a78db4a2b55f4501743231c92f235f8c3e16c"
+      "bytes": 6177405,
+      "sha256": "871d6f28855bf44cf903c5940cb5a0dd1a3c15c50bf10394a85ead318da07132"
     },
     {
       "id": "altoy-kr-event-timeline",
       "url": "https://raw.githubusercontent.com/JforPlay/altoy/main/src/data/kr_event_timeline.json",
       "relativePath": "ALtoy/data/kr_event_timeline.json",
-      "bytes": 187175,
-      "sha256": "71ddd50438e8e2b51e80f9b06241a27e45a5bc1d3244dd17c7ace7c87516bbf7"
+      "bytes": 187835,
+      "sha256": "6f1afa1437e9dcc2cbc063282be2219b7a27ff91e9bf98c005c994d5bfdcb275"
     },
     {
       "id": "altoy-lite",
@@ -56,8 +56,8 @@
       "id": "altoy-map-data",
       "url": "https://jforplay.github.io/altoy/data/maps/map_data_full.json",
       "relativePath": "ALtoy/data/maps/map_data_full.json",
-      "bytes": 10500919,
-      "sha256": "42ca9fa2eea6dc246159c3ea9bdd436db3bc6b4abd518e6ab4a5f6c2327fb4d9"
+      "bytes": 10664002,
+      "sha256": "2ab8b1341751a283bc59a3d61f0f36922e4e4464e00cf1be26bdfc1da7ea5b86"
     },
     {
       "id": "altoy-skill-template",
@@ -139,29 +139,29 @@
       "id": "fleet-tech-workbook",
       "url": "https://docs.google.com/spreadsheets/d/1R5u6fgr3e6XvfqQ3_GMuroeNfe2ShiY65akzzwDnwTs/export?format=xlsx",
       "relativePath": "벽람항로(일) - アズールレーン.xlsx",
-      "bytes": 849050,
-      "sha256": "e696a607111d99a9f42c7754d3e18f589cea8c4ffe77c1a1bb04bc837510557f"
+      "bytes": 848319,
+      "sha256": "83d9622cca554037e9c79da06c7ff9a66d592efda9325935685726ce4c03106c"
     },
     {
       "id": "growth-guide-workbook",
       "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=xlsx",
       "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본.xlsx",
-      "bytes": 8706168,
-      "sha256": "543348868fe03a9ce5a48ea64abd77d44e38c186744827ceab188a00b33e7a0d"
+      "bytes": 8411070,
+      "sha256": "e70aee5c9be214c238a765e583c4b7a2bc6331791270c0d9c4906ec168d54ad2"
     },
     {
       "id": "growth-main-sea",
-      "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=csv&gid=1100559522",
+      "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=csv&gid=452228887",
       "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - [ 인식각성 추천표(메인해역).csv",
-      "bytes": 19180,
-      "sha256": "e002d53030b1ee79e567c4992c035d83228de98dd5c97c0bb70dc8fa7f342df2"
+      "bytes": 8768,
+      "sha256": "61a4597735f72941ec209e6f9c1a826b63ba5e91fb3e660f5e9d6e1ba0cfb4e2"
     },
     {
       "id": "growth-main-sheet",
       "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=csv&gid=438662354",
       "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - [ 메인시트.csv",
-      "bytes": 131232,
-      "sha256": "c6cc34dfad0283044665d9200894743f5fcf130582ef0fddd7b8a14ccc7e5423"
+      "bytes": 131304,
+      "sha256": "c90a0fe2941d4b2e7c666822a0489a26643b654f461b78daf67f6bdaad488dd6"
     },
     {
       "id": "growth-new-player",
@@ -216,8 +216,8 @@
       "id": "kr-research-task-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/task_data_template.lua",
       "relativePath": "AzurLaneLuaScripts/KR/sharecfgdata/task_data_template.lua",
-      "bytes": 7506608,
-      "sha256": "29cb1b31bd5bcf2233770c5312ced6dae89f1eb0ab283cf2ea26a49fa83ada71"
+      "bytes": 7511641,
+      "sha256": "18d0d07d1259531a247d4ad5ad3c0979a669c7f81ea6ae366ed37cb79d26debb"
     },
     {
       "id": "kr-ship-data-group-lua",
@@ -225,6 +225,13 @@
       "relativePath": "AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
       "bytes": 534284,
       "sha256": "297fbb98d3fbfbe7ffb0011868e21fac1bb90cf4bdfb1cc138329f6b777de171"
+    },
+    {
+      "id": "kr-soundstory-lua",
+      "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/soundstory_template.lua",
+      "relativePath": "AzurLaneLuaScripts/KR/sharecfg/soundstory_template.lua",
+      "bytes": 26488,
+      "sha256": "45b1b6a2f1ac974bfd9512dfcee5483205821480095631b45a60cade4540e556"
     },
     {
       "id": "kr-spweapon-statistics-lua",

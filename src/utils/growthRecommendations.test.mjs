@@ -21,6 +21,17 @@ const obtainabilityByName = new Map(characters.map(character => [
 ]))
 
 const sections = buildGrowthRecommendationSections('main', characters, recommendationData, obtainabilityByName)
+const roleData = { recommendations: [
+  { source: 'main', name: '우선함', tier: 'A+', sheetSection: '메인 밀기용', sheetGroup: '전열 선봉', roleNote: '밀기 보호' },
+  { source: 'main', name: '우선함', tier: 'SS', sheetSection: '메인 쫄작용', sheetGroup: '전열 선봉', roleNote: '쫄작 보호' },
+  { source: 'main', name: '차순위함', tier: 'S', sheetSection: '메인 밀기용', sheetGroup: '후열 기함', roleNote: '돌파' },
+] }
+const pushSections = buildGrowthRecommendationSections('main', characters, roleData, obtainabilityByName)
+const farmSections = buildGrowthRecommendationSections('main-farm', characters, roleData, obtainabilityByName)
+assert.equal(pushSections.find(section => section.id === 'top').cards[0].name, '차순위함', '쫄작 SS를 밀기 A+보다 높은 등급으로 합치지 않는다')
+assert.equal(farmSections.find(section => section.id === 'top').cards[0].tier, 'SS')
+assert.ok(farmSections.every(section => section.cards.every(card => card.sheetSection === '메인 쫄작용')))
+assert.ok(farmSections.find(section => section.id === 'top').cards[0].summary.includes('메인 쫄작용 · 전열 선봉'))
 assert.equal(sections.find(section => section.id === 'top').cards[0].name, '우선함')
 assert.equal(sections.find(section => section.id === 'next').cards[0].name, '차순위함')
 assert.equal(sections.find(section => section.id === 'special').cards[0].name, '우선함')

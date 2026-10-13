@@ -1,3 +1,7 @@
+export function resolveOfficialPermanentShop({ gid, shops = [], today }) {
+  return shops.find(row => Number(row.gid) === Number(gid) && row.effectiveAt && row.effectiveAt <= today) || null
+}
+
 export function buildArenaShopGids(arenaData, shopData) {
   const activeCommodityIds = new Set()
   for (const row of Object.values(arenaData || {})) {

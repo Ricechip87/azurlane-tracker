@@ -1,6 +1,6 @@
 # 이글 유니온 / 노스 유니온 진영 자동 감사
 
-- 기준 데이터 생성 시각: 2026-09-30 23:49:59 KST
+- 기준 데이터 생성 시각: 2026-10-14 03:23:42 KST
 - 앱 전체 함선: 895척
 - 진영 대조 원천 누락: 0건
 - 진영 대조 원천과 불일치: 0건
@@ -20,7 +20,7 @@ CN 원본에서 gid를 찾지 못한 함선은 같은 gid의 ALtoy `nationality`
 
 | 파일 | 대조 건수 | 캐릭터 누락 | 진영 불일치 |
 |---|---:|---:|---:|
-| `growthRecommendations.json` | 197 | 0 | 0 |
+| `growthRecommendations.json` | 141 | 0 | 0 |
 | `shipObtainability.json` | 202 | 0 | 0 |
 | `researchRecommendations.json` | 9 | 0 | 0 |
 

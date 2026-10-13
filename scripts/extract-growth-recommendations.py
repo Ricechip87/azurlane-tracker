@@ -32,6 +32,7 @@ SOURCES = [
         "audience": "벽청년 이상",
         "sheet_name": "인식각성 추천표(메인해역)",
         "report": "main",
+        "exclusion_marker": "추천편성 예시",
     },
     {
         "key": "operation-siren",
@@ -55,6 +56,12 @@ SHIP_TYPE_HEADER_RE = re.compile(r"(DD|CL|CA|CVL|CV|BB|BC|SS)")
 MAIN_EXTRA_GROUP_RE = re.compile(r"(버퍼|디버퍼|힐러)")
 NEWBIE_EXTRA_GROUP_RE = re.compile(r"(상시|무딱|힐러|연구함|신규|이벤트)")
 MAIN_HEALER_GROUP_RE = re.compile(r"(메인 힐러|서브 힐러)")
+MAIN_ROLE_GROUP_RE = re.compile(r"^(후열\s*(기함|힐러)|전열\s*(선봉|나머지)|잠수함|지원\s*항모|쫄작시\s*쓰기 좋은\s*지원탄막 조합)")
+
+
+def main_section_label(value):
+    compact = re.sub(r"\s+", "", clean(value))
+    return {"메인밀기용": "메인 밀기용", "메인쫄작용": "메인 쫄작용"}.get(compact, "")
 
 NAME_ALIASES = {
     "하이덴 리우": "하우덴 리우",
@@ -63,6 +70,7 @@ NAME_ALIASES = {
     "라피 II": "라피Ⅱ",
     "라피 Ⅱ": "라피Ⅱ",
     "다 빈치": "레오나르도 다 빈치",
+    "다빈치": "레오나르도 다 빈치",
     "키로프 META": "키로프(META)",
     "키로프 META (경순)": "키로프(META)",
     "U-556 META": "U-556(META)",
@@ -233,7 +241,7 @@ def is_source_group_cell(value, source_key):
     if is_section_header(text):
         return True
     if source_key == "main":
-        return bool(MAIN_EXTRA_GROUP_RE.search(text))
+        return bool(MAIN_EXTRA_GROUP_RE.search(text) or MAIN_ROLE_GROUP_RE.match(text))
     if source_key == "newbie":
         return bool(NEWBIE_EXTRA_GROUP_RE.search(text))
     return False
@@ -250,7 +258,7 @@ def build_group_rows(ws, values, source_key, excluded_from_row=None):
             text = clean(ws.cell(row, column).value)
             if not is_source_group_cell(text, source_key):
                 continue
-            if is_section_header(text):
+            if is_section_header(text) or (source_key == "main" and MAIN_ROLE_GROUP_RE.match(text)):
                 section_count += 1
             groups.append({"row": row, "column": column, "label": text})
 
@@ -262,7 +270,7 @@ def build_group_rows(ws, values, source_key, excluded_from_row=None):
             "",
         )
         if section_count >= 2 and not is_tier_cell(first_text):
-            group_rows.append({"row": row, "groups": sorted(groups, key=lambda group: group["column"])})
+            group_rows.append({"row": row, "groups": sorted(groups, key=lambda group: group["column"]), "section": main_section_label(first_text) if source_key == "main" else ""})
     return sorted(group_rows, key=lambda item: item["row"])
 
 
@@ -301,8 +309,8 @@ def find_column_group(row, column, group_rows):
     return current["label"] if current else selected["groups"][0]["label"]
 
 
-def find_tier(values, row):
-    for current_row in range(row, max(0, row - 8), -1):
+def find_tier(values, row, minimum_row=1):
+    for current_row in range(row, max(minimum_row - 1, row - 8), -1):
         tier = cell_value(values, current_row, 1)
         if is_tier_cell(tier):
             return normalize_tier(tier)
@@ -344,7 +352,7 @@ def find_excluded_from_row(ws, marker):
     if not marker:
         return None
     for row in ws.iter_rows():
-        if any(clean(cell.value) == marker for cell in row):
+        if any(re.sub(r"\s+", " ", clean(cell.value)) == marker for cell in row):
             return row[0].row
     return None
 
@@ -368,12 +376,18 @@ def extract_source(wb, source, by_name):
     group_rows = build_group_rows(ws, values, source["key"], excluded_from_row)
     candidates = []
     unmatched = []
+    source_guidance = []
 
     last_row_exclusive = min(ws.max_row + 1, excluded_from_row or ws.max_row + 1)
     for row in range(1, last_row_exclusive):
+        current_group_row = next((group for group in reversed(group_rows) if group["row"] <= row), None)
+        section = current_group_row.get("section", "") if current_group_row else ""
         for column in range(1, ws.max_column + 1):
             raw = clean(ws.cell(row, column).value)
             if not raw:
+                continue
+            if section and len(raw) > 40:
+                source_guidance.append({"sheetSection": section, "sheetGroup": find_column_group(row, column, group_rows), "text": raw, "row": row, "column": column})
                 continue
             pieces, attempts = build_name_attempts(raw)
             consumed_indexes = set()
@@ -401,8 +415,9 @@ def extract_source(wb, source, by_name):
                     "rarity": character["rarity"],
                     "faction": character["faction"],
                     "shipType": character["shipType"],
-                    "tier": find_tier(values, row),
+                    "tier": find_tier(values, row, current_group_row["row"] if section else 1),
                     "sheetGroup": find_column_group(row, column, group_rows),
+                    **({"sheetSection": section} if section else {}),
                     "roleNote": find_role_note(values, row, column, by_name),
                     "requiresUniqueEquipment": uses_unique_equipment(name),
                     "row": row,
@@ -426,7 +441,9 @@ def extract_source(wb, source, by_name):
 
     recommendations = []
     for candidate in candidates:
-        if len(matched_ids_by_row[candidate["row"]]) >= 2:
+        if candidate.get("sheetSection") and candidate["tier"] and candidate["sheetGroup"]:
+            recommendations.append(candidate)
+        elif len(matched_ids_by_row[candidate["row"]]) >= 2:
             recommendations.append(candidate)
         else:
             unmatched.append({
@@ -447,6 +464,7 @@ def extract_source(wb, source, by_name):
         "columns": ws.max_column,
         "recommendations": recommendations,
         "unmatched": unmatched,
+        "sourceGuidance": source_guidance,
     }
 
 
@@ -459,6 +477,7 @@ def dedupe_recommendations(recommendations):
             "id",
             "tier",
             "sheetGroup",
+            "sheetSection",
             "roleNote",
             "requiresUniqueEquipment",
             "row",
@@ -633,6 +652,7 @@ def main():
                 "updatedAt": extracted[index]["updatedAt"],
                 "exclusionMarker": extracted[index]["exclusionMarker"],
                 "excludedFromRow": extracted[index]["excludedFromRow"],
+                **({"sourceGuidance": extracted[index]["sourceGuidance"]} if extracted[index]["sourceGuidance"] else {}),
             }
             for index, source in enumerate(SOURCES)
         ],

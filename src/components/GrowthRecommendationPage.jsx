@@ -22,8 +22,13 @@ import { RecommendationShipArtwork } from './recommendations/RecommendationShipA
 const MODES = [
   {
     id: 'main',
-    label: '메인해역',
-    description: '일반 해역 진행과 13~15지 대응을 기준으로 먼저 키워볼 함선을 모아봅니다.',
+    label: '메인 밀기',
+    description: '15·16지 고해역 돌파 기준입니다. 기함·힐러·선봉 등 원본 역할별 평가를 반영하며 쫄작 평가와 구분합니다.',
+  },
+  {
+    id: 'main-farm',
+    label: '메인 쫄작',
+    description: '고해역 쫄팟 레벨링을 돕는 함선의 평가입니다. 밀기용 등급과 합치지 않으며 지원 편성 예시에는 임의 등급을 붙이지 않습니다.',
   },
   {
     id: 'operation',

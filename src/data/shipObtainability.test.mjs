@@ -365,4 +365,14 @@ assert.ok(data.ships.every(ship => !ship.obtain.some(source => /상시 건조 \(
   }
 }
 
+if (snapshotDate >= '2026-10-08') {
+  const kimberly = data.ships.find(ship => ship.gid === 970104)
+  assert.equal(kimberly.availability.key, 'permanent')
+  assert.equal(kimberly.primaryRoute.key, 'special-exchange')
+  assert.ok(kimberly.obtain[0].includes('부서진 결정 60'))
+  assert.equal(kimberly.verification.officialPermanentShop.effectiveAt, '2026-10-08')
+  assert.equal(kimberly.verification.officialPermanentShop.evidence.activityTime, 'always')
+  assert.ok(kimberly.historicalObtain.some(source => source.includes('월드 투어')), '과거 월드 투어 이력 보존')
+}
+
 console.log('shipObtainability data tests passed')

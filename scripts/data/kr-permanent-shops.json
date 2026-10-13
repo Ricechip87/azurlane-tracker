@@ -1,0 +1,26 @@
+{
+  "updatedAt": "2026-10-14",
+  "note": "공식 KR 개시일과 KR 상점 활성 원본으로 확인한 상시 상점만 보완한다. 원본 상품의 10월 1일 제한보다 공식 KR 10월 8일 개시를 우선하며 월드 투어 종료일은 적용하지 않는다.",
+  "ships": [
+    {
+      "gid": 970104,
+      "name": "킴벌리(META)",
+      "effectiveAt": "2026-10-08",
+      "verifiedAt": "2026-10-14",
+      "obtain": ["META 상점·월드 투어 이전 상점 (부서진 결정 60, 1회 교환)"],
+      "source": "https://cafe.naver.com/azurlanekorea/574581",
+      "evidence": {
+        "activityId": 7104,
+        "activityTime": "always",
+        "shopItemId": 12051,
+        "commodityId": 9701041,
+        "resourceType": 21000,
+        "resourceNum": 60,
+        "numLimit": 1,
+        "rawStartsAt": "2026-10-01",
+        "activitySource": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/activity_template.lua",
+        "shopSource": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/activity_shop_template.lua"
+      }
+    }
+  ]
+}

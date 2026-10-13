@@ -48926,7 +48926,7 @@
       "enhance": {
         "health": 380,
         "torpedo": 42,
-        "antiair": 30,
+        "antiair": 31,
         "reload": 57,
         "accuracy": 54,
         "evasion": 54
