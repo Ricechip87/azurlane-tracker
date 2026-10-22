@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T18:19:00.100Z",
+  "generatedAt": "2026-10-22T18:35:47.187Z",
   "policy": {
     "scope": "Fernando player-ship skin renders and shared background/background2 images declared by ship_skin_list.json",
     "optionalAssets": "null metadata fields are intentionally absent",
@@ -9,19 +9,55 @@
     "deployment": "reference-only; images remain under gitignored 참고용 and are not copied to public"
   },
   "checkedShips": 889,
-  "checkedSkins": 2467,
-  "declaredSkinAssets": 16033,
+  "checkedSkins": 2468,
+  "declaredSkinAssets": 16040,
   "declaredBackgroundAssets": 138,
-  "declaredBackgroundReferences": 1701,
+  "declaredBackgroundReferences": 1702,
   "checkedBackgrounds": 138,
   "excludedBgmReferences": 75,
   "excludedUniqueBgm": 19,
-  "declaredAssets": 16171,
+  "declaredAssets": 16178,
   "existingAssets": 16171,
-  "downloadedAssets": 0,
+  "downloadedAssets": 7,
   "invalidAssets": 0,
-  "fetchedAssets": 0,
-  "downloaded": [],
+  "fetchedAssets": 7,
+  "downloaded": [
+    {
+      "skinId": "903023",
+      "field": "banner",
+      "relativePath": "903023/banner.png"
+    },
+    {
+      "skinId": "903023",
+      "field": "chibi",
+      "relativePath": "903023/chibi.png"
+    },
+    {
+      "skinId": "903023",
+      "field": "icon",
+      "relativePath": "903023/icon.png"
+    },
+    {
+      "skinId": "903023",
+      "field": "painting_n",
+      "relativePath": "903023/painting_n.png"
+    },
+    {
+      "skinId": "903023",
+      "field": "painting",
+      "relativePath": "903023/painting.png"
+    },
+    {
+      "skinId": "903023",
+      "field": "qicon",
+      "relativePath": "903023/qicon.png"
+    },
+    {
+      "skinId": "903023",
+      "field": "shipyard",
+      "relativePath": "903023/shipyard.png"
+    }
+  ],
   "replacedInvalid": [],
   "rosterMetadataMissing": [
     {

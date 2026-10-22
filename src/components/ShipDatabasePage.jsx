@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import shipCombatData from '../data/shipCombatData.json'
 import shipDatabaseDetails from '../data/shipDatabaseDetails.json'
 import shipObtainabilityData from '../data/shipObtainability.json'
+import activeEvents from '../../scripts/data/kr-active-events.json'
+import { getActiveSelectionNotices } from '../utils/eventNotices.js'
 import { AFFECTION_SELECT_OPTIONS, getAffectionOptionLabel } from '../utils/affection.js'
 import { getFactionBadgeName, getFactionOptions } from '../utils/factions.js'
 import {
@@ -38,6 +40,7 @@ export default function ShipDatabasePage({ characters }) {
   const listScrollPosition = useRef(0)
   const cardRefs = useRef(new Map())
   const detailHeadingRef = useRef(null)
+  const selectionNotices = getActiveSelectionNotices(activeEvents.informationalEvents)
 
   const filteredCharacters = useMemo(
     () => sortShipDatabaseCharacters(
@@ -109,6 +112,20 @@ export default function ShipDatabasePage({ characters }) {
           </div>
         </div>
       </header>
+
+      {selectionNotices.map(notice => (
+        <aside key={notice.name} className="rounded border border-amber-800 bg-amber-950/20 px-4 py-3 text-sm text-amber-100">
+          <h2 className="font-bold">{notice.name} · {notice.periodLabel}</h2>
+          <p className="mt-2 leading-6">{notice.note}</p>
+          <details className="mt-2">
+            <summary className="cursor-pointer">선택 가능한 이벤트 {notice.options.length}개</summary>
+            <ul className="mt-2 list-disc pl-5">
+              {notice.options.map(option => <li key={option}>{option}</li>)}
+            </ul>
+          </details>
+          <a className="mt-2 inline-block text-cyan-300 underline" href={notice.sources.find(source => source.priority === 'primary')?.urls[0]} target="_blank" rel="noopener noreferrer">KR 공식 안내</a>
+        </aside>
+      ))}
 
       <ShipDatabaseFilters
         filters={filters}

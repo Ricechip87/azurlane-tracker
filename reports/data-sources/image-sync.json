@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-10-13T18:18:22.673Z",
+  "generatedAt": "2026-10-22T18:36:35.511Z",
   "checked": 895,
   "changedShips": 0,
   "unavailableShips": 6,
   "results": [
     {
-      "gid": 1030002,
-      "name": "네코네",
-      "skinId": 10300020,
+      "gid": 1030004,
+      "name": "우루루",
+      "skinId": 10300040,
       "downloaded": [],
       "unavailable": [
         {
           "label": "Fernando painting.png",
           "error": "HTTP 404",
-          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300020/painting.png"
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300040/painting.png"
         }
       ]
     },
@@ -44,19 +44,6 @@
       ]
     },
     {
-      "gid": 1030004,
-      "name": "우루루",
-      "skinId": 10300040,
-      "downloaded": [],
-      "unavailable": [
-        {
-          "label": "Fernando painting.png",
-          "error": "HTTP 404",
-          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300040/painting.png"
-        }
-      ]
-    },
-    {
       "gid": 1030001,
       "name": "쿠온",
       "skinId": 10300010,
@@ -66,6 +53,19 @@
           "label": "Fernando painting.png",
           "error": "HTTP 404",
           "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300010/painting.png"
+        }
+      ]
+    },
+    {
+      "gid": 1030002,
+      "name": "네코네",
+      "skinId": 10300020,
+      "downloaded": [],
+      "unavailable": [
+        {
+          "label": "Fernando painting.png",
+          "error": "HTTP 404",
+          "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/images/skin/10300020/painting.png"
         }
       ]
     },

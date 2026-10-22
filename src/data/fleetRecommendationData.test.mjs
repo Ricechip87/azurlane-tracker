@@ -29,6 +29,8 @@ for (const [gid, expected] of Object.entries({
   40805: { id: 15620, name: '이걸로 속도를 확인해 봐', stats: { torpedo: 25, accuracy: 10 } },
   20210: { id: 15640, name: '교육 담당의 수완', stats: { firepower: 25, reload: 20 } },
   39903: { id: 15660, name: '지금은 경계 중', stats: { firepower: 20, health: 180 } },
+  960001: { id: 15680, name: '규약의 서', stats: { firepower: 30, accuracy: 15 } },
+  60103: { id: 15700, name: 'GB에게 맡겨', stats: { firepower: 30, health: 150 } },
 })) {
   assert.deepEqual(combat.ships[gid]?.augment, expected, `${gid} 신규 전용장비의 +10 직접 능력치를 반영합니다.`)
 }

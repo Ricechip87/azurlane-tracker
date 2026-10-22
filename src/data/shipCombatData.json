@@ -38558,7 +38558,14 @@
         "reload": 57
       },
       "retrofit": {},
-      "augment": null,
+      "augment": {
+        "id": 15700,
+        "name": "GB에게 맡겨",
+        "stats": {
+          "firepower": 30,
+          "health": 150
+        }
+      },
       "equipSlots": [
         [
           1
@@ -47122,7 +47129,14 @@
         "reload": 50
       },
       "retrofit": {},
-      "augment": null,
+      "augment": {
+        "id": 15680,
+        "name": "규약의 서",
+        "stats": {
+          "firepower": 30,
+          "accuracy": 15
+        }
+      },
       "equipSlots": [
         [
           1

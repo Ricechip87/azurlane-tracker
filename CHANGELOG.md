@@ -1,5 +1,13 @@
 # Change Log
 
+## 2026-10-23 - Refresh KR October 22 Content
+
+- Add Royal Fortune and Vincenzo Gioberti's new augment direct stats using the existing +10 extraction policy; preserve recommendation ratings and conditional-skill handling.
+- Show a date-bounded, source-linked notice for the seven-option selective rerun without marking all event ships obtainable simultaneously.
+- Refresh acquisition snapshots for ended construction and remaining reward-claim windows. Collect seven missing reference skin images locally, excluding them from web assets.
+- Add augment and selective-rerun boundary regression coverage; include notice tests in the npm test lifecycle.
+- Verified independently: lint, full tests (including notice posttest), and production build pass. Local source audits and repeated-generation consistency pass. All 895 gid/id mappings and character field values are preserved; only source ordering changes.
+
 ## 2026-10-14 - Clarify Unrated Ship Notice
 
 - Replace the misleading "new ships" label with "source recommendation rating not registered" and explain that the notice covers a maintained watchlist, not every unrated ship. Preserve ship names, ratings, and selection behavior.

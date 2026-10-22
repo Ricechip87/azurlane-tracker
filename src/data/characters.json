@@ -2568,6 +2568,36 @@
     }
   },
   {
+    "id": 99,
+    "name": "호스타일",
+    "rarity": "SR",
+    "shipType": "구축",
+    "faction": "로열",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "뇌격",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 5,
+      "maxLB": 11,
+      "lv120": 8
+    },
+    "gid": 20119,
+    "iconUrl": "/azurlane-tracker/ship-icons/201190.png"
+  },
+  {
     "id": 100,
     "name": "헌터",
     "rarity": "R",
@@ -4491,6 +4521,36 @@
       "maxLB": 7,
       "lv120": 5
     }
+  },
+  {
+    "id": 169,
+    "name": "아마츠카제",
+    "rarity": "SSR",
+    "shipType": "구축",
+    "faction": "중앵",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "회피",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "뇌격",
+      "value": 1
+    },
+    "gid": 30119,
+    "techPoints": {
+      "acquired": 9,
+      "maxLB": 18,
+      "lv120": 13
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/301190.png"
   },
   {
     "id": 170,
@@ -8489,36 +8549,6 @@
     }
   },
   {
-    "id": 329,
-    "name": "덴버",
-    "rarity": "SR",
-    "shipType": "경순",
-    "faction": "유니온",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "대공",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "화력",
-      "value": 1
-    },
-    "gid": 10215,
-    "iconUrl": "/azurlane-tracker/ship-icons/102150.png",
-    "techPoints": {
-      "acquired": 10,
-      "maxLB": 20,
-      "lv120": 15
-    }
-  },
-  {
     "id": 330,
     "name": "몬트필리어",
     "rarity": "SSR",
@@ -8546,6 +8576,36 @@
       "acquired": 12,
       "maxLB": 24,
       "lv120": 18
+    }
+  },
+  {
+    "id": 329,
+    "name": "덴버",
+    "rarity": "SR",
+    "shipType": "경순",
+    "faction": "유니온",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "대공",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "화력",
+      "value": 1
+    },
+    "gid": 10215,
+    "iconUrl": "/azurlane-tracker/ship-icons/102150.png",
+    "techPoints": {
+      "acquired": 10,
+      "maxLB": 20,
+      "lv120": 15
     }
   },
   {
@@ -20960,6 +21020,377 @@
     "iconUrl": "/azurlane-tracker/ship-icons/801060.png"
   },
   {
+    "id": 746,
+    "name": "슈퍼브",
+    "rarity": "SSR",
+    "shipType": "경순",
+    "faction": "로열",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "대공",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "명중",
+      "value": 1
+    },
+    "gid": 20237,
+    "techPoints": {
+      "acquired": 12,
+      "maxLB": 24,
+      "lv120": 18
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/202370.png"
+  },
+  {
+    "id": 747,
+    "name": "서리",
+    "rarity": "SSR",
+    "shipType": "중순",
+    "faction": "로열",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "중순",
+        "모니터",
+        "초순"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "중순",
+        "모니터",
+        "초순"
+      ],
+      "stat": "장전",
+      "value": 1
+    },
+    "gid": 20314,
+    "techPoints": {
+      "acquired": 14,
+      "maxLB": 28,
+      "lv120": 21
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/203140.png"
+  },
+  {
+    "id": 748,
+    "name": "그리핀",
+    "rarity": "SR",
+    "shipType": "구축",
+    "faction": "로열",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "회피",
+      "value": 1
+    },
+    "gid": 20115,
+    "techPoints": {
+      "acquired": 5,
+      "maxLB": 11,
+      "lv120": 8
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/201150.png"
+  },
+  {
+    "id": 749,
+    "name": "콜렛",
+    "rarity": "SSR",
+    "shipType": "구축",
+    "faction": "유니온",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "화력",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 2
+    },
+    "gid": 10156,
+    "techPoints": {
+      "acquired": 12,
+      "maxLB": 24,
+      "lv120": 18
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/101560.png"
+  },
+  {
+    "id": 750,
+    "name": "해리슨",
+    "rarity": "SR",
+    "shipType": "구축",
+    "faction": "유니온",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "대공",
+      "value": 1
+    },
+    "gid": 10157,
+    "techPoints": {
+      "acquired": 8,
+      "maxLB": 17,
+      "lv120": 13
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/101570.png"
+  },
+  {
+    "id": 751,
+    "name": "빅스버그",
+    "rarity": "SSR",
+    "shipType": "경순",
+    "faction": "유니온",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "대공",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "화력",
+      "value": 1
+    },
+    "gid": 10236,
+    "techPoints": {
+      "acquired": 12,
+      "maxLB": 24,
+      "lv120": 18
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/102360.png"
+  },
+  {
+    "id": 752,
+    "name": "베닝턴",
+    "rarity": "SSR",
+    "shipType": "항모",
+    "faction": "유니온",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경항모",
+        "항모"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경항모",
+        "항모"
+      ],
+      "stat": "항공",
+      "value": 2
+    },
+    "gid": 10720,
+    "techPoints": {
+      "acquired": 17,
+      "maxLB": 35,
+      "lv120": 26
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/107200.png"
+  },
+  {
+    "id": 753,
+    "name": "존 로저스",
+    "rarity": "SR",
+    "shipType": "구축",
+    "faction": "유니온",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "대잠",
+      "value": 1
+    },
+    "gid": 10158,
+    "techPoints": {
+      "acquired": 8,
+      "maxLB": 17,
+      "lv120": 13
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/101580.png"
+  },
+  {
+    "id": 754,
+    "name": "타이거",
+    "rarity": "UR",
+    "shipType": "경순",
+    "faction": "로열",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "대공",
+      "value": 2
+    },
+    "stat120": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "화력",
+      "value": 1
+    },
+    "gid": 20238,
+    "techPoints": {
+      "acquired": 21,
+      "maxLB": 43,
+      "lv120": 32
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/202380.png"
+  },
+  {
+    "id": 755,
+    "name": "아즈치",
+    "rarity": "UR",
+    "shipType": "순전",
+    "faction": "중앵",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "전함",
+        "순전",
+        "항전"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "전함",
+        "순전",
+        "항전"
+      ],
+      "stat": "화력",
+      "value": 1
+    },
+    "gid": 30409,
+    "techPoints": {
+      "acquired": 26,
+      "maxLB": 52,
+      "lv120": 39
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/304090.png"
+  },
+  {
+    "id": 756,
+    "name": "이14",
+    "rarity": "SSR",
+    "shipType": "잠항모",
+    "faction": "중앵",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "잠수함",
+        "잠수항모"
+      ],
+      "stat": "뇌격",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "잠수항모"
+      ],
+      "stat": "항공",
+      "value": 2
+    },
+    "gid": 31703,
+    "techPoints": {
+      "acquired": 6,
+      "maxLB": 12,
+      "lv120": 9
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/317030.png"
+  },
+  {
+    "id": 757,
+    "name": "헤이스티",
+    "rarity": "SR",
+    "shipType": "구축",
+    "faction": "로열",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "명중",
+      "value": 1
+    },
+    "gid": 20140,
+    "techPoints": {
+      "acquired": 5,
+      "maxLB": 11,
+      "lv120": 8
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/201400.png"
+  },
+  {
     "id": "M001",
     "name": "히류(META)",
     "rarity": "SSR",
@@ -22920,6 +23351,130 @@
     },
     "gid": 970112,
     "iconUrl": "/azurlane-tracker/ship-icons/9701120.png"
+  },
+  {
+    "id": "M063",
+    "name": "뉘른베르크(META)",
+    "rarity": "SR",
+    "shipType": "경순",
+    "faction": "META",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "경순"
+      ],
+      "stat": "대공",
+      "value": 1
+    },
+    "techPoints": {
+      "acquired": 10,
+      "maxLB": 21,
+      "lv120": 16
+    },
+    "gid": 970213,
+    "iconUrl": "/azurlane-tracker/ship-icons/9702130.png"
+  },
+  {
+    "id": "M064",
+    "name": "새러토가(META)",
+    "rarity": "SSR",
+    "shipType": "항모",
+    "faction": "META",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경항모",
+        "항모"
+      ],
+      "stat": "내구",
+      "value": 2
+    },
+    "stat120": {
+      "shipTypes": [
+        "경항모",
+        "항모"
+      ],
+      "stat": "항공",
+      "value": 1
+    },
+    "gid": 970710,
+    "techPoints": {
+      "acquired": 19,
+      "maxLB": 39,
+      "lv120": 29
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/9707100.png"
+  },
+  {
+    "id": "M065",
+    "name": "빅토리어스(META)",
+    "rarity": "SSR",
+    "shipType": "항모",
+    "faction": "META",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [
+        "경항모",
+        "항모"
+      ],
+      "stat": "내구",
+      "value": 2
+    },
+    "stat120": {
+      "shipTypes": [
+        "경항모",
+        "항모"
+      ],
+      "stat": "대공",
+      "value": 1
+    },
+    "gid": 970709,
+    "techPoints": {
+      "acquired": 19,
+      "maxLB": 39,
+      "lv120": 29
+    },
+    "iconUrl": "/azurlane-tracker/ship-icons/9707090.png"
+  },
+  {
+    "id": "M066",
+    "gid": 970113,
+    "name": "소브라지텔니(META)",
+    "rarity": "SR",
+    "shipType": "구축",
+    "faction": "META",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "iconUrl": "/azurlane-tracker/ship-icons/9701130.png",
+    "techPoints": {
+      "acquired": 9,
+      "maxLB": 18,
+      "lv120": 13
+    },
+    "statAcquired": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "내구",
+      "value": 1
+    },
+    "stat120": {
+      "shipTypes": [
+        "구축"
+      ],
+      "stat": "회피",
+      "value": 1
+    }
   },
   {
     "id": "P001",
@@ -26612,6 +27167,58 @@
     "iconUrl": "/azurlane-tracker/ship-icons/11500060.png"
   },
   {
+    "id": "Z161",
+    "name": "A2",
+    "rarity": "SSR",
+    "shipType": "중순",
+    "faction": "니어",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [],
+      "stat": "",
+      "value": 0
+    },
+    "stat120": {
+      "shipTypes": [],
+      "stat": "",
+      "value": 0
+    },
+    "gid": 1170001,
+    "iconUrl": "/azurlane-tracker/ship-icons/11700010.png",
+    "techPoints": {
+      "acquired": 0,
+      "maxLB": 0,
+      "lv120": 0
+    }
+  },
+  {
+    "id": "Z162",
+    "name": "2B",
+    "rarity": "SSR",
+    "shipType": "경순",
+    "faction": "니어",
+    "canRemodel": false,
+    "skillPoints": 0,
+    "statAcquired": {
+      "shipTypes": [],
+      "stat": "",
+      "value": 0
+    },
+    "stat120": {
+      "shipTypes": [],
+      "stat": "",
+      "value": 0
+    },
+    "gid": 1170002,
+    "iconUrl": "/azurlane-tracker/ship-icons/11700020.png",
+    "techPoints": {
+      "acquired": 0,
+      "maxLB": 0,
+      "lv120": 0
+    }
+  },
+  {
     "id": "Z990",
     "name": "엘리제",
     "rarity": "SSR",
@@ -26766,612 +27373,5 @@
     },
     "gid": 1060015,
     "iconUrl": "/azurlane-tracker/ship-icons/10600150.png"
-  },
-  {
-    "id": "Z161",
-    "name": "A2",
-    "rarity": "SSR",
-    "shipType": "중순",
-    "faction": "니어",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
-    },
-    "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
-    },
-    "gid": 1170001,
-    "iconUrl": "/azurlane-tracker/ship-icons/11700010.png",
-    "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
-    }
-  },
-  {
-    "id": "Z162",
-    "name": "2B",
-    "rarity": "SSR",
-    "shipType": "경순",
-    "faction": "니어",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
-    },
-    "stat120": {
-      "shipTypes": [],
-      "stat": "",
-      "value": 0
-    },
-    "gid": 1170002,
-    "iconUrl": "/azurlane-tracker/ship-icons/11700020.png",
-    "techPoints": {
-      "acquired": 0,
-      "maxLB": 0,
-      "lv120": 0
-    }
-  },
-  {
-    "id": 746,
-    "name": "슈퍼브",
-    "rarity": "SSR",
-    "shipType": "경순",
-    "faction": "로열",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "대공",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "명중",
-      "value": 1
-    },
-    "gid": 20237,
-    "techPoints": {
-      "acquired": 12,
-      "maxLB": 24,
-      "lv120": 18
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/202370.png"
-  },
-  {
-    "id": 747,
-    "name": "서리",
-    "rarity": "SSR",
-    "shipType": "중순",
-    "faction": "로열",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "중순",
-        "모니터",
-        "초순"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "중순",
-        "모니터",
-        "초순"
-      ],
-      "stat": "장전",
-      "value": 1
-    },
-    "gid": 20314,
-    "techPoints": {
-      "acquired": 14,
-      "maxLB": 28,
-      "lv120": 21
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/203140.png"
-  },
-  {
-    "id": 748,
-    "name": "그리핀",
-    "rarity": "SR",
-    "shipType": "구축",
-    "faction": "로열",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "회피",
-      "value": 1
-    },
-    "gid": 20115,
-    "techPoints": {
-      "acquired": 5,
-      "maxLB": 11,
-      "lv120": 8
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/201150.png"
-  },
-  {
-    "id": 749,
-    "name": "콜렛",
-    "rarity": "SSR",
-    "shipType": "구축",
-    "faction": "유니온",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "화력",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "내구",
-      "value": 2
-    },
-    "gid": 10156,
-    "techPoints": {
-      "acquired": 12,
-      "maxLB": 24,
-      "lv120": 18
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/101560.png"
-  },
-  {
-    "id": 750,
-    "name": "해리슨",
-    "rarity": "SR",
-    "shipType": "구축",
-    "faction": "유니온",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "대공",
-      "value": 1
-    },
-    "gid": 10157,
-    "techPoints": {
-      "acquired": 8,
-      "maxLB": 17,
-      "lv120": 13
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/101570.png"
-  },
-  {
-    "id": 751,
-    "name": "빅스버그",
-    "rarity": "SSR",
-    "shipType": "경순",
-    "faction": "유니온",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "대공",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "화력",
-      "value": 1
-    },
-    "gid": 10236,
-    "techPoints": {
-      "acquired": 12,
-      "maxLB": 24,
-      "lv120": 18
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/102360.png"
-  },
-  {
-    "id": 752,
-    "name": "베닝턴",
-    "rarity": "SSR",
-    "shipType": "항모",
-    "faction": "유니온",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "경항모",
-        "항모"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "경항모",
-        "항모"
-      ],
-      "stat": "항공",
-      "value": 2
-    },
-    "gid": 10720,
-    "techPoints": {
-      "acquired": 17,
-      "maxLB": 35,
-      "lv120": 26
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/107200.png"
-  },
-  {
-    "id": 753,
-    "name": "존 로저스",
-    "rarity": "SR",
-    "shipType": "구축",
-    "faction": "유니온",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "대잠",
-      "value": 1
-    },
-    "gid": 10158,
-    "techPoints": {
-      "acquired": 8,
-      "maxLB": 17,
-      "lv120": 13
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/101580.png"
-  },
-  {
-    "id": 169,
-    "name": "아마츠카제",
-    "rarity": "SSR",
-    "shipType": "구축",
-    "faction": "중앵",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "회피",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "뇌격",
-      "value": 1
-    },
-    "gid": 30119,
-    "techPoints": {
-      "acquired": 9,
-      "maxLB": 18,
-      "lv120": 13
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/301190.png"
-  },
-  {
-    "id": 754,
-    "name": "타이거",
-    "rarity": "UR",
-    "shipType": "경순",
-    "faction": "로열",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "대공",
-      "value": 2
-    },
-    "stat120": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "화력",
-      "value": 1
-    },
-    "gid": 20238,
-    "techPoints": {
-      "acquired": 21,
-      "maxLB": 43,
-      "lv120": 32
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/202380.png"
-  },
-  {
-    "id": 755,
-    "name": "아즈치",
-    "rarity": "UR",
-    "shipType": "순전",
-    "faction": "중앵",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "전함",
-        "순전",
-        "항전"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "전함",
-        "순전",
-        "항전"
-      ],
-      "stat": "화력",
-      "value": 1
-    },
-    "gid": 30409,
-    "techPoints": {
-      "acquired": 26,
-      "maxLB": 52,
-      "lv120": 39
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/304090.png"
-  },
-  {
-    "id": 756,
-    "name": "이14",
-    "rarity": "SSR",
-    "shipType": "잠항모",
-    "faction": "중앵",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "잠수함",
-        "잠수항모"
-      ],
-      "stat": "뇌격",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "잠수항모"
-      ],
-      "stat": "항공",
-      "value": 2
-    },
-    "gid": 31703,
-    "techPoints": {
-      "acquired": 6,
-      "maxLB": 12,
-      "lv120": 9
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/317030.png"
-  },
-  {
-    "id": 757,
-    "name": "헤이스티",
-    "rarity": "SR",
-    "shipType": "구축",
-    "faction": "로열",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "명중",
-      "value": 1
-    },
-    "gid": 20140,
-    "techPoints": {
-      "acquired": 5,
-      "maxLB": 11,
-      "lv120": 8
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/201400.png"
-  },
-  {
-    "id": "M063",
-    "name": "뉘른베르크(META)",
-    "rarity": "SR",
-    "shipType": "경순",
-    "faction": "META",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "경순"
-      ],
-      "stat": "대공",
-      "value": 1
-    },
-    "techPoints": {
-      "acquired": 10,
-      "maxLB": 21,
-      "lv120": 16
-    },
-    "gid": 970213,
-    "iconUrl": "/azurlane-tracker/ship-icons/9702130.png"
-  },
-  {
-    "id": "M064",
-    "name": "새러토가(META)",
-    "rarity": "SSR",
-    "shipType": "항모",
-    "faction": "META",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "경항모",
-        "항모"
-      ],
-      "stat": "내구",
-      "value": 2
-    },
-    "stat120": {
-      "shipTypes": [
-        "경항모",
-        "항모"
-      ],
-      "stat": "항공",
-      "value": 1
-    },
-    "gid": 970710,
-    "techPoints": {
-      "acquired": 19,
-      "maxLB": 39,
-      "lv120": 29
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/9707100.png"
-  },
-  {
-    "id": "M065",
-    "name": "빅토리어스(META)",
-    "rarity": "SSR",
-    "shipType": "항모",
-    "faction": "META",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "경항모",
-        "항모"
-      ],
-      "stat": "내구",
-      "value": 2
-    },
-    "stat120": {
-      "shipTypes": [
-        "경항모",
-        "항모"
-      ],
-      "stat": "대공",
-      "value": 1
-    },
-    "gid": 970709,
-    "techPoints": {
-      "acquired": 19,
-      "maxLB": 39,
-      "lv120": 29
-    },
-    "iconUrl": "/azurlane-tracker/ship-icons/9707090.png"
-  },
-  {
-    "id": "M066",
-    "gid": 970113,
-    "name": "소브라지텔니(META)",
-    "rarity": "SR",
-    "shipType": "구축",
-    "faction": "META",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "iconUrl": "/azurlane-tracker/ship-icons/9701130.png",
-    "techPoints": {
-      "acquired": 9,
-      "maxLB": 18,
-      "lv120": 13
-    },
-    "statAcquired": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "회피",
-      "value": 1
-    }
-  },
-  {
-    "id": 99,
-    "name": "호스타일",
-    "rarity": "SR",
-    "shipType": "구축",
-    "faction": "로열",
-    "canRemodel": false,
-    "skillPoints": 0,
-    "statAcquired": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "내구",
-      "value": 1
-    },
-    "stat120": {
-      "shipTypes": [
-        "구축"
-      ],
-      "stat": "뇌격",
-      "value": 1
-    },
-    "techPoints": {
-      "acquired": 5,
-      "maxLB": 11,
-      "lv120": 8
-    },
-    "gid": 20119,
-    "iconUrl": "/azurlane-tracker/ship-icons/201190.png"
   }
 ]

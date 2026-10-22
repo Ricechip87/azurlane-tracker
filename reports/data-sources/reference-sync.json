@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T18:18:21.964Z",
+  "generatedAt": "2026-10-22T18:34:56.138Z",
   "policy": {
     "data": "원격 원천을 임시 경로에서 전부 검증한 뒤 자동 관리 경로만 교체",
     "images": "별도 이미지 동기화에서 기존 파일을 보존하고 누락 파일만 추가",
@@ -35,15 +35,15 @@
       "id": "altoy-full",
       "url": "https://jforplay.github.io/altoy/data/ship_info_data.json",
       "relativePath": "ALtoy/data/ship_info_data.json",
-      "bytes": 6177405,
-      "sha256": "871d6f28855bf44cf903c5940cb5a0dd1a3c15c50bf10394a85ead318da07132"
+      "bytes": 6178086,
+      "sha256": "ec25a5a7928b0343b2e6d659ef76dbce899db5c753b4b784034bc929e8d4ec62"
     },
     {
       "id": "altoy-kr-event-timeline",
       "url": "https://raw.githubusercontent.com/JforPlay/altoy/main/src/data/kr_event_timeline.json",
       "relativePath": "ALtoy/data/kr_event_timeline.json",
-      "bytes": 187835,
-      "sha256": "6f1afa1437e9dcc2cbc063282be2219b7a27ff91e9bf98c005c994d5bfdcb275"
+      "bytes": 188160,
+      "sha256": "c4286965845372e53bd1c04d50a40eea25459168aa12854df78cbe6498ad1782"
     },
     {
       "id": "altoy-lite",
@@ -56,15 +56,15 @@
       "id": "altoy-map-data",
       "url": "https://jforplay.github.io/altoy/data/maps/map_data_full.json",
       "relativePath": "ALtoy/data/maps/map_data_full.json",
-      "bytes": 10664002,
-      "sha256": "2ab8b1341751a283bc59a3d61f0f36922e4e4464e00cf1be26bdfc1da7ea5b86"
+      "bytes": 10664678,
+      "sha256": "39e3a419e3e0384a84f1a54a544d3792dd13de3ecc72c630d8822fca81029d0b"
     },
     {
       "id": "altoy-skill-template",
       "url": "https://jforplay.github.io/altoy/data/sim/skill_data_template.json",
       "relativePath": "ALtoy/data/sim/skill_data_template.json",
-      "bytes": 2002273,
-      "sha256": "fe0a0a7acc50a76b210f35f61050544859618fcd995977791de587ef8860df95"
+      "bytes": 2003820,
+      "sha256": "df4b1b4afe712170f7511215bffff8d022f9cd08ff74e455047dd92b297f776a"
     },
     {
       "id": "azurlane-data",
@@ -76,29 +76,29 @@
       "id": "cn-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/CN/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 247754,
-      "sha256": "5a57aaf5ddbeb71a99c7bf16e79de7616c1570890f87a82c169898353213c651"
+      "bytes": 249457,
+      "sha256": "5d995ef61399a61fa31e4fa91a23f6ebccaab292bec92859879547d8ef15b7ed"
     },
     {
       "id": "en-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/EN/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/EN/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 247754,
-      "sha256": "5a57aaf5ddbeb71a99c7bf16e79de7616c1570890f87a82c169898353213c651"
+      "bytes": 249457,
+      "sha256": "5d995ef61399a61fa31e4fa91a23f6ebccaab292bec92859879547d8ef15b7ed"
     },
     {
       "id": "fernando-ship-skin-list",
       "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/ship_skin_list.json",
       "relativePath": "AzurLane/ship_skin_list.json",
-      "bytes": 3461271,
-      "sha256": "8e10928300c1d8ac970a8f6cc968b569483fd4d4159f55d9c98db75342896355"
+      "bytes": 3462687,
+      "sha256": "595d43bbdd133edf5987f23859938a10e6aad5a8197ec9c94861c3631a34cd03"
     },
     {
       "id": "fernando-ship-skins",
       "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/ship_skin.json",
       "relativePath": "AzurLane/ship_skin.json",
-      "bytes": 3495958,
-      "sha256": "270f9bdd8c2201cde6174e5e7eebad7cb5bb94e0b4b0a90b4136fbf7842c004a"
+      "bytes": 3497384,
+      "sha256": "04789729b58cb6d2cc669c2161fbec90f5731aa1774b42c187716fa68b1ef24d"
     },
     {
       "id": "fernando-ships",
@@ -111,15 +111,15 @@
       "id": "fernando-skin-list",
       "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/skin_list.json",
       "relativePath": "AzurLane/skin_list.json",
-      "bytes": 3282879,
-      "sha256": "f2c2782afd113d285282d6cbe82c8b811696c1cfde5ff040e8fefbf5692d1b62"
+      "bytes": 3284199,
+      "sha256": "b3a75b11339b1901585fdb04fa738afd3e6349cc58324f98c464fe0da75472c6"
     },
     {
       "id": "fernando-skins",
       "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/skin.json",
       "relativePath": "AzurLane/skin.json",
-      "bytes": 3311788,
-      "sha256": "cbc02036307facba84410d99d818fba3c4d7faf181560f221df60c21db7d0929"
+      "bytes": 3313118,
+      "sha256": "d6346185ef21586b320df1ce09191445b3679376ecc5f2f3509737d5e0d84381"
     },
     {
       "id": "fernando-version",
@@ -132,22 +132,22 @@
       "id": "fleet-tech-ship-score",
       "url": "https://docs.google.com/spreadsheets/d/1R5u6fgr3e6XvfqQ3_GMuroeNfe2ShiY65akzzwDnwTs/export?format=csv&gid=1194876348",
       "relativePath": "벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv",
-      "bytes": 88349,
-      "sha256": "440227f5c268e986517d68cb4364275a2cc5b7050768a3a86a29a1ca89e9bcd3"
+      "bytes": 88773,
+      "sha256": "dee305afbe50358ce3422312979ab09693e37bf18386236d865aa46262181cb9"
     },
     {
       "id": "fleet-tech-workbook",
       "url": "https://docs.google.com/spreadsheets/d/1R5u6fgr3e6XvfqQ3_GMuroeNfe2ShiY65akzzwDnwTs/export?format=xlsx",
       "relativePath": "벽람항로(일) - アズールレーン.xlsx",
-      "bytes": 848319,
-      "sha256": "83d9622cca554037e9c79da06c7ff9a66d592efda9325935685726ce4c03106c"
+      "bytes": 851953,
+      "sha256": "01456c67929dbac3e4e37edd1073fb8bdc5c9b5189f7161b977989c17f4596e6"
     },
     {
       "id": "growth-guide-workbook",
       "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=xlsx",
       "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본.xlsx",
-      "bytes": 8411070,
-      "sha256": "e70aee5c9be214c238a765e583c4b7a2bc6331791270c0d9c4906ec168d54ad2"
+      "bytes": 8728781,
+      "sha256": "ed9b537ef801111bdd580891ee065cf872c5f0e42dac23e7b2d2c9de01d0606c"
     },
     {
       "id": "growth-main-sea",
@@ -160,8 +160,8 @@
       "id": "growth-main-sheet",
       "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=csv&gid=438662354",
       "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - [ 메인시트.csv",
-      "bytes": 131304,
-      "sha256": "c90a0fe2941d4b2e7c666822a0489a26643b654f461b78daf67f6bdaad488dd6"
+      "bytes": 131363,
+      "sha256": "e573969ca01352a5006a1c5012c73b98f5d5df6769186380daddd34a206c934d"
     },
     {
       "id": "growth-new-player",
@@ -181,8 +181,8 @@
       "id": "jp-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/JP/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/JP/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 247754,
-      "sha256": "5a57aaf5ddbeb71a99c7bf16e79de7616c1570890f87a82c169898353213c651"
+      "bytes": 249457,
+      "sha256": "5d995ef61399a61fa31e4fa91a23f6ebccaab292bec92859879547d8ef15b7ed"
     },
     {
       "id": "kr-blueprint-lua",
@@ -216,8 +216,8 @@
       "id": "kr-research-task-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/task_data_template.lua",
       "relativePath": "AzurLaneLuaScripts/KR/sharecfgdata/task_data_template.lua",
-      "bytes": 7511641,
-      "sha256": "18d0d07d1259531a247d4ad5ad3c0979a669c7f81ea6ae366ed37cb79d26debb"
+      "bytes": 7822660,
+      "sha256": "f9ed23a90d83ab797fcf69eae80dd4a6650804136a95e80d4a1ba6f5b6c9b31d"
     },
     {
       "id": "kr-ship-data-group-lua",
@@ -237,8 +237,8 @@
       "id": "kr-spweapon-statistics-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/spweapon_data_statistics.lua",
       "relativePath": "AzurLaneLuaScripts/KR/sharecfgdata/spweapon_data_statistics.lua",
-      "bytes": 602275,
-      "sha256": "dc37877d4330773d0a4a4c8cae7185abb8de6f8be80f2d2a56d85edab4462340"
+      "bytes": 606966,
+      "sha256": "f916d510a391dc35f4f1d682ea963d7e9ec7721b16526418afcc4c285db2fe81"
     },
     {
       "id": "research-exp",

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "posttest": "node src/utils/eventNotices.test.mjs",
     "build": "vite build",
     "lint": "eslint .",
     "pretest": "node src/utils/fleetFormationExamples.test.mjs && python -B scripts/extract-growth-recommendations.test.py && node scripts/lib/csv-records.test.mjs && node scripts/lib/remote-image.test.mjs && node scripts/lib/ship-skin-assets.test.mjs && node scripts/lib/data-issues-report.test.mjs && node scripts/lib/current-data-audit-reports.test.mjs && node scripts/lib/local-icon-assets.test.mjs && node scripts/lib/reference-sync-workspace.test.mjs && node scripts/lib/character-source-identity.test.mjs && node scripts/lib/research-lua-sources.test.mjs && node scripts/lib/kr-combat-lua-sources.test.mjs && node scripts/lib/fleet-recommendation-sources.test.mjs && node src/utils/eventAcquisition.test.mjs",

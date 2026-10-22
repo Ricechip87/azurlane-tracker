@@ -58,6 +58,20 @@
   ],
   "informationalEvents": [
     {
+      "name": "선택형 경량화 복각",
+      "kind": "selectable-rerun",
+      "startsAt": "2026-10-22",
+      "endsAt": "2026-10-29",
+      "periodLabel": "10월 22일 점검 후 ~ 10월 29일 점검까지",
+      "selectionCount": 1,
+      "options": ["깨워라, 창홍의 바람", "아마하라에 바치는 춤", "별빛 아래의 석양", "새장에 갇힌 신의 빛", "높은 탑의 장미", "심연 아래의 비밀", "강철의 날개와 바람"],
+      "note": "7개 이벤트 중 1개만 선택할 수 있으며, 개방 후 변경할 수 없습니다. 한번 선택한 이벤트는 향후 개최 때도 다시 선택할 수 없습니다. 선택한 이벤트의 한정 건조·교환·누적 보상 등이 함께 열립니다. 사이트는 게임 내 선택을 알 수 없어 함선별 입수 가능 상태에 일괄 반영하지 않습니다.",
+      "sources": [
+        { "kind": "official-kr-full-notice", "priority": "primary", "urls": ["https://cafe.naver.com/azurlanekorea/574862"] },
+        { "kind": "altoy-cross-check", "scope": "10월 22일 선택형 복각 개최 확인; 개별 함선·건조 확률 근거로 사용하지 않음", "urls": ["https://github.com/JforPlay/altoy/blob/main/src/data/kr_event_timeline.json"] }
+      ]
+    },
+    {
       "name": "9월 30일 신규 스킨",
       "kind": "skin-sale",
       "startsAt": "2026-09-30",
