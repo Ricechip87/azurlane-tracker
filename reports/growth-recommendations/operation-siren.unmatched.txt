@@ -1,6 +1,6 @@
 육성 추천표 미매칭 검토 후보
 
-총 검토 후보: 456
+총 검토 후보: 454
 
 ## operation-siren
 - 대작전용 (2:1) - not matched
@@ -24,26 +24,28 @@
 - 전열 탱 보조 1황 (8:6) - not matched
 - 구축 탱커 1황 (8:6) - not matched
 - 만능 육각형 (8:8) - not matched
-- 만능 육각형 (8:10) - not matched
-- 미항팟 지원 (8:10) - not matched
+- 미항팟 지원 (8:8) - not matched
 - 레이더 탐지 (8:20) - not matched
 - 경순 딜러 1황 (8:22) - not matched
 - 기함 전함 딜버프 (8:22) - not matched
 - 대 경장갑 필살기 (8:24) - not matched
-- 지원탄막 (8:36) - not matched
-- 꽉찬 육각형 (8:36) - not matched
-- 고출력 중순 표준 (8:38) - not matched
+- 전열 딜러 1황 (8:26) - not matched
+- 경장 킬러 (8:26) - not matched
+- 고출력 중순 표준 (8:36) - not matched
 - S+ 급 (9:1) - not matched
 - S급 이상 (9:1) - not matched
 - SS대용 (9:1) - not matched
-- 알자스덱 (12:2) - not matched
-- 3번 자리 딜러 (12:2) - not matched
-- 생존 보장시 (12:4) - not matched
-- 공습선도 1황 (12:4) - not matched
+- 만능 육각형 (12:2) - not matched
+- 알자스덱 (12:4) - not matched
+- 3번 자리 딜러 (12:4) - not matched
+- 생존 보장시 (12:6) - not matched
+- 공습선도 1황 (12:6) - not matched
 - 구축함 상대 (12:18) - not matched
 - 공방 지원 + 높은 딜 (12:20) - not matched
 - 경장 특화 (12:20) - not matched
-- 전열 딜러 2황 (12:36) - not matched
+- 지원탄막 (12:36) - not matched
+- 꽉찬 육각형 (12:36) - not matched
+- 전열 딜러 2황 (12:38) - not matched
 - S 급 (13:1) - not matched
 - 최고 성능 (13:1) - not matched
 - (콜라보, 경순) (15:20) - not matched
@@ -58,6 +60,7 @@
 - 20초 주기 (16:20) - not matched
 - 소환물 + 피해량버프 (16:20) - not matched
 - 전열 화력 버프 (16:22) - not matched
+- 후열 보조 (16:24) - not matched
 - 최강 쫄팟 요원 (16:32) - not matched
 - 최강 쫄팟 요원2 (16:34) - not matched
 - 보스 전용 탱커 (16:36) - not matched
@@ -71,8 +74,6 @@
 - A+ 급 (17:1) - not matched
 - 받뎀증 (18:26) - not matched
 - 감속 (18:27) - not matched
-- 포격 보조 (18:28) - not matched
-- 힐 보조 (18:29) - not matched
 - 분신 (18:34) - not matched
 - 감속 (18:34) - not matched
 - 블랙홀 (18:35) - not matched
@@ -107,6 +108,7 @@
 - 3번자리 딜러 (20:44) - not matched
 - 파갑 지원 (20:46) - not matched
 - A 급 (21:1) - not matched
+- 프랑스팟 (22:13) - not matched
 - 항공 보조 (22:24) - not matched
 - 명중 보조 (22:25) - not matched
 - 기함 (22:26) - not matched
@@ -118,7 +120,6 @@
 - 3번 자리 뇌장딜러 (24:6) - not matched
 - 20초 주기 (24:10) - not matched
 - 명중 버퍼 (24:10) - not matched
-- 알자스팟 (24:12) - not matched
 - 3번 자리 딜러 (24:12) - not matched
 - 구축 버프 (24:14) - not matched
 - 쓴다면 14지 (24:14) - not matched
@@ -231,6 +232,7 @@
 - 씹성능 (40:1) - not matched
 - 모든 장갑 코어픽 (43:24) - not matched
 - 모든 장갑 깡패픽 (43:26) - not matched
+- 모든 장갑 국밥픽 (43:28) - not matched
 - SS 급 (44:1) - not matched
 - 최우선 (44:1) - not matched
 - 미항팟, 경장갑 필살기 (47:6) - not matched
@@ -241,11 +243,11 @@
 - S+ 급 (48:1) - not matched
 - S급 이상 (48:1) - not matched
 - SS대용 (48:1) - not matched
-- 쫄팟의 떠오르는 코어픽 (51:2) - not matched
-- 여기는 순수 쫄팟티어 (51:2) - not matched
-- 일항팟 시너지 + 대중장 (51:12) - not matched
-- 바인드 (51:18) - not matched
-- 북련 조합 요구 (51:18) - not matched
+- 쫄팟의 신 (51:2) - not matched
+- 쫄팟의 신 2 (51:4) - not matched
+- 일항팟 시너지 + 대중장 (51:6) - not matched
+- 바인드 (51:12) - not matched
+- 북련 조합 요구 (51:12) - not matched
 - 블랙홀 바인드 (51:24) - not matched
 - 전함 인데 시너지 (51:26) - not matched
 - 일본 버퍼 (51:26) - not matched
@@ -264,16 +266,16 @@
 - 타함대 힐 (55:2) - not matched
 - 라이온팟 (55:4) - not matched
 - 선장전 (55:4) - not matched
-- 대중형 (55:6) - not matched
-- 중장 (55:6) - not matched
-- 딜 보조 (55:6) - not matched
-- 영국 시너지 (55:6) - not matched
-- 보스팟 딜러 (55:8) - not matched
-- 바인더 1황 (55:10) - not matched
-- 영국 항모 (55:10) - not matched
-- Lucky E (55:12) - not matched
-- 중장갑 특화 (55:14) - not matched
-- 단기전의 신 (55:16) - not matched
+- 대중형 (55:8) - not matched
+- 중장 (55:8) - not matched
+- 딜 보조 (55:8) - not matched
+- 영국 시너지 (55:8) - not matched
+- 보스팟 딜러 (55:10) - not matched
+- 바인더 1황 (55:12) - not matched
+- 영국 항모 (55:12) - not matched
+- Lucky E (55:14) - not matched
+- 중장갑 특화 (55:16) - not matched
+- 단기전의 신 (55:18) - not matched
 - 전함 최강 버퍼 (55:26) - not matched
 - 포격 버퍼 (55:28) - not matched
 - 경, 중형 특화 (55:28) - not matched
@@ -296,6 +298,7 @@
 - 경장 (57:13) - not matched
 - 올라운더 (57:16) - not matched
 - 4공습 (57:17) - not matched
+- 바인더 (57:20) - not matched
 - 3 이글 (57:23) - not matched
 - 반장전, 단기전 특화 (59:2) - not matched
 - 루나 상위호환 (59:2) - not matched
@@ -311,9 +314,7 @@
 - 데어라 콜라보 항모 (59:16) - not matched
 - 중형 바인더 (59:18) - not matched
 - 항모뎀증 '파갑' 보유 (59:18) - not matched
-- 중형 (59:20) - not matched
-- 중갑 바인더 (59:20) - not matched
-- 딜 로또 (59:20) - not matched
+- 중갑 잘팸 (59:20) - not matched
 - 무난하게 강한 (59:24) - not matched
 - 탈금딱 전함 (59:24) - not matched
 - 명중, 장전 버퍼 (59:26) - not matched
@@ -328,7 +329,6 @@
 - 단기전 강함 (59:40) - not matched
 - 대중장 특화 (59:40) - not matched
 - 전열 보호 (59:42) - not matched
-- 4포좌 (59:44) - not matched
 - 감속 (59:46) - not matched
 - 중형 (59:46) - not matched
 - 중장 특화 (59:46) - not matched
@@ -340,9 +340,6 @@
 - 반장전, 단기전 특화 (63:2) - not matched
 - 쫄팟, 광역힐 (63:4) - not matched
 - 선장전 (63:4) - not matched
-- 경장 (63:6) - not matched
-- 중장 특화 (63:6) - not matched
-- 무난한 금딱항모 (63:6) - not matched
 - 4공습 / (63:8) - not matched
 - 미묘한 바인드 (63:8) - not matched
 - 폭격 특화 (63:10) - not matched
@@ -418,6 +415,7 @@
 - 뇌격 특화 (71:10) - not matched
 - 그럭저럭 강힘 (71:12) - not matched
 - 약한 바인더 (71:12) - not matched
+- 폭격 특화 (71:18) - not matched
 - 소량 힐 (71:24) - not matched
 - 각종 유틸 (71:26) - not matched
 - 프랑스 조합 필요 (71:28) - not matched
@@ -436,7 +434,6 @@
 - 아군버프 / (71:50) - not matched
 - 초살팟 (71:50) - not matched
 - C+ 급 (72:1) - not matched
-- 폭격 특화 (75:6) - not matched
 - 최대 4 μ 시너지 (75:10) - not matched
 - 항마기 시너지 (75:10) - not matched
 - 반장전 (75:10) - not matched
@@ -455,6 +452,7 @@
 - 같이 쓰기 (75:42) - not matched
 - 작은 육각형 딜러 (75:44) - not matched
 - 글쎄요..? (75:50) - not matched
+- 알자스 (22:13) - single matched name row
 - 드레이크 (24:38) - single matched name row
 - 아즈마 (30:48) - single matched name row
 - 아즈마 (30:49) - single matched name row

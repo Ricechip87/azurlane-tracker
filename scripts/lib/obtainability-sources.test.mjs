@@ -12,6 +12,18 @@ import characters from '../../src/data/characters.json' with { type: 'json' }
 import * as obtainabilitySources from './obtainability-sources.mjs'
 import { resolveEventAcquisition } from '../../src/utils/eventAcquisition.js'
 
+{
+  const row = officialConstruction.ships.find(item => item.gid === 960014)
+  const lite = { gid: 960014, heavy: false, limited: true }
+  assert.equal(resolveOfficialConstruction({ gid: 960014, lite, overrides: [row], today: '2026-10-28' }).override, null)
+  assert.equal(resolveOfficialConstruction({ gid: 960014, lite, overrides: [row], today: '2026-10-29' }).override.archive, '템페스타와 자유 군도')
+  assert.deepEqual(lite, { gid: 960014, heavy: false, limited: true }, '공식 보완은 원본 플래그를 수정하지 않는다')
+  assert.equal(resolveOfficialConstruction({ gid: 960014, lite, overrides: [{ ...row, archive: undefined }], today: '2026-10-30' }).override.archive, undefined)
+  for (const archive of [true, 1, '', null, {}]) {
+    assert.throws(() => resolveOfficialConstruction({ gid: 960014, lite, overrides: [{ ...row, archive }], today: '2026-10-30' }), /공식 작전문서 이름/)
+  }
+}
+
 const saratogaEvent = activeEvents.events.find(event => event.ships.includes('새러토가(META)'))
 assert.ok(saratogaEvent, '9월 17일 KR 공식 새러토가 META 비콘 이벤트 설정 존재')
 assert.equal(saratogaEvent.startsAt, '2026-09-17')
@@ -125,12 +137,12 @@ assert.equal(classification.availability.key, 'permanent')
 assert.equal(classification.primaryRoute.key, 'construction')
 assert.equal(classification.difficulty.key, 'normal')
 
-assert.deepEqual(officialConstruction.ships.map(({ gid, name, pool }) => ({ gid, name, pool })), [
+assert.deepEqual(officialConstruction.ships.filter(row => row.effectiveAt === '2026-09-10').map(({ gid, name, pool }) => ({ gid, name, pool })), [
   { gid: 40406, name: '알비트', pool: 'heavy' },
   { gid: 40147, name: 'Z47', pool: 'light' },
   { gid: 40813, name: 'U-31', pool: 'special' },
 ], '9월 10일 KR 공지가 확정한 상시 건조 3척과 건조 풀만 보정')
-for (const override of officialConstruction.ships) {
+for (const override of officialConstruction.ships.filter(row => row.effectiveAt === '2026-09-10')) {
   assert.equal(override.effectiveAt, '2026-09-10')
   assert.equal(override.source, 'https://cafe.naver.com/azurlanekorea/574296')
   const resolved = resolveOfficialConstruction({ gid: override.gid, lite: {}, overrides: officialConstruction.ships, today: '2026-09-11' })

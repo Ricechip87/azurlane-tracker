@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T18:34:56.138Z",
+  "generatedAt": "2026-10-29T17:05:22.150Z",
   "policy": {
     "data": "원격 원천을 임시 경로에서 전부 검증한 뒤 자동 관리 경로만 교체",
     "images": "별도 이미지 동기화에서 기존 파일을 보존하고 누락 파일만 추가",
@@ -42,15 +42,15 @@
       "id": "altoy-kr-event-timeline",
       "url": "https://raw.githubusercontent.com/JforPlay/altoy/main/src/data/kr_event_timeline.json",
       "relativePath": "ALtoy/data/kr_event_timeline.json",
-      "bytes": 188160,
-      "sha256": "c4286965845372e53bd1c04d50a40eea25459168aa12854df78cbe6498ad1782"
+      "bytes": 188165,
+      "sha256": "0b9f9af10b5e03fe4ef3cabf1228e57e44a4ac939fe22e71deb673fbdf570c74"
     },
     {
       "id": "altoy-lite",
       "url": "https://jforplay.github.io/altoy/data/ship_info_lite.json",
       "relativePath": "ALtoy/data/ship_info_lite.json",
-      "bytes": 278432,
-      "sha256": "149caaa3418c4de1170ffd3cb48c02df6fdb58ab94bb533eebd1ef165945bf8c"
+      "bytes": 316223,
+      "sha256": "5eb444d333c8373566a9311a18c8c77e86f33b2f05d66a270e719017306205ac"
     },
     {
       "id": "altoy-map-data",
@@ -90,15 +90,15 @@
       "id": "fernando-ship-skin-list",
       "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/ship_skin_list.json",
       "relativePath": "AzurLane/ship_skin_list.json",
-      "bytes": 3462687,
-      "sha256": "595d43bbdd133edf5987f23859938a10e6aad5a8197ec9c94861c3631a34cd03"
+      "bytes": 3481439,
+      "sha256": "f0c96d11a8ffb1dc15c3477996ba3ae4e514d3c8997c296f0e7ecbd5f6932a6c"
     },
     {
       "id": "fernando-ship-skins",
       "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/ship_skin.json",
       "relativePath": "AzurLane/ship_skin.json",
-      "bytes": 3497384,
-      "sha256": "04789729b58cb6d2cc669c2161fbec90f5731aa1774b42c187716fa68b1ef24d"
+      "bytes": 3516338,
+      "sha256": "c6102962531cd6f27dca9da5dba378da28101946c0736890d04975405aaffcc9"
     },
     {
       "id": "fernando-ships",
@@ -111,15 +111,15 @@
       "id": "fernando-skin-list",
       "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/skin_list.json",
       "relativePath": "AzurLane/skin_list.json",
-      "bytes": 3284199,
-      "sha256": "b3a75b11339b1901585fdb04fa738afd3e6349cc58324f98c464fe0da75472c6"
+      "bytes": 3302473,
+      "sha256": "a8da635216f85064d4b790492f923e01b27e33ea5dca876c16fd9faf5abf8b68"
     },
     {
       "id": "fernando-skins",
       "url": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/skin.json",
       "relativePath": "AzurLane/skin.json",
-      "bytes": 3313118,
-      "sha256": "d6346185ef21586b320df1ce09191445b3679376ecc5f2f3509737d5e0d84381"
+      "bytes": 3331564,
+      "sha256": "b565cc1e0954f0ba8a049ef2a678e52e35140238427e3c26dea1a502434eb0a8"
     },
     {
       "id": "fernando-version",
@@ -132,22 +132,22 @@
       "id": "fleet-tech-ship-score",
       "url": "https://docs.google.com/spreadsheets/d/1R5u6fgr3e6XvfqQ3_GMuroeNfe2ShiY65akzzwDnwTs/export?format=csv&gid=1194876348",
       "relativePath": "벽람항로(일) - アズールレーン - 함선기술 함선점수】.csv",
-      "bytes": 88773,
-      "sha256": "dee305afbe50358ce3422312979ab09693e37bf18386236d865aa46262181cb9"
+      "bytes": 88945,
+      "sha256": "bc72e80f9f88f11ec42b4027d1cd50fcac5fa341266aea2b2d5fb31bd258fc36"
     },
     {
       "id": "fleet-tech-workbook",
       "url": "https://docs.google.com/spreadsheets/d/1R5u6fgr3e6XvfqQ3_GMuroeNfe2ShiY65akzzwDnwTs/export?format=xlsx",
       "relativePath": "벽람항로(일) - アズールレーン.xlsx",
-      "bytes": 851953,
-      "sha256": "01456c67929dbac3e4e37edd1073fb8bdc5c9b5189f7161b977989c17f4596e6"
+      "bytes": 879100,
+      "sha256": "4249a584b469d5397c9eb45cb0056dac0b9a8e48dd726112b04b91d12b42cbcd"
     },
     {
       "id": "growth-guide-workbook",
       "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/export?format=xlsx",
       "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본.xlsx",
-      "bytes": 8728781,
-      "sha256": "ed9b537ef801111bdd580891ee065cf872c5f0e42dac23e7b2d2c9de01d0606c"
+      "bytes": 9048259,
+      "sha256": "cd00e43c7e347e132a6c3eeeda25dcd4b7545740027244b97095e0c0b8a75130"
     },
     {
       "id": "growth-main-sea",
@@ -174,8 +174,8 @@
       "id": "growth-operation-siren",
       "url": "https://docs.google.com/spreadsheets/d/162NmcpaC-BmmBN-elnPuY8aV1zwR2LVzwNWX3MeBKXo/gviz/tq?tqx=out:csv&sheet=%EC%9D%B8%EC%8B%9D%EA%B0%81%EC%84%B1%20%EC%B6%94%EC%B2%9C%ED%91%9C(%EB%8C%80%EC%9E%91%EC%A0%84)",
       "relativePath": "벽람 함순이도감 v2.1.8_배포용의 사본 - 인식각성 추천표(대작전).csv",
-      "bytes": 43641,
-      "sha256": "abd635753a283e2b2ee0826c127f959e472ec82829e0305898833db78ded0ded"
+      "bytes": 43692,
+      "sha256": "acc21ab3e3a4ef3eda68d0b5ad464fd4d81fcbb72ee684b78b98bdd2b20954d5"
     },
     {
       "id": "jp-fleet-tech-lua",
@@ -216,15 +216,15 @@
       "id": "kr-research-task-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfgdata/task_data_template.lua",
       "relativePath": "AzurLaneLuaScripts/KR/sharecfgdata/task_data_template.lua",
-      "bytes": 7822660,
-      "sha256": "f9ed23a90d83ab797fcf69eae80dd4a6650804136a95e80d4a1ba6f5b6c9b31d"
+      "bytes": 7834556,
+      "sha256": "6dca4c1b3f9042c76d9f6f529aa5a238a7be1add4f23726bca7efdfe477647ff"
     },
     {
       "id": "kr-ship-data-group-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/ship_data_group.lua",
       "relativePath": "AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
-      "bytes": 534284,
-      "sha256": "297fbb98d3fbfbe7ffb0011868e21fac1bb90cf4bdfb1cc138329f6b777de171"
+      "bytes": 535552,
+      "sha256": "5af78143649d5b910c4ee6bbc8193b72690773b2ea2e3e2cd3de8c1d2abf0d12"
     },
     {
       "id": "kr-soundstory-lua",
@@ -258,8 +258,8 @@
       "id": "tw-fleet-tech-lua",
       "url": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/TW/sharecfg/fleet_tech_ship_template.lua",
       "relativePath": "AzurLaneLuaScripts/TW/sharecfg/fleet_tech_ship_template.lua",
-      "bytes": 246132,
-      "sha256": "4f3a747c2f527555ca02e39154f143e5f5bd2382475d3f6bebbc81895379bfc4"
+      "bytes": 247835,
+      "sha256": "a8bc67ec6f96668445676bae5bb875e8edc2d24595059d54e981a217efbedf26"
     }
   ]
 }

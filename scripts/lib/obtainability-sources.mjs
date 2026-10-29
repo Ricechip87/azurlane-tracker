@@ -33,6 +33,7 @@ export function resolveOfficialConstruction({ gid, lite, overrides = [], today }
   const override = overrides.find(row => Number(row.gid) === Number(gid) && row.effectiveAt <= today) || null
   if (!override) return { lite, override: null }
   if (!['light', 'heavy', 'special'].includes(override.pool)) throw new Error(`지원하지 않는 공식 건조 풀: ${override.pool}`)
+  if (override.archive !== undefined && (typeof override.archive !== 'string' || !override.archive.trim())) throw new Error('공식 작전문서 이름은 비어 있지 않은 문자열이어야 합니다')
   return { lite: { ...lite, [override.pool]: true, limited: false }, override }
 }
 

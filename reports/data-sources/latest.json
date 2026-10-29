@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T18:36:36.091Z",
+  "generatedAt": "2026-10-29T17:08:48.995Z",
   "policy": {
     "displayScope": "ALtoy/KR service roster only; name fallback handles six Utawarerumono skin-ID identities",
     "fleetTechPriority": [
@@ -22,7 +22,7 @@
     },
     "krShips": {
       "path": "참고용/AzurLaneLuaScripts/KR/sharecfg/ship_data_group.lua",
-      "sha256": "297fbb98d3fbfbe7ffb0011868e21fac1bb90cf4bdfb1cc138329f6b777de171"
+      "sha256": "5af78143649d5b910c4ee6bbc8193b72690773b2ea2e3e2cd3de8c1d2abf0d12"
     },
     "cnTech": {
       "path": "참고용/AzurLaneLuaScripts/CN/sharecfg/fleet_tech_ship_template.lua",
@@ -42,7 +42,7 @@
     },
     "twTech": {
       "path": "참고용/AzurLaneLuaScripts/TW/sharecfg/fleet_tech_ship_template.lua",
-      "sha256": "4f3a747c2f527555ca02e39154f143e5f5bd2382475d3f6bebbc81895379bfc4"
+      "sha256": "a8bc67ec6f96668445676bae5bb875e8edc2d24595059d54e981a217efbedf26"
     }
   },
   "display": {
@@ -72,7 +72,7 @@
       "enTech": 765,
       "jpTech": 765,
       "krTech": 760,
-      "twTech": 755
+      "twTech": 760
     },
     "regionalLuaVsCnMismatchCounts": {
       "cnTech": 0,

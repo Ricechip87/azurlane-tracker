@@ -8,6 +8,27 @@ import { resolveEventAcquisition } from '../utils/eventAcquisition.js'
 
 // A committed data snapshot is verified at its generation date, not the CI machine's current date.
 const snapshotDate = data.meta.asOfDate || toKstDateKey(data.meta.generatedAt)
+for (const gid of [960011, 960016]) {
+  const ship = data.ships.find(item => item.gid === gid)
+  assert.notEqual(ship.availability.key, 'permanent', `${ship.name} 상점 예고를 현재 입수로 표시하지 않는다`)
+  assert.equal(ship.permanentSignals.arenaShop, false)
+  assert.equal(ship.permanentSignals.timeline, false)
+  assert.deepEqual(ship.acquisitionRoutes, [])
+  assert.ok(ship.obtain.includes('연습 상점 편입 예고 (적용일 미확정)'))
+}
+for (const [gid, pool] of [[960012, 'heavy'], [960014, 'heavy'], [960013, 'light'], [960015, 'light'], [960009, 'special'], [960007, 'heavy'], [960008, 'light'], [960010, 'light']]) {
+  const ship = data.ships.find(item => item.gid === gid)
+  assert.equal(ship.build[pool], true, `${ship.name} 10월 29일 공식 상시 건조`)
+  assert.equal(ship.build.limited, false)
+  assert.equal(ship.availability.key, 'permanent')
+  assert.equal(ship.verification.officialKrOverride.source, 'https://cafe.naver.com/azurlanekorea/574927')
+}
+for (const gid of [960014, 960009]) {
+  const ship = data.ships.find(item => item.gid === gid)
+  assert.equal(ship.permanentSignals.archive, true, `${ship.name} 공식 작전문서 드랍`)
+  assert.ok(ship.obtain.includes('작전문서 드랍'))
+  assert.ok(ship.acquisitionRoutes.some(route => route.key === 'archive-drop'))
+}
 assert.match(snapshotDate, /^\d{4}-\d{2}-\d{2}$/, '입수 데이터 생성 기준일 존재')
 const allowedAvailability = new Set(['permanent', 'active-event', 'upcoming-event', 'rerun-wait', 'collab-unknown', 'unknown'])
 assert.equal(data.ships.length, data.meta.total)
@@ -233,7 +254,7 @@ for (const override of officialConstruction.ships) {
   assert.equal(ship.availability.key, 'permanent', `${override.name} KR 상시 건조 편입`)
   assert.equal(ship.build[override.pool], true, `${override.name} 공지에 명시된 건조 풀`)
   assert.equal(ship.build.limited, false, `${override.name} 과거 한정 건조 플래그 해제`)
-  assert.equal(ship.primaryRoute.key, 'construction', `${override.name} 상시 건조 추천 분류`)
+  assert.equal(ship.primaryRoute.key, override.archive ? 'archive-drop' : 'construction', `${override.name} 상시 입수 추천 분류`)
   assert.deepEqual(ship.verification.officialKrOverride, override, `${override.name} 공식 보정 근거 보존`)
   assert.ok(ship.historicalObtain.length > 0, `${override.name} 원본 입수 이력 유지`)
 }

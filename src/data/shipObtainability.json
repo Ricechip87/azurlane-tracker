@@ -1,28 +1,28 @@
 {
   "meta": {
     "note": "KR-visible ships cross-checked with ALtoy permanent-source data. CN-only availability states are not exposed.",
-    "generatedAt": "2026-10-22T18:36:43.043Z",
-    "asOfDate": "2026-10-23",
+    "generatedAt": "2026-10-29T17:08:57.425Z",
+    "asOfDate": "2026-10-30",
     "total": 895,
     "withObtain": 895,
     "withoutObtain": 0,
     "availability": {
-      "active-event": 5,
+      "active-event": 2,
       "collab-unknown": 91,
-      "permanent": 630,
-      "rerun-wait": 169
+      "permanent": 638,
+      "rerun-wait": 164
     },
     "difficulty": {
-      "easy": 328,
-      "event": 5,
+      "easy": 330,
+      "event": 2,
       "hard": 84,
-      "limited": 260,
-      "normal": 218
+      "limited": 255,
+      "normal": 224
     },
     "acquisitionRoutes": {
-      "active-event": 5,
-      "archive-drop": 63,
-      "construction": 323,
+      "active-event": 2,
+      "archive-drop": 65,
+      "construction": 331,
       "core-monthly": 25,
       "fixed-exchange": 112,
       "guaranteed-reward": 21,
@@ -23249,8 +23249,7 @@
       "faction": "로열",
       "shipType": "구축",
       "obtain": [
-        "이벤트 수령 기간: 유영 미성 (2026-10-23 23:59까지)",
-        "파트너볼 누적 획득 보상 (10-23 23:59까지)"
+        "이벤트: 유영 미성"
       ],
       "historicalObtain": [
         "이벤트: 유영 미성"
@@ -23275,56 +23274,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "이벤트 수령 기간",
-        "eventName": "유영 미성",
-        "endsAt": "2026-10-23 23:59",
-        "endsAtLabel": "2026-10-23 23:59까지",
-        "phase": "claim-only",
-        "startsAt": "2026-09-24",
-        "mainEndsAt": "2026-10-16 23:59",
-        "mainEndsAtLabel": "2026-10-16 23:59까지",
-        "claimEndsAt": "2026-10-23 23:59",
-        "eventRoutes": [
-          {
-            "kind": "milestone-reward",
-            "label": "파트너볼 누적 획득 보상 (10-23 23:59까지)",
-            "endsAt": "2026-10-23 23:59"
-          }
-        ],
-        "activeEventRoutes": [
-          {
-            "kind": "milestone-reward",
-            "label": "파트너볼 누적 획득 보상 (10-23 23:59까지)",
-            "endsAt": "2026-10-23 23:59"
-          }
-        ]
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "이벤트 수령 기간",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "이벤트 수령 기간 유영 미성"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "이벤트 수령 기간",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "이벤트 수령 기간 유영 미성"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -28625,8 +28584,7 @@
       "faction": "로열",
       "shipType": "경순",
       "obtain": [
-        "이벤트 수령 기간: 유영 미성 (2026-10-23 23:59까지)",
-        "진휘의 장식 200/300개로 1·2번째 교환 (최대 2회 · 10-23 23:59까지)"
+        "이벤트: 유영 미성"
       ],
       "historicalObtain": [
         "이벤트: 유영 미성"
@@ -28651,56 +28609,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "이벤트 수령 기간",
-        "eventName": "유영 미성",
-        "endsAt": "2026-10-23 23:59",
-        "endsAtLabel": "2026-10-23 23:59까지",
-        "phase": "claim-only",
-        "startsAt": "2026-09-24",
-        "mainEndsAt": "2026-10-16 23:59",
-        "mainEndsAtLabel": "2026-10-16 23:59까지",
-        "claimEndsAt": "2026-10-23 23:59",
-        "eventRoutes": [
-          {
-            "kind": "event-exchange",
-            "label": "진휘의 장식 200/300개로 1·2번째 교환 (최대 2회 · 10-23 23:59까지)",
-            "endsAt": "2026-10-23 23:59"
-          }
-        ],
-        "activeEventRoutes": [
-          {
-            "kind": "event-exchange",
-            "label": "진휘의 장식 200/300개로 1·2번째 교환 (최대 2회 · 10-23 23:59까지)",
-            "endsAt": "2026-10-23 23:59"
-          }
-        ]
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "이벤트 수령 기간",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "이벤트 수령 기간 유영 미성"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "이벤트 수령 기간",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "이벤트 수령 기간 유영 미성"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {
@@ -69207,7 +69125,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "obtain": [
-        "이벤트: 템페스타와 잠든 바다"
+        "중형함 상시 건조"
       ],
       "historicalObtain": [
         "이벤트: 템페스타와 잠든 바다"
@@ -69217,9 +69135,9 @@
       ],
       "build": {
         "light": false,
-        "heavy": false,
+        "heavy": true,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "04:42:30"
       },
       "mapDrops": [],
@@ -69228,29 +69146,55 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "중형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "construction",
+        "label": "상시 건조",
+        "certainty": "random",
+        "rank": 2,
+        "sources": [
+          "중형함 상시 건조"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "복각 대기"
+          "상시 건조",
+          "중형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialKrOverride": {
+          "gid": 960007,
+          "name": "건스웨이",
+          "effectiveAt": "2026-10-29",
+          "pool": "heavy",
+          "source": "https://cafe.naver.com/azurlanekorea/574927"
+        }
       }
     },
     {
@@ -69261,7 +69205,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "obtain": [
-        "이벤트: 템페스타와 잠든 바다"
+        "소형함 상시 건조"
       ],
       "historicalObtain": [
         "이벤트: 템페스타와 잠든 바다"
@@ -69270,10 +69214,10 @@
         "Event: Tempesta and the Sleeping Sea"
       ],
       "build": {
-        "light": false,
+        "light": true,
         "heavy": false,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "01:39:21"
       },
       "mapDrops": [],
@@ -69282,29 +69226,55 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "소형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "construction",
+        "label": "상시 건조",
+        "certainty": "random",
+        "rank": 2,
+        "sources": [
+          "소형함 상시 건조"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "복각 대기"
+          "상시 건조",
+          "소형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialKrOverride": {
+          "gid": 960008,
+          "name": "팬시",
+          "effectiveAt": "2026-10-29",
+          "pool": "light",
+          "source": "https://cafe.naver.com/azurlanekorea/574927"
+        }
       }
     },
     {
@@ -69315,7 +69285,8 @@
       "faction": "템페스타",
       "shipType": "범선",
       "obtain": [
-        "이벤트: 템페스타와 잠든 바다"
+        "작전문서 드랍",
+        "특형함 상시 건조"
       ],
       "historicalObtain": [
         "이벤트: 템페스타와 잠든 바다"
@@ -69326,39 +69297,76 @@
       "build": {
         "light": false,
         "heavy": false,
-        "special": false,
-        "limited": true,
+        "special": true,
+        "limited": false,
         "timer": "00:28:13"
       },
       "mapDrops": [],
       "permanentSignals": {
         "map": false,
-        "archive": false,
+        "archive": true,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "archive-drop",
+          "label": "작전문서 드롭",
+          "certainty": "random",
+          "rank": 1,
+          "sources": [
+            "작전문서 드랍"
+          ]
+        },
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "특형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "archive-drop",
+        "label": "작전문서 드롭",
+        "certainty": "random",
+        "rank": 1,
+        "sources": [
+          "작전문서 드랍"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "easy",
+        "label": "쉬움",
         "reasons": [
-          "복각 대기"
+          "작전문서 드랍",
+          "상시 건조",
+          "특형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialKrOverride": {
+          "gid": 960009,
+          "name": "아미티",
+          "effectiveAt": "2026-10-29",
+          "pool": "special",
+          "archive": "템페스타와 잠든 바다",
+          "source": "https://cafe.naver.com/azurlanekorea/574927"
+        }
       }
     },
     {
@@ -69369,7 +69377,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "obtain": [
-        "이벤트: 템페스타와 잠든 바다"
+        "소형함 상시 건조"
       ],
       "historicalObtain": [
         "이벤트: 템페스타와 잠든 바다"
@@ -69378,10 +69386,10 @@
         "Event: Tempesta and the Sleeping Sea"
       ],
       "build": {
-        "light": false,
+        "light": true,
         "heavy": false,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "00:28:14"
       },
       "mapDrops": [],
@@ -69390,29 +69398,55 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "소형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "construction",
+        "label": "상시 건조",
+        "certainty": "random",
+        "rank": 2,
+        "sources": [
+          "소형함 상시 건조"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "복각 대기"
+          "상시 건조",
+          "소형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialKrOverride": {
+          "gid": 960010,
+          "name": "포츠머스 어드벤처",
+          "effectiveAt": "2026-10-29",
+          "pool": "light",
+          "source": "https://cafe.naver.com/azurlanekorea/574927"
+        }
       }
     },
     {
@@ -69423,7 +69457,8 @@
       "faction": "템페스타",
       "shipType": "범선",
       "obtain": [
-        "이벤트: 템페스타와 잠든 바다"
+        "이벤트: 템페스타와 잠든 바다",
+        "연습 상점 편입 예고 (적용일 미확정)"
       ],
       "historicalObtain": [
         "이벤트: 템페스타와 잠든 바다"
@@ -69466,7 +69501,14 @@
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "pendingShop": {
+          "gid": 960011,
+          "name": "돌핀",
+          "announcedAt": "2026-10-29",
+          "note": "다음 점검 후 연습 상점 편입 예고. KR 원본 선행 등록만으로 출시일을 확정하지 않는다. 공식 적용 확인 후 이 보류 항목을 제거한다.",
+          "source": "https://cafe.naver.com/azurlanekorea/574927"
+        }
       }
     },
     {
@@ -69477,7 +69519,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "obtain": [
-        "이벤트: 템페스타와 자유 군도"
+        "중형함 상시 건조"
       ],
       "historicalObtain": [
         "이벤트: 템페스타와 자유 군도"
@@ -69487,9 +69529,9 @@
       ],
       "build": {
         "light": false,
-        "heavy": false,
+        "heavy": true,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "04:46:10"
       },
       "mapDrops": [],
@@ -69498,29 +69540,55 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "중형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "construction",
+        "label": "상시 건조",
+        "certainty": "random",
+        "rank": 2,
+        "sources": [
+          "중형함 상시 건조"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "복각 대기"
+          "상시 건조",
+          "중형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialKrOverride": {
+          "gid": 960012,
+          "name": "퀸 앤즈 리벤지",
+          "effectiveAt": "2026-10-29",
+          "pool": "heavy",
+          "source": "https://cafe.naver.com/azurlanekorea/574927"
+        }
       }
     },
     {
@@ -69531,7 +69599,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "obtain": [
-        "이벤트: 템페스타와 자유 군도"
+        "소형함 상시 건조"
       ],
       "historicalObtain": [
         "이벤트: 템페스타와 자유 군도"
@@ -69540,10 +69608,10 @@
         "Event: Tempesta and Islas de Libertád"
       ],
       "build": {
-        "light": false,
+        "light": true,
         "heavy": false,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "00:28:14"
       },
       "mapDrops": [],
@@ -69552,29 +69620,55 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "소형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "construction",
+        "label": "상시 건조",
+        "certainty": "random",
+        "rank": 2,
+        "sources": [
+          "소형함 상시 건조"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "복각 대기"
+          "상시 건조",
+          "소형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialKrOverride": {
+          "gid": 960013,
+          "name": "라임",
+          "effectiveAt": "2026-10-29",
+          "pool": "light",
+          "source": "https://cafe.naver.com/azurlanekorea/574927"
+        }
       }
     },
     {
@@ -69585,7 +69679,8 @@
       "faction": "템페스타",
       "shipType": "범선",
       "obtain": [
-        "이벤트: 템페스타와 자유 군도"
+        "작전문서 드랍",
+        "중형함 상시 건조"
       ],
       "historicalObtain": [
         "이벤트: 템페스타와 자유 군도"
@@ -69595,40 +69690,77 @@
       ],
       "build": {
         "light": false,
-        "heavy": false,
+        "heavy": true,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "04:46:02"
       },
       "mapDrops": [],
       "permanentSignals": {
         "map": false,
-        "archive": false,
+        "archive": true,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "archive-drop",
+          "label": "작전문서 드롭",
+          "certainty": "random",
+          "rank": 1,
+          "sources": [
+            "작전문서 드랍"
+          ]
+        },
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "중형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "archive-drop",
+        "label": "작전문서 드롭",
+        "certainty": "random",
+        "rank": 1,
+        "sources": [
+          "작전문서 드랍"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "easy",
+        "label": "쉬움",
         "reasons": [
-          "복각 대기"
+          "작전문서 드랍",
+          "상시 건조",
+          "중형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialKrOverride": {
+          "gid": 960014,
+          "name": "펄",
+          "effectiveAt": "2026-10-29",
+          "pool": "heavy",
+          "archive": "템페스타와 자유 군도",
+          "source": "https://cafe.naver.com/azurlanekorea/574927"
+        }
       }
     },
     {
@@ -69639,7 +69771,7 @@
       "faction": "템페스타",
       "shipType": "범선",
       "obtain": [
-        "이벤트: 템페스타와 자유 군도"
+        "소형함 상시 건조"
       ],
       "historicalObtain": [
         "이벤트: 템페스타와 자유 군도"
@@ -69648,10 +69780,10 @@
         "Event: Tempesta and Islas de Libertád"
       ],
       "build": {
-        "light": false,
+        "light": true,
         "heavy": false,
         "special": false,
-        "limited": true,
+        "limited": false,
         "timer": "00:28:37"
       },
       "mapDrops": [],
@@ -69660,29 +69792,55 @@
         "archive": false,
         "coreMonthly": false,
         "arenaShop": false,
-        "build": false,
+        "build": true,
         "shop": false,
         "other": false,
         "timeline": false
       },
       "availability": {
-        "key": "rerun-wait",
-        "label": "복각 대기"
+        "key": "permanent",
+        "label": "상시 획득"
       },
-      "acquisitionRoutes": [],
-      "primaryRoute": null,
+      "acquisitionRoutes": [
+        {
+          "key": "construction",
+          "label": "상시 건조",
+          "certainty": "random",
+          "rank": 2,
+          "sources": [
+            "소형함 상시 건조"
+          ]
+        }
+      ],
+      "primaryRoute": {
+        "key": "construction",
+        "label": "상시 건조",
+        "certainty": "random",
+        "rank": 2,
+        "sources": [
+          "소형함 상시 건조"
+        ]
+      },
       "difficulty": {
-        "key": "limited",
-        "label": "현재 획득 불가",
+        "key": "normal",
+        "label": "보통",
         "reasons": [
-          "복각 대기"
+          "상시 건조",
+          "소형함 상시 건조"
         ]
       },
       "verification": {
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "officialKrOverride": {
+          "gid": 960015,
+          "name": "로열 제임스",
+          "effectiveAt": "2026-10-29",
+          "pool": "light",
+          "source": "https://cafe.naver.com/azurlanekorea/574927"
+        }
       }
     },
     {
@@ -69693,7 +69851,8 @@
       "faction": "템페스타",
       "shipType": "범선",
       "obtain": [
-        "이벤트: 템페스타와 자유 군도"
+        "이벤트: 템페스타와 자유 군도",
+        "연습 상점 편입 예고 (적용일 미확정)"
       ],
       "historicalObtain": [
         "이벤트: 템페스타와 자유 군도"
@@ -69736,7 +69895,14 @@
         "localKr": true,
         "localResource": true,
         "altoy": true,
-        "status": "matched"
+        "status": "matched",
+        "pendingShop": {
+          "gid": 960016,
+          "name": "어드벤처",
+          "announcedAt": "2026-10-29",
+          "note": "다음 점검 후 연습 상점 편입 예고. KR 원본 선행 등록만으로 출시일을 확정하지 않는다. 공식 적용 확인 후 이 보류 항목을 제거한다.",
+          "source": "https://cafe.naver.com/azurlanekorea/574927"
+        }
       }
     },
     {
@@ -73886,8 +74052,7 @@
       "faction": "META",
       "shipType": "항모",
       "obtain": [
-        "이벤트 수령 기간: 유영 미성 (2026-10-23 23:59까지)",
-        "이벤트 상점 파트너볼 8,000개 교환 (최대 5회 · 10-23 23:59까지)"
+        "이벤트: 유영 미성"
       ],
       "historicalObtain": [
         "이벤트: 유영 미성"
@@ -73912,66 +74077,16 @@
         "timeline": false
       },
       "availability": {
-        "key": "active-event",
-        "label": "이벤트 수령 기간",
-        "eventName": "유영 미성",
-        "endsAt": "2026-10-23 23:59",
-        "endsAtLabel": "2026-10-23 23:59까지",
-        "phase": "claim-only",
-        "startsAt": "2026-09-24",
-        "mainEndsAt": "2026-10-16 23:59",
-        "mainEndsAtLabel": "2026-10-16 23:59까지",
-        "claimEndsAt": "2026-10-23 23:59",
-        "eventRoutes": [
-          {
-            "kind": "limited-construction",
-            "label": "한정 건조 0.5%",
-            "endsAt": "2026-10-16 23:59"
-          },
-          {
-            "kind": "event-exchange",
-            "label": "이벤트 상점 파트너볼 8,000개 교환 (최대 5회 · 10-23 23:59까지)",
-            "endsAt": "2026-10-23 23:59"
-          },
-          {
-            "kind": "event-drop",
-            "label": "이벤트 해역 드롭",
-            "endsAt": "2026-10-16 23:59"
-          }
-        ],
-        "activeEventRoutes": [
-          {
-            "kind": "event-exchange",
-            "label": "이벤트 상점 파트너볼 8,000개 교환 (최대 5회 · 10-23 23:59까지)",
-            "endsAt": "2026-10-23 23:59"
-          }
-        ]
+        "key": "rerun-wait",
+        "label": "복각 대기"
       },
-      "acquisitionRoutes": [
-        {
-          "key": "active-event",
-          "label": "이벤트 수령 기간",
-          "certainty": "limited-time",
-          "rank": 1,
-          "sources": [
-            "이벤트 수령 기간 유영 미성"
-          ]
-        }
-      ],
-      "primaryRoute": {
-        "key": "active-event",
-        "label": "이벤트 수령 기간",
-        "certainty": "limited-time",
-        "rank": 1,
-        "sources": [
-          "이벤트 수령 기간 유영 미성"
-        ]
-      },
+      "acquisitionRoutes": [],
+      "primaryRoute": null,
       "difficulty": {
-        "key": "event",
-        "label": "이벤트",
+        "key": "limited",
+        "label": "현재 획득 불가",
         "reasons": [
-          "현재 진행 중인 KR 이벤트"
+          "복각 대기"
         ]
       },
       "verification": {

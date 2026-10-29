@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T18:36:36.235Z",
+  "generatedAt": "2026-10-29T17:08:49.155Z",
   "summary": {
     "identityExceptions": 0,
     "obtainabilityAltoyOnly": 0,
@@ -9,15 +9,15 @@
     "krAppPending": 0,
     "cnOnlyExcluded": 5,
     "availability": {
-      "active-event": 5,
+      "active-event": 2,
       "collab-unknown": 91,
-      "permanent": 630,
-      "rerun-wait": 169
+      "permanent": 638,
+      "rerun-wait": 164
     },
     "acquisitionRoutes": {
-      "active-event": 5,
-      "archive-drop": 63,
-      "construction": 323,
+      "active-event": 2,
+      "archive-drop": 65,
+      "construction": 331,
       "core-monthly": 25,
       "fixed-exchange": 112,
       "guaranteed-reward": 21,

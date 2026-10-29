@@ -1,17 +1,22 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-14",
+  "checkedAt": "2026-10-30",
   "region": "KR",
   "purpose": "신규 스킨 및 시크릿즈 파일실 알림 중복 방지용 기준 목록. 웹 UI나 음성 재배포용 데이터가 아님.",
   "policy": "id 추가뿐 아니라 제목·판매 기간·상시 전환도 비교. 공식 KR 출시와 선행 원본 등록을 구분. 이 기준에 처음 기록된 기존 항목을 오늘 신규 출시로 알리지 않음. 이후 이 대화에서 실제로 알린 항목도 함께 대조.",
-  "skinLibrary": { "uniqueSkins": 2467, "declaredImages": 16171, "source": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/ship_skin_list.json" },
+  "skinLibrary": { "checkedAt": "2026-10-30", "uniqueSkins": 2482, "declaredImages": 16267, "source": "https://raw.githubusercontent.com/Fernando2603/AzurLane/main/ship_skin_list.json", "note": "해외 선행을 포함하는 원본 메타데이터 수이며 KR 출시 수가 아니다. KR 신규 출시 여부는 공식 공지와 별도 대조한다." },
   "reportedSkinReleases": [
+    { "shipGid": 90302, "character": "알제리", "skinId": 903023, "title": "응석을 받아주는 채찍 메이드", "type": "일반·이벤트 임무 보상", "releaseDate": "2026-10-29", "reportedAt": "2026-10-29", "eventEndsAt": "2026-11-19 점검", "officialNoticeUrl": "https://cafe.naver.com/azurlanekorea/574927" },
     { "shipGid": 30513, "character": "오와리", "skinId": 305138, "title": "지금, 넘쳐흐를 듯한 마음을", "type": "서약", "releaseDate": "2026-10-08", "officialNoticeUrl": "https://cafe.naver.com/azurlanekorea/574662" },
     { "shipGid": 20233, "character": "스킬라", "skinId": 202338, "title": "퓨어리 플라워리 프로미스", "type": "서약", "releaseDate": "2026-10-08", "officialNoticeUrl": "https://cafe.naver.com/azurlanekorea/574662" },
     { "shipGid": 30708, "character": "시나노", "skinId": 307088, "title": "화려한 꽃꿈의 맹약", "type": "서약", "releaseDate": "2026-10-08", "officialNoticeUrl": "https://cafe.naver.com/azurlanekorea/574662" },
     { "shipGid": 10148, "character": "잉그레이엄", "skinId": 101482, "title": "미니어처라이즈 월드", "type": "월드 투어 유료 보상", "releaseDate": "2026-10-08", "officialNoticeUrl": "https://cafe.naver.com/azurlanekorea/574581" }
   ],
   "earlierReportedSkins": { "config": "scripts/data/kr-active-events.json", "eventName": "9월 30일 신규 스킨", "note": "이벤트 설정의 8종은 이 대화에서 이미 알린 항목" },
+  "reportedSkinStatusChanges": [
+    { "config": "scripts/data/kr-active-events.json", "eventName": "10월 29일 기존 스킨 상시 판매 전환", "reportedAt": "2026-10-29", "effectiveAt": "2026-10-29", "count": 16, "note": "정확한 캐릭터·스킨명·유형은 informationalEvents의 동일 이름 목록을 대조한다. 신규 출시로 재알림하지 않는다." },
+    { "config": "scripts/data/kr-active-events.json", "eventName": "10월 22일 기존 Live2D 스킨 한정 체험", "reportedAt": "2026-10-22", "effectiveAt": "2026-10-22", "count": 3, "note": "10월 28일 종료된 기존 스킨 체험. 신규 출시 아님." }
+  ],
   "secretMessages": {
     "source": "https://raw.githubusercontent.com/AzurLaneTools/AzurLaneLuaScripts/main/KR/sharecfg/soundstory_template.lua",
     "sourceCommit": "6c461c37d30d9ff1324cb75054f650f82ebf7636",

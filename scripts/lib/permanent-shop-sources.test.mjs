@@ -1,4 +1,12 @@
 import assert from 'node:assert/strict'
+import { deferPendingShopSignals } from './permanent-shop-sources.mjs'
+
+{
+  const signals = Object.freeze({ arenaShop: true, shop: true, other: true, timeline: true, build: false, map: false, archive: false, coreMonthly: false })
+  assert.equal(deferPendingShopSignals(signals, null), signals, '기존 상점은 변경하지 않는다')
+  assert.ok(Object.values(deferPendingShopSignals(signals, { gid: 960011 })).every(value => value === false), '공식 예고는 선행 상점 및 timeline 신호를 현재 입수로 만들지 않는다')
+  assert.equal(deferPendingShopSignals({ ...signals, build: true }, { gid: 960011 }).build, true, '독립적으로 확인된 건조 경로는 유지한다')
+}
 import { buildArenaShopGids, timelineFallbackSource } from './permanent-shop-sources.mjs'
 import { resolveOfficialPermanentShop } from './permanent-shop-sources.mjs'
 import officialShops from '../data/kr-permanent-shops.json' with { type: 'json' }

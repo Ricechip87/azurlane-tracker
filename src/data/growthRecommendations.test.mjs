@@ -11,7 +11,7 @@ assert.deepEqual(
   Object.fromEntries(data.sources.map(source => [source.key, source.updatedAt])),
   {
     main: '2026-10-11',
-    'operation-siren': '2026-08-27',
+    'operation-siren': '2026-10-28',
     newbie: '2025-08-09',
   },
 )
@@ -107,6 +107,15 @@ for (const characterId of new Set(data.recommendations.map(recommendation => Str
 }
 
 const recommendationKey = (source, name) => data.recommendations.some(item => item.source === source && item.name === name)
+const operationSirenRecommendations = data.recommendations.filter(item => item.source === 'operation-siren')
+assert.deepEqual([...new Set(operationSirenRecommendations.map(item => item.sheetGroup))], [
+  '구축 DD', '경순 CL', '중순 / 대순 CA', '전함 BB, 순전 BC', '항모 CV, 경항모 CVL', '잠수 SS',
+], '10월 28일 대작전 갱신의 여섯 카테고리를 보존해야 합니다.')
+for (const [name, id] of [['아즈치', 755], ['빅토리어스(META)', 'M065']]) {
+  const entries = operationSirenRecommendations.filter(item => item.name === name)
+  assert.ok(entries.length > 0, `10월 28일 대작전 추천 누락: ${name}`)
+  assert.ok(entries.every(item => item.id === id), `10월 28일 대작전 추천 식별 오류: ${name}`)
+}
 assert.equal(recommendationKey('main', '아즈치'), true)
 assert.equal(recommendationKey('main', '레오나르도 다 빈치'), true)
 const mainRecommendations = data.recommendations.filter(item => item.source === 'main')
@@ -138,5 +147,10 @@ assert.equal(data.sources.find(source => source.key === 'operation-siren').exclu
 
 assert.deepEqual(
   data.review.unratedRecentShips.map(ship => ship.name),
-  ['랑트레피드', '해리슨', '빅스버그', '존 로저스'],
+  ['랑트레피드', '해리슨', '존 로저스'],
+)
+assert.equal(
+  operationSirenRecommendations.find(item => item.name === '빅스버그')?.tier,
+  'B',
+  '빅스버그는 10월 28일 대작전 B등급 등록으로 미평가 안내에서 제외됩니다.',
 )

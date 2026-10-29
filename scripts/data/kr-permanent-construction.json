@@ -1,7 +1,15 @@
 {
-  "updatedAt": "2026-09-10",
+  "updatedAt": "2026-10-30",
   "note": "KR 공식 완료 공지에서 상시 건조 편입이 확인됐으나 ALtoy 건조 플래그가 아직 반영하지 않은 항목. 원본 입수 이력과 원본 간 비교 상태는 보존한다.",
   "ships": [
+    { "gid": 960012, "name": "퀸 앤즈 리벤지", "effectiveAt": "2026-10-29", "pool": "heavy", "source": "https://cafe.naver.com/azurlanekorea/574927" },
+    { "gid": 960014, "name": "펄", "effectiveAt": "2026-10-29", "pool": "heavy", "archive": "템페스타와 자유 군도", "source": "https://cafe.naver.com/azurlanekorea/574927" },
+    { "gid": 960013, "name": "라임", "effectiveAt": "2026-10-29", "pool": "light", "source": "https://cafe.naver.com/azurlanekorea/574927" },
+    { "gid": 960015, "name": "로열 제임스", "effectiveAt": "2026-10-29", "pool": "light", "source": "https://cafe.naver.com/azurlanekorea/574927" },
+    { "gid": 960009, "name": "아미티", "effectiveAt": "2026-10-29", "pool": "special", "archive": "템페스타와 잠든 바다", "source": "https://cafe.naver.com/azurlanekorea/574927" },
+    { "gid": 960007, "name": "건스웨이", "effectiveAt": "2026-10-29", "pool": "heavy", "source": "https://cafe.naver.com/azurlanekorea/574927" },
+    { "gid": 960008, "name": "팬시", "effectiveAt": "2026-10-29", "pool": "light", "source": "https://cafe.naver.com/azurlanekorea/574927" },
+    { "gid": 960010, "name": "포츠머스 어드벤처", "effectiveAt": "2026-10-29", "pool": "light", "source": "https://cafe.naver.com/azurlanekorea/574927" },
     {
       "gid": 40406,
       "name": "알비트",

@@ -8,7 +8,7 @@ import officialShops from './data/kr-permanent-shops.json' with { type: 'json' }
 import { classifyObtainability } from './lib/obtainability-classifier.mjs'
 import { normalizeConstructionSources } from './lib/construction-sources.mjs'
 import { selectObtainSources, resolveOfficialConstruction, resolveOfficialMetaDossier } from './lib/obtainability-sources.mjs'
-import { buildArenaShopGids, timelineFallbackSource, resolveOfficialPermanentShop } from './lib/permanent-shop-sources.mjs'
+import { buildArenaShopGids, timelineFallbackSource, resolveOfficialPermanentShop, deferPendingShopSignals } from './lib/permanent-shop-sources.mjs'
 import { toKstDateKey } from '../src/utils/kstDate.js'
 import { resolveEventAcquisition } from '../src/utils/eventAcquisition.js'
 
@@ -212,21 +212,24 @@ const ships = characters.map(character => {
   const altoyObtain = normalizeList(full?.description)
   const rawObtain = selectObtainSources({ gid, localKrObtain, altoyObtain })
   const officialMetaDossier = resolveOfficialMetaDossier({ gid, dossiers: officialMetaDossiers.ships, today: asOfDate })
-  const officialPermanentShop = resolveOfficialPermanentShop({ gid, shops: officialShops.ships, today: asOfDate })
+  const pendingShop = officialShops.pendingShips?.find(row => Number(row.gid) === gid && row.announcedAt <= asOfDate)
+  const officialPermanentShop = pendingShop ? null : resolveOfficialPermanentShop({ gid, shops: officialShops.ships, today: asOfDate })
   const drops = mapDrops(lite)
   const timelineInfo = permanentTimelineInfo.get(nameKey)
-  const permanentSignals = {
+  const permanentSignals = deferPendingShopSignals({
     map: drops.length > 0,
-    archive: archiveGids.has(Number(lite?.gid ?? full?.gid ?? gid)),
+    archive: Boolean(officialKrOverride?.archive) || archiveGids.has(Number(lite?.gid ?? full?.gid ?? gid)),
     coreMonthly: coreMonthlyGids.has(Number(lite?.gid ?? full?.gid ?? gid)),
     arenaShop: arenaShopGids.has(Number(lite?.gid ?? full?.gid ?? gid)),
     build: Boolean(lite?.light || lite?.heavy || lite?.special),
     shop: Boolean(officialPermanentShop) || altoyObtain.some(source => SHOP_PATTERN.test(source)),
     other: Boolean(officialMetaDossier) || altoyObtain.some(source => OTHER_PERMANENT_PATTERN.test(source)),
     timeline: Boolean(timelineInfo),
-  }
+  }, pendingShop)
   const activeEvent = currentEventFor(character.name)
-  const obtain = officialPermanentShop?.obtain || officialMetaDossier?.obtain || currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent })
+  const obtain = pendingShop && !activeEvent && !Object.values(permanentSignals).some(Boolean)
+    ? [...rawObtain.filter(source => /이벤트/.test(source)), '연습 상점 편입 예고 (적용일 미확정)']
+    : officialPermanentShop?.obtain || officialMetaDossier?.obtain || currentObtainSources({ rawObtain, altoyObtain, lite, drops, permanentSignals, timelineInfo, activeEvent })
   const classification = classifyObtainability({
     name: character.name,
     faction: character.faction,
@@ -260,6 +263,7 @@ const ships = characters.map(character => {
       ...(officialKrOverride ? { officialKrOverride } : {}),
       ...(officialMetaDossier ? { officialMetaDossier } : {}),
       ...(officialPermanentShop ? { officialPermanentShop } : {}),
+      ...(pendingShop ? { pendingShop } : {}),
     },
   }
 }).sort((a, b) => a.gid - b.gid)

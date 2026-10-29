@@ -2,6 +2,12 @@ export function resolveOfficialPermanentShop({ gid, shops = [], today }) {
   return shops.find(row => Number(row.gid) === Number(gid) && row.effectiveAt && row.effectiveAt <= today) || null
 }
 
+export function deferPendingShopSignals(signals, pendingShop) {
+  if (!pendingShop) return signals
+  // Only these two explicitly deferred ships are gated; preserve independently confirmed maps/construction.
+  return { ...signals, arenaShop: false, shop: false, other: false, timeline: false }
+}
+
 export function buildArenaShopGids(arenaData, shopData) {
   const activeCommodityIds = new Set()
   for (const row of Object.values(arenaData || {})) {

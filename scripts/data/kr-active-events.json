@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-10-30",
   "dataCorrections": [
     {
       "ship": "Z43",
@@ -57,6 +57,55 @@
     }
   ],
   "informationalEvents": [
+    {
+      "name": "응석을 받아주는 채찍 메이드",
+      "kind": "skin-mission",
+      "startsAt": "2026-10-29",
+      "endsAt": "2026-11-19",
+      "periodLabel": "10월 29일 점검 후 ~ 11월 19일 점검까지",
+      "skin": { "ship": "알제리", "skinId": 903023, "name": "응석을 받아주는 채찍 메이드", "type": "일반" },
+      "rewardsFullyUnlockedAt": "2026-11-04 00:00",
+      "note": "이벤트 임무 누적 보상 스킨. 임무는 첫날 해금되지만 보상 수령은 11월 4일까지 매일 0시에 순차 개방된다. 이미지 선행 등록일과 KR 출시일을 구분한다. 10월 29일 무점검 업데이트로 임무 조건 표기 오류가 수정됐다.",
+      "sources": [{ "kind": "official-kr-full-notice", "priority": "primary", "urls": ["https://cafe.naver.com/azurlanekorea/574927", "https://cafe.naver.com/azurlanekorea/574914", "https://cafe.naver.com/azurlanekorea/574931"] }]
+    },
+    {
+      "name": "10월 29일 기존 스킨 상시 판매 전환",
+      "kind": "skin-permanent-sale",
+      "startsAt": "2026-10-29",
+      "note": "기존 스킨의 상시 판매 전환이며 신규 스킨 출시가 아니다.",
+      "skins": [
+        { "ship": "오와리", "name": "나의 소원은 사랑", "type": "Live2D" },
+        { "ship": "아타고", "name": "달밤의 늑대 누나", "type": "모션" },
+        { "ship": "건스웨이", "name": "봉인된 머메이드", "type": "모션" },
+        { "ship": "아미티", "name": "프렌들리 프랑켄", "type": "모션" },
+        { "ship": "팬시", "name": "팬시 하트 호러", "type": "일반" },
+        { "ship": "포츠머스 어드벤처", "name": "서프라이즈 어드벤처", "type": "일반" },
+        { "ship": "돌핀", "name": "부활의 주문", "type": "일반" },
+        { "ship": "브리스톨", "name": "토플리스 인베스티게이터", "type": "일반" },
+        { "ship": "펄", "name": "마성의 타락 천사", "type": "Live2D+" },
+        { "ship": "퀸 앤즈 리벤지", "name": "은밀한 포옹의 속삭임", "type": "Live2D" },
+        { "ship": "이즈모", "name": "두근거리는 꼬리 칵테일", "type": "모션" },
+        { "ship": "크론시타트", "name": "애니멀 에이전트", "type": "모션" },
+        { "ship": "라임", "name": "데빌라이즈 트랩", "type": "모션" },
+        { "ship": "어드벤처", "name": "세이프 하우스 마스터", "type": "모션" },
+        { "ship": "로열 제임스", "name": "금기의 츄잉 본", "type": "일반" },
+        { "ship": "하루츠키", "name": "수증기 속 정령", "type": "일반" }
+      ],
+      "sources": [{ "kind": "official-kr-full-notice", "priority": "primary", "urls": ["https://cafe.naver.com/azurlanekorea/574927"] }]
+    },
+    {
+      "name": "10월 22일 기존 Live2D 스킨 한정 체험",
+      "kind": "skin-trial",
+      "startsAt": "2026-10-22",
+      "endsAt": "2026-10-28 23:59",
+      "skins": [
+        { "ship": "피츠버그", "name": "걸즈 카운터", "type": "Live2D" },
+        { "ship": "프리드리히 데어 그로세", "name": "한여름 밤의 만남", "type": "Live2D" },
+        { "ship": "팽르베", "name": "생크림에 행운 있으라", "type": "Live2D" }
+      ],
+      "note": "이미 보고된 기존 스킨 체험 이력. 신규 출시 또는 판매 재개로 분류하지 않는다.",
+      "sources": [{ "kind": "official-kr-full-notice", "priority": "primary", "urls": ["https://cafe.naver.com/azurlanekorea/574862"] }]
+    },
     {
       "name": "선택형 경량화 복각",
       "kind": "selectable-rerun",

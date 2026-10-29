@@ -1,5 +1,9 @@
 {
-  "updatedAt": "2026-10-14",
+  "updatedAt": "2026-10-30",
+  "pendingShips": [
+    { "gid": 960011, "name": "돌핀", "announcedAt": "2026-10-29", "note": "다음 점검 후 연습 상점 편입 예고. KR 원본 선행 등록만으로 출시일을 확정하지 않는다. 공식 적용 확인 후 이 보류 항목을 제거한다.", "source": "https://cafe.naver.com/azurlanekorea/574927" },
+    { "gid": 960016, "name": "어드벤처", "announcedAt": "2026-10-29", "note": "다음 점검 후 연습 상점 편입 예고. KR 원본 선행 등록만으로 출시일을 확정하지 않는다. 공식 적용 확인 후 이 보류 항목을 제거한다.", "source": "https://cafe.naver.com/azurlanekorea/574927" }
+  ],
   "note": "공식 KR 개시일과 KR 상점 활성 원본으로 확인한 상시 상점만 보완한다. 원본 상품의 10월 1일 제한보다 공식 KR 10월 8일 개시를 우선하며 월드 투어 종료일은 적용하지 않는다.",
   "ships": [
     {

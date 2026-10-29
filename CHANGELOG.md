@@ -1,5 +1,19 @@
 # Change Log
 
+## 2026-10-30 - Refresh KR October 29 Content
+
+- Refresh Operation Siren recommendations from the source sheet dated October 28. Update the stale date fixture and protect all six categories plus Azuchi/Victorious META identities without changing the generator.
+
+- Apply eight officially confirmed permanent construction additions and Pearl/Amity archive acquisition, preserving historical source evidence and existing ship identities.
+- Refresh the source-backed Operation Siren recommendations through the established extractor; leave main-sea formation examples and user progress untouched.
+- Collect 89 missing reference images: 2,482 skin records and 16,267 declared images, with no corrupt-image replacements. Preserve all 895 KR app ships; overseas-only source additions are not KR releases.
+- Keep Adventure and Dolphin's announced exercise-shop additions pending until the official KR effective update is confirmed, despite pre-populated upstream shop entries.
+
+- Record Algérie's October 29 event-reward skin release and the staged reward-unlock period separately from its earlier source-image availability.
+- Record sixteen existing skins becoming permanently available and preserve the previously reported three-skin trial as ended history, not new releases.
+- Update notification deduplication references and clarify ended event history in the handoff. Preserve the immutable 30-entry SecretMessages baseline; do not turn unspecified skin voices or overseas metadata into new KR releases.
+- Verified independently: lint, full tests/posttest, and production build pass after updating stale source-date and unrated-Vicksburg assertions against the October 28 workbook. Local source audits and generation idempotency pass; all 895 ship identities and public assets remain unchanged.
+
 ## 2026-10-23 - Refresh KR October 22 Content
 
 - Add Royal Fortune and Vincenzo Gioberti's new augment direct stats using the existing +10 extraction policy; preserve recommendation ratings and conditional-skill handling.
